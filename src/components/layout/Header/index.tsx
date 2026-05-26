@@ -143,9 +143,8 @@ export default function Header() {
                   <div key={item.slug} className="group relative border-r border-white/30 last:border-r-0">
                     <Link
                       href={item.submenu.length ? `/menu/${item.slug}/${toSlug(item.submenu[0])}` : '/contact'}
-                      className={`flex items-center gap-1 px-5 py-4 text-[12px] font-semibold uppercase text-white transition-colors hover:bg-[#004a8e] ${
-                        isActive ? 'bg-[#004a8e]' : ''
-                      }`}
+                      className={`flex items-center gap-1 px-5 py-4 text-[12px] font-semibold uppercase text-white transition-colors hover:bg-[#004a8e] ${isActive ? 'bg-[#004a8e]' : ''
+                        }`}
                     >
                       {item.label}
                       <ChevronDown className="h-3.5 w-3.5" />
