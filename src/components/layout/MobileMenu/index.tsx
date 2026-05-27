@@ -163,10 +163,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
               {/* Case Studies */}
               <Link
-                href="/case-studies"
+                href="/downloads"
                 onClick={handleLinkClick}
                 className={`flex items-center justify-between px-3 py-3 rounded-lg hover:bg-slate-50 transition-colors ${
-                  isActive('/case-studies') ? 'bg-slate-50 text-accent font-semibold' : ''
+                  isActive('/downloads') ? 'bg-slate-50 text-accent font-semibold' : ''
                 }`}
               >
                 <span>Case Studies</span>

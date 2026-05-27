@@ -4,11 +4,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, CheckCircle2, ChevronRight, FileText, Shield, Sparkles, Trophy, Cpu, Zap, Pause, Play } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronRight, Sparkles, Cpu, Zap, Pause, Play } from 'lucide-react';
 import { services } from '@/constants/services';
-import { caseStudies } from '@/constants/caseStudies';
-import { IconMapper } from '@/components/layout/Navbar';
 import Card from '@/components/common/Card';
+import ArcadeSection from '@/components/home/ArcadeSection';
 
 // 11 Sections Data structure matching points exactly
 interface Slide {
@@ -150,6 +149,15 @@ const slides: Slide[] = [
     ]
   }
 ];
+
+const serviceCardImages: Record<string, string> = {
+  'product-engineering': '/image/product-engin.png',
+  'plant-process-design': '/image/plant-process-design.png',
+  'document-engineering': '/image/docu-engin.png',
+  'geoinformatics-engineering': '/image/geoinformatic-information.png',
+  'plm-software-engineering': '/image/plm.png',
+  'project-management-controls': '/image/project-development-cycle.png'
+};
 
 export default function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -367,49 +375,57 @@ export default function HomePage() {
               We cover the entire Product and Plant Life Cycle (PPLC), delivering customized solutions that reduce costs and accelerate your time-to-market.
             </p>
           </div>
-
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((svc) => (
               <Card
                 key={svc.slug}
-                className="flex flex-col h-full bg-white border border-slate-200/60 p-8 rounded-xl shadow-sm hover:shadow-md transition-all group"
+                className="flex flex-col h-full overflow-hidden bg-white border border-slate-200/70 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
               >
-                <div className="p-3.5 rounded-xl bg-slate-50 text-slate-600 group-hover:bg-accent group-hover:text-white transition-colors self-start mb-6">
-                  <IconMapper name={svc.iconName} className="w-6 h-6" />
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={serviceCardImages[svc.slug] || '/image/product-engin.png'}
+                    alt={svc.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/65 via-slate-900/20 to-transparent" />
+                  <h3 className="absolute left-4 right-4 bottom-3 text-lg font-bold text-white leading-tight">
+                    {svc.title}
+                  </h3>
                 </div>
 
-                <h3 className="text-lg font-bold text-primary group-hover:text-accent transition-colors mb-3">
-                  {svc.title}
-                </h3>
+                <div className="flex flex-col flex-grow p-6">
+                  <p className="text-slate-600 text-xs leading-relaxed flex-grow mb-5 min-h-[56px]">
+                    {svc.tagline}
+                  </p>
 
-                <p className="text-slate-500 text-xs leading-relaxed flex-grow mb-6">
-                  {svc.tagline}
-                </p>
+                  <div className="border-t border-slate-100 pt-4 mt-auto">
+                    <div className="text-[10px] font-mono tracking-widest uppercase text-slate-400 mb-2.5">Key Focus Areas</div>
+                    <ul className="text-[11px] text-slate-700 space-y-1.5 min-h-[62px]">
+                      {svc.bulletPoints.slice(0, 3).map((bp, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent-light mt-1 shrink-0" />
+                          <span className="leading-snug">{bp}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                {/* Sub-competency snippet */}
-                <div className="border-t border-slate-100 pt-4 mt-auto">
-                  <div className="text-[10px] font-mono tracking-widest uppercase text-slate-400 mb-2.5">Key Focus Areas</div>
-                  <ul className="text-[11px] text-slate-600 space-y-1.5">
-                    {svc.bulletPoints.slice(0, 3).map((bp, i) => (
-                      <li key={i} className="flex items-center gap-1.5">
-                        <span className="w-1 h-1 rounded-full bg-accent-light shrink-0" />
-                        <span>{bp}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <Link
+                    href={svc.href || `/services/${svc.slug}`}
+                    className="flex items-center gap-1 text-xs font-semibold text-accent group-hover:text-accent-dark transition-colors pt-5 mt-4 border-t border-slate-100"
+                  >
+                    Read More Details
+                    <ChevronRight className="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" />
+                  </Link>
                 </div>
-
-                <Link
-                  href={`/services/${svc.slug}`}
-                  className="flex items-center gap-1 text-xs font-semibold text-accent group-hover:text-accent-dark transition-colors pt-6 mt-4 border-t border-slate-50"
-                >
-                  Read More Details
-                  <ChevronRight className="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" />
-                </Link>
               </Card>
             ))}
           </div>
+
+          <ArcadeSection />
 
         </div>
       </section>
@@ -506,172 +522,6 @@ export default function HomePage() {
                       </p>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4: CASE STUDIES */}
-      <section className="py-20 sm:py-28 bg-slate-900 text-white relative blueprint-grid overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-slate-950 pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-          {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div className="space-y-3">
-              <div className="text-xs font-mono font-semibold tracking-widest text-accent-light uppercase">
-                Success Stories
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-white">
-                Engineering Case Studies
-              </h2>
-              <div className="h-1 w-12 bg-accent rounded-full" />
-            </div>
-            <Link
-              href="/case-studies"
-              className="text-xs font-semibold text-accent-light hover:text-white transition-colors flex items-center gap-1 shrink-0"
-            >
-              VIEW ALL CASE STUDIES
-              <ChevronRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          {/* Grid of highlight projects */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {caseStudies.map((cs) => (
-              <div
-                key={cs.id}
-                className="flex flex-col h-full bg-slate-950/80 border border-slate-800 rounded-xl overflow-hidden p-6 hover:border-slate-700 transition-all group"
-              >
-                {/* Visual Placeholder pointing to specified corporate image */}
-                <div className="relative mb-5 rounded-lg overflow-hidden border border-slate-850">
-                  <Image
-                    src="/image/IMAGE.png"
-                    alt={cs.title}
-                    width={500}
-                    height={300}
-                    className="object-cover w-full h-full aspect-video rounded"
-                  />
-                  <div className="absolute top-2 left-2 bg-slate-900/90 text-[9px] font-mono text-slate-300 px-2 py-0.5 rounded uppercase tracking-wider">
-                    {cs.clientIndustry.replace('Energy - ', '')}
-                  </div>
-                </div>
-
-                <h3 className="text-sm font-bold text-white group-hover:text-accent-light transition-colors line-clamp-2 mb-3">
-                  {cs.title}
-                </h3>
-
-                <p className="text-slate-400 text-[11px] leading-relaxed line-clamp-3 mb-6">
-                  {cs.challenge}
-                </p>
-
-                {/* Key result item */}
-                <div className="mt-auto border-t border-slate-800 pt-4">
-                  <div className="text-[9px] font-mono text-slate-500 uppercase tracking-widest mb-2">Highlight Outcome</div>
-                  <p className="text-[11px] text-slate-300 italic">
-                    &ldquo;{cs.results[0]}&rdquo;
-                  </p>
-                </div>
-
-                <div className="pt-6 mt-4 border-t border-slate-850">
-                  {cs.pdfUrl !== '#' ? (
-                    <a
-                      href={cs.pdfUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-mono font-semibold text-accent-light hover:underline flex items-center gap-1.5"
-                    >
-                      <FileText className="w-4 h-4" />
-                      View Technical PDF
-                    </a>
-                  ) : (
-                    <Link
-                      href="/case-studies"
-                      className="text-xs font-mono font-semibold text-accent-light hover:underline flex items-center gap-1.5"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Read Case Summary
-                    </Link>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* SECTION 5: ACCREDITATIONS & QUALITY */}
-      <section className="py-20 sm:py-28 bg-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Grid structure */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-
-            {/* Text description */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="space-y-3">
-                <div className="text-xs font-mono font-semibold tracking-widest text-accent uppercase">
-                  Standards Compliant
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-primary tracking-tight">
-                  Accreditations & Quality Policy
-                </h2>
-                <div className="h-1 w-12 bg-accent rounded-full" />
-              </div>
-              <p className="text-slate-500 text-xs leading-relaxed">
-                Our relentless pursuit of quality ensures we maintain a robust, standardized operational atmosphere. GTS maintains information privacy and project quality compliance parameters mapped directly to global CMMI and ISO structures.
-              </p>
-              <div className="p-4 bg-slate-50 border border-slate-200 rounded-lg text-xs italic text-slate-600">
-                &ldquo;We are committed to deliver innovative solutions that delight Customers through deployment of robust processes.&rdquo;
-              </div>
-            </div>
-
-            {/* Badges Grid */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {/* Card 1: ISO 9001 */}
-              <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-5 text-center flex flex-col items-center justify-center space-y-3 shadow-sm hover:border-accent/40 transition-all">
-                <div className="p-3 bg-accent/10 text-accent rounded-full">
-                  <Shield className="w-6 h-6" />
-                </div>
-                <h3 className="font-bold text-slate-900 text-xs">ISO 9001:2015</h3>
-                <p className="text-[10px] text-slate-500 leading-relaxed font-mono">
-                  QUALITY PROCESSES
-                </p>
-                <div className="text-[9px] font-semibold text-slate-400 bg-white border border-slate-200 rounded-full px-2 py-0.5 mt-2">
-                  Compliant
-                </div>
-              </div>
-
-              {/* Card 2: ISO 27001 */}
-              <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-5 text-center flex flex-col items-center justify-center space-y-3 shadow-sm hover:border-accent/40 transition-all">
-                <div className="p-3 bg-accent-light/10 text-accent-light rounded-full">
-                  <Shield className="w-6 h-6" />
-                </div>
-                <h3 className="font-bold text-slate-900 text-xs">ISO 27001</h3>
-                <p className="text-[10px] text-slate-500 leading-relaxed font-mono">
-                  INFORMATION SECURITY
-                </p>
-                <div className="text-[9px] font-semibold text-slate-400 bg-white border border-slate-200 rounded-full px-2 py-0.5 mt-2">
-                  Compliant
-                </div>
-              </div>
-
-              {/* Card 3: CMMI Level 3 */}
-              <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-5 text-center flex flex-col items-center justify-center space-y-3 shadow-sm hover:border-accent/40 transition-all">
-                <div className="p-3 bg-primary/10 text-primary rounded-full">
-                  <Trophy className="w-6 h-6" />
-                </div>
-                <h3 className="font-bold text-slate-900 text-xs">CMMI Level 3</h3>
-                <p className="text-[10px] text-slate-500 leading-relaxed font-mono">
-                  EXECUTION STANDARDS
-                </p>
-                <div className="text-[9px] font-semibold text-slate-400 bg-white border border-slate-200 rounded-full px-2 py-0.5 mt-2">
-                  Compliant Principles
                 </div>
               </div>
             </div>

@@ -21,7 +21,7 @@ export const caseStudies: CaseStudy[] = [
       "Maintained a safety factor of 1.8 against fatigue failure and buckling load limits.",
       "Optimized production tooling compatibility, leading to a 7% reduction in material costs."
     ],
-    pdfUrl: "https://gtsusainc.com/wp-content/themes/gts/pdfs/Compressor%20Housing.pdf",
+    pdfUrl: "/documents/Compressor Housing.pdf",
     imageUrl: "/image/IMAGE.png"
   },
   {

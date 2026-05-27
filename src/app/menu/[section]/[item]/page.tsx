@@ -3,6 +3,13 @@ import Image from 'next/image';
 import { FileText, FolderOpen } from 'lucide-react';
 import TechnologyCompetenciesContent from '@/components/menu/delivery/TechnologyCompetenciesContent';
 import GlobalEngagementModelsContent from '@/components/menu/delivery/GlobalEngagementModelsContent';
+import CollaborativeCommunicationContent from '@/components/menu/delivery/CollaborativeCommunicationContent';
+import QualityManagementSystemContent from '@/components/menu/delivery/QualityManagementSystemContent';
+import HrValuesContent from '@/components/menu/delivery/HrValuesContent';
+import InfrastructureContent from '@/components/menu/delivery/InfrastructureContent';
+import LifeAtGtsContent from '@/components/menu/careers/LifeAtGtsContent';
+import WhyJoinUsContent from '@/components/menu/careers/WhyJoinUsContent';
+import EmploymentOpportunitiesContent from '@/components/menu/careers/EmploymentOpportunitiesContent';
 
 interface MenuSubPageProps {
   params: Promise<{
@@ -55,6 +62,13 @@ const deliveryEnablersSubmenu = [
   'Quality Management System',
   'HR Values',
   'Infrastructure'
+];
+
+const careersSubmenu = [
+  'HR Values',
+  'Life @ GTS Engineering',
+  'Why Join Us',
+  'Employment Opportunities'
 ];
 
 const whoWeAreParagraphs = [
@@ -220,6 +234,18 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
     section === 'delivery-enablers' && item === 'technology-and-competencies';
   const isGlobalEngagementModelsPage =
     section === 'delivery-enablers' && item === 'global-engagement-models';
+  const isCollaborativeCommunicationPage =
+    section === 'delivery-enablers' && item === 'collaborative-communication';
+  const isQualityManagementSystemPage =
+    section === 'delivery-enablers' && item === 'quality-management-system';
+  const isHrValuesPage =
+    (section === 'delivery-enablers' && item === 'hr-values') ||
+    (section === 'careers' && item === 'hr-values');
+  const isInfrastructurePage = section === 'delivery-enablers' && item === 'infrastructure';
+  const isLifeAtGtsPage = section === 'careers' && item === 'life-gts-engineering';
+  const isWhyJoinUsPage =
+    section === 'careers' && (item === 'why-join-us' || item === 'why-we-us');
+  const isEmploymentOpportunitiesPage = section === 'careers' && item === 'employment-opportunities';
   const sidebarTitle = section === 'service-offerings' ? 'Services' : 'About Us';
   const sidebarSubmenu =
     section === 'service-offerings'
@@ -230,6 +256,8 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
           ? technologySourcingSubmenu
           : section === 'delivery-enablers'
             ? deliveryEnablersSubmenu
+            : section === 'careers'
+              ? careersSubmenu
           : aboutUsSubmenu;
   const resolvedSidebarTitle =
     section === 'service-offerings'
@@ -240,6 +268,8 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
           ? 'Technology & Sourcing'
           : section === 'delivery-enablers'
             ? 'Delivery Enablers'
+            : section === 'careers'
+              ? 'Careers'
         : sidebarTitle;
 
   return (
@@ -2251,6 +2281,20 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   <TechnologyCompetenciesContent />
                 ) : isGlobalEngagementModelsPage ? (
                   <GlobalEngagementModelsContent />
+                ) : isCollaborativeCommunicationPage ? (
+                  <CollaborativeCommunicationContent />
+                ) : isQualityManagementSystemPage ? (
+                  <QualityManagementSystemContent />
+                ) : isHrValuesPage ? (
+                  <HrValuesContent />
+                ) : isInfrastructurePage ? (
+                  <InfrastructureContent />
+                ) : isLifeAtGtsPage ? (
+                  <LifeAtGtsContent />
+                ) : isWhyJoinUsPage ? (
+                  <WhyJoinUsContent />
+                ) : isEmploymentOpportunitiesPage ? (
+                  <EmploymentOpportunitiesContent />
                 ) : (
                   <p className="mt-4 text-slate-600">
                     Content for this submenu is coming soon.

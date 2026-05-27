@@ -155,11 +155,11 @@ export default function Navbar() {
 
       {/* Case Studies Route */}
       <Link 
-        href="/case-studies" 
-        className={`hover:text-accent transition-colors py-2 relative ${isActive('/case-studies') ? 'text-accent font-semibold' : ''}`}
+        href="/downloads" 
+        className={`hover:text-accent transition-colors py-2 relative ${isActive('/downloads') ? 'text-accent font-semibold' : ''}`}
       >
         Case Studies
-        {isActive('/case-studies') && (
+        {isActive('/downloads') && (
           <motion.div layoutId="nav-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent" />
         )}
       </Link>

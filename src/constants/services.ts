@@ -5,6 +5,7 @@ export interface SubService {
 
 export interface Service {
   slug: string;
+  href?: string;
   title: string;
   tagline: string;
   description: string;
@@ -19,6 +20,7 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: "product-engineering",
+    href: "/menu/service-offerings/product-engineering",
     title: "Product Engineering",
     tagline: "Accelerating innovation from conceptualization to validation and production-ready designs.",
     description: "GTS operates as a virtual extension of your team, providing complete end-to-end design, analysis, and validation services. We manage product development cycles from the initial napkin sketch to physical prototyping and manufacturing release across diverse heavy engineering, automotive, and consumer segments.",
@@ -63,6 +65,7 @@ export const services: Service[] = [
   },
   {
     slug: "plant-process-design",
+    href: "/menu/service-offerings/plant-and-process-engineering",
     title: "Plant & Process Design",
     tagline: "Comprehensive industrial plant engineering, basic design, FEED, and lifecycle optimization.",
     description: "We deliver world-class engineering solutions for complex processing facilities, refineries, onshore/offshore piping, and thermal power structures. Our rigorous engineering practices ensure regulatory compliance, safety, and operational efficiency.",
@@ -97,6 +100,7 @@ export const services: Service[] = [
   },
   {
     slug: "document-engineering",
+    href: "/menu/service-offerings/plant-and-process-engineering",
     title: "Document Engineering",
     tagline: "Precision technical documentation, electrical wiring schematics, and translation enablers.",
     description: "High-quality, standards-compliant technical publications are critical for engineered assets. GTS produces accurate, comprehensive documentation, interactive manuals, and multi-lingual technical publications for global audiences.",
@@ -131,6 +135,7 @@ export const services: Service[] = [
   },
   {
     slug: "geoinformatics-engineering",
+    href: "/menu/service-offerings/geoinformatics-engineering",
     title: "Geoinformatics Engineering",
     tagline: "Advanced GIS systems development, spatial analytics, and utility asset intelligence.",
     description: "Harnessing the power of location intelligence. GTS provides custom geospatial consulting, asset mapping, and advanced web-GIS systems to help organizations manage massive infrastructure, utilities, and logistics networks.",
@@ -165,6 +170,7 @@ export const services: Service[] = [
   },
   {
     slug: "plm-software-engineering",
+    href: "/menu/service-offerings/plm-and-software-engineering",
     title: "PLM & Software Engineering",
     tagline: "Seamless product lifecycle management integrations, migrations, and customized software enablers.",
     description: "Accelerate your digital transformation. We bridge the gap between design engineering and enterprise software, integrating state-of-the-art PLM systems, automating custom workflows, and providing application management support.",
@@ -199,6 +205,7 @@ export const services: Service[] = [
   },
   {
     slug: "project-management-controls",
+    href: "/menu/service-offerings/project-management-and-controls",
     title: "Project Management & Controls",
     tagline: "Mitigating risks and maintaining schedules through robust procurement, tracking, and commissioning support.",
     description: "GTS ensures engineering projects finish on time, within budget, and to the highest quality. We serve as owners' representatives and consultants, organizing schedules, verifying quality, and facilitating successful equipment commissioning.",

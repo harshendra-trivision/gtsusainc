@@ -66,7 +66,7 @@ export default function ServicesLandingPage() {
 
                 <div className="pt-6 mt-6 border-t border-slate-100/50">
                   <Link 
-                    href={`/services/${svc.slug}`}
+                    href={svc.href || `/services/${svc.slug}`}
                     className="flex w-full items-center justify-center gap-2 rounded-lg bg-slate-50 py-3 text-center text-xs font-semibold text-accent hover:bg-accent hover:text-white transition-all group-hover:shadow-sm"
                   >
                     Explore Detailed Offerings
