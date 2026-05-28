@@ -183,4 +183,3 @@ export default function InfrastructurePage() {
     </div>
   );
 }
-export { InfrastructurePage };

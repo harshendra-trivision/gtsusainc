@@ -1,20 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const outfit = Outfit({
-  variable: "--font-display",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -35,10 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${outfit.variable} h-full antialiased`}
-    >
+    <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-white text-slate-900">
         <Header />
         <main className="flex-grow flex flex-col">

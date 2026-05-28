@@ -3,6 +3,8 @@ import { services } from '@/constants/services';
 import { industries } from '@/constants/industries';
 import { solutionPoints } from '@/constants/solutions';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://gtsusainc.com';
 

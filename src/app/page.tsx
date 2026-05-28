@@ -533,4 +533,3 @@ export default function HomePage() {
     </div>
   );
 }
-export { HomePage };

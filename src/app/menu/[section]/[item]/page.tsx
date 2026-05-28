@@ -2314,3 +2314,21 @@ const toSlug = (value: string) =>
     .replace(/&/g, 'and')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
+
+export function generateStaticParams() {
+  const sectionToSubmenu: Record<string, string[]> = {
+    'about-us': aboutUsSubmenu,
+    'service-offerings': serviceOfferingsSubmenu,
+    industries: industriesSubmenu,
+    'technology-sourcing': technologySourcingSubmenu,
+    'delivery-enablers': deliveryEnablersSubmenu,
+    careers: careersSubmenu
+  };
+
+  return Object.entries(sectionToSubmenu).flatMap(([section, items]) =>
+    items.map((entry) => ({
+      section,
+      item: toSlug(entry)
+    }))
+  );
+}

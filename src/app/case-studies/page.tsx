@@ -156,4 +156,3 @@ export default function CaseStudiesPage() {
     </div>
   );
 }
-export { CaseStudiesPage };
