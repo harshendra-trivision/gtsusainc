@@ -26,7 +26,7 @@ export default function Footer() {
             </Link>
           </div>
           <p className="text-xs leading-relaxed text-slate-500">
-            A technology enabler and virtual extension of global engineering teams, delivering end-to-end design, FEA simulation, plant layouts, GIS systems, and project management controls.
+            An AI-powered industrial engineering and digital transformation company delivering automation, IIoT, industrial software, and high-impact operational outcomes.
           </p>
           <div className="flex items-center gap-2 pt-2 text-xs font-mono text-slate-500">
             <ShieldCheck className="w-4 h-4 text-accent-light" />
@@ -34,10 +34,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Column 2: Quick Links - Services */}
+        {/* Column 2: Quick Links - Solutions */}
         <div className="space-y-4">
           <h4 className="text-xs font-mono uppercase tracking-widest text-slate-300 font-semibold">
-            Services
+            Solutions
           </h4>
           <ul className="text-xs space-y-2.5">
             {services.map((svc) => (
@@ -114,8 +114,8 @@ export default function Footer() {
           &copy; {currentYear} GTS Engineering USA Incorporated. All rights reserved.
         </div>
         <div className="flex items-center gap-6">
-          <Link href="/about" className="hover:text-slate-400 transition-colors">About Us</Link>
-          <Link href="/infrastructure" className="hover:text-slate-400 transition-colors">Infrastructure</Link>
+          <Link href="/about" className="hover:text-slate-400 transition-colors">About</Link>
+          <Link href="/services/ai-digital-transformation" className="hover:text-slate-400 transition-colors">AI & Digital</Link>
           <Link href="/contact" className="hover:text-slate-400 transition-colors">Contact Us</Link>
         </div>
       </div>

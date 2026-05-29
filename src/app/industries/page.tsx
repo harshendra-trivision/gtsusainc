@@ -15,13 +15,13 @@ export default function IndustriesLandingPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/70 to-slate-950" />
         <div className="max-w-5xl mx-auto px-4 relative z-10 text-center space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-xs font-mono text-accent-light uppercase tracking-wider">
-            Sectors Served
+            Industries
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white">
-            Target Industry Verticals
+            Industries We Transform
           </h1>
           <p className="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
-            Applying advanced engineering solutions, stress analytics, CAD validations, and standards documentation across diverse industrial markets worldwide.
+            Each industry page maps pain points, AI opportunities, automation opportunities, and engineering capabilities for measurable outcomes.
           </p>
         </div>
       </section>

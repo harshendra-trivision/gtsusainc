@@ -88,7 +88,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
 
               {/* Sub-sectors Checklist */}
               <div className="space-y-6">
-                <h3 className="text-xl font-bold text-primary font-display">Specialized Domain Segments</h3>
+                <h3 className="text-xl font-bold text-primary font-display">Industry Context</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {ind.subSectors.map((sub, i) => (
                     <div 
@@ -118,7 +118,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
               {/* Bullet Highlights Card */}
               <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-4">
                 <h4 className="font-bold text-primary text-xs font-mono uppercase tracking-wider">
-                  Highlights & Capabilities
+                  Pain Points, AI and Automation Opportunities
                 </h4>
                 <ul className="text-xs text-slate-600 space-y-3">
                   {ind.features.map((bp, i) => (
@@ -142,7 +142,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
                     className="flex w-full items-center justify-center gap-2 rounded-lg bg-white py-2.5 text-center text-xs font-semibold text-primary hover:bg-slate-100 transition-colors"
                   >
                     <MessageSquare className="w-4 h-4" />
-                    Submit Sector Inquiry
+                    Explore Industry Solution
                   </Link>
                   <a 
                     href="mailto:info@gtsusainc.com" 

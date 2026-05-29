@@ -15,13 +15,13 @@ export default function ServicesLandingPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/70 to-slate-950" />
         <div className="max-w-5xl mx-auto px-4 relative z-10 text-center space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-xs font-mono text-accent-light uppercase tracking-wider">
-            GTS Services
+            GTS Solutions
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white">
-            Engineering & Technology Capabilities
+            Industrial Technology Solutions
           </h1>
           <p className="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
-            Delivering bespoke design, CAD modeling, FEA simulation, GIS assets tracking, and commissioning controls across the product and plant lifecycle.
+            AI-powered engineering, automation, IIoT, and industrial software solutions focused on measurable business outcomes.
           </p>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function ServicesLandingPage() {
                 {/* Sub-services breakdown snippet */}
                 <div className="border-t border-slate-100 pt-5 mt-auto space-y-3">
                   <div className="text-[10px] font-mono tracking-widest uppercase text-slate-400 font-semibold">
-                    Service Competencies
+                    Solution Scope
                   </div>
                   <ul className="text-xs text-slate-600 space-y-2">
                     {svc.subServices.map((sub, i) => (
@@ -69,7 +69,7 @@ export default function ServicesLandingPage() {
                     href={svc.href || `/services/${svc.slug}`}
                     className="flex w-full items-center justify-center gap-2 rounded-lg bg-slate-50 py-3 text-center text-xs font-semibold text-accent hover:bg-accent hover:text-white transition-all group-hover:shadow-sm"
                   >
-                    Explore Detailed Offerings
+                    Explore Solution
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
