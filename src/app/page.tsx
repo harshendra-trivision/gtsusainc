@@ -4,149 +4,61 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, CheckCircle2, ChevronRight, Sparkles, Cpu, Zap, Pause, Play } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react';
 import { services } from '@/constants/services';
 import Card from '@/components/common/Card';
 import ArcadeSection from '@/components/home/ArcadeSection';
 
-// 11 Sections Data structure matching points exactly
-interface Slide {
-  heading: string;
-  image: string;
-  points: { title: string; slug: string }[];
-}
-
-const slides: Slide[] = [
+const heroSlides = [
   {
-    heading: "An Engineering Solution Specialist",
-    image: "/image/an-engineering-solution-specialist.png",
-    points: [
-      { title: "Our Benefits", slug: "our-benefits" },
-      { title: "Virtual Extension", slug: "virtual-extension" },
-      { title: "Extended Arm", slug: "extended-arm" },
-      { title: "Increasing Efficiency", slug: "increasing-efficiency" },
-      { title: "Optimization", slug: "optimization" },
-      { title: "3F Strategy - Customer delight", slug: "3f-strategy" },
-      { title: "Fast", slug: "fast" },
-      { title: "Flexible", slug: "flexible" },
-      { title: "Focused", slug: "focused" }
-    ]
+    industry: 'Energy',
+    title: 'Powering Critical Energy Infrastructure',
+    video: '/vedios-gts/download (16).mp4'
   },
   {
-    heading: "Energy",
-    image: "/image/energy.png",
-    points: [
-      { title: "Oil & Gas", slug: "oil-gas" },
-      { title: "Onshore & Offshore", slug: "onshore-offshore" },
-      { title: "Pipeline", slug: "pipeline" },
-      { title: "Petrochemical & Refinery", slug: "petrochemical-refinery" },
-      { title: "Power", slug: "power" },
-      { title: "Thermal", slug: "thermal" },
-      { title: "Hydro", slug: "hydro" },
-      { title: "Wind", slug: "wind" },
-      { title: "Nuclear", slug: "nuclear" }
-    ]
+    industry: 'Heavy Engineering',
+    title: 'Engineering Industrial Excellence',
+    video: '/vedios-gts/download (17).mp4'
   },
   {
-    heading: "Heavy Engineering & Machinery",
-    image: "/image/heavy-enginerring-machinery.png",
-    points: [
-      { title: "Oil & Gas Equipment", slug: "oil-gas-equipment" },
-      { title: "Steel & Cement Plant", slug: "steel-cement-plant" },
-      { title: "Transportation", slug: "transportation" },
-      { title: "Mining & Exploration", slug: "mining-exploration" },
-      { title: "Agricultural Machinery", slug: "agricultural-machinery" },
-      { title: "Material Handling", slug: "material-handling" },
-      { title: "Packaging Machinery", slug: "packaging-machinery" },
-      { title: "Machine Tools", slug: "machine-tools" }
-    ]
+    industry: 'Railways',
+    title: 'Advancing Smart Transportation Systems',
+    video: '/vedios-gts/railway.mp4'
   },
   {
-    heading: "Marine",
-    image: "/image/marin.png",
-    points: [
-      { title: "Naval architecture", slug: "naval-architecture" },
-      { title: "Hull Structure", slug: "hull-structure" },
-      { title: "Machinery", slug: "machinery" },
-      { title: "Marine & utility systems", slug: "marine-utility-systems" },
-      { title: "Piping design & analysis", slug: "piping-design-analysis" },
-      { title: "HVAC", slug: "hvac" },
-      { title: "Outfitting", slug: "outfitting" }
-    ]
+    industry: 'Marine',
+    title: 'Innovating Maritime Engineering Solutions',
+    video: '/vedios-gts/marine.mp4'
   },
   {
-    heading: "Consumer",
-    image: "/image/consumer.png",
-    points: [
-      { title: "Office Automation", slug: "office-automation" },
-      { title: "Electronics & Durables", slug: "electronics-durables" },
-      { title: "Security & Gaming Equipment", slug: "security-gaming" }
-    ]
+    industry: 'Consumer',
+    title: 'Creating Exceptional Consumer Experiences',
+    video: '/vedios-gts/consumer.mp4'
   },
   {
-    heading: "Medical Devices",
-    image: "/image/medical-device.png",
-    points: [
-      { title: "Diagnostic Imaging", slug: "diagnostic-imaging" },
-      { title: "Patient Monitoring Systems", slug: "patient-monitoring" },
-      { title: "Therapeutic Equipment", slug: "therapeutic-equipment" }
-    ]
+    industry: 'Medical Devices',
+    title: 'Engineering Precision Healthcare Solutions',
+    video: '/vedios-gts/medical-machine.mp4'
   },
   {
-    heading: "Telecom",
-    image: "/image/telcome.png",
-    points: [
-      { title: "Consulting & Implementation", slug: "consulting-implementation" },
-      { title: "Network Inventory Management", slug: "network-inventory" },
-      { title: "Network Operations Support", slug: "network-operations" },
-      { title: "Network Operational Support Systems", slug: "network-operational-systems" }
-    ]
+    industry: 'Telecom',
+    title: 'Enabling Next-Generation Connectivity',
+    video: '/vedios-gts/telecom.mp4'
   },
   {
-    heading: "Utilities",
-    image: "/image/utilities.png",
-    points: [
-      { title: "Smart Grid", slug: "smart-grid" },
-      { title: "IT Systems", slug: "it-systems" },
-      { title: "Operational Systems", slug: "operational-systems" },
-      { title: "Power Engineering", slug: "power-engineering" }
-    ]
+    industry: 'Utilities',
+    title: 'Building Smarter Utility Networks',
+    video: '/vedios-gts/biology.mp4'
   },
   {
-    heading: "Aerospace",
-    image: "/image/aerospace.png",
-    points: [
-      { title: "Aero Interiors", slug: "aero-interiors" },
-      { title: "Aero Structures", slug: "aero-structures" },
-      { title: "Aero Systems", slug: "aero-systems" },
-      { title: "Aero Engines", slug: "aero-engines" }
-    ]
+    industry: 'Aerospace',
+    title: 'Engineering the Future of Flight',
+    video: '/vedios-gts/AI.mp4'
   },
   {
-    heading: "Automotive",
-    image: "/image/automotives.png",
-    points: [
-      { title: "BIW", slug: "biw" },
-      { title: "Closures", slug: "closures" },
-      { title: "Interior", slug: "interior" },
-      { title: "Exterior", slug: "exterior" },
-      { title: "Underbody", slug: "underbody" },
-      { title: "Powertrain", slug: "powertrain" },
-      { title: "Electrical & Electronics", slug: "electrical-electronics" }
-    ]
-  },
-  {
-    heading: "Railways",
-    image: "/image/railway.png",
-    points: [
-      { title: "Positive Train Control", slug: "positive-train-control" },
-      { title: "Signalling & Interlocking", slug: "signalling-interlocking" },
-      { title: "Electrical & Electronics Design", slug: "rail-electrical-electronics" },
-      { title: "Mechanical Design & Analysis", slug: "rail-mechanical-design" },
-      { title: "Technical Publication", slug: "rail-technical-publication" },
-      { title: "Design Automation", slug: "rail-design-automation" },
-      { title: "Interiors & Seating", slug: "rail-interiors-seating" }
-    ]
+    industry: 'Automotive',
+    title: 'Driving Intelligent Mobility Innovation',
+    video: '/vedios-gts/automobile.mp4'
   }
 ];
 
@@ -161,33 +73,30 @@ const serviceCardImages: Record<string, string> = {
 
 export default function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  // 3-second slider interval setup
   useEffect(() => {
-    if (!isPaused) {
-      timerRef.current = setInterval(() => {
-        setActiveSlide((prev) => (prev + 1) % slides.length);
-      }, 3000);
-    }
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [isPaused]);
+    const currentVideo = videoRef.current;
+    if (!currentVideo) return;
+    currentVideo.currentTime = 0;
+    void currentVideo.play().catch(() => undefined);
+  }, [activeSlide]);
 
   const handleSlideChange = (index: number) => {
     setActiveSlide(index);
   };
 
+  const handleVideoEnd = () => {
+    setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
   // Animation variants
-  const fadeInUp: any = {
+  const fadeInUp = {
     hidden: { opacity: 0, y: 25 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
   };
 
-  const staggerContainer: any = {
+  const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -200,161 +109,84 @@ export default function HomePage() {
   return (
     <div className="flex flex-col w-full overflow-hidden">
       {/* SECTION 1: HERO */}
-      <section className="relative bg-slate-950 text-white py-20 sm:py-28 blueprint-grid overflow-hidden border-b border-slate-900">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/75 to-slate-950 z-0" />
+      <section className="relative h-[82vh] min-h-[620px] w-full overflow-hidden border-b border-slate-900 bg-slate-950">
+        <video
+          ref={videoRef}
+          key={heroSlides[activeSlide].video}
+          autoPlay
+          muted
+          playsInline
+          preload="metadata"
+          onEnded={handleVideoEnd}
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src={heroSlides[activeSlide].video} type="video/mp4" />
+        </video>
 
-        {/* Glow Highlights */}
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[120px] pointer-events-none z-0" />
-        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-accent-light/10 rounded-full blur-[100px] pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-slate-950/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(45,109,246,0.25),transparent_40%),radial-gradient(circle_at_80%_60%,rgba(14,165,233,0.18),transparent_40%)]" />
+        <div className="absolute inset-0 blueprint-grid-fine opacity-20" />
 
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-
-            {/* Left Column: Widescreen Text Block (lg:col-span-5) */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
-              className="lg:col-span-5 flex flex-col space-y-6 text-left"
-            >
-              <motion.div variants={fadeInUp} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-xs font-mono text-accent-light uppercase tracking-wider self-start">
-                <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-                Virtual Engineering Center
-              </motion.div>
-
-              <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-[1.1] tracking-tight">
-                An Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-light to-accent">Virtual Extension</span> of Your Team
-              </motion.h1>
-
-              <motion.p variants={fadeInUp} className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-xl">
-                GTS Engineering USA acts as a trusted, extended arm of design, development, and engineering groups worldwide. We co-create value by delivering high-fidelity CAD layouts, plant FEED, structural FEA simulations, GIS utility mapping, and commissioning management.
-              </motion.p>
-
-              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 pt-2">
-                <Link
-                  href="/services"
-                  className="px-5 py-3 rounded-lg bg-accent text-white hover:bg-accent-dark hover:shadow-lg hover:shadow-accent/20 transition-all font-semibold flex items-center justify-center gap-2 group text-xs"
+        <div className="relative z-10 mx-auto flex h-full w-full max-w-[1500px] items-center justify-center px-4 sm:px-6 lg:px-8 py-8">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="mx-auto flex h-full w-full max-w-6xl items-center justify-center"
+          >
+            <div className="w-full p-6 sm:p-10 lg:p-16">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`industry-${activeSlide}`}
+                  initial={{ opacity: 0, y: 26 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.65, ease: 'easeOut' }}
+                  className="space-y-6 text-center"
                 >
-                  Explore Services Offered
-                  <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="px-5 py-3 rounded-lg border border-slate-700 bg-slate-900/40 text-slate-350 hover:border-slate-500 hover:text-white transition-all font-semibold text-center text-xs"
-                >
-                  Discuss Your Project
-                </Link>
-              </motion.div>
-            </motion.div>
+                  <p className="text-xl font-semibold tracking-wide text-cyan-100 sm:text-2xl">
+                    {heroSlides[activeSlide].industry}
+                  </p>
 
-            {/* Right Column: Massive Interactive Slideshow Centerpiece (lg:col-span-7) */}
-            <div className="lg:col-span-7 w-full">
-              <div
-                className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl group"
-                onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)}
-              >
-                {/* 1. Large Slide Image Background (Transition Zoom/Fade) */}
-                <div className="absolute inset-0 z-0 bg-slate-950 overflow-hidden">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeSlide}
-                      initial={{ opacity: 0, scale: 1.05 }}
-                      animate={{ opacity: 0.5, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.7, ease: 'easeInOut' }}
-                      className="relative w-full h-full"
+                  <h1 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+                    <span className="text-white">{heroSlides[activeSlide].title.split(' ').slice(0, Math.ceil(heroSlides[activeSlide].title.split(' ').length / 2)).join(' ')}</span>{' '}
+                    <span className="text-cyan-300">{heroSlides[activeSlide].title.split(' ').slice(Math.ceil(heroSlides[activeSlide].title.split(' ').length / 2)).join(' ')}</span>
+                  </h1>
+
+                  <p className="mx-auto max-w-3xl text-sm leading-relaxed text-slate-100 sm:text-base">
+                    GTS Engineering USA acts as a trusted, extended arm of design, development, and engineering groups worldwide. We co-create value by delivering high-fidelity CAD layouts, plant FEED, structural FEA simulations, GIS utility mapping, and commissioning management.
+                  </p>
+
+                  <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                    <Link
+                      href="/services"
+                      className="group inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-accent-dark hover:shadow-lg hover:shadow-accent/20"
                     >
-                      <Image
-                        src={slides[activeSlide].image}
-                        alt={`GTS industrial slide ${slides[activeSlide].heading}`}
-                        fill
-                        className="object-cover"
-                        priority
-                        onLoad={() => setIsImageLoaded(true)}
-                      />
-                    </motion.div>
-                  </AnimatePresence>
-
-                  {/* Grid overlays */}
-                  <div className="absolute inset-0 blueprint-grid-fine opacity-20 z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-slate-950/40 z-15" />
-                </div>
-
-                {/* 2. Floating Slider Status & Pause Trigger */}
-                <div className="absolute top-4 left-4 z-30 flex items-center gap-2">
-                  <span className="bg-slate-950/80 backdrop-blur-md border border-slate-800 rounded px-2.5 py-1 text-[9px] font-mono text-slate-400 tracking-wider">
-                    SECTOR: 0{activeSlide + 1} / 11
-                  </span>
-                  <button
-                    onClick={() => setIsPaused(!isPaused)}
-                    className="p-1 rounded bg-slate-950/80 backdrop-blur-md border border-slate-800 text-slate-400 hover:text-white transition-colors focus:outline-none"
-                    aria-label={isPaused ? "Play slide timer" : "Pause slide timer"}
-                  >
-                    {isPaused ? <Play className="w-3 h-3" /> : <Pause className="w-3 h-3" />}
-                  </button>
-                </div>
-
-                {/* 3. Floating points panel inside the image at the bottom-right */}
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeSlide}
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 15 }}
-                    transition={{ duration: 0.4 }}
-                    className="absolute bottom-5 right-5 sm:bottom-6 sm:right-6 z-25 w-[90%] sm:w-[480px] bg-slate-950/15 backdrop-blur-[2px] rounded-2xl p-5 sm:p-6 shadow-2xl"                  >
-                    <div className="space-y-3">
-                      {/* Active Heading */}
-                      <div className="flex items-center gap-2">
-                        <span className="p-1 border border-accent/30 rounded text-accent-light">
-                          <Cpu className="w-3.5 h-3.5" />
-                        </span>
-                        <h3 className="text-xs sm:text-sm font-extrabold text-white font-display tracking-tight leading-tight">
-                          {slides[activeSlide].heading}
-                        </h3>
-                      </div>
-
-                      <div className="h-px bg-slate-800/80" />
-
-                      {/* Points Grid organized in columns */}
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-left">
-                        {slides[activeSlide].points.map((pt, i) => (
-                          <Link
-                            key={pt.slug}
-                            href={`/solutions/${pt.slug}`}
-                            className="hover:text-accent-light text-[10px] leading-snug flex items-start gap-1 transition-colors font-medium text-slate-400 py-0.5 group/pt"
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-slate-700 mt-1 shrink-0 group-hover/pt:bg-accent-light transition-colors" />
-                            <span className="hover:underline line-clamp-1">{pt.title}</span>
-                          </Link>
-                        ))}
-                      </div>
-
-                      {/* Prompt guidance */}
-                    </div>
+                      Explore Services Offered
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="rounded-lg border border-slate-300/40 bg-slate-950/25 px-6 py-3 text-sm font-semibold text-white transition-all hover:border-white/70"
+                    >
+                      Discuss Your Project
+                    </Link>
                   </motion.div>
-                </AnimatePresence>
-
-                {/* 4. Slides Progress Indicator bar dot indicators */}
-                <div className="absolute bottom-5 left-5 z-25 flex items-center gap-1.5">
-                  {slides.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => handleSlideChange(idx)}
-                      className={`h-1.5 rounded-full transition-all focus:outline-none ${activeSlide === idx
-                        ? 'w-6 bg-accent'
-                        : 'w-1.5 bg-slate-700 hover:bg-slate-500'
-                        }`}
-                      aria-label={`Jump to sector slide 0${idx + 1}`}
-                    />
-                  ))}
-                </div>
-
-              </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
+          </motion.div>
+        </div>
 
-          </div>
+        <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2">
+          {heroSlides.map((item, idx) => (
+            <button
+              key={item.video}
+              onClick={() => handleSlideChange(idx)}
+              className={`h-2 rounded-full transition-all ${activeSlide === idx ? 'w-10 bg-cyan-300' : 'w-2 bg-white/45 hover:bg-white/80'}`}
+              aria-label={`Show industry slide ${idx + 1}`}
+            />
+          ))}
         </div>
       </section>
 
