@@ -87,19 +87,20 @@ export default function Header() {
 
   return (
     <>
-      <header className="z-40 w-full border-b border-slate-200/80 bg-gradient-to-b from-[#f8fbff] via-[#f2f7fd] to-[#eef4fb] shadow-[0_8px_30px_rgba(0,86,164,0.08)]">
+      <header className="sticky top-0 z-40 w-full border-b border-white/20 bg-gradient-to-b from-[#e9f3ff]/85 via-[#d9e9fb]/78 to-[#d1e2f7]/75 shadow-[0_12px_40px_rgba(4,58,110,0.14)] backdrop-blur-xl">
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 py-5">
-          <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <Link href="/" className="self-center rounded-xl bg-white/70 p-2 shadow-sm ring-1 ring-[#0056a4]/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:ring-[#0056a4]/25 lg:self-start">
+          <div className="relative rounded-3xl border border-white/35 bg-white/30 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_10px_30px_rgba(7,58,110,0.10)] backdrop-blur-xl sm:p-5">
+            <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <Link href="/" className="self-center rounded-2xl border border-white/45 bg-white/55 p-2.5 shadow-[0_8px_18px_rgba(7,58,110,0.14)] ring-1 ring-[#0056a4]/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/75 hover:shadow-[0_14px_28px_rgba(7,58,110,0.16)] hover:ring-[#0056a4]/25 lg:self-start">
               <Image src="/image/gts-logo.png" alt="GTS Logo" width={110} height={110} className="h-20 w-auto" priority />
             </Link>
 
             <div className="w-full lg:w-auto">
               <div className="flex flex-wrap items-center justify-center gap-2.5 lg:justify-end">
-                <div className="hidden items-center overflow-hidden rounded-md border border-[#0056a4]/20 bg-[#0056a4] text-[11px] font-semibold uppercase tracking-wide text-white shadow-sm sm:flex">
+                <div className="hidden items-center overflow-hidden rounded-xl border border-white/35 bg-[#0056a4]/88 text-[11px] font-semibold uppercase tracking-wide text-white shadow-[0_8px_20px_rgba(0,86,164,0.28)] backdrop-blur-md sm:flex">
                   {utilityNav.map((item, index) => (
                     <React.Fragment key={item.label}>
-                      <Link href={item.href} className="px-3.5 py-2 transition-all duration-200 hover:bg-[#004a8e] hover:text-sky-100">
+                      <Link href={item.href} className="px-3.5 py-2 transition-all duration-300 hover:bg-white/20 hover:text-white">
                         {item.label}
                       </Link>
                       {index < utilityNav.length - 1 && <span className="text-white/40">|</span>}
@@ -107,20 +108,20 @@ export default function Header() {
                   ))}
                 </div>
 
-                <div className="hidden h-9 items-center overflow-hidden rounded-md border border-[#0056a4]/25 bg-white shadow-sm transition-all duration-200 focus-within:border-[#0056a4]/50 focus-within:shadow-md sm:flex">
+                <div className="hidden h-9 items-center overflow-hidden rounded-xl border border-white/40 bg-white/60 shadow-[0_8px_16px_rgba(10,58,100,0.12)] backdrop-blur-md transition-all duration-300 focus-within:border-[#0056a4]/45 focus-within:bg-white/80 focus-within:shadow-[0_10px_24px_rgba(10,58,100,0.16)] sm:flex">
                   <input
                     type="text"
                     placeholder="SEARCH"
                     className="h-full w-48 bg-transparent px-3 text-[11px] font-medium text-slate-700 placeholder:text-slate-400 outline-none"
                   />
-                  <button className="h-full bg-[#0056a4] px-3 text-white transition-all duration-200 hover:bg-[#004a8e] hover:text-sky-100" aria-label="Search">
+                  <button className="h-full bg-[#0056a4]/90 px-3 text-white transition-all duration-300 hover:bg-[#004a8e] hover:text-sky-100" aria-label="Search">
                     <Search className="h-4 w-4" />
                   </button>
                 </div>
               </div>
 
               <div className="mt-2.5 flex flex-col items-center lg:items-end">
-                <p className="bg-gradient-to-r from-[#004f97] via-[#0a66b7] to-[#003d75] bg-clip-text text-center text-2  xl font-extrabold leading-tight tracking-tight text-transparent sm:text-4xl lg:text-right">
+                <p className="bg-gradient-to-r from-[#003f7a] via-[#0a66b7] to-[#022f5a] bg-clip-text text-center text-3xl font-extrabold leading-tight tracking-tight text-transparent sm:text-4xl lg:text-right">
                   Delivering Engineering Excellence & Innovation
                 </p>
                 <span className="mt-2 block h-[2px] w-[220px] rounded-full bg-gradient-to-r from-[#60a5fa] via-[#22d3ee] to-[#93c5fd] shadow-[0_0_12px_rgba(34,211,238,0.45)] sm:w-[340px] lg:w-[430px]" />
@@ -129,21 +130,22 @@ export default function Header() {
 
             <button
               onClick={() => setIsOpen(true)}
-              className="absolute right-0 top-5 flex items-center justify-center rounded-lg border border-[#0056a4]/20 bg-white/80 p-2 text-[#0056a4] shadow-sm transition-colors hover:bg-white lg:hidden"
+              className="absolute right-0 top-5 flex items-center justify-center rounded-xl border border-white/45 bg-white/70 p-2 text-[#0056a4] shadow-[0_8px_16px_rgba(7,58,110,0.14)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90 lg:hidden"
               aria-label="Toggle Navigation Menu"
             >
               <Menu className="h-6 w-6" />
             </button>
           </div>
         </div>
+        </div>
 
-        <div className="border-t border-[#2d76b5] bg-gradient-to-r from-[#045aa9] via-[#0056a4] to-[#045aa9]">
+        <div className="border-t border-white/25 bg-gradient-to-r from-[#045aa9]/88 via-[#0056a4]/86 to-[#045aa9]/88 backdrop-blur-lg">
           <div className="mx-auto hidden max-w-[1440px] px-4 sm:px-6 lg:block lg:px-8">
             <div className="flex flex-wrap">
               {primaryNav.map((item) => {
                 const isActive = pathname.startsWith(`/menu/${item.slug}`);
                 return (
-                  <div key={item.slug} className="group relative border-r border-white/25 last:border-r-0">
+                  <div key={item.slug} className="group relative border-r border-white/20 last:border-r-0">
                     <Link
                       href={
                         item.slug === 'about-us'
@@ -152,7 +154,7 @@ export default function Header() {
                             ? `/menu/${item.slug}/${toSlug(item.submenu[0])}`
                             : '/contact'
                       }
-                      className={`relative flex items-center gap-1.5 px-5 py-4 text-[12px] font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-[#004a8e] hover:text-sky-100 ${isActive ? 'bg-[#004a8e]' : ''
+                      className={`relative flex items-center gap-1.5 px-5 py-4 text-[12px] font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-white/18 hover:text-sky-100 ${isActive ? 'bg-white/18' : ''
                         }`}
                     >
                       {item.label}
@@ -164,7 +166,7 @@ export default function Header() {
                     </Link>
 
                     {item.submenu.length > 0 && (
-                      <div className="invisible absolute left-0 top-full z-50 w-[320px] translate-y-2 rounded-2xl border border-slate-200/90 bg-white/95 p-2 opacity-0 shadow-[0_18px_40px_rgba(2,84,164,0.20)] backdrop-blur-md transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                      <div className="invisible absolute left-0 top-full z-50 w-[320px] translate-y-2 rounded-2xl border border-white/50 bg-white/78 p-2 opacity-0 shadow-[0_20px_44px_rgba(2,84,164,0.22)] backdrop-blur-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                         <div className="mb-1 rounded-xl bg-gradient-to-r from-sky-50 to-blue-50 px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#0056a4]">
                           {item.label}
                         </div>

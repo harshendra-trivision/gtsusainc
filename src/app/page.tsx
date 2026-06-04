@@ -13,7 +13,7 @@ const heroSlides = [
   {
     industry: 'Energy',
     title: 'Powering Critical Energy Infrastructure',
-    video: '/vedios-gts/download (16).mp4'
+    video: '/vedios-gts/railway.mp4'
   },
   {
     industry: 'Heavy Engineering',
