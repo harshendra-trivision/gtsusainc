@@ -13,12 +13,12 @@ const heroSlides = [
   {
     industry: 'Energy',
     title: 'Powering Critical Energy Infrastructure',
-    video: '/vedios-gts/railway.mp4'
+    video: '/vedios-gts/energy.mp4'
   },
   {
     industry: 'Heavy Engineering',
     title: 'Engineering Industrial Excellence',
-    video: '/vedios-gts/download (17).mp4'
+    video: '/vedios-gts/heavy-enginerring.mp4'
   },
   {
     industry: 'Railways',
@@ -28,7 +28,7 @@ const heroSlides = [
   {
     industry: 'Marine',
     title: 'Innovating Maritime Engineering Solutions',
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/marin.mp4'
   },
   {
     industry: 'Consumer',
@@ -53,7 +53,7 @@ const heroSlides = [
   {
     industry: 'Aerospace',
     title: 'Engineering the Future of Flight',
-    video: '/vedios-gts/AI.mp4'
+    video: '/vedios-gts/aerospace.mp4'
   },
   {
     industry: 'Automotive',

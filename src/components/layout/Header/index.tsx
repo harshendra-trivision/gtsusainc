@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Menu, Search, ChevronDown } from 'lucide-react';
 import MobileMenu from '../MobileMenu';
@@ -83,11 +83,36 @@ const toSlug = (value: string) =>
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY <= 20) {
+        setIsHeaderVisible(true);
+      } else {
+        setIsHeaderVisible(currentScrollY < lastScrollY.current);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full border-b border-white/20 bg-gradient-to-b from-[#e9f3ff]/85 via-[#d9e9fb]/78 to-[#d1e2f7]/75 shadow-[0_12px_40px_rgba(4,58,110,0.14)] backdrop-blur-xl">
+      <header
+        className={`sticky top-0 z-40 w-full border-b border-white/20 bg-gradient-to-b from-[#e9f3ff]/85 via-[#d9e9fb]/78 to-[#d1e2f7]/75 shadow-[0_12px_40px_rgba(4,58,110,0.14)] backdrop-blur-xl transition-transform duration-300 ease-out ${
+          isHeaderVisible || isOpen ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 py-5">
           <div className="relative rounded-3xl border border-white/35 bg-white/30 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_10px_30px_rgba(7,58,110,0.10)] backdrop-blur-xl sm:p-5">
             <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
