@@ -1,42 +1,28 @@
 'use client';
 
-import React from 'react';
+import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-import { ArrowRight, ChevronRight } from 'lucide-react';
 import { industries } from '@/constants/industries';
 import { IconMapper } from '@/components/layout/Navbar';
-import Card from '@/components/common/Card';
+import { AnimatedSection, MagneticCard, PageHero } from '@/components/ui';
 
 export default function IndustriesLandingPage() {
   return (
-    <div className="flex flex-col w-full">
-      {/* Page Header */}
-      <section className="bg-slate-950 text-white py-20 blueprint-grid relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/70 to-slate-950" />
-        <div className="max-w-5xl mx-auto px-4 relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-xs font-mono text-accent-light uppercase tracking-wider">
-            Sectors Served
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white">
-            Target Industry Verticals
-          </h1>
-          <p className="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
-            Applying advanced engineering solutions, stress analytics, CAD validations, and standards documentation across diverse industrial markets worldwide.
-          </p>
-        </div>
-      </section>
+    <div className="flex w-full flex-col">
+      <PageHero
+        eyebrow="Sectors Served"
+        title="Target Industry Verticals"
+        description="Applying advanced engineering solutions, stress analytics, CAD validations, and standards documentation across diverse industrial markets worldwide."
+      />
 
-      {/* Industries Directory */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+      <section className="industrial-surface py-16 sm:py-24">
+        <AnimatedSection as="div" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((ind) => (
-              <Card
+              <MagneticCard
                 key={ind.slug}
-                className="flex flex-col bg-white border border-slate-200/75 p-6 rounded-xl shadow-sm hover:shadow-md hover:border-slate-350 transition-all group"
+                className="group flex flex-col rounded-[1.75rem] border border-slate-200/75 bg-white/90 p-6 shadow-sm backdrop-blur"
               >
-                {/* Icon wrapper */}
                 <div className="p-3 rounded-lg bg-slate-50 text-slate-600 group-hover:bg-accent group-hover:text-white transition-colors self-start mb-5">
                   <IconMapper name={ind.iconName} className="w-5 h-5" />
                 </div>
@@ -49,7 +35,6 @@ export default function IndustriesLandingPage() {
                   {ind.tagline}
                 </p>
 
-                {/* Sub-sectors snippet */}
                 <div className="border-t border-slate-100 pt-4 mt-auto">
                   <div className="text-[9px] font-mono tracking-widest uppercase text-slate-400 font-semibold mb-2">
                     Industry Subsectors
@@ -65,7 +50,7 @@ export default function IndustriesLandingPage() {
                 </div>
 
                 <div className="pt-6 mt-5 border-t border-slate-100/50">
-                  <Link 
+                  <Link
                     href={`/industries/${ind.slug}`}
                     className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-slate-50 py-2.5 text-center text-xs font-semibold text-accent hover:bg-accent hover:text-white transition-all"
                   >
@@ -73,12 +58,10 @@ export default function IndustriesLandingPage() {
                     <ChevronRight className="w-4 h-4" />
                   </Link>
                 </div>
-
-              </Card>
+              </MagneticCard>
             ))}
           </div>
-
-        </div>
+        </AnimatedSection>
       </section>
     </div>
   );

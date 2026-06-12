@@ -6,6 +6,7 @@ import { Eye } from 'lucide-react';
 
 interface ImagePlaceholderProps {
   alt: string;
+  src?: string;
   className?: string;
   width?: number;
   height?: number;
@@ -16,6 +17,7 @@ interface ImagePlaceholderProps {
 
 export default function ImagePlaceholder({
   alt,
+  src = '/image/showcase1.png',
   className = '',
   width = 600,
   height = 400,
@@ -47,7 +49,7 @@ export default function ImagePlaceholder({
       )}
 
       <Image
-        src="/image/IMAGE.png"
+        src={src}
         alt={alt}
         width={width}
         height={height}
@@ -55,7 +57,6 @@ export default function ImagePlaceholder({
           ${isLoaded ? 'scale-100 opacity-100' : 'scale-105 opacity-0'}
           group-hover:scale-105`}
         onLoad={() => setIsLoaded(true)}
-        priority
       />
 
       {/* Modern glassmorphism blueprint details overlay */}

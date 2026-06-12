@@ -1,43 +1,27 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
-import { ArrowRight, ChevronRight } from 'lucide-react';
 import { services } from '@/constants/services';
 import { IconMapper } from '@/components/layout/Navbar';
-import Card from '@/components/common/Card';
+import { AnimatedSection, GradientButton, MagneticCard, PageHero } from '@/components/ui';
 
 export default function ServicesLandingPage() {
   return (
-    <div className="flex flex-col w-full">
-      {/* Page Header */}
-      <section className="bg-slate-950 text-white py-20 blueprint-grid relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/70 to-slate-950" />
-        <div className="max-w-5xl mx-auto px-4 relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-xs font-mono text-accent-light uppercase tracking-wider">
-            GTS Services
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white">
-            Engineering & Technology Capabilities
-          </h1>
-          <p className="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
-            Delivering bespoke design, CAD modeling, FEA simulation, GIS assets tracking, and commissioning controls across the product and plant lifecycle.
-          </p>
-        </div>
-      </section>
+    <div className="flex w-full flex-col">
+      <PageHero
+        eyebrow="GTS Services"
+        title="Engineering & Technology Capabilities"
+        description="Delivering bespoke design, CAD modeling, FEA simulation, GIS assets tracking, and commissioning controls across the product and plant lifecycle."
+      />
 
-      {/* Services Directory */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+      <section className="industrial-surface py-16 sm:py-24">
+        <AnimatedSection className="mx-auto max-w-7xl space-y-12 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((svc) => (
-              <Card
+              <MagneticCard
                 key={svc.slug}
-                className="flex flex-col bg-white border border-slate-200/75 p-8 rounded-xl shadow-sm hover:shadow-md hover:border-slate-350 transition-all group"
+                className="group flex flex-col rounded-[1.75rem] border border-slate-200/75 bg-white/90 p-8 shadow-sm backdrop-blur"
               >
-                {/* Icon wrapper */}
-                <div className="p-3.5 rounded-xl bg-slate-50 text-slate-600 group-hover:bg-accent group-hover:text-white transition-colors self-start mb-6">
+                <div className="mb-6 self-start rounded-2xl bg-slate-50 p-3.5 text-slate-600 transition-colors group-hover:bg-accent group-hover:text-white">
                   <IconMapper name={svc.iconName} className="w-6 h-6" />
                 </div>
 
@@ -49,7 +33,6 @@ export default function ServicesLandingPage() {
                   {svc.tagline}
                 </p>
 
-                {/* Sub-services breakdown snippet */}
                 <div className="border-t border-slate-100 pt-5 mt-auto space-y-3">
                   <div className="text-[10px] font-mono tracking-widest uppercase text-slate-400 font-semibold">
                     Service Competencies
@@ -65,20 +48,14 @@ export default function ServicesLandingPage() {
                 </div>
 
                 <div className="pt-6 mt-6 border-t border-slate-100/50">
-                  <Link 
-                    href={svc.href || `/services/${svc.slug}`}
-                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-slate-50 py-3 text-center text-xs font-semibold text-accent hover:bg-accent hover:text-white transition-all group-hover:shadow-sm"
-                  >
+                  <GradientButton href={svc.href || `/services/${svc.slug}`} className="w-full py-3 text-xs">
                     Explore Detailed Offerings
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                  </GradientButton>
                 </div>
-
-              </Card>
+              </MagneticCard>
             ))}
           </div>
-
-        </div>
+        </AnimatedSection>
       </section>
     </div>
   );

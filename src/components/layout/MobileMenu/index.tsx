@@ -1,13 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { X, ChevronDown, Cpu, ChevronRight } from 'lucide-react';
+import { X, ChevronDown, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { services } from '@/constants/services';
-import { industries } from '@/constants/industries';
-import { IconMapper } from '../Navbar';
+import { primaryNavigation } from '../navigation';
+import { GradientButton } from '@/components/ui';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -16,12 +15,24 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const pathname = usePathname();
-  const [expandedSection, setExpandedSection] = useState<'services' | 'industries' | null>(null);
+  const [expandedSection, setExpandedSection] = useState<string | null>('Solutions');
+  const onCloseRef = useRef(onClose);
 
-  const isActive = (path: string) => pathname === path;
-  const isSubRoute = (parentPath: string) => pathname.startsWith(parentPath);
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
 
-  const toggleSection = (section: 'services' | 'industries') => {
+  useEffect(() => {
+    onCloseRef.current();
+  }, [pathname]);
+
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    if (href.includes('#')) return false;
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+  const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section);
   };
 
@@ -33,180 +44,112 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop blur overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-slate-950/40 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-[90] bg-slate-950/60 backdrop-blur-md lg:hidden"
           />
 
-          {/* Drawer container */}
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed bottom-0 right-0 top-0 z-50 flex h-full w-full max-w-xs flex-col bg-white shadow-2xl lg:hidden border-l border-slate-100"
+            className="fixed bottom-0 right-0 top-0 z-[91] flex h-full w-full max-w-sm flex-col border-l border-white/10 bg-slate-950/94 text-white shadow-[0_30px_100px_rgba(2,6,23,0.7)] backdrop-blur-2xl lg:hidden"
           >
-            {/* Drawer Header */}
-            <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
-              <span className="text-base font-bold font-display tracking-tight text-primary">
-                GTS Engineering
-              </span>
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(37,99,235,0.20),transparent_35%),linear-gradient(180deg,rgba(15,23,42,0.70),rgba(2,6,23,0.96))]" />
+            <div className="relative flex items-center justify-between border-b border-white/10 px-5 py-5">
+              <div>
+                <span className="font-display text-lg font-bold tracking-tight text-white">GTS Engineering</span>
+                <span className="mt-1 block text-[10px] font-mono uppercase tracking-[0.22em] text-cyan-200">
+                  Industrial Intelligence
+                </span>
+              </div>
               <button
                 onClick={onClose}
-                className="p-1.5 rounded-full hover:bg-slate-100 text-slate-500 transition-colors focus:outline-none"
+                className="rounded-full border border-white/10 bg-white/5 p-2 text-slate-300 transition-colors hover:bg-white/10 hover:text-white focus:outline-none"
+                aria-label="Close navigation menu"
               >
-                <X className="w-5 h-5" />
+                <X className="h-5 w-5" />
               </button>
             </div>
 
-            {/* Navigation items list */}
-            <div className="flex-1 overflow-y-auto px-4 py-6 font-medium text-slate-800 space-y-2">
-              {/* Home */}
-              <Link
-                href="/"
-                onClick={handleLinkClick}
-                className={`flex items-center justify-between px-3 py-3 rounded-lg hover:bg-slate-50 transition-colors ${
-                  isActive('/') ? 'bg-slate-50 text-accent font-semibold' : ''
-                }`}
-              >
-                <span>Home</span>
-                <ChevronRight className="w-4 h-4 text-slate-400" />
-              </Link>
+            <div className="relative flex-1 space-y-2 overflow-y-auto px-4 py-6 font-medium text-slate-100">
+              {primaryNavigation.map((item) => {
+                const hasSubmenu = Boolean(item.submenu?.length);
 
-              {/* Services Accordion */}
-              <div>
-                <button
-                  onClick={() => toggleSection('services')}
-                  className={`flex w-full items-center justify-between px-3 py-3 rounded-lg hover:bg-slate-50 transition-colors focus:outline-none ${
-                    isSubRoute('/services') ? 'text-accent font-semibold' : ''
-                  }`}
-                >
-                  <span>Services</span>
-                  <ChevronDown
-                    className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${
-                      expandedSection === 'services' ? 'rotate-180 text-accent' : ''
-                    }`}
-                  />
-                </button>
-
-                <AnimatePresence>
-                  {expandedSection === 'services' && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden bg-slate-50 rounded-lg mt-1 px-2 space-y-1"
-                    >
-                      {services.map((svc) => (
-                        <Link
-                          key={svc.slug}
-                          href={`/services/${svc.slug}`}
-                          onClick={handleLinkClick}
-                          className={`flex items-center gap-2.5 px-3 py-2.5 rounded-md text-xs hover:bg-slate-100 transition-colors ${
-                            isActive(`/services/${svc.slug}`) ? 'text-accent font-semibold bg-white shadow-sm' : 'text-slate-600'
+                if (hasSubmenu && item.submenu) {
+                  return (
+                    <div key={item.label}>
+                      <button
+                        onClick={() => toggleSection(item.label)}
+                        className={`relative flex w-full items-center justify-between rounded-xl px-3 py-3 transition-colors hover:bg-white/10 focus:outline-none ${
+                          isActive(item.href) ? 'font-semibold text-cyan-200' : ''
+                        }`}
+                      >
+                        <span>{item.label}</span>
+                        <ChevronDown
+                          className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${
+                            expandedSection === item.label ? 'rotate-180 text-accent' : ''
                           }`}
-                        >
-                          <IconMapper name={svc.iconName} className="w-4 h-4 text-slate-500" />
-                          <span>{svc.title}</span>
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                        />
+                      </button>
 
-              {/* Industries Accordion */}
-              <div>
-                <button
-                  onClick={() => toggleSection('industries')}
-                  className={`flex w-full items-center justify-between px-3 py-3 rounded-lg hover:bg-slate-50 transition-colors focus:outline-none ${
-                    isSubRoute('/industries') ? 'text-accent font-semibold' : ''
-                  }`}
-                >
-                  <span>Industries</span>
-                  <ChevronDown
-                    className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${
-                      expandedSection === 'industries' ? 'rotate-180 text-accent' : ''
+                      <AnimatePresence>
+                        {expandedSection === item.label && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="mt-1 space-y-1 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] px-2"
+                          >
+                            {item.submenu.map((subItem) => (
+                              <Link
+                                key={subItem.href}
+                                href={subItem.href}
+                                onClick={handleLinkClick}
+                                className="flex items-center justify-between rounded-xl px-3 py-2.5 text-xs text-slate-300 transition-colors hover:bg-white/10 hover:text-cyan-200"
+                              >
+                                <span>{subItem.label}</span>
+                                <ChevronRight className="h-3.5 w-3.5 text-slate-500" />
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={handleLinkClick}
+                    className={`relative flex items-center justify-between rounded-xl px-3 py-3 transition-colors hover:bg-white/10 ${
+                      isActive(item.href) ? 'bg-white/10 font-semibold text-cyan-200' : ''
                     }`}
-                  />
-                </button>
-
-                <AnimatePresence>
-                  {expandedSection === 'industries' && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden bg-slate-50 rounded-lg mt-1 px-2 space-y-1"
-                    >
-                      {industries.map((ind) => (
-                        <Link
-                          key={ind.slug}
-                          href={`/industries/${ind.slug}`}
-                          onClick={handleLinkClick}
-                          className={`flex items-center gap-2.5 px-3 py-2.5 rounded-md text-xs hover:bg-slate-100 transition-colors ${
-                            isActive(`/industries/${ind.slug}`) ? 'text-accent font-semibold bg-white shadow-sm' : 'text-slate-600'
-                          }`}
-                        >
-                          <IconMapper name={ind.iconName} className="w-4 h-4 text-slate-500" />
-                          <span>{ind.title.replace('Energy – ', '')}</span>
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {/* Case Studies */}
-              <Link
-                href="/downloads"
-                onClick={handleLinkClick}
-                className={`flex items-center justify-between px-3 py-3 rounded-lg hover:bg-slate-50 transition-colors ${
-                  isActive('/downloads') ? 'bg-slate-50 text-accent font-semibold' : ''
-                }`}
-              >
-                <span>Case Studies</span>
-                <ChevronRight className="w-4 h-4 text-slate-400" />
-              </Link>
-
-              {/* Infrastructure */}
-              <Link
-                href="/infrastructure"
-                onClick={handleLinkClick}
-                className={`flex items-center justify-between px-3 py-3 rounded-lg hover:bg-slate-50 transition-colors ${
-                  isActive('/infrastructure') ? 'bg-slate-50 text-accent font-semibold' : ''
-                }`}
-              >
-                <span>Infrastructure</span>
-                <ChevronRight className="w-4 h-4 text-slate-400" />
-              </Link>
-
-              {/* About */}
-              <Link
-                href="/about"
-                onClick={handleLinkClick}
-                className={`flex items-center justify-between px-3 py-3 rounded-lg hover:bg-slate-50 transition-colors ${
-                  isActive('/about') ? 'bg-slate-50 text-accent font-semibold' : ''
-                }`}
-              >
-                <span>About</span>
-                <ChevronRight className="w-4 h-4 text-slate-400" />
-              </Link>
+                  >
+                    {isActive(item.href) && (
+                      <motion.span
+                        layoutId="mobile-nav-active"
+                        className="absolute inset-0 rounded-xl border border-cyan-200/15 bg-white/10"
+                        transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+                      />
+                    )}
+                    <span className="relative z-10">{item.label}</span>
+                    <ChevronRight className="relative z-10 h-4 w-4 text-slate-500" />
+                  </Link>
+                );
+              })}
             </div>
 
-            {/* Bottom Contact CTA */}
-            <div className="border-t border-slate-100 p-5 bg-slate-50">
-              <Link
-                href="/contact"
-                onClick={handleLinkClick}
-                className="flex w-full items-center justify-center rounded-lg bg-primary py-3 text-center text-sm font-semibold text-white hover:bg-accent transition-colors"
-              >
-                Contact Us
-              </Link>
+            <div className="relative border-t border-white/10 bg-white/[0.03] p-5">
+              <GradientButton href="/contact" className="w-full" onClick={handleLinkClick}>
+                Schedule Consultation
+              </GradientButton>
             </div>
           </motion.div>
         </>

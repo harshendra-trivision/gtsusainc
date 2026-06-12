@@ -1,91 +1,28 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
-import { Menu, Search, ChevronDown } from 'lucide-react';
-import MobileMenu from '../MobileMenu';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-const utilityNav = [
-  { label: 'Home', href: '/' },
-  { label: 'Why Us', href: '/menu/about-us/who-we-are' },
-  { label: 'Careers', href: '/menu/careers/hr-values' },
-  { label: 'Downloads', href: '/downloads' }
-];
-
-const primaryNav = [
-  {
-    label: 'About Us',
-    slug: 'about-us',
-    submenu: ['Who We Are', 'Our Team', 'Vision & Mission', 'Quality', 'The GTS Engineering Advantage']
-  },
-  {
-    label: 'Service Offerings',
-    slug: 'service-offerings',
-    submenu: [
-      'Product Engineering',
-      'Plant & Process Engineering',
-      'PLM & Software Engineering',
-      'Geoinformatics Engineering',
-      'Project Management & Controls',
-      'Project Engineering',
-      'Document Engineering'
-    ]
-  },
-  {
-    label: 'Industries',
-    slug: 'industries',
-    submenu: [
-      'Energy – Oil & Gas and Power',
-      'Heavy Engineering & Machinery',
-      'Railways',
-      'Marine',
-      'Consumer',
-      'Medical Devices',
-      'Telecom',
-      'Utilities',
-      'Aerospace',
-      'Automotive'
-    ]
-  },
-  {
-    label: 'Technology & Sourcing',
-    slug: 'technology-sourcing',
-    submenu: ['Technology Representation', 'Sourcing solutions', 'Procurement Services', 'Contract Manufacturing']
-  },
-  {
-    label: 'Delivery Enablers',
-    slug: 'delivery-enablers',
-    submenu: [
-      'Technology & Competencies',
-      'Global Engagement Models',
-      'Collaborative Communication',
-      'Quality Management System',
-      'HR Values',
-      'Infrastructure'
-    ]
-  },
-  {
-    label: 'Careers',
-    slug: 'careers',
-    submenu: ['HR Values', 'Life @ GTS Engineering', 'Why Join Us', 'Employment Opportunities']
-  },
-  { label: 'Contact Us', slug: 'contact-us', submenu: [] }
-];
-
-const toSlug = (value: string) =>
-  value
-    .toLowerCase()
-    .replace(/&/g, 'and')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { ChevronDown, Menu, Search } from 'lucide-react';
+import MobileMenu from '../MobileMenu';
+import { primaryNavigation } from '../navigation';
+import { GradientButton, cn } from '@/components/ui';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const lastScrollY = useRef(0);
   const pathname = usePathname();
+  const shouldReduceMotion = useReducedMotion();
+
+  const isActiveItem = (href: string) => {
+    if (href === '/') return pathname === '/';
+    if (href.includes('#')) return false;
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -108,116 +45,117 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={`sticky top-0 z-40 w-full border-b border-white/20 bg-gradient-to-b from-[#e9f3ff]/85 via-[#d9e9fb]/78 to-[#d1e2f7]/75 shadow-[0_12px_40px_rgba(4,58,110,0.14)] backdrop-blur-xl transition-transform duration-300 ease-out ${
-          isHeaderVisible || isOpen ? 'translate-y-0' : '-translate-y-full'
-        }`}
+      <motion.header
+        initial={false}
+        animate={{ y: isHeaderVisible || isOpen ? 0 : '-100%' }}
+        transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+        className="fixed inset-x-0 top-0 z-[80] w-full border-b border-white/10 bg-slate-950/86 text-white shadow-[0_18px_70px_rgba(2,6,23,0.34)] backdrop-blur-2xl"
       >
-        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 py-5">
-          <div className="relative rounded-3xl border border-white/35 bg-white/30 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_10px_30px_rgba(7,58,110,0.10)] backdrop-blur-xl sm:p-5">
-            <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <Link href="/" className="self-center rounded-2xl border border-white/45 bg-white/55 p-2.5 shadow-[0_8px_18px_rgba(7,58,110,0.14)] ring-1 ring-[#0056a4]/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/75 hover:shadow-[0_14px_28px_rgba(7,58,110,0.16)] hover:ring-[#0056a4]/25 lg:self-start">
-              <Image src="/image/gts-logo.png" alt="GTS Logo" width={110} height={110} className="h-20 w-auto" priority />
-            </Link>
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_0%,rgba(37,99,235,0.20),transparent_34%),linear-gradient(90deg,rgba(15,23,42,0.96),rgba(15,23,42,0.78),rgba(2,6,23,0.94))]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent" />
 
-            <div className="w-full lg:w-auto">
-              <div className="flex flex-wrap items-center justify-center gap-2.5 lg:justify-end">
-                <div className="hidden items-center overflow-hidden rounded-xl border border-white/35 bg-[#0056a4]/88 text-[11px] font-semibold uppercase tracking-wide text-white shadow-[0_8px_20px_rgba(0,86,164,0.28)] backdrop-blur-md sm:flex">
-                  {utilityNav.map((item, index) => (
-                    <React.Fragment key={item.label}>
-                      <Link href={item.href} className="px-3.5 py-2 transition-all duration-300 hover:bg-white/20 hover:text-white">
-                        {item.label}
-                      </Link>
-                      {index < utilityNav.length - 1 && <span className="text-white/40">|</span>}
-                    </React.Fragment>
-                  ))}
-                </div>
+        <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+          <Link href="/" className="flex items-center gap-3 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+            <span className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-white/95 shadow-[0_10px_28px_rgba(14,165,233,0.14)]">
+              <Image src="/image/gts-logo.png" alt="GTS Logo" width={76} height={76} className="h-12 w-auto object-contain" priority />
+            </span>
+            <span className="hidden sm:block">
+              <span className="block font-display text-lg font-extrabold leading-tight tracking-tight text-white">
+                GTS Engineering
+              </span>
+              <span className="block text-[10px] font-mono uppercase tracking-[0.24em] text-cyan-200/80">
+                AI-enabled industrial engineering
+              </span>
+            </span>
+          </Link>
 
-                <div className="hidden h-9 items-center overflow-hidden rounded-xl border border-white/40 bg-white/60 shadow-[0_8px_16px_rgba(10,58,100,0.12)] backdrop-blur-md transition-all duration-300 focus-within:border-[#0056a4]/45 focus-within:bg-white/80 focus-within:shadow-[0_10px_24px_rgba(10,58,100,0.16)] sm:flex">
-                  <input
-                    type="text"
-                    placeholder="SEARCH"
-                    className="h-full w-48 bg-transparent px-3 text-[11px] font-medium text-slate-700 placeholder:text-slate-400 outline-none"
-                  />
-                  <button className="h-full bg-[#0056a4]/90 px-3 text-white transition-all duration-300 hover:bg-[#004a8e] hover:text-sky-100" aria-label="Search">
-                    <Search className="h-4 w-4" />
-                  </button>
-                </div>
-              </div>
+          <nav className="hidden items-center gap-1 lg:flex" onMouseLeave={() => setActiveDropdown(null)}>
+            {primaryNavigation.map((item) => {
+              const hasSubmenu = Boolean(item.submenu?.length);
+              const isActive = isActiveItem(item.href);
 
-              <div className="mt-2.5 flex flex-col items-center lg:items-end">
-                <p className="bg-gradient-to-r from-[#003f7a] via-[#0a66b7] to-[#022f5a] bg-clip-text text-center text-3xl font-extrabold leading-tight tracking-tight text-transparent sm:text-4xl lg:text-right">
-                  Delivering Engineering Excellence & Innovation
-                </p>
-                <span className="mt-2 block h-[2px] w-[220px] rounded-full bg-gradient-to-r from-[#60a5fa] via-[#22d3ee] to-[#93c5fd] shadow-[0_0_12px_rgba(34,211,238,0.45)] sm:w-[340px] lg:w-[430px]" />
-              </div>
-            </div>
-
-            <button
-              onClick={() => setIsOpen(true)}
-              className="absolute right-0 top-5 flex items-center justify-center rounded-xl border border-white/45 bg-white/70 p-2 text-[#0056a4] shadow-[0_8px_16px_rgba(7,58,110,0.14)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90 lg:hidden"
-              aria-label="Toggle Navigation Menu"
-            >
-              <Menu className="h-6 w-6" />
-            </button>
-          </div>
-        </div>
-        </div>
-
-        <div className="border-t border-white/25 bg-gradient-to-r from-[#045aa9]/88 via-[#0056a4]/86 to-[#045aa9]/88 backdrop-blur-lg">
-          <div className="mx-auto hidden max-w-[1440px] px-4 sm:px-6 lg:block lg:px-8">
-            <div className="flex flex-wrap">
-              {primaryNav.map((item) => {
-                const isActive = pathname.startsWith(`/menu/${item.slug}`);
-                return (
-                  <div key={item.slug} className="group relative border-r border-white/20 last:border-r-0">
-                    <Link
-                      href={
-                        item.slug === 'about-us'
-                          ? '/about'
-                          : item.submenu.length
-                            ? `/menu/${item.slug}/${toSlug(item.submenu[0])}`
-                            : '/contact'
-                      }
-                      className={`relative flex items-center gap-1.5 px-5 py-4 text-[12px] font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-white/18 hover:text-sky-100 ${isActive ? 'bg-white/18' : ''
-                        }`}
-                    >
-                      {item.label}
-                      <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180" />
-                      <span
-                        className={`absolute bottom-0 left-0 h-0.5 bg-sky-200 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                          }`}
-                      />
-                    </Link>
-
-                    {item.submenu.length > 0 && (
-                      <div className="invisible absolute left-0 top-full z-50 w-[320px] translate-y-2 rounded-2xl border border-white/50 bg-white/78 p-2 opacity-0 shadow-[0_20px_44px_rgba(2,84,164,0.22)] backdrop-blur-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                        <div className="mb-1 rounded-xl bg-gradient-to-r from-sky-50 to-blue-50 px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#0056a4]">
-                          {item.label}
-                        </div>
-                        <div className="space-y-1">
-                          {item.submenu.map((subItem) => (
-                            <Link
-                              key={`${item.slug}-${subItem}`}
-                              href={`/menu/${item.slug}/${toSlug(subItem)}`}
-                              className="group/item flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-gradient-to-r hover:from-sky-50 hover:to-blue-50 hover:text-[#0056a4]"
-                            >
-                              <span className="line-clamp-1">{subItem}</span>
-                              <span className="translate-x-0 text-slate-400 transition-all duration-200 group-hover/item:translate-x-0.5 group-hover/item:text-[#0056a4]">
-                                ›
-                              </span>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => setActiveDropdown(hasSubmenu ? item.label : null)}
+                  onFocus={() => setActiveDropdown(hasSubmenu ? item.label : null)}
+                >
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      'group relative isolate flex items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold text-slate-200 transition-colors duration-200 hover:bg-white/10 hover:text-cyan-200',
+                      'after:absolute after:inset-x-4 after:-bottom-1 after:h-px after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-blue-400 after:to-cyan-300 after:transition-transform after:duration-300 hover:after:scale-x-100',
+                      isActive && 'text-white'
                     )}
-                  </div>
-                );
-              })}
-            </div>
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="header-active-pill"
+                        className="absolute inset-0 -z-10 rounded-full border border-cyan-200/20 bg-white/10 shadow-[0_0_28px_rgba(34,211,238,0.16)]"
+                        transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+                      />
+                    )}
+                    <span className="relative z-10">{item.label}</span>
+                    {hasSubmenu && <ChevronDown className="relative z-10 h-3.5 w-3.5 transition-transform group-hover:rotate-180" />}
+                  </Link>
+
+                  <AnimatePresence>
+                    {hasSubmenu && activeDropdown === item.label && item.submenu && (
+                      <motion.div
+                        initial={shouldReduceMotion ? false : { opacity: 0, y: 12, scale: 0.98 }}
+                        animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
+                        exit={shouldReduceMotion ? undefined : { opacity: 0, y: 10, scale: 0.98 }}
+                        transition={{ duration: 0.2, ease: 'easeOut' }}
+                        style={{ x: '-50%' }}
+                        className="absolute left-1/2 top-full z-50 w-[420px] max-w-[calc(100vw-2rem)] pt-4"
+                      >
+                        <div className="overflow-hidden rounded-3xl border border-white/12 bg-slate-950/78 p-2 shadow-[0_30px_90px_rgba(2,6,23,0.45)] ring-1 ring-cyan-200/10 backdrop-blur-2xl">
+                          <div className="rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 text-[11px] font-mono uppercase tracking-[0.22em] text-cyan-200">
+                            {item.label}
+                          </div>
+                          <div className="mt-2 space-y-1">
+                            {item.submenu.map((subItem) => (
+                              <Link
+                                key={subItem.href}
+                                href={subItem.href}
+                                className="group/item flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-semibold text-slate-200 transition-all hover:bg-white/10 hover:text-cyan-200"
+                              >
+                                <span>{subItem.label}</span>
+                                <span className="text-slate-500 transition-transform group-hover/item:translate-x-1 group-hover/item:text-cyan-200">→</span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </nav>
+
+          <div className="hidden items-center gap-3 lg:flex">
+            <button
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-slate-300 transition-colors hover:border-cyan-200/30 hover:bg-white/10 hover:text-cyan-200"
+              aria-label="Search"
+            >
+              <Search className="h-4 w-4" />
+            </button>
+            <GradientButton href="/contact" className="px-4 py-2.5 text-xs">
+              Consultation
+            </GradientButton>
           </div>
+
+          <button
+            onClick={() => setIsOpen(true)}
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-slate-100 shadow-sm transition-colors hover:border-cyan-200/30 hover:bg-white/10 hover:text-cyan-200 lg:hidden"
+            aria-label="Open navigation menu"
+          >
+            <Menu className="h-6 w-6" />
+          </button>
         </div>
-      </header>
+      </motion.header>
 
       <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </>

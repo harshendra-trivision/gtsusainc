@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
-import { FileText, Filter, CheckCircle2, BookOpen } from 'lucide-react';
+import { useState } from 'react';
+import { FileText, Filter, CheckCircle2 } from 'lucide-react';
 import { caseStudies } from '@/constants/caseStudies';
-import Card from '@/components/common/Card';
 import ImagePlaceholder from '@/components/common/ImagePlaceholder';
+import { AnimatedSection, MagneticCard, PageHero } from '@/components/ui';
 
 export default function CaseStudiesPage() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
@@ -21,28 +21,15 @@ export default function CaseStudiesPage() {
     : caseStudies.filter(cs => cs.clientIndustry.includes(activeCategory) || cs.clientIndustry.includes(activeCategory === 'Energy' ? 'Oil' : ''));
 
   return (
-    <div className="flex flex-col w-full">
-      {/* Page Header */}
-      <section className="bg-slate-950 text-white py-20 blueprint-grid relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/70 to-slate-950" />
-        <div className="max-w-5xl mx-auto px-4 relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-xs font-mono text-accent-light uppercase tracking-wider">
-            Proven Performance
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white">
-            Engineering Success Stories
-          </h1>
-          <p className="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
-            Review detailed case files proving how GTS acts as a virtual extension, resolving structural limits, conversions, and alignment issues.
-          </p>
-        </div>
-      </section>
+    <div className="flex w-full flex-col">
+      <PageHero
+        eyebrow="Proven Performance"
+        title="Engineering Success Stories"
+        description="Review detailed case files proving how GTS acts as a virtual extension, resolving structural limits, conversions, and alignment issues."
+      />
 
-      {/* Main Grid & Filters */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
-          {/* Category Filter Bubbles */}
+      <section className="industrial-surface py-16">
+        <AnimatedSection as="div" className="mx-auto max-w-7xl space-y-12 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-3">
             <div className="flex items-center gap-2 text-xs font-mono text-slate-400 mr-2 uppercase tracking-wider">
               <Filter className="w-4 h-4 text-slate-400" />
@@ -63,24 +50,22 @@ export default function CaseStudiesPage() {
             ))}
           </div>
 
-          {/* Projects Deck */}
           <div className="space-y-12">
             {filteredCaseStudies.map((cs) => (
-              <Card 
+              <MagneticCard
                 key={cs.id}
-                className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start shadow-sm hover:shadow-md transition-all"
+                className="grid grid-cols-1 items-start gap-8 rounded-[2rem] border border-slate-200/80 bg-white/90 p-6 shadow-sm backdrop-blur sm:p-8 lg:grid-cols-12"
               >
-                {/* Left side visual: specified image */}
                 <div className="lg:col-span-4 relative border border-slate-200 rounded-xl overflow-hidden p-1.5 bg-slate-50">
                   <ImagePlaceholder 
                     alt={cs.title} 
+                    src="/image/showcase2.jpg"
                     aspectRatio="video" 
                     showOverlay={true}
                     overlayText={cs.clientIndustry}
                   />
                 </div>
 
-                {/* Right side contents: Challenge, Solution, Outcomes */}
                 <div className="lg:col-span-8 space-y-6">
                   <div>
                     <div className="text-[10px] font-mono text-accent font-semibold uppercase tracking-wider mb-1.5">
@@ -112,7 +97,6 @@ export default function CaseStudiesPage() {
                     </div>
                   </div>
 
-                  {/* Results list */}
                   <div className="border-t border-slate-100 pt-5 space-y-3">
                     <h4 className="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-semibold">
                       Engineering Results & Outcomes
@@ -127,7 +111,6 @@ export default function CaseStudiesPage() {
                     </ul>
                   </div>
 
-                  {/* Action Linkage */}
                   <div className="pt-4 border-t border-slate-50 flex items-center justify-between">
                     {cs.pdfUrl !== '#' ? (
                       <a
@@ -147,11 +130,10 @@ export default function CaseStudiesPage() {
                   </div>
 
                 </div>
-              </Card>
+              </MagneticCard>
             ))}
           </div>
-
-        </div>
+        </AnimatedSection>
       </section>
     </div>
   );

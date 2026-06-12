@@ -1,32 +1,23 @@
 'use client';
 
 import React from 'react';
-import { ShieldAlert, Server, Network, ShieldCheck, HelpCircle, Activity, Globe } from 'lucide-react';
+import { ShieldAlert, Server, Network, ShieldCheck } from 'lucide-react';
 import Card from '@/components/common/Card';
 import ImagePlaceholder from '@/components/common/ImagePlaceholder';
+import { AnimatedSection, PageHero } from '@/components/ui';
 
 export default function InfrastructurePage() {
   return (
-    <div className="flex flex-col w-full">
-      {/* Page Header */}
-      <section className="bg-slate-950 text-white py-20 blueprint-grid relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/70 to-slate-950" />
-        <div className="max-w-5xl mx-auto px-4 relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-xs font-mono text-accent-light uppercase tracking-wider">
-            Operational Backbone
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white">
-            Delivery Enablers & Infrastructure
-          </h1>
-          <p className="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
-            Delivering robust execution environments, secure IT boundaries, and flexible engagement models to guarantee intellectual property safety and delivery timelines.
-          </p>
-        </div>
-      </section>
+    <div className="flex w-full flex-col">
+      <PageHero
+        eyebrow="Operational Backbone"
+        title="Delivery Enablers & Infrastructure"
+        description="Delivering robust execution environments, secure IT boundaries, and flexible engagement models to guarantee intellectual property safety and delivery timelines."
+      />
 
       {/* SECTION 1: IT & DATA SECURITY (ISO 27001 principles) */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="industrial-surface py-16">
+        <AnimatedSection as="div" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left: Text data */}
           <div className="lg:col-span-7 space-y-6">
@@ -99,12 +90,12 @@ export default function InfrastructurePage() {
             </div>
           </div>
 
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* SECTION 2: GLOBAL ENGAGEMENT MODELS */}
       <section className="py-16 sm:py-24 bg-slate-50 border-t border-slate-200/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <AnimatedSection as="div" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <div className="text-xs font-mono font-semibold tracking-widest text-accent uppercase">
@@ -178,7 +169,7 @@ export default function InfrastructurePage() {
 
           </div>
 
-        </div>
+        </AnimatedSection>
       </section>
     </div>
   );

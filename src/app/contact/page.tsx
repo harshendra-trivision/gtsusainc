@@ -1,125 +1,163 @@
-export default function ContactPage() {
-  const captcha = Array.from({ length: 4 }, () =>
-    'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[Math.floor(Math.random() * 32)]
-  ).join('');
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { AnimatedSection, GradientButton, MagneticCard, PageHero, SectionHeading } from '@/components/ui';
 
+const captcha = 'GTS7';
+
+const primaryLocations = [
+  {
+    title: 'GTS Engineering USA Incorporated',
+    lines: ['Physical Address:', '888 W Sam Houston Pkwy S, Suite 225 B,', 'Houston, TX 77042-1909', '832-295-0545', '832-295-0587', 'info@gtsusainc.com', 'skype – gaurav_blue']
+  },
+  {
+    title: 'GTS – Singapore Sales Office',
+    lines: ['26 Bayshore Road, 21-01,', 'Singapore 469972']
+  },
+  {
+    title: 'GTS – Middle East Sales Office',
+    lines: ['3/4, 1st Floor, Sercon Building,', 'Musa Bin Nussair Street,', 'Riyadh, Saudi Arabia']
+  }
+];
+
+const deliveryLocations = [
+  {
+    title: 'Global Delivery Center',
+    lines: ['GTS Techno Projects (India) P Limited', 'An ISO 9001:2015 certified company', '(A subsidiary of GTS Engineering USA Incorporated)', 'G – 41, Sector – 63,', 'Noida, U.P. – 201301', 'INDIA']
+  },
+  {
+    title: 'GTS Manufacturing – Adomac Technicals',
+    lines: ['G – 230, Sector – 63,', 'Noida, U.P., India – 201309']
+  },
+  {
+    title: 'GTS India – Gurgaon',
+    lines: ['Unit 405, Sector – 21,', 'Suncity Trade Tower', 'Gurgaon, Haryana, India – 122016']
+  },
+  {
+    title: 'GTS India – Haridwar',
+    lines: ['Kankhal, Haridwar,', 'Uttarakhand, India – 249408']
+  },
+  {
+    title: 'GTS India – GOA',
+    lines: ['A5, RR Towers,', 'Near Vodafone Gallery,', 'Mapusa, Goa, India- 403507']
+  }
+];
+
+function LocationCard({ title, lines }: { title: string; lines: string[] }) {
   return (
-    <main className="min-h-screen bg-[linear-gradient(180deg,#edf3fb_0%,#f8fafc_38%,#ffffff_100%)] py-10 sm:py-14">
-      <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-xl shadow-slate-200/60 sm:p-8 lg:p-10">
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Contact us</h1>
+    <MagneticCard className="p-5">
+      <div className="mb-3 flex items-center gap-2">
+        <MapPin className="h-5 w-5 text-accent" />
+        <h3 className="font-bold text-primary">{title}</h3>
+      </div>
+      <div className="space-y-1 text-sm leading-6 text-slate-600">
+        {lines.map((line) => (
+          <p key={line}>{line}</p>
+        ))}
+      </div>
+    </MagneticCard>
+  );
+}
 
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            <div className="space-y-6 text-[15px] leading-7 text-slate-700">
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <h2 className="text-xl font-semibold text-[#0056a4]">GTS Engineering USA Incorporated</h2>
-                <p className="mt-3 font-semibold">Physical Address:</p>
-                <p>888 W Sam Houston Pkwy S, Suite 225 B,</p>
-                <p>Houston, TX 77042-1909</p>
-                <p className="mt-3">832-295-0545</p>
-                <p>832-295-0587</p>
-                <p className="mt-2">info@gtsusainc.com</p>
-                <p>skype – gaurav_blue</p>
-              </div>
+export default function ContactPage() {
+  return (
+    <main className="min-h-screen">
+      <PageHero
+        eyebrow="Contact GTS"
+        title="Let’s Discuss Your Engineering Program"
+        description="Connect with GTS offices and delivery centers for plant, product, automation, documentation, and digital engineering requirements."
+      />
 
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <h3 className="text-lg font-semibold text-slate-900">GTS – Singapore Sales Office</h3>
-                <p className="mt-2">26 Bayshore Road, 21-01,</p>
-                <p>Singapore 469972</p>
-              </div>
-
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <h3 className="text-lg font-semibold text-slate-900">GTS – Middle East Sales Office</h3>
-                <p className="mt-2">3/4, 1st Floor, Sercon Building,</p>
-                <p>Musa Bin Nussair Street,</p>
-                <p>Riyadh, Saudi Arabia</p>
+      <section className="industrial-surface py-14 sm:py-20">
+        <AnimatedSection as="div" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-12">
+            <div className="space-y-6 lg:col-span-6">
+              <SectionHeading
+                eyebrow="Global Access"
+                title="US presence with international delivery reach"
+                description="Use the contact details or inquiry form to route your request to the relevant engineering team."
+                align="left"
+              />
+              <div className="grid gap-5">
+                {primaryLocations.map((location) => (
+                  <LocationCard key={location.title} {...location} />
+                ))}
               </div>
             </div>
 
-            <div className="space-y-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <h2 className="text-xl font-semibold text-[#0056a4]">Write to Us!</h2>
-              <p className="text-sm text-red-600">
-                Failed to send your message. Please try later or contact the administrator by another method.
-              </p>
+            <div className="lg:col-span-6">
+              <MagneticCard className="rounded-[2rem] p-6 sm:p-8">
+                <h2 className="text-2xl font-extrabold text-primary">Write to Us</h2>
+                <p className="mt-2 text-sm leading-7 text-slate-500">
+                  Share a concise scope and GTS will follow up through the most relevant engineering function.
+                </p>
 
-              <div className="grid gap-3 text-sm text-slate-700">
-                <label className="font-medium">Name:</label>
-                <input className="rounded border border-slate-300 bg-white px-3 py-2" defaultValue="Sanjay Saini" />
+                <form className="mt-6 grid gap-4">
+                  <label className="space-y-2 text-sm font-semibold text-slate-800">
+                    <span>Name</span>
+                    <input className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" placeholder="Your name" />
+                  </label>
 
-                <label className="font-medium">Address:</label>
-                <input className="rounded border border-slate-300 bg-white px-3 py-2" defaultValue="B 76 Raman Marg Tilak Nagar" />
+                  <label className="space-y-2 text-sm font-semibold text-slate-800">
+                    <span>Company / Address</span>
+                    <input className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" placeholder="Company and location" />
+                  </label>
 
-                <label className="font-medium">Phone no:</label>
-                <input className="rounded border border-slate-300 bg-white px-3 py-2" defaultValue="9876543212" />
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <label className="space-y-2 text-sm font-semibold text-slate-800">
+                      <span>Phone no</span>
+                      <input className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" placeholder="Phone number" />
+                    </label>
 
-                <label className="font-medium">Email</label>
-                <input className="rounded border border-slate-300 bg-white px-3 py-2" defaultValue="sanjay@trivision.ai" />
+                    <label className="space-y-2 text-sm font-semibold text-slate-800">
+                      <span>Email</span>
+                      <input type="email" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" placeholder="name@company.com" />
+                    </label>
+                  </div>
 
-                <label className="font-medium">Enquiry</label>
-                <textarea
-                  className="min-h-[130px] rounded border border-slate-300 bg-white px-3 py-2"
-                  defaultValue="enquiry"
-                />
-              </div>
+                  <label className="space-y-2 text-sm font-semibold text-slate-800">
+                    <span>Enquiry</span>
+                    <textarea
+                      className="min-h-[140px] w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white"
+                      placeholder="Tell us about your project, industry, timelines, and service needs."
+                    />
+                  </label>
 
-              <div className="pt-1">
-                <p className="font-semibold text-slate-800">Prove that you are human using the captcha below:</p>
-                <div className="mt-2 inline-block rounded border border-slate-300 bg-white px-4 py-2 text-3xl tracking-[0.35em] text-slate-900">
-                  {captcha}
-                </div>
-                <div className="mt-3">
-                  <button className="rounded bg-slate-800 px-6 py-2 text-sm font-semibold text-white hover:bg-slate-700">Send</button>
-                </div>
-              </div>
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                    <p className="text-sm font-semibold text-slate-800">Prove that you are human using the captcha below:</p>
+                    <div className="mt-3 inline-block rounded-xl border border-slate-300 bg-white px-4 py-2 text-2xl font-extrabold tracking-[0.35em] text-slate-900">
+                      {captcha}
+                    </div>
+                  </div>
 
-              <p className="rounded border border-blue-300 bg-blue-50 p-3 text-sm text-slate-700">
-                Failed to send your message. Please try later or contact the administrator by another method.
-              </p>
+                  <GradientButton type="submit" className="w-full">Send Engineering Inquiry</GradientButton>
+                </form>
+              </MagneticCard>
+            </div>
+          </div>
+
+          <div className="mt-14">
+            <SectionHeading
+              eyebrow="Delivery Centers"
+              title="Engineering execution across GTS locations"
+              description="GTS maintains delivery and manufacturing support locations for scalable project execution."
+            />
+            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {deliveryLocations.map((location) => (
+                <LocationCard key={location.title} {...location} />
+              ))}
             </div>
           </div>
 
-          <div className="mt-8 grid gap-6 text-[15px] leading-7 text-slate-700 md:grid-cols-2">
-            <div className="space-y-5">
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <h3 className="text-lg font-semibold text-[#0056a4]">Global Delivery Center:</h3>
-                <p className="mt-2 font-semibold">GTS Techno Projects (India) P Limited</p>
-                <p>An ISO 9001:2015 certified company</p>
-                <p className="font-semibold">(A subsidiary of GTS Engineering USA Incorporated)</p>
-                <p className="mt-2">G – 41, Sector – 63,</p>
-                <p>Noida, U.P. – 201301</p>
-                <p>INDIA</p>
-              </div>
-
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <p className="font-semibold">GTS Manufacturing – Adomac Technicals</p>
-                <p className="mt-2">G – 230, Sector – 63,</p>
-                <p>Noida, U.P., India – 201309</p>
-              </div>
-            </div>
-
-            <div className="space-y-5">
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <p className="font-semibold">GTS India – Gurgaon</p>
-                <p className="mt-2">Unit 405, Sector – 21,</p>
-                <p>Suncity Trade Tower</p>
-                <p>Gurgaon, Haryana, India – 122016</p>
-              </div>
-
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <p className="font-semibold">GTS India – Haridwar</p>
-                <p className="mt-2">Kankhal, Haridwar,</p>
-                <p>Uttarakhand, India – 249408</p>
-              </div>
-
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <p className="font-semibold">GTS India – GOA</p>
-                <p className="mt-2">A5, RR Towers,</p>
-                <p>Near Vodafone Gallery,</p>
-                <p>Mapusa, Goa, India- 403507</p>
-              </div>
+          <div className="mt-12 grid gap-4 rounded-[2rem] border border-slate-200 bg-white/90 p-6 shadow-xl shadow-blue-100/50 md:grid-cols-2">
+            <a href="mailto:info@gtsusainc.com" className="flex items-center gap-3 text-sm font-bold text-primary transition hover:text-accent">
+              <Mail className="h-5 w-5 text-accent" />
+              info@gtsusainc.com
+            </a>
+            <div className="flex items-center gap-3 text-sm font-bold text-primary">
+              <Phone className="h-5 w-5 text-accent" />
+              USA: 832-295-0545 / 832-295-0587
             </div>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
     </main>
   );

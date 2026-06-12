@@ -10,6 +10,7 @@ import InfrastructureContent from '@/components/menu/delivery/InfrastructureCont
 import LifeAtGtsContent from '@/components/menu/careers/LifeAtGtsContent';
 import WhyJoinUsContent from '@/components/menu/careers/WhyJoinUsContent';
 import EmploymentOpportunitiesContent from '@/components/menu/careers/EmploymentOpportunitiesContent';
+import { AnimatedSection, MagneticCard } from '@/components/ui';
 
 interface MenuSubPageProps {
   params: Promise<{
@@ -273,13 +274,13 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
         : sidebarTitle;
 
   return (
-    <main className="min-h-screen bg-[linear-gradient(180deg,#edf3fb_0%,#f8fafc_38%,#ffffff_100%)] py-10 sm:py-14">
+    <main className="industrial-surface min-h-screen py-10 sm:py-14">
       <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-xl shadow-slate-200/60 sm:p-8 lg:p-10">
+        <AnimatedSection as="div" className="rounded-[2rem] border border-slate-200 bg-white/95 p-4 shadow-xl shadow-blue-100/60 backdrop-blur sm:p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-12">
             <aside className="lg:col-span-4 xl:col-span-3">
-              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <div className="bg-gradient-to-r from-[#0056a4] to-[#0a6bc7] px-5 py-3">
+              <MagneticCard className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+                <div className="bg-gradient-to-r from-slate-950 to-blue-900 px-5 py-3">
                   <h2 className="text-lg font-semibold text-white">{resolvedSidebarTitle}</h2>
                 </div>
                 <nav className="p-2">
@@ -301,7 +302,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                     );
                   })}
                 </nav>
-              </div>
+              </MagneticCard>
 
               <div className="mt-5 space-y-3">
                 {isProductEngineeringPage && (
@@ -462,7 +463,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   <section className="space-y-3">
                     <h2 className="text-2xl font-semibold text-[#0056a4]">Our Quality Policy:</h2>
                     <p className="text-xl font-semibold leading-8 text-slate-800">
-                      "We are committed to deliver innovative solutions that delight Customers through deployment of robust processes."
+                      &ldquo;We are committed to deliver innovative solutions that delight Customers through deployment of robust processes.&rdquo;
                     </p>
                   </section>
 
@@ -2302,7 +2303,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
               )}
             </div>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
     </main>
   );

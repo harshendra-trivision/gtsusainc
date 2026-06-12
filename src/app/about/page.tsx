@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { AnimatedSection, GradientButton, MagneticCard, PageHero } from '@/components/ui';
 
 const aboutUsSubmenu = [
   { label: 'Who We Are', href: '/menu/about-us/who-we-are' },
@@ -10,12 +11,18 @@ const aboutUsSubmenu = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-slate-50 py-14 sm:py-20">
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen">
+      <PageHero
+        eyebrow="About GTS"
+        title="Engineering Expertise. Digital Intelligence. Global Delivery."
+        description="GTS Engineering USA Incorporated is a technology enabler and engineering solutions partner supporting product, plant, digital, and project execution programs."
+      />
+      <section className="industrial-surface py-14 sm:py-20">
+      <AnimatedSection as="div" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-12">
           <aside className="lg:col-span-4 xl:col-span-3">
-            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <div className="bg-gradient-to-r from-[#0056a4] to-[#0a6bc7] px-5 py-3">
+            <MagneticCard className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-sm">
+              <div className="bg-gradient-to-r from-slate-950 to-blue-900 px-5 py-4">
                 <h2 className="text-lg font-semibold text-white">About Us</h2>
               </div>
               <nav className="p-2">
@@ -25,16 +32,16 @@ export default function AboutPage() {
                     href={item.href}
                     className="flex items-center rounded-lg px-3 py-2.5 text-sm text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900"
                   >
-                    <span className="mr-2 text-[10px]">▸</span>
+                    <span className="mr-2 text-[10px] text-accent">▸</span>
                     {item.label}
                   </Link>
                 ))}
               </nav>
-            </div>
+            </MagneticCard>
           </aside>
 
-          <div className="lg:col-span-8 xl:col-span-9 rounded-2xl border border-slate-200 bg-white px-6 py-8 shadow-sm sm:px-10 sm:py-12">
-            <h1 className="text-3xl font-extrabold tracking-tight text-[#0056a4] sm:text-4xl">About us</h1>
+          <div className="rounded-[2rem] border border-slate-200 bg-white/92 px-6 py-8 shadow-xl shadow-blue-100/50 backdrop-blur sm:px-10 sm:py-12 lg:col-span-8 xl:col-span-9">
+            <h1 className="font-display text-3xl font-extrabold tracking-tight text-primary sm:text-4xl">About us</h1>
 
             <div className="mt-7 space-y-6 text-[15px] leading-8 text-slate-700">
               <p>
@@ -56,9 +63,13 @@ export default function AboutPage() {
                 product &amp; plant development.
               </p>
             </div>
+            <div className="mt-8">
+              <GradientButton href="/contact">Discuss Your Program</GradientButton>
+            </div>
           </div>
         </div>
-      </section>      
+      </AnimatedSection>
+      </section>
     </main>
   );
 }
