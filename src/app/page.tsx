@@ -598,8 +598,10 @@ export default function HomePage() {
         </AnimatedSection>
       </section>
 
-      <section id="solutions" className="scroll-mt-32 bg-white py-20 sm:py-28">
-        <AnimatedSection as="div" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section id="solutions" className="relative scroll-mt-32 overflow-hidden bg-white py-20 sm:py-28">
+        <div className="absolute inset-0 bg-[url('/image/background.jpg')] bg-cover bg-center bg-no-repeat opacity-100" />
+        <div className="absolute inset-0 bg-white/72" />
+        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Our Solution Areas"
             title="Multidisciplinary engineering capabilities for industrial transformation"
