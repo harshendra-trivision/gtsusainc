@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0b1528; /* Premium Midnight Navy */
+  --color-primary: #0b132b; /* Deep Space Cobalt (#0B132B) */
   --color-primary-light: #1e293b;
-  --color-accent: #2563eb; /* Corporate Royal Blue */
-  --color-accent-light: #60a5fa; /* Modern Sky Blue */
-  --color-accent-dark: #1d4ed8;
+  --color-secondary-titanium: #1c2541; /* Titanium Steel (#1C2541) */
+  --color-accent: #3f37c9; /* Electric Indigo (#3F37C9) as primary accent */
+  --color-accent-light: #48cae4; /* Cyber Cyan (#48CAE4) as accent light */
+  --color-accent-cyan: #48cae4;
+  --color-accent-indigo: #3f37c9;
+  --color-accent-dark: #2222b0;
   --color-steel: #64748b;
   --color-graphite: #111827;
   

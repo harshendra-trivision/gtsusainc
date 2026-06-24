@@ -41,30 +41,23 @@ export default function AboutPage() {
           </aside>
 
           <div className="rounded-[2rem] border border-slate-200 bg-white/92 px-6 py-8 shadow-xl shadow-blue-100/50 backdrop-blur sm:px-10 sm:py-12 lg:col-span-8 xl:col-span-9">
-            <h1 className="font-display text-3xl font-extrabold tracking-tight text-primary sm:text-4xl">About us</h1>
+            <h1 className="font-display text-3xl font-extrabold tracking-tight text-primary sm:text-4xl">About GTS Engineering</h1>
 
             <div className="mt-7 space-y-6 text-[15px] leading-8 text-slate-700">
               <p>
-                GTS Engineering USA Incorporated (GTS), a technology enabler &amp; a &ldquo;new age&rdquo; technology company, maintains
-                the highest standards of quality, enabling us to realistically strive for a Zero Defect Environment. GTS is an
-                end-to-end solutions provider, offering design &amp; engineering services and solutions spanning the entire
-                &ldquo;Product &amp; Plant Life Cycle Management and Support Services&rdquo; spectrum using a collaborative model and
-                becoming a virtual extension of your design development &amp; engineering teams. As a medium size company we
-                benefit from our ability to take quick decisions and rapidly adapt to the changing needs of our clients.
+                GTS Engineering® is a multidisciplinary engineering and digital solutions partner established in 2012. We deliver end-to-end solutions spanning the entire asset and product lifecycle, serving as a virtual execution extension of our clients' design and project delivery teams.
               </p>
 
               <p>
-                We have an established State-of-the-art Engineering Center for executing projects on the QCD (Quality, Cost
-                effectiveness &amp; Delivery) model that boasts of expert groups, engineering domains combined synergistically with
-                collaboration project management &amp; quality processes. Given the engineering lineage of GTS as well as similarity
-                in product &amp; plant life cycle with our offshore engineering teams have architecture of a unique road map to
-                deliver Context to Core support for your design development goals in the short &amp; long term. We have existing
-                investments, resources and process knowledge to support needs of your division both in sustaining as well as new
-                product &amp; plant development.
+                Through our strategic US-India Global Delivery Model, we pair local US project management, client relations, and quality oversight with high-performance, scalable engineering execution centers in India. This dual-shore approach allows us to deliver 24-hour engineering progress, optimize resource costs, and guarantee strict compliance with international standards (such as ASME, API, and OSHA PSM).
+              </p>
+
+              <p>
+                Whether we are conducting finite element simulations (FEA/CFD) for new product validation, detailing structural steel arrays in Tekla, engineering processing plant piping systems, or developing digital twin predictive dashboards, GTS is committed to absolute engineering integrity, process safety, and execution excellence.
               </p>
             </div>
             <div className="mt-8">
-              <GradientButton href="/contact">Discuss Your Program</GradientButton>
+              <GradientButton href="/contact">Discuss Your Project</GradientButton>
             </div>
           </div>
         </div>
