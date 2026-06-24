@@ -14,6 +14,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(0);
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
@@ -27,6 +28,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 20);
 
       if (currentScrollY <= 20) {
         setIsHeaderVisible(true);
@@ -49,9 +51,21 @@ export default function Header() {
         initial={false}
         animate={{ y: isHeaderVisible || isOpen ? 0 : '-100%' }}
         transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed inset-x-0 top-0 z-[80] w-full border-b border-white/10 bg-slate-950/86 text-white shadow-[0_18px_70px_rgba(2,6,23,0.34)] backdrop-blur-2xl"
+        className={cn(
+          "fixed inset-x-0 top-0 z-[80] w-full border-b border-white/10 text-white transition-all duration-300",
+          isScrolled
+            ? "bg-slate-950/70 backdrop-blur-md shadow-[0_18px_70px_rgba(2,6,23,0.34)]"
+            : "bg-transparent shadow-none"
+        )}
       >
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_0%,rgba(37,99,235,0.20),transparent_34%),linear-gradient(90deg,rgba(15,23,42,0.96),rgba(15,23,42,0.78),rgba(2,6,23,0.94))]" />
+        <div
+          className={cn(
+            "pointer-events-none absolute inset-0 transition-opacity duration-300",
+            isScrolled
+              ? "opacity-100 bg-[radial-gradient(circle_at_12%_0%,rgba(37,99,235,0.20),transparent_34%),linear-gradient(90deg,rgba(15,23,42,0.96),rgba(15,23,42,0.78),rgba(2,6,23,0.94))]"
+              : "opacity-40 bg-[radial-gradient(circle_at_12%_0%,rgba(37,99,235,0.20),transparent_34%)]"
+          )}
+        />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent" />
 
         <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
