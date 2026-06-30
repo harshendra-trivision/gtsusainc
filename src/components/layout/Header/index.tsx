@@ -28,9 +28,9 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setIsScrolled(currentScrollY > 20);
+      setIsScrolled(currentScrollY > 10);
 
-      if (currentScrollY <= 20) {
+      if (currentScrollY <= 10) {
         setIsHeaderVisible(true);
       } else {
         setIsHeaderVisible(currentScrollY < lastScrollY.current);
@@ -52,21 +52,24 @@ export default function Header() {
         animate={{ y: isHeaderVisible || isOpen ? 0 : '-100%' }}
         transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
         className={cn(
-          "fixed inset-x-0 top-0 z-[80] w-full border-b border-white/10 text-white transition-all duration-300",
+          "fixed inset-x-0 top-0 z-[80] w-full border-b text-white transition-all duration-500 ease-in-out",
           isScrolled
-            ? "bg-slate-950/70 backdrop-blur-md shadow-[0_18px_70px_rgba(2,6,23,0.34)]"
-            : "bg-transparent shadow-none"
+            ? "border-white/10 bg-slate-950/70 backdrop-blur-md shadow-[0_18px_70px_rgba(2,6,23,0.34)]"
+            : "border-transparent bg-transparent backdrop-blur-none shadow-none"
         )}
       >
         <div
           className={cn(
-            "pointer-events-none absolute inset-0 transition-opacity duration-300",
+            "pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out",
             isScrolled
               ? "opacity-100 bg-[radial-gradient(circle_at_12%_0%,rgba(37,99,235,0.20),transparent_34%),linear-gradient(90deg,rgba(15,23,42,0.96),rgba(15,23,42,0.78),rgba(2,6,23,0.94))]"
-              : "opacity-40 bg-[radial-gradient(circle_at_12%_0%,rgba(37,99,235,0.20),transparent_34%)]"
+              : "opacity-0"
           )}
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent" />
+        <div className={cn(
+          "pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent transition-opacity duration-500 ease-in-out",
+          isScrolled ? "opacity-100" : "opacity-0"
+        )} />
 
         <div className="relative flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">

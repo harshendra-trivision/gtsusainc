@@ -27,7 +27,7 @@ export const primaryNavigation: PrimaryNavigationItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Solutions', href: '/#solutions', submenu: solutionNavigation },
   { label: 'Industries', href: '/industries' },
-  { label: 'Projects', href: '/case-studies' },
+  // { label: 'Projects', href: '/case-studies' },
   { label: 'AI & Digital', href: '/#ai-digital' },
   { label: 'About', href: '/about' },
   { label: 'Careers', href: '/careers' },

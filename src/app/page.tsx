@@ -35,7 +35,7 @@ interface SolutionArea {
   id: string;
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon: string;
   capabilities: string[];
 }
 
@@ -150,35 +150,35 @@ const solutionAreas: SolutionArea[] = [
     id: 'plant-process-engineering',
     title: 'Plant & Process Engineering',
     description: 'Integrated plant, process, piping, pipeline, offshore, and EPC support for complex industrial assets.',
-    icon: Settings,
+    icon: '/icons/process-enginerring.png',
     capabilities: ['FEED', 'Process Design', 'Detailed Engineering', 'EPC Support', 'Pipelines', 'Offshore']
   },
   {
     id: 'product-engineering',
     title: 'Product Engineering',
     description: 'Mechanical product development from concept models through CAD, reverse engineering, automation, and prototype support.',
-    icon: Cpu,
+    icon: '/icons/product-enginerring.png',
     capabilities: ['Mechanical Design', 'CAD', 'Reverse Engineering', 'Product Development', 'Design Automation', 'Prototyping']
   },
   {
     id: 'simulation-digital-validation',
     title: 'Simulation & Digital Validation',
     description: 'CAE-led validation to reduce physical iteration, improve reliability, and optimize product and asset performance.',
-    icon: BarChart,
+    icon: '/icons/simulation.png',
     capabilities: ['FEA', 'CFD', 'Structural Analysis', 'Fatigue', 'Thermal Analysis', 'Optimization']
   },
   {
     id: 'automation-ai-industry-4-0',
     title: 'Automation, AI & Industry 4.0',
     description: 'Operational technology and industrial intelligence programs connecting assets, controls, data, and decisions.',
-    icon: Radio,
+    icon: '/icons/automation.png',
     capabilities: ['SCADA', 'PLC', 'Digital Twins', 'Industrial IoT', 'Predictive Maintenance', 'AI Analytics']
   },
   {
     id: 'steel-detailing-structural-engineering',
     title: 'Steel Detailing & Structural Engineering',
     description: 'High-accuracy structural steel modeling and fabrication packages for industrial structures and project execution teams.',
-    icon: Grid,
+    icon: '/icons/structure-enginerring.png',
     capabilities: [
       'Structural Steel Detailing',
       'Tekla Modeling',
@@ -194,7 +194,7 @@ const solutionAreas: SolutionArea[] = [
     id: 'technical-documentation-asset-intelligence',
     title: 'Technical Documentation & Asset Intelligence',
     description: 'Structured technical content, engineering data, PLM support, and asset documentation that improve lifecycle visibility.',
-    icon: FileText,
+    icon: '/icons/technology-document.png',
     capabilities: ['PLM', 'Manuals', 'Asset Documentation', 'Engineering Data Management', 'Intelligent Documentation']
   }
 ];
@@ -211,18 +211,18 @@ const digitalCapabilities = [
 ];
 
 const industriesServed = [
-  { title: 'Oil & Gas', icon: Flame },
-  { title: 'Refineries', icon: Settings },
-  { title: 'Petrochemicals', icon: Flame },
-  { title: 'Energy & Utilities', icon: Grid },
-  { title: 'Manufacturing', icon: Settings },
-  { title: 'Mining', icon: Truck },
-  { title: 'Infrastructure', icon: Map },
-  { title: 'Heavy Equipment', icon: Truck },
-  { title: 'Marine & Offshore', icon: Ship },
-  { title: 'Water & Wastewater', icon: Grid },
-  { title: 'Automotive', icon: Car },
-  { title: 'Rail', icon: Train }
+  { title: 'Oil & Gas', icon: '/icons/oil-gas.png' },
+  { title: 'Refineries', icon: '/icons/refinery.png' },
+  { title: 'Petrochemicals', icon: '/icons/petrochemical.png' },
+  { title: 'Energy & Utilities', icon: '/icons/solar-utilities.png' },
+  { title: 'Manufacturing', icon: '/icons/manufacturing.png' },
+  { title: 'Mining', icon: '/icons/mining.png' },
+  { title: 'Infrastructure', icon: '/icons/infrastructure.png' },
+  { title: 'Heavy Equipment', icon: '/icons/heavy-equepment.png' },
+  { title: 'Marine & Offshore', icon: '/icons/marine.png' },
+  { title: 'Water & Wastewater', icon: '/icons/water-filter.png' },
+  { title: 'Automotive', icon: '/icons/automotive.png' },
+  { title: 'Rail', icon: '/icons/train.png' }
 ];
 
 const engineeringCapabilities: CapabilityDiscipline[] = [
@@ -614,7 +614,7 @@ export default function HomePage() {
 
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {solutionAreas.map((area) => {
-              const Icon = area.icon;
+              const iconUrl = area.icon;
 
               return (
                 <MagneticCard
@@ -623,8 +623,20 @@ export default function HomePage() {
                   className="group scroll-mt-36 rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-blue-100/70"
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <div className="rounded-2xl bg-accent/10 p-3 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
-                      <Icon className="h-6 w-6" />
+                    <div className="flex items-center justify-center h-14 w-14">
+                      <div
+                        style={{
+                          WebkitMaskImage: `url('${iconUrl}')`,
+                          maskImage: `url('${iconUrl}')`,
+                          WebkitMaskRepeat: 'no-repeat',
+                          maskRepeat: 'no-repeat',
+                          WebkitMaskPosition: 'center',
+                          maskPosition: 'center',
+                          WebkitMaskSize: 'contain',
+                          maskSize: 'contain',
+                        }}
+                        className="w-15 h-15 bg-gradient-to-br from-[#2563eb] to-[#22d3ee] transition-all duration-300 group-hover:scale-110 drop-shadow-[0_3px_12px_rgba(34,211,238,0.4)]"
+                      />
                     </div>
                     <span className="text-xs font-mono uppercase tracking-[0.2em] text-slate-300">Solution</span>
                   </div>
@@ -712,14 +724,30 @@ export default function HomePage() {
             title="Industrial sectors supported by GTS delivery teams"
             description="GTS supports asset owners, OEMs, EPC teams, and technology programs across energy, infrastructure, manufacturing, transportation, and heavy industry."
           />
-          <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {industriesServed.map((industry) => {
-              const Icon = industry.icon;
+              const iconUrl = industry.icon;
 
               return (
-                <MagneticCard key={industry.title} intensity={5} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
-                  <Icon className="h-6 w-6 text-accent" />
-                  <div className="mt-4 text-sm font-extrabold text-primary">{industry.title}</div>
+                <MagneticCard key={industry.title} intensity={5} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center justify-center h-10 w-10 shrink-0">
+                      <div
+                        style={{
+                          WebkitMaskImage: `url('${iconUrl}')`,
+                          maskImage: `url('${iconUrl}')`,
+                          WebkitMaskRepeat: 'no-repeat',
+                          maskRepeat: 'no-repeat',
+                          WebkitMaskPosition: 'center',
+                          maskPosition: 'center',
+                          WebkitMaskSize: 'contain',
+                          maskSize: 'contain',
+                        }}
+                        className="w-7 h-7 bg-gradient-to-br from-[#2563eb] to-[#22d3ee] transition-all duration-300 group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(34,211,238,0.3)]"
+                      />
+                    </div>
+                    <div className="text-sm font-extrabold text-primary leading-tight">{industry.title}</div>
+                  </div>
                 </MagneticCard>
               );
             })}
