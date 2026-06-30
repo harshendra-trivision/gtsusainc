@@ -24,7 +24,6 @@ import {
 } from 'lucide-react';
 import {
   AnimatedSection,
-  BackgroundGrid,
   FloatingParticles,
   GlassCard,
   GradientButton,
@@ -93,7 +92,7 @@ const trustStats = [
   },
   {
     title: '100+ Projects Delivered',
-    image: '/image/Projects-Delivered.jpg',
+    image: '/image/project-delivery.png',
     description:
       'Successfully delivering 100+ engineering projects across diverse industries, we utilize AI-powered insights, automation, and advanced analytics to improve efficiency, accelerate execution, and maximize project outcomes.'
   },
@@ -365,7 +364,7 @@ export default function HomePage() {
 
   return (
     <div className="flex w-full flex-col overflow-hidden bg-white">
-      <section className="relative min-h-[760px] overflow-hidden bg-slate-950 text-white">
+      <section className="relative min-h-[760px] lg:min-h-screen overflow-hidden bg-slate-950 text-white">
         <video
           ref={videoRef}
           key={heroVisuals[activeSlide].video}
@@ -379,105 +378,111 @@ export default function HomePage() {
           <source src={heroVisuals[activeSlide].video} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/88 to-slate-950/40" />
-        <BackgroundGrid variant="fine" className="opacity-70" />
         <FloatingParticles />
 
-        <div className="relative z-10 mx-auto grid min-h-[760px] max-w-7xl grid-cols-1 items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-12 lg:px-8">
-          <AnimatedSection as="div" className="space-y-8 lg:col-span-7">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200/25 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100 backdrop-blur">
-              GTS Engineering®
-            </div>
-            <div className="space-y-5">
-              <p className="text-lg font-semibold text-cyan-200 sm:text-xl">
-                Engineering Excellence Powered by AI & Innovation
-              </p>
-              <h1 className="font-display text-4xl font-extrabold leading-[1.12] tracking-[-0.035em] sm:text-5xl lg:text-[2.85rem] xl:text-[3rem]">
-                <span className="block">AI-Powered</span>
-                <span className="block bg-gradient-to-r from-cyan-200 via-sky-300 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(34,211,238,0.18)] lg:whitespace-nowrap">
-                  Intelligent Engineering Solutions
-                </span>
-                <span className="block">
-                  for{' '}
-                  <span className="bg-gradient-to-r from-cyan-200 via-sky-300 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(34,211,238,0.18)] lg:whitespace-nowrap">
-                    Industrial Transformation
+        <div className="relative z-10 grid min-h-[760px] lg:min-h-screen grid-cols-1 items-center lg:items-stretch gap-12 px-4 pt-28 pb-20 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-24 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <AnimatedSection as="div" className="lg:col-span-7 flex flex-col justify-between gap-8 lg:gap-12">
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200/25 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100 backdrop-blur">
+                GTS Engineering®
+              </div>
+              <div className="space-y-5">
+                <p className="text-base font-semibold text-cyan-200 sm:text-lg">
+                  Engineering Excellence Powered by AI & Innovation
+                </p>
+                <h1 className="font-display text-3xl font-extrabold leading-[1.15] tracking-[-0.03em] sm:text-4xl lg:text-[2.4rem] xl:text-[2.6rem]">
+                  <span className="block">AI-Powered</span>
+                  <span className="block bg-gradient-to-r from-cyan-200 via-sky-300 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(34,211,238,0.18)] lg:whitespace-nowrap">
+                    Intelligent Engineering Solutions
                   </span>
-                </span>
-              </h1>
-              <p className="max-w-3xl text-base leading-8 text-slate-200 sm:text-lg">
+                  <span className="block">
+                    for{' '}
+                    <span className="bg-gradient-to-r from-cyan-200 via-sky-300 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(34,211,238,0.18)] lg:whitespace-nowrap">
+                      Industrial Transformation
+                    </span>
+                  </span>
+                </h1>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <p className="max-w-3xl text-sm leading-7 text-slate-200 sm:text-base">
                 Delivering end-to-end Plant, Process, Product, Automation, Digital Engineering, and EPC solutions for global industrial, energy, infrastructure, and manufacturing sectors.
               </p>
+              <div className="flex flex-wrap gap-4">
+                <GradientButton href="/#solutions">
+                  Explore Solutions
+                </GradientButton>
+                <GradientButton href="/contact" variant="ghost">
+                  Schedule Consultation
+                </GradientButton>
+              </div>
+              <p className="max-w-2xl text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
+                More than drafting: integrated engineering, automation, AI, digital, and industrial technology delivery.
+              </p>
             </div>
-            <div className="flex flex-wrap gap-4">
-              <GradientButton href="/#solutions">
-                Explore Solutions
-              </GradientButton>
-              <GradientButton href="/contact" variant="ghost">
-                Schedule Consultation
-              </GradientButton>
-            </div>
-            <p className="max-w-2xl text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
-              More than drafting: integrated engineering, automation, AI, digital, and industrial technology delivery.
-            </p>
           </AnimatedSection>
 
-          <AnimatedSection as="div" delay={0.12} className="lg:col-span-5">
-            <GlassCard tone="dark" className="rounded-[2rem] p-3 shadow-2xl shadow-slate-950/60">
-              <div className="relative min-h-[420px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950">
-                <video
-                  key={`panel-${heroVisuals[activeSlide].video}`}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  className="absolute inset-0 h-full w-full object-cover opacity-70"
-                >
-                  <source src={heroVisuals[activeSlide].video} type="video/mp4" />
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-transparent" />
-                <div className="absolute left-5 right-5 top-5 rounded-2xl border border-cyan-200/20 bg-slate-950/55 p-4 backdrop-blur">
-                  <div className="flex items-center justify-between text-xs text-cyan-100">
-                    <span className="font-mono uppercase tracking-[0.22em]">Digital Engineering View</span>
-                    <span className="rounded-full bg-emerald-400/15 px-2 py-1 text-emerald-200">Live</span>
-                  </div>
-                  <div className="mt-4 grid grid-cols-3 gap-3">
-                    {['Asset Health', 'Design Risk', 'Schedule'].map((metric, index) => (
-                      <div key={metric} className="rounded-xl bg-white/10 p-3">
-                        <div className="text-[10px] uppercase tracking-wider text-slate-300">{metric}</div>
-                        <div className="mt-2 text-lg font-bold text-white">{index === 0 ? '98%' : index === 1 ? 'Low' : '24/7'}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="absolute bottom-5 left-5 right-5 space-y-4">
-                  <div>
-                    <div className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">
-                      {heroVisuals[activeSlide].label}
+          <AnimatedSection as="div" delay={0.12} className="lg:col-span-5 lg:self-end w-full">
+            <div className="mx-auto lg:ml-auto max-w-[480px] w-full">
+              <GlassCard tone="dark" className="rounded-[2rem] p-3 shadow-2xl shadow-slate-950/60">
+                <div className="relative min-h-[420px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950">
+                  <video
+                    key={`panel-${heroVisuals[activeSlide].video}`}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="absolute inset-0 h-full w-full object-cover opacity-70"
+                  >
+                    <source src={heroVisuals[activeSlide].video} type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-transparent" />
+                  <div className="absolute left-5 right-5 top-5 rounded-2xl border border-cyan-200/20 bg-slate-950/55 p-4 backdrop-blur">
+                    <div className="flex items-center justify-between text-xs text-cyan-100">
+                      <span className="font-mono uppercase tracking-[0.22em]">Digital Engineering View</span>
+                      <span className="rounded-full bg-emerald-400/15 px-2 py-1 text-emerald-200">Live</span>
                     </div>
-                    <h3 className="mt-2 text-2xl font-bold leading-tight text-white">
-                      {heroVisuals[activeSlide].title}
-                    </h3>
+                    <div className="mt-4 grid grid-cols-3 gap-3">
+                      {['Asset Health', 'Design Risk', 'Schedule'].map((metric, index) => (
+                        <div key={metric} className="rounded-xl bg-white/10 p-3">
+                          <div className="text-[10px] uppercase tracking-wider text-slate-300">{metric}</div>
+                          <div className="mt-2 text-lg font-bold text-white">{index === 0 ? '98%' : index === 1 ? 'Low' : '24/7'}</div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    {heroVisualTags.map((tag) => (
-                      <div key={tag} className="rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-[11px] font-medium text-slate-100 backdrop-blur">
-                        {tag}
+                  <div className="absolute bottom-5 left-5 right-5 space-y-4">
+                    <div>
+                      <div className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">
+                        {heroVisuals[activeSlide].label}
                       </div>
-                    ))}
+                      <h3 className="mt-2 text-2xl font-bold leading-tight text-white">
+                        {heroVisuals[activeSlide].title}
+                      </h3>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      {heroVisualTags.map((tag) => (
+                        <div key={tag} className="rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-[11px] font-medium text-slate-100 backdrop-blur">
+                          {tag}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </GlassCard>
+              </GlassCard>
 
-            <div className="mt-5 flex justify-center gap-2">
-              {heroVisuals.map((visual, index) => (
-                <button
-                  key={visual.video}
-                  onClick={() => setActiveSlide(index)}
-                  className={`h-2 rounded-full transition-all ${activeSlide === index ? 'w-10 bg-cyan-300' : 'w-2 bg-white/40 hover:bg-white/70'}`}
-                  aria-label={`Show ${visual.label}`}
-                />
-              ))}
+              <div className="mt-5 flex justify-center gap-2">
+                {heroVisuals.map((visual, index) => (
+                  <button
+                    key={visual.video}
+                    onClick={() => setActiveSlide(index)}
+                    className={`h-2 rounded-full transition-all ${activeSlide === index ? 'w-10 bg-cyan-300' : 'w-2 bg-white/40 hover:bg-white/70'}`}
+                    aria-label={`Show ${visual.label}`}
+                  />
+                ))}
+              </div>
             </div>
           </AnimatedSection>
         </div>
@@ -485,7 +490,6 @@ export default function HomePage() {
 
       <section className="relative overflow-hidden border-y border-cyan-200/10 bg-slate-950 py-16 text-white sm:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(20,184,166,0.26),transparent_30%),radial-gradient(circle_at_84%_20%,rgba(37,99,235,0.24),transparent_30%),linear-gradient(135deg,rgba(2,6,23,0.96),rgba(15,118,110,0.78),rgba(2,6,23,0.96))]" />
-        <BackgroundGrid variant="fine" className="opacity-30" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection as="div" className="mx-auto mb-12 max-w-3xl text-center">
