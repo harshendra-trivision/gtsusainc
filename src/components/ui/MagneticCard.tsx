@@ -9,13 +9,17 @@ interface MagneticCardProps {
   className?: string;
   id?: string;
   intensity?: number;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
 export default function MagneticCard({
   children,
   className,
   intensity = 8,
-  id
+  id,
+  onMouseEnter,
+  onMouseLeave
 }: MagneticCardProps) {
   const shouldReduceMotion = useReducedMotion();
   const pointerX = useMotionValue(0);
@@ -36,6 +40,7 @@ export default function MagneticCard({
       style={shouldReduceMotion ? undefined : { rotateX, rotateY, transformStyle: 'preserve-3d' }}
       whileHover={shouldReduceMotion ? undefined : { y: -6, scale: 1.01 }}
       transition={{ duration: 0.25, ease: 'easeOut' }}
+      onMouseEnter={onMouseEnter}
       onMouseMove={(event) => {
         const rect = event.currentTarget.getBoundingClientRect();
         const x = (event.clientX - rect.left) / rect.width - 0.5;
@@ -48,6 +53,7 @@ export default function MagneticCard({
       onMouseLeave={() => {
         pointerX.set(0);
         pointerY.set(0);
+        if (onMouseLeave) onMouseLeave();
       }}
       id={id}
     >

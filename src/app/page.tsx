@@ -243,18 +243,18 @@ const digitalCapabilities = [
 ];
 
 const industriesServed = [
-  { title: 'Oil & Gas', icon: '/icons/oil-gas.png' },
-  { title: 'Refineries', icon: '/icons/refinery.png' },
-  { title: 'Petrochemicals', icon: '/icons/petrochemical.png' },
-  { title: 'Energy & Utilities', icon: '/icons/solar-utilities.png' },
-  { title: 'Manufacturing', icon: '/icons/manufacturing.png' },
-  { title: 'Mining', icon: '/icons/mining.png' },
-  { title: 'Infrastructure', icon: '/icons/infrastructure.png' },
-  { title: 'Heavy Equipment', icon: '/icons/heavy-equepment.png' },
-  { title: 'Marine & Offshore', icon: '/icons/marine.png' },
-  { title: 'Water & Wastewater', icon: '/icons/water-filter.png' },
-  { title: 'Automotive', icon: '/icons/automotive.png' },
-  { title: 'Rail', icon: '/icons/train.png' }
+  { title: 'Oil & Gas', icon: '/icons/oil-gas.png', bgImage: '/image/industry-image/oilandgas.jpg' },
+  { title: 'Refineries', icon: '/icons/refinery.png', bgImage: '/image/industry-image/refineries.jpg' },
+  { title: 'Petrochemicals', icon: '/icons/petrochemical.png', bgImage: '/image/industry-image/Petrochemicals.jpg' },
+  { title: 'Energy & Utilities', icon: '/icons/solar-utilities.png', bgImage: '/image/industry-image/Energy.jpg' },
+  { title: 'Manufacturing', icon: '/icons/manufacturing.png', bgImage: '/image/industry-image/equipment-heavy.jpg' },
+  { title: 'Mining', icon: '/icons/mining.png', bgImage: '/image/industry-image/mining.jpg' },
+  { title: 'Infrastructure', icon: '/icons/infrastructure.png', bgImage: '/image/industry-image/Infrastructure.jpg' },
+  { title: 'Heavy Equipment', icon: '/icons/heavy-equepment.png', bgImage: '/image/industry-image/Heavy Equipment.jpg' },
+  { title: 'Marine & Offshore', icon: '/icons/marine.png', bgImage: '/image/industry-image/marine-1.jpg' },
+  { title: 'Water & Wastewater', icon: '/icons/water-filter.png', bgImage: '/image/industry-image/water.jpg' },
+  { title: 'Automotive', icon: '/icons/automotive.png', bgImage: '/image/industry-image/automotive-1.jpg' },
+  { title: 'Rail', icon: '/icons/train.png', bgImage: '/image/industry-image/rail.jpg' }
 ];
 
 const engineeringCapabilities: CapabilityDiscipline[] = [
@@ -374,9 +374,58 @@ const clientSignals = [
 
 const qualitySignals = ['Quality Systems', 'Engineering Reviews', 'Secure Delivery', 'Technology Partnerships'];
 
+interface CountUpProps {
+  end: number;
+  duration?: number;
+  suffix?: string;
+  separator?: boolean;
+}
+
+function AnimatedCounter({ end, duration = 2000, suffix = '', separator = true }: CountUpProps) {
+  const [count, setCount] = useState(0);
+  const elementRef = useRef<HTMLSpanElement | null>(null);
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setHasStarted(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      setCount(Math.floor(progress * end));
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }, [hasStarted, end, duration]);
+
+  const formattedCount = separator ? count.toLocaleString() : count.toString();
+  return <span ref={elementRef}>{formattedCount}{suffix}</span>;
+}
+
 export default function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeDiscipline, setActiveDiscipline] = useState(engineeringCapabilities[0].name);
+  const [hoveredIndustryIndex, setHoveredIndustryIndex] = useState<number | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const selectedCapability =
@@ -521,11 +570,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-y border-cyan-200/10 bg-slate-950 py-16 text-white sm:py-20">
+      <section className="relative overflow-hidden border-y border-cyan-200/10 bg-slate-950 py-20 text-white sm:py-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(20,184,166,0.26),transparent_30%),radial-gradient(circle_at_84%_20%,rgba(37,99,235,0.24),transparent_30%),linear-gradient(135deg,rgba(2,6,23,0.96),rgba(15,118,110,0.78),rgba(2,6,23,0.96))]" />
 
+        {/* Map Background with Minimum Visibility */}
+        <div
+          className="absolute inset-0 bg-[url('/image/map.png')] bg-cover bg-center bg-no-repeat opacity-[0.06] pointer-events-none mix-blend-screen"
+        />
+
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedSection as="div" className="mx-auto mb-12 max-w-3xl text-center">
+          <AnimatedSection as="div" className="mx-auto mb-16 max-w-3xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-200">
               Trusted Engineering Delivery
             </p>
@@ -534,35 +588,344 @@ export default function HomePage() {
             </h2>
           </AnimatedSection>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {trustStats.map((stat) => (
-              <MagneticCard
-                key={stat.title}
-                intensity={4}
-                className="rounded-[2rem] border-white/10 bg-white/[0.06] p-0 shadow-[0_28px_90px_rgba(2,6,23,0.34)] backdrop-blur"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Column 1 */}
+            <div className="flex flex-col gap-8">
+              {/* Card 1 - Established 2012 */}
+              <div
+                className="group relative w-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer animate-fade-in"
+                style={{
+                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
+                  height: '420px'
+                }}
               >
-                <div className="relative h-72 overflow-hidden">
-                  <Image
-                    src={stat.image}
-                    alt={stat.title}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/8 to-cyan-200/8" />
-                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/65 to-transparent" />
-                </div>
-
-                <div className="relative mx-5 -mt-12 mb-5 rounded-3xl border border-slate-200/90 bg-slate-100 px-5 py-6 text-center shadow-[0_24px_70px_rgba(2,6,23,0.24)]">
-                  <h3 className="font-display text-2xl font-semibold tracking-tight text-transparent bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-700 bg-clip-text">
-                    {stat.title}
+                <Image
+                  src={trustStats[0].image}
+                  alt={trustStats[0].title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
+                <div
+                  className="absolute inset-0 border border-white/10 pointer-events-none"
+                  style={{
+                    clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
+                  }}
+                />
+                <div
+                  className="absolute bottom-0 left-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
+                  style={{
+                    clipPath: 'polygon(0 100%, 100% 100%, 0 0)'
+                  }}
+                />
+                <div
+                  className="absolute top-0 right-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
+                  style={{
+                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
+                  }}
+                />
+                <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col justify-end">
+                  <h3 className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    {trustStats[0].title}
                   </h3>
-                  <p className="mt-4 text-sm leading-7 text-slate-700">
-                    {stat.description}
+                  <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                    {trustStats[0].description}
                   </p>
                 </div>
-              </MagneticCard>
-            ))}
+              </div>
+
+              {/* Card 2 - 100+ Projects Delivered */}
+              <div
+                className="group relative w-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer"
+                style={{
+                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
+                  height: '280px'
+                }}
+              >
+                <Image
+                  src={trustStats[1].image}
+                  alt={trustStats[1].title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
+                <div
+                  className="absolute inset-0 border border-white/10 pointer-events-none"
+                  style={{
+                    clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
+                  }}
+                />
+                <div
+                  className="absolute bottom-0 left-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
+                  style={{
+                    clipPath: 'polygon(0 100%, 100% 100%, 0 0)'
+                  }}
+                />
+                <div
+                  className="absolute top-0 right-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
+                  style={{
+                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
+                  }}
+                />
+                <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col justify-end">
+                  <h3 className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    {trustStats[1].title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                    {trustStats[1].description}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Column 2 */}
+            <div className="flex flex-col gap-8">
+              {/* Card 3 - Global Delivery Model */}
+              <div
+                className="group relative w-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer"
+                style={{
+                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
+                  height: '280px'
+                }}
+              >
+                <Image
+                  src={trustStats[2].image}
+                  alt={trustStats[2].title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
+                <div
+                  className="absolute inset-0 border border-white/10 pointer-events-none"
+                  style={{
+                    clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
+                  }}
+                />
+                <div
+                  className="absolute bottom-0 left-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
+                  style={{
+                    clipPath: 'polygon(0 100%, 100% 100%, 0 0)'
+                  }}
+                />
+                <div
+                  className="absolute top-0 right-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
+                  style={{
+                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
+                  }}
+                />
+                <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col justify-end">
+                  <h3 className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    {trustStats[2].title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                    {trustStats[2].description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 4 - Multidisciplinary Engineering Teams */}
+              <div
+                className="group relative w-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer"
+                style={{
+                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
+                  height: '420px'
+                }}
+              >
+                <Image
+                  src={trustStats[3].image}
+                  alt={trustStats[3].title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
+                <div
+                  className="absolute inset-0 border border-white/10 pointer-events-none"
+                  style={{
+                    clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
+                  }}
+                />
+                <div
+                  className="absolute bottom-0 left-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
+                  style={{
+                    clipPath: 'polygon(0 100%, 100% 100%, 0 0)'
+                  }}
+                />
+                <div
+                  className="absolute top-0 right-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
+                  style={{
+                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
+                  }}
+                />
+                <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col justify-end">
+                  <h3 className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    {trustStats[3].title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                    {trustStats[3].description}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Column 3 */}
+            <div className="flex flex-col gap-8">
+              {/* Card 5 - AI & Digital Engineering Capability */}
+              <div
+                className="group relative w-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer"
+                style={{
+                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
+                  height: '420px'
+                }}
+              >
+                <Image
+                  src={trustStats[4].image}
+                  alt={trustStats[4].title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
+                <div
+                  className="absolute inset-0 border border-white/10 pointer-events-none"
+                  style={{
+                    clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
+                  }}
+                />
+                <div
+                  className="absolute bottom-0 left-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
+                  style={{
+                    clipPath: 'polygon(0 100%, 100% 100%, 0 0)'
+                  }}
+                />
+                <div
+                  className="absolute top-0 right-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
+                  style={{
+                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
+                  }}
+                />
+                <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col justify-end">
+                  <h3 className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    {trustStats[4].title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                    {trustStats[4].description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 6 - US + India Operations */}
+              <div
+                className="group relative w-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer"
+                style={{
+                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
+                  height: '280px'
+                }}
+              >
+                <Image
+                  src={trustStats[5].image}
+                  alt={trustStats[5].title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
+                <div
+                  className="absolute inset-0 border border-white/10 pointer-events-none"
+                  style={{
+                    clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
+                  }}
+                />
+                <div
+                  className="absolute bottom-0 left-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
+                  style={{
+                    clipPath: 'polygon(0 100%, 100% 100%, 0 0)'
+                  }}
+                />
+                <div
+                  className="absolute top-0 right-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
+                  style={{
+                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
+                  }}
+                />
+                <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col justify-end">
+                  <h3 className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    {trustStats[5].title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                    {trustStats[5].description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden border-b border-cyan-200/10 bg-slate-950 py-20 text-white sm:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(20,184,166,0.26),transparent_30%),radial-gradient(circle_at_84%_20%,rgba(37,99,235,0.24),transparent_30%),linear-gradient(135deg,rgba(2,6,23,0.96),rgba(15,118,110,0.78),rgba(2,6,23,0.96))]" />
+
+        {/* Map Background with Minimum Visibility */}
+        <div
+          className="absolute inset-0 bg-[url('/image/map.png')] bg-cover bg-center bg-no-repeat opacity-[0.06] pointer-events-none mix-blend-screen"
+        />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Stat 1 */}
+            <div className="flex flex-col justify-between">
+              <div>
+                <div className="font-display text-5xl font-extrabold tracking-tight text-cyan-300 sm:text-6xl">
+                  <AnimatedCounter end={21700} suffix="+" />
+                </div>
+                <p className="mt-4 text-sm font-medium leading-relaxed text-slate-300 max-w-[250px]">
+                  MW Renewable energy capacity across global markets
+                </p>
+              </div>
+              <div className="mt-6 h-px w-full bg-cyan-200/10" />
+            </div>
+
+            {/* Stat 2 */}
+            <div className="flex flex-col justify-between">
+              <div>
+                <div className="font-display text-5xl font-extrabold tracking-tight text-cyan-300 sm:text-6xl">
+                  <AnimatedCounter end={10000} suffix="+" />
+                </div>
+                <p className="mt-4 text-sm font-medium leading-relaxed text-slate-300 max-w-[250px]">
+                  Assets operating worldwide
+                </p>
+              </div>
+              <div className="mt-6 h-px w-full bg-cyan-200/10" />
+            </div>
+
+            {/* Stat 3 */}
+            <div className="flex flex-col justify-between">
+              <div>
+                <div className="font-display text-5xl font-extrabold tracking-tight text-cyan-300 sm:text-6xl">
+                  <AnimatedCounter end={1900} suffix="+" />
+                </div>
+                <p className="mt-4 text-sm font-medium leading-relaxed text-slate-300 max-w-[250px]">
+                  Clients across industries and markets
+                </p>
+              </div>
+              <div className="mt-6 h-px w-full bg-cyan-200/10" />
+            </div>
+
+            {/* Stat 4 */}
+            <div className="flex flex-col justify-between">
+              <div>
+                <div className="font-display text-5xl font-extrabold tracking-tight text-cyan-300 sm:text-6xl">
+                  <AnimatedCounter end={17} />
+                </div>
+                <p className="mt-4 text-sm font-medium leading-relaxed text-slate-300 max-w-[250px]">
+                  Countries connected through renewable energy ecosystems
+                </p>
+              </div>
+              <div className="mt-6 h-px w-full bg-cyan-200/10" />
+            </div>
           </div>
         </div>
       </section>
@@ -759,20 +1122,67 @@ export default function HomePage() {
           </div>
         </AnimatedSection>
       </section>
+      <section id="industries-served" className="scroll-mt-32 bg-slate-50 py-20 sm:py-28 relative overflow-hidden transition-colors duration-500">
+        {/* Dynamic Vertical Accordion Background */}
+        <div className="absolute inset-0 w-full h-full flex overflow-hidden pointer-events-none z-0">
+          {industriesServed.map((industry, index) => {
+            const isHovered = hoveredIndustryIndex === index;
+            const isAnyHovered = hoveredIndustryIndex !== null;
 
-      <section id="industries-served" className="scroll-mt-32 bg-slate-50 py-20 sm:py-28">
-        <AnimatedSection as="div" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            let flexStyle = '1 1 0%';
+            let opacityStyle = 0.8;
+
+            if (isAnyHovered) {
+              if (isHovered) {
+                flexStyle = '100 1 0%';
+                opacityStyle = 1;
+              } else {
+                flexStyle = '0 0 0%';
+                opacityStyle = 0;
+              }
+            }
+
+            return (
+              <div
+                key={industry.title}
+                style={{
+                  backgroundImage: `url('${industry.bgImage}')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  flex: flexStyle,
+                  opacity: opacityStyle,
+                }}
+                className="h-full transition-all duration-700 ease-in-out border-r border-slate-200/50 last:border-r-0"
+              />
+            );
+          })}
+        </div>
+
+        {/* Backdrop overlay for text contrast */}
+        <div className="absolute inset-0 bg-white/10 pointer-events-none z-0" />
+
+        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Industries Served"
             title="Industrial sectors supported by GTS delivery teams"
-            description="GTS supports asset owners, OEMs, EPC teams, and technology programs across energy, infrastructure, manufacturing, transportation, and heavy industry."
           />
-          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {industriesServed.map((industry) => {
+          <div className="mx-auto mt-4 max-w-2xl rounded-2xl bg-white/85 backdrop-blur-md px-6 py-3 shadow-sm border border-slate-200/50 text-center mb-10">
+            <p className="text-sm leading-7 text-slate-600 sm:text-base">
+              GTS supports asset owners, OEMs, EPC teams, and technology programs across energy, infrastructure, manufacturing, transportation, and heavy industry.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {industriesServed.map((industry, index) => {
               const iconUrl = industry.icon;
 
               return (
-                <MagneticCard key={industry.title} intensity={5} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
+                <MagneticCard
+                  key={industry.title}
+                  intensity={5}
+                  className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md cursor-pointer"
+                  onMouseEnter={() => setHoveredIndustryIndex(index)}
+                  onMouseLeave={() => setHoveredIndustryIndex(null)}
+                >
                   <div className="flex items-center gap-4">
                     <div className="flex items-center justify-center h-10 w-10 shrink-0">
                       <div
@@ -797,7 +1207,6 @@ export default function HomePage() {
           </div>
         </AnimatedSection>
       </section>
-
       <section className="bg-white py-20 sm:py-28">
         <AnimatedSection as="div" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
