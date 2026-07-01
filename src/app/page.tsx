@@ -71,6 +71,36 @@ const heroVisuals = [
     label: 'Industrial Automation',
     title: 'SCADA, PLC, IoT, and analytics for Industry 4.0 programs',
     video: '/vedios-gts/biology.mp4'
+  },
+  {
+    label: 'Aerospace Engineering',
+    title: 'Advanced structural, thermal, and fluid dynamics analysis for aerospace systems',
+    video: '/vedios-gts/aerospace.mp4'
+  },
+  {
+    label: 'Consumer Products',
+    title: 'Design and validation of high-volume consumer goods and electronics',
+    video: '/vedios-gts/consumer.mp4'
+  },
+  {
+    label: 'Marine & Offshore',
+    title: 'Structural detailing, layout design, and marine engineering services',
+    video: '/vedios-gts/marine.mp4'
+  },
+  {
+    label: 'Medical Devices',
+    title: 'Compliant engineering and design automation for medical machinery',
+    video: '/vedios-gts/medical-machine.mp4'
+  },
+  {
+    label: 'Railway Systems',
+    title: 'Transit design, structural validation, and systems engineering support',
+    video: '/vedios-gts/railway.mp4'
+  },
+  {
+    label: 'Telecommunications',
+    title: 'Infrastructure modeling, tower detailing, and equipment packaging',
+    video: '/vedios-gts/telecom.mp4'
   }
 ];
 
@@ -126,22 +156,22 @@ const whoWeAreHighlights = [
   {
     title: 'Plant',
     text: 'Process, piping, and EPC support across industrial assets',
-    icon: Settings
+    icon: '/icons/plant.png'
   },
   {
     title: 'Product',
     text: 'CAD, CAE, reverse engineering, and design automation',
-    icon: Cpu
+    icon: '/icons/product.png'
   },
   {
     title: 'Digital',
     text: 'AI workflows, digital twins, analytics, and data intelligence',
-    icon: Radio
+    icon: '/icons/digitalization.png'
   },
   {
     title: 'Delivery',
     text: 'US + India engineering teams with scalable execution',
-    icon: Grid
+    icon: '/icons/dilivery.png'
   }
 ];
 
@@ -582,15 +612,25 @@ export default function HomePage() {
                   </div>
 
                   <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-2">
-                    {whoWeAreHighlights.map(({ title, text, icon: Icon }) => (
+                    {whoWeAreHighlights.map(({ title, text, icon }) => (
                       <MagneticCard
                         key={title}
                         intensity={444}
-                        className="rounded-2xl border-white/10 bg-white/[0.07] p-5 shadow-none"
+                        className="group rounded-2xl border-white/10 bg-white/[0.07] p-5 shadow-none"
                       >
-                        <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-200/20 bg-cyan-200/10 text-cyan-200">
-                          <Icon className="h-5 w-5" />
-                        </div>
+                        <div
+                          style={{
+                            WebkitMaskImage: `url('${icon}')`,
+                            maskImage: `url('${icon}')`,
+                            WebkitMaskRepeat: 'no-repeat',
+                            maskRepeat: 'no-repeat',
+                            WebkitMaskPosition: 'center',
+                            maskPosition: 'center',
+                            WebkitMaskSize: 'contain',
+                            maskSize: 'contain',
+                          }}
+                          className="w-12 h-12 bg-gradient-to-br from-[#2563eb] to-[#22d3ee] transition-all duration-300 group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(34,211,238,0.3)]"
+                        />
                         <div className="mt-5 text-2xl font-extrabold text-white">{title}</div>
                         <p className="mt-2 text-xs leading-relaxed text-slate-300">{text}</p>
                       </MagneticCard>
@@ -890,8 +930,12 @@ export default function HomePage() {
           <div className="lg:col-span-7">
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
               {whyGts.map((reason) => (
-                <MagneticCard key={reason} intensity={3} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                <MagneticCard
+                  key={reason}
+                  intensity={3}
+                  className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4"
+                >
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-500" />
                   <span className="text-sm font-bold text-slate-800">{reason}</span>
                 </MagneticCard>
               ))}

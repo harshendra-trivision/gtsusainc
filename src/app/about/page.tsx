@@ -6,7 +6,8 @@ const aboutUsSubmenu = [
   { label: 'Our Team', href: '/menu/about-us/our-team' },
   { label: 'Vision & Mission', href: '/menu/about-us/vision-and-mission' },
   { label: 'Quality', href: '/menu/about-us/quality' },
-  { label: 'The GTS Engineering Advantage', href: '/menu/about-us/the-gts-engineering-advantage' }
+  { label: 'The GTS Engineering Advantage', href: '/menu/about-us/the-gts-engineering-advantage' },
+  { label: 'Careers', href: '/menu/about-us/careers' }
 ];
 
 export default function AboutPage() {

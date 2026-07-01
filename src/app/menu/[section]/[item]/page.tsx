@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FileText, FolderOpen } from 'lucide-react';
+import { ArrowUpRight, BriefcaseBusiness, FileText, FolderOpen, Globe2, GraduationCap, Users } from 'lucide-react';
 import TechnologyCompetenciesContent from '@/components/menu/delivery/TechnologyCompetenciesContent';
 import GlobalEngagementModelsContent from '@/components/menu/delivery/GlobalEngagementModelsContent';
 import CollaborativeCommunicationContent from '@/components/menu/delivery/CollaborativeCommunicationContent';
@@ -10,7 +10,7 @@ import InfrastructureContent from '@/components/menu/delivery/InfrastructureCont
 import LifeAtGtsContent from '@/components/menu/careers/LifeAtGtsContent';
 import WhyJoinUsContent from '@/components/menu/careers/WhyJoinUsContent';
 import EmploymentOpportunitiesContent from '@/components/menu/careers/EmploymentOpportunitiesContent';
-import { AnimatedSection, MagneticCard } from '@/components/ui';
+import { AnimatedSection, GradientButton, MagneticCard, SectionHeading } from '@/components/ui';
 
 interface MenuSubPageProps {
   params: Promise<{
@@ -24,7 +24,38 @@ const aboutUsSubmenu = [
   'Our Team',
   'Vision & Mission',
   'Quality',
-  'The GTS Engineering Advantage'
+  'The GTS Engineering Advantage',
+  'Careers'
+];
+
+const careerLinks = [
+  { label: 'HR Values', href: '/menu/careers/hr-values' },
+  { label: 'Life @ GTS Engineering', href: '/menu/careers/life-gts-engineering' },
+  { label: 'Why Join Us', href: '/menu/careers/why-join-us' },
+  { label: 'Employment Opportunities', href: '/menu/careers/employment-opportunities' }
+];
+
+const careerPillars = [
+  {
+    title: 'Engineering Depth',
+    description: 'Work across product, plant, process, documentation, simulation, and automation programs.',
+    icon: BriefcaseBusiness
+  },
+  {
+    title: 'Global Delivery',
+    description: 'Collaborate with US and India teams on industrial programs for global customers.',
+    icon: Globe2
+  },
+  {
+    title: 'Continuous Learning',
+    description: 'Grow technical capability through domain tools, project exposure, and quality systems.',
+    icon: GraduationCap
+  },
+  {
+    title: 'Collaborative Culture',
+    description: 'Join multidisciplinary teams built around accountability, responsiveness, and engineering rigor.',
+    icon: Users
+  }
 ];
 
 const serviceOfferingsSubmenu = [
@@ -193,6 +224,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
   const isVisionMissionPage = section === 'about-us' && item === 'vision-and-mission';
   const isQualityPage = section === 'about-us' && item === 'quality';
   const isGtsAdvantagePage = section === 'about-us' && item === 'the-gts-engineering-advantage';
+  const isCareersPage = section === 'about-us' && item === 'careers';
   const isProductEngineeringPage = section === 'service-offerings' && item === 'product-engineering';
   const isPlantProcessEngineeringPage =
     section === 'service-offerings' &&
@@ -575,6 +607,55 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                     If you are looking for a trusted engineering partner and looking forward to the standards that our company offers,
                     we would love to hear from you. Simply call us or contact us today!
                   </p>
+                </div>
+              ) : isCareersPage ? (
+                <div className="mt-5 space-y-8">
+                  <p className="text-[15px] leading-8 text-slate-700">
+                    Join a multidisciplinary engineering environment focused on technical quality, delivery discipline, and global industrial transformation.
+                  </p>
+                  <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center">
+                    <GradientButton href="/menu/careers/employment-opportunities">
+                      View Opportunities
+                    </GradientButton>
+                  </div>
+
+                  <div className="mt-6 h-px w-full bg-gradient-to-r from-[#0056a4] via-slate-300 to-transparent" />
+
+                  <div className="mt-6">
+                    <SectionHeading
+                      eyebrow="Career Tracks"
+                      title="A practical environment for serious engineering talent"
+                      description="GTS career content remains available through the existing routes, now presented through a cleaner enterprise pathway."
+                      align="left"
+                    />
+
+                    <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                      {careerPillars.map((pillar) => {
+                        const Icon = pillar.icon;
+
+                        return (
+                          <MagneticCard key={pillar.title} className="p-6">
+                            <Icon className="h-7 w-7 text-accent" />
+                            <h2 className="mt-5 text-lg font-extrabold text-primary">{pillar.title}</h2>
+                            <p className="mt-3 text-sm leading-7 text-slate-500">{pillar.description}</p>
+                          </MagneticCard>
+                        );
+                      })}
+                    </div>
+
+                    <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      {careerLinks.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-white/90 p-5 text-sm font-bold text-slate-800 shadow-sm transition-all hover:-translate-y-1 hover:border-cyan-300 hover:text-accent hover:shadow-xl hover:shadow-blue-100/60"
+                        >
+                          <span>{item.label}</span>
+                          <ArrowUpRight className="h-4 w-4 text-slate-400 transition-colors group-hover:text-accent" />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               ) : isProductEngineeringPage ? (
                 <div className="mt-5 space-y-6 text-[15px] leading-7 text-slate-700">

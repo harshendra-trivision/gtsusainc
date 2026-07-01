@@ -18,7 +18,7 @@ export const solutionNavigation: NavigationLink[] = [
 
 export const utilityNavigation: NavigationLink[] = [
   { label: 'Home', href: '/' },
-  { label: 'Careers', href: '/careers' },
+  { label: 'Careers', href: '/menu/about-us/careers' },
   { label: 'Downloads', href: '/downloads' },
   { label: 'Contact', href: '/contact' }
 ];
@@ -30,6 +30,5 @@ export const primaryNavigation: PrimaryNavigationItem[] = [
   // { label: 'Projects', href: '/case-studies' },
   { label: 'AI & Digital', href: '/#ai-digital' },
   { label: 'About', href: '/about' },
-  { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '/contact' }
 ];
