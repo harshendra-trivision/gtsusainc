@@ -373,12 +373,13 @@ export default function HomePage() {
           playsInline
           preload="metadata"
           onEnded={handleVideoEnd}
-          className="absolute inset-0 h-full w-full object-cover opacity-45"
+          className="absolute inset-0 h-full w-full object-cover "
         >
           <source src={heroVisuals[activeSlide].video} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/88 to-slate-950/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/30 to-slate-950/40" />
         <FloatingParticles />
+
 
         <div className="relative z-10 grid min-h-[760px] lg:min-h-screen grid-cols-1 items-center lg:items-stretch gap-12 px-4 pt-28 pb-20 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-24 sm:px-6 lg:grid-cols-12 lg:px-8">
           <AnimatedSection as="div" className="lg:col-span-7 flex flex-col justify-between gap-8 lg:gap-12">
@@ -417,9 +418,9 @@ export default function HomePage() {
                   Schedule Consultation
                 </GradientButton>
               </div>
-              <p className="max-w-2xl text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
+              {/* <p className="max-w-2xl text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
                 More than drafting: integrated engineering, automation, AI, digital, and industrial technology delivery.
-              </p>
+              </p> */}
             </div>
           </AnimatedSection>
 
@@ -584,7 +585,7 @@ export default function HomePage() {
                     {whoWeAreHighlights.map(({ title, text, icon: Icon }) => (
                       <MagneticCard
                         key={title}
-                        intensity={3}
+                        intensity={444}
                         className="rounded-2xl border-white/10 bg-white/[0.07] p-5 shadow-none"
                       >
                         <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-200/20 bg-cyan-200/10 text-cyan-200">
@@ -669,7 +670,7 @@ export default function HomePage() {
             <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {digitalCapabilities.map((capability) => (
                 <div key={capability} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-cyan-300" />
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-green-500" />
                   <span className="text-sm font-semibold text-slate-100">{capability}</span>
                 </div>
               ))}
@@ -800,7 +801,7 @@ export default function HomePage() {
                 <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
                   {selectedCapability.deliverables.map((deliverable) => (
                     <div key={deliverable} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                      <CheckCircle2 className="h-5 w-5 shrink-0 text-cyan-300" />
+                      <CheckCircle2 className="h-5 w-5 shrink-0 text-green-500" />
                       <span className="text-sm font-semibold text-slate-100">{deliverable}</span>
                     </div>
                   ))}
