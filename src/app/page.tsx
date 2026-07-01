@@ -48,6 +48,11 @@ interface CapabilityDiscipline {
 
 const heroVisuals = [
   {
+    label: 'Marine & Offshore',
+    title: 'Structural detailing, layout design, and marine engineering services',
+    video: '/vedios-gts/marine.mp4'
+  },
+  {
     label: 'Refinery & Process Plant',
     title: 'Industrial asset engineering from concept to commissioning',
     video: '/vedios-gts/energy.mp4'
@@ -58,14 +63,15 @@ const heroVisuals = [
     video: '/vedios-gts/heavy-enginerring.mp4'
   },
   {
-    label: '3D Product Engineering',
-    title: 'Mechanical design, validation, and design automation workflows',
-    video: '/vedios-gts/automobile.mp4'
+    label: 'Railway Systems',
+    title: 'Transit design, structural validation, and systems engineering support',
+    video: '/vedios-gts/railway.mp4'
   },
+
   {
-    label: 'AI & Digital Twin',
-    title: 'Connected engineering intelligence for smarter operations',
-    video: '/vedios-gts/AI.mp4'
+    label: 'Consumer Products',
+    title: 'Design and validation of high-volume consumer goods and electronics',
+    video: '/vedios-gts/consumer.mp4'
   },
   {
     label: 'Industrial Automation',
@@ -73,35 +79,31 @@ const heroVisuals = [
     video: '/vedios-gts/biology.mp4'
   },
   {
+    label: 'Telecommunications',
+    title: 'Infrastructure modeling, tower detailing, and equipment packaging',
+    video: '/vedios-gts/telecom.mp4'
+  },
+  {
+    label: '3D Product Engineering',
+    title: 'Mechanical design, validation, and design automation workflows',
+    video: '/vedios-gts/automobile.mp4'
+  },
+  {
     label: 'Aerospace Engineering',
     title: 'Advanced structural, thermal, and fluid dynamics analysis for aerospace systems',
     video: '/vedios-gts/aerospace.mp4'
   },
   {
-    label: 'Consumer Products',
-    title: 'Design and validation of high-volume consumer goods and electronics',
-    video: '/vedios-gts/consumer.mp4'
-  },
-  {
-    label: 'Marine & Offshore',
-    title: 'Structural detailing, layout design, and marine engineering services',
-    video: '/vedios-gts/marine.mp4'
+    label: 'AI & Digital Twin',
+    title: 'Connected engineering intelligence for smarter operations',
+    video: '/vedios-gts/AI.mp4'
   },
   {
     label: 'Medical Devices',
     title: 'Compliant engineering and design automation for medical machinery',
     video: '/vedios-gts/medical-machine.mp4'
   },
-  {
-    label: 'Railway Systems',
-    title: 'Transit design, structural validation, and systems engineering support',
-    video: '/vedios-gts/railway.mp4'
-  },
-  {
-    label: 'Telecommunications',
-    title: 'Infrastructure modeling, tower detailing, and equipment packaging',
-    video: '/vedios-gts/telecom.mp4'
-  }
+
 ];
 
 const heroVisualTags = [
