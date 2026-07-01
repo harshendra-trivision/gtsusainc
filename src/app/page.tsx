@@ -868,7 +868,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
               {processSafetyItems.map((item) => (
                 <MagneticCard key={item} intensity={4} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <ShieldCheck className="h-5 w-5 text-accent" />
+                  <ShieldCheck className="h-5 w-5 text-accent text-red-500" />
                   <div className="mt-4 text-sm font-extrabold text-primary">{item}</div>
                 </MagneticCard>
               ))}
@@ -963,7 +963,7 @@ export default function HomePage() {
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-4">
             {qualitySignals.map((signal) => (
               <MagneticCard key={signal} intensity={3} className="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
-                <ShieldCheck className="mx-auto h-6 w-6 text-accent" />
+                <ShieldCheck className="mx-auto h-6 w-6 text-accent text-red-500" />
                 <div className="mt-3 text-sm font-extrabold text-primary">{signal}</div>
               </MagneticCard>
             ))}
