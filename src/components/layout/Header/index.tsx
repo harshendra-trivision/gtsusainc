@@ -76,11 +76,11 @@ export default function Header() {
             <span className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-white/95 shadow-[0_10px_28px_rgba(14,165,233,0.14)]">
               <Image src="/image/gts-logo.png" alt="GTS Logo" width={76} height={76} className="h-12 w-auto object-contain" priority />
             </span>
-            <span className="hidden sm:block">
+            {/* <span className="hidden sm:block">
               <span className="block font-display text-lg font-extrabold leading-tight tracking-tight text-white">
                 GTS Engineering
               </span>
-            </span>
+            </span> */}
           </Link>
 
           <div className="flex items-center gap-4 lg:gap-6">

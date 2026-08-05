@@ -27,8 +27,13 @@ export const primaryNavigation: PrimaryNavigationItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Solutions', href: '/#solutions', submenu: solutionNavigation },
   { label: 'Industries', href: '/industries' },
-  // { label: 'Projects', href: '/case-studies' },
+  { label: 'Projects', href: '/case-studies' },
+  { label: 'Technology', href: '/technology' },
   { label: 'AI & Digital', href: '/#ai-digital' },
+  { label: 'Innovation', href: '/innovation' },
+  { label: 'Insights', href: '/insights' },
+  { label: 'Delivery Excellence', href: '/delivery-excellence' },
+  { label: 'Careers', href: '/careers' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' }
 ];
