@@ -151,12 +151,12 @@ export default function Header() {
             </nav>
 
             <div className="hidden items-center gap-3 lg:flex">
-              <button
+              {/* <button
                 className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-slate-300 transition-colors hover:border-cyan-200/30 hover:bg-white/10 hover:text-cyan-200"
                 aria-label="Search"
               >
                 <Search className="h-4 w-4" />
-              </button>
+              </button> */}
               <GradientButton href="/contact" className="px-4 py-2.5 text-xs">
                 Consultation
               </GradientButton>

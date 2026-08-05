@@ -46,73 +46,333 @@ interface CapabilityDiscipline {
   deliverables: string[];
 }
 
-const heroVisuals = [
+interface HeroMetric {
+  label: string;
+  value: string;
+}
+
+interface HeroVisual {
+  label: string;
+  dashboardTitle: string;
+  metrics: HeroMetric[];
+  title: string;
+  tags: string[];
+  video: string;
+}
+
+const heroVisuals: HeroVisual[] = [
   {
-    label: 'Marine & Offshore',
-    title: 'Structural detailing, layout design, and marine engineering services',
-    video: '/vedios-gts/marine.mp4'
-  },
-  {
-    label: 'Refinery & Process Plant',
-    title: 'Industrial asset engineering from concept to commissioning',
+    label: 'Oil & Gas',
+    dashboardTitle: 'PLANT ENGINEERING VIEW',
+    metrics: [
+      { label: 'Asset Health', value: '98%' },
+      { label: 'Safety Compliance', value: '100%' },
+      { label: 'Project Status', value: 'LIVE' }
+    ],
+    title: 'Integrated engineering solutions for upstream, midstream, and downstream facilities.',
+    tags: ['Process Engineering', 'P&ID Design', 'HAZOP', 'Stress Analysis', '3D Plant Design', 'Digital Twin', 'Asset Integrity', 'EPC Support'],
     video: '/vedios-gts/energy.mp4'
   },
   {
-    label: 'Steel & Structural Systems',
-    title: 'Detailed structures, pipe racks, platforms, and fabrication support',
-    video: '/vedios-gts/heavy-enginerring.mp4'
+    label: 'LNG',
+    dashboardTitle: 'LNG FACILITY VIEW',
+    metrics: [
+      { label: 'Cryogenic Systems', value: 'Active' },
+      { label: 'BOG Performance', value: 'Optimal' },
+      { label: 'Terminal Status', value: 'LIVE' }
+    ],
+    title: 'Engineering LNG liquefaction, storage, regasification, and export terminal infrastructure.',
+    tags: ['Liquefaction', 'Cryogenic Design', 'LNG Storage', 'Loading Systems', 'Process Safety', 'Piping Design', 'Digital Twin', 'Commissioning'],
+    video: '/vedios-gts/marine.mp4'
   },
   {
-    label: 'Railway Systems',
-    title: 'Transit design, structural validation, and systems engineering support',
-    video: '/vedios-gts/railway.mp4'
+    label: 'Process Engineering',
+    dashboardTitle: 'PROCESS ENGINEERING VIEW',
+    metrics: [
+      { label: 'Process Efficiency', value: '96%' },
+      { label: 'Simulation Status', value: 'Running' },
+      { label: 'Design Review', value: 'Complete' }
+    ],
+    title: 'Optimizing industrial processes through advanced engineering, simulation, and design.',
+    tags: ['Process Simulation', 'Heat & Mass Balance', 'Equipment Design', 'Utility Systems', 'Process Optimization', 'FEED', 'Aspen HYSYS', 'Plant Design'],
+    video: '/vedios-gts/marine.mp4'
   },
-
   {
-    label: 'Consumer Products',
-    title: 'Design and validation of high-volume consumer goods and electronics',
-    video: '/vedios-gts/consumer.mp4'
+    label: 'Process Safety',
+    dashboardTitle: 'PROCESS SAFETY VIEW',
+    metrics: [
+      { label: 'Risk Level', value: 'Low' },
+      { label: 'Compliance', value: '100%' },
+      { label: 'Safety Review', value: 'Complete' }
+    ],
+    title: 'Protecting people, facilities, and operations through risk-based engineering.',
+    tags: ['HAZOP', 'HAZID', 'LOPA', 'SIL Studies', 'Relief Systems', 'Fire Protection', 'PSM', 'Risk Assessment'],
+    video: '/vedios-gts/marine.mp4'
+  },
+  {
+    label: 'Data Centers',
+    dashboardTitle: 'MISSION CRITICAL VIEW',
+    metrics: [
+      { label: 'Power Availability', value: '99.999%' },
+      { label: 'Cooling Status', value: 'Optimal' },
+      { label: 'Operations', value: '24/7' }
+    ],
+    title: 'Mission-critical engineering for hyperscale and AI infrastructure.',
+    tags: ['Electrical Engineering', 'CFD Cooling', 'BIM', 'Commissioning', 'UPS Systems', 'Digital Twin', 'Power Distribution', 'Energy Modeling'],
+    video: '/vedios-gts/marine.mp4'
+  },
+  {
+    label: 'Semiconductors',
+    dashboardTitle: 'SEMICONDUCTOR FACILITY VIEW',
+    metrics: [
+      { label: 'Cleanroom Status', value: 'ISO 3' },
+      { label: 'Facility Yield', value: '98%' },
+      { label: 'Equipment Status', value: 'Online' }
+    ],
+    title: 'Engineering advanced semiconductor manufacturing facilities and cleanroom environments.',
+    tags: ['Cleanroom Design', 'Ultra Pure Water', 'Chemical Systems', 'HVAC', 'Process Utilities', 'Equipment Layout', 'BIM', 'Digital Twin'],
+    video: '/vedios-gts/marine.mp4'
+  },
+  {
+    label: 'Power & Utilities',
+    dashboardTitle: 'POWER SYSTEMS VIEW',
+    metrics: [
+      { label: 'Grid Stability', value: 'Stable' },
+      { label: 'Substation Health', value: '99%' },
+      { label: 'SCADA Status', value: 'Online' }
+    ],
+    title: 'Engineering reliable electrical infrastructure for modern energy systems.',
+    tags: ['Substations', 'Relay Protection', 'SCADA', 'Load Flow', 'Arc Flash', 'Grid Studies', 'Power Quality', 'Switchgear'],
+    video: '/vedios-gts/marine.mp4'
+  },
+  {
+    label: 'Water & Wastewater',
+    dashboardTitle: 'UTILITY ENGINEERING VIEW',
+    metrics: [
+      { label: 'Plant Performance', value: '98%' },
+      { label: 'Water Quality', value: 'Within Spec' },
+      { label: 'Operations', value: 'Continuous' }
+    ],
+    title: 'Delivering sustainable engineering solutions for water treatment and utility infrastructure.',
+    tags: ['Water Treatment', 'Wastewater', 'Pump Stations', 'Hydraulic Modeling', 'SCADA', 'Instrumentation', 'Process Control', 'Digital Twin'],
+    video: '/vedios-gts/marine.mp4'
   },
   {
     label: 'Industrial Automation',
-    title: 'SCADA, PLC, IoT, and analytics for Industry 4.0 programs',
-    video: '/vedios-gts/biology.mp4'
+    dashboardTitle: 'AUTOMATION CONTROL VIEW',
+    metrics: [
+      { label: 'Automation Level', value: 'High' },
+      { label: 'System Availability', value: '99.9%' },
+      { label: 'Production Status', value: 'Running' }
+    ],
+    title: 'Connecting industrial operations through intelligent automation and Industry 4.0 technologies.',
+    tags: ['PLC', 'SCADA', 'Industrial IoT', 'MES', 'Robotics', 'Analytics', 'Control Systems', 'OT Cybersecurity'],
+    video: '/vedios-gts/marine.mp4'
   },
   {
-    label: 'Telecommunications',
-    title: 'Infrastructure modeling, tower detailing, and equipment packaging',
-    video: '/vedios-gts/telecom.mp4'
-  },
-  {
-    label: '3D Product Engineering',
-    title: 'Mechanical design, validation, and design automation workflows',
-    video: '/vedios-gts/automobile.mp4'
-  },
-  {
-    label: 'Aerospace Engineering',
-    title: 'Advanced structural, thermal, and fluid dynamics analysis for aerospace systems',
-    video: '/vedios-gts/aerospace.mp4'
-  },
-  {
-    label: 'AI & Digital Twin',
-    title: 'Connected engineering intelligence for smarter operations',
+    label: 'AI & Digital Engineering',
+    dashboardTitle: 'AI ENGINEERING VIEW',
+    metrics: [
+      { label: 'AI Models', value: 'Active' },
+      { label: 'Connected Assets', value: 'Live' },
+      { label: 'Analytics', value: 'Real-Time' }
+    ],
+    title: 'Transforming engineering with AI, digital twins, and intelligent industrial solutions.',
+    tags: ['Digital Twin', 'Predictive Analytics', 'Computer Vision', 'AI Copilot', 'Cloud Engineering', 'Data Integration', 'Machine Learning', 'Industrial AI'],
     video: '/vedios-gts/AI.mp4'
   },
   {
+    label: 'Product Engineering',
+    dashboardTitle: 'PRODUCT ENGINEERING VIEW',
+    metrics: [
+      { label: 'Design Status', value: 'Active' },
+      { label: 'Validation', value: 'Passed' },
+      { label: 'Revision', value: 'R12' }
+    ],
+    title: 'Accelerating product development through advanced design and engineering validation.',
+    tags: ['CAD Design', 'FEA', 'CFD', 'Tolerance Analysis', 'DFM', 'Rapid Prototyping', 'PLM', 'Manufacturing Support'],
+    video: '/vedios-gts/automobile.mp4'
+  },
+  {
+    label: 'Mechanical Engineering',
+    dashboardTitle: 'MECHANICAL ENGINEERING VIEW',
+    metrics: [
+      { label: 'Model Status', value: 'Approved' },
+      { label: 'Analysis', value: 'Complete' },
+      { label: 'Documentation', value: 'Released' }
+    ],
+    title: 'Delivering precision mechanical engineering for industrial equipment and machinery.',
+    tags: ['Mechanical Design', 'Equipment Design', 'FEA', 'GD&T', 'Assemblies', 'Rotating Equipment', 'Reverse Engineering', 'Drawings'],
+    video: '/vedios-gts/marine.mp4'
+  },
+  {
+    label: 'Structural Engineering',
+    dashboardTitle: 'STRUCTURAL ENGINEERING VIEW',
+    metrics: [
+      { label: 'Structural Integrity', value: 'Verified' },
+      { label: 'BIM Coordination', value: '98%' },
+      { label: 'Fabrication Status', value: 'Ready' }
+    ],
+    title: 'Engineering safe, efficient structural systems for industrial facilities.',
+    tags: ['Steel Structures', 'Pipe Racks', 'Foundations', 'Structural Analysis', 'Tekla', 'BIM', 'Fabrication Drawings', 'Connection Design'],
+    video: '/vedios-gts/heavy-enginerring.mp4'
+  },
+  {
+    label: 'Electrical Engineering',
+    dashboardTitle: 'ELECTRICAL ENGINEERING VIEW',
+    metrics: [
+      { label: 'Load Capacity', value: 'Optimal' },
+      { label: 'Protection Status', value: 'Verified' },
+      { label: 'Distribution', value: 'Online' }
+    ],
+    title: 'Engineering dependable electrical systems for industrial and mission-critical facilities.',
+    tags: ['MV/LV Systems', 'Switchgear', 'Lighting', 'Grounding', 'ETAP', 'Cable Routing', 'Arc Flash', 'Power Studies'],
+    video: '/vedios-gts/marine.mp4'
+  },
+  {
+    label: 'Instrumentation & Controls',
+    dashboardTitle: 'I&C ENGINEERING VIEW',
+    metrics: [
+      { label: 'Instrument Health', value: '99%' },
+      { label: 'Loop Status', value: 'Verified' },
+      { label: 'Control Logic', value: 'Running' }
+    ],
+    title: 'Integrating intelligent instrumentation and control systems for industrial facilities.',
+    tags: ['Instrumentation', 'PLC', 'DCS', 'Control Panels', 'Loop Diagrams', 'SCADA', 'Functional Safety', 'Calibration'],
+    video: '/vedios-gts/marine.mp4'
+  },
+  {
+    label: 'Manufacturing Engineering',
+    dashboardTitle: 'SMART MANUFACTURING VIEW',
+    metrics: [
+      { label: 'Production Efficiency', value: '97%' },
+      { label: 'Line Availability', value: '99%' },
+      { label: 'Quality Status', value: 'Passed' }
+    ],
+    title: 'Improving manufacturing performance through engineering optimization and automation.',
+    tags: ['Production Lines', 'Lean Manufacturing', 'Automation', 'Robotics', 'Quality Engineering', 'Simulation', 'Digital Factory', 'MES'],
+    video: '/vedios-gts/marine.mp4'
+  },
+  {
+    label: 'Telecommunications',
+    dashboardTitle: 'NETWORK INFRASTRUCTURE VIEW',
+    metrics: [
+      { label: 'Network Availability', value: '99.99%' },
+      { label: 'Tower Health', value: 'Verified' },
+      { label: 'Connectivity', value: 'Live' }
+    ],
+    title: 'Engineering connected infrastructure for next-generation communication networks.',
+    tags: ['Tower Design', 'Fiber Networks', 'Equipment Layout', 'Structural Analysis', 'GIS', 'RF Coordination', 'BIM', 'Site Engineering'],
+    video: '/vedios-gts/telecom.mp4'
+  },
+  {
+    label: 'Rail & Transportation',
+    dashboardTitle: 'TRANSPORT SYSTEMS VIEW',
+    metrics: [
+      { label: 'System Reliability', value: '99%' },
+      { label: 'Infrastructure Status', value: 'Operational' },
+      { label: 'Design Review', value: 'Approved' }
+    ],
+    title: 'Engineering modern transportation infrastructure and integrated mobility systems.',
+    tags: ['Rail Infrastructure', 'Stations', 'Track Engineering', 'Bridges', 'Structural Design', 'BIM', 'Systems Integration', 'Asset Management'],
+    video: '/vedios-gts/railway.mp4'
+  },
+  {
+    label: 'Marine & Offshore',
+    dashboardTitle: 'MARINE ENGINEERING VIEW',
+    metrics: [
+      { label: 'Structural Health', value: '98%' },
+      { label: 'Offshore Status', value: 'Operational' },
+      { label: 'Asset Integrity', value: 'Verified' }
+    ],
+    title: 'Engineering offshore platforms, marine structures, and port infrastructure.',
+    tags: ['Offshore Structures', 'Hull Design', 'Mooring Systems', 'Corrosion Protection', 'Marine Piping', 'Asset Integrity', 'Digital Twin', 'Structural Analysis'],
+    video: '/vedios-gts/marine.mp4'
+  },
+  {
+    label: 'Mining & Metals',
+    dashboardTitle: 'MINING OPERATIONS VIEW',
+    metrics: [
+      { label: 'Plant Availability', value: '97%' },
+      { label: 'Equipment Status', value: 'Running' },
+      { label: 'Safety Index', value: '100%' }
+    ],
+    title: 'Engineering processing facilities and infrastructure for mining and metals operations.',
+    tags: ['Material Handling', 'Crushers', 'Conveyors', 'Process Plants', 'Structural Engineering', 'Dust Control', 'Utilities', 'Asset Management'],
+    video: '/vedios-gts/heavy-enginerring.mp4'
+  },
+  {
+    label: 'Renewable Energy',
+    dashboardTitle: 'RENEWABLE ENERGY VIEW',
+    metrics: [
+      { label: 'Energy Output', value: '98%' },
+      { label: 'Grid Connection', value: 'Stable' },
+      { label: 'Availability', value: '99%' }
+    ],
+    title: 'Advancing sustainable energy through engineering for wind, solar, hydrogen, and emerging technologies.',
+    tags: ['Solar Plants', 'Wind Farms', 'Battery Storage', 'Hydrogen', 'Grid Integration', 'Electrical Design', 'SCADA', 'Digital Twin'],
+    video: '/vedios-gts/marine.mp4'
+  },
+  {
     label: 'Medical Devices',
-    title: 'Compliant engineering and design automation for medical machinery',
+    dashboardTitle: 'MEDICAL ENGINEERING VIEW',
+    metrics: [
+      { label: 'Compliance', value: 'FDA Ready' },
+      { label: 'Verification', value: 'Passed' },
+      { label: 'Traceability', value: '100%' }
+    ],
+    title: 'Supporting compliant engineering for precision medical technologies.',
+    tags: ['Medical Devices', 'Design Controls', 'DFMEA', 'Verification', 'Validation', 'Risk Management', 'CAD', 'Regulatory Support'],
     video: '/vedios-gts/medical-machine.mp4'
   },
-
-];
-
-const heroVisualTags = [
-  'Refinery / Process Plant',
-  'Steel Structure Model',
-  '3D Product Model',
-  'Digital Twin',
-  'AI Dashboard',
-  'Industrial Automation'
+  {
+    label: 'Life Sciences',
+    dashboardTitle: 'LIFE SCIENCES VIEW',
+    metrics: [
+      { label: 'GMP Compliance', value: '100%' },
+      { label: 'Facility Status', value: 'Operational' },
+      { label: 'Quality Systems', value: 'Verified' }
+    ],
+    title: 'Engineering GMP-compliant facilities for pharmaceutical and biotechnology industries.',
+    tags: ['GMP Facilities', 'Clean Utilities', 'Validation', 'HVAC', 'Cleanrooms', 'Process Equipment', 'Automation', 'Digital Twin'],
+    video: '/vedios-gts/biology.mp4'
+  },
+  {
+    label: 'Consumer Products',
+    dashboardTitle: 'CONSUMER PRODUCT VIEW',
+    metrics: [
+      { label: 'Product Status', value: 'Released' },
+      { label: 'Quality', value: 'Approved' },
+      { label: 'Production', value: 'Live' }
+    ],
+    title: 'Helping manufacturers bring innovative consumer products from concept to production.',
+    tags: ['Product Design', 'Plastic Components', 'Tooling', 'FEA', 'DFM', 'Packaging', 'Validation', 'Manufacturing'],
+    video: '/vedios-gts/consumer.mp4'
+  },
+  {
+    label: 'Aerospace Engineering',
+    dashboardTitle: 'AEROSPACE ENGINEERING VIEW',
+    metrics: [
+      { label: 'Structural Analysis', value: 'Verified' },
+      { label: 'Thermal Performance', value: 'Optimal' },
+      { label: 'Certification', value: 'In Progress' }
+    ],
+    title: 'Delivering advanced engineering and simulation solutions for aerospace systems.',
+    tags: ['Composite Design', 'CFD', 'FEA', 'Thermal Analysis', 'Certification', 'Weight Optimization', 'Structural Design', 'Digital Engineering'],
+    video: '/vedios-gts/aerospace.mp4'
+  },
+  {
+    label: 'Smart Infrastructure & Cities',
+    dashboardTitle: 'SMART INFRASTRUCTURE VIEW',
+    metrics: [
+      { label: 'Connected Assets', value: 'Live' },
+      { label: 'City Operations', value: 'Integrated' },
+      { label: 'Infrastructure Health', value: '98%' }
+    ],
+    title: 'Engineering connected infrastructure that powers smarter, more resilient communities.',
+    tags: ['Smart Cities', 'IoT', 'Digital Twin', 'Utilities', 'Mobility', 'GIS', 'Asset Management', 'AI Analytics'],
+    video: '/vedios-gts/marine.mp4'
+  }
 ];
 
 const trustStats = [
@@ -448,7 +708,7 @@ export default function HomePage() {
       <section className="relative min-h-[760px] lg:min-h-screen overflow-hidden bg-slate-950 text-white">
         <video
           ref={videoRef}
-          key={heroVisuals[activeSlide].video}
+          key={`hero-video-${activeSlide}`}
           autoPlay
           muted
           playsInline
@@ -465,9 +725,6 @@ export default function HomePage() {
         <div className="relative z-10 grid min-h-[760px] lg:min-h-screen grid-cols-1 items-center lg:items-stretch gap-12 px-4 pt-28 pb-20 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-24 sm:px-6 lg:grid-cols-12 lg:px-8">
           <AnimatedSection as="div" className="lg:col-span-7 flex flex-col justify-between gap-8 lg:gap-12">
             <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200/25 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100 backdrop-blur">
-                GTS Engineering®
-              </div>
               <div className="space-y-5">
                 <p className="text-base font-semibold text-cyan-200 sm:text-lg">
                   Engineering Excellence Powered by AI & Innovation
@@ -508,9 +765,9 @@ export default function HomePage() {
           <AnimatedSection as="div" delay={0.12} className="lg:col-span-5 lg:self-end w-full">
             <div className="mx-auto lg:ml-auto max-w-[480px] w-full">
               <GlassCard tone="dark" className="rounded-[2rem] p-3 shadow-2xl shadow-slate-950/60">
-                <div className="relative min-h-[420px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950">
+                <div className="relative min-h-[520px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950">
                   <video
-                    key={`panel-${heroVisuals[activeSlide].video}`}
+                    key={`panel-${activeSlide}`}
                     autoPlay
                     muted
                     loop
@@ -523,14 +780,14 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-transparent" />
                   <div className="absolute left-5 right-5 top-5 rounded-2xl border border-cyan-200/20 bg-slate-950/55 p-4 backdrop-blur">
                     <div className="flex items-center justify-between text-xs text-cyan-100">
-                      <span className="font-mono uppercase tracking-[0.22em]">Digital Engineering View</span>
+                      <span className="font-mono uppercase tracking-[0.22em]">{heroVisuals[activeSlide].dashboardTitle}</span>
                       <span className="rounded-full bg-emerald-400/15 px-2 py-1 text-emerald-200">Live</span>
                     </div>
                     <div className="mt-4 grid grid-cols-3 gap-3">
-                      {['Asset Health', 'Design Risk', 'Schedule'].map((metric, index) => (
-                        <div key={metric} className="rounded-xl bg-white/10 p-3">
-                          <div className="text-[10px] uppercase tracking-wider text-slate-300">{metric}</div>
-                          <div className="mt-2 text-lg font-bold text-white">{index === 0 ? '98%' : index === 1 ? 'Low' : '24/7'}</div>
+                      {heroVisuals[activeSlide].metrics.map((metric) => (
+                        <div key={metric.label} className="rounded-xl bg-white/10 p-3">
+                          <div className="text-[10px] uppercase tracking-wider text-slate-300">{metric.label}</div>
+                          <div className="mt-2 text-lg font-bold text-white">{metric.value}</div>
                         </div>
                       ))}
                     </div>
@@ -540,12 +797,12 @@ export default function HomePage() {
                       <div className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">
                         {heroVisuals[activeSlide].label}
                       </div>
-                      <h3 className="mt-2 text-2xl font-bold leading-tight text-white">
+                      <h3 className="mt-2 line-clamp-2 text-xl font-bold leading-tight text-white">
                         {heroVisuals[activeSlide].title}
                       </h3>
                     </div>
                     <div className="grid grid-cols-2 gap-2">
-                      {heroVisualTags.map((tag) => (
+                      {heroVisuals[activeSlide].tags.map((tag) => (
                         <div key={tag} className="rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-[11px] font-medium text-slate-100 backdrop-blur">
                           {tag}
                         </div>
@@ -555,10 +812,10 @@ export default function HomePage() {
                 </div>
               </GlassCard>
 
-              <div className="mt-5 flex justify-center gap-2">
+              <div className="mt-5 flex flex-wrap justify-center gap-2">
                 {heroVisuals.map((visual, index) => (
                   <button
-                    key={visual.video}
+                    key={visual.label}
                     onClick={() => setActiveSlide(index)}
                     className={`h-2 rounded-full transition-all ${activeSlide === index ? 'w-10 bg-cyan-300' : 'w-2 bg-white/40 hover:bg-white/70'}`}
                     aria-label={`Show ${visual.label}`}
