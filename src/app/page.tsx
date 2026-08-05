@@ -83,7 +83,7 @@ const heroVisuals: HeroVisual[] = [
     ],
     title: 'Engineering LNG liquefaction, storage, regasification, and export terminal infrastructure.',
     tags: ['Liquefaction', 'Cryogenic Design', 'LNG Storage', 'Loading Systems', 'Process Safety', 'Piping Design', 'Digital Twin', 'Commissioning'],
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/lng-facility.mp4'
   },
   {
     label: 'Process Engineering',
@@ -95,7 +95,7 @@ const heroVisuals: HeroVisual[] = [
     ],
     title: 'Optimizing industrial processes through advanced engineering, simulation, and design.',
     tags: ['Process Simulation', 'Heat & Mass Balance', 'Equipment Design', 'Utility Systems', 'Process Optimization', 'FEED', 'Aspen HYSYS', 'Plant Design'],
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/process-enginerring.mp4'
   },
   {
     label: 'Process Safety',
@@ -107,7 +107,7 @@ const heroVisuals: HeroVisual[] = [
     ],
     title: 'Protecting people, facilities, and operations through risk-based engineering.',
     tags: ['HAZOP', 'HAZID', 'LOPA', 'SIL Studies', 'Relief Systems', 'Fire Protection', 'PSM', 'Risk Assessment'],
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/process-safety.mp4'
   },
   {
     label: 'Data Centers',
@@ -119,7 +119,7 @@ const heroVisuals: HeroVisual[] = [
     ],
     title: 'Mission-critical engineering for hyperscale and AI infrastructure.',
     tags: ['Electrical Engineering', 'CFD Cooling', 'BIM', 'Commissioning', 'UPS Systems', 'Digital Twin', 'Power Distribution', 'Energy Modeling'],
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/data-center.mp4'
   },
   {
     label: 'Semiconductors',
@@ -131,7 +131,7 @@ const heroVisuals: HeroVisual[] = [
     ],
     title: 'Engineering advanced semiconductor manufacturing facilities and cleanroom environments.',
     tags: ['Cleanroom Design', 'Ultra Pure Water', 'Chemical Systems', 'HVAC', 'Process Utilities', 'Equipment Layout', 'BIM', 'Digital Twin'],
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/semiconductors.mp4'
   },
   {
     label: 'Power & Utilities',
@@ -143,7 +143,7 @@ const heroVisuals: HeroVisual[] = [
     ],
     title: 'Engineering reliable electrical infrastructure for modern energy systems.',
     tags: ['Substations', 'Relay Protection', 'SCADA', 'Load Flow', 'Arc Flash', 'Grid Studies', 'Power Quality', 'Switchgear'],
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/power-utilities.mp4'
   },
   {
     label: 'Water & Wastewater',
@@ -155,7 +155,7 @@ const heroVisuals: HeroVisual[] = [
     ],
     title: 'Delivering sustainable engineering solutions for water treatment and utility infrastructure.',
     tags: ['Water Treatment', 'Wastewater', 'Pump Stations', 'Hydraulic Modeling', 'SCADA', 'Instrumentation', 'Process Control', 'Digital Twin'],
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/water-wastewater.mp4'
   },
   {
     label: 'Industrial Automation',
@@ -167,7 +167,7 @@ const heroVisuals: HeroVisual[] = [
     ],
     title: 'Connecting industrial operations through intelligent automation and Industry 4.0 technologies.',
     tags: ['PLC', 'SCADA', 'Industrial IoT', 'MES', 'Robotics', 'Analytics', 'Control Systems', 'OT Cybersecurity'],
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/industrial-automation.mp4'
   },
   {
     label: 'AI & Digital Engineering',
@@ -203,7 +203,7 @@ const heroVisuals: HeroVisual[] = [
     ],
     title: 'Delivering precision mechanical engineering for industrial equipment and machinery.',
     tags: ['Mechanical Design', 'Equipment Design', 'FEA', 'GD&T', 'Assemblies', 'Rotating Equipment', 'Reverse Engineering', 'Drawings'],
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/mechanical-engineering.mp4'
   },
   {
     label: 'Structural Engineering',
@@ -227,7 +227,7 @@ const heroVisuals: HeroVisual[] = [
     ],
     title: 'Engineering dependable electrical systems for industrial and mission-critical facilities.',
     tags: ['MV/LV Systems', 'Switchgear', 'Lighting', 'Grounding', 'ETAP', 'Cable Routing', 'Arc Flash', 'Power Studies'],
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/electrical-engineering.mp4'
   },
   {
     label: 'Instrumentation & Controls',
@@ -239,7 +239,7 @@ const heroVisuals: HeroVisual[] = [
     ],
     title: 'Integrating intelligent instrumentation and control systems for industrial facilities.',
     tags: ['Instrumentation', 'PLC', 'DCS', 'Control Panels', 'Loop Diagrams', 'SCADA', 'Functional Safety', 'Calibration'],
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/instrumentation-controls.mp4'
   },
   {
     label: 'Manufacturing Engineering',
@@ -371,7 +371,7 @@ const heroVisuals: HeroVisual[] = [
     ],
     title: 'Engineering connected infrastructure that powers smarter, more resilient communities.',
     tags: ['Smart Cities', 'IoT', 'Digital Twin', 'Utilities', 'Mobility', 'GIS', 'Asset Management', 'AI Analytics'],
-    video: '/vedios-gts/marine.mp4'
+    video: '/vedios-gts/smart-infrastructure-cities.mp4'
   }
 ];
 
