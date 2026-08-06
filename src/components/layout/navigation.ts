@@ -1,4 +1,7 @@
-import { solutionsMegaMenu, type SolutionMenuCategory } from '@/constants/solutionsMenu';
+import { solutionsMegaMenu } from '@/constants/solutionsMenu';
+import { industriesMegaMenu } from '@/constants/industriesMenu';
+import { projectsMegaMenu } from '@/constants/projectsMenu';
+import type { MegaMenuCategory } from '@/constants/megaMenu';
 
 export interface NavigationLink {
   label: string;
@@ -7,10 +10,12 @@ export interface NavigationLink {
 
 export interface PrimaryNavigationItem extends NavigationLink {
   submenu?: NavigationLink[];
-  megaMenu?: SolutionMenuCategory[];
+  megaMenu?: MegaMenuCategory[];
+  /** When set, mega menu category headers and items link to `${megaMenuLinkTo}#${category.slug}` instead of being plain display text. */
+  megaMenuLinkTo?: string;
 }
 
-export { solutionsMegaMenu };
+export { solutionsMegaMenu, industriesMegaMenu, projectsMegaMenu };
 
 export const utilityNavigation: NavigationLink[] = [
   { label: 'Home', href: '/' },
@@ -22,8 +27,8 @@ export const utilityNavigation: NavigationLink[] = [
 export const primaryNavigation: PrimaryNavigationItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Solutions', href: '/#solutions', megaMenu: solutionsMegaMenu },
-  { label: 'Industries', href: '/industries' },
-  { label: 'Projects', href: '/case-studies' },
+  { label: 'Industries', href: '/industries', megaMenu: industriesMegaMenu },
+  { label: 'Projects', href: '/case-studies', megaMenu: projectsMegaMenu, megaMenuLinkTo: '/case-studies' },
   { label: 'Technology', href: '/technology' },
   { label: 'AI & Digital', href: '/#ai-digital' },
   { label: 'Innovation', href: '/innovation' },

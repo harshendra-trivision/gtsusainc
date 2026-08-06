@@ -13,225 +13,190 @@ export interface Industry {
 
 export const industries: Industry[] = [
   {
-    slug: "energy-oil-gas-power",
-    title: "Energy – Oil & Gas and Power",
-    tagline: "Engineering resilient systems for onshore/offshore facilities, pipeline assets, and sustainable generation plants.",
-    description: "GTS delivers comprehensive engineering and documentation solutions across the energy value chain. From complex hydrocarbon refineries to massive wind and nuclear power generators, we support asset lifecycle engineering and safety-critical operations.",
+    slug: "energy-process-industries",
+    title: "Energy & Process Industries",
+    tagline: "Engineering resilient systems across the hydrocarbon and process value chain, from wellhead to finished product.",
+    description: "GTS delivers process, piping, and mechanical engineering across oil & gas, LNG, refining, and chemical processing. We support FEED through detailed design for hydrocarbon, petrochemical, fertilizer, and industrial gas facilities, along with emerging hydrogen and biofuels infrastructure.",
     iconName: "Flame",
-    subSectors: [
-      "Onshore & Offshore Oil & Gas facilities",
-      "Pipeline & Distribution Networks",
-      "Petrochemical & Refinery Operations",
-      "Thermal Power Engineering",
-      "Hydroelectric Dams & Turbine systems",
-      "Wind Farm Layout & Mechanical design",
-      "Nuclear Plant Auxiliary structures"
-    ],
+    subSectors: ["Oil & Gas", "LNG", "Refineries", "Petrochemicals", "Chemicals", "Fertilizers", "Industrial Gases", "Hydrogen", "Biofuels"],
     features: [
-      "FEED (Front-End Engineering Design) for refinery pipelines",
-      "Stress and vibration analysis of high-pressure piping assemblies",
-      "Civil/structural structural design for plant auxiliary towers",
-      "Creation of detailed P&IDs and standard operating manuals"
+      "FEED and detailed engineering for upstream, midstream, and downstream assets",
+      "Process simulation, P&ID development, and HAZOP-driven design",
+      "Piping stress analysis and 3D plant modeling for process units",
+      "Cryogenic and LNG liquefaction/regasification engineering support"
     ],
-    seoTitle: "Energy, Oil & Gas, and Power Engineering | GTS Engineering",
-    seoDescription: "Engineering excellence for the energy sector. Detailed piping layouts, offshore design, FEED, P&ID developments, and power generation solutions.",
-    seoKeywords: ["energy engineering", "oil and gas piping", "power plant design", "pipeline analysis", "onshore offshore engineering"]
+    seoTitle: "Energy & Process Industries Engineering | GTS Engineering",
+    seoDescription: "Process, piping, and plant engineering for oil & gas, LNG, refineries, petrochemicals, chemicals, fertilizers, and hydrogen infrastructure.",
+    seoKeywords: ["oil and gas engineering", "LNG engineering", "refinery design", "petrochemical engineering", "process plant design"]
   },
   {
-    slug: "heavy-engineering-machinery",
-    title: "Heavy Engineering & Machinery",
-    tagline: "Optimizing material throughput and machine durability through advanced structures and automation.",
-    description: "We optimize heavy-duty systems, structures, and automated equipment. Our design and structural verification services ensure machinery operating in high-fatigue mining, agriculture, or steelworks works reliably and safely.",
-    iconName: "Truck",
-    subSectors: [
-      "Oil & Gas Drilling Equipment",
-      "Steel, Cement & Power Plant Structures",
-      "Heavy Mining & Exploration Machinery",
-      "Agricultural Machinery & Implements",
-      "Material Handling Cranes & Conveyors",
-      "Packaging Machinery & Robotics",
-      "Advanced Machine Tools & Dies"
-    ],
+    slug: "power-utilities-energy-transition",
+    title: "Power, Utilities & Energy Transition",
+    tagline: "Engineering dependable power delivery and next-generation grid and storage infrastructure.",
+    description: "From conventional generation to renewables, nuclear, and battery storage, GTS engineers the electrical infrastructure that keeps power flowing. We support transmission and distribution, grid modernization, and smart grid programs for utilities navigating the energy transition.",
+    iconName: "Zap",
+    subSectors: ["Conventional Power", "Renewable Energy", "Nuclear", "Battery Energy Storage (BESS)", "Transmission & Distribution", "Grid Modernization", "Smart Grid", "Utilities"],
     features: [
-      "Weight optimization using advanced FEA simulation",
-      "Kinematic and dynamic modeling of complex linkages",
-      "Tooling and fixture designs for progressive assembly",
-      "Reliability engineering and technical asset documentation"
+      "Substation, switchgear, and protection system design",
+      "Renewable interconnection and grid integration studies",
+      "BESS system layout, electrical design, and SCADA integration",
+      "Load flow, arc flash, and power quality studies"
     ],
-    seoTitle: "Heavy Engineering & Machinery Design | GTS Engineering",
-    seoDescription: "Industrial machinery design, FEA structural optimization, material handling systems, and advanced manufacturing automation.",
-    seoKeywords: ["heavy engineering", "machinery design", "finite element analysis", "material handling systems", "machine tooling design"]
+    seoTitle: "Power, Utilities & Energy Transition Engineering | GTS Engineering",
+    seoDescription: "Substation, grid, renewable interconnection, and battery storage engineering for power generators and utilities.",
+    seoKeywords: ["power engineering", "utility engineering", "grid modernization", "battery energy storage design", "renewable energy engineering"]
   },
   {
-    slug: "marine",
-    title: "Marine",
-    tagline: "Naval architecture, structural integrity, and outfitting designs for modern commercial and military vessels.",
-    description: "GTS brings deep naval architecture expertise. We assist shipyards and designers in developing hull structures, routing intricate mechanical/utility piping, and designing HVAC and outfitting assemblies compliant with international classification societies.",
+    slug: "data-centers-digital-infrastructure",
+    title: "Data Centers & Digital Infrastructure",
+    tagline: "Mission-critical engineering for the facilities powering AI, cloud, and connected infrastructure.",
+    description: "GTS supports hyperscale and colocation data center developers with electrical, cooling, and commissioning engineering. We extend that expertise to AI compute facilities, edge computing sites, and the telecom and digital infrastructure that connects them.",
+    iconName: "Database",
+    subSectors: ["Hyperscale Data Centers", "AI Compute Facilities", "Colocation", "Edge Computing", "Telecommunications", "Digital Infrastructure"],
+    features: [
+      "Electrical distribution and UPS system design for critical loads",
+      "CFD-based cooling analysis and thermal management",
+      "Commissioning and startup support for mission-critical facilities",
+      "Power availability and redundancy (N+1 / 2N) engineering"
+    ],
+    seoTitle: "Data Center & Digital Infrastructure Engineering | GTS Engineering",
+    seoDescription: "Electrical, cooling, and commissioning engineering for hyperscale data centers, AI compute facilities, colocation, and edge sites.",
+    seoKeywords: ["data center engineering", "hyperscale data center design", "AI compute facility engineering", "colocation engineering", "edge computing infrastructure"]
+  },
+  {
+    slug: "semiconductor-advanced-manufacturing",
+    title: "Semiconductor & Advanced Manufacturing",
+    tagline: "Precision facility engineering for cleanroom, fab, and advanced manufacturing environments.",
+    description: "Semiconductor fabrication and advanced electronics manufacturing demand exacting tolerances and ultra-clean environments. GTS engineers cleanrooms, process utilities, and precision manufacturing facilities to the strict standards these industries require.",
+    iconName: "Cpu",
+    subSectors: ["Semiconductor Fabs", "Electronics Manufacturing", "Cleanrooms", "Advanced Manufacturing", "Precision Manufacturing"],
+    features: [
+      "Cleanroom classification, layout, and HVAC design",
+      "Ultra-pure water and process chemical distribution systems",
+      "Equipment layout and utility routing for fab environments",
+      "Vibration-sensitive structural design for precision tooling"
+    ],
+    seoTitle: "Semiconductor & Advanced Manufacturing Engineering | GTS Engineering",
+    seoDescription: "Cleanroom, process utility, and precision facility engineering for semiconductor fabs and advanced electronics manufacturing.",
+    seoKeywords: ["semiconductor fab engineering", "cleanroom design", "advanced manufacturing engineering", "electronics manufacturing", "precision manufacturing"]
+  },
+  {
+    slug: "manufacturing-industrial-systems",
+    title: "Manufacturing & Industrial Systems",
+    tagline: "Optimizing production systems across heavy equipment, automotive, and industrial automation.",
+    description: "GTS supports manufacturers across heavy equipment, automotive, consumer products, and industrial automation with mechanical design, automation integration, and production system optimization that improves throughput and reliability.",
+    iconName: "Factory",
+    subSectors: ["Heavy Equipment", "Industrial Machinery", "Automotive", "Consumer Products", "Industrial Automation"],
+    features: [
+      "Mechanical design and FEA for industrial machinery",
+      "Automotive structural, closures, and interior component design",
+      "PLC/SCADA integration and industrial automation engineering",
+      "Production line layout and manufacturing optimization"
+    ],
+    seoTitle: "Manufacturing & Industrial Systems Engineering | GTS Engineering",
+    seoDescription: "Mechanical design, automation integration, and production optimization for heavy equipment, automotive, and industrial manufacturers.",
+    seoKeywords: ["manufacturing engineering", "industrial automation engineering", "automotive engineering", "heavy equipment design", "production line optimization"]
+  },
+  {
+    slug: "infrastructure-transportation",
+    title: "Infrastructure & Transportation",
+    tagline: "Engineering the highways, rail, and urban infrastructure that keeps people and goods moving.",
+    description: "GTS provides civil, structural, and systems engineering for transportation infrastructure spanning highways, bridges, rail, airports, and ports. Our teams support urban infrastructure programs from planning through construction delivery.",
+    iconName: "Route",
+    subSectors: ["Highways", "Bridges", "Rail", "Airports", "Ports", "Tunnels", "Urban Infrastructure"],
+    features: [
+      "Highway and bridge structural design and analysis",
+      "Rail infrastructure and station engineering",
+      "Airport and port civil and structural engineering",
+      "Tunnel and urban infrastructure design support"
+    ],
+    seoTitle: "Infrastructure & Transportation Engineering | GTS Engineering",
+    seoDescription: "Civil and structural engineering for highways, bridges, rail, airports, ports, tunnels, and urban infrastructure programs.",
+    seoKeywords: ["infrastructure engineering", "transportation engineering", "bridge design", "rail infrastructure engineering", "urban infrastructure design"]
+  },
+  {
+    slug: "mining-metals",
+    title: "Mining & Metals",
+    tagline: "Engineering processing facilities and infrastructure for mining and metals production.",
+    description: "From mineral processing plants to smelters and steel mills, GTS engineers the structures, material handling systems, and process infrastructure that keep mining and metals operations running safely and efficiently.",
+    iconName: "Mountain",
+    subSectors: ["Mining", "Mineral Processing", "Smelters", "Steel Plants", "Aluminum", "Copper"],
+    features: [
+      "Material handling, crusher, and conveyor structural design",
+      "Process plant engineering for mineral processing facilities",
+      "Structural and utility design for smelters and steel plants",
+      "Dust control and environmental systems engineering"
+    ],
+    seoTitle: "Mining & Metals Engineering | GTS Engineering",
+    seoDescription: "Process plant, material handling, and structural engineering for mining, mineral processing, smelters, and steel plants.",
+    seoKeywords: ["mining engineering", "mineral processing design", "smelter engineering", "steel plant engineering", "material handling design"]
+  },
+  {
+    slug: "life-sciences-healthcare",
+    title: "Life Sciences & Healthcare",
+    tagline: "GMP-compliant engineering for pharmaceutical, biotech, and healthcare facilities.",
+    description: "GTS engineers cleanroom, HVAC, and process utility systems for GMP-compliant pharmaceutical and biotechnology facilities, along with hospitals, research facilities, and laboratories that demand precision and regulatory rigor.",
+    iconName: "HeartPulse",
+    subSectors: ["Pharmaceuticals", "Biotechnology", "Medical Devices", "Hospitals", "Research Facilities", "Laboratories"],
+    features: [
+      "GMP facility design and clean utilities engineering",
+      "Cleanroom HVAC and process equipment layout",
+      "Medical device design controls and validation support",
+      "Laboratory and research facility MEP engineering"
+    ],
+    seoTitle: "Life Sciences & Healthcare Facility Engineering | GTS Engineering",
+    seoDescription: "GMP facility, cleanroom, and MEP engineering for pharmaceutical, biotech, medical device, and healthcare facilities.",
+    seoKeywords: ["life sciences engineering", "GMP facility design", "pharmaceutical engineering", "medical device engineering", "healthcare facility design"]
+  },
+  {
+    slug: "food-beverage-consumer-products",
+    title: "Food, Beverage & Consumer Products",
+    tagline: "Engineering hygienic, efficient production lines for food, beverage, and consumer goods.",
+    description: "GTS designs processing lines, packaging systems, and sanitary utilities for food and beverage manufacturers, along with the production engineering that brings consumer goods from concept to shelf.",
+    iconName: "UtensilsCrossed",
+    subSectors: ["Food Processing", "Beverage Plants", "Packaging", "Consumer Goods"],
+    features: [
+      "Sanitary process and utility design for food-grade facilities",
+      "Beverage plant process and packaging line engineering",
+      "Packaging machinery and automation design",
+      "Consumer product design for manufacturability"
+    ],
+    seoTitle: "Food, Beverage & Consumer Products Engineering | GTS Engineering",
+    seoDescription: "Sanitary process, packaging, and production line engineering for food processing, beverage plants, and consumer goods manufacturers.",
+    seoKeywords: ["food processing engineering", "beverage plant design", "packaging engineering", "consumer goods manufacturing design"]
+  },
+  {
+    slug: "marine-offshore",
+    title: "Marine & Offshore",
+    tagline: "Naval architecture, structural integrity, and outfitting for vessels and offshore assets.",
+    description: "GTS supports shipyards and offshore operators with hull structure design, FPSO and platform engineering, and marine outfitting, backed by rigorous structural analysis for classification society compliance.",
     iconName: "Ship",
-    subSectors: [
-      "Naval Architecture & Hydrostatics",
-      "Hull Structure Design & Finite Element Analysis",
-      "Propulsion & Machinery Integration",
-      "Marine & Utility Fluid Systems",
-      "Vessel Piping Design & Stress Analysis",
-      "Shipboard HVAC & Environmental Systems",
-      "Deck Outfitting & Accommodations"
-    ],
+    subSectors: ["Offshore Platforms", "FPSOs", "Shipyards", "Ports", "Marine Infrastructure"],
     features: [
-      "3D hull modeling and structural frame detailing",
-      "Pipe routing, stress checks, and isometric drafting",
-      "HVAC duct routing and fluid pressure drops optimization",
-      "Technical manuals and wiring diagrams for ship control boards"
+      "Offshore platform and topside structural engineering",
+      "FPSO piping, structural, and process integration support",
+      "Hull structure design and finite element analysis",
+      "Marine and port infrastructure engineering"
     ],
-    seoTitle: "Naval Architecture & Marine Engineering | GTS Engineering",
-    seoDescription: "Comprehensive marine engineering, hull modeling, outfitting designs, vessel piping layout, and CAD/CAE solutions.",
-    seoKeywords: ["marine engineering", "naval architecture", "hull design", "ship piping layout", "vessel outfitting"]
+    seoTitle: "Marine & Offshore Engineering | GTS Engineering",
+    seoDescription: "Hull structure, offshore platform, and FPSO engineering for shipyards, offshore operators, and marine infrastructure projects.",
+    seoKeywords: ["marine engineering", "offshore platform design", "FPSO engineering", "shipyard engineering", "naval architecture"]
   },
   {
-    slug: "consumer",
-    title: "Consumer & Medical Devices",
-    tagline: "Accelerating consumer product conceptualization and engineering precision diagnostic medical platforms.",
-    description: "We combine high-volume consumer aesthetics with safety-critical medical standards. Our multidisciplinary engineers speed up development, ensuring durable casings, compliant diagnostic structures, and robust electrical wiring.",
-    iconName: "Smartphone",
-    subSectors: [
-      "Office Automation & Printers",
-      "Consumer Electronics & Household Durables",
-      "Security Systems & Access Control",
-      "Gaming Equipment & Interactive Hardware",
-      "Diagnostic Imaging Systems (MRI, CT)",
-      "Patient Monitoring Systems",
-      "Therapeutic Equipment & Devices"
-    ],
+    slug: "government-defense-critical-infrastructure",
+    title: "Government, Defense & Critical Infrastructure",
+    tagline: "Secure, resilient engineering for defense, federal, and critical infrastructure programs.",
+    description: "GTS supports government and defense clients with engineering for secure facilities and critical infrastructure, delivering the documentation rigor and security discipline these programs require.",
+    iconName: "Landmark",
+    subSectors: ["Defense", "Federal Agencies", "Critical Infrastructure", "Secure Facilities", "Public Sector"],
     features: [
-      "Plastic injection molded enclosures design",
-      "Thermal simulation and dynamic drop testing validation",
-      "Regulatory document packages (FDA/CE) and publishing",
-      "PCB sizing, electrical schematics, and wiring layouts"
+      "Secure facility design and engineering documentation",
+      "Critical infrastructure resilience and protective design",
+      "Federal compliance and standards-based engineering",
+      "Public sector infrastructure engineering support"
     ],
-    seoTitle: "Consumer Electronics & Medical Device Engineering | GTS Engineering",
-    seoDescription: "Enclosure styling, thermal simulation, component detailing, and regulatory manuals for consumer products and medical systems.",
-    seoKeywords: ["consumer electronics", "medical device design", "injection molding design", "thermal simulation", "drop testing"]
-  },
-  {
-    slug: "telecom",
-    title: "Telecom",
-    tagline: "Scaling telecommunication infrastructure, geospatial network models, and operations support systems.",
-    description: "Deploying high-speed networks requires rigorous documentation and real-time asset data. GTS designs network routing, compiles installation guides, and leverages web-GIS tools to monitor fibers, towers, and auxiliary utilities.",
-    iconName: "Radio",
-    subSectors: [
-      "Network Infrastructure Consulting",
-      "Network Inventory & GIS Management",
-      "Operations Support Systems (OSS) integration",
-      "Inside/Outside Plant (ISP/OSP) designs",
-      "Tower structural and wind-load validation",
-      "Technical installation manuals and documentation"
-    ],
-    features: [
-      "GIS asset mapping and route layout optimization",
-      "Tower structural calculations under high wind conditions",
-      "Fiber optic network topology and cabinet diagrams",
-      "Operating procedures manuals and quick guides creation"
-    ],
-    seoTitle: "Telecom Infrastructure & Network GIS Services | GTS Engineering",
-    seoDescription: "OSP/ISP layout, tower load checks, network database mapping, and complete operations support documentation for telecom networks.",
-    seoKeywords: ["telecom engineering", "GIS mapping", "network inventory", "OSP ISP design", "tower structural analysis"]
-  },
-  {
-    slug: "utilities",
-    title: "Utilities",
-    tagline: "Asset tracking, Smart Grid implementations, and spatial analytics for water, gas, and power systems.",
-    description: "GTS helps municipal utilities and power grids maintain vast distribution networks. We specialize in mapping pipeline networks in GIS databases, designing layouts, and documenting grid control interfaces.",
-    iconName: "Grid",
-    subSectors: [
-      "Smart Grid system integration",
-      "Utility Operational & IT systems",
-      "Water & Gas distribution network design",
-      "Substation and Power Transmission structures",
-      "GIS Asset mapping and database migration",
-      "Standard Operating Procedures & Safety Manuals"
-    ],
-    features: [
-      "Converting legacy blueprints to georeferenced GIS databases",
-      "Smart meter grid data structures and software connections",
-      "Substation support structure stress analyses",
-      "Asset lifecycle logs and maintenance planning guides"
-    ],
-    seoTitle: "Smart Grid & Utility Asset Engineering | GTS Engineering",
-    seoDescription: "GIS database conversion, substations structural analysis, smart grid layouts, and operations manuals for municipal utilities.",
-    seoKeywords: ["utility engineering", "smart grid design", "GIS utility mapping", "substation structural design", "asset database conversion"]
-  },
-  {
-    slug: "aerospace",
-    title: "Aerospace",
-    tagline: "Weight optimization, cabin interior designs, and rigorous technical publications for aircraft systems.",
-    description: "Aerospace projects demand perfect accuracy and strict compliance. GTS assists tier-1 aerospace suppliers with weight reduction simulations, cabin interior component designs, electrical wiring, and ATA-compliant manuals.",
-    iconName: "Plane",
-    subSectors: [
-      "Aircraft Cabin Interiors & Seating systems",
-      "Aero Structures & Bracket designs",
-      "Auxiliary Environmental Control systems",
-      "Aircraft Engine component modeling",
-      "Aerospace Electrical Harness routing",
-      "ATA iSpec 2200 Technical Publications"
-    ],
-    features: [
-      "Weight-reduction studies via finite element analysis (FEA)",
-      "Design of cabin brackets, galleys, and seating trim panels",
-      "Routing electrical harness routing and schematic generation",
-      "ATA iSpec 2200 and S1000D structured documentation manuals"
-    ],
-    seoTitle: "Aerospace Cabin Design & Tech Pubs | GTS Engineering",
-    seoDescription: "Expert aerospace services: FEA weight reduction, cabin interior styling, harness routing, and ATA iSpec 2200 flight manuals.",
-    seoKeywords: ["aerospace engineering", "cabin design", "aircraft structures", "ATA iSpec 2200", "S1000D documentation"]
-  },
-  {
-    slug: "automotive",
-    title: "Automotive",
-    tagline: "Body-in-White (BIW) design, interior trim, closures, and complex vehicle electronics systems.",
-    description: "GTS is a strategic partner to automotive suppliers, helping accelerate the design of structural components, bumpers, closures, vehicle interior trims, and electric vehicle battery packaging.",
-    iconName: "Car",
-    subSectors: [
-      "Body-in-White (BIW) structures",
-      "Closures (Doors, Hoods, Tailgates)",
-      "Dashboard & Interior Trim assemblies",
-      "Bumpers & Exterior cladding panels",
-      "Chassis, Underbody & Suspension frames",
-      "Powertrain & Battery enclosure packagings",
-      "Automotive Electrical wiring & Harnesses"
-    ],
-    features: [
-      "Stamping dies and mold tooling design for steel/plastics",
-      "Crashworthiness, modal, and fatigue simulations (CAE)",
-      "Class-A surface modeling and trim clip routing",
-      "Quality control inspection logs and component documentation"
-    ],
-    seoTitle: "Automotive BIW, Interiors, & CAE Engineering | GTS Engineering",
-    seoDescription: "Automotive engineering partner: BIW structures, plastic interior trims, crash safety simulation, and mold tooling design.",
-    seoKeywords: ["automotive engineering", "BIW design", "closures design", "interior trim design", "crash simulation"]
-  },
-  {
-    slug: "railways",
-    title: "Railways",
-    tagline: "Positive Train Control (PTC), safety-critical signaling, train interior design, and publications.",
-    description: "Modern mass transit requires safe signaling and robust rolling stock design. GTS supports railway signaling design (including PTC), layout design for passenger cars, and extensive safety documentation.",
-    iconName: "Train",
-    subSectors: [
-      "Positive Train Control (PTC) implementation",
-      "Signaling & Interlocking system logic",
-      "Electrical & Electronics schematics",
-      "Rolling Stock mechanical structure designs",
-      "Interior seating & Cab layout optimization",
-      "Railway Operations Technical publications",
-      "Design automation custom scripts"
-    ],
-    features: [
-      "Interlocking safety logic matrices and schematic wiring",
-      "Passenger seat mechanical frame structural FEM validations",
-      "Operating instructions and maintenance manuals for locomotives",
-      "Automating harness routing via specialized scripting"
-    ],
-    seoTitle: "Railway Signaling, PTC, & Rolling Stock Design | GTS Engineering",
-    seoDescription: "Complete rail engineering solutions: signaling design, interlocking configurations, PTC, structures analysis, and maintenance manuals.",
-    seoKeywords: ["railway engineering", "positive train control", "PTC signaling", "interlocking logic", "rolling stock design"]
+    seoTitle: "Government, Defense & Critical Infrastructure Engineering | GTS Engineering",
+    seoDescription: "Secure facility and critical infrastructure engineering for government, defense, and federal agency programs.",
+    seoKeywords: ["defense engineering", "critical infrastructure engineering", "government facility design", "secure facility engineering"]
   }
 ];

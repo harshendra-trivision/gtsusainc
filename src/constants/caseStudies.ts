@@ -1,57 +1,155 @@
 export interface CaseStudy {
   id: string;
   title: string;
-  clientIndustry: string;
+  industry: string;
+  client?: string;
   challenge: string;
-  solution: string;
-  results: string[];
+  solution: string[];
+  disciplines?: string[];
+  outcomes: string[];
+  category: 'energy-process-industries' | 'data-centers-mission-critical' | 'manufacturing' | 'heavy-engineering';
   pdfUrl: string;
   imageUrl: string;
 }
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "connecting-rod-value-engineering",
-    title: "Connecting Rod Value Engineering – Weight reduction using FEA",
-    clientIndustry: "Heavy Engineering & Machinery",
-    challenge: "A heavy machinery manufacturer needed to reduce the weight of an engine connecting rod to improve fuel efficiency and mechanical performance without compromising structural load capacity, fatigue life, or buckling safety factor.",
-    solution: "GTS engineers developed a parameterized 3D model and performed iterative Finite Element Analysis (FEA). We optimized the web thickness and rib geometry under extreme tensile and compressive loads (representing peak gas ignition pressure).",
-    results: [
-      "Successfully reduced the total component weight by 14% while retaining structural integrity.",
-      "Maintained a safety factor of 1.8 against fatigue failure and buckling load limits.",
-      "Optimized production tooling compatibility, leading to a 7% reduction in material costs."
-    ],
-    pdfUrl: "/documents/Compressor Housing.pdf",
-    imageUrl: "/image/IMAGE.png"
-  },
-  {
-    id: "pump-lower-bearing-integration",
-    title: "Integration of Pump & Lower Bearing Support Systems",
-    clientIndustry: "Marine & Energy",
-    challenge: "Integrating high-speed pump assemblies with lower oil bearing shells typically causes alignment errors, bearing thermal expansion, and dangerous high-frequency vibration during continuous deep-sea operations.",
-    solution: "We re-engineered the fluid dynamic bearing casing using integrated structural bracing, modeled temperature fields in multi-physics software, and developed a customized self-aligning bearing support matrix.",
-    results: [
-      "Reduced system assembly complexity and aligned structural components by 25%.",
-      "Lowered operational bearing vibration levels by 18dB, complying with strict offshore standards.",
-      "Doubled expected service intervals between major component overhauls."
-    ],
+    id: "delayed-coker-technology-transfer",
+    title: "Delayed Coker Technology Transfer",
+    industry: "Refining & Petrochemicals",
+    client: "Confidential Global Energy Company",
+    challenge: "Support the transfer and localization of advanced delayed coker technology for one of the world's largest refinery expansion projects.",
+    solution: ["Technology transfer coordination", "Build-Operate-Transfer (BOT) strategy", "Engineering management", "Multidisciplinary coordination", "Global delivery management"],
+    disciplines: ["Process Engineering", "Mechanical Engineering", "Project Management", "Technology Commercialization"],
+    outcomes: ["Supported technology transfer exceeding $300 million", "Managed a team of over 200 engineers", "Successfully executed a large-scale international engineering collaboration"],
+    category: "energy-process-industries",
     pdfUrl: "#",
     imageUrl: "/image/IMAGE.png"
   },
   {
-    id: "reciprocating-compressor-conversion",
-    title: "2D to 3D Conversion of Reciprocating Compressor Assembly",
-    clientIndustry: "Energy - Oil & Gas",
-    challenge: "Converting massive archives of legacy 2D drawings into highly accurate 3D solid models with correct parametric references, tolerances, Bill of Materials (BOM), and interferences checks.",
-    solution: "GTS used a dedicated engineering conversion framework. We built clean 3D solid models of all 450+ unique compressor components in CAD, verified complex clearances, and linked them directly to dynamic ERP bill of materials tables.",
-    results: [
-      "Converted 100% of legacy paper records to parametric CAD models with zero errors.",
-      "Discovered and resolved 12 structural interference issues prior to manufacture.",
-      "Accelerated downstream design customization cycles by 40%."
-    ],
+    id: "containerized-water-treatment-plant",
+    title: "Containerized Water Treatment Plant",
+    industry: "Petrochemical",
+    client: "Confidential Petrochemical Facility – Texas",
+    challenge: "Develop a modular water treatment solution to reduce field construction and accelerate deployment.",
+    solution: ["Process Design", "Mechanical Engineering", "Structural Engineering", "Electrical & Instrumentation", "Modular Integration"],
+    outcomes: ["Reduced site construction", "Improved quality through modular fabrication", "Accelerated project delivery"],
+    category: "energy-process-industries",
+    pdfUrl: "#",
+    imageUrl: "/image/IMAGE.png"
+  },
+  {
+    id: "process-safety-center-of-excellence",
+    title: "Process Safety Center of Excellence",
+    industry: "Oil & Gas",
+    challenge: "Establish a dedicated engineering center focused on Process Safety Management (PSM).",
+    solution: ["Relief Valve Sizing", "Curtiss-Wright iPRSM", "Process Safety Studies", "Global Engineering Delivery"],
+    outcomes: ["Established dedicated Process Safety Design Center", "Long-term engineering support capability", "Standardized safety engineering workflows"],
+    category: "energy-process-industries",
+    pdfUrl: "#",
+    imageUrl: "/image/IMAGE.png"
+  },
+  {
+    id: "modular-fish-protein-biodiesel-facilities",
+    title: "Modular Fish Protein & Biodiesel Facilities",
+    industry: "Renewable Energy & Food Processing",
+    challenge: "Design innovative processing facilities for emerging sustainable industries.",
+    solution: ["Process Engineering", "Mechanical Design", "Plant Layout", "Equipment Engineering"],
+    outcomes: ["Delivered complete engineering for specialized industrial plants"],
+    category: "energy-process-industries",
+    pdfUrl: "#",
+    imageUrl: "/image/IMAGE.png"
+  },
+  {
+    id: "custom-oil-gas-drilling-equipment",
+    title: "Custom Oil & Gas Drilling Equipment",
+    industry: "Oil & Gas",
+    client: "Confidential Middle Eastern Energy Company",
+    challenge: "Develop specialized drilling equipment for demanding field conditions.",
+    solution: [],
+    outcomes: ["Enhanced operational efficiency through custom-engineered equipment"],
+    category: "energy-process-industries",
+    pdfUrl: "#",
+    imageUrl: "/image/IMAGE.png"
+  },
+  {
+    id: "industrial-boiler-emissions-technology",
+    title: "Industrial Boiler Emissions Technology",
+    industry: "Energy",
+    challenge: "Develop patented emissions-control technology.",
+    solution: [],
+    outcomes: ["Patent development", "Commercial deployment", "Multiple industry contracts"],
+    category: "energy-process-industries",
+    pdfUrl: "#",
+    imageUrl: "/image/IMAGE.png"
+  },
+  {
+    id: "industrial-facility-modularization",
+    title: "Industrial Facility Modularization",
+    industry: "Industrial Facilities & Design-Build",
+    challenge: "Reduce construction schedule for a complex industrial facility program.",
+    solution: [],
+    outcomes: ["30% faster construction", "15% lower project cost"],
+    category: "data-centers-mission-critical",
+    pdfUrl: "#",
+    imageUrl: "/image/IMAGE.png"
+  },
+  {
+    id: "smart-manufacturing-automation",
+    title: "Smart Manufacturing Automation",
+    industry: "Manufacturing",
+    challenge: "Increase production efficiency.",
+    solution: ["Robotics", "Automation", "Production Engineering"],
+    outcomes: ["30% increase in production output"],
+    category: "manufacturing",
+    pdfUrl: "#",
+    imageUrl: "/image/IMAGE.png"
+  },
+  {
+    id: "digital-transformation-roadmap",
+    title: "Digital Transformation Roadmap",
+    industry: "Industrial Manufacturing",
+    challenge: "Modernize production through digital technologies.",
+    solution: ["IoT", "Predictive Analytics", "Digital Strategy", "AI"],
+    outcomes: ["Improved production efficiency while reducing downtime"],
+    category: "manufacturing",
+    pdfUrl: "#",
+    imageUrl: "/image/IMAGE.png"
+  },
+  {
+    id: "ai-predictive-maintenance",
+    title: "AI Predictive Maintenance",
+    industry: "Industrial AI & Digital Engineering",
+    challenge: "Reduce unplanned downtime through predictive, data-driven maintenance strategies.",
+    solution: [],
+    outcomes: ["25% reduction in equipment downtime"],
+    category: "manufacturing",
+    pdfUrl: "#",
+    imageUrl: "/image/IMAGE.png"
+  },
+  {
+    id: "heavy-rail-bogie-engineering",
+    title: "Heavy Rail Bogie Engineering",
+    industry: "Rail Transportation",
+    challenge: "Develop a new bogie arrangement for standard-gauge rolling stock.",
+    solution: ["Mechanical Design", "FEA", "Structural Validation", "Design Optimization"],
+    outcomes: ["Successfully validated through finite element analysis"],
+    category: "heavy-engineering",
+    pdfUrl: "#",
+    imageUrl: "/image/IMAGE.png"
+  },
+  {
+    id: "heavy-equipment-value-engineering",
+    title: "Heavy Equipment Value Engineering",
+    industry: "Heavy Equipment & Mining",
+    challenge: "Improve structural performance and reduce manufacturing cost across a diverse portfolio of heavy equipment programs — mining trucks, boom cranes, freight cars, drilling rigs, and maintenance equipment.",
+    solution: ["Value Engineering", "Structural Optimization", "Design for Manufacturing"],
+    outcomes: ["Improved structural performance", "Reduced manufacturing cost", "Enhanced reliability"],
+    category: "heavy-engineering",
     pdfUrl: "#",
     imageUrl: "/image/IMAGE.png"
   }
 ];
+
 export const allCaseStudies = caseStudies;
 export default caseStudies;

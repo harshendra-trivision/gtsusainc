@@ -5,16 +5,50 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { Boxes, ChevronDown, HardHat, Menu, ShieldCheck, Wrench, type LucideIcon } from 'lucide-react';
+import {
+  Boxes,
+  ChevronDown,
+  Cpu,
+  Database,
+  Factory,
+  Flame,
+  HardHat,
+  HeartPulse,
+  Landmark,
+  Menu,
+  Mountain,
+  Route,
+  ShieldCheck,
+  Ship,
+  Truck,
+  UtensilsCrossed,
+  Wrench,
+  Zap,
+  type LucideIcon
+} from 'lucide-react';
 import MobileMenu from '../MobileMenu';
 import { primaryNavigation } from '../navigation';
 import { GradientButton, cn } from '@/components/ui';
+import type { MegaMenuIconName } from '@/constants/megaMenu';
+import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 
-const megaMenuIcons: Record<string, LucideIcon> = {
+const megaMenuIcons: Record<MegaMenuIconName, LucideIcon> = {
   Wrench,
   ShieldCheck,
   HardHat,
-  Boxes
+  Boxes,
+  Flame,
+  Zap,
+  Database,
+  Cpu,
+  Factory,
+  Route,
+  Mountain,
+  HeartPulse,
+  UtensilsCrossed,
+  Ship,
+  Landmark,
+  Truck
 };
 
 export default function Header() {
@@ -23,14 +57,41 @@ export default function Header() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(0);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
+
+  useBodyScrollLock(activeDropdown !== null);
 
   const isActiveItem = (href: string) => {
     if (href === '/') return pathname === '/';
     if (href.includes('#')) return false;
     return pathname === href || pathname.startsWith(`${href}/`);
   };
+
+  useEffect(() => {
+    if (!activeDropdown) return;
+
+    const handlePointerDown = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handlePointerDown);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activeDropdown]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,7 +152,7 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-4 lg:gap-6">
-            <div className="relative hidden lg:block" onMouseLeave={() => setActiveDropdown(null)}>
+            <div ref={dropdownRef} className="relative hidden lg:block" onMouseLeave={() => setActiveDropdown(null)}>
               <nav className="flex items-center gap-1">
                 {primaryNavigation.map((item) => {
                   const hasSubmenu = Boolean(item.submenu?.length);
@@ -188,26 +249,50 @@ export default function Header() {
                         <div className="grid grid-cols-1 gap-x-6 gap-y-8 p-6 sm:grid-cols-2 lg:grid-cols-4 lg:p-8">
                           {activeMegaItem.megaMenu.map((category) => {
                             const CategoryIcon = megaMenuIcons[category.icon];
+                            const linkTo = activeMegaItem.megaMenuLinkTo;
+                            const categoryHref = linkTo ? `${linkTo}#${category.slug}` : undefined;
 
                             return (
                               <div key={category.slug} className="flex flex-col">
-                                <div className="mb-4 flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-3">
-                                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-200/20 bg-cyan-400/10 text-cyan-200">
-                                    <CategoryIcon className="h-[18px] w-[18px]" />
-                                  </span>
-                                  <span>
-                                    <span className="block text-[13px] font-bold leading-tight text-white">
-                                      {category.label}
+                                {categoryHref ? (
+                                  <Link
+                                    href={categoryHref}
+                                    onClick={() => setActiveDropdown(null)}
+                                    className="group/cat mb-4 flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-3 transition-colors hover:border-cyan-200/30 hover:bg-white/10"
+                                  >
+                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-200/20 bg-cyan-400/10 text-cyan-200">
+                                      <CategoryIcon className="h-[18px] w-[18px]" />
                                     </span>
-                                    {category.tagline && (
-                                      <span className="mt-1 block text-[10px] font-medium italic text-cyan-200/70">
-                                        {category.tagline}
+                                    <span>
+                                      <span className="block text-[13px] font-bold leading-tight text-white transition-colors group-hover/cat:text-cyan-200">
+                                        {category.label}
                                       </span>
-                                    )}
-                                  </span>
-                                </div>
+                                      {category.tagline && (
+                                        <span className="mt-1 block text-[10px] font-medium italic text-cyan-200/70">
+                                          {category.tagline}
+                                        </span>
+                                      )}
+                                    </span>
+                                  </Link>
+                                ) : (
+                                  <div className="mb-4 flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-3">
+                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-200/20 bg-cyan-400/10 text-cyan-200">
+                                      <CategoryIcon className="h-[18px] w-[18px]" />
+                                    </span>
+                                    <span>
+                                      <span className="block text-[13px] font-bold leading-tight text-white">
+                                        {category.label}
+                                      </span>
+                                      {category.tagline && (
+                                        <span className="mt-1 block text-[10px] font-medium italic text-cyan-200/70">
+                                          {category.tagline}
+                                        </span>
+                                      )}
+                                    </span>
+                                  </div>
+                                )}
 
-                                <div className="max-h-[52vh] space-y-4 overflow-y-auto pr-1">
+                                <div className={cn('space-y-4', category.groups.length > 0 && 'max-h-[52vh] overflow-y-auto overscroll-contain pr-1')}>
                                   {category.groups.map((group, groupIdx) => (
                                     <div key={group.heading ?? groupIdx}>
                                       {group.heading && (
@@ -216,15 +301,27 @@ export default function Header() {
                                         </div>
                                       )}
                                       <ul className="space-y-0.5">
-                                        {group.items.map((label) => (
-                                          <li
-                                            key={label}
-                                            className="flex items-start gap-1.5 rounded-lg px-2 py-1 text-[12px] leading-snug text-slate-300"
-                                          >
-                                            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-300/50" />
-                                            <span>{label}</span>
-                                          </li>
-                                        ))}
+                                        {group.items.map((label) =>
+                                          categoryHref ? (
+                                            <li key={label}>
+                                              <Link
+                                                href={categoryHref}
+                                                onClick={() => setActiveDropdown(null)}
+                                                className="block rounded-lg px-2 py-1 text-[12px] leading-snug text-slate-300 transition-colors hover:bg-white/10 hover:text-cyan-200"
+                                              >
+                                                {label}
+                                              </Link>
+                                            </li>
+                                          ) : (
+                                            <li
+                                              key={label}
+                                              className="flex items-start gap-1.5 rounded-lg px-2 py-1 text-[12px] leading-snug text-slate-300"
+                                            >
+                                              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-300/50" />
+                                              <span>{label}</span>
+                                            </li>
+                                          )
+                                        )}
                                       </ul>
                                     </div>
                                   ))}
@@ -234,10 +331,20 @@ export default function Header() {
                           })}
                         </div>
 
-                        <div className="border-t border-white/10 bg-white/[0.04] px-6 py-4 lg:px-8">
+                        <div className="flex items-center justify-between border-t border-white/10 bg-white/[0.04] px-6 py-4 lg:px-8">
                           <p className="text-[11px] text-slate-400">
-                            {activeMegaItem.megaMenu.length} solution areas across engineering, safety, delivery, and packaged systems.
+                            {activeMegaItem.megaMenu.length} {activeMegaItem.label.toLowerCase()} categories
                           </p>
+                          {activeMegaItem.megaMenuLinkTo && (
+                            <Link
+                              href={activeMegaItem.megaMenuLinkTo}
+                              onClick={() => setActiveDropdown(null)}
+                              className="group/all inline-flex items-center gap-1.5 rounded-full border border-cyan-200/20 bg-cyan-400/10 px-4 py-2 text-xs font-semibold text-cyan-200 transition-colors hover:bg-cyan-400/20"
+                            >
+                              View all {activeMegaItem.label.toLowerCase()}
+                              <ChevronDown className="h-3.5 w-3.5 -rotate-90 transition-transform group-hover/all:translate-x-1" />
+                            </Link>
+                          )}
                         </div>
                       </div>
                     </motion.div>

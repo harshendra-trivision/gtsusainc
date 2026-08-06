@@ -384,7 +384,7 @@ const trustStats = [
   },
   {
     title: '100+ Projects Delivered',
-    image: '/image/project-delivery.png',
+    image: '/image/Projects-Delivered.jpg',
     description:
       'Successfully delivering 100+ engineering projects across diverse industries, we utilize AI-powered insights, automation, and advanced analytics to improve efficiency, accelerate execution, and maximize project outcomes.'
   },

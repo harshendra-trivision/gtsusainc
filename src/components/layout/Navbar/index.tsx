@@ -3,7 +3,32 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, Cpu, Settings, FileText, Map, Code, BarChart, Flame, Truck, Ship, Smartphone, Radio, Grid, Plane, Car, Train } from 'lucide-react';
+import {
+  ChevronDown,
+  Cpu,
+  Settings,
+  FileText,
+  Map,
+  Code,
+  BarChart,
+  Flame,
+  Truck,
+  Ship,
+  Smartphone,
+  Radio,
+  Grid,
+  Plane,
+  Car,
+  Train,
+  Zap,
+  Database,
+  Factory,
+  Route,
+  Mountain,
+  HeartPulse,
+  UtensilsCrossed,
+  Landmark
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { services } from '@/constants/services';
 import { industries } from '@/constants/industries';
@@ -26,6 +51,14 @@ export const IconMapper = ({ name, className = "w-5 h-5" }: { name: string; clas
     case 'Plane': return <Plane className={className} />;
     case 'Car': return <Car className={className} />;
     case 'Train': return <Train className={className} />;
+    case 'Zap': return <Zap className={className} />;
+    case 'Database': return <Database className={className} />;
+    case 'Factory': return <Factory className={className} />;
+    case 'Route': return <Route className={className} />;
+    case 'Mountain': return <Mountain className={className} />;
+    case 'HeartPulse': return <HeartPulse className={className} />;
+    case 'UtensilsCrossed': return <UtensilsCrossed className={className} />;
+    case 'Landmark': return <Landmark className={className} />;
     default: return <Settings className={className} />;
   }
 };

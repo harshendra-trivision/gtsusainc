@@ -1,18 +1,6 @@
-export interface SolutionMenuGroup {
-  heading?: string;
-  items: string[];
-}
+import type { MegaMenuCategory } from './megaMenu';
 
-export interface SolutionMenuCategory {
-  slug: string;
-  label: string;
-  icon: 'Wrench' | 'ShieldCheck' | 'HardHat' | 'Boxes';
-  tagline?: string;
-  description?: string;
-  groups: SolutionMenuGroup[];
-}
-
-export const solutionsMegaMenu: SolutionMenuCategory[] = [
+export const solutionsMegaMenu: MegaMenuCategory[] = [
   {
     slug: 'engineering-excellence',
     label: 'Engineering Excellence',

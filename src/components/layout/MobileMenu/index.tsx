@@ -3,16 +3,51 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { X, ChevronDown, ChevronRight, Boxes, HardHat, ShieldCheck, Wrench, type LucideIcon } from 'lucide-react';
+import {
+  X,
+  ChevronDown,
+  ChevronRight,
+  Boxes,
+  Cpu,
+  Database,
+  Factory,
+  Flame,
+  HardHat,
+  HeartPulse,
+  Landmark,
+  Mountain,
+  Route,
+  ShieldCheck,
+  Ship,
+  Truck,
+  UtensilsCrossed,
+  Wrench,
+  Zap,
+  type LucideIcon
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { primaryNavigation } from '../navigation';
 import { GradientButton } from '@/components/ui';
+import type { MegaMenuIconName } from '@/constants/megaMenu';
+import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 
-const megaMenuIcons: Record<string, LucideIcon> = {
+const megaMenuIcons: Record<MegaMenuIconName, LucideIcon> = {
   Wrench,
   ShieldCheck,
   HardHat,
-  Boxes
+  Boxes,
+  Flame,
+  Zap,
+  Database,
+  Cpu,
+  Factory,
+  Route,
+  Mountain,
+  HeartPulse,
+  UtensilsCrossed,
+  Ship,
+  Landmark,
+  Truck
 };
 
 interface MobileMenuProps {
@@ -25,6 +60,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const [expandedSection, setExpandedSection] = useState<string | null>('Solutions');
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const onCloseRef = useRef(onClose);
+
+  useBodyScrollLock(isOpen);
 
   useEffect(() => {
     onCloseRef.current = onClose;
@@ -118,66 +155,107 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                             exit={{ height: 0, opacity: 0 }}
                             className="mt-1 space-y-1 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-1"
                           >
-                            {item.megaMenu.map((category) => {
-                              const CategoryIcon = megaMenuIcons[category.icon];
-                              const isCategoryOpen = expandedCategory === category.slug;
+                            {item.megaMenuLinkTo &&
+                              item.megaMenu.map((category) => {
+                                const CategoryIcon = megaMenuIcons[category.icon];
 
-                              return (
-                                <div key={category.slug} className="py-1">
-                                  <button
-                                    onClick={() => toggleCategory(category.slug)}
-                                    className="flex w-full items-center justify-between gap-2 rounded-xl px-2 py-2.5 text-left text-xs font-semibold text-slate-200 transition-colors hover:bg-white/10"
+                                return (
+                                  <Link
+                                    key={category.slug}
+                                    href={`${item.megaMenuLinkTo}#${category.slug}`}
+                                    onClick={handleLinkClick}
+                                    className="flex items-center justify-between gap-2 rounded-xl px-2 py-2.5 text-left text-xs font-semibold text-slate-200 transition-colors hover:bg-white/10"
                                   >
                                     <span className="flex items-center gap-2">
                                       <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-cyan-200/20 bg-cyan-400/10 text-cyan-200">
                                         <CategoryIcon className="h-3.5 w-3.5" />
                                       </span>
-                                      {category.label}
-                                    </span>
-                                    <ChevronRight
-                                      className={`h-3.5 w-3.5 shrink-0 text-slate-500 transition-transform duration-200 ${
-                                        isCategoryOpen ? 'rotate-90 text-cyan-200' : ''
-                                      }`}
-                                    />
-                                  </button>
-
-                                  <AnimatePresence>
-                                    {isCategoryOpen && (
-                                      <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: 'auto', opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        className="ml-2 mt-1 space-y-3 overflow-hidden border-l border-white/10 pl-3"
-                                      >
+                                      <span>
+                                        <span className="block">{category.label}</span>
                                         {category.tagline && (
-                                          <p className="pt-1 text-[11px] italic text-cyan-200/70">{category.tagline}</p>
+                                          <span className="mt-0.5 block text-[10px] font-normal italic text-slate-400">
+                                            {category.tagline}
+                                          </span>
                                         )}
-                                        {category.groups.map((group, groupIdx) => (
-                                          <div key={group.heading ?? groupIdx}>
-                                            {group.heading && (
-                                              <div className="mb-1 text-[9px] font-mono font-semibold uppercase tracking-[0.14em] text-slate-500">
-                                                {group.heading}
-                                              </div>
-                                            )}
-                                            <ul className="space-y-0.5">
-                                              {group.items.map((label) => (
-                                                <li
-                                                  key={label}
-                                                  className="flex items-start gap-1.5 rounded-lg px-2 py-1.5 text-[11px] text-slate-300"
-                                                >
-                                                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-300/50" />
-                                                  <span>{label}</span>
-                                                </li>
-                                              ))}
-                                            </ul>
-                                          </div>
-                                        ))}
-                                      </motion.div>
-                                    )}
-                                  </AnimatePresence>
-                                </div>
-                              );
-                            })}
+                                      </span>
+                                    </span>
+                                    <ChevronRight className="h-3.5 w-3.5 shrink-0 text-slate-500" />
+                                  </Link>
+                                );
+                              })}
+
+                            {item.megaMenuLinkTo && (
+                              <Link
+                                href={item.megaMenuLinkTo}
+                                onClick={handleLinkClick}
+                                className="mt-1 flex items-center justify-between rounded-xl px-2 py-2.5 text-xs font-semibold text-cyan-200 transition-colors hover:bg-white/10"
+                              >
+                                <span>View all {item.label.toLowerCase()}</span>
+                                <ChevronRight className="h-3.5 w-3.5" />
+                              </Link>
+                            )}
+
+                            {!item.megaMenuLinkTo &&
+                              item.megaMenu.map((category) => {
+                                const CategoryIcon = megaMenuIcons[category.icon];
+                                const isCategoryOpen = expandedCategory === category.slug;
+
+                                return (
+                                  <div key={category.slug} className="py-1">
+                                    <button
+                                      onClick={() => toggleCategory(category.slug)}
+                                      className="flex w-full items-center justify-between gap-2 rounded-xl px-2 py-2.5 text-left text-xs font-semibold text-slate-200 transition-colors hover:bg-white/10"
+                                    >
+                                      <span className="flex items-center gap-2">
+                                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-cyan-200/20 bg-cyan-400/10 text-cyan-200">
+                                          <CategoryIcon className="h-3.5 w-3.5" />
+                                        </span>
+                                        {category.label}
+                                      </span>
+                                      <ChevronRight
+                                        className={`h-3.5 w-3.5 shrink-0 text-slate-500 transition-transform duration-200 ${
+                                          isCategoryOpen ? 'rotate-90 text-cyan-200' : ''
+                                        }`}
+                                      />
+                                    </button>
+
+                                    <AnimatePresence>
+                                      {isCategoryOpen && (
+                                        <motion.div
+                                          initial={{ height: 0, opacity: 0 }}
+                                          animate={{ height: 'auto', opacity: 1 }}
+                                          exit={{ height: 0, opacity: 0 }}
+                                          className="ml-2 mt-1 space-y-3 overflow-hidden border-l border-white/10 pl-3"
+                                        >
+                                          {category.tagline && (
+                                            <p className="pt-1 text-[11px] italic text-cyan-200/70">{category.tagline}</p>
+                                          )}
+                                          {category.groups.map((group, groupIdx) => (
+                                            <div key={group.heading ?? groupIdx}>
+                                              {group.heading && (
+                                                <div className="mb-1 text-[9px] font-mono font-semibold uppercase tracking-[0.14em] text-slate-500">
+                                                  {group.heading}
+                                                </div>
+                                              )}
+                                              <ul className="space-y-0.5">
+                                                {group.items.map((label) => (
+                                                  <li
+                                                    key={label}
+                                                    className="flex items-start gap-1.5 rounded-lg px-2 py-1.5 text-[11px] text-slate-300"
+                                                  >
+                                                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-300/50" />
+                                                    <span>{label}</span>
+                                                  </li>
+                                                ))}
+                                              </ul>
+                                            </div>
+                                          ))}
+                                        </motion.div>
+                                      )}
+                                    </AnimatePresence>
+                                  </div>
+                                );
+                              })}
                           </motion.div>
                         )}
                       </AnimatePresence>
