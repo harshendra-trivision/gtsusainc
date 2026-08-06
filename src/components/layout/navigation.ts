@@ -1,3 +1,5 @@
+import { solutionsMegaMenu, type SolutionMenuCategory } from '@/constants/solutionsMenu';
+
 export interface NavigationLink {
   label: string;
   href: string;
@@ -5,16 +7,10 @@ export interface NavigationLink {
 
 export interface PrimaryNavigationItem extends NavigationLink {
   submenu?: NavigationLink[];
+  megaMenu?: SolutionMenuCategory[];
 }
 
-export const solutionNavigation: NavigationLink[] = [
-  { label: 'Plant & Process Engineering', href: '/#plant-process-engineering' },
-  { label: 'Product Engineering', href: '/#product-engineering' },
-  { label: 'Simulation & FEA', href: '/#simulation-digital-validation' },
-  { label: 'Automation & AI', href: '/#automation-ai-industry-4-0' },
-  { label: 'Steel Detailing & Structural Engineering', href: '/#steel-detailing-structural-engineering' },
-  { label: 'Technical Documentation', href: '/#technical-documentation-asset-intelligence' }
-];
+export { solutionsMegaMenu };
 
 export const utilityNavigation: NavigationLink[] = [
   { label: 'Home', href: '/' },
@@ -25,7 +21,7 @@ export const utilityNavigation: NavigationLink[] = [
 
 export const primaryNavigation: PrimaryNavigationItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'Solutions', href: '/#solutions', submenu: solutionNavigation },
+  { label: 'Solutions', href: '/#solutions', megaMenu: solutionsMegaMenu },
   { label: 'Industries', href: '/industries' },
   { label: 'Projects', href: '/case-studies' },
   { label: 'Technology', href: '/technology' },

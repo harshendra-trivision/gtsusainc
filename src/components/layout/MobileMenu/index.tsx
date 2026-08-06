@@ -3,10 +3,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { X, ChevronDown, ChevronRight } from 'lucide-react';
+import { X, ChevronDown, ChevronRight, Boxes, HardHat, ShieldCheck, Wrench, type LucideIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { primaryNavigation } from '../navigation';
 import { GradientButton } from '@/components/ui';
+
+const megaMenuIcons: Record<string, LucideIcon> = {
+  Wrench,
+  ShieldCheck,
+  HardHat,
+  Boxes
+};
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -16,6 +23,7 @@ interface MobileMenuProps {
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const pathname = usePathname();
   const [expandedSection, setExpandedSection] = useState<string | null>('Solutions');
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const onCloseRef = useRef(onClose);
 
   useEffect(() => {
@@ -34,6 +42,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
   const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section);
+  };
+
+  const toggleCategory = (slug: string) => {
+    setExpandedCategory(expandedCategory === slug ? null : slug);
   };
 
   const handleLinkClick = () => {
@@ -79,6 +91,99 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <div className="relative flex-1 space-y-2 overflow-y-auto px-4 py-6 font-medium text-slate-100">
               {primaryNavigation.map((item) => {
                 const hasSubmenu = Boolean(item.submenu?.length);
+                const hasMegaMenu = Boolean(item.megaMenu?.length);
+
+                if (hasMegaMenu && item.megaMenu) {
+                  return (
+                    <div key={item.label}>
+                      <button
+                        onClick={() => toggleSection(item.label)}
+                        className={`relative flex w-full items-center justify-between rounded-xl px-3 py-3 transition-colors hover:bg-white/10 focus:outline-none ${
+                          isActive(item.href) ? 'font-semibold text-cyan-200' : ''
+                        }`}
+                      >
+                        <span>{item.label}</span>
+                        <ChevronDown
+                          className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${
+                            expandedSection === item.label ? 'rotate-180 text-accent' : ''
+                          }`}
+                        />
+                      </button>
+
+                      <AnimatePresence>
+                        {expandedSection === item.label && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="mt-1 space-y-1 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-1"
+                          >
+                            {item.megaMenu.map((category) => {
+                              const CategoryIcon = megaMenuIcons[category.icon];
+                              const isCategoryOpen = expandedCategory === category.slug;
+
+                              return (
+                                <div key={category.slug} className="py-1">
+                                  <button
+                                    onClick={() => toggleCategory(category.slug)}
+                                    className="flex w-full items-center justify-between gap-2 rounded-xl px-2 py-2.5 text-left text-xs font-semibold text-slate-200 transition-colors hover:bg-white/10"
+                                  >
+                                    <span className="flex items-center gap-2">
+                                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-cyan-200/20 bg-cyan-400/10 text-cyan-200">
+                                        <CategoryIcon className="h-3.5 w-3.5" />
+                                      </span>
+                                      {category.label}
+                                    </span>
+                                    <ChevronRight
+                                      className={`h-3.5 w-3.5 shrink-0 text-slate-500 transition-transform duration-200 ${
+                                        isCategoryOpen ? 'rotate-90 text-cyan-200' : ''
+                                      }`}
+                                    />
+                                  </button>
+
+                                  <AnimatePresence>
+                                    {isCategoryOpen && (
+                                      <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: 'auto', opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        className="ml-2 mt-1 space-y-3 overflow-hidden border-l border-white/10 pl-3"
+                                      >
+                                        {category.tagline && (
+                                          <p className="pt-1 text-[11px] italic text-cyan-200/70">{category.tagline}</p>
+                                        )}
+                                        {category.groups.map((group, groupIdx) => (
+                                          <div key={group.heading ?? groupIdx}>
+                                            {group.heading && (
+                                              <div className="mb-1 text-[9px] font-mono font-semibold uppercase tracking-[0.14em] text-slate-500">
+                                                {group.heading}
+                                              </div>
+                                            )}
+                                            <ul className="space-y-0.5">
+                                              {group.items.map((label) => (
+                                                <li
+                                                  key={label}
+                                                  className="flex items-start gap-1.5 rounded-lg px-2 py-1.5 text-[11px] text-slate-300"
+                                                >
+                                                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-300/50" />
+                                                  <span>{label}</span>
+                                                </li>
+                                              ))}
+                                            </ul>
+                                          </div>
+                                        ))}
+                                      </motion.div>
+                                    )}
+                                  </AnimatePresence>
+                                </div>
+                              );
+                            })}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
 
                 if (hasSubmenu && item.submenu) {
                   return (

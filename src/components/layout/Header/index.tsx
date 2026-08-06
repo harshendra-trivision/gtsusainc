@@ -5,10 +5,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { ChevronDown, Menu, Search } from 'lucide-react';
+import { Boxes, ChevronDown, HardHat, Menu, ShieldCheck, Wrench, type LucideIcon } from 'lucide-react';
 import MobileMenu from '../MobileMenu';
 import { primaryNavigation } from '../navigation';
 import { GradientButton, cn } from '@/components/ui';
+
+const megaMenuIcons: Record<string, LucideIcon> = {
+  Wrench,
+  ShieldCheck,
+  HardHat,
+  Boxes
+};
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,71 +91,160 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-4 lg:gap-6">
-            <nav className="hidden items-center gap-1 lg:flex" onMouseLeave={() => setActiveDropdown(null)}>
-              {primaryNavigation.map((item) => {
-                const hasSubmenu = Boolean(item.submenu?.length);
-                const isActive = isActiveItem(item.href);
+            <div className="relative hidden lg:block" onMouseLeave={() => setActiveDropdown(null)}>
+              <nav className="flex items-center gap-1">
+                {primaryNavigation.map((item) => {
+                  const hasSubmenu = Boolean(item.submenu?.length);
+                  const hasMegaMenu = Boolean(item.megaMenu?.length);
+                  const hasDropdown = hasSubmenu || hasMegaMenu;
+                  const isActive = isActiveItem(item.href);
 
-                return (
-                  <div
-                    key={item.label}
-                    className="relative"
-                    onMouseEnter={() => setActiveDropdown(hasSubmenu ? item.label : null)}
-                    onFocus={() => setActiveDropdown(hasSubmenu ? item.label : null)}
-                  >
-                    <Link
-                      href={item.href}
-                      className={cn(
-                        'group relative isolate flex items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold text-slate-200 transition-colors duration-200 hover:bg-white/10 hover:text-cyan-200',
-                        'after:absolute after:inset-x-4 after:-bottom-1 after:h-px after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-blue-400 after:to-cyan-300 after:transition-transform after:duration-300 hover:after:scale-x-100',
-                        isActive && 'text-white'
-                      )}
+                  return (
+                    <div
+                      key={item.label}
+                      className="relative"
+                      onMouseEnter={() => setActiveDropdown(hasDropdown ? item.label : null)}
+                      onFocus={() => setActiveDropdown(hasDropdown ? item.label : null)}
                     >
-                      {isActive && (
-                        <motion.span
-                          layoutId="header-active-pill"
-                          className="absolute inset-0 -z-10 rounded-full border border-cyan-200/20 bg-white/10 shadow-[0_0_28px_rgba(34,211,238,0.16)]"
-                          transition={{ type: 'spring', stiffness: 420, damping: 34 }}
-                        />
-                      )}
-                      <span className="relative z-10">{item.label}</span>
-                      {hasSubmenu && <ChevronDown className="relative z-10 h-3.5 w-3.5 transition-transform group-hover:rotate-180" />}
-                    </Link>
+                      <Link
+                        href={item.href}
+                        className={cn(
+                          'group relative isolate flex items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold text-slate-200 transition-colors duration-200 hover:bg-white/10 hover:text-cyan-200',
+                          'after:absolute after:inset-x-4 after:-bottom-1 after:h-px after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-blue-400 after:to-cyan-300 after:transition-transform after:duration-300 hover:after:scale-x-100',
+                          isActive && 'text-white'
+                        )}
+                      >
+                        {isActive && (
+                          <motion.span
+                            layoutId="header-active-pill"
+                            className="absolute inset-0 -z-10 rounded-full border border-cyan-200/20 bg-white/10 shadow-[0_0_28px_rgba(34,211,238,0.16)]"
+                            transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+                          />
+                        )}
+                        <span className="relative z-10">{item.label}</span>
+                        {hasDropdown && (
+                          <ChevronDown
+                            className={cn(
+                              'relative z-10 h-3.5 w-3.5 transition-transform group-hover:rotate-180',
+                              activeDropdown === item.label && 'rotate-180'
+                            )}
+                          />
+                        )}
+                      </Link>
 
-                    <AnimatePresence>
-                      {hasSubmenu && activeDropdown === item.label && item.submenu && (
-                        <motion.div
-                          initial={shouldReduceMotion ? false : { opacity: 0, y: 12, scale: 0.98 }}
-                          animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
-                          exit={shouldReduceMotion ? undefined : { opacity: 0, y: 10, scale: 0.98 }}
-                          transition={{ duration: 0.2, ease: 'easeOut' }}
-                          style={{ x: '-50%' }}
-                          className="absolute left-1/2 top-full z-50 w-[420px] max-w-[calc(100vw-2rem)] pt-4"
-                        >
-                          <div className="overflow-hidden rounded-3xl border border-white/12 bg-slate-950/78 p-2 shadow-[0_30px_90px_rgba(2,6,23,0.45)] ring-1 ring-cyan-200/10 backdrop-blur-2xl">
-                            <div className="rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 text-[11px] font-mono uppercase tracking-[0.22em] text-cyan-200">
-                              {item.label}
+                      <AnimatePresence>
+                        {hasSubmenu && activeDropdown === item.label && item.submenu && (
+                          <motion.div
+                            initial={shouldReduceMotion ? false : { opacity: 0, y: 12, scale: 0.98 }}
+                            animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
+                            exit={shouldReduceMotion ? undefined : { opacity: 0, y: 10, scale: 0.98 }}
+                            transition={{ duration: 0.2, ease: 'easeOut' }}
+                            style={{ x: '-50%' }}
+                            className="absolute left-1/2 top-full z-50 w-[420px] max-w-[calc(100vw-2rem)] pt-4"
+                          >
+                            <div className="overflow-hidden rounded-3xl border border-white/12 bg-slate-950/78 p-2 shadow-[0_30px_90px_rgba(2,6,23,0.45)] ring-1 ring-cyan-200/10 backdrop-blur-2xl">
+                              <div className="rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 text-[11px] font-mono uppercase tracking-[0.22em] text-cyan-200">
+                                {item.label}
+                              </div>
+                              <div className="mt-2 space-y-1">
+                                {item.submenu.map((subItem) => (
+                                  <Link
+                                    key={subItem.href}
+                                    href={subItem.href}
+                                    className="group/item flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-semibold text-slate-200 transition-all hover:bg-white/10 hover:text-cyan-200"
+                                  >
+                                    <span>{subItem.label}</span>
+                                    <span className="text-slate-500 transition-transform group-hover/item:translate-x-1 group-hover/item:text-cyan-200">→</span>
+                                  </Link>
+                                ))}
+                              </div>
                             </div>
-                            <div className="mt-2 space-y-1">
-                              {item.submenu.map((subItem) => (
-                                <Link
-                                  key={subItem.href}
-                                  href={subItem.href}
-                                  className="group/item flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-semibold text-slate-200 transition-all hover:bg-white/10 hover:text-cyan-200"
-                                >
-                                  <span>{subItem.label}</span>
-                                  <span className="text-slate-500 transition-transform group-hover/item:translate-x-1 group-hover/item:text-cyan-200">→</span>
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              })}
-            </nav>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
+              </nav>
+
+              <AnimatePresence>
+                {(() => {
+                  const activeMegaItem = primaryNavigation.find(
+                    (item) => item.megaMenu?.length && item.label === activeDropdown
+                  );
+                  if (!activeMegaItem?.megaMenu) return null;
+
+                  return (
+                    <motion.div
+                      key={activeMegaItem.label}
+                      initial={shouldReduceMotion ? false : { opacity: 0, y: 12, scale: 0.98 }}
+                      animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
+                      exit={shouldReduceMotion ? undefined : { opacity: 0, y: 10, scale: 0.98 }}
+                      transition={{ duration: 0.2, ease: 'easeOut' }}
+                      style={{ x: '-50%' }}
+                      className="absolute left-1/2 top-full z-50 w-[min(96vw,1180px)] max-w-[calc(100vw-2rem)] pt-4"
+                    >
+                      <div className="overflow-hidden rounded-3xl border border-white/12 bg-slate-950/85 shadow-[0_30px_90px_rgba(2,6,23,0.5)] ring-1 ring-cyan-200/10 backdrop-blur-2xl">
+                        <div className="grid grid-cols-1 gap-x-6 gap-y-8 p-6 sm:grid-cols-2 lg:grid-cols-4 lg:p-8">
+                          {activeMegaItem.megaMenu.map((category) => {
+                            const CategoryIcon = megaMenuIcons[category.icon];
+
+                            return (
+                              <div key={category.slug} className="flex flex-col">
+                                <div className="mb-4 flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-3">
+                                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-200/20 bg-cyan-400/10 text-cyan-200">
+                                    <CategoryIcon className="h-[18px] w-[18px]" />
+                                  </span>
+                                  <span>
+                                    <span className="block text-[13px] font-bold leading-tight text-white">
+                                      {category.label}
+                                    </span>
+                                    {category.tagline && (
+                                      <span className="mt-1 block text-[10px] font-medium italic text-cyan-200/70">
+                                        {category.tagline}
+                                      </span>
+                                    )}
+                                  </span>
+                                </div>
+
+                                <div className="max-h-[52vh] space-y-4 overflow-y-auto pr-1">
+                                  {category.groups.map((group, groupIdx) => (
+                                    <div key={group.heading ?? groupIdx}>
+                                      {group.heading && (
+                                        <div className="mb-1.5 text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-slate-500">
+                                          {group.heading}
+                                        </div>
+                                      )}
+                                      <ul className="space-y-0.5">
+                                        {group.items.map((label) => (
+                                          <li
+                                            key={label}
+                                            className="flex items-start gap-1.5 rounded-lg px-2 py-1 text-[12px] leading-snug text-slate-300"
+                                          >
+                                            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-300/50" />
+                                            <span>{label}</span>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+
+                        <div className="border-t border-white/10 bg-white/[0.04] px-6 py-4 lg:px-8">
+                          <p className="text-[11px] text-slate-400">
+                            {activeMegaItem.megaMenu.length} solution areas across engineering, safety, delivery, and packaged systems.
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })()}
+              </AnimatePresence>
+            </div>
 
             <div className="hidden items-center gap-3 lg:flex">
               {/* <button
