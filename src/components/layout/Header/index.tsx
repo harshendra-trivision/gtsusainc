@@ -220,7 +220,7 @@ export default function Header() {
         className={cn(
           "fixed inset-x-0 top-0 z-[80] w-full border-b text-white transition-all duration-500 ease-in-out",
           isScrolled
-            ? "border-white/10 bg-slate-950/70 backdrop-blur-md shadow-[0_18px_70px_rgba(2,6,23,0.34)]"
+            ? "border-white/10 bg-slate-950/85 backdrop-blur-md shadow-[0_18px_70px_rgba(2,6,23,0.34)]"
             : "border-transparent bg-transparent backdrop-blur-none shadow-none"
         )}
       >
@@ -228,7 +228,7 @@ export default function Header() {
           className={cn(
             "pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out",
             isScrolled
-              ? "opacity-100 bg-[radial-gradient(circle_at_12%_0%,rgba(37,99,235,0.20),transparent_34%),linear-gradient(90deg,rgba(15,23,42,0.96),rgba(15,23,42,0.78),rgba(2,6,23,0.94))]"
+              ? "opacity-100 bg-[linear-gradient(90deg,#FFFFFF_0%,#E8F7FA_16%,#0F172A_38%,#0F172A_70%,#020617_100%)]"
               : "opacity-0"
           )}
         />
@@ -239,9 +239,9 @@ export default function Header() {
 
         <div className="relative flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
-            <span className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-white/95 shadow-[0_10px_28px_rgba(14,165,233,0.14)]">
-              <Image src="/image/gts-logo.png" alt="GTS Logo" width={76} height={76} className="h-12 w-auto object-contain" priority />
-            </span>
+            {/* <span className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-white/95 shadow-[0_10px_28px_rgba(14,165,233,0.14)]"> */}
+            <Image src="/icons/logo transparent.png" alt="GTS Logo" width={100} height={100} className="h-15 w-auto object-contain" priority />
+            {/* </span> */}
             {/* <span className="hidden sm:block">
               <span className="block font-display text-lg font-extrabold leading-tight tracking-tight text-white">
                 GTS Engineering

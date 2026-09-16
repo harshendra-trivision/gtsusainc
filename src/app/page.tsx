@@ -378,39 +378,39 @@ const heroVisuals: HeroVisual[] = [
 const trustStats = [
   {
     title: 'Established 2012',
-    image: '/image/Established.jpg',
+    image: '/image/engineering-excellence-2012.png',
     description:
-      'Since 2012, we have combined engineering expertise with digital innovation, leveraging AI-assisted workflows and data-driven methodologies to deliver reliable, scalable, and future-ready industrial solutions across global markets.'
+      'More than a decade of delivering multidisciplinary engineering solutions for industrial clients through innovation, digital engineering, and execution excellence.'
   },
   {
     title: '100+ Projects Delivered',
-    image: '/image/Projects-Delivered.jpg',
+    image: '/image/100project-delivered.png',
     description:
-      'Successfully delivering 100+ engineering projects across diverse industries, we utilize AI-powered insights, automation, and advanced analytics to improve efficiency, accelerate execution, and maximize project outcomes.'
+      'Successfully supporting FEED, detailed engineering, EPC, brownfield expansions, and digital transformation projects across multiple industries.'
   },
   {
     title: 'Global Delivery Model',
-    image: '/image/Global-Delivery-Model.jpg',
+    image: '/image/globalenginerringdelivery.png',
     description:
-      'Our global delivery framework combines distributed engineering talent, digital collaboration platforms, and AI-enhanced project management to ensure seamless execution, quality assurance, and timely delivery worldwide.'
+      'Integrated project leadership from the United States with scalable engineering execution through global delivery centers and digital collaboration. This is a much stronger trust signal than a generic map. Global delivery and visible trust signals should be prominent where buyers evaluate capabilities.'
   },
   {
     title: 'Multidisciplinary Engineering Teams',
-    image: '/image/Multidisciplinary-Engineering-Teams.jpg',
+    image: '/image/multidisciplinary-engineering-teams.png',
     description:
-      'Our multidisciplinary teams integrate mechanical, electrical, process, civil, and digital engineering expertise, supported by AI-driven tools that enhance collaboration, innovation, design accuracy, and operational performance.'
+      'Integrated engineering teams collaborate across all major disciplines to deliver coordinated, constructible, and digitally enabled engineering solutions.'
   },
   {
     title: 'AI & Digital Engineering Capability',
-    image: '/image/AI-Digital-Engineering-Capability.jpg',
+    image: '/image/AI-Enabled-digital-engineering.png',
     description:
-      'We harness artificial intelligence, digital engineering, simulation technologies, and predictive analytics to optimize design processes, improve decision-making, reduce project risks, and accelerate industrial transformation.'
+      'AI-assisted engineering workflows, digital twins, engineering analytics, and simulation technologies improve quality, accelerate schedules, and reduce project risk.'
   },
   {
     title: 'US + India Operations',
-    image: '/image/US-India-Operations.png',
+    image: '/image/USA-India Engineering Operations.png',
     description:
-      'With strategic operations across the United States and India, we combine global engineering standards, regional expertise, and AI-enabled delivery capabilities to provide cost-effective, high-quality engineering solutions.'
+      'Combining USA project leadership with global engineering execution to provide responsive, scalable, and cost-effective engineering support.'
   }
 ];
 
@@ -840,283 +840,213 @@ export default function HomePage() {
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-200">
               Trusted Engineering Delivery
             </p>
-            <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-              Proven scale, digital capability, and global execution strength
+
+            <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-white sm:text-3xl">
+              Why Global Industrial Companies Trust GTS
             </h2>
+            <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+              From concept through commissioning, GTS combines multidisciplinary engineering, AI-enabled digital delivery, global execution, and rigorous quality systems to successfully deliver complex industrial projects across energy, manufacturing, infrastructure, and technology sectors.
+            </p>
+
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Column 1 */}
-            <div className="flex flex-col gap-8">
-              {/* Card 1 - Established 2012 */}
-              <div
-                className="group relative w-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer animate-fade-in"
-                style={{
-                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
-                  height: '420px'
-                }}
-              >
+          <div className="mt-14">
+            <div className="grid grid-cols-1 gap-0 overflow-hidden border border-white/15 bg-slate-900/40 md:grid-cols-2 lg:grid-cols-4">
+
+              {/* =========================================================
+        CARD 1 — ESTABLISHED 2012
+        Large feature card
+    ========================================================= */}
+              <div className="group relative min-h-[360px] overflow-hidden border-b border-white/15 md:col-span-2 lg:col-span-2 lg:row-span-2 lg:border-r">
                 <Image
                   src={trustStats[0].image}
                   alt={trustStats[0].title}
                   fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
-                <div
-                  className="absolute inset-0 border border-white/10 pointer-events-none"
-                  style={{
-                    clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
-                  }}
-                />
-                <div
-                  className="absolute bottom-0 left-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
-                  style={{
-                    clipPath: 'polygon(0 100%, 100% 100%, 0 0)'
-                  }}
-                />
-                <div
-                  className="absolute top-0 right-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
-                  style={{
-                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
-                  }}
-                />
-                <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col justify-end">
-                  <h3 className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-slate-950/10" />
+
+                {/* Technical grid */}
+                <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.15)_1px,transparent_1px)] [background-size:32px_32px]" />
+
+                {/* Content */}
+                <div className="absolute inset-x-0 bottom-0 z-10 p-6 sm:p-8">
+                  <div className="mb-3 flex items-center gap-3">
+                    <span className="h-px w-8 bg-cyan-400" />
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-[0.28em] text-cyan-300">
+                      Engineering Excellence
+                    </span>
+                  </div>
+
+                  <h3 className="max-w-xl font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
                     {trustStats[0].title}
                   </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+
+                  <p className="mt-3 max-w-xl text-sm leading-6 text-slate-200">
                     {trustStats[0].description}
                   </p>
                 </div>
+
+                {/* Corner detail */}
+                <div className="absolute right-0 top-0 h-16 w-16 border-b border-l border-cyan-400/40" />
+                <div className="absolute right-4 top-4 h-2 w-2 bg-cyan-400" />
               </div>
 
-              {/* Card 2 - 100+ Projects Delivered */}
-              <div
-                className="group relative w-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer"
-                style={{
-                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
-                  height: '280px'
-                }}
-              >
-                <Image
-                  src={trustStats[1].image}
-                  alt={trustStats[1].title}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
-                <div
-                  className="absolute inset-0 border border-white/10 pointer-events-none"
-                  style={{
-                    clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
-                  }}
-                />
-                <div
-                  className="absolute bottom-0 left-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
-                  style={{
-                    clipPath: 'polygon(0 100%, 100% 100%, 0 0)'
-                  }}
-                />
-                <div
-                  className="absolute top-0 right-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
-                  style={{
-                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
-                  }}
-                />
-                <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col justify-end">
-                  <h3 className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                    {trustStats[1].title}
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-                    {trustStats[1].description}
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            {/* Column 2 */}
-            <div className="flex flex-col gap-8">
-              {/* Card 3 - Global Delivery Model */}
-              <div
-                className="group relative w-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer"
-                style={{
-                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
-                  height: '280px'
-                }}
-              >
+              {/* =========================================================
+        CARD 2 — GLOBAL DELIVERY
+        Large right card
+    ========================================================= */}
+              <div className="group relative min-h-[260px] overflow-hidden border-b border-white/15 lg:col-span-2 lg:border-r">
                 <Image
                   src={trustStats[2].image}
                   alt={trustStats[2].title}
                   fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
-                <div
-                  className="absolute inset-0 border border-white/10 pointer-events-none"
-                  style={{
-                    clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
-                  }}
-                />
-                <div
-                  className="absolute bottom-0 left-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
-                  style={{
-                    clipPath: 'polygon(0 100%, 100% 100%, 0 0)'
-                  }}
-                />
-                <div
-                  className="absolute top-0 right-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
-                  style={{
-                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
-                  }}
-                />
-                <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col justify-end">
-                  <h3 className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/15" />
+
+                <div className="pointer-events-none absolute inset-0 opacity-15 [background-image:linear-gradient(rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:28px_28px]" />
+
+                <div className="absolute inset-x-0 bottom-0 z-10 p-6">
+                  <div className="mb-2 text-[10px] font-mono font-bold uppercase tracking-[0.28em] text-cyan-300">
+                    Global Delivery
+                  </div>
+
+                  <h3 className="font-display text-xl font-extrabold text-white sm:text-2xl">
                     {trustStats[2].title}
                   </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+
+                  <p className="mt-2 max-w-2xl text-xs leading-5 text-slate-300">
                     {trustStats[2].description}
                   </p>
                 </div>
               </div>
 
-              {/* Card 4 - Multidisciplinary Engineering Teams */}
-              <div
-                className="group relative w-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer"
-                style={{
-                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
-                  height: '420px'
-                }}
-              >
-                <Image
-                  src={trustStats[3].image}
-                  alt={trustStats[3].title}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
-                <div
-                  className="absolute inset-0 border border-white/10 pointer-events-none"
-                  style={{
-                    clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
-                  }}
-                />
-                <div
-                  className="absolute bottom-0 left-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
-                  style={{
-                    clipPath: 'polygon(0 100%, 100% 100%, 0 0)'
-                  }}
-                />
-                <div
-                  className="absolute top-0 right-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
-                  style={{
-                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
-                  }}
-                />
-                <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col justify-end">
-                  <h3 className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                    {trustStats[3].title}
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-                    {trustStats[3].description}
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            {/* Column 3 */}
-            <div className="flex flex-col gap-8">
-              {/* Card 5 - AI & Digital Engineering Capability */}
-              <div
-                className="group relative w-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer"
-                style={{
-                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
-                  height: '420px'
-                }}
-              >
+              {/* =========================================================
+        CARD 3 — AI
+        Small card
+    ========================================================= */}
+              <div className="group relative min-h-[170px] overflow-hidden border-b border-white/15 lg:col-span-1 lg:border-r">
                 <Image
                   src={trustStats[4].image}
                   alt={trustStats[4].title}
                   fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 1024px) 25vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
-                <div
-                  className="absolute inset-0 border border-white/10 pointer-events-none"
-                  style={{
-                    clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
-                  }}
-                />
-                <div
-                  className="absolute bottom-0 left-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
-                  style={{
-                    clipPath: 'polygon(0 100%, 100% 100%, 0 0)'
-                  }}
-                />
-                <div
-                  className="absolute top-0 right-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
-                  style={{
-                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
-                  }}
-                />
-                <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col justify-end">
-                  <h3 className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                    {trustStats[4].title}
+
+                <div className="absolute inset-0 bg-slate-950/75 transition-colors duration-300 group-hover:bg-slate-950/55" />
+
+                <div className="absolute inset-0 z-10 flex flex-col justify-end p-5">
+                  <div className="mb-2 text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-cyan-300">
+                    AI
+                  </div>
+
+                  <h3 className="text-base font-extrabold text-white">
+                    AI & Digital Engineering
                   </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-                    {trustStats[4].description}
-                  </p>
                 </div>
               </div>
 
-              {/* Card 6 - US + India Operations */}
-              <div
-                className="group relative w-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer"
-                style={{
-                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))',
-                  height: '280px'
-                }}
-              >
+
+              {/* =========================================================
+        CARD 4 — TEAMS
+        Small card
+    ========================================================= */}
+              <div className="group relative min-h-[170px] overflow-hidden border-b border-white/15 lg:col-span-1">
+                <Image
+                  src={trustStats[3].image}
+                  alt={trustStats[3].title}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+
+                <div className="absolute inset-0 bg-slate-950/75 transition-colors duration-300 group-hover:bg-slate-950/55" />
+
+                <div className="absolute inset-0 z-10 flex flex-col justify-end p-5">
+                  <div className="mb-2 text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-cyan-300">
+                    Teams
+                  </div>
+
+                  <h3 className="text-base font-extrabold text-white">
+                    Multidisciplinary Teams
+                  </h3>
+                </div>
+              </div>
+
+
+              {/* =========================================================
+        CARD 5 — USA + INDIA
+        Small card
+    ========================================================= */}
+              <div className="group relative min-h-[170px] overflow-hidden border-b border-white/15 md:border-r lg:col-span-1">
                 <Image
                   src={trustStats[5].image}
                   alt={trustStats[5].title}
                   fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 1024px) 25vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
-                <div
-                  className="absolute inset-0 border border-white/10 pointer-events-none"
-                  style={{
-                    clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
-                  }}
-                />
-                <div
-                  className="absolute bottom-0 left-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
-                  style={{
-                    clipPath: 'polygon(0 100%, 100% 100%, 0 0)'
-                  }}
-                />
-                <div
-                  className="absolute top-0 right-0 w-6 h-6 bg-cyan-500 transition-colors duration-300 group-hover:bg-cyan-400"
-                  style={{
-                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
-                  }}
-                />
-                <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col justify-end">
-                  <h3 className="font-display text-xl font-extrabold tracking-tight text-white sm:text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                    {trustStats[5].title}
+
+                <div className="absolute inset-0 bg-slate-950/75 transition-colors duration-300 group-hover:bg-slate-950/55" />
+
+                <div className="absolute inset-0 z-10 flex flex-col justify-end p-5">
+                  <div className="mb-2 text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-cyan-300">
+                    Operations
+                  </div>
+
+                  <h3 className="text-base font-extrabold text-white">
+                    USA + India
                   </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-200 opacity-90 sm:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-                    {trustStats[5].description}
-                  </p>
                 </div>
               </div>
+
+
+              {/* =========================================================
+        CARD 6 — PROJECTS DELIVERED
+        Bottom wide feature card
+    ========================================================= */}
+              <div className="group relative min-h-[220px] overflow-hidden md:col-span-2 lg:col-span-3">
+                <Image
+                  src={trustStats[1].image}
+                  alt={trustStats[1].title}
+                  fill
+                  sizes="(min-width: 1024px) 75vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-slate-950/25" />
+
+                <div className="absolute inset-0 z-10 flex items-center p-6 sm:p-8">
+                  <div>
+                    <div className="mb-3 flex items-center gap-3">
+                      <span className="h-px w-8 bg-cyan-400" />
+
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-[0.28em] text-cyan-300">
+                        Delivery Track Record
+                      </span>
+                    </div>
+
+                    <h3 className="font-display text-2xl font-extrabold text-white sm:text-3xl">
+                      {trustStats[1].title}
+                    </h3>
+
+                    <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
+                      {trustStats[1].description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
             </div>
           </div>
         </div>
