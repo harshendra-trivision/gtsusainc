@@ -1617,36 +1617,51 @@ export default function HomePage() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8 items-start">
             {/* Left Column (lg:col-span-4) */}
             <div className="relative flex flex-col justify-between pr-0 lg:pr-4 lg:col-span-4">
-              {/* Globe Background with public/image/background.jpg per instructions */}
-              <div className="pointer-events-none absolute -bottom-16 -left-12 sm:-left-6 w-80 h-80 sm:w-[380px] sm:h-[380px] select-none">
-                <div className="relative h-full w-full rounded-full overflow-hidden border border-blue-200/50 shadow-[0_0_60px_rgba(59,130,246,0.15)] bg-blue-50/30">
+              {/* Globe Background per instructions: smaller, transparent, positioned at bottom-right */}
+              <div className="pointer-events-none absolute -bottom-10 -right-2 sm:-right-6 w-60 h-60 sm:w-72 sm:h-72 select-none">
+                <div className="relative h-full w-full rounded-full overflow-hidden [mask-image:radial-gradient(circle_at_center,black_45%,transparent_75%)]">
+                  {/* Subtle texture from background.jpg with soft radial fade */}
                   <Image
                     src="/image/background.jpg"
                     alt="Global Network"
                     fill
-                    sizes="380px"
-                    className="object-cover opacity-20 mix-blend-multiply scale-125"
+                    sizes="288px"
+                    className="object-cover opacity-[0.08] mix-blend-multiply"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-white/90 via-blue-50/50 to-transparent" />
-                  <svg className="absolute inset-0 h-full w-full text-blue-500/40" viewBox="0 0 200 200" fill="none">
-                    <circle cx="100" cy="100" r="88" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
-                    <ellipse cx="100" cy="100" rx="88" ry="34" stroke="currentColor" strokeWidth="1.2" />
-                    <ellipse cx="100" cy="100" rx="34" ry="88" stroke="currentColor" strokeWidth="1.2" />
-                    <path d="M12 100 Q100 42 188 100" stroke="currentColor" strokeWidth="1.2" />
-                    <path d="M12 100 Q100 158 188 100" stroke="currentColor" strokeWidth="1.2" />
+                  {/* Soft atmospheric radial gradient */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_45%,rgba(191,219,254,0.35)_0%,rgba(219,234,254,0.15)_50%,transparent_70%)]" />
+
+                  {/* High-fidelity transparent globe with continents, parallels, and network nodes */}
+                  <svg className="absolute inset-0 h-full w-full" viewBox="0 0 200 200" fill="none">
+                    {/* Faint continent landmasses */}
+                    <path
+                      d="M60 70 Q70 60 85 68 T95 90 T80 110 T65 100 Z M115 55 Q130 50 145 62 T150 85 T130 95 T118 75 Z M75 115 Q88 120 92 135 T85 155 T72 145 Z"
+                      fill="rgba(147,197,253,0.22)"
+                    />
+
+                    {/* Parallels & Meridians */}
+                    <circle cx="100" cy="100" r="85" stroke="rgba(59,130,246,0.18)" strokeWidth="0.9" strokeDasharray="3 3" />
+                    <ellipse cx="100" cy="100" rx="85" ry="32" stroke="rgba(59,130,246,0.22)" strokeWidth="1" />
+                    <ellipse cx="100" cy="100" rx="32" ry="85" stroke="rgba(59,130,246,0.22)" strokeWidth="1" />
+                    <path d="M15 100 Q100 45 185 100" stroke="rgba(59,130,246,0.2)" strokeWidth="1" />
+                    <path d="M15 100 Q100 155 185 100" stroke="rgba(59,130,246,0.2)" strokeWidth="1" />
+
+                    {/* Network Connection Arcs */}
+                    <path d="M65 80 Q100 45 138 68" stroke="#3b82f6" strokeWidth="1.2" strokeDasharray="3 2" opacity="0.65" />
+                    <path d="M65 80 Q85 108 112 128" stroke="#3b82f6" strokeWidth="1.2" strokeDasharray="3 2" opacity="0.65" />
+                    <path d="M138 68 Q125 102 112 128" stroke="#3b82f6" strokeWidth="1.2" strokeDasharray="3 2" opacity="0.65" />
+                    <path d="M52 118 Q82 124 112 128" stroke="#60a5fa" strokeWidth="1" strokeDasharray="2 2" opacity="0.55" />
+                    <path d="M112 128 Q136 124 156 114" stroke="#60a5fa" strokeWidth="1" strokeDasharray="2 2" opacity="0.55" />
+
                     {/* Network Nodes */}
-                    <circle cx="65" cy="80" r="3.5" fill="#2563eb" />
-                    <circle cx="140" cy="70" r="3.5" fill="#2563eb" />
-                    <circle cx="110" cy="130" r="3.5" fill="#2563eb" />
-                    <circle cx="50" cy="120" r="2.5" fill="#3b82f6" />
-                    <circle cx="155" cy="115" r="2.5" fill="#3b82f6" />
-                    <circle cx="85" cy="105" r="2" fill="#60a5fa" />
-                    {/* Network Arcs */}
-                    <path d="M65 80 Q100 45 140 70" stroke="#2563eb" strokeWidth="1.4" strokeDasharray="3 2" />
-                    <path d="M65 80 Q85 110 110 130" stroke="#2563eb" strokeWidth="1.4" strokeDasharray="3 2" />
-                    <path d="M140 70 Q125 105 110 130" stroke="#2563eb" strokeWidth="1.4" strokeDasharray="3 2" />
-                    <path d="M50 120 Q80 125 110 130" stroke="#3b82f6" strokeWidth="1.2" strokeDasharray="2 2" />
-                    <path d="M110 130 Q135 125 155 115" stroke="#3b82f6" strokeWidth="1.2" strokeDasharray="2 2" />
+                    <circle cx="65" cy="80" r="4" fill="#2563eb" opacity="0.85" />
+                    <circle cx="65" cy="80" r="7" fill="#60a5fa" opacity="0.25" />
+                    <circle cx="138" cy="68" r="4" fill="#2563eb" opacity="0.85" />
+                    <circle cx="138" cy="68" r="7" fill="#60a5fa" opacity="0.25" />
+                    <circle cx="112" cy="128" r="4" fill="#2563eb" opacity="0.85" />
+                    <circle cx="112" cy="128" r="7" fill="#60a5fa" opacity="0.25" />
+                    <circle cx="52" cy="118" r="3" fill="#3b82f6" opacity="0.75" />
+                    <circle cx="156" cy="114" r="3" fill="#3b82f6" opacity="0.75" />
                   </svg>
                 </div>
               </div>
