@@ -218,35 +218,43 @@ export default function Header() {
         animate={{ y: isHeaderVisible || isOpen ? 0 : '-100%' }}
         transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
         className={cn(
-          "fixed inset-x-0 top-0 z-[80] w-full border-b text-white transition-all duration-500 ease-in-out",
+          "fixed inset-x-0 top-0 z-[80] w-full border-b transition-all duration-500 ease-in-out",
           isScrolled
-            ? "border-white/10 bg-slate-950/85 backdrop-blur-md shadow-[0_18px_70px_rgba(2,6,23,0.34)]"
+            ? "border-slate-200/80 bg-white/95 backdrop-blur-md shadow-[0_4px_25px_rgba(15,23,42,0.08)]"
             : "border-transparent bg-transparent backdrop-blur-none shadow-none"
         )}
       >
         <div
           className={cn(
-            "pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out",
-            isScrolled
-              ? "opacity-100 bg-[linear-gradient(90deg,#FFFFFF_0%,#E8F7FA_16%,#0F172A_38%,#0F172A_70%,#020617_100%)]"
-              : "opacity-0"
+            "pointer-events-none absolute inset-0 bg-gradient-to-b from-white/95 via-slate-50/90 to-white/95 transition-opacity duration-500 ease-in-out",
+            isScrolled ? "opacity-100" : "opacity-0"
           )}
         />
-        <div className={cn(
-          "pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent transition-opacity duration-500 ease-in-out",
-          isScrolled ? "opacity-100" : "opacity-0"
-        )} />
+        <div
+          className={cn(
+            "pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/25 to-transparent transition-opacity duration-500 ease-in-out",
+            isScrolled ? "opacity-100" : "opacity-0"
+          )}
+        />
 
         <div className="relative flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-          <Link href="/" className="flex items-center gap-3 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
-            {/* <span className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-white/95 shadow-[0_10px_28px_rgba(14,165,233,0.14)]"> */}
-            <Image src="/icons/logo transparent.png" alt="GTS Logo" width={100} height={100} className="h-15 w-auto object-contain" priority />
-            {/* </span> */}
-            {/* <span className="hidden sm:block">
-              <span className="block font-display text-lg font-extrabold leading-tight tracking-tight text-white">
-                GTS Engineering
-              </span>
-            </span> */}
+          <Link
+            href="/"
+            className="group relative flex items-center gap-3 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+          >
+            <Image
+              src="/icons/logo transparent.png"
+              alt="GTS Logo"
+              width={300}
+              height={300}
+              className={cn(
+                "h-20 sm:h-22 w-auto object-contain transition-all duration-300 group-hover:scale-105",
+                isScrolled
+                  ? "drop-shadow-none"
+                  : "drop-shadow-[0_0_1px_rgba(255,255,255,0.95)] drop-shadow-[0_0_8px_rgba(255,255,255,0.65)]"
+              )}
+              priority
+            />
           </Link>
 
           <div className="flex items-center gap-4 lg:gap-6">
@@ -268,15 +276,23 @@ export default function Header() {
                       <Link
                         href={item.href}
                         className={cn(
-                          'group relative isolate flex items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold text-slate-200 transition-colors duration-200 hover:bg-white/10 hover:text-cyan-200',
-                          'after:absolute after:inset-x-4 after:-bottom-1 after:h-px after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-blue-400 after:to-cyan-300 after:transition-transform after:duration-300 hover:after:scale-x-100',
-                          isActive && 'text-white'
+                          'group relative isolate flex items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-semibold transition-colors duration-200',
+                          isScrolled
+                            ? 'text-slate-700 hover:bg-slate-100 hover:text-blue-600'
+                            : 'text-slate-100 hover:bg-white/10 hover:text-white',
+                          'after:absolute after:inset-x-3.5 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-blue-600 after:to-cyan-500 after:transition-transform after:duration-300 hover:after:scale-x-100',
+                          isActive && (isScrolled ? 'text-blue-600 font-bold' : 'text-white font-bold')
                         )}
                       >
                         {isActive && (
                           <motion.span
                             layoutId="header-active-pill"
-                            className="absolute inset-0 -z-10 rounded-full border border-cyan-200/20 bg-white/10 shadow-[0_0_28px_rgba(34,211,238,0.16)]"
+                            className={cn(
+                              "absolute inset-0 -z-10 rounded-full",
+                              isScrolled
+                                ? "border border-blue-200/80 bg-blue-50/80 shadow-[0_2px_8px_rgba(37,99,235,0.08)]"
+                                : "border border-white/20 bg-white/15 shadow-[0_0_24px_rgba(34,211,238,0.25)]"
+                            )}
                             transition={{ type: 'spring', stiffness: 420, damping: 34 }}
                           />
                         )}
@@ -285,7 +301,10 @@ export default function Header() {
                           <ChevronDown
                             className={cn(
                               'relative z-10 h-3.5 w-3.5 transition-transform group-hover:rotate-180',
-                              activeDropdown === item.label && 'rotate-180'
+                              isScrolled
+                                ? 'text-slate-400 group-hover:text-blue-600'
+                                : 'text-slate-300 group-hover:text-white',
+                              activeDropdown === item.label && (isScrolled ? 'rotate-180 text-blue-600' : 'rotate-180 text-cyan-200')
                             )}
                           />
                         )}
@@ -301,8 +320,8 @@ export default function Header() {
                             style={{ x: '-50%' }}
                             className="absolute left-1/2 top-full z-50 w-[420px] max-w-[calc(100vw-2rem)] pt-4"
                           >
-                            <div className="overflow-hidden rounded-3xl border border-white/12 bg-slate-950/78 p-2 shadow-[0_30px_90px_rgba(2,6,23,0.45)] ring-1 ring-cyan-200/10 backdrop-blur-2xl">
-                              <div className="rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 text-[11px] font-mono uppercase tracking-[0.22em] text-cyan-200">
+                            <div className="overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 p-2 shadow-[0_25px_60px_rgba(15,23,42,0.15)] ring-1 ring-slate-900/5 backdrop-blur-2xl">
+                              <div className="rounded-2xl border border-blue-100 bg-blue-50/60 px-4 py-3 text-[11px] font-mono font-bold uppercase tracking-[0.22em] text-blue-600">
                                 {item.label}
                               </div>
                               <div className="mt-2 space-y-1">
@@ -310,10 +329,10 @@ export default function Header() {
                                   <Link
                                     key={subItem.href}
                                     href={subItem.href}
-                                    className="group/item flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-semibold text-slate-200 transition-all hover:bg-white/10 hover:text-cyan-200"
+                                    className="group/item flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition-all hover:bg-blue-50/80 hover:text-blue-600"
                                   >
                                     <span>{subItem.label}</span>
-                                    <span className="text-slate-500 transition-transform group-hover/item:translate-x-1 group-hover/item:text-cyan-200">→</span>
+                                    <span className="text-slate-400 transition-transform group-hover/item:translate-x-1 group-hover/item:text-blue-600">→</span>
                                   </Link>
                                 ))}
                               </div>
@@ -343,7 +362,7 @@ export default function Header() {
                       style={{ x: '-50%' }}
                       className="absolute left-1/2 top-full z-50 w-[min(96vw,1180px)] max-w-[calc(100vw-2rem)] pt-4"
                     >
-                      <div className="overflow-hidden rounded-3xl border border-white/12 bg-slate-950/85 shadow-[0_30px_90px_rgba(2,6,23,0.5)] ring-1 ring-cyan-200/10 backdrop-blur-2xl">
+                      <div className="overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 shadow-[0_30px_90px_rgba(15,23,42,0.18)] ring-1 ring-slate-900/5 backdrop-blur-2xl">
                         <div className="grid grid-cols-1 gap-x-6 gap-y-8 p-6 sm:grid-cols-2 lg:grid-cols-4 lg:p-8">
                           {activeMegaItem.megaMenu.map((category) => {
                             const CategoryIcon = megaMenuIcons[category.icon];
@@ -356,33 +375,33 @@ export default function Header() {
                                   <Link
                                     href={categoryHref}
                                     onClick={() => setActiveDropdown(null)}
-                                    className="group/cat mb-4 flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-3 transition-colors hover:border-cyan-200/30 hover:bg-white/10"
+                                    className="group/cat mb-4 flex items-start gap-3 rounded-2xl border border-slate-200/70 bg-slate-50/80 p-3 transition-colors hover:border-blue-300 hover:bg-blue-50/60"
                                   >
-                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-200/20 bg-cyan-400/10 text-cyan-200">
+                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-blue-200/60 bg-blue-50 text-blue-600">
                                       <CategoryIcon className="h-[18px] w-[18px]" />
                                     </span>
                                     <span>
-                                      <span className="block text-[13px] font-bold leading-tight text-white transition-colors group-hover/cat:text-cyan-200">
+                                      <span className="block text-[13px] font-bold leading-tight text-slate-900 transition-colors group-hover/cat:text-blue-600">
                                         {category.label}
                                       </span>
                                       {category.tagline && (
-                                        <span className="mt-1 block text-[10px] font-medium italic text-cyan-200/70">
+                                        <span className="mt-1 block text-[10px] font-medium italic text-slate-500">
                                           {category.tagline}
                                         </span>
                                       )}
                                     </span>
                                   </Link>
                                 ) : (
-                                  <div className="mb-4 flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-3">
-                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-200/20 bg-cyan-400/10 text-cyan-200">
+                                  <div className="mb-4 flex items-start gap-3 rounded-2xl border border-slate-200/70 bg-slate-50/80 p-3">
+                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-blue-200/60 bg-blue-50 text-blue-600">
                                       <CategoryIcon className="h-[18px] w-[18px]" />
                                     </span>
                                     <span>
-                                      <span className="block text-[13px] font-bold leading-tight text-white">
+                                      <span className="block text-[13px] font-bold leading-tight text-slate-900">
                                         {category.label}
                                       </span>
                                       {category.tagline && (
-                                        <span className="mt-1 block text-[10px] font-medium italic text-cyan-200/70">
+                                        <span className="mt-1 block text-[10px] font-medium italic text-slate-500">
                                           {category.tagline}
                                         </span>
                                       )}
@@ -394,7 +413,7 @@ export default function Header() {
                                   {category.groups.map((group, groupIdx) => (
                                     <div key={group.heading ?? groupIdx}>
                                       {group.heading && (
-                                        <div className="mb-1.5 text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-slate-500">
+                                        <div className="mb-1.5 text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-slate-400">
                                           {group.heading}
                                         </div>
                                       )}
@@ -405,7 +424,7 @@ export default function Header() {
                                               <Link
                                                 href={categoryHref}
                                                 onClick={() => setActiveDropdown(null)}
-                                                className="block rounded-lg px-2 py-1 text-[12px] leading-snug text-slate-300 transition-colors hover:bg-white/10 hover:text-cyan-200"
+                                                className="block rounded-lg px-2 py-1 text-[12px] leading-snug text-slate-600 transition-colors hover:bg-blue-50 hover:text-blue-600"
                                               >
                                                 {label}
                                               </Link>
@@ -413,9 +432,9 @@ export default function Header() {
                                           ) : (
                                             <li
                                               key={label}
-                                              className="flex items-start gap-1.5 rounded-lg px-2 py-1 text-[12px] leading-snug text-slate-300"
+                                              className="flex items-start gap-1.5 rounded-lg px-2 py-1 text-[12px] leading-snug text-slate-600"
                                             >
-                                              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-300/50" />
+                                              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-blue-500/60" />
                                               <span>{label}</span>
                                             </li>
                                           )
@@ -429,15 +448,15 @@ export default function Header() {
                           })}
                         </div>
 
-                        <div className="flex items-center justify-between border-t border-white/10 bg-white/[0.04] px-6 py-4 lg:px-8">
-                          <p className="text-[11px] text-slate-400">
+                        <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50/60 px-6 py-4 lg:px-8">
+                          <p className="text-[11px] text-slate-500">
                             {activeMegaItem.megaMenu.length} {activeMegaItem.label.toLowerCase()} categories
                           </p>
                           {activeMegaItem.megaMenuLinkTo && (
                             <Link
                               href={activeMegaItem.megaMenuLinkTo}
                               onClick={() => setActiveDropdown(null)}
-                              className="group/all inline-flex items-center gap-1.5 rounded-full border border-cyan-200/20 bg-cyan-400/10 px-4 py-2 text-xs font-semibold text-cyan-200 transition-colors hover:bg-cyan-400/20"
+                              className="group/all inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-semibold text-blue-600 transition-colors hover:bg-blue-100"
                             >
                               View all {activeMegaItem.label.toLowerCase()}
                               <ChevronDown className="h-3.5 w-3.5 -rotate-90 transition-transform group-hover/all:translate-x-1" />
@@ -465,7 +484,12 @@ export default function Header() {
 
             <button
               onClick={() => setIsOpen(true)}
-              className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-slate-100 shadow-sm transition-colors hover:border-cyan-200/30 hover:bg-white/10 hover:text-cyan-200 lg:hidden"
+              className={cn(
+                "flex h-11 w-11 items-center justify-center rounded-xl shadow-sm transition-colors lg:hidden",
+                isScrolled
+                  ? "border border-slate-200/80 bg-slate-50 text-slate-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600"
+                  : "border border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-cyan-200"
+              )}
               aria-label="Open navigation menu"
             >
               <Menu className="h-6 w-6" />

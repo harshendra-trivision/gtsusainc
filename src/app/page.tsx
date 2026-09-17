@@ -718,7 +718,6 @@ export default function HomePage() {
         >
           <source src={heroVisuals[activeSlide].video} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/30 to-slate-950/40" />
         <FloatingParticles />
 
 
