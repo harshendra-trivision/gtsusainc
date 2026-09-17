@@ -5,10 +5,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { LucideIcon } from 'lucide-react';
 import {
+  ArrowRight,
   BarChart,
+  Box,
   BrainCircuit,
+  Building2,
   Calendar,
-  Car,
+  Check,
   CheckCircle2,
   Clock,
   Code,
@@ -17,22 +20,23 @@ import {
   Database,
   Factory,
   FileText,
-  Flame,
   Globe,
   Grid,
   Handshake,
   Layers,
   Map,
   MapPin,
+  Monitor,
   Radio,
+  RotateCw,
   Settings,
   ShieldCheck,
   Ship,
+  Sliders,
   Smartphone,
-  Train,
   TrendingUp,
-  Truck,
   Users,
+  X,
   Zap
 } from 'lucide-react';
 import {
@@ -427,26 +431,317 @@ const trustStats = [
   }
 ];
 
-const whoWeAreHighlights = [
+const whoWeAreTrustStats = [
+  { value: '100+', label: 'Engineering Professionals', icon: Users },
+  { value: '100+', label: 'Projects Delivered', icon: FileText },
+  { value: '15+', label: 'Industries Supported', icon: Cog },
+  { value: 'USA + India', label: 'Delivery Centers', icon: Globe },
+  { value: '24/7', label: 'Engineering Collaboration', icon: Clock },
+  { value: 'Trusted', label: 'Quality, Safety & Compliance', icon: ShieldCheck }
+];
+
+const engineeringPillars = [
+  { title: 'Multi-Discipline', subtitle: 'Expertise', icon: Users },
+  { title: 'Faster', subtitle: 'Project Delivery', icon: Zap },
+  { title: 'Cost', subtitle: 'Optimization', icon: TrendingUp },
+  { title: 'Reduced', subtitle: 'Project Risk', icon: ShieldCheck },
+  { title: 'Sustainable', subtitle: 'Industrial Growth', icon: Globe }
+];
+
+export interface EngineeringSolutionItem {
+  id: string;
+  title: string;
+  shortDesc: string;
+  fullDesc: string;
+  image: string;
+  icon: LucideIcon;
+  stats: { value: string; label: string }[];
+  keyServices: string[];
+  softwareTools: string[];
+  relatedIndustries: string[];
+  bottomMetrics: { label: string; sublabel: string }[];
+}
+
+const engineeringSolutions: EngineeringSolutionItem[] = [
   {
-    title: 'Plant',
-    text: 'Process, piping, and EPC support across industrial assets',
-    icon: '/icons/plant.png'
+    id: 'plant-engineering',
+    title: 'Plant Engineering',
+    shortDesc: 'Process, piping, mechanical, electrical, instrumentation and EPC support.',
+    fullDesc:
+      'End-to-end engineering solutions for process plants, refineries, LNG, power, chemicals, and industrial facilities, delivered with accuracy, efficiency, and industry expertise.',
+    image: '/image/Global-Delivery-Model.jpg',
+    icon: Factory,
+    stats: [
+      { value: '50+', label: 'Plant Projects' },
+      { value: '25+', label: 'Clients' },
+      { value: '15+', label: 'Industries' }
+    ],
+    keyServices: [
+      'FEED and Detailed Engineering',
+      'Process Design (PFD, P&ID)',
+      '3D Modeling & Plant Layout',
+      'Piping & Stress Analysis',
+      'Mechanical Equipment Design',
+      'Electrical, Instrumentation & Automation',
+      'Civil & Structural Engineering',
+      'Utility Systems & Infrastructure',
+      'EPC Support and Commissioning Assistance'
+    ],
+    softwareTools: ['PDMS', 'SP3D', 'E3D', 'AutoCAD Plant 3D', 'CAESAR II', 'AVEVA', 'Hexagon SmartPlant'],
+    relatedIndustries: ['Oil & Gas', 'LNG', 'Chemicals', 'Power', 'Refining', 'Manufacturing', 'Pharmaceuticals'],
+    bottomMetrics: [
+      { label: '100+', sublabel: 'Projects Delivered' },
+      { label: '20+', sublabel: 'Years Experience' },
+      { label: 'Global', sublabel: 'Project Support' }
+    ]
   },
   {
-    title: 'Product',
-    text: 'CAD, CAE, reverse engineering, and design automation',
-    icon: '/icons/product.png'
+    id: 'product-engineering',
+    title: 'Product Engineering',
+    shortDesc: 'CAD, CAE, reverse engineering, equipment design, and manufacturing support.',
+    fullDesc:
+      'Mechanical design, product development, reverse engineering, and manufacturing support for industrial equipment and systems.',
+    image: '/image/Global-Delivery-Model.jpg',
+    icon: Box,
+    stats: [
+      { value: '50+', label: 'Products Engineered' },
+      { value: '30+', label: 'Global Clients' },
+      { value: 'Cost', label: 'Optimized Designs' }
+    ],
+    keyServices: [
+      'Mechanical Design & 3D Modeling',
+      'Equipment & Machinery Design',
+      'Reverse Engineering',
+      'Design for Manufacturing (DFM)',
+      'Pressure Vessel Design',
+      'Product Development',
+      'Detailed Drawings & Documentation',
+      'Manufacturing Support'
+    ],
+    softwareTools: ['SolidWorks', 'CATIA', 'NX', 'Inventor', 'Creo', 'AutoCAD Mechanical'],
+    relatedIndustries: ['Oil & Gas', 'Power', 'Manufacturing', 'Heavy Industry', 'Mining', 'Process Equipment'],
+    bottomMetrics: [
+      { label: '50+', sublabel: 'Products Engineered' },
+      { label: '30+', sublabel: 'Global Clients' },
+      { label: 'Cost', sublabel: 'Optimized Designs' }
+    ]
   },
   {
-    title: 'Digital',
-    text: 'AI workflows, digital twins, analytics, and data intelligence',
-    icon: '/icons/digitalization.png'
+    id: 'structural-engineering',
+    title: 'Structural Engineering',
+    shortDesc: 'Steel detailing, structural analysis, fabrication drawings, and offshore structures.',
+    fullDesc:
+      'Steel detailing, structural analysis, fabrication drawings, and offshore engineering for industrial plants, infrastructure, and marine structures.',
+    image: '/image/Global-Delivery-Model.jpg',
+    icon: Layers,
+    stats: [
+      { value: '1,000+', label: 'Structural Drawings' },
+      { value: '15+', label: 'Years Experience' },
+      { value: 'Global', label: 'Project Execution' }
+    ],
+    keyServices: [
+      'Structural Analysis & Design',
+      'Steel Detailing & Fabrication Drawings',
+      'Connection Design',
+      'Industrial & Offshore Structures',
+      'Pipe Racks & Modules',
+      'Foundation & Civil Structures',
+      'Erection Drawings & Support',
+      'Design to International Standards'
+    ],
+    softwareTools: ['STAAD Pro', 'Tekla Structures', 'Revit Structure', 'SAP2000', 'ETABS', 'Advance Steel'],
+    relatedIndustries: ['Oil & Gas', 'LNG', 'Power', 'Infrastructure', 'Marine', 'Manufacturing'],
+    bottomMetrics: [
+      { label: '1,000+', sublabel: 'Structural Drawings' },
+      { label: '15+', sublabel: 'Years Experience' },
+      { label: 'Global', sublabel: 'Project Execution' }
+    ]
   },
   {
-    title: 'Delivery',
-    text: 'US + India engineering teams with scalable execution',
-    icon: '/icons/dilivery.png'
+    id: 'digital-engineering',
+    title: 'Digital Engineering',
+    shortDesc: 'AI workflows, digital twins, BIM, engineering analytics, and automation.',
+    fullDesc:
+      'AI-enabled engineering workflows, digital twins, BIM, engineering analytics, and data intelligence for smarter, faster, and more efficient project delivery.',
+    image: '/image/Global-Delivery-Model.jpg',
+    icon: Monitor,
+    stats: [
+      { value: 'Faster', label: 'Decision Making' },
+      { value: 'Higher', label: 'Project Accuracy' },
+      { value: 'Smarter', label: 'Project Operations' }
+    ],
+    keyServices: [
+      'Digital Twin Development',
+      'BIM & 3D Visualization',
+      'AI Engineering & Automation',
+      'Engineering Data Analytics',
+      'Digital Project Collaboration',
+      'Reality Capture & Laser Scanning',
+      'Virtual Commissioning',
+      'Cloud-based Engineering Platforms'
+    ],
+    softwareTools: ['AVEVA', 'Bentley', 'Autodesk', 'Azure Digital Twins', 'Power BI', 'Python'],
+    relatedIndustries: ['Oil & Gas', 'Power', 'Manufacturing', 'Infrastructure', 'Chemicals', 'Renewables'],
+    bottomMetrics: [
+      { label: 'Faster', sublabel: 'Decision Making' },
+      { label: 'Higher', sublabel: 'Project Accuracy' },
+      { label: 'Smarter', sublabel: 'Project Operations' }
+    ]
+  },
+  {
+    id: 'simulation-analysis',
+    title: 'Simulation & Analysis',
+    shortDesc: 'FEA, CFD, thermal analysis, vibration, and multi-physics simulation.',
+    fullDesc:
+      'Advanced engineering simulation including structural, thermal, CFD, fatigue, vibration, and multi-physics analysis to improve performance, safety, and reliability.',
+    image: '/image/Global-Delivery-Model.jpg',
+    icon: BrainCircuit,
+    stats: [
+      { value: 'Reliable', label: 'Design Outcomes' },
+      { value: 'Reduced', label: 'Project Risk' },
+      { value: 'Optimized', label: 'Performance' }
+    ],
+    keyServices: [
+      'Finite Element Analysis (FEA)',
+      'Computational Fluid Dynamics (CFD)',
+      'Thermal & Stress Analysis',
+      'Fatigue & Vibration Analysis',
+      'Multi-Physics Simulation',
+      'Design Optimization',
+      'Failure Analysis',
+      'Digital Validation & Certification Support'
+    ],
+    softwareTools: ['ANSYS', 'Abaqus', 'HyperMesh', 'LS-DYNA', 'COMSOL', 'Fluent', 'OpenFOAM'],
+    relatedIndustries: ['Oil & Gas', 'Aerospace', 'Power', 'Manufacturing', 'Automotive', 'Heavy Equipment'],
+    bottomMetrics: [
+      { label: 'Reliable', sublabel: 'Design Outcomes' },
+      { label: 'Reduced', sublabel: 'Project Risk' },
+      { label: 'Optimized', sublabel: 'Performance' }
+    ]
+  },
+  {
+    id: 'automation-controls',
+    title: 'Automation & Controls',
+    shortDesc: 'PLC, SCADA, IIoT, Industry 4.0, and smart manufacturing solutions.',
+    fullDesc:
+      'Industrial automation, communication systems, SCADA, IIoT, and smart manufacturing solutions to improve operational efficiency and plant performance.',
+    image: '/image/Global-Delivery-Model.jpg',
+    icon: Sliders,
+    stats: [
+      { value: 'Increased', label: 'Operational Efficiency' },
+      { value: 'Reduced', label: 'Downtime' },
+      { value: 'Smarter', label: 'Plant Operations' }
+    ],
+    keyServices: [
+      'PLC & SCADA System Design',
+      'Instrumentation & Control Design',
+      'DCS & Safety Systems',
+      'IIoT & Industry 4.0 Integration',
+      'Control Panel Design',
+      'Automation Software Development',
+      'System Testing & Commissioning',
+      'Predictive Maintenance Solutions'
+    ],
+    softwareTools: ['Siemens TIA Portal', 'Rockwell Studio 5000', 'AVEVA', 'Wonderware', 'Ignition', 'OSI PI', 'WinCC'],
+    relatedIndustries: ['Oil & Gas', 'Power', 'Manufacturing', 'Chemicals', 'Water', 'Pharmaceuticals'],
+    bottomMetrics: [
+      { label: 'Increased', sublabel: 'Operational Efficiency' },
+      { label: 'Reduced', sublabel: 'Downtime' },
+      { label: 'Smarter', sublabel: 'Plant Operations' }
+    ]
+  },
+  {
+    id: 'infrastructure-bim',
+    title: 'Infrastructure & BIM',
+    shortDesc: 'Civil, infrastructure, 3D modeling, construction coordination, and digital project delivery.',
+    fullDesc:
+      'Civil, infrastructure, and BIM solutions including 3D modeling, construction coordination, and digital project delivery for industrial and infrastructure projects.',
+    image: '/image/Global-Delivery-Model.jpg',
+    icon: Building2,
+    stats: [
+      { value: 'Faster', label: 'Project Delivery' },
+      { value: 'Reduced', label: 'Rework' },
+      { value: 'Better', label: 'Collaboration' }
+    ],
+    keyServices: [
+      '3D BIM Modeling',
+      'Civil & Infrastructure Design',
+      'Construction Coordination',
+      'Digital Project Delivery',
+      'Clash Detection & Resolution',
+      'Quantity Takeoff & Modeling',
+      'As-built Modeling',
+      'Integration with Engineering Disciplines'
+    ],
+    softwareTools: ['Revit', 'Civil 3D', 'Navisworks', 'Bentley', 'MicroStation', 'OpenRoads'],
+    relatedIndustries: ['Industrial Facilities', 'Infrastructure', 'Transportation', 'Power', 'Water', 'Commercial'],
+    bottomMetrics: [
+      { label: 'Faster', sublabel: 'Project Delivery' },
+      { label: 'Reduced', sublabel: 'Rework' },
+      { label: 'Better', sublabel: 'Collaboration' }
+    ]
+  },
+  {
+    id: 'project-program-support',
+    title: 'Project & Program Support',
+    shortDesc: 'Project controls, document management, engineering reviews, and EPC support.',
+    fullDesc:
+      'Comprehensive project support services including planning, document management, engineering reviews, and EPC support to ensure successful project execution.',
+    image: '/image/Global-Delivery-Model.jpg',
+    icon: FileText,
+    stats: [
+      { value: 'On-Time', label: 'Project Execution' },
+      { value: 'Within Budget', label: 'Cost Control' },
+      { value: 'Successful', label: 'Project Outcomes' }
+    ],
+    keyServices: [
+      'Project Planning & Scheduling',
+      'Document Control & Management',
+      'Engineering Reviews (IDR/HAZOP)',
+      'Cost Estimation Support',
+      'Procurement & Vendor Coordination',
+      'EPC Execution Support',
+      'Risk Management',
+      'Commissioning & Start-up Support'
+    ],
+    softwareTools: ['Primavera P6', 'MS Project', 'Aconex', 'SharePoint', 'Autodesk Construction Cloud', 'OpenText'],
+    relatedIndustries: ['Oil & Gas', 'Power', 'Chemicals', 'Manufacturing', 'Mining', 'Renewables'],
+    bottomMetrics: [
+      { label: 'On-Time', sublabel: 'Project Execution' },
+      { label: 'Within Budget', sublabel: 'Cost Control' },
+      { label: 'Successful', sublabel: 'Project Outcomes' }
+    ]
+  },
+  {
+    id: 'asset-lifecycle-support',
+    title: 'Asset Lifecycle Support',
+    shortDesc: 'Brownfield engineering, debottlenecking, operations support, and sustainability solutions.',
+    fullDesc:
+      'Lifecycle engineering solutions to maximize asset performance, reliability, and sustainability from operations through decommissioning.',
+    image: '/image/Global-Delivery-Model.jpg',
+    icon: RotateCw,
+    stats: [
+      { value: 'Higher', label: 'Asset Reliability' },
+      { value: 'Extended', label: 'Asset Life' },
+      { value: 'More', label: 'Sustainable Operations' }
+    ],
+    keyServices: [
+      'Brownfield Engineering',
+      'Debottlenecking & Revamps',
+      'Asset Integrity & Reliability',
+      'Maintenance Planning',
+      'Life Extension Studies',
+      'Sustainability & Emissions Reduction',
+      'Decommissioning Support',
+      'Digital Asset Management'
+    ],
+    softwareTools: ['AVEVA', 'AssetWise', 'SAP', 'IBM Maximo', 'Power BI', 'Azure IoT'],
+    relatedIndustries: ['Oil & Gas', 'Power', 'Chemicals', 'Manufacturing', 'Mining', 'Infrastructure'],
+    bottomMetrics: [
+      { label: 'Higher', sublabel: 'Asset Reliability' },
+      { label: 'Extended', sublabel: 'Asset Life' },
+      { label: 'More', sublabel: 'Sustainable Operations' }
+    ]
   }
 ];
 
@@ -785,7 +1080,27 @@ export default function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeDiscipline, setActiveDiscipline] = useState(engineeringCapabilities[0].name);
   const [hoveredIndustryIndex, setHoveredIndustryIndex] = useState<number | null>(null);
+  const [selectedSolution, setSelectedSolution] = useState<EngineeringSolutionItem | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedSolution(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    if (selectedSolution) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedSolution]);
 
   const selectedCapability =
     engineeringCapabilities.find((capability) => capability.name === activeDiscipline) ?? engineeringCapabilities[0];
@@ -1211,82 +1526,336 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-slate-100 py-20 sm:py-28">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_15%,rgba(14,165,233,0.16),transparent_32%),radial-gradient(circle_at_90%_28%,rgba(37,99,235,0.12),transparent_34%),linear-gradient(180deg,#f8fafc_0%,#eef4f8_100%)]" />
-        <div className="absolute right-0 top-0 h-full w-1/2 blueprint-grid-fine opacity-50" />
-        <div className="absolute left-8 top-16 hidden h-28 w-28 rounded-full border border-cyan-300/30 bg-cyan-200/10 blur-sm lg:block" />
+      {/* =========================================================
+          ENGINEERING SOLUTIONS & INTRO SECTION (Matching Mockup)
+      ========================================================= */}
+      <section className="relative overflow-hidden border-y border-slate-200/80 bg-white py-16 sm:py-20 lg:py-24 text-slate-900">
+        {/* Background Image: Clear on left, smooth gradient fade to white on right */}
+        <div className="absolute inset-0 pointer-events-none select-none z-0">
+          <Image
+            src="/image/OUR ENGINEERING SOLUTION.jpg"
+            alt="Engineering Solutions Background"
+            fill
+            sizes="100vw"
+            className="object-cover object-left-bottom"
+            priority={false}
+          />
+          {/* Subtle top/bottom edge fade to seamlessly blend into adjacent sections */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/40 pointer-events-none" />
 
-        <AnimatedSection as="div" className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
-          <div className="lg:col-span-7">
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/80 bg-white/72 p-8 shadow-[0_30px_90px_rgba(15,23,42,0.10)] backdrop-blur-xl sm:p-10">
-              <div className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-cyan-300/20 blur-3xl" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
+          {/* Smooth Horizontal Gradient: Clear on left, fading smoothly into solid white on the right */}
+          {/* On Desktop (lg): Left 0-20% is clear, 20-50% fades smoothly into white, 56%+ is pure solid white */}
+          <div className="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,transparent_0%,transparent_18%,rgba(255,255,255,0.35)_30%,rgba(255,255,255,0.85)_44%,#ffffff_56%,#ffffff_100%)] pointer-events-none" />
+          {/* On Tablet (sm to lg): Horizontal fade adjusted for narrower width */}
+          <div className="absolute inset-0 hidden sm:block lg:hidden bg-[linear-gradient(to_right,transparent_0%,transparent_12%,rgba(255,255,255,0.45)_26%,rgba(255,255,255,0.92)_42%,#ffffff_56%,#ffffff_100%)] pointer-events-none" />
+          {/* On Mobile (<sm): Vertical fade so intro has plant background and cards below have clean white */}
+          <div className="absolute inset-0 sm:hidden bg-[linear-gradient(to_bottom,transparent_0%,transparent_15%,rgba(255,255,255,0.45)_28%,rgba(255,255,255,0.95)_45%,#ffffff_58%,#ffffff_100%)] pointer-events-none" />
+        </div>
 
-              <SectionHeading
-                eyebrow="Who We Are"
-                title="Engineering Expertise. Digital Intelligence. Global Delivery."
-                description="GTS Engineering delivers multidisciplinary engineering, automation, digital transformation, and project execution services across the industrial asset lifecycle—from concept and FEED to commissioning and optimization."
-                align="left"
-              />
-
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <GradientButton href="/about">
-                  About GTS
-                </GradientButton>
-                <div className="rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-slate-600">
-                  Concept → Commissioning → Optimization
+        <div className="relative z-10 mx-auto max-w-[1520px] px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8 items-start">
+            
+            {/* Left Column: Intro & Trust Signals (lg:col-span-4) */}
+            <div className="relative flex flex-col justify-between pr-0 lg:pr-6 lg:col-span-4">
+              <div>
+                {/* Eyebrow */}
+                <div className="inline-flex items-center gap-2.5">
+                  <span className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-blue-600">
+                    WHO WE ARE
+                  </span>
+                  <span className="h-[2px] w-8 rounded-full bg-blue-500/80" />
                 </div>
+
+                {/* Heading */}
+                <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-[40px] font-extrabold leading-[1.12] tracking-tight text-slate-900">
+                  Engineering <br />
+                  Expertise. <br />
+                  Digital Innovation. <br />
+                  <span className="text-blue-600">Global Impact.</span>
+                </h2>
+
+                {/* Description */}
+                <p className="mt-5 text-xs sm:text-sm leading-relaxed text-slate-700 font-normal">
+                  GTS Engineering delivers multidisciplinary engineering, AI-enabled digital solutions, and project execution services across the industrial asset lifecycle — from concept and FEED to commissioning, operations, and optimization.
+                </p>
+
+                {/* 6 Trust Signals list */}
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3.5">
+                  {whoWeAreTrustStats.map((item) => {
+                    const ItemIcon = item.icon;
+                    return (
+                      <div key={item.label} className="flex items-center gap-3.5 rounded-xl border border-slate-200/80 bg-white/90 p-2.5 shadow-xs transition-all hover:border-blue-200 hover:shadow backdrop-blur-xs">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 border border-blue-100/80 shadow-xs">
+                          <ItemIcon className="h-5 w-5" />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="text-sm font-extrabold text-slate-900 leading-none">{item.value}</div>
+                          <div className="text-xs text-slate-500 font-medium mt-1 leading-tight">{item.label}</div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Vertical Taglines */}
+                <div className="mt-8 flex items-stretch gap-3.5">
+                  <div className="w-[3px] rounded-full bg-blue-600 shrink-0" />
+                  <div className="flex flex-col space-y-1 font-mono text-[11px] font-bold tracking-[0.24em] text-slate-600 uppercase">
+                    <span>PEOPLE</span>
+                    <span>TECHNOLOGY</span>
+                    <span>SOLUTIONS</span>
+                    <span>GLOBAL IMPACT</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Industrial Brand Line */}
+              <div className="mt-10 pt-6 border-t border-slate-300/60">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.28em] text-slate-600">
+                  ENGINEERING A SMARTER TOMORROW
+                </span>
+              </div>
+            </div>
+
+            {/* Right Column: 3x3 Engineering Solutions Grid (lg:col-span-8) */}
+            <div className="lg:col-span-8 rounded-3xl border border-slate-200/80 bg-white/95 p-5 sm:p-7 shadow-[0_4px_24px_rgba(15,23,42,0.03)] backdrop-blur-sm">
+              {/* Header Bar */}
+              <div className="flex items-center justify-between pb-4 border-b border-slate-200/80">
+                <div className="inline-flex items-center gap-2.5">
+                  <span className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-blue-600">
+                    OUR ENGINEERING SOLUTIONS
+                  </span>
+                  <span className="h-[2px] w-8 rounded-full bg-blue-500/80" />
+                </div>
+                <Link
+                  href="/solutions"
+                  className="group inline-flex items-center gap-1.5 text-xs font-bold font-mono uppercase tracking-wider text-blue-600 hover:text-blue-700 transition-colors"
+                >
+                  <span>EXPLORE ALL SOLUTIONS</span>
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+
+              {/* 3x3 Grid of 9 Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                {engineeringSolutions.map((sol) => {
+                  const SolIcon = sol.icon;
+                  const isSelected = selectedSolution?.id === sol.id;
+                  return (
+                    <button
+                      key={sol.id}
+                      type="button"
+                      onClick={() => setSelectedSolution(sol)}
+                      className={`group relative flex flex-col justify-between rounded-2xl border bg-white p-3.5 sm:p-4 text-left shadow-[0_2px_10px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer ${
+                        isSelected
+                          ? 'border-blue-600 ring-4 ring-blue-500/10 shadow-blue-100'
+                          : 'border-slate-200/80 hover:border-blue-300'
+                      }`}
+                    >
+                      {/* Card Thumbnail Image with Floating Icon Badge */}
+                      <div className="relative h-32 sm:h-36 w-full rounded-xl overflow-hidden mb-3.5 bg-slate-100">
+                        <Image
+                          src={sol.image}
+                          alt={sol.title}
+                          fill
+                          sizes="(min-width: 1024px) 25vw, 50vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+                        {/* Floating Icon Badge */}
+                        <div className="absolute bottom-2.5 left-2.5 flex h-9 w-9 items-center justify-center rounded-xl bg-white shadow-md border border-slate-100 text-blue-600 transition-transform group-hover:scale-110">
+                          <SolIcon className="h-5 w-5" />
+                        </div>
+                      </div>
+
+                      {/* Title and Short Description */}
+                      <div className="flex-1 flex flex-col justify-between">
+                        <div className="flex items-start justify-between gap-2">
+                          <h3 className="font-bold text-slate-900 text-[14px] sm:text-[15px] leading-snug group-hover:text-blue-600 transition-colors">
+                            {sol.title}
+                          </h3>
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <ArrowRight className="h-3.5 w-3.5" />
+                          </span>
+                        </div>
+                        <p className="mt-2 text-[11px] sm:text-xs text-slate-500 leading-relaxed line-clamp-2">
+                          {sol.shortDesc}
+                        </p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Bottom 5-Pillar Highlights Bar */}
+              <div className="mt-8 pt-5 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
+                {engineeringPillars.map((hl) => {
+                  const HlIcon = hl.icon;
+                  return (
+                    <div key={hl.title} className="flex items-center gap-2.5">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 border border-blue-100/70">
+                        <HlIcon className="h-4 w-4" />
+                      </div>
+                      <div className="min-w-0">
+                        <span className="block text-xs font-bold text-slate-900 leading-tight">{hl.title}</span>
+                        <span className="block text-[10px] text-slate-500 font-medium leading-tight">{hl.subtitle}</span>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="lg:col-span-5">
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-[2.75rem] bg-gradient-to-br from-cyan-300/24 via-blue-500/14 to-slate-950/10 blur-2xl" />
-              <div className="relative rounded-[2.5rem] border border-slate-900/10 bg-slate-950 p-4 shadow-[0_36px_100px_rgba(15,23,42,0.28)]">
-                <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(15,23,42,0.98),rgba(30,41,59,0.88))] p-4">
-                  <div className="mb-4 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3">
-                    <div>
-                      <p className="text-[10px] font-mono uppercase tracking-[0.24em] text-cyan-200">
-                        Capability Map
-                      </p>
-                      <p className="mt-1 text-sm font-semibold text-white">
-                        Integrated engineering delivery
-                      </p>
+        {/* Slide-over Detail Drawer / Side Card */}
+        {selectedSolution && (
+          <div className="fixed inset-0 z-50 overflow-hidden">
+            {/* Backdrop */}
+            <div
+              className="absolute inset-0 bg-slate-950/40 backdrop-blur-sm transition-opacity animate-in fade-in duration-200"
+              onClick={() => setSelectedSolution(null)}
+            />
+
+            <div className="fixed inset-y-0 right-0 flex max-w-full pl-6 sm:pl-10">
+              <div className="relative w-screen max-w-lg sm:max-w-xl md:max-w-2xl bg-white shadow-2xl overflow-y-auto border-l border-slate-200 animate-in slide-in-from-right duration-300 flex flex-col">
+                {/* Sticky Header */}
+                <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 border border-blue-100">
+                      {(() => {
+                        const Icon = selectedSolution.icon;
+                        return <Icon className="h-6 w-6" />;
+                      })()}
                     </div>
-                    <span className="h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.85)]" />
+                    <div>
+                      <div className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-blue-600">
+                        OUR SOLUTIONS
+                      </div>
+                      <h3 className="text-xl font-extrabold text-slate-900 leading-tight">
+                        {selectedSolution.title}
+                      </h3>
+                    </div>
                   </div>
 
-                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-2">
-                    {whoWeAreHighlights.map(({ title, text, icon }) => (
-                      <MagneticCard
-                        key={title}
-                        intensity={444}
-                        className="group rounded-2xl border-white/10 bg-white/[0.07] p-5 shadow-none"
-                      >
+                  <button
+                    type="button"
+                    onClick={() => setSelectedSolution(null)}
+                    className="rounded-full p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors"
+                    aria-label="Close panel"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+
+                {/* Body Content */}
+                <div className="p-6 space-y-6 flex-1">
+                  {/* Full Description */}
+                  <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    {selectedSolution.fullDesc}
+                  </p>
+
+                  {/* Hero Image with Stats Overlay */}
+                  <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-slate-100 shadow-sm border border-slate-100">
+                    <Image
+                      src={selectedSolution.image}
+                      alt={selectedSolution.title}
+                      fill
+                      sizes="(min-width: 768px) 600px, 100vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent" />
+
+                    {/* Stats Overlay on Image */}
+                    <div className="absolute inset-x-4 bottom-3 grid grid-cols-3 gap-2 text-center">
+                      {selectedSolution.stats.map((st) => (
+                        <div key={st.label} className="rounded-xl bg-white/10 backdrop-blur-md p-2 border border-white/10">
+                          <div className="text-base sm:text-lg font-extrabold text-cyan-200 leading-none">
+                            {st.value}
+                          </div>
+                          <div className="text-[10px] sm:text-xs text-slate-200 font-medium mt-1 leading-tight">
+                            {st.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Key Services */}
+                  <div>
+                    <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-slate-400">
+                      KEY SERVICES
+                    </div>
+                    <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {selectedSolution.keyServices.map((service) => (
+                        <div key={service} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-slate-700 font-medium leading-snug">
+                          <Check className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
+                          <span>{service}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Software & Tools */}
+                  <div>
+                    <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-slate-400">
+                      SOFTWARE & TOOLS
+                    </div>
+                    <div className="mt-2.5 flex flex-wrap gap-2">
+                      {selectedSolution.softwareTools.map((tool) => (
+                        <span
+                          key={tool}
+                          className="rounded-xl border border-blue-100 bg-blue-50/70 px-3 py-1.5 text-xs font-semibold text-blue-700 shadow-sm"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Related Industries */}
+                  <div>
+                    <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-slate-400">
+                      RELATED INDUSTRIES
+                    </div>
+                    <div className="mt-2.5 grid grid-cols-2 sm:grid-cols-3 gap-2">
+                      {selectedSolution.relatedIndustries.map((ind) => (
                         <div
-                          style={{
-                            WebkitMaskImage: `url('${icon}')`,
-                            maskImage: `url('${icon}')`,
-                            WebkitMaskRepeat: 'no-repeat',
-                            maskRepeat: 'no-repeat',
-                            WebkitMaskPosition: 'center',
-                            maskPosition: 'center',
-                            WebkitMaskSize: 'contain',
-                            maskSize: 'contain',
-                          }}
-                          className="w-12 h-12 bg-gradient-to-br from-[#2563eb] to-[#22d3ee] transition-all duration-300 group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(34,211,238,0.3)]"
-                        />
-                        <div className="mt-5 text-2xl font-extrabold text-white">{title}</div>
-                        <p className="mt-2 text-xs leading-relaxed text-slate-300">{text}</p>
-                      </MagneticCard>
+                          key={ind}
+                          className="flex items-center gap-2 rounded-xl border border-slate-200/80 bg-slate-50/70 p-2.5 text-xs font-semibold text-slate-800 shadow-sm"
+                        >
+                          <Factory className="h-3.5 w-3.5 text-blue-600 shrink-0" />
+                          <span className="truncate">{ind}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom Impact Metrics */}
+                  <div className="grid grid-cols-3 gap-3 border-t border-slate-200/80 pt-4">
+                    {selectedSolution.bottomMetrics.map((met) => (
+                      <div key={met.sublabel} className="text-center rounded-xl bg-slate-50 p-2.5 border border-slate-100">
+                        <div className="text-sm sm:text-base font-extrabold text-blue-600 leading-tight">
+                          {met.label}
+                        </div>
+                        <div className="text-[10px] sm:text-[11px] text-slate-500 font-medium mt-0.5 leading-tight">
+                          {met.sublabel}
+                        </div>
+                      </div>
                     ))}
                   </div>
+
+                  {/* CTA Button */}
+                  <div className="pt-2">
+                    <GradientButton href="/contact" className="w-full justify-center text-sm py-3.5 shadow-md">
+                      Get in Touch About {selectedSolution.title} →
+                    </GradientButton>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        )}
       </section>
 
       <section id="solutions" className="relative scroll-mt-32 overflow-hidden bg-white py-20 sm:py-28">
