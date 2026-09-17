@@ -889,10 +889,6 @@ export default function HomePage() {
                     {trustStats[0].description}
                   </p>
                 </div>
-
-                {/* Corner detail */}
-                <div className="absolute right-0 top-0 h-16 w-16 border-b border-l border-cyan-400/40" />
-                <div className="absolute right-4 top-4 h-2 w-2 bg-cyan-400" />
               </div>
 
 
