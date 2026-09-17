@@ -6,21 +6,34 @@ import Link from 'next/link';
 import type { LucideIcon } from 'lucide-react';
 import {
   BarChart,
+  BrainCircuit,
+  Calendar,
   Car,
   CheckCircle2,
+  Clock,
   Code,
+  Cog,
   Cpu,
+  Database,
+  Factory,
   FileText,
   Flame,
+  Globe,
   Grid,
+  Handshake,
+  Layers,
   Map,
+  MapPin,
   Radio,
   Settings,
   ShieldCheck,
   Ship,
   Smartphone,
   Train,
-  Truck
+  TrendingUp,
+  Truck,
+  Users,
+  Zap
 } from 'lucide-react';
 import {
   AnimatedSection,
@@ -611,16 +624,102 @@ const softwareExpertise = [
   { category: 'Digital', tools: 'Python | MATLAB | AWS | Azure' }
 ];
 
-const whyGts = [
-  'Established Since 2012',
-  'Engineering Excellence',
-  'US + India Delivery',
-  'Fast Turnaround',
-  'AI-Enabled Engineering',
-  'Dedicated Project Teams',
-  'Cost Optimization',
-  'Scalable Resources',
-  'Strong Quality Systems'
+interface WhyGtsFeature {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}
+
+interface WhyGtsStat {
+  value: string;
+  label: string;
+  icon: LucideIcon;
+}
+
+const whyGtsFeatures: WhyGtsFeature[] = [
+  {
+    title: 'USA + Global Engineering Delivery',
+    description: 'Integrated project leadership from the United States with scalable engineering execution through our global delivery centers.',
+    icon: Globe
+  },
+  {
+    title: 'Multidisciplinary Engineering',
+    description: 'Mechanical, Process, Piping, Civil, Structural, Electrical, Instrumentation, Automation, Digital Engineering, and Project Controls under one partner.',
+    icon: Users
+  },
+  {
+    title: 'AI & Digital Engineering',
+    description: 'AI-assisted engineering workflows, automation, simulation, digital twins, and engineering analytics improve productivity and project quality.',
+    icon: BrainCircuit
+  },
+  {
+    title: 'Faster Project Delivery',
+    description: 'Optimized engineering processes and global collaboration reduce project schedules while maintaining engineering quality.',
+    icon: Zap
+  },
+  {
+    title: 'Scalable Engineering Resources',
+    description: 'Engineering teams expand quickly to support FEED, detailed engineering, EPC, brownfield, and mega-project requirements.',
+    icon: TrendingUp
+  },
+  {
+    title: 'Industry Expertise',
+    description: 'Experience supporting Oil & Gas, LNG, Data Centers, Power, Infrastructure, Manufacturing, Mining, Pharmaceuticals, and other industrial sectors.',
+    icon: Factory
+  },
+  {
+    title: 'Quality & Compliance',
+    description: 'Structured QA/QC procedures, engineering reviews, document control, and compliance with international engineering standards.',
+    icon: ShieldCheck
+  },
+  {
+    title: 'Cost Optimization',
+    description: 'Global engineering delivery and digital workflows reduce total engineering cost while maintaining technical excellence.',
+    icon: Database
+  },
+  {
+    title: 'Long-Term Engineering Partner',
+    description: 'Supporting clients throughout the complete project lifecycle—from concept and FEED through commissioning, operations, and asset optimization.',
+    icon: Handshake
+  }
+];
+
+const whyGtsStats: WhyGtsStat[] = [
+  {
+    value: '2012',
+    label: 'Established',
+    icon: Calendar
+  },
+  {
+    value: '100+',
+    label: 'Engineering Professionals',
+    icon: Users
+  },
+  {
+    value: '500+',
+    label: 'Projects Delivered',
+    icon: FileText
+  },
+  {
+    value: '15+',
+    label: 'Industries Supported',
+    icon: Layers
+  },
+  {
+    value: 'USA + India',
+    label: 'Delivery Centers',
+    icon: MapPin
+  },
+  {
+    value: '24/7',
+    label: 'Engineering Collaboration',
+    icon: Clock
+  },
+  {
+    value: '10+',
+    label: 'Engineering Disciplines',
+    icon: Cog
+  }
 ];
 
 const clientSignals = [
@@ -1510,31 +1609,134 @@ export default function HomePage() {
         </AnimatedSection>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
-        <AnimatedSection as="div" className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
-          <div className="lg:col-span-5">
-            <SectionHeading
-              eyebrow="Why GTS"
-              title="Why Global Industries Choose GTS"
-              description="GTS brings engineering depth, delivery agility, digital capability, and project execution discipline into one scalable partner model."
-              align="left"
-            />
-          </div>
-          <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-              {whyGts.map((reason) => (
-                <MagneticCard
-                  key={reason}
-                  intensity={3}
-                  className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4"
-                >
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-500" />
-                  <span className="text-sm font-bold text-slate-800">{reason}</span>
-                </MagneticCard>
-              ))}
+      {/* =========================================================
+          WHY GTS SECTION (Why Leading Industrial Companies Partner with GTS)
+      ========================================================= */}
+      <section className="relative overflow-hidden border-y border-slate-200/80 bg-slate-50/50 py-16 sm:py-20 lg:py-24 text-slate-900">
+        <div className="relative z-10 mx-auto max-w-[1480px] px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8 items-start">
+            {/* Left Column (lg:col-span-4) */}
+            <div className="relative flex flex-col justify-between pr-0 lg:pr-4 lg:col-span-4">
+              {/* Globe Background with public/image/background.jpg per instructions */}
+              <div className="pointer-events-none absolute -bottom-16 -left-12 sm:-left-6 w-80 h-80 sm:w-[380px] sm:h-[380px] select-none">
+                <div className="relative h-full w-full rounded-full overflow-hidden border border-blue-200/50 shadow-[0_0_60px_rgba(59,130,246,0.15)] bg-blue-50/30">
+                  <Image
+                    src="/image/background.jpg"
+                    alt="Global Network"
+                    fill
+                    sizes="380px"
+                    className="object-cover opacity-20 mix-blend-multiply scale-125"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-white/90 via-blue-50/50 to-transparent" />
+                  <svg className="absolute inset-0 h-full w-full text-blue-500/40" viewBox="0 0 200 200" fill="none">
+                    <circle cx="100" cy="100" r="88" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
+                    <ellipse cx="100" cy="100" rx="88" ry="34" stroke="currentColor" strokeWidth="1.2" />
+                    <ellipse cx="100" cy="100" rx="34" ry="88" stroke="currentColor" strokeWidth="1.2" />
+                    <path d="M12 100 Q100 42 188 100" stroke="currentColor" strokeWidth="1.2" />
+                    <path d="M12 100 Q100 158 188 100" stroke="currentColor" strokeWidth="1.2" />
+                    {/* Network Nodes */}
+                    <circle cx="65" cy="80" r="3.5" fill="#2563eb" />
+                    <circle cx="140" cy="70" r="3.5" fill="#2563eb" />
+                    <circle cx="110" cy="130" r="3.5" fill="#2563eb" />
+                    <circle cx="50" cy="120" r="2.5" fill="#3b82f6" />
+                    <circle cx="155" cy="115" r="2.5" fill="#3b82f6" />
+                    <circle cx="85" cy="105" r="2" fill="#60a5fa" />
+                    {/* Network Arcs */}
+                    <path d="M65 80 Q100 45 140 70" stroke="#2563eb" strokeWidth="1.4" strokeDasharray="3 2" />
+                    <path d="M65 80 Q85 110 110 130" stroke="#2563eb" strokeWidth="1.4" strokeDasharray="3 2" />
+                    <path d="M140 70 Q125 105 110 130" stroke="#2563eb" strokeWidth="1.4" strokeDasharray="3 2" />
+                    <path d="M50 120 Q80 125 110 130" stroke="#3b82f6" strokeWidth="1.2" strokeDasharray="2 2" />
+                    <path d="M110 130 Q135 125 155 115" stroke="#3b82f6" strokeWidth="1.2" strokeDasharray="2 2" />
+                  </svg>
+                </div>
+              </div>
+
+              <div className="relative z-10">
+                {/* Eyebrow */}
+                <div className="inline-flex items-center gap-3">
+                  <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-blue-600">
+                    WHY GTS
+                  </span>
+                  <span className="h-[2px] w-10 rounded-full bg-blue-500/80" />
+                </div>
+
+                {/* Heading */}
+                <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-[42px] font-extrabold leading-[1.12] tracking-tight text-slate-900">
+                  Why Leading <br />
+                  Industrial Companies <br />
+                  <span className="text-blue-600">Partner with GTS</span>
+                </h2>
+
+                {/* Description */}
+                <p className="mt-5 text-xs sm:text-sm leading-relaxed text-slate-600 font-normal max-w-md">
+                  GTS combines multidisciplinlary engineering expertise, AI-enabled digital workflows, global delivery capability, and project execution discipline to help clients reduce engineering schedules, improve quality, and successfully deliver complex industrial projects.
+                </p>
+              </div>
+
+              {/* Vertical Indicator Taglines */}
+              <div className="relative z-10 mt-8 lg:mt-12 flex items-stretch gap-3.5">
+                <div className="w-[3px] rounded-full bg-blue-600 shrink-0" />
+                <div className="flex flex-col space-y-1 font-mono text-[11px] font-bold tracking-[0.25em] text-slate-500 uppercase">
+                  <span>PEOPLE</span>
+                  <span>TECHNOLOGY</span>
+                  <span>SOLUTIONS</span>
+                  <span>GLOBAL IMPACT</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: 3x3 Cards Grid (lg:col-span-8) */}
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
+                {whyGtsFeatures.map((card) => {
+                  const FeatureIcon = card.icon;
+                  return (
+                    <div
+                      key={card.title}
+                      className="group relative flex items-start gap-3.5 rounded-2xl border border-slate-200/80 bg-white p-4 sm:p-5 shadow-[0_2px_8px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-[0_8px_24px_rgba(37,99,235,0.08)]"
+                    >
+                      <div className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 border border-blue-100/80 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                        <FeatureIcon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-slate-900 text-[13px] sm:text-sm leading-snug">
+                          {card.title}
+                        </h3>
+                        <p className="mt-1.5 text-[11px] sm:text-xs text-slate-500 leading-relaxed">
+                          {card.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </AnimatedSection>
+
+          {/* Bottom Stats Strip with subtle vertical dividers */}
+          <div className="mt-12 pt-8 sm:mt-14 sm:pt-8 border-t border-slate-200/80">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 lg:gap-0 lg:divide-x lg:divide-slate-200/80">
+              {whyGtsStats.map((stat) => {
+                const StatIcon = stat.icon;
+                return (
+                  <div key={stat.label} className="flex items-center gap-3 px-0 lg:px-4 first:lg:pl-0 last:lg:pr-0">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center text-blue-600">
+                      <StatIcon className="h-6 w-6 stroke-[1.8]" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="block font-display text-lg sm:text-xl font-extrabold text-slate-900 leading-none">
+                        {stat.value}
+                      </span>
+                      <span className="mt-1 block text-[11px] sm:text-xs text-slate-500 font-medium leading-tight">
+                        {stat.label}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="bg-slate-50 py-20 sm:py-28">
