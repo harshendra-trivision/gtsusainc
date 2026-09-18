@@ -9,6 +9,7 @@ import {
   BarChart,
   Box,
   BrainCircuit,
+  Briefcase,
   Building2,
   Calendar,
   Check,
@@ -24,6 +25,8 @@ import {
   Grid,
   Handshake,
   Layers,
+  Leaf,
+  Lightbulb,
   Map,
   MapPin,
   Monitor,
@@ -39,6 +42,7 @@ import {
   X,
   Zap
 } from 'lucide-react';
+import { solutionCapabilities } from '@/constants/engineeringCapabilities';
 import {
   AnimatedSection,
   FloatingParticles,
@@ -796,6 +800,64 @@ const solutionAreas: SolutionArea[] = [
     description: 'Structured technical content, engineering data, PLM support, and asset documentation that improve lifecycle visibility.',
     icon: '/icons/technology-document.png',
     capabilities: ['PLM', 'Manuals', 'Asset Documentation', 'Engineering Data Management', 'Intelligent Documentation']
+  },
+  {
+    id: 'project-engineering-advisory',
+    title: 'Project Engineering & Advisory',
+    description: 'Integrated project management, controls, cost engineering, schedule governance, and owner’s engineering advisory.',
+    icon: '/icons/process-enginerring.png',
+    capabilities: ['Project Controls', 'Cost Engineering', 'Commissioning Support', "Owner's Engineer", 'Risk Management']
+  },
+  {
+    id: 'digital-engineering-asset-lifecycle',
+    title: 'Digital Engineering & Asset Lifecycle',
+    description: 'Digital twins, engineering analytics, GIS mapping, predictive AI, and lifecycle solutions to maximize asset performance.',
+    icon: '/icons/automation.png',
+    capabilities: ['Digital Twin', 'Data Analytics', 'GIS', 'AI Enabled Engineering', 'Sustainability']
+  }
+];
+
+const capabilityIconsMap: Record<string, LucideIcon> = {
+  Factory: Factory,
+  Cog: Cog,
+  Cpu: Cpu,
+  BrainCircuit: BrainCircuit,
+  Building2: Building2,
+  FileText: FileText,
+  Briefcase: Briefcase,
+  BarChart: BarChart
+};
+
+const capabilityPillars = [
+  {
+    icon: Users,
+    title: 'Multidisciplinary Teams',
+    subtitle: 'All engineering disciplines under one partner'
+  },
+  {
+    icon: Lightbulb,
+    title: 'Industry Expertise',
+    subtitle: '26+ industries served globally'
+  },
+  {
+    icon: Globe,
+    title: 'Global Delivery',
+    subtitle: 'USA + India delivery centers'
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Quality & Compliance',
+    subtitle: 'International standards (API, ASME, ISO)'
+  },
+  {
+    icon: TrendingUp,
+    title: 'Faster Project Delivery',
+    subtitle: 'Optimized processes and digital workflows'
+  },
+  {
+    icon: Leaf,
+    title: 'Sustainable Solutions',
+    subtitle: 'Engineering for a better tomorrow'
   }
 ];
 
@@ -1854,57 +1916,158 @@ export default function HomePage() {
         )}
       </section>
 
-      <section id="solutions" className="relative scroll-mt-32 overflow-hidden bg-white py-20 sm:py-28">
-        <div className="absolute inset-0 bg-[url('/image/background.jpg')] bg-cover bg-center bg-no-repeat opacity-100" />
-        <div className="absolute inset-0 bg-white/72" />
-        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Our Solution Areas"
-            title="Multidisciplinary engineering capabilities for industrial transformation"
-            description="Six integrated solution areas position GTS as a complete engineering, automation, AI, and industrial technology partner."
+      {/* =========================================================
+          OUR ENGINEERING CAPABILITIES (Matching Reference Mockup)
+      ========================================================= */}
+      <section id="solutions" className="relative scroll-mt-32 overflow-hidden border-y border-slate-200/80 bg-white py-20 sm:py-28 text-slate-900">
+        {/* Background Image with 20% visibility */}
+        <div className="absolute inset-0 pointer-events-none select-none z-0">
+          <Image
+            src="/image/background.jpg"
+            alt="Engineering Capabilities Background"
+            fill
+            sizes="100vw"
+            className="object-cover object-center opacity-20"
+            priority={false}
           />
+        </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {solutionAreas.map((area) => {
-              const iconUrl = area.icon;
+        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-[1520px] px-4 sm:px-6 lg:px-8">
+          
+          {/* Section Header with Left & Right Taglines */}
+          <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12">
+            
+            {/* Left Tagline Accent (Visible on lg+) */}
+            <div className="hidden lg:col-span-2 lg:flex items-start gap-3 pt-2">
+              <div className="w-[3px] h-20 rounded-full bg-blue-600 shrink-0 shadow-[0_0_8px_rgba(37,99,235,0.4)]" />
+              <div className="flex flex-col space-y-1 font-mono text-[10px] font-bold tracking-[0.22em] text-slate-400 uppercase">
+                <span>PEOPLE</span>
+                <span>TECHNOLOGY</span>
+                <span>ENGINEERING</span>
+                <span className="text-slate-500">A BETTER TOMORROW</span>
+              </div>
+            </div>
 
+            {/* Center Heading & Subtitle */}
+            <div className="lg:col-span-8 text-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-blue-50/80 px-4 py-1.5 text-xs font-mono font-bold uppercase tracking-[0.22em] text-blue-600 shadow-2xs mb-4">
+                <span>OUR ENGINEERING CAPABILITIES</span>
+              </div>
+              
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+                Integrated Engineering Solutions Across the Complete Industrial Asset Lifecycle
+              </h2>
+              
+              <p className="mt-4 max-w-3xl mx-auto text-xs sm:text-sm lg:text-base leading-relaxed text-slate-600">
+                From concept and FEED through detailed engineering, digital transformation, automation, commissioning, and lifecycle optimization—GTS delivers multidisciplinary engineering solutions for energy, infrastructure, manufacturing, and technology industries.
+              </p>
+            </div>
+
+            {/* Right Tagline Accent */}
+            <div className="hidden lg:col-span-2 lg:flex items-start justify-end gap-3 pt-2 text-right">
+              <div className="flex flex-col space-y-1 font-mono text-[10px] font-bold tracking-[0.22em] text-slate-400 uppercase">
+                <span>ENGINEERING</span>
+                <span>A SMARTER,</span>
+                <span>SAFER & MORE</span>
+                <span>SUSTAINABLE</span>
+                <span className="text-slate-500">TOMORROW</span>
+              </div>
+              <div className="w-[3px] h-24 rounded-full bg-blue-600 shrink-0 shadow-[0_0_8px_rgba(37,99,235,0.4)]" />
+            </div>
+          </div>
+
+          {/* 8-Card Responsive Grid (2 rows of 4 on lg) */}
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {solutionCapabilities.map((cap) => {
+              const CapIcon = capabilityIconsMap[cap.iconName] || Factory;
               return (
-                <MagneticCard
-                  id={area.id}
-                  key={area.id}
-                  className="group scroll-mt-36 rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-blue-100/70"
+                <div
+                  key={cap.id}
+                  className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-500/10"
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex items-center justify-center h-14 w-14">
-                      <div
-                        style={{
-                          WebkitMaskImage: `url('${iconUrl}')`,
-                          maskImage: `url('${iconUrl}')`,
-                          WebkitMaskRepeat: 'no-repeat',
-                          maskRepeat: 'no-repeat',
-                          WebkitMaskPosition: 'center',
-                          maskPosition: 'center',
-                          WebkitMaskSize: 'contain',
-                          maskSize: 'contain',
-                        }}
-                        className="w-15 h-15 bg-gradient-to-br from-[#2563eb] to-[#22d3ee] transition-all duration-300 group-hover:scale-110 drop-shadow-[0_3px_12px_rgba(34,211,238,0.4)]"
+                  <div>
+                    {/* Thumbnail Image with Tagline Badge & Overlapping Icon */}
+                    <div className="relative h-44 w-full rounded-xl overflow-hidden mb-4 bg-slate-100">
+                      <Image
+                        src={cap.image}
+                        alt={cap.title}
+                        fill
+                        sizes="(min-width: 1024px) 25vw, 50vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
+
+                      {/* Top-Left Tagline Badge */}
+                      <div className="absolute top-2.5 left-2.5 max-w-[85%] rounded-md  px-2 py-1 text-[9px] font-mono font-bold uppercase tracking-wider text-white border border-white/10 leading-tight">
+                        {cap.tagline}
+                      </div>
+
+                      {/* Bottom-Left Floating Icon Badge */}
+                      <div className="absolute -bottom-2 left-3 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 text-white shadow-lg border-2 border-white transition-transform duration-300 group-hover:scale-110">
+                        <CapIcon className="h-5 w-5" />
+                      </div>
                     </div>
-                    <span className="text-xs font-mono uppercase tracking-[0.2em] text-slate-300">Solution</span>
+
+                    {/* Card Title & Description */}
+                    <div className="pt-2">
+                      <h3 className="font-display text-base sm:text-[17px] font-bold text-slate-900 leading-snug group-hover:text-blue-600 transition-colors">
+                        {cap.title}
+                      </h3>
+                      <p className="mt-2 text-xs text-slate-600 leading-relaxed line-clamp-3 min-h-[48px]">
+                        {cap.cardDescription}
+                      </p>
+                    </div>
+
+                    {/* Capability Tags / Pills */}
+                    <div className="mt-4 flex flex-wrap gap-1.5">
+                      {cap.cardPills.map((pill) => (
+                        <span
+                          key={pill}
+                          className="rounded-full bg-slate-50 border border-slate-200/80 px-2.5 py-0.5 text-[11px] font-medium text-slate-600"
+                        >
+                          {pill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <h3 className="mt-6 text-xl font-extrabold text-primary">{area.title}</h3>
-                  <p className="mt-3 min-h-[72px] text-sm leading-relaxed text-slate-500">{area.description}</p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {area.capabilities.map((capability) => (
-                      <span key={capability} className="rounded-full bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 ring-1 ring-slate-200">
-                        {capability}
-                      </span>
-                    ))}
+
+                  {/* Explore Capabilities Action Link */}
+                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <Link
+                      href={`/solutions/${cap.slug}`}
+                      className="group/link inline-flex items-center gap-1.5 text-xs font-bold font-mono text-blue-600 hover:text-blue-700 transition-colors"
+                    >
+                      <span>Explore Capabilities</span>
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1" />
+                    </Link>
                   </div>
-                </MagneticCard>
+                </div>
               );
             })}
           </div>
+
+          {/* Bottom 6-Pillar Feature Strip */}
+          <div className="mt-16 pt-8 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-start">
+            {capabilityPillars.map((pillar) => {
+              const PillarIcon = pillar.icon;
+              return (
+                <div key={pillar.title} className="flex items-start gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 border border-blue-100/70 shadow-2xs">
+                    <PillarIcon className="h-5 w-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
+                      {pillar.title}
+                    </h4>
+                    <p className="mt-1 text-[11px] text-slate-500 font-medium leading-snug">
+                      {pillar.subtitle}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
         </AnimatedSection>
       </section>
 
@@ -2184,7 +2347,7 @@ export default function HomePage() {
             <div className="relative flex flex-col justify-between pr-0 lg:pr-4 lg:col-span-4">
               {/* Globe Background per instructions: smaller, transparent, positioned at bottom-right */}
               <div className="pointer-events-none absolute -bottom-10 -right-2 sm:-right-6 w-60 h-60 sm:w-72 sm:h-72 select-none">
-                <div className="relative h-full w-full rounded-full overflow-hidden [mask-image:radial-gradient(circle_at_center,black_45%,transparent_75%)]">
+                <div className="relative h-full w-full rounded-full overflow-hidden [mask-image:radial-gradient(circle_at_center,black_45%,transparent_55%)]">
                   {/* Subtle texture from background.jpg with soft radial fade */}
                   <Image
                     src="/image/background.jpg"
