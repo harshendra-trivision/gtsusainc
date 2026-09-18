@@ -433,7 +433,7 @@ const trustStats = [
 
 const whoWeAreTrustStats = [
   { value: '100+', label: 'Engineering Professionals', icon: Users },
-  { value: '100+', label: 'Projects Delivered', icon: FileText },
+  { value: '500+', label: 'Projects Delivered', icon: FileText },
   { value: '15+', label: 'Industries Supported', icon: Cog },
   { value: 'USA + India', label: 'Delivery Centers', icon: Globe },
   { value: '24/7', label: 'Engineering Collaboration', icon: Clock },
@@ -469,7 +469,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     shortDesc: 'Process, piping, mechanical, electrical, instrumentation and EPC support.',
     fullDesc:
       'End-to-end engineering solutions for process plants, refineries, LNG, power, chemicals, and industrial facilities, delivered with accuracy, efficiency, and industry expertise.',
-    image: '/image/Global-Delivery-Model.jpg',
+    image: "/image/OUR ENGINEERING SOLUTION.jpg",
     icon: Factory,
     stats: [
       { value: '50+', label: 'Plant Projects' },
@@ -501,7 +501,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     shortDesc: 'CAD, CAE, reverse engineering, equipment design, and manufacturing support.',
     fullDesc:
       'Mechanical design, product development, reverse engineering, and manufacturing support for industrial equipment and systems.',
-    image: '/image/Global-Delivery-Model.jpg',
+    image: '/image/heavy machine enginerring .jpg',
     icon: Box,
     stats: [
       { value: '50+', label: 'Products Engineered' },
@@ -532,7 +532,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     shortDesc: 'Steel detailing, structural analysis, fabrication drawings, and offshore structures.',
     fullDesc:
       'Steel detailing, structural analysis, fabrication drawings, and offshore engineering for industrial plants, infrastructure, and marine structures.',
-    image: '/image/Global-Delivery-Model.jpg',
+    image: '/image/structured-enginerring.jpg',
     icon: Layers,
     stats: [
       { value: '1,000+', label: 'Structural Drawings' },
@@ -563,7 +563,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     shortDesc: 'AI workflows, digital twins, BIM, engineering analytics, and automation.',
     fullDesc:
       'AI-enabled engineering workflows, digital twins, BIM, engineering analytics, and data intelligence for smarter, faster, and more efficient project delivery.',
-    image: '/image/Global-Delivery-Model.jpg',
+    image: '/image/digital enginerring.jpg',
     icon: Monitor,
     stats: [
       { value: 'Faster', label: 'Decision Making' },
@@ -594,7 +594,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     shortDesc: 'FEA, CFD, thermal analysis, vibration, and multi-physics simulation.',
     fullDesc:
       'Advanced engineering simulation including structural, thermal, CFD, fatigue, vibration, and multi-physics analysis to improve performance, safety, and reliability.',
-    image: '/image/Global-Delivery-Model.jpg',
+    image: '/image/simulation and analysis.png',
     icon: BrainCircuit,
     stats: [
       { value: 'Reliable', label: 'Design Outcomes' },
@@ -625,7 +625,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     shortDesc: 'PLC, SCADA, IIoT, Industry 4.0, and smart manufacturing solutions.',
     fullDesc:
       'Industrial automation, communication systems, SCADA, IIoT, and smart manufacturing solutions to improve operational efficiency and plant performance.',
-    image: '/image/Global-Delivery-Model.jpg',
+    image: '/image/Assest lifecycle support.png',
     icon: Sliders,
     stats: [
       { value: 'Increased', label: 'Operational Efficiency' },
@@ -656,7 +656,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     shortDesc: 'Civil, infrastructure, 3D modeling, construction coordination, and digital project delivery.',
     fullDesc:
       'Civil, infrastructure, and BIM solutions including 3D modeling, construction coordination, and digital project delivery for industrial and infrastructure projects.',
-    image: '/image/Global-Delivery-Model.jpg',
+    image: '/image/infrastructure & BMI.jpg',
     icon: Building2,
     stats: [
       { value: 'Faster', label: 'Project Delivery' },
@@ -687,7 +687,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     shortDesc: 'Project controls, document management, engineering reviews, and EPC support.',
     fullDesc:
       'Comprehensive project support services including planning, document management, engineering reviews, and EPC support to ensure successful project execution.',
-    image: '/image/Global-Delivery-Model.jpg',
+    image: '/image/project and program support.jpg',
     icon: FileText,
     stats: [
       { value: 'On-Time', label: 'Project Execution' },
@@ -718,7 +718,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     shortDesc: 'Brownfield engineering, debottlenecking, operations support, and sustainability solutions.',
     fullDesc:
       'Lifecycle engineering solutions to maximize asset performance, reliability, and sustainability from operations through decommissioning.',
-    image: '/image/Global-Delivery-Model.jpg',
+    image: '/image/Assest lifecycle support.png',
     icon: RotateCw,
     stats: [
       { value: 'Higher', label: 'Asset Reliability' },
@@ -1530,7 +1530,7 @@ export default function HomePage() {
           ENGINEERING SOLUTIONS & INTRO SECTION (Matching Mockup)
       ========================================================= */}
       <section className="relative overflow-hidden border-y border-slate-200/80 bg-white py-16 sm:py-20 lg:py-24 text-slate-900">
-        {/* Background Image: Clear on left, smooth gradient fade to white on right */}
+        {/* Background Image: Highly visible from left to right with subtle softening on the far right */}
         <div className="absolute inset-0 pointer-events-none select-none z-0">
           <Image
             src="/image/OUR ENGINEERING SOLUTION.jpg"
@@ -1540,16 +1540,16 @@ export default function HomePage() {
             className="object-cover object-left-bottom"
             priority={false}
           />
-          {/* Subtle top/bottom edge fade to seamlessly blend into adjacent sections */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/40 pointer-events-none" />
+          {/* Very light top/bottom edge transition to keep the image crisp */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/15 pointer-events-none" />
 
-          {/* Smooth Horizontal Gradient: Clear on left, fading smoothly into solid white on the right */}
-          {/* On Desktop (lg): Left 0-20% is clear, 20-50% fades smoothly into white, 56%+ is pure solid white */}
-          <div className="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,transparent_0%,transparent_18%,rgba(255,255,255,0.35)_30%,rgba(255,255,255,0.85)_44%,#ffffff_56%,#ffffff_100%)] pointer-events-none" />
-          {/* On Tablet (sm to lg): Horizontal fade adjusted for narrower width */}
-          <div className="absolute inset-0 hidden sm:block lg:hidden bg-[linear-gradient(to_right,transparent_0%,transparent_12%,rgba(255,255,255,0.45)_26%,rgba(255,255,255,0.92)_42%,#ffffff_56%,#ffffff_100%)] pointer-events-none" />
-          {/* On Mobile (<sm): Vertical fade so intro has plant background and cards below have clean white */}
-          <div className="absolute inset-0 sm:hidden bg-[linear-gradient(to_bottom,transparent_0%,transparent_15%,rgba(255,255,255,0.45)_28%,rgba(255,255,255,0.95)_45%,#ffffff_58%,#ffffff_100%)] pointer-events-none" />
+          {/* Smooth Horizontal Transition: Full clarity across left & center, with gentle softening towards the right */}
+          {/* On Desktop (lg): 0-45% completely clear, gentle transition from 45% to 85%, softly brightening at the far right edge */}
+          <div className="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,transparent_0%,transparent_42%,rgba(255,255,255,0.2)_60%,rgba(255,255,255,0.5)_80%,rgba(255,255,255,0.78)_100%)] pointer-events-none" />
+          {/* On Tablet (sm to lg): Adjusted for tablet width */}
+          <div className="absolute inset-0 hidden sm:block lg:hidden bg-[linear-gradient(to_right,transparent_0%,transparent_30%,rgba(255,255,255,0.25)_55%,rgba(255,255,255,0.65)_85%,rgba(255,255,255,0.85)_100%)] pointer-events-none" />
+          {/* On Mobile (<sm): Vertical fade so image shines through with soft transition below */}
+          <div className="absolute inset-0 sm:hidden bg-[linear-gradient(to_bottom,transparent_0%,transparent_25%,rgba(255,255,255,0.3)_50%,rgba(255,255,255,0.75)_80%,rgba(255,255,255,0.92)_100%)] pointer-events-none" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-[1520px] px-4 sm:px-6 lg:px-8">
@@ -1579,39 +1579,42 @@ export default function HomePage() {
                   GTS Engineering delivers multidisciplinary engineering, AI-enabled digital solutions, and project execution services across the industrial asset lifecycle — from concept and FEED to commissioning, operations, and optimization.
                 </p>
 
-                {/* 6 Trust Signals list */}
+                {/* 6 Trust Signals list - Clear Glass Design with High BG Visibility */}
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3.5">
                   {whoWeAreTrustStats.map((item) => {
                     const ItemIcon = item.icon;
                     return (
-                      <div key={item.label} className="flex items-center gap-3.5 rounded-xl border border-slate-200/80 bg-white/90 p-2.5 shadow-xs transition-all hover:border-blue-200 hover:shadow backdrop-blur-xs">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 border border-blue-100/80 shadow-xs">
+                      <div
+                        key={item.label}
+                        className="flex items-center gap-3.5 rounded-2xl border border-white/60 bg-white/20 p-3 shadow-[0_4px_16px_rgba(15,23,42,0.03)] backdrop-blur-[1px] transition-all duration-300 hover:bg-white/35 hover:border-white/80 hover:shadow-md"
+                      >
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50/60 text-blue-600 border border-blue-100/50 shadow-xs">
                           <ItemIcon className="h-5 w-5" />
                         </div>
                         <div className="min-w-0">
-                          <div className="text-sm font-extrabold text-slate-900 leading-none">{item.value}</div>
-                          <div className="text-xs text-slate-500 font-medium mt-1 leading-tight">{item.label}</div>
+                          <div className="text-sm sm:text-[15px] font-extrabold text-slate-900 leading-none drop-shadow-xs">{item.value}</div>
+                          <div className="text-xs text-slate-700 font-semibold mt-1 leading-tight drop-shadow-xs">{item.label}</div>
                         </div>
                       </div>
                     );
                   })}
                 </div>
 
-                {/* Vertical Taglines */}
+                {/* Vertical Taglines - Simple Visible Text */}
                 <div className="mt-8 flex items-stretch gap-3.5">
-                  <div className="w-[3px] rounded-full bg-blue-600 shrink-0" />
-                  <div className="flex flex-col space-y-1 font-mono text-[11px] font-bold tracking-[0.24em] text-slate-600 uppercase">
+                  <div className="w-[3px] rounded-full bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.6)] shrink-0" />
+                  <div className="flex flex-col space-y-1.5 font-mono text-xs sm:text-[13px] font-black tracking-[0.24em] text-slate-950 uppercase [text-shadow:_0_0_12px_rgba(255,255,255,0.9),_0_1px_3px_rgba(255,255,255,1)]">
                     <span>PEOPLE</span>
                     <span>TECHNOLOGY</span>
                     <span>SOLUTIONS</span>
-                    <span>GLOBAL IMPACT</span>
+                    <span className="text-blue-600 [text-shadow:_0_0_12px_rgba(255,255,255,0.9),_0_1px_3px_rgba(255,255,255,1)]">GLOBAL IMPACT</span>
                   </div>
                 </div>
               </div>
 
-              {/* Bottom Industrial Brand Line */}
-              <div className="mt-10 pt-6 border-t border-slate-300/60">
-                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.28em] text-slate-600">
+              {/* Bottom Industrial Brand Line - Simple Visible Text */}
+              <div className="mt-10 pt-6 border-t border-slate-300/80">
+                <span className="font-mono text-xs font-black uppercase tracking-[0.28em] text-slate-950 [text-shadow:_0_0_12px_rgba(255,255,255,0.9),_0_1px_3px_rgba(255,255,255,1)]">
                   ENGINEERING A SMARTER TOMORROW
                 </span>
               </div>
@@ -1627,13 +1630,6 @@ export default function HomePage() {
                   </span>
                   <span className="h-[2px] w-8 rounded-full bg-blue-500/80" />
                 </div>
-                <Link
-                  href="/solutions"
-                  className="group inline-flex items-center gap-1.5 text-xs font-bold font-mono uppercase tracking-wider text-blue-600 hover:text-blue-700 transition-colors"
-                >
-                  <span>EXPLORE ALL SOLUTIONS</span>
-                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                </Link>
               </div>
 
               {/* 3x3 Grid of 9 Cards */}
