@@ -16,7 +16,9 @@ import {
   Calendar,
   Check,
   CheckCircle2,
+  ChevronRight,
   Clock,
+  Cloud,
   Code,
   Cog,
   Cpu,
@@ -33,6 +35,7 @@ import {
   LineChart,
   Map,
   MapPin,
+  MessageSquare,
   Microscope,
   Monitor,
   Plane,
@@ -869,15 +872,53 @@ const capabilityPillars = [
   }
 ];
 
-const digitalCapabilities = [
-  'AI-Powered Engineering',
-  'Predictive Maintenance',
-  'Digital Twin Solutions',
-  'Intelligent Asset Management',
-  'Industrial Analytics',
-  'Smart Manufacturing',
-  'Engineering Automation',
-  'Data-Driven Operations'
+interface DigitalCapabilityItem {
+  title: string;
+  subtitle: string;
+  icon: LucideIcon;
+}
+
+const digitalCapabilities: DigitalCapabilityItem[] = [
+  {
+    title: 'AI-Powered Engineering',
+    subtitle: 'Smarter insights, faster decisions',
+    icon: BrainCircuit,
+  },
+  {
+    title: 'Predictive Maintenance',
+    subtitle: 'Maximize uptime, reduce costs',
+    icon: TrendingUp,
+  },
+  {
+    title: 'Digital Twin Solutions',
+    subtitle: 'Virtual assets, real outcomes',
+    icon: Box,
+  },
+  {
+    title: 'Intelligent Asset Management',
+    subtitle: 'Data-driven lifecycle decisions',
+    icon: Database,
+  },
+  {
+    title: 'Industrial Analytics',
+    subtitle: 'Turn data into operational value',
+    icon: Cog,
+  },
+  {
+    title: 'Smart Manufacturing',
+    subtitle: 'Connected, efficient, future-ready',
+    icon: Factory,
+  },
+  {
+    title: 'Engineering Automation',
+    subtitle: 'Automate repetitive tasks, improve quality',
+    icon: Bot,
+  },
+  {
+    title: 'Data-Driven Operations',
+    subtitle: 'Integrated, real-time intelligence',
+    icon: Cpu,
+  },
 ];
 
 interface IndustryServedItem {
@@ -2284,60 +2325,216 @@ export default function HomePage() {
         </AnimatedSection>
       </section>
 
-      <section id="ai-digital" className="scroll-mt-32 overflow-hidden bg-slate-950 py-20 text-white sm:py-28">
-        <AnimatedSection as="div" className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
-          <div className="lg:col-span-6">
-            <SectionHeading
-              eyebrow="AI & Digital Transformation"
-              title="Engineering Intelligence for Industry 4.0"
-              description="Premium digital engineering programs that combine AI analytics, asset intelligence, automation, and operational data to improve reliability and decision speed."
-              align="left"
-              theme="dark"
-            />
-            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {digitalCapabilities.map((capability) => (
-                <div key={capability} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-green-500" />
-                  <span className="text-sm font-semibold text-slate-100">{capability}</span>
+      <section id="ai-digital" className="scroll-mt-32 overflow-hidden bg-slate-50/50 py-16 sm:py-24 lg:py-28">
+        <AnimatedSection as="div" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
+            {/* Left Column: Heading, Description, 8 Cards, Buttons */}
+            <div className="lg:col-span-6 xl:col-span-7">
+              {/* Eyebrow with accent underline */}
+              <div>
+                <span className="text-xs font-mono font-semibold uppercase tracking-[0.24em] text-accent">
+                  AI & DIGITAL ENGINEERING
+                </span>
+                <div className="mt-2 h-0.5 w-10 rounded-full bg-accent" />
+              </div>
+
+              {/* Title with display font and brand gradient */}
+              <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-primary leading-[1.12]">
+                Engineering Intelligence <br />
+                for <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent">Industry 4.0</span>
+              </h2>
+
+              {/* Description */}
+              <p className="mt-4 text-sm leading-7 text-slate-500 sm:text-base max-w-2xl">
+                We combine AI analytics, digital twins, automation, and operational data to help industrial companies improve reliability, optimize performance, reduce risk, and accelerate their journey to a smarter, more sustainable future.
+              </p>
+
+              {/* 8 Capability Cards Grid using MagneticCard */}
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                {digitalCapabilities.map((item) => {
+                  const ItemIcon = item.icon;
+                  return (
+                    <MagneticCard
+                      key={item.title}
+                      intensity={3}
+                      className="rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-xs transition-all duration-300 hover:border-accent/40 hover:shadow-md"
+                    >
+                      <div className="flex items-center gap-3.5">
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 via-cyan-500 to-blue-700 text-white shadow-xs">
+                          <ItemIcon className="h-5 w-5" />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="font-display text-sm font-extrabold text-primary leading-tight">
+                            {item.title}
+                          </div>
+                          <div className="text-[11.5px] sm:text-xs text-slate-500 font-medium mt-0.5 leading-tight">
+                            {item.subtitle}
+                          </div>
+                        </div>
+                      </div>
+                    </MagneticCard>
+                  );
+                })}
+              </div>
+
+              {/* Action Buttons using project GradientButton */}
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <GradientButton href="/solutions" variant="primary">
+                  Explore Capabilities
+                </GradientButton>
+                <GradientButton href="/contact" variant="secondary" showIcon={false}>
+                  <MessageSquare className="h-4 w-4 text-accent" />
+                  <span>Talk to Our Experts</span>
+                  <ChevronRight className="h-4 w-4 text-slate-400" />
+                </GradientButton>
+              </div>
+            </div>
+
+            {/* Right Column: Visual Container with GlassCard frame */}
+            <div className="lg:col-span-6 xl:col-span-5">
+              <GlassCard className="rounded-[2rem] border border-slate-200/80 bg-white/70 p-3.5 sm:p-4 shadow-xl backdrop-blur-md">
+                <div className="relative min-h-[460px] sm:min-h-[520px] lg:min-h-[560px] w-full overflow-hidden rounded-[1.5rem] bg-slate-950">
+                  {/* Background Image */}
+                  <Image
+                    src="/image/AI-Digital-Engineering-Capability.jpg"
+                    alt="Engineering Intelligence for Industry 4.0"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-center"
+                  />
+
+                  {/* Dark Vignette Gradient for badge readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-slate-950/60" />
+
+                  {/* Top Right Header Text */}
+                  <div className="absolute top-5 right-5 text-right pointer-events-none">
+                    <div className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-cyan-200 drop-shadow-md">
+                      REAL DATA.
+                    </div>
+                    <div className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-cyan-200 drop-shadow-md">
+                      REAL INSIGHTS.
+                    </div>
+                    <div className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-cyan-200 drop-shadow-md">
+                      REAL IMPACT.
+                    </div>
+                  </div>
+
+                  {/* Floating Action Badges from Mockup */}
+                  <div className="absolute top-6 left-6 sm:left-10 inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white backdrop-blur-md shadow-md">
+                    <Cloud className="h-3.5 w-3.5 text-cyan-300" />
+                    <span>CONNECT</span>
+                  </div>
+
+                  <div className="absolute top-16 left-36 sm:left-44 inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white backdrop-blur-md shadow-md">
+                    <BarChart className="h-3.5 w-3.5 text-cyan-300" />
+                    <span>ANALYZE</span>
+                  </div>
+
+                  <div className="absolute top-28 right-32 sm:right-36 inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white backdrop-blur-md shadow-md">
+                    <Cog className="h-3.5 w-3.5 text-cyan-300" />
+                    <span>OPTIMIZE</span>
+                  </div>
+
+                  <div className="absolute top-20 right-6 sm:right-8 inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white backdrop-blur-md shadow-md">
+                    <Leaf className="h-3.5 w-3.5 text-emerald-300" />
+                    <span>SUSTAIN</span>
+                  </div>
+
+                  {/* Bottom Right Branding */}
+                  <div className="absolute bottom-5 right-5 text-right pointer-events-none">
+                    <div className="font-display text-lg sm:text-xl font-extrabold text-white tracking-tight leading-none drop-shadow-lg">
+                      GTS Engineering<sup>&reg;</sup>
+                    </div>
+                    <div className="text-xs text-cyan-100 font-medium mt-1 drop-shadow-md">
+                      A smarter tomorrow
+                    </div>
+                  </div>
                 </div>
-              ))}
+              </GlassCard>
             </div>
           </div>
 
-          <div className="lg:col-span-6">
-            <div className="rounded-[2rem] border border-cyan-200/20 bg-white/10 p-4 shadow-2xl shadow-cyan-950/40">
-              <div className="relative min-h-[420px] overflow-hidden rounded-[1.5rem] bg-slate-900">
-                <video autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 h-full w-full object-cover opacity-55">
-                  <source src="/vedios-gts/AI.mp4" type="video/mp4" />
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-slate-950/10" />
-                <div className="absolute inset-x-5 top-5 grid grid-cols-3 gap-3">
-                  {[
-                    ['OEE', '91%'],
-                    ['Risk', 'Low'],
-                    ['MTBF', '+18%']
-                  ].map(([label, value]) => (
-                    <div key={label} className="rounded-2xl border border-white/10 bg-slate-950/55 p-4 backdrop-blur">
-                      <div className="text-[10px] uppercase tracking-[0.2em] text-slate-400">{label}</div>
-                      <div className="mt-2 text-2xl font-extrabold text-cyan-200">{value}</div>
+          {/* Bottom Stats / Metrics Strip with MagneticCard items */}
+          <div className="mt-14 sm:mt-16 pt-8 border-t border-slate-200/90">
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 items-center">
+              {/* Metric 1 */}
+              <MagneticCard intensity={2} className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
+                <div className="flex items-center gap-3.5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-accent border border-blue-100/80 shadow-xs">
+                    <Cog className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <div className="font-display text-2xl sm:text-3xl font-extrabold text-primary tracking-tight leading-none">
+                      30%
                     </div>
-                  ))}
+                    <div className="text-xs text-slate-500 font-medium mt-1 leading-snug">
+                      Higher Equipment Availability
+                    </div>
+                  </div>
                 </div>
-                <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-cyan-200/20 bg-slate-950/65 p-5 backdrop-blur">
-                  <div className="mb-4 flex items-center justify-between">
-                    <span className="text-xs font-mono uppercase tracking-[0.24em] text-cyan-200">Industrial AI Dashboard</span>
-                    <span className="rounded-full bg-cyan-300/15 px-3 py-1 text-xs text-cyan-100">Digital Twin Online</span>
+              </MagneticCard>
+
+              {/* Metric 2 */}
+              <MagneticCard intensity={2} className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
+                <div className="flex items-center gap-3.5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-accent border border-blue-100/80 shadow-xs">
+                    <TrendingUp className="h-5 w-5" />
                   </div>
-                  <div className="space-y-3">
-                    {['Predict compressor anomaly', 'Optimize energy load', 'Prioritize maintenance window'].map((item, index) => (
-                      <div key={item} className="flex items-center gap-3 rounded-xl bg-white/10 p-3">
-                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-cyan-300/15 text-xs font-bold text-cyan-100">
-                          {index + 1}
-                        </span>
-                        <span className="text-sm text-slate-100">{item}</span>
-                      </div>
-                    ))}
+                  <div>
+                    <div className="font-display text-2xl sm:text-3xl font-extrabold text-primary tracking-tight leading-none">
+                      20%
+                    </div>
+                    <div className="text-xs text-slate-500 font-medium mt-1 leading-snug">
+                      Lower Operating Costs
+                    </div>
                   </div>
+                </div>
+              </MagneticCard>
+
+              {/* Metric 3 */}
+              <MagneticCard intensity={2} className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
+                <div className="flex items-center gap-3.5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-accent border border-blue-100/80 shadow-xs">
+                    <Leaf className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <div className="font-display text-2xl sm:text-3xl font-extrabold text-primary tracking-tight leading-none">
+                      25%
+                    </div>
+                    <div className="text-xs text-slate-500 font-medium mt-1 leading-snug">
+                      Reduction in Emissions
+                    </div>
+                  </div>
+                </div>
+              </MagneticCard>
+
+              {/* Metric 4 */}
+              <MagneticCard intensity={2} className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
+                <div className="flex items-center gap-3.5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-accent border border-blue-100/80 shadow-xs">
+                    <Clock className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <div className="font-display text-2xl sm:text-3xl font-extrabold text-primary tracking-tight leading-none">
+                      2x
+                    </div>
+                    <div className="text-xs text-slate-500 font-medium mt-1 leading-snug">
+                      Faster Decision Making
+                    </div>
+                  </div>
+                </div>
+              </MagneticCard>
+
+              {/* Right Statement */}
+              <div className="col-span-2 lg:col-span-1 border-t lg:border-t-0 lg:border-l border-slate-200 pt-4 lg:pt-0 lg:pl-6 flex flex-col justify-center">
+                <div className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-slate-400 leading-tight">
+                  BUILDING
+                </div>
+                <div className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-primary leading-tight mt-1">
+                  A MORE EFFICIENT,
+                </div>
+                <div className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-accent leading-tight mt-1">
+                  SUSTAINABLE TOMORROW
                 </div>
               </div>
             </div>
