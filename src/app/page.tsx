@@ -5,8 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { LucideIcon } from 'lucide-react';
 import {
+  Activity,
   ArrowRight,
   BarChart,
+  Bot,
   Box,
   BrainCircuit,
   Briefcase,
@@ -24,14 +26,19 @@ import {
   Globe,
   Grid,
   Handshake,
+  Landmark,
   Layers,
   Leaf,
   Lightbulb,
+  LineChart,
   Map,
   MapPin,
+  Microscope,
   Monitor,
+  Plane,
   Radio,
   RotateCw,
+  Server,
   Settings,
   ShieldCheck,
   Ship,
@@ -39,6 +46,7 @@ import {
   Smartphone,
   TrendingUp,
   Users,
+  Wind,
   X,
   Zap
 } from 'lucide-react';
@@ -872,19 +880,104 @@ const digitalCapabilities = [
   'Data-Driven Operations'
 ];
 
-const industriesServed = [
-  { title: 'Oil & Gas', icon: '/icons/oil-gas.png', bgImage: '/image/industry-image/oilandgas.jpg' },
-  { title: 'Refineries', icon: '/icons/refinery.png', bgImage: '/image/industry-image/refineries.jpg' },
-  { title: 'Petrochemicals', icon: '/icons/petrochemical.png', bgImage: '/image/industry-image/Petrochemicals.jpg' },
-  { title: 'Energy & Utilities', icon: '/icons/solar-utilities.png', bgImage: '/image/industry-image/Energy.jpg' },
-  { title: 'Manufacturing', icon: '/icons/manufacturing.png', bgImage: '/image/industry-image/equipment-heavy.jpg' },
-  { title: 'Mining', icon: '/icons/mining.png', bgImage: '/image/industry-image/mining.jpg' },
-  { title: 'Infrastructure', icon: '/icons/infrastructure.png', bgImage: '/image/industry-image/Infrastructure.jpg' },
-  { title: 'Heavy Equipment', icon: '/icons/heavy-equepment.png', bgImage: '/image/industry-image/Heavy Equipment.jpg' },
-  { title: 'Marine & Offshore', icon: '/icons/marine.png', bgImage: '/image/industry-image/marine-1.jpg' },
-  { title: 'Water & Wastewater', icon: '/icons/water-filter.png', bgImage: '/image/industry-image/water.jpg' },
-  { title: 'Automotive', icon: '/icons/automotive.png', bgImage: '/image/industry-image/automotive-1.jpg' },
-  { title: 'Rail', icon: '/icons/train.png', bgImage: '/image/industry-image/rail.jpg' }
+interface IndustryServedItem {
+  title: string;
+  topText: string;
+  icon: string | LucideIcon;
+  bgImage: string;
+}
+
+const industriesServed: IndustryServedItem[] = [
+  {
+    title: 'Oil & Gas',
+    topText: 'OIL & GAS',
+    icon: '/icons/oil-gas.png',
+    bgImage: '/image/industry-image/oilandgas.jpg',
+  },
+  {
+    title: 'LNG',
+    topText: 'LNG',
+    icon: '/icons/refinery.png',
+    bgImage: '/image/industry-image/refineries.jpg',
+  },
+  {
+    title: 'Chemicals & Petrochemicals',
+    topText: 'CHEMICALS & PETROCHEMICALS',
+    icon: '/icons/petrochemical.png',
+    bgImage: '/image/industry-image/Petrochemicals.jpg',
+  },
+  {
+    title: 'Power & Utilities',
+    topText: 'POWER & UTILITIES',
+    icon: '/icons/solar-utilities.png',
+    bgImage: '/image/industry-image/Energy.jpg',
+  },
+  {
+    title: 'Renewables',
+    topText: 'RENEWABLES',
+    icon: Wind,
+    bgImage: '/image/utilities.png',
+  },
+  {
+    title: 'Data Centers',
+    topText: 'DATA CENTERS',
+    icon: Server,
+    bgImage: '/image/AI-Digital-Engineering-Capability.jpg',
+  },
+  {
+    title: 'Semiconductors',
+    topText: 'SEMICONDUCTORS',
+    icon: Cpu,
+    bgImage: '/image/Global-Delivery-Model.jpg',
+  },
+  {
+    title: 'Manufacturing',
+    topText: 'MANUFACTURING',
+    icon: '/icons/manufacturing.png',
+    bgImage: '/image/industry-image/equipment-heavy.jpg',
+  },
+  {
+    title: 'Mining & Metals',
+    topText: 'MINING & METALS',
+    icon: '/icons/mining.png',
+    bgImage: '/image/industry-image/mining.jpg',
+  },
+  {
+    title: 'Infrastructure',
+    topText: 'INFRASTRUCTURE & SMART CITIES',
+    icon: '/icons/infrastructure.png',
+    bgImage: '/image/industry-image/Infrastructure.jpg',
+  },
+  {
+    title: 'Water & Wastewater',
+    topText: 'WATER & ENVIRONMENT',
+    icon: '/icons/water-filter.png',
+    bgImage: '/image/industry-image/water.jpg',
+  },
+  {
+    title: 'Life Sciences & Pharma',
+    topText: 'LIFE SCIENCES & PHARMA',
+    icon: Microscope,
+    bgImage: '/image/Assest lifecycle support.png',
+  },
+  {
+    title: 'Automotive',
+    topText: 'AUTOMOTIVE',
+    icon: '/icons/automotive.png',
+    bgImage: '/image/industry-image/automotive-1.jpg',
+  },
+  {
+    title: 'Rail & Transportation',
+    topText: 'RAIL & TRANSPORTATION',
+    icon: '/icons/train.png',
+    bgImage: '/image/industry-image/rail.jpg',
+  },
+  {
+    title: 'Aerospace & Defense',
+    topText: 'AEROSPACE & DEFENSE',
+    icon: Plane,
+    bgImage: '/image/aerospace.png',
+  },
 ];
 
 const engineeringCapabilities: CapabilityDiscipline[] = [
@@ -962,15 +1055,135 @@ const processSafetyItems = [
   'PMC'
 ];
 
-const featuredProjects = [
-  'Distillery Plant Engineering',
-  'Storage Terminal Design',
-  'Offshore Structural Analysis',
-  'Pipeline Engineering',
-  'Steel Detailing Projects',
-  'Heavy Equipment Design',
-  'FEA Optimization Projects',
-  'Industrial Automation Projects'
+interface FeaturedProject {
+  title: string;
+  description: string;
+  tags: string[];
+  icon: LucideIcon;
+  image: string;
+}
+
+const featuredProjects: FeaturedProject[] = [
+  {
+    title: 'Distillery Plant Engineering',
+    description: 'GTS provides complete engineering support for distillery and ethanol facilities including process engineering, piping, equipment layout, utility systems, structural design, electrical, instrumentation, automation, and detailed engineering packages from FEED through commissioning support.',
+    tags: [
+      'Process Design',
+      'PFD & P&ID',
+      'Equipment Layout',
+      'Utility Systems',
+      'Piping Design',
+      'Instrumentation',
+      'Structural',
+      'Electrical',
+      '3D Plant Modeling'
+    ],
+    icon: Factory,
+    image: "/image/OUR ENGINEERING SOLUTION.jpg",
+  },
+  {
+    title: 'Storage Terminal Design',
+    description: 'Engineering services for crude oil, LNG, chemicals, LPG, aviation fuel, and bulk liquid storage terminals including tank farm design, piping networks, loading facilities, fire protection systems, civil works, structural engineering, and project execution support.',
+    tags: [
+      'Tank Farm Design',
+      'Loading Facilities',
+      'Fire Protection',
+      'Piping',
+      'Civil',
+      'Structural',
+      'Instrumentation',
+      'EPC Support'
+    ],
+    icon: Database,
+    image: '/image/storage-therminal.jpg'
+  },
+  {
+    title: 'Offshore Structural Analysis',
+    description: 'Structural engineering and offshore analysis for platforms, jackets, topsides, modules, subsea structures, and marine facilities using advanced finite element analysis and international offshore design standards.',
+    tags: [
+      'Offshore Structures',
+      'FEA',
+      'Fatigue Analysis',
+      'Structural Design',
+      'Jacket Platforms',
+      'Topsides',
+      'Marine Engineering'
+    ],
+    icon: Ship,
+    image: '/image/Global-Delivery-Model.jpg'
+  },
+  {
+    title: 'Pipeline Engineering',
+    description: 'Engineering support for transmission and distribution pipelines including routing studies, stress analysis, hydraulic calculations, material specifications, pipeline integrity, crossings, and construction engineering.',
+    tags: [
+      'Pipeline Design',
+      'Stress Analysis',
+      'CAESAR II',
+      'Hydraulic Analysis',
+      'Pipeline Integrity',
+      'Crossings',
+      'Construction Support'
+    ],
+    icon: Activity,
+    image: '/image/pipeline-enginerring.jpg'
+  },
+  {
+    title: 'Steel Detailing & Structural Engineering',
+    description: 'Preparation of structural steel models, fabrication drawings, connection design, shop drawings, erection packages, and detailed structural engineering for industrial plants, process facilities, and infrastructure projects.',
+    tags: [
+      'Tekla',
+      'Structural Steel',
+      'Shop Drawings',
+      'Connection Design',
+      'Fabrication Packages',
+      'Industrial Structures'
+    ],
+    icon: Landmark,
+    image: '/image/structured-enginerring.jpg',
+  },
+  {
+    title: 'Heavy Equipment Design',
+    description: 'Mechanical engineering for heavy industrial equipment including pressure vessels, material handling systems, rotating equipment, machinery components, product development, and manufacturing support.',
+    tags: [
+      'Mechanical Design',
+      'CAD Modeling',
+      'Pressure Vessels',
+      'Product Development',
+      'Heavy Machinery',
+      'Manufacturing Support'
+    ],
+    icon: Cog,
+    image: '/image/Global-Delivery-Model.jpg'
+  },
+  {
+    title: 'Simulation & FEA Engineering',
+    description: 'Advanced engineering simulation including structural, thermal, CFD, fatigue, vibration, optimization, and digital validation to improve product performance, safety, and operational reliability.',
+    tags: [
+      'ANSYS',
+      'Abaqus',
+      'CFD',
+      'Thermal Analysis',
+      'Structural FEA',
+      'Optimization',
+      'Digital Validation'
+    ],
+    icon: LineChart,
+    image: '/image/Global-Delivery-Model.jpg'
+  },
+  {
+    title: 'Industrial Automation & Digital Engineering',
+    description: 'Industrial automation, PLC/SCADA systems, Industry 4.0 integration, Digital Twin solutions, predictive maintenance, industrial AI, and operational analytics to improve plant performance and decision-making.',
+    tags: [
+      'PLC',
+      'SCADA',
+      'Digital Twin',
+      'AI Analytics',
+      'Industry 4.0',
+      'Predictive Maintenance'
+    ],
+    icon: Bot,
+    image: '/image/AI-Enabled-digital-engineering.png',
+  }
 ];
 
 const softwareExpertise = [
@@ -2131,84 +2344,140 @@ export default function HomePage() {
           </div>
         </AnimatedSection>
       </section>
-      <section id="industries-served" className="scroll-mt-32 bg-slate-50 py-20 sm:py-28 relative overflow-hidden transition-colors duration-500">
-        {/* Dynamic Vertical Accordion Background */}
-        <div className="absolute inset-0 w-full h-full flex overflow-hidden pointer-events-none z-0">
+      <section
+        id="industries-served"
+        onMouseLeave={() => setHoveredIndustryIndex(null)}
+        className="scroll-mt-32 relative overflow-hidden py-16 sm:py-24 lg:py-28 min-h-[680px] sm:min-h-[720px] flex items-center bg-slate-900"
+      >
+        {/* Dynamic 15-Strip Vertical Accordion Background */}
+        <div className="absolute inset-0 w-full h-full flex overflow-hidden z-0">
           {industriesServed.map((industry, index) => {
             const isHovered = hoveredIndustryIndex === index;
             const isAnyHovered = hoveredIndustryIndex !== null;
 
-            let flexStyle = '1 1 0%';
-            let opacityStyle = 0.8;
-
-            if (isAnyHovered) {
-              if (isHovered) {
-                flexStyle = '100 1 0%';
-                opacityStyle = 1;
-              } else {
-                flexStyle = '0 0 0%';
-                opacityStyle = 0;
-              }
-            }
-
             return (
               <div
                 key={industry.title}
+                onMouseEnter={() => setHoveredIndustryIndex(index)}
+                onMouseLeave={() => setHoveredIndustryIndex(null)}
                 style={{
-                  backgroundImage: `url('${industry.bgImage}')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  flex: flexStyle,
-                  opacity: opacityStyle,
+                  flex: isAnyHovered ? (isHovered ? '1 0 100%' : '0 0 0%') : '1 1 0%',
+                  opacity: isAnyHovered ? (isHovered ? 1 : 0) : 1,
+                  minWidth: isAnyHovered ? (isHovered ? '100%' : '0%') : '0%',
                 }}
-                className="h-full transition-all duration-700 ease-in-out border-r border-slate-200/50 last:border-r-0"
-              />
+                className={`relative h-full transition-all duration-700 ease-in-out overflow-hidden cursor-pointer ${
+                  isAnyHovered && !isHovered ? 'border-r-0' : 'border-r border-white/20 last:border-r-0'
+                }`}
+              >
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 ease-out"
+                  style={{
+                    backgroundImage: `url('${industry.bgImage}')`,
+                    transform: isHovered ? 'scale(1.04)' : 'scale(1)',
+                  }}
+                />
+
+                {/* Top Gradient & Text on Top of Image Strip */}
+                <div className="absolute top-0 inset-x-0 bg-gradient-to-b from-black/85 via-black/45 to-transparent pt-3.5 pb-8 px-1 text-center pointer-events-none z-10">
+                  <p className="text-[9px] sm:text-[10px] lg:text-[11px] font-bold text-white uppercase tracking-wider leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] line-clamp-2">
+                    {industry.topText}
+                  </p>
+                  <div className="w-3.5 sm:w-4 h-0.5 bg-white/80 mx-auto mt-1 rounded-full shadow-sm" />
+                </div>
+
+                {/* Subtle dark tint to harmonize background colors */}
+                <div
+                  className={`absolute inset-0 transition-colors duration-500 ${
+                    isHovered ? 'bg-black/10' : 'bg-black/25'
+                  }`}
+                />
+              </div>
             );
           })}
         </div>
 
-        {/* Backdrop overlay for text contrast */}
-        <div className="absolute inset-0 bg-white/10 pointer-events-none z-0" />
-
-        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Industries Served"
-            title="Industrial sectors supported by GTS delivery teams"
+        {/* Ambient Center Gradient Overlay for High Text & Card Contrast */}
+        <div
+          className={`absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ${
+            hoveredIndustryIndex !== null
+              ? 'bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.85)_0%,rgba(255,255,255,0.6)_55%,rgba(255,255,255,0.15)_100%)]'
+              : 'bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.72)_55%,rgba(255,255,255,0.25)_100%)]'
+          }`}
+        />
+        {/* Center White Brightness Overlay: center two images width and text area strictly */}
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+          {/* Vertical bright white column over center 2 images (~14% width) */}
+          <div
+            className={`absolute inset-y-0 left-1/2 -translate-x-1/2 w-[14%] min-w-[120px] max-w-[220px] bg-gradient-to-b from-white/30 via-white/85 to-white/70 shadow-[0_0_60px_30px_rgba(255,255,255,0.85)] transition-opacity duration-500 ${
+              hoveredIndustryIndex !== null ? 'opacity-30' : 'opacity-100'
+            }`}
           />
-          <div className="mx-auto mt-4 max-w-2xl rounded-2xl bg-white/85 backdrop-blur-md px-6 py-3 shadow-sm border border-slate-200/50 text-center mb-10">
-            <p className="text-sm leading-7 text-slate-600 sm:text-base">
-              GTS supports asset owners, OEMs, EPC teams, and technology programs across energy, infrastructure, manufacturing, transportation, and heavy industry.
+
+          {/* Bright white illumination directly behind the text area */}
+          <div className="absolute top-8 sm:top-12 lg:top-14 left-1/2 -translate-x-1/2 w-[92%] max-w-3xl h-[260px] sm:h-[290px] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.88)_42%,rgba(255,255,255,0.3)_65%,transparent_82%)]" />
+        </div>
+
+        {/* Foreground Content */}
+        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+          <div className="text-center max-w-4xl mx-auto">
+            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0090e7]">
+              INDUSTRIES WE SERVE
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight"/>
+            <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              Industrial sectors supported by GTS’s multidisciplinary expertise
+            </h2>
+            <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed">
+              GTS supports asset owners, OEMs, EPC teams, and technology programs across energy, infrastructure, manufacturing, transportation, and new industries.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+          {/* 15 Cards Grid: 5 columns x 3 rows matching mockup */}
+          <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-3.5">
             {industriesServed.map((industry, index) => {
-              const iconUrl = industry.icon;
+              const isHovered = hoveredIndustryIndex === index;
 
               return (
                 <MagneticCard
                   key={industry.title}
-                  intensity={5}
-                  className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md cursor-pointer"
+                  intensity={4}
+                  className={`rounded-2xl border px-3.5 py-3 transition-all duration-300 cursor-pointer ${
+                    isHovered
+                      ? 'border-[#0090e7] bg-white shadow-xl scale-[1.03] ring-2 ring-[#0090e7]/25'
+                      : 'border-white/80 bg-white/95 backdrop-blur-md shadow-sm hover:border-sky-300 hover:bg-white hover:shadow-md'
+                  }`}
                   onMouseEnter={() => setHoveredIndustryIndex(index)}
                   onMouseLeave={() => setHoveredIndustryIndex(null)}
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center justify-center h-10 w-10 shrink-0">
-                      <div
-                        style={{
-                          WebkitMaskImage: `url('${iconUrl}')`,
-                          maskImage: `url('${iconUrl}')`,
-                          WebkitMaskRepeat: 'no-repeat',
-                          maskRepeat: 'no-repeat',
-                          WebkitMaskPosition: 'center',
-                          maskPosition: 'center',
-                          WebkitMaskSize: 'contain',
-                          maskSize: 'contain',
-                        }}
-                        className="w-7 h-7 bg-gradient-to-br from-[#2563eb] to-[#22d3ee] transition-all duration-300 group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(34,211,238,0.3)]"
-                      />
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center">
+                      {typeof industry.icon === 'string' ? (
+                        <div
+                          style={{
+                            WebkitMaskImage: `url('${industry.icon}')`,
+                            maskImage: `url('${industry.icon}')`,
+                            WebkitMaskRepeat: 'no-repeat',
+                            maskRepeat: 'no-repeat',
+                            WebkitMaskPosition: 'center',
+                            maskPosition: 'center',
+                            WebkitMaskSize: 'contain',
+                            maskSize: 'contain',
+                          }}
+                          className="h-6 w-6 bg-[#0090e7] shrink-0 transition-transform duration-300 group-hover:scale-110"
+                        />
+                      ) : (
+                        <industry.icon
+                          className="h-6 w-6 text-[#0090e7] shrink-0 transition-transform duration-300 group-hover:scale-110"
+                          strokeWidth={2.2}
+                        />
+                      )}
                     </div>
-                    <div className="text-sm font-extrabold text-primary leading-tight">{industry.title}</div>
+                    <div className="min-w-0 flex-1">
+                      <span className="text-xs sm:text-sm font-extrabold text-slate-800 group-hover:text-slate-950 leading-snug line-clamp-2 block">
+                        {industry.title}
+                      </span>
+                    </div>
                   </div>
                 </MagneticCard>
               );
@@ -2295,25 +2564,80 @@ export default function HomePage() {
         </AnimatedSection>
       </section>
 
-      <section id="featured-projects" className="scroll-mt-32 bg-white py-20 sm:py-28">
-        <AnimatedSection as="div" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Featured Projects"
-            title="Representative project types delivered by GTS teams"
-            description="Project cards focus on the type of engineering outcomes industrial buyers recognize: plants, terminals, offshore systems, pipelines, steel packages, products, simulation, and automation."
-          />
-          <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {featuredProjects.map((project, index) => (
-              <MagneticCard key={project} className="group rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 transition-all hover:-translate-y-1 hover:bg-primary hover:text-white hover:shadow-xl hover:shadow-slate-200">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-sm font-extrabold text-accent ring-1 ring-slate-200 group-hover:bg-white/10 group-hover:text-cyan-200 group-hover:ring-white/15">
-                  {index + 1}
+      <section id="featured-projects" className="scroll-mt-32 bg-slate-50/40 py-20 sm:py-28 relative overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-50/50 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-cyan-50/40 rounded-full blur-3xl pointer-events-none" />
+
+        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-3">
+              <div className="h-0.5 w-7 sm:w-10 bg-blue-500/50" />
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#0070f3]">
+                FEATURED PROJECTS
+              </span>
+              <div className="h-0.5 w-7 sm:w-10 bg-blue-500/50" />
+            </div>
+            <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              Engineering Solutions Delivered Across{' '}
+              <span className="text-[#0070f3]">Industrial Projects</span>
+            </h2>
+            <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-slate-600 max-w-4xl mx-auto font-normal leading-relaxed">
+              From concept development and FEED through detailed engineering, digital engineering, procurement support, and project execution, GTS delivers multidisciplinary engineering services across complex industrial facilities worldwide.
+            </p>
+          </div>
+
+          <div className="mt-12 sm:mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredProjects.map((project) => {
+              const Icon = project.icon;
+
+              return (
+                <div
+                  key={project.title}
+                  className="group rounded-2xl border border-slate-200/80 bg-white overflow-hidden shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-blue-200 flex flex-col"
+                >
+                  {/* Card Image Container */}
+                  <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-100">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />
+
+                    {/* Floating Icon Badge */}
+                    <div className="absolute bottom-3 left-4 flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-[#0070f3] text-white shadow-md ring-2 ring-white">
+                      <Icon className="h-5 w-5 sm:h-5.5 sm:w-5.5" strokeWidth={2.2} />
+                    </div>
+                  </div>
+
+                  {/* Card Body */}
+                  <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-base sm:text-lg font-extrabold text-slate-900 leading-snug tracking-tight group-hover:text-[#0070f3] transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="mt-2.5 text-xs text-slate-600 leading-relaxed font-normal">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    {/* Tags */}
+                    <div className="mt-5 flex flex-wrap gap-1.5 pt-3 border-t border-slate-100">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-blue-50/70 border border-blue-100/80 px-2.5 py-1 text-[10.5px] font-medium text-blue-700 leading-none"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <h3 className="mt-6 text-lg font-extrabold text-primary group-hover:text-white">{project}</h3>
-                <p className="mt-3 text-xs leading-relaxed text-slate-500 group-hover:text-slate-300">
-                  Scope-driven engineering delivery with discipline coordination, documentation, validation, and project controls.
-                </p>
-              </MagneticCard>
-            ))}
+              );
+            })}
           </div>
         </AnimatedSection>
       </section>
@@ -2547,7 +2871,7 @@ export default function HomePage() {
                   <select name="project_type" defaultValue="" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium outline-none transition focus:border-accent focus:bg-white">
                     <option value="" disabled>Choose project type</option>
                     {featuredProjects.map((project) => (
-                      <option key={project} value={project}>{project}</option>
+                      <option key={project.title} value={project.title}>{project.title}</option>
                     ))}
                   </select>
                 </label>
