@@ -25,10 +25,12 @@ import {
   Cpu,
   Database,
   Factory,
+  FileCheck,
   FileText,
   Globe,
   Grid,
   Handshake,
+  HardHat,
   Landmark,
   Layers,
   Leaf,
@@ -42,6 +44,7 @@ import {
   Plane,
   Radio,
   RotateCw,
+  Search,
   Server,
   Settings,
   ShieldCheck,
@@ -63,6 +66,8 @@ import {
   MagneticCard,
   SectionHeading
 } from '@/components/ui';
+import ConsultationSection from '@/components/home/ConsultationSection';
+import CapabilitiesInteractiveMap from '@/components/home/CapabilitiesInteractiveMap';
 
 interface SolutionArea {
   id: string;
@@ -1085,16 +1090,85 @@ const engineeringCapabilities: CapabilityDiscipline[] = [
   }
 ];
 
-const processSafetyItems = [
-  'Process Safety Management (PSM)',
-  'HAZOP',
-  'SIL',
-  'Risk Assessments',
-  'QRA',
-  'Asset Integrity',
-  'EPC',
-  'EPCM',
-  'PMC'
+const processSafetyCards = [
+  {
+    icon: ShieldCheck,
+    title: 'Process Safety Management (PSM)',
+    description: 'Implementing risk-based PSM programs to prevent incidents and ensure safer operations.'
+  },
+  {
+    icon: Factory,
+    title: 'HAZOP',
+    description: 'Facilitating HAZOP studies to identify and mitigate process hazards early.'
+  },
+  {
+    icon: FileText,
+    title: 'SIL',
+    description: 'Safety Instrumented Systems design and verification to achieve required SIL levels.'
+  },
+  {
+    icon: Search,
+    title: 'Risk Assessments',
+    description: 'Comprehensive HRA, QRA, and LOPA to quantify and manage process risks.'
+  },
+  {
+    icon: Award,
+    title: 'QRA',
+    description: 'Quantitative risk analysis for informed decision-making and regulatory compliance.'
+  },
+  {
+    icon: Database,
+    title: 'Asset Integrity',
+    description: 'Integrity management programs to extend asset life and ensure reliable operations.'
+  },
+  {
+    icon: Cog,
+    title: 'EPC',
+    description: 'End-to-end EPC support from engineering definition to commissioning.'
+  },
+  {
+    icon: FileCheck,
+    title: 'EPCM',
+    description: 'Engineering, procurement and construction management for successful project delivery.'
+  },
+  {
+    icon: HardHat,
+    title: 'PMC',
+    description: 'Project management consulting to drive cost, schedule, and quality excellence.'
+  }
+];
+
+const processSafetyStats = [
+  {
+    icon: ShieldCheck,
+    value: '100+',
+    label: 'Safety Studies Completed'
+  },
+  {
+    icon: Factory,
+    value: '50+',
+    label: 'EPC/EPCM Projects'
+  },
+  {
+    icon: Users,
+    value: '15+',
+    label: 'Industries Served'
+  },
+  {
+    icon: Clock,
+    value: '30%',
+    label: 'Faster Project Delivery'
+  },
+  {
+    icon: TrendingUp,
+    value: '20%',
+    label: 'Lower Project Costs'
+  },
+  {
+    icon: HardHat,
+    value: 'Zero',
+    label: 'Compromise on Safety'
+  }
 ];
 
 interface FeaturedProject {
@@ -1479,7 +1553,6 @@ function AnimatedCounter({ end, duration = 2000, suffix = '', separator = true }
 
 export default function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [activeDiscipline, setActiveDiscipline] = useState(engineeringCapabilities[0].name);
   const [hoveredIndustryIndex, setHoveredIndustryIndex] = useState<number | null>(null);
   const [selectedSolution, setSelectedSolution] = useState<EngineeringSolutionItem | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -1502,10 +1575,6 @@ export default function HomePage() {
       document.body.style.overflow = '';
     };
   }, [selectedSolution]);
-
-  const selectedCapability =
-    engineeringCapabilities.find((capability) => capability.name === activeDiscipline) ?? engineeringCapabilities[0];
-  const ActiveCapabilityIcon = selectedCapability.icon;
 
   useEffect(() => {
     const currentVideo = videoRef.current;
@@ -2767,80 +2836,126 @@ export default function HomePage() {
           </div>
         </AnimatedSection>
       </section>
-      <section className="bg-white py-20 sm:py-28">
-        <AnimatedSection as="div" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Engineering Capabilities"
-            title="Interactive capability map across core disciplines"
-            description="Select a discipline to see how GTS maps engineering teams, deliverables, and digital workflows around industrial project needs."
-          />
+      <CapabilitiesInteractiveMap />
 
-          <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-12">
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-2">
-              {engineeringCapabilities.map((capability) => {
-                const Icon = capability.icon;
-                const isActive = capability.name === activeDiscipline;
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] via-[#f1f6fd]/30 to-white py-20 sm:py-28 border-b border-slate-200/60">
+        {/* Left Industrial Plant Background Image with High Clarity and Sharp Visibility */}
+        <div className="pointer-events-none absolute left-0 top-24 sm:top-28 lg:top-20 bottom-0 lg:bottom-24 h-[420px] sm:h-[480px] lg:h-auto w-full sm:w-[560px] lg:w-[46%] xl:w-[41%] overflow-hidden opacity-95 lg:opacity-100 select-none z-0">
+          <div className="relative h-full w-full">
+            <Image
+              src="/image/OUR ENGINEERING SOLUTION.jpg"
+              alt="Process Safety & Industrial Facility"
+              fill
+              priority
+              className="object-cover object-left-bottom contrast-[1.08] saturate-[1.12] brightness-[1.02]"
+              quality={100}
+            />
+            {/* Edge-only gentle gradient blends: keeping the central plant towers 100% clear and sharp */}
+            <div className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc]/60 to-transparent" />
+            <div className="absolute inset-y-0 right-0 w-28 sm:w-44 bg-gradient-to-r from-transparent via-[#f8fafc]/75 to-[#f8fafc]" />
+            <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#f8fafc] via-[#f8fafc]/50 to-transparent" />
+            <div className="absolute inset-y-0 left-0 w-8 sm:w-12 bg-gradient-to-r from-[#f8fafc]/40 to-transparent" />
+          </div>
+        </div>
 
-                return (
-                  <button
-                    key={capability.name}
-                    onClick={() => setActiveDiscipline(capability.name)}
-                    className={`flex items-center gap-3 rounded-2xl border p-4 text-left transition-all ${isActive
-                      ? 'border-accent bg-accent text-white shadow-lg shadow-blue-100'
-                      : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-accent/40 hover:bg-white'
-                      }`}
-                  >
-                    <Icon className="h-5 w-5 shrink-0" />
-                    <span className="text-sm font-bold">{capability.name}</span>
-                  </button>
-                );
-              })}
-            </div>
+        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8 items-start">
+            {/* Left Column: Heading, Description & Glowing Safety Shield */}
+            <div className="lg:col-span-4 flex flex-col justify-between h-full pr-0 lg:pr-4">
+              <div>
+                <div className="inline-flex items-center gap-2.5">
+                  <span className="text-xs font-mono font-bold uppercase tracking-[0.22em] text-[#0070f3]">
+                    PROCESS SAFETY & EPC
+                  </span>
+                  <span className="h-0.5 w-8 bg-[#0070f3]/60 rounded-full" />
+                </div>
 
-            <div className="lg:col-span-7">
-              <div className="h-full rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-xl shadow-slate-200">
-                <div className="flex items-center gap-4">
-                  <div className="rounded-2xl bg-cyan-300/15 p-4 text-cyan-200">
-                    <ActiveCapabilityIcon className="h-8 w-8" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-mono uppercase tracking-[0.24em] text-cyan-200">Selected Discipline</div>
-                    <h3 className="mt-1 text-3xl font-extrabold">{selectedCapability.name}</h3>
+                <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl lg:text-5xl font-display leading-[1.12]">
+                  Process Safety & <br className="hidden sm:inline" />
+                  <span className="text-[#0070f3]">Project Execution</span>
+                </h2>
+
+                <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-md">
+                  GTS combines process safety, asset integrity, and project delivery controls to help
+                  industrial organizations move from engineering definition to execution with stronger
+                  risk visibility and safer, more reliable operations.
+                </p>
+              </div>
+
+              {/* Glowing Safety Badge (Over the Plant Image) */}
+              <div className="mt-10 sm:mt-14 flex items-center gap-4">
+                <div className="relative flex h-20 w-20 sm:h-24 sm:w-24 shrink-0 items-center justify-center">
+                  {/* Glowing ripple aura */}
+                  <div className="absolute inset-0 rounded-full bg-cyan-400/20 blur-xl animate-pulse" />
+                  <div className="absolute -inset-2 rounded-full border border-cyan-400/30" />
+                  <div className="relative flex h-18 w-18 sm:h-20 sm:w-20 items-center justify-center rounded-3xl bg-white/90 border-2 border-cyan-400/80 backdrop-blur-md shadow-xl shadow-cyan-500/25">
+                    <ShieldCheck className="h-10 w-10 sm:h-11 sm:w-11 text-[#0070f3] drop-shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
                   </div>
                 </div>
-                <p className="mt-6 text-sm leading-7 text-slate-300">{selectedCapability.summary}</p>
-                <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  {selectedCapability.deliverables.map((deliverable) => (
-                    <div key={deliverable} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                      <CheckCircle2 className="h-5 w-5 shrink-0 text-green-500" />
-                      <span className="text-sm font-semibold text-slate-100">{deliverable}</span>
-                    </div>
-                  ))}
+                <div className="bg-white/70 sm:bg-white/40 backdrop-blur-[3px] sm:backdrop-blur-none px-3 py-2 rounded-xl">
+                  <div className="flex flex-col text-[11px] sm:text-xs font-mono font-extrabold uppercase tracking-widest text-slate-900 space-y-0.5">
+                    <span>SAFER PLANTS</span>
+                    <span>RELIABLE OPERATIONS</span>
+                    <span className="text-[#0070f3]">SUSTAINABLE GROWTH</span>
+                  </div>
+                  <div className="mt-1.5 h-1 w-12 bg-[#0070f3] rounded-full" />
                 </div>
               </div>
             </div>
-          </div>
-        </AnimatedSection>
-      </section>
 
-      <section className="bg-slate-50 py-20 sm:py-28">
-        <AnimatedSection as="div" className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
-          <div className="lg:col-span-5">
-            <SectionHeading
-              eyebrow="Process Safety & EPC"
-              title="Process Safety & Project Execution"
-              description="GTS combines process safety, asset integrity, and project delivery controls so industrial programs can move from engineering definition to execution with stronger risk visibility."
-              align="left"
-            />
+            {/* Right Column: 3x3 Grid of 9 Cards */}
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {processSafetyCards.map((card) => {
+                  const Icon = card.icon;
+                  return (
+                    <MagneticCard
+                      key={card.title}
+                      intensity={2}
+                      className="group relative flex items-start gap-4 rounded-2xl border border-slate-200/90 bg-white/95 p-5 shadow-xs shadow-slate-200/30 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-500/10"
+                    >
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-blue-200/80 bg-blue-50 text-[#0070f3] transition-colors duration-300 group-hover:bg-[#0070f3] group-hover:text-white">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <h3 className="text-sm font-bold text-slate-900 transition-colors duration-200 group-hover:text-[#0070f3] leading-snug">
+                          {card.title}
+                        </h3>
+                        <p className="mt-1 text-xs text-slate-500 leading-relaxed">
+                          {card.description}
+                        </p>
+                      </div>
+                    </MagneticCard>
+                  );
+                })}
+              </div>
+            </div>
           </div>
-          <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-              {processSafetyItems.map((item) => (
-                <MagneticCard key={item} intensity={4} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <ShieldCheck className="h-5 w-5 text-accent text-red-500" />
-                  <div className="mt-4 text-sm font-extrabold text-primary">{item}</div>
-                </MagneticCard>
-              ))}
+
+          {/* Bottom Trust & Performance Metrics Bar */}
+          <div className="mt-12 rounded-2xl border border-slate-200/80 bg-white/95 p-5 sm:p-6 shadow-sm backdrop-blur-sm">
+            <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+              {processSafetyStats.map((stat, idx) => {
+                const Icon = stat.icon;
+                return (
+                  <div
+                    key={stat.label}
+                    className={`flex items-center gap-3.5 ${idx > 0 ? 'sm:pl-4 xl:pl-6' : ''}`}
+                  >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#0070f3]">
+                      <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                    </div>
+                    <div>
+                      <div className="text-lg font-black text-slate-900 font-display leading-tight">
+                        {stat.value}
+                      </div>
+                      <div className="text-[11px] font-medium text-slate-500 leading-tight mt-0.5">
+                        {stat.label}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </AnimatedSection>
@@ -3451,76 +3566,7 @@ export default function HomePage() {
         </AnimatedSection>
       </section>
 
-      <section className="bg-primary py-20 text-white sm:py-28">
-        <AnimatedSection as="div" className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
-          <div className="lg:col-span-5">
-            <SectionHeading
-              eyebrow="Contact / Consultation"
-              title="Let's Engineer the Future Together"
-              description="Share your industry, service area, project type, and budget range so the right engineering team can respond with focused next steps."
-              align="left"
-              theme="dark"
-            />
-          </div>
-
-          <div className="lg:col-span-7">
-            <form action="/contact" method="get" className="rounded-[2rem] border border-white/10 bg-white p-6 text-slate-900 shadow-2xl shadow-slate-950/30 sm:p-8">
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <label className="space-y-2 text-sm font-bold text-slate-800">
-                  <span>Industry</span>
-                  <select name="industry" defaultValue="" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium outline-none transition focus:border-accent focus:bg-white">
-                    <option value="" disabled>Choose industry</option>
-                    {industriesServed.map((industry) => (
-                      <option key={industry.title} value={industry.title}>{industry.title}</option>
-                    ))}
-                  </select>
-                </label>
-
-                <label className="space-y-2 text-sm font-bold text-slate-800">
-                  <span>Service Area</span>
-                  <select name="service_area" defaultValue="" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium outline-none transition focus:border-accent focus:bg-white">
-                    <option value="" disabled>Choose service area</option>
-                    {solutionAreas.map((area) => (
-                      <option key={area.id} value={area.title}>{area.title}</option>
-                    ))}
-                  </select>
-                </label>
-
-                <label className="space-y-2 text-sm font-bold text-slate-800">
-                  <span>Project Type</span>
-                  <select name="project_type" defaultValue="" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium outline-none transition focus:border-accent focus:bg-white">
-                    <option value="" disabled>Choose project type</option>
-                    {featuredProjects.map((project) => (
-                      <option key={project.title} value={project.title}>{project.title}</option>
-                    ))}
-                  </select>
-                </label>
-
-                <label className="space-y-2 text-sm font-bold text-slate-800">
-                  <span>Budget Range</span>
-                  <select name="budget_range" defaultValue="" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium outline-none transition focus:border-accent focus:bg-white">
-                    <option value="" disabled>Choose budget range</option>
-                    <option value="under-25k">Under $25k</option>
-                    <option value="25k-100k">$25k - $100k</option>
-                    <option value="100k-500k">$100k - $500k</option>
-                    <option value="500k-plus">$500k+</option>
-                    <option value="to-be-defined">To be defined</option>
-                  </select>
-                </label>
-              </div>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <GradientButton type="submit" className="flex-1">
-                  Request Consultation
-                </GradientButton>
-                <Link href="/downloads" className="inline-flex flex-1 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-6 py-3 text-sm font-bold text-slate-800 transition hover:border-accent/40 hover:text-accent">
-                  Download Capability Statement
-                </Link>
-              </div>
-            </form>
-          </div>
-        </AnimatedSection>
-      </section>
+      <ConsultationSection />
     </div>
   );
 }
