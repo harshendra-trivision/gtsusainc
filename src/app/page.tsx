@@ -7,6 +7,7 @@ import type { LucideIcon } from 'lucide-react';
 import {
   Activity,
   ArrowRight,
+  Award,
   BarChart,
   Bot,
   Box,
@@ -415,7 +416,7 @@ const trustStats = [
       'More than a decade of delivering multidisciplinary engineering solutions for industrial clients through innovation, digital engineering, and execution excellence.'
   },
   {
-    title: '100+ Projects Delivered',
+    title: '500+ Projects Delivered',
     image: '/image/100project-delivered.png',
     description:
       'Successfully supporting FEED, detailed engineering, EPC, brownfield expansions, and digital transformation projects across multiple industries.'
@@ -1330,6 +1331,90 @@ const whyGtsStats: WhyGtsStat[] = [
     value: '10+',
     label: 'Engineering Disciplines',
     icon: Cog
+  }
+];
+
+const excellencePillars = [
+  {
+    title: 'Quality',
+    description: 'Structured quality systems to ensure engineering excellence.',
+    icon: ShieldCheck,
+    items: [
+      'Engineering QA/QC',
+      'Independent Design Reviews',
+      'Document Control',
+      'Revision Management',
+      'Continuous Improvement'
+    ]
+  },
+  {
+    title: 'Engineering Standards',
+    description: 'Compliance with global engineering standards.',
+    icon: FileText,
+    items: [
+      'API, ASME, ASTM, AISC, AWS',
+      'IEC, IEEE, NFPA, ACI, ANSI',
+      'ISO-based Quality Systems',
+      'Client Specifications',
+      'EPC & Industry Standards'
+    ]
+  },
+  {
+    title: 'Digital Delivery',
+    description: 'AI-enabled workflows for smarter, faster project execution.',
+    icon: Monitor,
+    items: [
+      'AI Engineering',
+      'BIM & 3D Models',
+      'Digital Twin',
+      'Engineering Analytics',
+      'Cloud Collaboration'
+    ]
+  },
+  {
+    title: 'Global Execution',
+    description: 'A global delivery model for scalable project success.',
+    icon: Globe,
+    items: [
+      'USA Project Leadership',
+      'India Engineering Center',
+      'Scalable Resources',
+      'Fast Turnaround',
+      '24-Hour Delivery Model'
+    ]
+  }
+];
+
+const excellenceStats = [
+  {
+    icon: Users,
+    value: '100+',
+    label: 'Engineering Professionals'
+  },
+  {
+    icon: FileText,
+    value: '100+',
+    label: 'Projects Delivered'
+  },
+  {
+    icon: Cog,
+    value: '15+',
+    label: 'Industries Supported'
+  },
+  {
+    icon: Globe,
+    value: 'USA + India',
+    label: 'Delivery Centers'
+  },
+  {
+    icon: Clock,
+    value: '24/7',
+    label: 'Engineering Collaboration'
+  },
+  {
+    icon: Award,
+    value: 'ISO-Aligned',
+    label: 'Quality Systems'
   }
 ];
 
@@ -3003,27 +3088,365 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-20 sm:py-28">
-        <AnimatedSection as="div" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Clients & Certifications"
-            title="Trusted delivery systems for industrial engineering programs"
-            description="Client logos, certifications, quality systems, and technology partnerships can be placed here as approved assets become available."
-          />
-          <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {clientSignals.map((signal) => (
-              <MagneticCard key={signal} intensity={3} className="flex min-h-28 items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 text-center text-xs font-bold uppercase tracking-wide text-slate-500">
-                {signal}
-              </MagneticCard>
-            ))}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] via-[#f1f6fd]/40 to-white py-20 sm:py-28 border-y border-slate-200/60">
+        {/* Decorative High-Clarity Global Network Globe (Left) */}
+        <div className="pointer-events-none absolute -left-12 sm:-left-16 lg:-left-20 top-2 sm:top-4 h-[440px] w-[440px] sm:h-[500px] sm:w-[500px] lg:h-[540px] lg:w-[540px] opacity-75 sm:opacity-85 lg:opacity-90 select-none">
+          <svg className="h-full w-full" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="globeSphereGrad" x1="50" y1="50" x2="450" y2="450" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#0070f3" stopOpacity="0.12" />
+                <stop offset="60%" stopColor="#0284c7" stopOpacity="0.05" />
+                <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id="arcGlow" x1="100" y1="100" x2="350" y2="250" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#0070f3" />
+                <stop offset="50%" stopColor="#38bdf8" />
+                <stop offset="100%" stopColor="#0070f3" />
+              </linearGradient>
+              <pattern id="globeDots" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.2" fill="#0070f3" fillOpacity="0.35" />
+              </pattern>
+            </defs>
+
+            {/* Globe Sphere Base & Atmosphere */}
+            <circle cx="250" cy="250" r="210" fill="url(#globeSphereGrad)" />
+            <circle cx="250" cy="250" r="210" stroke="#0070f3" strokeWidth="1.5" strokeOpacity="0.45" />
+            <circle cx="250" cy="250" r="218" stroke="#38bdf8" strokeWidth="1" strokeDasharray="4 6" strokeOpacity="0.35" />
+
+            {/* Latitude Grid Lines */}
+            <ellipse cx="250" cy="250" rx="210" ry="85" stroke="#0070f3" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.4" />
+            <ellipse cx="250" cy="250" rx="210" ry="155" stroke="#0070f3" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.3" />
+            <line x1="40" y1="250" x2="460" y2="250" stroke="#0070f3" strokeWidth="1.5" strokeDasharray="5 5" strokeOpacity="0.5" />
+            <ellipse cx="250" cy="165" rx="192" ry="60" stroke="#0070f3" strokeWidth="1" strokeDasharray="3 4" strokeOpacity="0.3" />
+            <ellipse cx="250" cy="335" rx="192" ry="60" stroke="#0070f3" strokeWidth="1" strokeDasharray="3 4" strokeOpacity="0.25" />
+
+            {/* Longitude Grid Lines */}
+            <line x1="250" y1="40" x2="250" y2="460" stroke="#0070f3" strokeWidth="1.5" strokeDasharray="5 5" strokeOpacity="0.5" />
+            <ellipse cx="250" cy="250" rx="85" ry="210" stroke="#0070f3" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.4" />
+            <ellipse cx="250" cy="250" rx="155" ry="210" stroke="#0070f3" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.3" />
+
+            {/* Stylized Continent Silhouettes with Dotted Texture */}
+            {/* North America */}
+            <path
+              d="M100 130 C120 110, 160 115, 185 135 C195 145, 190 165, 175 180 C160 195, 140 210, 145 225 C130 220, 115 200, 105 185 C95 170, 90 145, 100 130 Z"
+              fill="url(#globeDots)"
+              stroke="#0070f3"
+              strokeWidth="1.5"
+              strokeOpacity="0.5"
+            />
+            {/* South America */}
+            <path
+              d="M150 235 C170 240, 190 260, 185 290 C180 320, 165 350, 150 375 C140 360, 135 320, 135 295 C135 270, 140 245, 150 235 Z"
+              fill="url(#globeDots)"
+              stroke="#0070f3"
+              strokeWidth="1.5"
+              strokeOpacity="0.45"
+            />
+            {/* Europe & Asia */}
+            <path
+              d="M230 110 C260 95, 310 100, 350 125 C370 140, 390 165, 380 195 C360 215, 320 210, 295 195 C275 180, 255 185, 240 170 C225 155, 220 125, 230 110 Z"
+              fill="url(#globeDots)"
+              stroke="#0070f3"
+              strokeWidth="1.5"
+              strokeOpacity="0.5"
+            />
+            {/* Africa */}
+            <path
+              d="M235 180 C260 185, 280 205, 285 235 C290 265, 275 300, 255 330 C240 315, 230 280, 225 250 C220 220, 225 195, 235 180 Z"
+              fill="url(#globeDots)"
+              stroke="#0070f3"
+              strokeWidth="1.5"
+              strokeOpacity="0.45"
+            />
+
+            {/* Glowing Interconnect Arcs */}
+            <path d="M140 175 C175 120, 230 110, 260 140" stroke="url(#arcGlow)" strokeWidth="2.5" strokeLinecap="round" />
+            <path d="M140 175 C170 210, 210 240, 260 250" stroke="url(#arcGlow)" strokeWidth="2" strokeLinecap="round" />
+            <path d="M260 140 C300 130, 335 150, 350 180" stroke="url(#arcGlow)" strokeWidth="2" strokeLinecap="round" />
+            <path d="M140 175 C200 160, 280 180, 350 180" stroke="#0070f3" strokeWidth="1.5" strokeDasharray="4 4" strokeOpacity="0.7" />
+
+            {/* Global Hub Nodes with Radar Rings */}
+            {/* Hub 1: USA (Houston / NYC) */}
+            <g transform="translate(140, 175)">
+              <circle r="12" stroke="#0070f3" strokeWidth="1.5" strokeOpacity="0.5" fill="none" />
+              <circle r="6" fill="#0070f3" />
+              <circle r="3" fill="#ffffff" />
+            </g>
+
+            {/* Hub 2: Europe (London) */}
+            <g transform="translate(260, 140)">
+              <circle r="10" stroke="#0070f3" strokeWidth="1.5" strokeOpacity="0.5" fill="none" />
+              <circle r="5" fill="#0070f3" />
+              <circle r="2.5" fill="#ffffff" />
+            </g>
+
+            {/* Hub 3: India (Delivery Center) */}
+            <g transform="translate(350, 180)">
+              <circle r="14" stroke="#0070f3" strokeWidth="2" strokeOpacity="0.6" fill="none" />
+              <circle r="7" fill="#0070f3" />
+              <circle r="3.5" fill="#ffffff" />
+            </g>
+
+            {/* Hub 4: South America */}
+            <g transform="translate(165, 280)">
+              <circle r="8" stroke="#0284c7" strokeWidth="1.2" strokeOpacity="0.5" fill="none" />
+              <circle r="4" fill="#0284c7" />
+            </g>
+
+            {/* Hub 5: Middle East / Africa */}
+            <g transform="translate(260, 250)">
+              <circle r="9" stroke="#0284c7" strokeWidth="1.2" strokeOpacity="0.5" fill="none" />
+              <circle r="4.5" fill="#0284c7" />
+            </g>
+          </svg>
+        </div>
+
+        {/* Watermark text on top-left over the globe */}
+        <div className="pointer-events-none absolute left-6 sm:left-8 top-28 sm:top-32 hidden flex-col font-mono text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#0052b4] select-none lg:flex">
+          <div className="flex items-center gap-1.5">
+            <span className="h-2 w-2 rounded-full bg-[#0070f3] animate-pulse" />
+            <span>GLOBAL</span>
           </div>
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-4">
-            {qualitySignals.map((signal) => (
-              <MagneticCard key={signal} intensity={3} className="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
-                <ShieldCheck className="mx-auto h-6 w-6 text-accent text-red-500" />
-                <div className="mt-3 text-sm font-extrabold text-primary">{signal}</div>
-              </MagneticCard>
-            ))}
+          <span className="pl-3.5">ENGINEERING</span>
+          <span className="pl-3.5 text-[#0070f3]">LOCAL IMPACT</span>
+        </div>
+
+        {/* Watermark text on top-right */}
+        <div className="pointer-events-none absolute right-8 top-10 hidden border-l-2 border-[#0070f3] pl-3.5 font-mono text-[10.5px] font-extrabold uppercase tracking-wider text-slate-800 select-none lg:flex flex-col space-y-0.5 bg-white/70 backdrop-blur-xs py-1.5 pr-2.5 rounded-r shadow-xs">
+          <span>PEOPLE</span>
+          <span>TECHNOLOGY</span>
+          <span>SOLUTIONS</span>
+          <span className="text-[#0070f3]">GLOBAL IMPACT</span>
+        </div>
+
+        {/* Right Industrial Image Overlay with high clarity and smooth left fade */}
+        <div
+          className="pointer-events-none absolute -right-2 sm:right-0 top-0 bottom-0 w-[40%] md:w-[44%] lg:w-[46%] xl:w-[48%] overflow-hidden opacity-85 sm:opacity-90 lg:opacity-95 select-none"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 8%, rgba(0,0,0,0.7) 25%, black 45%, black 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 8%, rgba(0,0,0,0.7) 25%, black 45%, black 100%)'
+          }}
+        >
+          <div className="relative h-full w-full">
+            <Image
+              src="/image/OUR ENGINEERING SOLUTION.jpg"
+              alt="Industrial Engineering Plant"
+              fill
+              className="object-cover object-left"
+              quality={95}
+            />
+            {/* Soft vertical blend into section top/bottom borders */}
+            <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc]/60 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-white via-white/60 to-transparent" />
+          </div>
+        </div>
+
+        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Header Area */}
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center gap-3">
+              <span className="h-px w-8 bg-blue-300" />
+              <span className="text-xs font-bold uppercase tracking-widest text-[#0070f3]">
+                CLIENTS & CERTIFICATIONS
+              </span>
+              <span className="h-px w-8 bg-blue-300" />
+            </div>
+
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl lg:text-5xl font-display">
+              Engineering Excellence Built on{' '}
+              <span className="text-[#0070f3]">
+                Quality, Compliance, and Global Delivery
+              </span>
+            </h2>
+
+            <div className="mx-auto mt-4 max-w-4xl space-y-2 text-center text-sm sm:text-[15px] leading-relaxed text-slate-600">
+              <p>
+                GTS Engineering delivers multidisciplinary engineering services through standardized quality systems, experienced engineering teams, AI-enabled workflows, and internationally recognized engineering practices.
+              </p>
+              <p className="text-xs sm:text-sm text-slate-500">
+                Engineering teams experienced with internationally recognized industrial standards including API, ASME, AISC, AWS, ASTM, IEC, IEEE, NFPA, ISO, and client-specific engineering specifications.
+              </p>
+            </div>
+          </div>
+
+          {/* 4 Pillar Cards Grid */}
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {excellencePillars.map((pillar) => {
+              const Icon = pillar.icon;
+              return (
+                <MagneticCard
+                  key={pillar.title}
+                  intensity={2}
+                  className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white/95 p-6 shadow-sm shadow-slate-200/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-500/10"
+                >
+                  <div>
+                    {/* Card Header: Icon + Title & Description */}
+                    <div className="flex items-start gap-3.5">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-blue-200/80 bg-blue-50 text-[#0070f3] transition-colors duration-300 group-hover:bg-[#0070f3] group-hover:text-white">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <h3 className="text-base font-bold text-slate-900 transition-colors duration-200 group-hover:text-[#0070f3]">
+                          {pillar.title}
+                        </h3>
+                        <p className="mt-1 text-xs text-slate-500 leading-snug">
+                          {pillar.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Checkmark Checklist */}
+                    <ul className="mt-6 space-y-2.5 border-t border-slate-100 pt-5">
+                      {pillar.items.map((item) => (
+                        <li key={item} className="flex items-start gap-2.5 text-xs font-medium text-slate-700">
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0070f3]" />
+                          <span className="leading-tight">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </MagneticCard>
+              );
+            })}
+          </div>
+
+          {/* Industry Standards & Certifications Ribbon */}
+          <div className="relative mt-10 rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-sm shadow-slate-200/30">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+              {/* Left Ribbon Title */}
+              <div className="flex items-center gap-4 shrink-0 border-b pb-3 lg:border-b-0 lg:pb-0 lg:border-r lg:pr-6 border-slate-200">
+                <div className="flex flex-col">
+                  <span className="text-xs font-black uppercase tracking-wider text-[#0070f3]">
+                    INDUSTRY STANDARDS
+                  </span>
+                  <span className="text-xs font-black uppercase tracking-wider text-[#0070f3]">
+                    & CERTIFICATIONS
+                  </span>
+                  <div className="mt-1 h-0.5 w-10 bg-[#0070f3]" />
+                </div>
+              </div>
+
+              {/* Standards Badges (API, ASME, ASTM, AISC, AWS, IEC, IEEE, NFPA, ISO, ACI, ANSI, Client Specifications) */}
+              {/* Note: Placeholders ready for manual replacement or SVG customization */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-between gap-x-6 gap-y-3 flex-1 w-full px-2">
+                {/* 1. API */}
+                <div className="flex items-center gap-1 group cursor-default" title="American Petroleum Institute (API)">
+                  <span className="text-base font-black tracking-tighter text-[#1b365d]">API</span>
+                  <span className="inline-block h-4 w-1.5 bg-[#d9232a] -skew-x-12" />
+                </div>
+
+                {/* 2. ASME */}
+                <div className="flex flex-col items-center justify-center leading-none group cursor-default" title="American Society of Mechanical Engineers (ASME)">
+                  <span className="text-base font-black tracking-widest text-[#004b87]">ASME</span>
+                  <span className="text-[6.5px] font-bold tracking-wider text-slate-400 uppercase mt-0.5">Setting the Standard</span>
+                </div>
+
+                {/* 3. ASTM */}
+                <div className="flex items-center gap-1 group cursor-default" title="ASTM International">
+                  <svg className="h-5 w-5 text-[#003865]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="9" strokeWidth="2" />
+                    <circle cx="12" cy="12" r="4" fill="currentColor" />
+                    <line x1="12" y1="3" x2="12" y2="7" strokeWidth="2" />
+                    <line x1="12" y1="17" x2="12" y2="21" strokeWidth="2" />
+                    <line x1="3" y1="12" x2="7" y2="12" strokeWidth="2" />
+                    <line x1="17" y1="12" x2="21" y2="12" strokeWidth="2" />
+                  </svg>
+                  <span className="text-base font-black tracking-tight text-[#003865]">ASTM</span>
+                </div>
+
+                {/* 4. AISC */}
+                <div className="flex items-center group cursor-default" title="American Institute of Steel Construction (AISC)">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-slate-700 bg-white">
+                    <span className="text-[8px] font-black text-slate-800">AISC</span>
+                  </div>
+                </div>
+
+                {/* 5. AWS */}
+                <div className="flex items-center justify-center group cursor-default" title="American Welding Society (AWS)">
+                  <div className="relative flex h-6 w-8 items-center justify-center rounded-sm bg-slate-900 text-white transform -skew-x-12 shadow-sm">
+                    <span className="text-[8.5px] font-black tracking-wider transform skew-x-12">AWS</span>
+                  </div>
+                </div>
+
+                {/* 6. IEC */}
+                <div className="flex items-center justify-center rounded bg-[#005a9c] px-2 py-0.5 text-white shadow-sm group cursor-default" title="International Electrotechnical Commission (IEC)">
+                  <span className="text-xs font-black tracking-wider">IEC</span>
+                </div>
+
+                {/* 7. IEEE */}
+                <div className="flex items-center gap-1 text-[#00629b] group cursor-default" title="Institute of Electrical and Electronics Engineers (IEEE)">
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L4 12l8 10 8-10L12 2zm0 4l5.5 6-5.5 6L6.5 12 12 6z" />
+                  </svg>
+                  <span className="text-sm font-black tracking-tight">IEEE</span>
+                </div>
+
+                {/* 8. NFPA */}
+                <div className="flex items-center justify-center rounded border-2 border-black bg-white px-1.5 py-0.5 group cursor-default" title="National Fire Protection Association (NFPA)">
+                  <span className="text-xs font-black text-red-600 mr-0.5">🔥</span>
+                  <span className="text-xs font-black text-black tracking-tight">NFPA</span>
+                </div>
+
+                {/* 9. ISO */}
+                <div className="flex items-center justify-center rounded-full bg-[#004b87] px-2.5 py-0.5 text-white shadow-sm group cursor-default" title="International Organization for Standardization (ISO)">
+                  <span className="text-xs font-black tracking-wider">ISO</span>
+                </div>
+
+                {/* 10. ACI */}
+                <div className="flex items-center justify-center rounded-full border border-slate-300 bg-slate-50 px-2 py-0.5 text-slate-800 group cursor-default" title="American Concrete Institute (ACI)">
+                  <span className="text-xs font-black italic tracking-tight"><span className="text-red-600">a</span>ci</span>
+                </div>
+
+                {/* 11. ANSI */}
+                <div className="flex items-center justify-center rounded bg-[#002f6c] px-2 py-0.5 text-white shadow-sm group cursor-default" title="American National Standards Institute (ANSI)">
+                  <span className="text-xs font-black tracking-wider">ANSI</span>
+                </div>
+
+                {/* 12. Client Specifications */}
+                <div className="flex items-center gap-1.5 text-slate-700 group cursor-default" title="Client-Specific Engineering Specifications">
+                  <FileText className="h-5 w-5 text-[#0070f3]" />
+                  <div className="text-[10px] font-bold leading-tight text-slate-700">
+                    <span>Client</span>
+                    <br />
+                    <span>Specifications</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Trust Metrics & Vision Statement */}
+          <div className="mt-8 rounded-2xl border border-slate-200/80 bg-white/90 p-5 sm:p-6 shadow-sm backdrop-blur-sm">
+            <div className="flex flex-col xl:flex-row items-center justify-between gap-6">
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 flex-1 w-full">
+                {excellenceStats.map((stat) => {
+                  const Icon = stat.icon;
+                  return (
+                    <div key={stat.label} className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#0070f3]">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <div className="text-base font-extrabold text-slate-900 tracking-tight leading-none">
+                          {stat.value}
+                        </div>
+                        <div className="mt-1 text-[11px] font-medium text-slate-500 leading-tight">
+                          {stat.label}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="hidden border-l border-slate-200 pl-6 xl:block shrink-0">
+                <div className="flex flex-col text-[10px] font-black uppercase tracking-widest text-slate-400 space-y-0.5">
+                  <span>SAFER INDUSTRIES</span>
+                  <span>STRONGER COMMUNITIES</span>
+                  <span>A SMARTER TOMORROW</span>
+                </div>
+              </div>
+            </div>
           </div>
         </AnimatedSection>
       </section>
