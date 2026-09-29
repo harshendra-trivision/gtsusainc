@@ -51,6 +51,7 @@ import {
   Ship,
   Sliders,
   Smartphone,
+  Sparkles,
   TrendingUp,
   Users,
   Wind,
@@ -1303,12 +1304,274 @@ const featuredProjects: FeaturedProject[] = [
   }
 ];
 
-const softwareExpertise = [
-  { category: 'Plant Design', tools: 'PDMS | SP3D | Plant 3D | CAESAR II' },
-  { category: 'Product Engineering', tools: 'SolidWorks | CATIA | NX | Inventor' },
-  { category: 'Simulation', tools: 'ANSYS | Abaqus | HyperMesh | LS-Dyna' },
-  { category: 'Structural', tools: 'Tekla | STAAD | SDS2' },
-  { category: 'Digital', tools: 'Python | MATLAB | AWS | Azure' }
+interface TechnologyPillar {
+  number: string;
+  title: string;
+  description: string;
+  capabilities: string[];
+  software: string[];
+}
+
+const technologyPillars: TechnologyPillar[] = [
+  {
+    number: '01',
+    title: 'Plant Engineering',
+    description: 'Engineering design platforms for process plants, refineries, LNG, power, chemicals, and industrial facilities.',
+    capabilities: [
+      'FEED & Detailed Engineering',
+      'Piping & Stress Analysis',
+      'P&IDs & Process Design',
+      'Instrumentation & Electrical',
+      '3D Modelling & Equipment Layout',
+      'Plant Integration'
+    ],
+    software: [
+      'PDMS',
+      'SP3D',
+      'E3D',
+      'AutoCAD Plant 3D',
+      'CAESAR II',
+      'AVEVA',
+      'Hexagon SmartPlant'
+    ]
+  },
+  {
+    number: '02',
+    title: 'Mechanical & Product Engineering',
+    description: 'Mechanical design, product development, reverse engineering, and manufacturing support.',
+    capabilities: [
+      'Mechanical Design & Analysis',
+      'Pressure Vessels & Machinery',
+      'Product Development',
+      'CAD Modelling',
+      'Reverse Engineering',
+      'Manufacturing Support'
+    ],
+    software: [
+      'SolidWorks',
+      'CATIA',
+      'NX',
+      'Inventor',
+      'Creo',
+      'AutoCAD Mechanical'
+    ]
+  },
+  {
+    number: '03',
+    title: 'Structural & Steel Engineering',
+    description: 'Industrial structural analysis, steel detailing, fabrication drawings, and offshore engineering.',
+    capabilities: [
+      'Structural Analysis & Design',
+      'Offshore Structures',
+      'Steel Detailing & Shop Drawings',
+      'Fabrication Packages',
+      'Connection Design',
+      'Pipe Supports'
+    ],
+    software: [
+      'STAAD Pro',
+      'Tekla Structures',
+      'Revit Structure',
+      'SAP2000',
+      'ETABS',
+      'Advance Steel'
+    ]
+  },
+  {
+    number: '04',
+    title: 'Simulation & Engineering Analysis',
+    description: 'Virtual engineering, finite element analysis, CFD, thermal analysis, and digital validation.',
+    capabilities: [
+      'Structural & Thermal Analysis',
+      'Optimization',
+      'CFD & Flow Simulation',
+      'Digital Validation',
+      'Fatigue & Vibration Analysis',
+      'Multi-physics Analysis'
+    ],
+    software: [
+      'ANSYS',
+      'Abaqus',
+      'HyperMesh',
+      'LS-DYNA',
+      'COMSOL',
+      'Fluent',
+      'OpenFOAM'
+    ]
+  },
+  {
+    number: '05',
+    title: 'BIM, Infrastructure & Construction',
+    description: 'Building information modeling, construction coordination, and digital project delivery.',
+    capabilities: [
+      '3D BIM Modelling',
+      'Civil & Infrastructure Design',
+      'Construction Coordination',
+      'Digital Project Delivery',
+      'Clash Detection & Visualization',
+      'As-Built Documentation'
+    ],
+    software: [
+      'Revit',
+      'Civil 3D',
+      'Navisworks',
+      'Bentley',
+      'MicroStation',
+      'OpenRoads'
+    ]
+  },
+  {
+    number: '06',
+    title: 'Automation, Controls & Industry 4.0',
+    description: 'Industrial automation, control systems, SCADA, IIoT, and smart manufacturing technologies.',
+    capabilities: [
+      'PLC & SCADA System Design',
+      'Digital Twin Integration',
+      'Control System Integration',
+      'Plant Automation',
+      'IIoT & Industry 4.0',
+      'Operational Analytics'
+    ],
+    software: [
+      'Siemens TIA Portal',
+      'Rockwell Studio 5000',
+      'Wonderware',
+      'Ignition',
+      'AVEVA PI',
+      'OSI PI',
+      'WinCC'
+    ]
+  },
+  {
+    number: '07',
+    title: 'AI, Data & Digital Engineering',
+    description: 'Artificial intelligence, engineering analytics, digital twins, predictive maintenance, and intelligent automation.',
+    capabilities: [
+      'AI-Assisted Engineering',
+      'Engineering Data Analytics',
+      'Digital Twins & Asset Analytics',
+      'Process Optimization',
+      'Predictive Maintenance',
+      'Custom AI Solutions'
+    ],
+    software: [
+      'Python',
+      'MATLAB',
+      'Power BI',
+      'Azure AI',
+      'AWS',
+      'TensorFlow',
+      'PyTorch',
+      'Azure Digital Twins'
+    ]
+  },
+  {
+    number: '08',
+    title: 'Project & Document Management',
+    description: 'Collaborative engineering execution, document control, digital workflows, and project lifecycle management.',
+    capabilities: [
+      'Project Planning & Scheduling',
+      'PLM & Data Management',
+      'Document Control & Workflow',
+      'Vendor & Subcontractor Mgmt',
+      'Engineering Collaboration',
+      'Knowledge Management'
+    ],
+    software: [
+      'Autodesk Construction Cloud',
+      'SharePoint',
+      'Primavera P6',
+      'Microsoft Project',
+      'Aconex',
+      'OpenText',
+      'Teamcenter',
+      'Windchill'
+    ]
+  }
+];
+
+const aiWorkflowSteps = [
+  {
+    icon: FileText,
+    title: 'Client Requirements',
+    description: 'Project goals, specifications and data inputs'
+  },
+  {
+    icon: Cog,
+    title: 'Engineering Design',
+    description: 'Multidisciplinary design & collaboration'
+  },
+  {
+    icon: Box,
+    title: '3D Modelling',
+    description: 'Integrated plant, product and structural models'
+  },
+  {
+    icon: Activity,
+    title: 'Simulation & Validation',
+    description: 'FEA, CFD, and performance analysis'
+  },
+  {
+    icon: BrainCircuit,
+    title: 'AI Review & Optimization',
+    description: 'AI-assisted quality check and design optimization'
+  },
+  {
+    icon: CheckCircle2,
+    title: 'Quality Assurance',
+    description: 'Standards, compliance and multi-level reviews'
+  },
+  {
+    icon: FileCheck,
+    title: 'Digital Deliverables',
+    description: 'Models, drawings, data and project handover'
+  }
+];
+
+const technologyMetrics = [
+  {
+    icon: Layers,
+    value: '100+',
+    label: 'Engineering Software & Tools'
+  },
+  {
+    icon: Briefcase,
+    value: '10+',
+    label: 'Technology Domains'
+  },
+  {
+    icon: BrainCircuit,
+    value: 'AI-Enabled',
+    label: 'Engineering Workflows'
+  },
+  {
+    icon: Globe,
+    value: 'Global',
+    label: 'Collaboration Platforms'
+  },
+  {
+    icon: Database,
+    value: 'Scalable',
+    label: 'Digital Infrastructure'
+  },
+  {
+    icon: Award,
+    value: 'Future-Ready',
+    label: 'For Smarter Engineering'
+  }
+];
+
+const technologyPartners = [
+  'Autodesk',
+  'AVEVA',
+  'Hexagon',
+  'Bentley',
+  'Siemens',
+  'Microsoft',
+  'AWS',
+  'Dassault Systèmes',
+  'ANSYS',
+  'PTC'
 ];
 
 interface WhyGtsFeature {
@@ -1842,8 +2105,11 @@ export default function HomePage() {
                   </div>
 
                   <h3 className="text-base font-extrabold text-white">
-                    AI & Digital Engineering
+                    AI-Enabled Digital Engineering
                   </h3>
+                  <p className="mt-2 max-w-2xl text-xs leading-5 text-slate-300">
+                    AI-assisted engineering workflows, digital twins, engineering analytics, and simulation technologies improve quality, accelerate schedules, and reduce project risk.
+                  </p>
                 </div>
               </div>
 
@@ -1869,8 +2135,11 @@ export default function HomePage() {
                   </div>
 
                   <h3 className="text-base font-extrabold text-white">
-                    Multidisciplinary Teams
+                    Multidisciplinary Engineering Teams
                   </h3>
+                  <p className="mt-2 max-w-2xl text-xs leading-5 text-slate-300">
+                    Integrated engineering teams collaborate across all major disciplines to deliver coordinated, constructible, and digitally enabled engineering solutions.
+                  </p>
                 </div>
               </div>
 
@@ -1898,6 +2167,9 @@ export default function HomePage() {
                   <h3 className="text-base font-extrabold text-white">
                     USA + India
                   </h3>
+                  <p className="mt-2 max-w-2xl text-xs leading-5 text-slate-300">
+                    Combining USA project leadership with global engineering execution to provide responsive, scalable, and cost-effective engineering support.
+                  </p>
                 </div>
               </div>
 
@@ -1977,7 +2249,7 @@ export default function HomePage() {
 
         <div className="relative z-10 mx-auto max-w-[1520px] px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8 items-start">
-            
+
             {/* Left Column: Intro & Trust Signals (lg:col-span-4) */}
             <div className="relative flex flex-col justify-between pr-0 lg:pr-6 lg:col-span-4">
               <div>
@@ -2065,11 +2337,10 @@ export default function HomePage() {
                       key={sol.id}
                       type="button"
                       onClick={() => setSelectedSolution(sol)}
-                      className={`group relative flex flex-col justify-between rounded-2xl border bg-white p-3.5 sm:p-4 text-left shadow-[0_2px_10px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer ${
-                        isSelected
+                      className={`group relative flex flex-col justify-between rounded-2xl border bg-white p-3.5 sm:p-4 text-left shadow-[0_2px_10px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer ${isSelected
                           ? 'border-blue-600 ring-4 ring-blue-500/10 shadow-blue-100'
                           : 'border-slate-200/80 hover:border-blue-300'
-                      }`}
+                        }`}
                     >
                       {/* Card Thumbnail Image with Floating Icon Badge */}
                       <div className="relative h-32 sm:h-36 w-full rounded-xl overflow-hidden mb-3.5 bg-slate-100">
@@ -2294,10 +2565,10 @@ export default function HomePage() {
         </div>
 
         <AnimatedSection as="div" className="relative z-10 mx-auto max-w-[1520px] px-4 sm:px-6 lg:px-8">
-          
+
           {/* Section Header with Left & Right Taglines */}
           <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12">
-            
+
             {/* Left Tagline Accent (Visible on lg+) */}
             <div className="hidden lg:col-span-2 lg:flex items-start gap-3 pt-2">
               <div className="w-[3px] h-20 rounded-full bg-blue-600 shrink-0 shadow-[0_0_8px_rgba(37,99,235,0.4)]" />
@@ -2314,11 +2585,11 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-blue-50/80 px-4 py-1.5 text-xs font-mono font-bold uppercase tracking-[0.22em] text-blue-600 shadow-2xs mb-4">
                 <span>OUR ENGINEERING CAPABILITIES</span>
               </div>
-              
+
               <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-slate-900 leading-[1.15]">
                 Integrated Engineering Solutions Across the Complete Industrial Asset Lifecycle
               </h2>
-              
+
               <p className="mt-4 max-w-3xl mx-auto text-xs sm:text-sm lg:text-base leading-relaxed text-slate-600">
                 From concept and FEED through detailed engineering, digital transformation, automation, commissioning, and lifecycle optimization—GTS delivers multidisciplinary engineering solutions for energy, infrastructure, manufacturing, and technology industries.
               </p>
@@ -2669,9 +2940,8 @@ export default function HomePage() {
                   opacity: isAnyHovered ? (isHovered ? 1 : 0) : 1,
                   minWidth: isAnyHovered ? (isHovered ? '100%' : '0%') : '0%',
                 }}
-                className={`relative h-full transition-all duration-700 ease-in-out overflow-hidden cursor-pointer ${
-                  isAnyHovered && !isHovered ? 'border-r-0' : 'border-r border-white/20 last:border-r-0'
-                }`}
+                className={`relative h-full transition-all duration-700 ease-in-out overflow-hidden cursor-pointer ${isAnyHovered && !isHovered ? 'border-r-0' : 'border-r border-white/20 last:border-r-0'
+                  }`}
               >
                 {/* Background Image */}
                 <div
@@ -2692,9 +2962,8 @@ export default function HomePage() {
 
                 {/* Subtle dark tint to harmonize background colors */}
                 <div
-                  className={`absolute inset-0 transition-colors duration-500 ${
-                    isHovered ? 'bg-black/10' : 'bg-black/25'
-                  }`}
+                  className={`absolute inset-0 transition-colors duration-500 ${isHovered ? 'bg-black/10' : 'bg-black/25'
+                    }`}
                 />
               </div>
             );
@@ -2703,19 +2972,17 @@ export default function HomePage() {
 
         {/* Ambient Center Gradient Overlay for High Text & Card Contrast */}
         <div
-          className={`absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ${
-            hoveredIndustryIndex !== null
+          className={`absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ${hoveredIndustryIndex !== null
               ? 'bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.85)_0%,rgba(255,255,255,0.6)_55%,rgba(255,255,255,0.15)_100%)]'
               : 'bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.72)_55%,rgba(255,255,255,0.25)_100%)]'
-          }`}
+            }`}
         />
         {/* Center White Brightness Overlay: center two images width and text area strictly */}
         <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
           {/* Vertical bright white column over center 2 images (~14% width) */}
           <div
-            className={`absolute inset-y-0 left-1/2 -translate-x-1/2 w-[14%] min-w-[120px] max-w-[220px] bg-gradient-to-b from-white/30 via-white/85 to-white/70 shadow-[0_0_60px_30px_rgba(255,255,255,0.85)] transition-opacity duration-500 ${
-              hoveredIndustryIndex !== null ? 'opacity-30' : 'opacity-100'
-            }`}
+            className={`absolute inset-y-0 left-1/2 -translate-x-1/2 w-[14%] min-w-[120px] max-w-[220px] bg-gradient-to-b from-white/30 via-white/85 to-white/70 shadow-[0_0_60px_30px_rgba(255,255,255,0.85)] transition-opacity duration-500 ${hoveredIndustryIndex !== null ? 'opacity-30' : 'opacity-100'
+              }`}
           />
 
           {/* Bright white illumination directly behind the text area */}
@@ -2728,7 +2995,7 @@ export default function HomePage() {
             <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0090e7]">
               INDUSTRIES WE SERVE
             </span>
-            <h2 className="mt-2 text-2xl sm:text-xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight"/>
+            <h2 className="mt-2 text-2xl sm:text-xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight" />
             <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Industrial sectors supported by GTS’s multidisciplinary expertise
             </h2>
@@ -2746,11 +3013,10 @@ export default function HomePage() {
                 <MagneticCard
                   key={industry.title}
                   intensity={4}
-                  className={`rounded-2xl border px-3.5 py-3 transition-all duration-300 cursor-pointer ${
-                    isHovered
+                  className={`rounded-2xl border px-3.5 py-3 transition-all duration-300 cursor-pointer ${isHovered
                       ? 'border-[#0090e7] bg-white shadow-xl scale-[1.03] ring-2 ring-[#0090e7]/25'
                       : 'border-white/80 bg-white/95 backdrop-blur-md shadow-sm hover:border-sky-300 hover:bg-white hover:shadow-md'
-                  }`}
+                    }`}
                   onMouseEnter={() => setHoveredIndustryIndex(index)}
                   onMouseLeave={() => setHoveredIndustryIndex(null)}
                 >
@@ -2992,21 +3258,187 @@ export default function HomePage() {
         </AnimatedSection>
       </section>
 
-      <section className="bg-slate-950 py-20 text-white sm:py-28">
-        <AnimatedSection as="div" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-slate-950 py-20 text-white sm:py-28">
+        {/* Ambient subtle tech background glow */}
+        <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[900px] rounded-full bg-blue-600/10 blur-[130px]" />
+        <div className="pointer-events-none absolute bottom-0 right-0 h-[400px] w-[500px] rounded-full bg-cyan-500/5 blur-[120px]" />
+
+        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-[1480px] px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Software & Technology Expertise"
-            title="Engineering platforms used across plant, product, simulation, structural, and digital programs"
-            description="Tool familiarity helps GTS integrate quickly with client engineering stacks while supporting robust delivery workflows."
+            eyebrow="ENGINEERING TECHNOLOGIES & DIGITAL PLATFORMS"
+            title="Engineering Technologies & Digital Platforms"
+            description="GTS leverages industry-leading engineering software, simulation platforms, AI technologies, and digital collaboration tools to deliver accurate, efficient, and globally integrated engineering solutions across the complete project lifecycle."
             theme="dark"
           />
-          <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-5">
-            {softwareExpertise.map((stack) => (
-              <GlassCard key={stack.category} tone="dark" className="rounded-[1.5rem] p-6">
-                <div className="text-xs font-mono uppercase tracking-[0.22em] text-cyan-200">{stack.category}</div>
-                <p className="mt-5 text-sm font-semibold leading-7 text-white">{stack.tools}</p>
-              </GlassCard>
+
+          {/* 8 Technology Pillars Grid */}
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+            {technologyPillars.map((pillar) => (
+              <div
+                key={pillar.number}
+                className="group relative flex flex-col justify-between rounded-2xl border border-slate-800/90 bg-slate-900/60 p-5 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#0070f3]/60 hover:bg-slate-900/95 hover:shadow-xl hover:shadow-[#0070f3]/10"
+              >
+                <div>
+                  {/* Header: Number Badge + Title */}
+                  <div className="flex items-center gap-2.5">
+                    <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#0070f3] text-xs font-black text-white shadow-sm shadow-blue-500/25">
+                      {pillar.number}
+                    </span>
+                    <h3 className="text-base sm:text-[17px] font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors">
+                      {pillar.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="mt-3 text-xs leading-relaxed text-slate-300 min-h-[38px]">
+                    {pillar.description}
+                  </p>
+
+                  {/* Key Capabilities */}
+                  <div className="mt-4 pt-3.5 border-t border-slate-800/80">
+                    <div className="text-[10.5px] font-black uppercase tracking-wider text-[#38bdf8]">
+                      Key Capabilities
+                    </div>
+                    <ul className="mt-2.5 grid grid-cols-2 gap-x-2 gap-y-1.5">
+                      {pillar.capabilities.map((cap) => (
+                        <li key={cap} className="flex items-start gap-1.5 text-[11px] leading-tight text-slate-300">
+                          <Check className="h-3 w-3 text-[#0070f3] shrink-0 mt-0.5" />
+                          <span>{cap}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Software & Platforms */}
+                <div className="mt-5 pt-3.5 border-t border-slate-800/80">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
+                    Software & Platforms
+                  </div>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {pillar.software.map((sw) => (
+                      <span
+                        key={sw}
+                        className="rounded-md border border-slate-700/70 bg-slate-800/70 px-2 py-0.5 text-[10.5px] font-medium text-slate-200 transition-colors group-hover:border-slate-600 group-hover:text-white"
+                      >
+                        {sw}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             ))}
+          </div>
+
+          {/* Section Footer: AI-Enabled Engineering Workflow Banner & Capabilities (From Image 2) */}
+          <div className="mt-14 rounded-2xl border border-blue-900/60 bg-gradient-to-r from-[#03152c] via-[#051f40] to-[#041936] p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+            {/* Subtle circuit background pattern */}
+            <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
+            <div className="pointer-events-none absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
+
+            {/* Workflow Header */}
+            <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-4 mb-7">
+              <div>
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cyan-400">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  <span>Next-Gen Delivery Model</span>
+                </div>
+                <h3 className="mt-1.5 text-xl sm:text-2xl font-black text-white tracking-tight">
+                  AI-Enabled Engineering Workflow
+                </h3>
+                <p className="mt-1 text-xs sm:text-sm text-slate-300">
+                  From concept to delivery — smarter, faster, more reliable.
+                </p>
+              </div>
+              <div className="hidden md:flex items-center gap-2 text-xs text-cyan-300/80 font-mono bg-blue-950/60 border border-blue-800/60 rounded-full px-3 py-1">
+                <span className="inline-block h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
+                Continuous AI Validation Pipeline
+              </div>
+            </div>
+
+            {/* 7 Workflow Step Cards Connected with Arrows */}
+            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 xl:flex xl:items-stretch gap-2.5 sm:gap-3">
+              {aiWorkflowSteps.map((step, idx) => {
+                const Icon = step.icon;
+                const isLast = idx === aiWorkflowSteps.length - 1;
+                return (
+                  <div key={step.title} className="contents xl:flex xl:items-center xl:flex-1">
+                    <div className="flex flex-col items-center justify-between rounded-xl bg-white p-3.5 text-center shadow-md border border-slate-100 transition-transform duration-200 hover:-translate-y-0.5 w-full h-full">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-[#0070f3]">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <div className="my-2">
+                        <div className="text-xs font-extrabold text-[#0f2d4a] leading-tight">
+                          {step.title}
+                        </div>
+                        <div className="mt-1 text-[9.5px] leading-tight text-slate-500">
+                          {step.description}
+                        </div>
+                      </div>
+                      <span className="text-[9px] font-mono font-bold text-blue-600 bg-blue-50 rounded px-1.5 py-0.5">
+                        Step 0{idx + 1}
+                      </span>
+                    </div>
+
+                    {!isLast && (
+                      <div className="hidden xl:flex items-center justify-center px-1 text-cyan-400 shrink-0">
+                        <ChevronRight className="h-5 w-5 stroke-[2.5]" />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Bottom 6 Metrics Ribbon (From Image 2) */}
+            <div className="relative z-10 mt-8 pt-7 border-t border-blue-800/60 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-5 sm:gap-6">
+              {technologyMetrics.map((metric) => {
+                const Icon = metric.icon;
+                return (
+                  <div key={metric.label} className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-500/15 border border-blue-400/25 text-cyan-300">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <div className="text-base sm:text-lg font-black text-white tracking-tight leading-none">
+                        {metric.value}
+                      </div>
+                      <div className="mt-1 text-[11px] font-medium text-slate-300 leading-tight">
+                        {metric.label}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Technology Partners Bar & CTA (Prompt recommendation) */}
+          <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:p-6 backdrop-blur-sm flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
+              <span className="text-xs font-mono uppercase tracking-wider text-slate-400 shrink-0">
+                Technology Partners:
+              </span>
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 sm:gap-2">
+                {technologyPartners.map((partner) => (
+                  <span
+                    key={partner}
+                    className="rounded-full bg-slate-800/80 border border-slate-700/70 px-3 py-1 text-xs font-medium text-slate-300 hover:text-white hover:border-slate-500 transition-colors"
+                  >
+                    {partner}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#0070f3] px-5 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-all hover:bg-blue-600 hover:shadow-blue-500/40"
+              >
+                <span>Request Consultation</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </AnimatedSection>
       </section>
