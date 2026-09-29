@@ -1197,7 +1197,7 @@ const featuredProjects: FeaturedProject[] = [
       '3D Plant Modeling'
     ],
     icon: Factory,
-    image: "/image/OUR ENGINEERING SOLUTION.jpg",
+    image: "/image/featured projects/Distillery Plant Engineering.jpg",
   },
   {
     title: 'Storage Terminal Design',
@@ -1213,7 +1213,7 @@ const featuredProjects: FeaturedProject[] = [
       'EPC Support'
     ],
     icon: Database,
-    image: '/image/storage-therminal.jpg'
+    image: "/image/featured projects/Storage Terminal Design.jpg"
   },
   {
     title: 'Offshore Structural Analysis',
@@ -1228,7 +1228,7 @@ const featuredProjects: FeaturedProject[] = [
       'Marine Engineering'
     ],
     icon: Ship,
-    image: '/image/Global-Delivery-Model.jpg'
+    image: "/image/featured projects/Offshore Structural Analysis.jpg"
   },
   {
     title: 'Pipeline Engineering',
@@ -1243,7 +1243,7 @@ const featuredProjects: FeaturedProject[] = [
       'Construction Support'
     ],
     icon: Activity,
-    image: '/image/pipeline-enginerring.jpg'
+    image: "/image/featured projects/Pipeline Engineering .jpg"
   },
   {
     title: 'Steel Detailing & Structural Engineering',
@@ -1257,7 +1257,7 @@ const featuredProjects: FeaturedProject[] = [
       'Industrial Structures'
     ],
     icon: Landmark,
-    image: '/image/structured-enginerring.jpg',
+    image: "/image/featured projects/Steel Detailing & Structural Engineering.jpg"
   },
   {
     title: 'Heavy Equipment Design',
@@ -1271,7 +1271,7 @@ const featuredProjects: FeaturedProject[] = [
       'Manufacturing Support'
     ],
     icon: Cog,
-    image: '/image/Global-Delivery-Model.jpg'
+    image: "/image/featured projects/Heavy Equipment Design.jpg"
   },
   {
     title: 'Simulation & FEA Engineering',
@@ -1286,7 +1286,7 @@ const featuredProjects: FeaturedProject[] = [
       'Digital Validation'
     ],
     icon: LineChart,
-    image: '/image/Global-Delivery-Model.jpg'
+    image: "/image/featured projects/Simulation & FEA Engineering .jpg"
   },
   {
     title: 'Industrial Automation & Digital Engineering',
@@ -1300,7 +1300,7 @@ const featuredProjects: FeaturedProject[] = [
       'Predictive Maintenance'
     ],
     icon: Bot,
-    image: '/image/AI-Enabled-digital-engineering.png',
+    image: "/image/featured projects/Industrial Automation & Digital Engineering.jpg"
   }
 ];
 
