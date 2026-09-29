@@ -1756,6 +1756,106 @@ const excellenceStats = [
   }
 ];
 
+const certificationLogos = [
+  {
+    name: 'API',
+    title: 'American Petroleum Institute (API)',
+    src: '/image/client and certificate/image1.png',
+    width: 1428,
+    height: 813,
+    className: 'h-6 sm:h-7 w-auto object-contain'
+  },
+  {
+    name: 'ASME',
+    title: 'American Society of Mechanical Engineers (ASME)',
+    src: '/image/client and certificate/image3.png',
+    width: 1430,
+    height: 712,
+    className: 'h-6 sm:h-7 w-auto object-contain'
+  },
+  {
+    name: 'ASTM',
+    title: 'ASTM International',
+    src: '/image/client and certificate/image2.png',
+    width: 1426,
+    height: 955,
+    className: 'h-6 sm:h-7 w-auto object-contain'
+  },
+  {
+    name: 'AISC',
+    title: 'American Institute of Steel Construction (AISC)',
+    src: '/image/client and certificate/image5.png',
+    width: 1426,
+    height: 1103,
+    className: 'h-7 sm:h-8 w-auto object-contain'
+  },
+  {
+    name: 'AWS',
+    title: 'American Welding Society (AWS)',
+    src: '/image/client and certificate/image4.png',
+    width: 1262,
+    height: 1246,
+    className: 'h-6 sm:h-7 w-auto object-contain'
+  },
+  {
+    name: 'IEC',
+    title: 'International Electrotechnical Commission (IEC)',
+    src: '/image/client and certificate/image7.png',
+    width: 1254,
+    height: 1254,
+    className: 'h-6 sm:h-7 w-auto rounded-[3px] object-contain'
+  },
+  {
+    name: 'IEEE',
+    title: 'Institute of Electrical and Electronics Engineers (IEEE)',
+    src: '/image/client and certificate/image6.png',
+    width: 1431,
+    height: 475,
+    className: 'h-5 sm:h-6 w-auto object-contain'
+  },
+  {
+    name: 'NFPA',
+    title: 'National Fire Protection Association (NFPA)',
+    src: '/image/client and certificate/image9.png',
+    width: 1322,
+    height: 1190,
+    className: 'h-6 sm:h-7 w-auto object-contain'
+  },
+  {
+    name: 'ISO',
+    title: 'International Organization for Standardization (ISO)',
+    src: '/image/client and certificate/image12.png',
+    width: 1426,
+    height: 955,
+    className: 'h-6 sm:h-7 w-auto object-contain'
+  },
+  {
+    name: 'ACI',
+    title: 'American Concrete Institute (ACI)',
+    src: '/image/client and certificate/image10.png',
+    width: 1430,
+    height: 712,
+    className: 'h-5 sm:h-6 w-auto object-contain'
+  },
+  {
+    name: 'ANSI',
+    title: 'American National Standards Institute (ANSI)',
+    src: '/image/client and certificate/image11.png',
+    width: 1430,
+    height: 866,
+    className: 'h-5 sm:h-6 w-auto object-contain'
+  },
+  {
+    name: 'Client Specifications',
+    title: 'Client-Specific Engineering Specifications',
+    src: '/image/client and certificate/image13.png',
+    width: 1254,
+    height: 1254,
+    className: 'h-6 sm:h-7 w-auto object-contain',
+    showLabel: true
+  }
+];
+
 const clientSignals = [
   'Industrial Owners',
   'Energy Operators',
@@ -3816,101 +3916,40 @@ export default function HomePage() {
               {/* Left Ribbon Title */}
               <div className="flex items-center gap-4 shrink-0 border-b pb-3 lg:border-b-0 lg:pb-0 lg:border-r lg:pr-6 border-slate-200">
                 <div className="flex flex-col">
-                  <span className="text-xs font-black uppercase tracking-wider text-[#0070f3]">
+                  <span className="text-xs font-black uppercase tracking-wider text-[#0f2d4a]">
                     INDUSTRY STANDARDS
                   </span>
-                  <span className="text-xs font-black uppercase tracking-wider text-[#0070f3]">
+                  <span className="text-xs font-black uppercase tracking-wider text-[#0f2d4a]">
                     & CERTIFICATIONS
                   </span>
                   <div className="mt-1 h-0.5 w-10 bg-[#0070f3]" />
                 </div>
               </div>
 
-              {/* Standards Badges (API, ASME, ASTM, AISC, AWS, IEC, IEEE, NFPA, ISO, ACI, ANSI, Client Specifications) */}
-              {/* Note: Placeholders ready for manual replacement or SVG customization */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-between gap-x-6 gap-y-3 flex-1 w-full px-2">
-                {/* 1. API */}
-                <div className="flex items-center gap-1 group cursor-default" title="American Petroleum Institute (API)">
-                  <span className="text-base font-black tracking-tighter text-[#1b365d]">API</span>
-                  <span className="inline-block h-4 w-1.5 bg-[#d9232a] -skew-x-12" />
-                </div>
-
-                {/* 2. ASME */}
-                <div className="flex flex-col items-center justify-center leading-none group cursor-default" title="American Society of Mechanical Engineers (ASME)">
-                  <span className="text-base font-black tracking-widest text-[#004b87]">ASME</span>
-                  <span className="text-[6.5px] font-bold tracking-wider text-slate-400 uppercase mt-0.5">Setting the Standard</span>
-                </div>
-
-                {/* 3. ASTM */}
-                <div className="flex items-center gap-1 group cursor-default" title="ASTM International">
-                  <svg className="h-5 w-5 text-[#003865]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <circle cx="12" cy="12" r="9" strokeWidth="2" />
-                    <circle cx="12" cy="12" r="4" fill="currentColor" />
-                    <line x1="12" y1="3" x2="12" y2="7" strokeWidth="2" />
-                    <line x1="12" y1="17" x2="12" y2="21" strokeWidth="2" />
-                    <line x1="3" y1="12" x2="7" y2="12" strokeWidth="2" />
-                    <line x1="17" y1="12" x2="21" y2="12" strokeWidth="2" />
-                  </svg>
-                  <span className="text-base font-black tracking-tight text-[#003865]">ASTM</span>
-                </div>
-
-                {/* 4. AISC */}
-                <div className="flex items-center group cursor-default" title="American Institute of Steel Construction (AISC)">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-slate-700 bg-white">
-                    <span className="text-[8px] font-black text-slate-800">AISC</span>
+              {/* Real Standards & Certification Images from public/image/client and certificate */}
+              <div className="flex flex-wrap items-center justify-center xl:justify-between gap-x-6 lg:gap-x-7 gap-y-3.5 flex-1 w-full px-2">
+                {certificationLogos.map((item) => (
+                  <div
+                    key={item.name}
+                    className="flex items-center gap-2 group cursor-default transition-transform duration-200 hover:scale-105 shrink-0"
+                    title={item.title}
+                  >
+                    <Image
+                      src={item.src}
+                      alt={item.name}
+                      width={item.width}
+                      height={item.height}
+                      className={item.className}
+                    />
+                    {item.showLabel && (
+                      <div className="text-[10px] sm:text-[11px] font-bold leading-tight text-slate-800 tracking-tight">
+                        <span>Client</span>
+                        <br />
+                        <span>Specifications</span>
+                      </div>
+                    )}
                   </div>
-                </div>
-
-                {/* 5. AWS */}
-                <div className="flex items-center justify-center group cursor-default" title="American Welding Society (AWS)">
-                  <div className="relative flex h-6 w-8 items-center justify-center rounded-sm bg-slate-900 text-white transform -skew-x-12 shadow-sm">
-                    <span className="text-[8.5px] font-black tracking-wider transform skew-x-12">AWS</span>
-                  </div>
-                </div>
-
-                {/* 6. IEC */}
-                <div className="flex items-center justify-center rounded bg-[#005a9c] px-2 py-0.5 text-white shadow-sm group cursor-default" title="International Electrotechnical Commission (IEC)">
-                  <span className="text-xs font-black tracking-wider">IEC</span>
-                </div>
-
-                {/* 7. IEEE */}
-                <div className="flex items-center gap-1 text-[#00629b] group cursor-default" title="Institute of Electrical and Electronics Engineers (IEEE)">
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L4 12l8 10 8-10L12 2zm0 4l5.5 6-5.5 6L6.5 12 12 6z" />
-                  </svg>
-                  <span className="text-sm font-black tracking-tight">IEEE</span>
-                </div>
-
-                {/* 8. NFPA */}
-                <div className="flex items-center justify-center rounded border-2 border-black bg-white px-1.5 py-0.5 group cursor-default" title="National Fire Protection Association (NFPA)">
-                  <span className="text-xs font-black text-red-600 mr-0.5">🔥</span>
-                  <span className="text-xs font-black text-black tracking-tight">NFPA</span>
-                </div>
-
-                {/* 9. ISO */}
-                <div className="flex items-center justify-center rounded-full bg-[#004b87] px-2.5 py-0.5 text-white shadow-sm group cursor-default" title="International Organization for Standardization (ISO)">
-                  <span className="text-xs font-black tracking-wider">ISO</span>
-                </div>
-
-                {/* 10. ACI */}
-                <div className="flex items-center justify-center rounded-full border border-slate-300 bg-slate-50 px-2 py-0.5 text-slate-800 group cursor-default" title="American Concrete Institute (ACI)">
-                  <span className="text-xs font-black italic tracking-tight"><span className="text-red-600">a</span>ci</span>
-                </div>
-
-                {/* 11. ANSI */}
-                <div className="flex items-center justify-center rounded bg-[#002f6c] px-2 py-0.5 text-white shadow-sm group cursor-default" title="American National Standards Institute (ANSI)">
-                  <span className="text-xs font-black tracking-wider">ANSI</span>
-                </div>
-
-                {/* 12. Client Specifications */}
-                <div className="flex items-center gap-1.5 text-slate-700 group cursor-default" title="Client-Specific Engineering Specifications">
-                  <FileText className="h-5 w-5 text-[#0070f3]" />
-                  <div className="text-[10px] font-bold leading-tight text-slate-700">
-                    <span>Client</span>
-                    <br />
-                    <span>Specifications</span>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
