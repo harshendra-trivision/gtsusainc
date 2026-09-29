@@ -68,6 +68,7 @@ import {
 } from '@/components/ui';
 import ConsultationSection from '@/components/home/ConsultationSection';
 import CapabilitiesInteractiveMap from '@/components/home/CapabilitiesInteractiveMap';
+import IndustryPerformanceMetrics from '@/components/home/IndustryPerformanceMetrics';
 
 interface SolutionArea {
   id: string;
@@ -430,7 +431,7 @@ const trustStats = [
     title: 'Global Delivery Model',
     image: '/image/globalenginerringdelivery.png',
     description:
-      'Integrated project leadership from the United States with scalable engineering execution through global delivery centers and digital collaboration. This is a much stronger trust signal than a generic map. Global delivery and visible trust signals should be prominent where buyers evaluate capabilities.'
+      'Integrated project leadership from the United States with scalable engineering execution through global delivery centers and digital collaboration.'
   },
   {
     title: 'Multidisciplinary Engineering Teams',
@@ -511,7 +512,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     softwareTools: ['PDMS', 'SP3D', 'E3D', 'AutoCAD Plant 3D', 'CAESAR II', 'AVEVA', 'Hexagon SmartPlant'],
     relatedIndustries: ['Oil & Gas', 'LNG', 'Chemicals', 'Power', 'Refining', 'Manufacturing', 'Pharmaceuticals'],
     bottomMetrics: [
-      { label: '100+', sublabel: 'Projects Delivered' },
+      { label: '500+', sublabel: 'Projects Delivered' },
       { label: '20+', sublabel: 'Years Experience' },
       { label: 'Global', sublabel: 'Project Support' }
     ]
@@ -1604,6 +1605,18 @@ export default function HomePage() {
         </video>
         <FloatingParticles />
 
+        {/* Left Ambient Light Wash: Soft Top-Left Logo Glow & Delicate Translucent Left Column */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-[10%] min-w-[100px] sm:min-w-[120px] lg:min-w-[140px] z-[1] select-none">
+          {/* Entire left strip: light, soft, translucent glass wash */}
+          <div className="h-full w-full bg-gradient-to-r from-white/20 via-white/10 to-transparent backdrop-blur-[2px]" />
+          {/* Subtle feathering to the right */}
+          <div className="absolute inset-y-0 -right-10 w-10 bg-gradient-to-r from-white/10 to-transparent" />
+        </div>
+
+        {/* Localized Top-Left Soft White Highlight exclusively behind the logo */}
+        <div className="pointer-events-none absolute top-0 left-0 z-[2] select-none">
+          <div className="h-36 w-64 sm:h-44 sm:w-80 lg:h-48 lg:w-96 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.65)_0%,rgba(255,255,255,0.35)_40%,rgba(255,255,255,0.1)_70%,transparent_100%)]" />
+        </div>
 
         <div className="relative z-10 grid min-h-[760px] lg:min-h-screen grid-cols-1 items-center lg:items-stretch gap-12 px-4 pt-28 pb-20 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-24 sm:px-6 lg:grid-cols-12 lg:px-8">
           <AnimatedSection as="div" className="lg:col-span-7 flex flex-col justify-between gap-8 lg:gap-12">
@@ -1931,70 +1944,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-b border-cyan-200/10 bg-slate-950 py-20 text-white sm:py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(20,184,166,0.26),transparent_30%),radial-gradient(circle_at_84%_20%,rgba(37,99,235,0.24),transparent_30%),linear-gradient(135deg,rgba(2,6,23,0.96),rgba(15,118,110,0.78),rgba(2,6,23,0.96))]" />
-
-        {/* Map Background with Minimum Visibility */}
-        <div
-          className="absolute inset-0 bg-[url('/image/map.png')] bg-cover bg-center bg-no-repeat opacity-[0.06] pointer-events-none mix-blend-screen"
-        />
-
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Stat 1 */}
-            <div className="flex flex-col justify-between">
-              <div>
-                <div className="font-display text-5xl font-extrabold tracking-tight text-cyan-300 sm:text-6xl">
-                  <AnimatedCounter end={21700} suffix="+" />
-                </div>
-                <p className="mt-4 text-sm font-medium leading-relaxed text-slate-300 max-w-[250px]">
-                  MW Renewable energy capacity across global markets
-                </p>
-              </div>
-              <div className="mt-6 h-px w-full bg-cyan-200/10" />
-            </div>
-
-            {/* Stat 2 */}
-            <div className="flex flex-col justify-between">
-              <div>
-                <div className="font-display text-5xl font-extrabold tracking-tight text-cyan-300 sm:text-6xl">
-                  <AnimatedCounter end={10000} suffix="+" />
-                </div>
-                <p className="mt-4 text-sm font-medium leading-relaxed text-slate-300 max-w-[250px]">
-                  Assets operating worldwide
-                </p>
-              </div>
-              <div className="mt-6 h-px w-full bg-cyan-200/10" />
-            </div>
-
-            {/* Stat 3 */}
-            <div className="flex flex-col justify-between">
-              <div>
-                <div className="font-display text-5xl font-extrabold tracking-tight text-cyan-300 sm:text-6xl">
-                  <AnimatedCounter end={1900} suffix="+" />
-                </div>
-                <p className="mt-4 text-sm font-medium leading-relaxed text-slate-300 max-w-[250px]">
-                  Clients across industries and markets
-                </p>
-              </div>
-              <div className="mt-6 h-px w-full bg-cyan-200/10" />
-            </div>
-
-            {/* Stat 4 */}
-            <div className="flex flex-col justify-between">
-              <div>
-                <div className="font-display text-5xl font-extrabold tracking-tight text-cyan-300 sm:text-6xl">
-                  <AnimatedCounter end={17} />
-                </div>
-                <p className="mt-4 text-sm font-medium leading-relaxed text-slate-300 max-w-[250px]">
-                  Countries connected through renewable energy ecosystems
-                </p>
-              </div>
-              <div className="mt-6 h-px w-full bg-cyan-200/10" />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* =========================================================
+          DYNAMIC INDUSTRY PERFORMANCE METRICS
+      ========================================================= */}
+      <IndustryPerformanceMetrics />
 
       {/* =========================================================
           ENGINEERING SOLUTIONS & INTRO SECTION (Matching Mockup)
