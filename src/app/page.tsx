@@ -3157,124 +3157,96 @@ export default function HomePage() {
       </section>
       <CapabilitiesInteractiveMap />
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] via-[#f1f6fd]/30 to-white py-20 sm:py-28 border-b border-slate-200/60">
-        {/* Left Industrial Plant Background Image with High Clarity and Sharp Visibility */}
-        <div className="pointer-events-none absolute left-0 top-24 sm:top-28 lg:top-20 bottom-0 lg:bottom-24 h-[420px] sm:h-[480px] lg:h-auto w-full sm:w-[560px] lg:w-[46%] xl:w-[41%] overflow-hidden opacity-95 lg:opacity-100 select-none z-0">
-          <div className="relative h-full w-full">
-            <Image
-              src="/image/OUR ENGINEERING SOLUTION.jpg"
-              alt="Process Safety & Industrial Facility"
-              fill
-              priority
-              className="object-cover object-left-bottom contrast-[1.08] saturate-[1.12] brightness-[1.02]"
-              quality={100}
-            />
-            {/* Edge-only gentle gradient blends: keeping the central plant towers 100% clear and sharp */}
-            <div className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc]/60 to-transparent" />
-            <div className="absolute inset-y-0 right-0 w-28 sm:w-44 bg-gradient-to-r from-transparent via-[#f8fafc]/75 to-[#f8fafc]" />
-            <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#f8fafc] via-[#f8fafc]/50 to-transparent" />
-            <div className="absolute inset-y-0 left-0 w-8 sm:w-12 bg-gradient-to-r from-[#f8fafc]/40 to-transparent" />
-          </div>
+      <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 border-b border-slate-200/60">
+        {/* Background Industrial Facility Image from public/image/process and safty/image2.jpg */}
+        <div className="pointer-events-none absolute inset-0 select-none overflow-hidden">
+          <Image
+            src="/image/process and safty/image2.jpg"
+            alt="Process Safety & EPC Industrial Facility"
+            fill
+            priority
+            className="object-cover object-center"
+            quality={95}
+          />
+          {/* Subtle directional washes: softer on left so headline is super clear while sunset & plant towers stay vivid */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent sm:from-white/75 sm:via-white/20 sm:to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#f8fafc]/80 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white/80 to-transparent" />
         </div>
 
-        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8 items-start">
-            {/* Left Column: Heading, Description & Glowing Safety Shield */}
-            <div className="lg:col-span-4 flex flex-col justify-between h-full pr-0 lg:pr-4">
-              <div>
-                <div className="inline-flex items-center gap-2.5">
-                  <span className="text-xs font-mono font-bold uppercase tracking-[0.22em] text-[#0070f3]">
-                    PROCESS SAFETY & EPC
-                  </span>
-                  <span className="h-0.5 w-8 bg-[#0070f3]/60 rounded-full" />
-                </div>
-
-                <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl lg:text-5xl font-display leading-[1.12]">
-                  Process Safety & <br className="hidden sm:inline" />
-                  <span className="text-[#0070f3]">Project Execution</span>
-                </h2>
-
-                <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-md">
-                  GTS combines process safety, asset integrity, and project delivery controls to help
-                  industrial organizations move from engineering definition to execution with stronger
-                  risk visibility and safer, more reliable operations.
-                </p>
+        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-[1520px] px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8 items-start">
+            {/* Left Column: Heading & Description */}
+            <div className="lg:col-span-4 flex flex-col justify-start pr-0 lg:pr-4">
+              <div className="inline-flex items-center gap-2.5">
+                <span className="text-xs font-mono font-bold uppercase tracking-[0.22em] text-[#0070f3]">
+                  PROCESS SAFETY & EPC
+                </span>
+                <span className="h-0.5 w-8 bg-[#0070f3]/70 rounded-full" />
               </div>
 
-              {/* Glowing Safety Badge (Over the Plant Image) */}
-              <div className="mt-10 sm:mt-14 flex items-center gap-4">
-                <div className="relative flex h-20 w-20 sm:h-24 sm:w-24 shrink-0 items-center justify-center">
-                  {/* Glowing ripple aura */}
-                  <div className="absolute inset-0 rounded-full bg-cyan-400/20 blur-xl animate-pulse" />
-                  <div className="absolute -inset-2 rounded-full border border-cyan-400/30" />
-                  <div className="relative flex h-18 w-18 sm:h-20 sm:w-20 items-center justify-center rounded-3xl bg-white/90 border-2 border-cyan-400/80 backdrop-blur-md shadow-xl shadow-cyan-500/25">
-                    <ShieldCheck className="h-10 w-10 sm:h-11 sm:w-11 text-[#0070f3] drop-shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
-                  </div>
-                </div>
-                <div className="bg-white/70 sm:bg-white/40 backdrop-blur-[3px] sm:backdrop-blur-none px-3 py-2 rounded-xl">
-                  <div className="flex flex-col text-[11px] sm:text-xs font-mono font-extrabold uppercase tracking-widest text-slate-900 space-y-0.5">
-                    <span>SAFER PLANTS</span>
-                    <span>RELIABLE OPERATIONS</span>
-                    <span className="text-[#0070f3]">SUSTAINABLE GROWTH</span>
-                  </div>
-                  <div className="mt-1.5 h-1 w-12 bg-[#0070f3] rounded-full" />
-                </div>
-              </div>
+              <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl lg:text-[44px] font-display leading-[1.12]">
+                Process Safety & <br className="hidden sm:inline" />
+                <span className="text-[#0070f3]">Project Execution</span>
+              </h2>
+
+              <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-slate-800 font-medium max-w-md">
+                Combines process safety, asset integrity, and project quality control to help industrial organizations move from engineering definition to execution with stronger risk visibility and safer, more reliable operations.
+              </p>
             </div>
 
-            {/* Right Column: 3x3 Grid of 9 Cards */}
-            <div className="lg:col-span-8">
+            {/* Right Column: 3x3 Grid of 9 Cards + Bottom Bar */}
+            <div className="lg:col-span-8 flex flex-col gap-6">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {processSafetyCards.map((card) => {
                   const Icon = card.icon;
                   return (
-                    <MagneticCard
+                    <div
                       key={card.title}
-                      intensity={2}
-                      className="group relative flex items-start gap-4 rounded-2xl border border-slate-200/90 bg-white/95 p-5 shadow-xs shadow-slate-200/30 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-500/10"
+                      className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white/95 p-4 sm:p-5 shadow-xs shadow-slate-200/30 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-500/10 min-h-[140px]"
                     >
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-blue-200/80 bg-blue-50 text-[#0070f3] transition-colors duration-300 group-hover:bg-[#0070f3] group-hover:text-white">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <h3 className="text-sm font-bold text-slate-900 transition-colors duration-200 group-hover:text-[#0070f3] leading-snug">
+                      <div>
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50/90 text-[#0070f3] group-hover:bg-[#0070f3] group-hover:text-white transition-colors duration-200">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <h3 className="mt-3 text-sm font-bold text-slate-900 group-hover:text-[#0070f3] transition-colors duration-200 leading-snug">
                           {card.title}
                         </h3>
                         <p className="mt-1 text-xs text-slate-500 leading-relaxed">
                           {card.description}
                         </p>
                       </div>
-                    </MagneticCard>
+                    </div>
                   );
                 })}
               </div>
-            </div>
-          </div>
 
-          {/* Bottom Trust & Performance Metrics Bar */}
-          <div className="mt-12 rounded-2xl border border-slate-200/80 bg-white/95 p-5 sm:p-6 shadow-sm backdrop-blur-sm">
-            <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
-              {processSafetyStats.map((stat, idx) => {
-                const Icon = stat.icon;
-                return (
-                  <div
-                    key={stat.label}
-                    className={`flex items-center gap-3.5 ${idx > 0 ? 'sm:pl-4 xl:pl-6' : ''}`}
-                  >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#0070f3]">
-                      <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
-                    </div>
-                    <div>
-                      <div className="text-lg font-black text-slate-900 font-display leading-tight">
-                        {stat.value}
+              {/* Bottom Trust & Performance Metrics Bar directly under the 9 cards */}
+              <div className="rounded-2xl border border-slate-200/90 bg-white/95 p-4 sm:p-5 shadow-sm backdrop-blur-sm">
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+                  {processSafetyStats.map((stat, idx) => {
+                    const Icon = stat.icon;
+                    return (
+                      <div
+                        key={stat.label}
+                        className={`flex items-center gap-2.5 ${idx > 0 ? 'sm:pl-3 xl:pl-4' : ''}`}
+                      >
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-[#0070f3]">
+                          <Icon className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
+                        </div>
+                        <div>
+                          <div className="text-sm sm:text-base font-black text-slate-900 font-display leading-tight">
+                            {stat.value}
+                          </div>
+                          <div className="text-[10px] font-medium text-slate-500 leading-tight mt-0.5">
+                            {stat.label}
+                          </div>
+                        </div>
                       </div>
-                      <div className="text-[11px] font-medium text-slate-500 leading-tight mt-0.5">
-                        {stat.label}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </AnimatedSection>

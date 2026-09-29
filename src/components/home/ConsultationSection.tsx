@@ -385,21 +385,23 @@ export default function ConsultationSection() {
   };
 
   return (
-    <section id="consultation" className="relative overflow-hidden bg-[#071328] py-20 text-white sm:py-28">
-      {/* Background Industrial Overlay behind the Left Column */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-full lg:w-1/2 overflow-hidden opacity-30 select-none">
+    <section id="consultation" className="relative overflow-hidden bg-[#030d1d] py-16 sm:py-20 lg:py-24 text-white">
+      {/* Background Hero Industrial & Network Collage from public/image/consulatation/image4.jpg */}
+      <div className="pointer-events-none absolute inset-0 select-none overflow-hidden">
         <Image
-          src="/image/OUR ENGINEERING SOLUTION.jpg"
-          alt="Industrial Engineering Background"
+          src="/image/consulatation/image4.jpg"
+          alt="Global Industrial & Engineering Network Background"
           fill
-          className="object-cover object-left"
-          quality={90}
+          priority
+          className="object-cover object-center"
+          quality={95}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071328]/80 via-[#071328]/95 to-[#071328]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#071328] via-transparent to-[#071328]" />
+        {/* Subtle dark tint gradient on the left to ensure crisp text contrast over the globe, while allowing the right industrial assets to shine through clearly */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#030d1d]/85 via-[#030d1d]/45 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#030d1d]/60 via-transparent to-[#030d1d]/70" />
       </div>
 
-      <AnimatedSection as="div" className="relative mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+      <AnimatedSection as="div" className="relative mx-auto max-w-[1520px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8 items-start">
           {/* ================= LEFT COLUMN ================= */}
           <div className="lg:col-span-4 xl:col-span-4 flex flex-col justify-between space-y-8 pr-0 lg:pr-4">
@@ -478,23 +480,23 @@ export default function ConsultationSection() {
             </div>
 
             {/* Frosted Dark Glass Stats Box */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md shadow-xl">
+            <div className="rounded-2xl border border-white/10 bg-[#05152c]/75 p-6 backdrop-blur-md shadow-2xl">
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <div className="text-2xl font-black text-white font-display">500+</div>
-                  <div className="text-xs text-slate-400 mt-0.5 font-medium">Projects Delivered</div>
+                  <div className="text-xs text-slate-300 mt-0.5 font-medium">Projects Delivered</div>
                 </div>
                 <div>
                   <div className="text-2xl font-black text-white font-display">15+</div>
-                  <div className="text-xs text-slate-400 mt-0.5 font-medium">Industries Served</div>
+                  <div className="text-xs text-slate-300 mt-0.5 font-medium">Industries Served</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-black text-white font-display">20+</div>
-                  <div className="text-xs text-slate-400 mt-0.5 font-medium">Years of Experience</div>
+                  <div className="text-2xl font-black text-white font-display">15+</div>
+                  <div className="text-xs text-slate-300 mt-0.5 font-medium">Years of Experience</div>
                 </div>
                 <div>
                   <div className="text-2xl font-black text-cyan-400 font-display">Global</div>
-                  <div className="text-xs text-slate-400 mt-0.5 font-medium">Delivery Model</div>
+                  <div className="text-xs text-slate-300 mt-0.5 font-medium">Delivery Model</div>
                 </div>
               </div>
             </div>
@@ -506,7 +508,7 @@ export default function ConsultationSection() {
                   href="https://www.linkedin.com/company/gts-usa/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-300 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-white transition-colors"
                 >
                   <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
                     <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
@@ -524,7 +526,7 @@ export default function ConsultationSection() {
 
           {/* ================= RIGHT COLUMN (THE 4-STEP WIZARD) ================= */}
           <div className="lg:col-span-8 xl:col-span-8">
-            <div className="rounded-[2rem] border border-slate-200/80 bg-white p-6 sm:p-8 lg:p-10 text-slate-900 shadow-2xl">
+            <div className="rounded-[2rem] border border-white/80 bg-white p-6 sm:p-8 lg:p-10 text-slate-900 shadow-2xl">
               {/* Top Wizard Stepper Navigation */}
               <div className="border-b border-slate-100 pb-6">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -560,7 +562,7 @@ export default function ConsultationSection() {
                           >
                             {isDone ? <Check className="h-4 w-4" /> : s.num}
                           </div>
-                          <div className="hidden xl:block">
+                          <div className="hidden md:block">
                             <div
                               className={`text-xs font-bold leading-tight ${
                                 isActive ? 'text-[#0070f3]' : 'text-slate-800'
