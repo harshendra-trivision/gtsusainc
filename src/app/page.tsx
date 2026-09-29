@@ -1731,7 +1731,7 @@ export default function HomePage() {
           className="absolute inset-0 bg-[url('/image/map.png')] bg-cover bg-center bg-no-repeat opacity-[0.06] pointer-events-none mix-blend-screen"
         />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
           <AnimatedSection as="div" className="mx-auto mb-16 max-w-3xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-200">
               Trusted Engineering Delivery
