@@ -455,20 +455,19 @@ const trustStats = [
 ];
 
 const whoWeAreTrustStats = [
-  { value: '100+', label: 'Engineering Professionals', icon: Users },
+  { value: '100+', label: 'Qualified Professionals', icon: Users },
   { value: '500+', label: 'Projects Delivered', icon: FileText },
-  { value: '15+', label: 'Industries Supported', icon: Cog },
-  { value: 'USA + India', label: 'Delivery Centers', icon: Globe },
+  { value: '15+', label: 'Industry Sectors Supported', icon: Cog },
+  { value: 'USA • India', label: 'Engineering Centers', icon: Globe },
   { value: '24/7', label: 'Engineering Collaboration', icon: Clock },
   { value: 'Trusted', label: 'Quality, Safety & Compliance', icon: ShieldCheck }
 ];
 
 const engineeringPillars = [
-  { title: 'Multi-Discipline', subtitle: 'Expertise', icon: Users },
+  { title: 'Multi-Discipline', subtitle: 'Expertise', icon: Cog },
   { title: 'Faster', subtitle: 'Project Delivery', icon: Zap },
-  { title: 'Cost', subtitle: 'Optimization', icon: TrendingUp },
-  { title: 'Reduced', subtitle: 'Project Risk', icon: ShieldCheck },
-  { title: 'Sustainable', subtitle: 'Industrial Growth', icon: Globe }
+  { title: 'Cost', subtitle: 'Optimization', icon: BarChart },
+  { title: 'Sustainable', subtitle: 'Industrial Growth', icon: Leaf }
 ];
 
 export interface EngineeringSolutionItem {
@@ -487,12 +486,12 @@ export interface EngineeringSolutionItem {
 
 const engineeringSolutions: EngineeringSolutionItem[] = [
   {
-    id: 'plant-engineering',
-    title: 'Plant Engineering',
-    shortDesc: 'Process, piping, mechanical, electrical, instrumentation and EPC support.',
+    id: 'process-engineering',
+    title: 'Process Engineering',
+    shortDesc: 'Process design, heat & material balance, hydraulics, P&ID, HAZOP, and process safety for cleaner, safer operations.',
     fullDesc:
       'End-to-end engineering solutions for process plants, refineries, LNG, power, chemicals, and industrial facilities, delivered with accuracy, efficiency, and industry expertise.',
-    image: "/image/OUR ENGINEERING SOLUTION.jpg",
+    image: '/image/who we are/plant enginerring.jpg',
     icon: Factory,
     stats: [
       { value: '50+', label: 'Plant Projects' },
@@ -521,10 +520,10 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
   {
     id: 'product-engineering',
     title: 'Product Engineering',
-    shortDesc: 'CAD, CAE, reverse engineering, equipment design, and manufacturing support.',
+    shortDesc: 'Equipment design, package engineering, CAD/CAE, reverse engineering and manufacturing support.',
     fullDesc:
       'Mechanical design, product development, reverse engineering, and manufacturing support for industrial equipment and systems.',
-    image: '/image/heavy machine enginerring .jpg',
+    image: '/image/who we are/product enginerring.jpg',
     icon: Box,
     stats: [
       { value: '50+', label: 'Products Engineered' },
@@ -555,7 +554,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     shortDesc: 'Steel detailing, structural analysis, fabrication drawings, and offshore structures.',
     fullDesc:
       'Steel detailing, structural analysis, fabrication drawings, and offshore engineering for industrial plants, infrastructure, and marine structures.',
-    image: '/image/structured-enginerring.jpg',
+    image: '/image/who we are/structured enginerring.jpg',
     icon: Layers,
     stats: [
       { value: '1,000+', label: 'Structural Drawings' },
@@ -583,10 +582,10 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
   {
     id: 'digital-engineering',
     title: 'Digital Engineering',
-    shortDesc: 'AI workflows, digital twins, BIM, engineering analytics, and automation.',
+    shortDesc: '3D modeling, digital twins, BIM, engineering analytics, and automation solutions.',
     fullDesc:
       'AI-enabled engineering workflows, digital twins, BIM, engineering analytics, and data intelligence for smarter, faster, and more efficient project delivery.',
-    image: '/image/digital enginerring.jpg',
+    image: '/image/who we are/digital enginerring.jpg',
     icon: Monitor,
     stats: [
       { value: 'Faster', label: 'Decision Making' },
@@ -614,10 +613,10 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
   {
     id: 'simulation-analysis',
     title: 'Simulation & Analysis',
-    shortDesc: 'FEA, CFD, thermal analysis, vibration, and multi-physics simulation.',
+    shortDesc: 'FEA, CFD, thermal analysis, vibration, and multi-physics simulation for optimized designs.',
     fullDesc:
       'Advanced engineering simulation including structural, thermal, CFD, fatigue, vibration, and multi-physics analysis to improve performance, safety, and reliability.',
-    image: '/image/simulation and analysis.png',
+    image: '/image/who we are/simulation and analyses.jpg',
     icon: BrainCircuit,
     stats: [
       { value: 'Reliable', label: 'Design Outcomes' },
@@ -648,7 +647,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     shortDesc: 'PLC, SCADA, IIoT, Industry 4.0, and smart manufacturing solutions.',
     fullDesc:
       'Industrial automation, communication systems, SCADA, IIoT, and smart manufacturing solutions to improve operational efficiency and plant performance.',
-    image: '/image/Assest lifecycle support.png',
+    image: '/image/who we are/automation and control.jpg',
     icon: Sliders,
     stats: [
       { value: 'Increased', label: 'Operational Efficiency' },
@@ -676,10 +675,10 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
   {
     id: 'infrastructure-bim',
     title: 'Infrastructure & BIM',
-    shortDesc: 'Civil, infrastructure, 3D modeling, construction coordination, and digital project delivery.',
+    shortDesc: 'Civil, infrastructure design, 3D coordination, BIM, and digital project delivery.',
     fullDesc:
       'Civil, infrastructure, and BIM solutions including 3D modeling, construction coordination, and digital project delivery for industrial and infrastructure projects.',
-    image: '/image/infrastructure & BMI.jpg',
+    image: '/image/who we are/infra and BIM.jpg',
     icon: Building2,
     stats: [
       { value: 'Faster', label: 'Project Delivery' },
@@ -710,7 +709,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     shortDesc: 'Project controls, document management, engineering reviews, and EPC support.',
     fullDesc:
       'Comprehensive project support services including planning, document management, engineering reviews, and EPC support to ensure successful project execution.',
-    image: '/image/project and program support.jpg',
+    image: '/image/who we are/project and program support.jpg',
     icon: FileText,
     stats: [
       { value: 'On-Time', label: 'Project Execution' },
@@ -738,10 +737,10 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
   {
     id: 'asset-lifecycle-support',
     title: 'Asset Lifecycle Support',
-    shortDesc: 'Brownfield engineering, debottlenecking, operations support, and sustainability solutions.',
+    shortDesc: 'Brownfield engineering, debottlenecking, operations support, reliability, and sustainability solutions.',
     fullDesc:
       'Lifecycle engineering solutions to maximize asset performance, reliability, and sustainability from operations through decommissioning.',
-    image: '/image/Assest lifecycle support.png',
+    image: '/image/who we are/Asset lifecycle managment.jpg',
     icon: RotateCw,
     stats: [
       { value: 'Higher', label: 'Asset Reliability' },
@@ -2324,106 +2323,117 @@ export default function HomePage() {
       {/* =========================================================
           ENGINEERING SOLUTIONS & INTRO SECTION (Matching Mockup)
       ========================================================= */}
-      <section className="relative overflow-hidden border-y border-slate-200/80 bg-white py-16 sm:py-20 lg:py-24 text-slate-900">
-        {/* Background Image: Highly visible from left to right with subtle softening on the far right */}
+      <section className="relative overflow-hidden border-y border-slate-200/80 bg-slate-50 py-16 sm:py-20 lg:py-24 text-slate-900">
+        {/* Background Image: public/image/who we are/who we are bg.jpg */}
         <div className="absolute inset-0 pointer-events-none select-none z-0">
           <Image
-            src="/image/OUR ENGINEERING SOLUTION.jpg"
-            alt="Engineering Solutions Background"
+            src="/image/who we are/who we are bg.jpg"
+            alt="Who We Are Background"
             fill
             sizes="100vw"
-            className="object-cover object-left-bottom"
-            priority={false}
+            className="object-cover object-center"
+            priority
           />
-          {/* Very light top/bottom edge transition to keep the image crisp */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/15 pointer-events-none" />
-
-          {/* Smooth Horizontal Transition: Full clarity across left & center, with gentle softening towards the right */}
-          {/* On Desktop (lg): 0-45% completely clear, gentle transition from 45% to 85%, softly brightening at the far right edge */}
-          <div className="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,transparent_0%,transparent_42%,rgba(255,255,255,0.2)_60%,rgba(255,255,255,0.5)_80%,rgba(255,255,255,0.78)_100%)] pointer-events-none" />
-          {/* On Tablet (sm to lg): Adjusted for tablet width */}
-          <div className="absolute inset-0 hidden sm:block lg:hidden bg-[linear-gradient(to_right,transparent_0%,transparent_30%,rgba(255,255,255,0.25)_55%,rgba(255,255,255,0.65)_85%,rgba(255,255,255,0.85)_100%)] pointer-events-none" />
-          {/* On Mobile (<sm): Vertical fade so image shines through with soft transition below */}
-          <div className="absolute inset-0 sm:hidden bg-[linear-gradient(to_bottom,transparent_0%,transparent_25%,rgba(255,255,255,0.3)_50%,rgba(255,255,255,0.75)_80%,rgba(255,255,255,0.92)_100%)] pointer-events-none" />
+          {/* Subtle directional washes: keep left text, logo and frosted cards clear while refinery towers and sunset stay vivid */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/25 to-transparent sm:from-white/60 sm:via-white/15 sm:to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/60 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/60 to-transparent" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-[1520px] px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8 items-start">
 
-            {/* Left Column: Intro & Trust Signals (lg:col-span-4) */}
+            {/* Left Column: Logo, Intro & Trust Signals (lg:col-span-4) */}
             <div className="relative flex flex-col justify-between pr-0 lg:pr-6 lg:col-span-4">
               <div>
+                {/* GTS Engineering Logo */}
+                <div className="flex items-center">
+                  <Image
+                    src="/icons/logo transparent.png"
+                    alt="GTS Engineering"
+                    width={180}
+                    height={70}
+                    className="h-14 sm:h-16 w-auto object-contain"
+                    priority
+                  />
+                </div>
+
                 {/* Eyebrow */}
-                <div className="inline-flex items-center gap-2.5">
-                  <span className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-blue-600">
+                <div className="mt-5 inline-flex items-center gap-2.5">
+                  <span className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-[#0070f3]">
                     WHO WE ARE
                   </span>
-                  <span className="h-[2px] w-8 rounded-full bg-blue-500/80" />
+                  <span className="h-[2px] w-8 rounded-full bg-[#0070f3]" />
                 </div>
 
                 {/* Heading */}
-                <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-[40px] font-extrabold leading-[1.12] tracking-tight text-slate-900">
+                <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-[42px] font-black leading-[1.12] tracking-tight text-slate-900">
                   Engineering <br />
                   Expertise. <br />
                   Digital Innovation. <br />
-                  <span className="text-blue-600">Global Impact.</span>
+                  <span className="text-[#0070f3]">Global Impact.</span>
                 </h2>
 
                 {/* Description */}
-                <p className="mt-5 text-xs sm:text-sm leading-relaxed text-slate-700 font-normal">
-                  GTS Engineering delivers multidisciplinary engineering, AI-enabled digital solutions, and project execution services across the industrial asset lifecycle — from concept and FEED to commissioning, operations, and optimization.
+                <p className="mt-4 text-xs sm:text-sm leading-relaxed text-slate-700 font-medium max-w-md">
+                  GTS Engineering delivers multidisciplinary engineering, digital and lifecycle services across the industrial value chain — from concept to commissioning, operations, and beyond.
                 </p>
 
-                {/* 6 Trust Signals list - Clear Glass Design with High BG Visibility */}
-                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3.5">
+                {/* 6 Trust Signals list - Frosted Glass Pill Cards */}
+                <div className="mt-6 flex flex-col gap-2.5 max-w-sm">
                   {whoWeAreTrustStats.map((item) => {
                     const ItemIcon = item.icon;
                     return (
                       <div
                         key={item.label}
-                        className="flex items-center gap-3.5 rounded-2xl border border-white/60 bg-white/20 p-3 shadow-[0_4px_16px_rgba(15,23,42,0.03)] backdrop-blur-[1px] transition-all duration-300 hover:bg-white/35 hover:border-white/80 hover:shadow-md"
+                        className="flex items-center gap-3.5 rounded-2xl border border-white/70 bg-white/80 p-3 shadow-xs backdrop-blur-md transition-all duration-300 hover:bg-white/95 hover:shadow-md"
                       >
-                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50/60 text-blue-600 border border-blue-100/50 shadow-xs">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50/90 text-[#0070f3] border border-blue-100/60 shadow-xs">
                           <ItemIcon className="h-5 w-5" />
                         </div>
                         <div className="min-w-0">
-                          <div className="text-sm sm:text-[15px] font-extrabold text-slate-900 leading-none drop-shadow-xs">{item.value}</div>
-                          <div className="text-xs text-slate-700 font-semibold mt-1 leading-tight drop-shadow-xs">{item.label}</div>
+                          <div className="text-[14px] sm:text-[15px] font-extrabold text-slate-900 leading-none drop-shadow-xs">
+                            {item.value}
+                          </div>
+                          <div className="text-[11px] sm:text-xs text-slate-600 font-medium mt-1 leading-tight">
+                            {item.label}
+                          </div>
                         </div>
                       </div>
                     );
                   })}
                 </div>
 
-                {/* Vertical Taglines - Simple Visible Text */}
-                <div className="mt-8 flex items-stretch gap-3.5">
-                  <div className="w-[3px] rounded-full bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.6)] shrink-0" />
-                  <div className="flex flex-col space-y-1.5 font-mono text-xs sm:text-[13px] font-black tracking-[0.24em] text-slate-950 uppercase [text-shadow:_0_0_12px_rgba(255,255,255,0.9),_0_1px_3px_rgba(255,255,255,1)]">
+                {/* Taglines: PEOPLE / TECHNOLOGY / SOLUTIONS + GLOBAL IMPACT */}
+                <div className="mt-8 flex flex-col gap-2.5">
+                  <div className="flex flex-col space-y-0.5 font-mono text-[10px] font-bold tracking-[0.24em] text-slate-500 uppercase">
                     <span>PEOPLE</span>
                     <span>TECHNOLOGY</span>
                     <span>SOLUTIONS</span>
-                    <span className="text-blue-600 [text-shadow:_0_0_12px_rgba(255,255,255,0.9),_0_1px_3px_rgba(255,255,255,1)]">GLOBAL IMPACT</span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2.5 font-mono text-xs font-bold tracking-[0.16em]">
+                    <span className="text-[#0070f3] font-black uppercase whitespace-nowrap">GLOBAL IMPACT</span>
+                    <span className="h-[2px] w-6 bg-[#0070f3]/70 rounded-full shrink-0" />
+                    <span className="text-slate-800 uppercase whitespace-nowrap text-[11px] sm:text-xs">
+                      ENGINEERING A CLEANER BRIGHTER TOMORROW
+                    </span>
                   </div>
                 </div>
-              </div>
-
-              {/* Bottom Industrial Brand Line - Simple Visible Text */}
-              <div className="mt-10 pt-6 border-t border-slate-300/80">
-                <span className="font-mono text-xs font-black uppercase tracking-[0.28em] text-slate-950 [text-shadow:_0_0_12px_rgba(255,255,255,0.9),_0_1px_3px_rgba(255,255,255,1)]">
-                  ENGINEERING A SMARTER TOMORROW
-                </span>
               </div>
             </div>
 
             {/* Right Column: 3x3 Engineering Solutions Grid (lg:col-span-8) */}
-            <div className="lg:col-span-8 rounded-3xl border border-slate-200/80 bg-white/95 p-5 sm:p-7 shadow-[0_4px_24px_rgba(15,23,42,0.03)] backdrop-blur-sm">
+            <div className="lg:col-span-8 rounded-[28px] sm:rounded-3xl border border-slate-200/90 bg-white p-5 sm:p-7 lg:p-8 shadow-2xl backdrop-blur-sm">
               {/* Header Bar */}
-              <div className="flex items-center justify-between pb-4 border-b border-slate-200/80">
+              <div className="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-slate-100">
                 <div className="inline-flex items-center gap-2.5">
-                  <span className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-blue-600">
+                  <span className="font-mono text-xs sm:text-[13px] font-bold uppercase tracking-[0.22em] text-[#0070f3]">
                     OUR ENGINEERING SOLUTIONS
                   </span>
-                  <span className="h-[2px] w-8 rounded-full bg-blue-500/80" />
+                  <span className="h-[2px] w-8 rounded-full bg-[#0070f3]" />
+                </div>
+                <div className="hidden sm:block text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
+                  END-TO-END ENGINEERING &nbsp;|&nbsp; DIGITAL &nbsp;|&nbsp; OPERATIONS SUPPORT
                 </div>
               </div>
 
@@ -2437,13 +2447,14 @@ export default function HomePage() {
                       key={sol.id}
                       type="button"
                       onClick={() => setSelectedSolution(sol)}
-                      className={`group relative flex flex-col justify-between rounded-2xl border bg-white p-3.5 sm:p-4 text-left shadow-[0_2px_10px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer ${isSelected
-                          ? 'border-blue-600 ring-4 ring-blue-500/10 shadow-blue-100'
-                          : 'border-slate-200/80 hover:border-blue-300'
-                        }`}
+                      className={`group relative flex flex-col justify-between rounded-2xl border p-2.5 sm:p-3 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer ${
+                        isSelected
+                          ? 'border-[#0070f3] ring-4 ring-blue-500/10 shadow-blue-100 bg-white'
+                          : 'border-slate-200/70 bg-white hover:border-blue-300'
+                      }`}
                     >
                       {/* Card Thumbnail Image with Floating Icon Badge */}
-                      <div className="relative h-32 sm:h-36 w-full rounded-xl overflow-hidden mb-3.5 bg-slate-100">
+                      <div className="relative h-28 sm:h-32 w-full rounded-xl overflow-hidden mb-3 bg-slate-100">
                         <Image
                           src={sol.image}
                           alt={sol.title}
@@ -2451,24 +2462,24 @@ export default function HomePage() {
                           sizes="(min-width: 1024px) 25vw, 50vw"
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
-                        {/* Floating Icon Badge */}
-                        <div className="absolute bottom-2.5 left-2.5 flex h-9 w-9 items-center justify-center rounded-xl bg-white shadow-md border border-slate-100 text-blue-600 transition-transform group-hover:scale-110">
-                          <SolIcon className="h-5 w-5" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent" />
+                        {/* Floating Icon Badge on bottom-left */}
+                        <div className="absolute bottom-2 left-2 flex h-8 w-8 sm:h-8.5 sm:w-8.5 items-center justify-center rounded-xl bg-white shadow-md border border-slate-100 text-[#0070f3] transition-transform duration-300 group-hover:scale-110">
+                          <SolIcon className="h-4 w-4" />
                         </div>
                       </div>
 
                       {/* Title and Short Description */}
                       <div className="flex-1 flex flex-col justify-between">
-                        <div className="flex items-start justify-between gap-2">
-                          <h3 className="font-bold text-slate-900 text-[14px] sm:text-[15px] leading-snug group-hover:text-blue-600 transition-colors">
+                        <div className="flex items-center justify-between gap-1.5">
+                          <h3 className="font-bold text-slate-900 text-sm sm:text-[14.5px] leading-snug group-hover:text-[#0070f3] transition-colors">
                             {sol.title}
                           </h3>
-                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                          <span className="text-[#0070f3] shrink-0 transition-transform duration-200 group-hover:translate-x-1">
                             <ArrowRight className="h-3.5 w-3.5" />
                           </span>
                         </div>
-                        <p className="mt-2 text-[11px] sm:text-xs text-slate-500 leading-relaxed line-clamp-2">
+                        <p className="mt-1.5 text-[11px] sm:text-xs text-slate-500 leading-relaxed line-clamp-3">
                           {sol.shortDesc}
                         </p>
                       </div>
@@ -2477,18 +2488,22 @@ export default function HomePage() {
                 })}
               </div>
 
-              {/* Bottom 5-Pillar Highlights Bar */}
-              <div className="mt-8 pt-5 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
+              {/* Bottom 4-Pillar Highlights Bar */}
+              <div className="mt-6 pt-5 border-t border-slate-100 grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {engineeringPillars.map((hl) => {
                   const HlIcon = hl.icon;
                   return (
                     <div key={hl.title} className="flex items-center gap-2.5">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 border border-blue-100/70">
-                        <HlIcon className="h-4 w-4" />
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#0070f3] border border-blue-100/60">
+                        <HlIcon className="h-4.5 w-4.5" />
                       </div>
                       <div className="min-w-0">
-                        <span className="block text-xs font-bold text-slate-900 leading-tight">{hl.title}</span>
-                        <span className="block text-[10px] text-slate-500 font-medium leading-tight">{hl.subtitle}</span>
+                        <span className="block text-xs sm:text-[13px] font-bold text-slate-900 leading-tight">
+                          {hl.title}
+                        </span>
+                        <span className="block text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight mt-0.5">
+                          {hl.subtitle}
+                        </span>
                       </div>
                     </div>
                   );
