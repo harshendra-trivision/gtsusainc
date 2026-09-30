@@ -32,6 +32,7 @@ import {
   Handshake,
   HardHat,
   Landmark,
+  Laptop,
   Layers,
   Leaf,
   Lightbulb,
@@ -41,6 +42,7 @@ import {
   MessageSquare,
   Microscope,
   Monitor,
+  Network,
   Plane,
   Radio,
   RotateCw,
@@ -52,6 +54,7 @@ import {
   Sliders,
   Smartphone,
   Sparkles,
+  Star,
   TrendingUp,
   Users,
   Wind,
@@ -924,7 +927,7 @@ const digitalCapabilities: DigitalCapabilityItem[] = [
   {
     title: 'Data-Driven Operations',
     subtitle: 'Integrated, real-time intelligence',
-    icon: Cpu,
+    icon: Network,
   },
 ];
 
@@ -1687,7 +1690,7 @@ const excellencePillars = [
   {
     title: 'Engineering Standards',
     description: 'Compliance with global engineering standards.',
-    icon: FileText,
+    icon: FileCheck,
     items: [
       'API, ASME, ASTM, AISC, AWS',
       'IEC, IEEE, NFPA, ACI, ANSI',
@@ -1699,7 +1702,7 @@ const excellencePillars = [
   {
     title: 'Digital Delivery',
     description: 'AI-enabled workflows for smarter, faster project execution.',
-    icon: Monitor,
+    icon: Laptop,
     items: [
       'AI Engineering',
       'BIM & 3D Models',
@@ -1749,7 +1752,7 @@ const excellenceStats = [
     label: 'Engineering Collaboration'
   },
   {
-    icon: Award,
+    icon: Star,
     value: 'ISO-Aligned',
     label: 'Quality Systems'
   }
@@ -2818,215 +2821,198 @@ export default function HomePage() {
         </AnimatedSection>
       </section>
 
-      <section id="ai-digital" className="scroll-mt-32 overflow-hidden bg-slate-50/50 py-16 sm:py-24 lg:py-28">
-        <AnimatedSection as="div" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
-            {/* Left Column: Heading, Description, 8 Cards, Buttons */}
-            <div className="lg:col-span-6 xl:col-span-7">
+      <section id="ai-digital" className="relative scroll-mt-32 overflow-hidden bg-white pt-14 pb-12 sm:pt-16 sm:pb-14 lg:pt-20 lg:pb-16 border-b border-slate-200/80">
+        <AnimatedSection as="div" className="relative z-10 mx-auto max-w-[1520px] px-4 sm:px-6 lg:px-8">
+          
+          {/* Main Upper Showcase Area: Left content + Right full-height image blending to white */}
+          <div className="relative min-h-[580px] lg:min-h-[640px] xl:min-h-[680px] flex flex-col justify-between">
+            
+            {/* Desktop Full-Height Background Image (No Frame, Bleeds to white on left with low low opacity) */}
+            <div
+              className="hidden lg:block absolute top-0 right-0 bottom-0 w-[55%] xl:w-[50%] pointer-events-none select-none z-0"
+              style={{
+                maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.03) 10%, rgba(0,0,0,0.15) 22%, rgba(0,0,0,0.5) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%)',
+                WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.03) 10%, rgba(0,0,0,0.15) 22%, rgba(0,0,0,0.5) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%)',
+              }}
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src="/image/ai digital and enginerring/ai and digital intelligence.png"
+                  alt="Engineering Intelligence for Industry 4.0 - Digital Twin, AI Analytics, Smart Manufacturing"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-right-bottom"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Top Right Header Text Overlay (from Mockup) */}
+            <div className="hidden lg:block absolute top-2 right-2 xl:top-4 xl:right-4 text-right pointer-events-none z-20">
+              <div className="font-mono text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-blue-600 drop-shadow-xs">
+                REAL DATA.
+              </div>
+              <div className="font-mono text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-blue-600 drop-shadow-xs">
+                REAL INSIGHTS.
+              </div>
+              <div className="font-mono text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-blue-600 drop-shadow-xs">
+                REAL IMPACT.
+              </div>
+            </div>
+
+            {/* Left Content Column */}
+            <div className="relative z-10 max-w-full lg:max-w-[56%] xl:max-w-[54%]">
               {/* Eyebrow with accent underline */}
               <div>
-                <span className="text-xs font-mono font-semibold uppercase tracking-[0.24em] text-accent">
+                <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-[0.2em] text-blue-600">
                   AI & DIGITAL ENGINEERING
                 </span>
-                <div className="mt-2 h-0.5 w-10 rounded-full bg-accent" />
+                <div className="mt-2 h-1 w-12 rounded-full bg-blue-600" />
               </div>
 
-              {/* Title with display font and brand gradient */}
-              <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-primary leading-[1.12]">
+              {/* Title */}
+              <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-slate-900 leading-[1.15]">
                 Engineering Intelligence <br />
-                for <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent">Industry 4.0</span>
+                for <span className="text-blue-600">Industry 4.0</span>
               </h2>
 
               {/* Description */}
-              <p className="mt-4 text-sm leading-7 text-slate-500 sm:text-base max-w-2xl">
+              <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base max-w-2xl">
                 We combine AI analytics, digital twins, automation, and operational data to help industrial companies improve reliability, optimize performance, reduce risk, and accelerate their journey to a smarter, more sustainable future.
               </p>
 
-              {/* 8 Capability Cards Grid using MagneticCard */}
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              {/* 8 Capability Cards Grid */}
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 {digitalCapabilities.map((item) => {
                   const ItemIcon = item.icon;
                   return (
-                    <MagneticCard
+                    <div
                       key={item.title}
-                      intensity={3}
-                      className="rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-xs transition-all duration-300 hover:border-accent/40 hover:shadow-md"
+                      className="group flex items-center gap-3.5 rounded-2xl border border-slate-200/90 bg-white/95 backdrop-blur-xs p-3.5 sm:p-4 shadow-2xs hover:border-blue-400 hover:shadow-md transition-all duration-200"
                     >
-                      <div className="flex items-center gap-3.5">
-                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 via-cyan-500 to-blue-700 text-white shadow-xs">
-                          <ItemIcon className="h-5 w-5" />
+                      <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white shadow-xs group-hover:scale-105 transition-transform duration-200">
+                        <ItemIcon className="h-5 w-5 sm:h-6 sm:w-6 stroke-[2]" />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="font-display text-sm sm:text-[15px] font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                          {item.title}
                         </div>
-                        <div className="min-w-0">
-                          <div className="font-display text-sm font-extrabold text-primary leading-tight">
-                            {item.title}
-                          </div>
-                          <div className="text-[11.5px] sm:text-xs text-slate-500 font-medium mt-0.5 leading-tight">
-                            {item.subtitle}
-                          </div>
+                        <div className="text-xs text-slate-500 font-normal mt-0.5 leading-snug">
+                          {item.subtitle}
                         </div>
                       </div>
-                    </MagneticCard>
+                    </div>
                   );
                 })}
               </div>
 
-              {/* Action Buttons using project GradientButton */}
+              {/* Action Buttons */}
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <GradientButton href="/solutions" variant="primary">
-                  Explore Capabilities
-                </GradientButton>
-                <GradientButton href="/contact" variant="secondary" showIcon={false}>
-                  <MessageSquare className="h-4 w-4 text-accent" />
+                <Link
+                  href="/solutions"
+                  className="inline-flex items-center gap-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-blue-600/25 transition-all hover:shadow-lg hover:shadow-blue-600/30 active:scale-[0.98]"
+                >
+                  <span>Explore Capabilities</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2.5 rounded-xl border border-blue-600 bg-white hover:bg-blue-50/60 px-6 py-3.5 text-sm font-bold text-blue-600 transition-all shadow-2xs active:scale-[0.98]"
+                >
+                  <MessageSquare className="h-4 w-4 text-blue-600" />
                   <span>Talk to Our Experts</span>
-                  <ChevronRight className="h-4 w-4 text-slate-400" />
-                </GradientButton>
+                  <ArrowRight className="h-4 w-4 text-blue-600" />
+                </Link>
               </div>
             </div>
 
-            {/* Right Column: Visual Container with GlassCard frame */}
-            <div className="lg:col-span-6 xl:col-span-5">
-              <GlassCard className="rounded-[2rem] border border-slate-200/80 bg-white/70 p-3.5 sm:p-4 shadow-xl backdrop-blur-md">
-                <div className="relative min-h-[460px] sm:min-h-[520px] lg:min-h-[560px] w-full overflow-hidden rounded-[1.5rem] bg-slate-950">
-                  {/* Background Image */}
-                  <Image
-                    src="/image/AI-Digital-Engineering-Capability.jpg"
-                    alt="Engineering Intelligence for Industry 4.0"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-center"
-                  />
-
-                  {/* Dark Vignette Gradient for badge readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-slate-950/60" />
-
-                  {/* Top Right Header Text */}
-                  <div className="absolute top-5 right-5 text-right pointer-events-none">
-                    <div className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-cyan-200 drop-shadow-md">
-                      REAL DATA.
-                    </div>
-                    <div className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-cyan-200 drop-shadow-md">
-                      REAL INSIGHTS.
-                    </div>
-                    <div className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-cyan-200 drop-shadow-md">
-                      REAL IMPACT.
-                    </div>
-                  </div>
-
-                  {/* Floating Action Badges from Mockup */}
-                  <div className="absolute top-6 left-6 sm:left-10 inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white backdrop-blur-md shadow-md">
-                    <Cloud className="h-3.5 w-3.5 text-cyan-300" />
-                    <span>CONNECT</span>
-                  </div>
-
-                  <div className="absolute top-16 left-36 sm:left-44 inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white backdrop-blur-md shadow-md">
-                    <BarChart className="h-3.5 w-3.5 text-cyan-300" />
-                    <span>ANALYZE</span>
-                  </div>
-
-                  <div className="absolute top-28 right-32 sm:right-36 inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white backdrop-blur-md shadow-md">
-                    <Cog className="h-3.5 w-3.5 text-cyan-300" />
-                    <span>OPTIMIZE</span>
-                  </div>
-
-                  <div className="absolute top-20 right-6 sm:right-8 inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white backdrop-blur-md shadow-md">
-                    <Leaf className="h-3.5 w-3.5 text-emerald-300" />
-                    <span>SUSTAIN</span>
-                  </div>
-
-                  {/* Bottom Right Branding */}
-                  <div className="absolute bottom-5 right-5 text-right pointer-events-none">
-                    <div className="font-display text-lg sm:text-xl font-extrabold text-white tracking-tight leading-none drop-shadow-lg">
-                      GTS Engineering<sup>&reg;</sup>
-                    </div>
-                    <div className="text-xs text-cyan-100 font-medium mt-1 drop-shadow-md">
-                      A smarter tomorrow
-                    </div>
-                  </div>
+            {/* Mobile / Tablet Dedicated Image Display (Below buttons on < lg screens) */}
+            <div className="lg:hidden mt-10 relative w-full aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200/90">
+              <Image
+                src="/image/ai digital and enginerring/ai and digital intelligence.png"
+                alt="Engineering Intelligence for Industry 4.0 - Digital Twin, AI Analytics, Smart Manufacturing"
+                fill
+                sizes="100vw"
+                className="object-cover object-center"
+              />
+              <div className="absolute top-4 right-4 text-right pointer-events-none z-10">
+                <div className="font-mono text-xs font-extrabold uppercase tracking-[0.2em] text-blue-600 drop-shadow-xs">
+                  REAL DATA.
                 </div>
-              </GlassCard>
+                <div className="font-mono text-xs font-extrabold uppercase tracking-[0.2em] text-blue-600 drop-shadow-xs">
+                  REAL INSIGHTS.
+                </div>
+                <div className="font-mono text-xs font-extrabold uppercase tracking-[0.2em] text-blue-600 drop-shadow-xs">
+                  REAL IMPACT.
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Bottom Stats / Metrics Strip with MagneticCard items */}
-          <div className="mt-14 sm:mt-16 pt-8 border-t border-slate-200/90">
-            <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 items-center">
+          {/* Bottom Stats / Metrics Strip (5 Columns) */}
+          <div className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-slate-200/90">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 items-center">
               {/* Metric 1 */}
-              <MagneticCard intensity={2} className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
-                <div className="flex items-center gap-3.5">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-accent border border-blue-100/80 shadow-xs">
-                    <Cog className="h-5 w-5" />
+              <div className="flex items-center gap-3.5">
+                <Cog className="h-9 w-9 sm:h-10 sm:w-10 text-blue-600 shrink-0 stroke-[1.75]" />
+                <div>
+                  <div className="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-none">
+                    30%
                   </div>
-                  <div>
-                    <div className="font-display text-2xl sm:text-3xl font-extrabold text-primary tracking-tight leading-none">
-                      30%
-                    </div>
-                    <div className="text-xs text-slate-500 font-medium mt-1 leading-snug">
-                      Higher Equipment Availability
-                    </div>
+                  <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1 leading-snug">
+                    Higher Equipment Availability
                   </div>
                 </div>
-              </MagneticCard>
+              </div>
 
               {/* Metric 2 */}
-              <MagneticCard intensity={2} className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
-                <div className="flex items-center gap-3.5">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-accent border border-blue-100/80 shadow-xs">
-                    <TrendingUp className="h-5 w-5" />
+              <div className="flex items-center gap-3.5">
+                <TrendingUp className="h-9 w-9 sm:h-10 sm:w-10 text-blue-600 shrink-0 stroke-[1.75]" />
+                <div>
+                  <div className="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-none">
+                    20%
                   </div>
-                  <div>
-                    <div className="font-display text-2xl sm:text-3xl font-extrabold text-primary tracking-tight leading-none">
-                      20%
-                    </div>
-                    <div className="text-xs text-slate-500 font-medium mt-1 leading-snug">
-                      Lower Operating Costs
-                    </div>
+                  <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1 leading-snug">
+                    Lower Operating Costs
                   </div>
                 </div>
-              </MagneticCard>
+              </div>
 
               {/* Metric 3 */}
-              <MagneticCard intensity={2} className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
-                <div className="flex items-center gap-3.5">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-accent border border-blue-100/80 shadow-xs">
-                    <Leaf className="h-5 w-5" />
+              <div className="flex items-center gap-3.5">
+                <Leaf className="h-9 w-9 sm:h-10 sm:w-10 text-blue-600 shrink-0 stroke-[1.75]" />
+                <div>
+                  <div className="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-none">
+                    25%
                   </div>
-                  <div>
-                    <div className="font-display text-2xl sm:text-3xl font-extrabold text-primary tracking-tight leading-none">
-                      25%
-                    </div>
-                    <div className="text-xs text-slate-500 font-medium mt-1 leading-snug">
-                      Reduction in Emissions
-                    </div>
+                  <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1 leading-snug">
+                    Reduction in Emissions
                   </div>
                 </div>
-              </MagneticCard>
+              </div>
 
               {/* Metric 4 */}
-              <MagneticCard intensity={2} className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
-                <div className="flex items-center gap-3.5">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-accent border border-blue-100/80 shadow-xs">
-                    <Clock className="h-5 w-5" />
+              <div className="flex items-center gap-3.5">
+                <Clock className="h-9 w-9 sm:h-10 sm:w-10 text-blue-600 shrink-0 stroke-[1.75]" />
+                <div>
+                  <div className="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-none">
+                    2x
                   </div>
-                  <div>
-                    <div className="font-display text-2xl sm:text-3xl font-extrabold text-primary tracking-tight leading-none">
-                      2x
-                    </div>
-                    <div className="text-xs text-slate-500 font-medium mt-1 leading-snug">
-                      Faster Decision Making
-                    </div>
+                  <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1 leading-snug">
+                    Faster Decision Making
                   </div>
                 </div>
-              </MagneticCard>
+              </div>
 
               {/* Right Statement */}
-              <div className="col-span-2 lg:col-span-1 border-t lg:border-t-0 lg:border-l border-slate-200 pt-4 lg:pt-0 lg:pl-6 flex flex-col justify-center">
-                <div className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-slate-400 leading-tight">
+              <div className="col-span-2 md:col-span-1 border-l-2 border-blue-600 pl-4 sm:pl-5 flex flex-col justify-center">
+                <div className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-[0.22em] text-slate-400 leading-tight">
                   BUILDING
                 </div>
-                <div className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-primary leading-tight mt-1">
+                <div className="text-xs sm:text-sm font-display font-extrabold uppercase tracking-wider text-slate-900 leading-tight mt-0.5">
                   A MORE EFFICIENT,
                 </div>
-                <div className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-accent leading-tight mt-1">
+                <div className="text-xs sm:text-sm font-display font-extrabold uppercase tracking-wider text-blue-600 leading-tight mt-0.5">
                   SUSTAINABLE TOMORROW
                 </div>
               </div>
@@ -3034,6 +3020,7 @@ export default function HomePage() {
           </div>
         </AnimatedSection>
       </section>
+      
       <section
         id="industries-served"
         onMouseLeave={() => setHoveredIndustryIndex(null)}
@@ -3075,33 +3062,9 @@ export default function HomePage() {
                   <div className="w-3.5 sm:w-4 h-0.5 bg-white/80 mx-auto mt-1 rounded-full shadow-sm" />
                 </div>
 
-                {/* Subtle dark tint to harmonize background colors */}
-                <div
-                  className={`absolute inset-0 transition-colors duration-500 ${isHovered ? 'bg-black/10' : 'bg-black/25'
-                    }`}
-                />
               </div>
             );
           })}
-        </div>
-
-        {/* Ambient Center Gradient Overlay for High Text & Card Contrast */}
-        <div
-          className={`absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 ${hoveredIndustryIndex !== null
-              ? 'bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.85)_0%,rgba(255,255,255,0.6)_55%,rgba(255,255,255,0.15)_100%)]'
-              : 'bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.72)_55%,rgba(255,255,255,0.25)_100%)]'
-            }`}
-        />
-        {/* Center White Brightness Overlay: center two images width and text area strictly */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-          {/* Vertical bright white column over center 2 images (~14% width) */}
-          <div
-            className={`absolute inset-y-0 left-1/2 -translate-x-1/2 w-[14%] min-w-[120px] max-w-[220px] bg-gradient-to-b from-white/30 via-white/85 to-white/70 shadow-[0_0_60px_30px_rgba(255,255,255,0.85)] transition-opacity duration-500 ${hoveredIndustryIndex !== null ? 'opacity-30' : 'opacity-100'
-              }`}
-          />
-
-          {/* Bright white illumination directly behind the text area */}
-          <div className="absolute top-8 sm:top-12 lg:top-14 left-1/2 -translate-x-1/2 w-[92%] max-w-3xl h-[260px] sm:h-[290px] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.88)_42%,rgba(255,255,255,0.3)_65%,transparent_82%)]" />
         </div>
 
         {/* Foreground Content */}
@@ -3110,7 +3073,6 @@ export default function HomePage() {
             <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0090e7]">
               INDUSTRIES WE SERVE
             </span>
-            <h2 className="mt-2 text-2xl sm:text-xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight" />
             <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Industrial sectors supported by GTS’s multidisciplinary expertise
             </h2>
@@ -3675,156 +3637,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] via-[#f1f6fd]/40 to-white py-20 sm:py-28 border-y border-slate-200/60">
-        {/* Decorative High-Clarity Global Network Globe (Left) */}
-        <div className="pointer-events-none absolute -left-12 sm:-left-16 lg:-left-20 top-2 sm:top-4 h-[440px] w-[440px] sm:h-[500px] sm:w-[500px] lg:h-[540px] lg:w-[540px] opacity-75 sm:opacity-85 lg:opacity-90 select-none">
-          <svg className="h-full w-full" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="globeSphereGrad" x1="50" y1="50" x2="450" y2="450" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#0070f3" stopOpacity="0.12" />
-                <stop offset="60%" stopColor="#0284c7" stopOpacity="0.05" />
-                <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient id="arcGlow" x1="100" y1="100" x2="350" y2="250" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#0070f3" />
-                <stop offset="50%" stopColor="#38bdf8" />
-                <stop offset="100%" stopColor="#0070f3" />
-              </linearGradient>
-              <pattern id="globeDots" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
-                <circle cx="2" cy="2" r="1.2" fill="#0070f3" fillOpacity="0.35" />
-              </pattern>
-            </defs>
-
-            {/* Globe Sphere Base & Atmosphere */}
-            <circle cx="250" cy="250" r="210" fill="url(#globeSphereGrad)" />
-            <circle cx="250" cy="250" r="210" stroke="#0070f3" strokeWidth="1.5" strokeOpacity="0.45" />
-            <circle cx="250" cy="250" r="218" stroke="#38bdf8" strokeWidth="1" strokeDasharray="4 6" strokeOpacity="0.35" />
-
-            {/* Latitude Grid Lines */}
-            <ellipse cx="250" cy="250" rx="210" ry="85" stroke="#0070f3" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.4" />
-            <ellipse cx="250" cy="250" rx="210" ry="155" stroke="#0070f3" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.3" />
-            <line x1="40" y1="250" x2="460" y2="250" stroke="#0070f3" strokeWidth="1.5" strokeDasharray="5 5" strokeOpacity="0.5" />
-            <ellipse cx="250" cy="165" rx="192" ry="60" stroke="#0070f3" strokeWidth="1" strokeDasharray="3 4" strokeOpacity="0.3" />
-            <ellipse cx="250" cy="335" rx="192" ry="60" stroke="#0070f3" strokeWidth="1" strokeDasharray="3 4" strokeOpacity="0.25" />
-
-            {/* Longitude Grid Lines */}
-            <line x1="250" y1="40" x2="250" y2="460" stroke="#0070f3" strokeWidth="1.5" strokeDasharray="5 5" strokeOpacity="0.5" />
-            <ellipse cx="250" cy="250" rx="85" ry="210" stroke="#0070f3" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.4" />
-            <ellipse cx="250" cy="250" rx="155" ry="210" stroke="#0070f3" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.3" />
-
-            {/* Stylized Continent Silhouettes with Dotted Texture */}
-            {/* North America */}
-            <path
-              d="M100 130 C120 110, 160 115, 185 135 C195 145, 190 165, 175 180 C160 195, 140 210, 145 225 C130 220, 115 200, 105 185 C95 170, 90 145, 100 130 Z"
-              fill="url(#globeDots)"
-              stroke="#0070f3"
-              strokeWidth="1.5"
-              strokeOpacity="0.5"
-            />
-            {/* South America */}
-            <path
-              d="M150 235 C170 240, 190 260, 185 290 C180 320, 165 350, 150 375 C140 360, 135 320, 135 295 C135 270, 140 245, 150 235 Z"
-              fill="url(#globeDots)"
-              stroke="#0070f3"
-              strokeWidth="1.5"
-              strokeOpacity="0.45"
-            />
-            {/* Europe & Asia */}
-            <path
-              d="M230 110 C260 95, 310 100, 350 125 C370 140, 390 165, 380 195 C360 215, 320 210, 295 195 C275 180, 255 185, 240 170 C225 155, 220 125, 230 110 Z"
-              fill="url(#globeDots)"
-              stroke="#0070f3"
-              strokeWidth="1.5"
-              strokeOpacity="0.5"
-            />
-            {/* Africa */}
-            <path
-              d="M235 180 C260 185, 280 205, 285 235 C290 265, 275 300, 255 330 C240 315, 230 280, 225 250 C220 220, 225 195, 235 180 Z"
-              fill="url(#globeDots)"
-              stroke="#0070f3"
-              strokeWidth="1.5"
-              strokeOpacity="0.45"
-            />
-
-            {/* Glowing Interconnect Arcs */}
-            <path d="M140 175 C175 120, 230 110, 260 140" stroke="url(#arcGlow)" strokeWidth="2.5" strokeLinecap="round" />
-            <path d="M140 175 C170 210, 210 240, 260 250" stroke="url(#arcGlow)" strokeWidth="2" strokeLinecap="round" />
-            <path d="M260 140 C300 130, 335 150, 350 180" stroke="url(#arcGlow)" strokeWidth="2" strokeLinecap="round" />
-            <path d="M140 175 C200 160, 280 180, 350 180" stroke="#0070f3" strokeWidth="1.5" strokeDasharray="4 4" strokeOpacity="0.7" />
-
-            {/* Global Hub Nodes with Radar Rings */}
-            {/* Hub 1: USA (Houston / NYC) */}
-            <g transform="translate(140, 175)">
-              <circle r="12" stroke="#0070f3" strokeWidth="1.5" strokeOpacity="0.5" fill="none" />
-              <circle r="6" fill="#0070f3" />
-              <circle r="3" fill="#ffffff" />
-            </g>
-
-            {/* Hub 2: Europe (London) */}
-            <g transform="translate(260, 140)">
-              <circle r="10" stroke="#0070f3" strokeWidth="1.5" strokeOpacity="0.5" fill="none" />
-              <circle r="5" fill="#0070f3" />
-              <circle r="2.5" fill="#ffffff" />
-            </g>
-
-            {/* Hub 3: India (Delivery Center) */}
-            <g transform="translate(350, 180)">
-              <circle r="14" stroke="#0070f3" strokeWidth="2" strokeOpacity="0.6" fill="none" />
-              <circle r="7" fill="#0070f3" />
-              <circle r="3.5" fill="#ffffff" />
-            </g>
-
-            {/* Hub 4: South America */}
-            <g transform="translate(165, 280)">
-              <circle r="8" stroke="#0284c7" strokeWidth="1.2" strokeOpacity="0.5" fill="none" />
-              <circle r="4" fill="#0284c7" />
-            </g>
-
-            {/* Hub 5: Middle East / Africa */}
-            <g transform="translate(260, 250)">
-              <circle r="9" stroke="#0284c7" strokeWidth="1.2" strokeOpacity="0.5" fill="none" />
-              <circle r="4.5" fill="#0284c7" />
-            </g>
-          </svg>
-        </div>
-
-        {/* Watermark text on top-left over the globe */}
-        <div className="pointer-events-none absolute left-6 sm:left-8 top-28 sm:top-32 hidden flex-col font-mono text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#0052b4] select-none lg:flex">
-          <div className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-[#0070f3] animate-pulse" />
-            <span>GLOBAL</span>
-          </div>
-          <span className="pl-3.5">ENGINEERING</span>
-          <span className="pl-3.5 text-[#0070f3]">LOCAL IMPACT</span>
-        </div>
-
-        {/* Watermark text on top-right */}
-        <div className="pointer-events-none absolute right-8 top-10 hidden border-l-2 border-[#0070f3] pl-3.5 font-mono text-[10.5px] font-extrabold uppercase tracking-wider text-slate-800 select-none lg:flex flex-col space-y-0.5 bg-white/70 backdrop-blur-xs py-1.5 pr-2.5 rounded-r shadow-xs">
-          <span>PEOPLE</span>
-          <span>TECHNOLOGY</span>
-          <span>SOLUTIONS</span>
-          <span className="text-[#0070f3]">GLOBAL IMPACT</span>
-        </div>
-
-        {/* Right Industrial Image Overlay with high clarity and smooth left fade */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] via-white to-white py-16 sm:py-24 border-y border-slate-200/60">
+        {/* Left Globe & Network Graphic from bg image */}
         <div
-          className="pointer-events-none absolute -right-2 sm:right-0 top-0 bottom-0 w-[40%] md:w-[44%] lg:w-[46%] xl:w-[48%] overflow-hidden opacity-85 sm:opacity-90 lg:opacity-95 select-none"
+          className="pointer-events-none absolute left-0 top-0 bottom-0 w-[28%] md:w-[30%] lg:w-[28%] xl:w-[25%] overflow-hidden select-none z-0"
           style={{
-            maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 8%, rgba(0,0,0,0.7) 25%, black 45%, black 100%)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 8%, rgba(0,0,0,0.7) 25%, black 45%, black 100%)'
+            maskImage: 'linear-gradient(to right, black 50%, rgba(0,0,0,0.6) 75%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, black 50%, rgba(0,0,0,0.6) 75%, transparent 100%)'
           }}
         >
           <div className="relative h-full w-full">
             <Image
-              src="/image/OUR ENGINEERING SOLUTION.jpg"
-              alt="Industrial Engineering Plant"
+              src="/image/client and certificate/bg image of client and certificate.jpg"
+              alt="Global Engineering Local Impact"
               fill
-              className="object-cover object-left"
+              style={{ objectPosition: 'left center' }}
+              className="object-cover"
               quality={95}
+              priority
             />
             {/* Soft vertical blend into section top/bottom borders */}
             <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc]/60 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-white via-white/60 to-transparent" />
+          </div>
+        </div>
+
+        {/* Right Industrial Image Overlay */}
+        <div
+          className="pointer-events-none absolute right-0 top-0 bottom-0 w-[35%] md:w-[38%] lg:w-[40%] xl:w-[38%] overflow-hidden select-none z-0"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 10%, rgba(0,0,0,0.7) 25%, black 45%, black 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 10%, rgba(0,0,0,0.7) 25%, black 45%, black 100%)'
+          }}
+        >
+          <div className="relative h-full w-full">
+            <Image
+              src="/image/client and certificate/bg image of client and certificate.jpg"
+              alt="Industrial Engineering Plant"
+              fill
+              style={{ objectPosition: '33% center' }}
+              className="object-cover"
+              quality={95}
+              priority
+            />
+            {/* Soft vertical blend into section top/bottom borders */}
+            <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc]/60 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-white via-white/60 to-transparent" />
+          </div>
+        </div>
+
+        {/* Watermark text on top-right */}
+        <div className="pointer-events-none absolute right-8 top-8 hidden lg:flex items-start gap-2.5 select-none z-10">
+          <div className="h-12 w-[1.5px] bg-slate-300" />
+          <div className="flex flex-col text-[10.5px] font-semibold uppercase tracking-wider text-slate-500 leading-snug">
+            <span>PEOPLE</span>
+            <span>TECHNOLOGY</span>
+            <span>SOLUTIONS</span>
+            <span>GLOBAL IMPACT</span>
           </div>
         </div>
 
@@ -3857,20 +3726,19 @@ export default function HomePage() {
           </div>
 
           {/* 4 Pillar Cards Grid */}
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 sm:mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {excellencePillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
-                <MagneticCard
+                <div
                   key={pillar.title}
-                  intensity={2}
-                  className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white/95 p-6 shadow-sm shadow-slate-200/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-500/10"
+                  className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-500/10"
                 >
                   <div>
                     {/* Card Header: Icon + Title & Description */}
                     <div className="flex items-start gap-3.5">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-blue-200/80 bg-blue-50 text-[#0070f3] transition-colors duration-300 group-hover:bg-[#0070f3] group-hover:text-white">
-                        <Icon className="h-6 w-6" />
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-blue-200/80 bg-blue-50 text-[#0070f3] transition-colors duration-300 group-hover:bg-[#0070f3] group-hover:text-white">
+                        <Icon className="h-5 w-5" />
                       </div>
                       <div>
                         <h3 className="text-base font-bold text-slate-900 transition-colors duration-200 group-hover:text-[#0070f3]">
@@ -3883,30 +3751,30 @@ export default function HomePage() {
                     </div>
 
                     {/* Checkmark Checklist */}
-                    <ul className="mt-6 space-y-2.5 border-t border-slate-100 pt-5">
+                    <ul className="mt-5 space-y-2.5">
                       {pillar.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2.5 text-xs font-medium text-slate-700">
+                        <li key={item} className="flex items-start gap-2.5 text-xs sm:text-[13px] font-medium text-slate-700">
                           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0070f3]" />
                           <span className="leading-tight">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                </MagneticCard>
+                </div>
               );
             })}
           </div>
 
           {/* Industry Standards & Certifications Ribbon */}
-          <div className="relative mt-10 rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-sm shadow-slate-200/30">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+          <div className="relative mt-8 sm:mt-10 rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-sm">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6">
               {/* Left Ribbon Title */}
-              <div className="flex items-center gap-4 shrink-0 border-b pb-3 lg:border-b-0 lg:pb-0 lg:border-r lg:pr-6 border-slate-200">
-                <div className="flex flex-col">
-                  <span className="text-xs font-black uppercase tracking-wider text-[#0f2d4a]">
+              <div className="flex items-center shrink-0 border-b pb-3 lg:border-b-0 lg:pb-0 lg:border-r lg:pr-6 border-slate-200 w-full lg:w-auto justify-center lg:justify-start">
+                <div className="flex flex-col text-left">
+                  <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-[#0070f3]">
                     INDUSTRY STANDARDS
                   </span>
-                  <span className="text-xs font-black uppercase tracking-wider text-[#0f2d4a]">
+                  <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-[#0070f3]">
                     & CERTIFICATIONS
                   </span>
                   <div className="mt-1 h-0.5 w-10 bg-[#0070f3]" />
@@ -3914,26 +3782,30 @@ export default function HomePage() {
               </div>
 
               {/* Real Standards & Certification Images from public/image/client and certificate */}
-              <div className="flex flex-wrap items-center justify-center xl:justify-between gap-x-6 lg:gap-x-7 gap-y-3.5 flex-1 w-full px-2">
+              <div className="flex flex-wrap items-center justify-center lg:justify-between gap-x-5 sm:gap-x-6 lg:gap-x-7 gap-y-3.5 flex-1 w-full px-2">
                 {certificationLogos.map((item) => (
                   <div
                     key={item.name}
                     className="flex items-center gap-2 group cursor-default transition-transform duration-200 hover:scale-105 shrink-0"
                     title={item.title}
                   >
-                    <Image
-                      src={item.src}
-                      alt={item.name}
-                      width={item.width}
-                      height={item.height}
-                      className={item.className}
-                    />
-                    {item.showLabel && (
-                      <div className="text-[10px] sm:text-[11px] font-bold leading-tight text-slate-800 tracking-tight">
-                        <span>Client</span>
-                        <br />
-                        <span>Specifications</span>
-                      </div>
+                    {item.name === 'Client Specifications' ? (
+                      <>
+                        <FileText className="h-6 w-6 text-[#0070f3] stroke-[1.8]" />
+                        <div className="text-[10px] sm:text-[11px] font-bold leading-tight text-slate-800 tracking-tight">
+                          <span>Client</span>
+                          <br />
+                          <span>Specifications</span>
+                        </div>
+                      </>
+                    ) : (
+                      <Image
+                        src={item.src}
+                        alt={item.name}
+                        width={item.width}
+                        height={item.height}
+                        className={item.className}
+                      />
                     )}
                   </div>
                 ))}
@@ -3942,17 +3814,20 @@ export default function HomePage() {
           </div>
 
           {/* Bottom Trust Metrics & Vision Statement */}
-          <div className="mt-8 rounded-2xl border border-slate-200/80 bg-white/90 p-5 sm:p-6 shadow-sm backdrop-blur-sm">
-            <div className="flex flex-col xl:flex-row items-center justify-between gap-6">
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 flex-1 w-full">
-                {excellenceStats.map((stat) => {
+          <div className="mt-6 sm:mt-8 rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-sm">
+            <div className="flex flex-col xl:flex-row items-center justify-between gap-4 xl:gap-0">
+              <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 xl:gap-0 flex-1 w-full xl:pr-6">
+                {excellenceStats.map((stat, idx) => {
                   const Icon = stat.icon;
                   return (
-                    <div key={stat.label} className="flex items-center gap-3">
+                    <div
+                      key={stat.label}
+                      className={`flex items-center gap-3 ${idx < 5 ? 'xl:border-r xl:border-slate-200 xl:pr-4 xl:mr-4' : ''}`}
+                    >
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#0070f3]">
                         <Icon className="h-5 w-5" />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <div className="text-base font-extrabold text-slate-900 tracking-tight leading-none">
                           {stat.value}
                         </div>
@@ -3965,8 +3840,8 @@ export default function HomePage() {
                 })}
               </div>
 
-              <div className="hidden border-l border-slate-200 pl-6 xl:block shrink-0">
-                <div className="flex flex-col text-[10px] font-black uppercase tracking-widest text-slate-400 space-y-0.5">
+              <div className="pt-3 xl:pt-0 xl:pl-6 border-t xl:border-t-0 xl:border-l border-slate-200 shrink-0 w-full xl:w-auto text-center xl:text-left">
+                <div className="flex flex-col text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#5c8dbf] leading-snug">
                   <span>SAFER INDUSTRIES</span>
                   <span>STRONGER COMMUNITIES</span>
                   <span>A SMARTER TOMORROW</span>

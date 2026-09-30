@@ -72,7 +72,7 @@ export const disciplinesData: DisciplineData[] = [
     summary:
       'End-to-end process engineering solutions for process plants, refineries, LNG, power, chemicals, and industrial facilities, delivered with accuracy, efficiency, and industry expertise.',
     bannerText: 'From Concept to Reality',
-    image: '/image/OUR ENGINEERING SOLUTION.jpg',
+    image: '/image/enginerring capibility/process.png',
     hotspots: [
       { label: 'Process Design', position: { top: '15%', left: '15%' } },
       { label: 'Simulation', position: { top: '22%', left: '68%' } },
@@ -118,7 +118,7 @@ export const disciplinesData: DisciplineData[] = [
       'Construction & Commissioning'
     ],
     stats: {
-      projects: '100+ Process Projects',
+      projects: '500+ Process Projects',
       experience: '25+ Years'
     },
     industries: ['Refining & Petrochemicals', 'LNG & Gas Processing', 'Chemicals', 'Hydrogen & Clean Fuels', 'Pharmaceuticals'],
@@ -139,7 +139,7 @@ export const disciplinesData: DisciplineData[] = [
     summary:
       'Mechanical engineering for static and rotating equipment, packages, skids, and plant assets, delivering ASME/API compliance and optimized lifecycle performance.',
     bannerText: 'Engineered for Performance',
-    image: '/image/OUR ENGINEERING SOLUTION.jpg',
+    image: '/image/enginerring capibility/mechinical.png',
     hotspots: [
       { label: 'ASME Pressure Vessels', position: { top: '18%', left: '16%' } },
       { label: 'Rotating Equipment', position: { top: '26%', left: '65%' } },
@@ -206,7 +206,7 @@ export const disciplinesData: DisciplineData[] = [
     summary:
       'Piping systems design and layout for process, utility, and offshore facilities, delivering zero-clash 3D models, rigorous stress analysis, and error-free isometrics.',
     bannerText: 'Piping Systems for a Stronger Tomorrow',
-    image: '/image/OUR ENGINEERING SOLUTION.jpg',
+    image: '/image/enginerring capibility/pipeline.png',
     hotspots: [
       { label: 'Plant Routing & Spools', position: { top: '16%', left: '18%' } },
       { label: 'CAESAR II Stress', position: { top: '24%', left: '68%' } },
@@ -273,7 +273,7 @@ export const disciplinesData: DisciplineData[] = [
     summary:
       'Electrical engineering solutions for power generation, medium & low voltage distribution, substations, lighting, earthing, and industrial electrical infrastructure.',
     bannerText: 'Powering Industrial Growth',
-    image: '/image/OUR ENGINEERING SOLUTION.jpg',
+    image: '/image/enginerring capibility/electrical.png',
     hotspots: [
       { label: 'Substation Design', position: { top: '16%', left: '16%' } },
       { label: 'Power Distribution', position: { top: '24%', left: '68%' } },
@@ -340,7 +340,7 @@ export const disciplinesData: DisciplineData[] = [
     summary:
       'Instrumentation and control systems for safe, reliable, and automated operations, spanning smart field instrumentation, SIL/SIS safety systems, and DCS/SCADA integration.',
     bannerText: 'Measure. Control. Optimize.',
-    image: '/image/OUR ENGINEERING SOLUTION.jpg',
+    image: '/image/enginerring capibility/instrumentation.png',
     hotspots: [
       { label: 'Smart Field Sensors', position: { top: '18%', left: '16%' } },
       { label: 'DCS / PLC Architecture', position: { top: '26%', left: '68%' } },
@@ -407,7 +407,7 @@ export const disciplinesData: DisciplineData[] = [
     summary:
       'Structural engineering and detailing for industrial, commercial, and offshore structures, providing rigorous finite element analysis, connection engineering, and Tekla BIM detailing.',
     bannerText: 'Structures that Support Progress',
-    image: '/image/OUR ENGINEERING SOLUTION.jpg',
+    image: '/image/enginerring capibility/structural.png',
     hotspots: [
       { label: 'Steel Framing & BIM', position: { top: '16%', left: '18%' } },
       { label: 'Pipe Rack Structures', position: { top: '24%', left: '68%' } },
@@ -474,7 +474,7 @@ export const disciplinesData: DisciplineData[] = [
     summary:
       'Pipeline engineering for onshore and offshore transmission and distribution systems, including route engineering, surge hydraulics, HDD crossings, and asset integrity.',
     bannerText: 'Connecting Energy to the World',
-    image: '/image/OUR ENGINEERING SOLUTION.jpg',
+    image: '/image/enginerring capibility/pipeline.png',
     hotspots: [
       { label: 'Route Optimization', position: { top: '16%', left: '16%' } },
       { label: 'Surge & Hydraulics', position: { top: '24%', left: '68%' } },
@@ -541,7 +541,7 @@ export const disciplinesData: DisciplineData[] = [
     summary:
       'Offshore engineering support for topsides, floating systems, subsea equipment, and marine structures, engineered to withstand extreme maritime environments.',
     bannerText: 'Engineering for a Sustainable Ocean Future',
-    image: '/image/OUR ENGINEERING SOLUTION.jpg',
+    image: '/image/enginerring capibility/offshore.png',
     hotspots: [
       { label: 'Platform Topsides', position: { top: '16%', left: '18%' } },
       { label: 'Subsea Manifolds', position: { top: '25%', left: '68%' } },
@@ -608,7 +608,7 @@ export const disciplinesData: DisciplineData[] = [
     summary:
       'Industrial automation, DCS/PLC programming, SCADA development, robotic workcells, and IIoT digital transformation for next-generation smart factories and plants.',
     bannerText: 'Smart, Autonomous Operations',
-    image: '/image/OUR ENGINEERING SOLUTION.jpg',
+    image: '/image/enginerring capibility/automation.png',
     hotspots: [
       { label: 'DCS Architecture', position: { top: '16%', left: '16%' } },
       { label: 'Cloud IIoT Edge', position: { top: '24%', left: '68%' } },
@@ -675,7 +675,7 @@ export const disciplinesData: DisciplineData[] = [
     summary:
       'Product design and engineering support across mechanical systems, tools, industrial equipment, and modular skids, engineered for manufacturability and market success.',
     bannerText: 'Innovative Designs for a Better Tomorrow',
-    image: '/image/OUR ENGINEERING SOLUTION.jpg',
+    image: '/image/enginerring capibility/product designe.png',
     hotspots: [
       { label: '3D CAD Assemblies', position: { top: '16%', left: '18%' } },
       { label: 'FEA Validation', position: { top: '24%', left: '68%' } },
