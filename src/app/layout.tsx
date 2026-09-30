@@ -10,11 +10,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "GTS Engineering USA Incorporated | Delivering Engineering Excellence & Innovation",
+  title: " GTS Engineering USA Incorporated | Delivering Engineering Excellence & Innovation",
   description: "GTS Engineering USA is a premier technology company and virtual extension of design, FEA simulation, piping layout, GIS network modeling, and EPCM teams globally.",
   keywords: ["engineering design", "plant process FEED", "3D CAD modeling", "FEA stress analysis", "web GIS development", "technical publishing", "ATA iSpec 2200"],
   authors: [{ name: "GTS Engineering USA Inc." }],
-  robots: "index, follow",
+  robots: "index, follow",  
 };
 
 export default function RootLayout({
