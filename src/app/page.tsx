@@ -421,37 +421,37 @@ const heroVisuals: HeroVisual[] = [
 const trustStats = [
   {
     title: 'Established 2012',
-    image: '/image/engineering-excellence-2012.png',
+    image: '/image/trusted enginerring/Established.jpg',
     description:
       'More than a decade of delivering multidisciplinary engineering solutions for industrial clients through innovation, digital engineering, and execution excellence.'
   },
   {
     title: '500+ Projects Delivered',
-    image: '/image/100project-delivered.png',
+    image: '/image/trusted enginerring/Projects Delivered.jpg',
     description:
       'Successfully supporting FEED, detailed engineering, EPC, brownfield expansions, and digital transformation projects across multiple industries.'
   },
   {
     title: 'Global Delivery Model',
-    image: '/image/globalenginerringdelivery.png',
+    image: '/image/trusted enginerring/Global Delivery Model.jpg',
     description:
       'Integrated project leadership from the United States with scalable engineering execution through global delivery centers and digital collaboration.'
   },
   {
     title: 'Multidisciplinary Engineering Teams',
-    image: '/image/multidisciplinary-engineering-teams.png',
+    image: '/image/trusted enginerring/Multidisciplinary Engineering Teams.jpg',
     description:
       'Integrated engineering teams collaborate across all major disciplines to deliver coordinated, constructible, and digitally enabled engineering solutions.'
   },
   {
     title: 'AI & Digital Engineering Capability',
-    image: '/image/AI-Enabled-digital-engineering.png',
+    image: '/image/trusted enginerring/AI-Enabled Digital Engineering.jpg',
     description:
       'AI-assisted engineering workflows, digital twins, engineering analytics, and simulation technologies improve quality, accelerate schedules, and reduce project risk.'
   },
   {
     title: 'US + India Operations',
-    image: '/image/USA-India Engineering Operations.png',
+    image: '/image/trusted enginerring/USA + India.jpg',
     description:
       'Combining USA project leadership with global engineering execution to provide responsive, scalable, and cost-effective engineering support.'
   }
@@ -973,13 +973,13 @@ const industriesServed: IndustryServedItem[] = [
     title: 'Data Centers',
     topText: 'DATA CENTERS',
     icon: Server,
-    bgImage: '/image/AI-Digital-Engineering-Capability.jpg',
-  },
+    bgImage: '/image/Data Center.jpg',
+  }, 
   {
     title: 'Semiconductors',
     topText: 'SEMICONDUCTORS',
     icon: Cpu,
-    bgImage: '/image/Global-Delivery-Model.jpg',
+    bgImage: '/image/Semiconductors.jpg'
   },
   {
     title: 'Manufacturing',
@@ -1009,7 +1009,7 @@ const industriesServed: IndustryServedItem[] = [
     title: 'Life Sciences & Pharma',
     topText: 'LIFE SCIENCES & PHARMA',
     icon: Microscope,
-    bgImage: '/image/Assest lifecycle support.png',
+    bgImage: '/image/Lifesciences & Pharma.jpg'
   },
   {
     title: 'Automotive',
@@ -3640,15 +3640,15 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] via-white to-white py-16 sm:py-24 border-y border-slate-200/60">
         {/* Left Globe & Network Graphic from bg image */}
         <div
-          className="pointer-events-none absolute left-0 top-0 bottom-0 w-[28%] md:w-[30%] lg:w-[28%] xl:w-[25%] overflow-hidden select-none z-0"
+          className="pointer-events-none absolute left-0 top-0 bottom-0 w-[28%] md:w-[32%] lg:w-[30%] xl:w-[28%] overflow-hidden select-none z-0"
           style={{
-            maskImage: 'linear-gradient(to right, black 50%, rgba(0,0,0,0.6) 75%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to right, black 50%, rgba(0,0,0,0.6) 75%, transparent 100%)'
+            maskImage: 'linear-gradient(to right, black 55%, rgba(0,0,0,0.6) 80%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, black 55%, rgba(0,0,0,0.6) 80%, transparent 100%)'
           }}
         >
           <div className="relative h-full w-full">
             <Image
-              src="/image/client and certificate/bg image of client and certificate.jpg"
+              src="/image/client and certificate/client-certification-bg.jpeg"
               alt="Global Engineering Local Impact"
               fill
               style={{ objectPosition: 'left center' }}
@@ -3662,20 +3662,31 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Watermark text on top-left over the globe */}
+        <div className="pointer-events-none absolute left-6 sm:left-10 lg:left-12 top-20 sm:top-24 hidden flex-col font-mono text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#0052b4] select-none lg:flex z-10">
+          <div className="flex items-center gap-1.5">
+            <span className="h-2 w-2 rounded-full bg-[#0070f3] animate-pulse" />
+            <span>GLOBAL</span>
+          </div>
+          <span className="pl-3.5">ENGINEERING</span>
+          <div className="my-1 ml-3.5 h-0.5 w-7 bg-[#0070f3]" />
+          <span className="pl-3.5 text-[#0070f3]">LOCAL IMPACT</span>
+        </div>
+
         {/* Right Industrial Image Overlay */}
         <div
-          className="pointer-events-none absolute right-0 top-0 bottom-0 w-[35%] md:w-[38%] lg:w-[40%] xl:w-[38%] overflow-hidden select-none z-0"
+          className="pointer-events-none absolute right-0 top-0 bottom-0 w-[36%] md:w-[40%] lg:w-[42%] xl:w-[40%] overflow-hidden select-none z-0"
           style={{
-            maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 10%, rgba(0,0,0,0.7) 25%, black 45%, black 100%)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 10%, rgba(0,0,0,0.7) 25%, black 45%, black 100%)'
+            maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.18) 12%, rgba(0,0,0,0.7) 28%, black 50%, black 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.18) 12%, rgba(0,0,0,0.7) 28%, black 50%, black 100%)'
           }}
         >
           <div className="relative h-full w-full">
             <Image
-              src="/image/client and certificate/bg image of client and certificate.jpg"
+              src="/image/client and certificate/client-certification-bg.jpeg"
               alt="Industrial Engineering Plant"
               fill
-              style={{ objectPosition: '33% center' }}
+              style={{ objectPosition: '30% center' }}
               className="object-cover"
               quality={95}
               priority

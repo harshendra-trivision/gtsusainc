@@ -129,15 +129,10 @@ export default function Footer() {
             <div>
               {/* Brand Logo & Name */}
               <Link href="/" className="group inline-flex flex-col items-start">
-                <Image
-                  src="/icons/logo transparent.png"
-                  alt="GTS Engineering Logo"
-                  width={200}
-                  height={167}
-                  className="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_2px_rgba(255,255,255,0.95)] drop-shadow-[0_0_10px_rgba(255,255,255,0.45)]"
-                  priority
-                />
-                <span className="mt-2 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.28em] text-cyan-200/90 font-semibold">
+                <span className="text-xl sm:text-2xl font-bold font-display tracking-tight text-white inline-flex items-center">
+                  GTS Engineering<sup className="text-[10px] sm:text-xs ml-0.5 -top-1 font-normal text-slate-300">&reg;</sup>
+                </span>
+                <span className="mt-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.28em] text-cyan-200/90 font-semibold">
                   USA INCORPORATED
                 </span>
               </Link>
