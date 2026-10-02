@@ -32,13 +32,14 @@ export default function AiDigitalPage() {
         eyebrow="AI & Digital"
         title="Transforming Engineering Through Intelligence"
         description="GTS combines engineering expertise with artificial intelligence, digital technologies, and industrial innovation to help organizations design smarter, build faster, operate more efficiently, and maximize asset performance. Our AI & Digital solutions are focused on delivering measurable business outcomes — from improved productivity and reduced project risk to enhanced operational reliability and long-term value creation."
+        backgroundImage="/image/ai and digital/ai-digital-bg.jpg"
       >
-        <div className="flex flex-wrap items-center justify-center gap-2">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-2.5 sm:gap-3">
           {aiDigitalContent.map((category) => (
             <a
               key={category.slug}
               href={`#${category.slug}`}
-              className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-mono uppercase tracking-[0.18em] text-slate-300 transition-colors hover:border-cyan-200/30 hover:text-white"
+              className="rounded-full border border-blue-400/30 bg-[#0c1f38]/80 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-blue-200 backdrop-blur-sm transition-all duration-200 hover:border-cyan-300/80 hover:bg-blue-900/60 hover:text-white hover:shadow-[0_0_14px_rgba(56,189,248,0.3)] sm:px-5 sm:py-2 sm:text-xs"
             >
               {category.label}
             </a>

@@ -62,13 +62,14 @@ export default function InnovationPage() {
         eyebrow="Innovation"
         title="Engineering the Future Through Innovation"
         description="Innovation is at the core of everything we do. At GTS Engineering, we continuously explore emerging technologies, advanced engineering methodologies, and digital solutions that help our clients improve performance, reduce risk, accelerate project delivery, and build the industries of tomorrow. By combining engineering expertise with artificial intelligence, digital technologies, strategic partnerships, and research-driven innovation, we help organizations remain competitive in an increasingly connected and rapidly evolving industrial landscape."
+        backgroundImage="/image/innovation/innovation bg .jpg"
       >
-        <div className="flex flex-wrap items-center justify-center gap-2">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-2.5 sm:gap-3">
           {innovationContent.map((category) => (
             <a
               key={category.slug}
               href={`#${category.slug}`}
-              className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-mono uppercase tracking-[0.18em] text-slate-300 transition-colors hover:border-cyan-200/30 hover:text-white"
+              className="rounded-full border border-blue-400/30 bg-[#0c1f38]/80 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-blue-200 backdrop-blur-sm transition-all duration-200 hover:border-cyan-300/80 hover:bg-blue-900/60 hover:text-white hover:shadow-[0_0_14px_rgba(56,189,248,0.3)] sm:px-5 sm:py-2 sm:text-xs"
             >
               {category.label}
             </a>
