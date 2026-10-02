@@ -64,13 +64,14 @@ export default function DeliveryExcellencePage() {
         eyebrow="Delivery Excellence"
         title="Delivering Engineering Excellence with Confidence"
         description="At GTS Engineering, delivery excellence is more than completing projects on time and within budget. It is our disciplined approach to engineering, collaboration, quality, technology, and project execution that enables clients to successfully deliver complex industrial projects across the complete asset lifecycle. By combining local leadership, global engineering resources, digital technologies, and proven project management methodologies, we consistently deliver high-quality engineering solutions that reduce risk, improve efficiency, and create long-term value."
+        backgroundImage="/image/delivery network/delivery network.jpg"
       >
-        <div className="flex flex-wrap items-center justify-center gap-2">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-2.5 sm:gap-3">
           {deliveryExcellenceContent.map((section) => (
             <a
               key={section.slug}
               href={`#${section.slug}`}
-              className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-mono uppercase tracking-[0.18em] text-slate-300 transition-colors hover:border-cyan-200/30 hover:text-white"
+              className="rounded-full border border-blue-400/30 bg-[#0c1f38]/80 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-blue-200 backdrop-blur-sm transition-all duration-200 hover:border-cyan-300/80 hover:bg-blue-900/60 hover:text-white hover:shadow-[0_0_14px_rgba(56,189,248,0.3)] sm:px-5 sm:py-2 sm:text-xs"
             >
               {section.label}
             </a>

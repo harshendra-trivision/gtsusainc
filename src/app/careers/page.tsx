@@ -26,8 +26,11 @@ export default function CareersPage() {
         eyebrow="Careers"
         title="Build the Future With Us"
         description="At GTS Engineering, you'll work alongside experienced engineers, industry leaders, and technology innovators on projects that shape the future of energy, infrastructure, manufacturing, and digital engineering."
+        backgroundImage="/image/carrers/career bg.jpg"
       >
-        <GradientButton href="/menu/careers/employment-opportunities">View Open Positions</GradientButton>
+        <div className="flex justify-center">
+          <GradientButton href="/menu/careers/employment-opportunities">View Open Positions</GradientButton>
+        </div>
       </PageHero>
 
       <section className="industrial-surface py-16 sm:py-24">
