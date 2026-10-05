@@ -1,55 +1,81 @@
 export interface CapabilityScope {
   title: string;
   scope: string[];
+  imageUrl?: string;
+  industry?: string;
 }
 
 export const dataCenterCapabilities: CapabilityScope[] = [
   {
     title: "Hyperscale Data Center Engineering",
-    scope: ["Multidisciplinary engineering", "Electrical power distribution", "Mechanical cooling systems", "Structural engineering", "BIM coordination", "Construction support"]
+    industry: "Hyperscale Cloud",
+    imageUrl: "/image/projects/Hyperscale Data Center Engineering .jpg",
+    scope: ["Multidisciplinary engineering", "Primary power distribution", "Mechanical cooling systems", "Site civil and grading", "Construction support"]
   },
   {
     title: "AI Compute Facility Infrastructure",
-    scope: ["High-density power systems", "Liquid cooling infrastructure", "Utility distribution", "Digital engineering", "Commissioning support"]
+    industry: "AI & High Density",
+    imageUrl: "/image/projects/AI Compute Facility Infrastructure.jpg",
+    scope: ["High density power systems", "Liquid cooling infrastructure", "Utility interconnection", "Digital engineering", "Commissioning support"]
   },
   {
     title: "Colocation Data Center Expansion",
-    scope: ["Capacity expansion engineering", "Electrical upgrades", "Mechanical system integration", "BIM modeling", "Phased construction support"]
+    industry: "Colocation",
+    imageUrl: "/image/projects/image7.jpg",
+    scope: ["Capacity expansion engineering", "Prioritization analysis", "Mechanical system integration", "BIM modeling", "Phased construction support"]
   },
   {
     title: "Edge Data Center Deployment",
-    scope: ["Modular facility engineering", "Packaged utility systems", "Site adaptation", "Power infrastructure", "Fast-track delivery support"]
+    industry: "Edge Computing",
+    imageUrl: "/image/projects/Edge Data Center Deployment.jpg",
+    scope: ["Modular facility engineering", "Packaged utility systems", "Site adaptation", "Power resilience base", "Fast track delivery support"]
   },
   {
     title: "Mission Critical Electrical Infrastructure",
-    scope: ["Medium-voltage distribution", "Switchgear systems", "UPS integration", "Generator systems", "Grounding and protection studies", "Arc flash analysis"]
+    industry: "Power & Substations",
+    imageUrl: "/image/projects/Mission Critical Electrical Infrastructure.jpg",
+    scope: ["Medium voltage distribution", "Switchgear systems", "UPS integration", "Generator systems", "Grounding and protection studies", "Arc flash analysis"]
   },
   {
     title: "Electrical E-House Engineering",
-    scope: ["Modular E-House design", "Structural engineering", "HVAC systems", "Electrical integration", "Fire protection", "FAT support"]
+    industry: "Modular E-House",
+    imageUrl: "/image/projects/Electrical E-House Engineering.jpg",
+    scope: ["Modular E-House design", "Structural engineering", "HVAC systems", "Electrical integration", "Factory testing", "Site support"]
   },
   {
     title: "Modular Substation Solutions",
+    industry: "Power Infrastructure",
+    imageUrl: "/image/projects/Modular Substation Solutions.jpg",
     scope: ["Prefabricated substations", "Power distribution", "Protection and control", "SCADA integration", "Site installation support"]
   },
   {
     title: "Mission Critical Control Centers",
-    scope: ["Control room engineering", "Operator workstations", "Building services", "Communication infrastructure", "Security integration"]
+    industry: "Control & Operations",
+    imageUrl: "/image/projects/Mission Critical Control Centers.jpg",
+    scope: ["Control room engineering", "Operator workstations", "Building systems", "Communication infrastructure", "Security integration"]
   },
   {
     title: "Critical Utility Infrastructure",
-    scope: ["Chilled water systems", "Process cooling", "Pump stations", "Utility corridors", "Energy optimization"]
+    industry: "Utility & Cooling",
+    imageUrl: "/image/projects/Critical Utility Infrastructure.jpg",
+    scope: ["Chilled water systems", "Power resiliency", "Pump stations", "Utility expansion", "Piping optimization"]
   },
   {
     title: "Digital Twin Implementation",
-    scope: ["BIM", "Digital Twins", "Asset information management", "Predictive maintenance", "Operational analytics"]
+    industry: "Digital Engineering",
+    imageUrl: "/image/projects/Digital Twin Implementation.jpg",
+    scope: ["BIM", "Digital twins", "Asset information management", "Predictive maintenance", "Operational analytics"]
   },
   {
     title: "Industrial Automation for Mission Critical Facilities",
+    industry: "Automation & SCADA",
+    imageUrl: "/image/projects/Industrial Automation for Mission Critical Facilities.jpg",
     scope: ["PLC", "SCADA", "Building Management Systems", "Monitoring", "Alarm Management", "Data Analytics"]
   },
   {
     title: "Facility Modernization & Capacity Expansion",
+    industry: "Brownfield Modernization",
+    imageUrl: "/image/projects/Facility Modernization & Capacity Expansion.jpg",
     scope: ["Brownfield engineering", "Facility upgrades", "Utility expansion", "Equipment replacement", "Operational continuity"]
   }
 ];

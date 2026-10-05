@@ -11,6 +11,7 @@ import {
   MessageSquare,
   Phone,
   Upload,
+  Users,
   type LucideIcon
 } from 'lucide-react';
 import { contactSections } from '@/constants/contactContent';
@@ -102,7 +103,64 @@ export default function ContactPage() {
         eyebrow="Contact GTS"
         title="Let's Build the Future Together"
         description="Whether you're planning a new project, seeking engineering expertise, exploring technology partnerships, or looking for career opportunities, our team is ready to help. Connect with GTS Engineering to discuss how we can support your business objectives with innovative, reliable, and high-quality engineering solutions."
-      />
+        backgroundImage="/image/contact/contact bg .jpg"
+      >
+        <div className="mx-auto mt-6 grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
+          <a
+            href="#request-consultation"
+            className="group flex flex-col items-center justify-center rounded-2xl border border-cyan-400/30 bg-[#0c1f38]/80 p-4 text-center backdrop-blur-md transition-all duration-300 hover:border-cyan-300 hover:bg-[#132d52]/90 hover:shadow-[0_0_18px_rgba(6,182,212,0.25)] hover:-translate-y-1"
+          >
+            <MessageSquare className="mb-2.5 h-6 w-6 text-cyan-400 transition-transform group-hover:scale-110" />
+            <span className="text-xs font-bold text-white tracking-wide sm:text-sm">Get in Touch</span>
+            <span className="mt-1 text-[11px] font-medium text-cyan-200/80">Send us a message</span>
+          </a>
+
+          <a
+            href="tel:+18322950545"
+            className="group flex flex-col items-center justify-center rounded-2xl border border-cyan-400/30 bg-[#0c1f38]/80 p-4 text-center backdrop-blur-md transition-all duration-300 hover:border-cyan-300 hover:bg-[#132d52]/90 hover:shadow-[0_0_18px_rgba(6,182,212,0.25)] hover:-translate-y-1"
+          >
+            <Phone className="mb-2.5 h-6 w-6 text-cyan-400 transition-transform group-hover:scale-110" />
+            <span className="text-xs font-bold text-white tracking-wide sm:text-sm">Call Us</span>
+            <span className="mt-1 text-[11px] font-medium text-cyan-200/80">+1 (832) 295-0545</span>
+          </a>
+
+          <a
+            href="mailto:info@gtsusainc.com"
+            className="group flex flex-col items-center justify-center rounded-2xl border border-cyan-400/30 bg-[#0c1f38]/80 p-4 text-center backdrop-blur-md transition-all duration-300 hover:border-cyan-300 hover:bg-[#132d52]/90 hover:shadow-[0_0_18px_rgba(6,182,212,0.25)] hover:-translate-y-1"
+          >
+            <Mail className="mb-2.5 h-6 w-6 text-cyan-400 transition-transform group-hover:scale-110" />
+            <span className="text-xs font-bold text-white tracking-wide sm:text-sm">Email Us</span>
+            <span className="mt-1 text-[11px] font-medium text-cyan-200/80 truncate max-w-full">info@gtsusainc.com</span>
+          </a>
+
+          <a
+            href="#locations"
+            className="group flex flex-col items-center justify-center rounded-2xl border border-cyan-400/30 bg-[#0c1f38]/80 p-4 text-center backdrop-blur-md transition-all duration-300 hover:border-cyan-300 hover:bg-[#132d52]/90 hover:shadow-[0_0_18px_rgba(6,182,212,0.25)] hover:-translate-y-1"
+          >
+            <MapPin className="mb-2.5 h-6 w-6 text-cyan-400 transition-transform group-hover:scale-110" />
+            <span className="text-xs font-bold text-white tracking-wide sm:text-sm">Our Locations</span>
+            <span className="mt-1 text-[11px] font-medium text-cyan-200/80">USA & Global Offices</span>
+          </a>
+
+          <a
+            href="#partner-with-us"
+            className="group flex flex-col items-center justify-center rounded-2xl border border-cyan-400/30 bg-[#0c1f38]/80 p-4 text-center backdrop-blur-md transition-all duration-300 hover:border-cyan-300 hover:bg-[#132d52]/90 hover:shadow-[0_0_18px_rgba(6,182,212,0.25)] hover:-translate-y-1"
+          >
+            <Handshake className="mb-2.5 h-6 w-6 text-cyan-400 transition-transform group-hover:scale-110" />
+            <span className="text-xs font-bold text-white tracking-wide sm:text-sm">Partner With Us</span>
+            <span className="mt-1 text-[11px] font-medium text-cyan-200/80">Strategic Collaborations</span>
+          </a>
+
+          <Link
+            href="/careers"
+            className="group flex flex-col items-center justify-center rounded-2xl border border-cyan-400/30 bg-[#0c1f38]/80 p-4 text-center backdrop-blur-md transition-all duration-300 hover:border-cyan-300 hover:bg-[#132d52]/90 hover:shadow-[0_0_18px_rgba(6,182,212,0.25)] hover:-translate-y-1"
+          >
+            <Users className="mb-2.5 h-6 w-6 text-cyan-400 transition-transform group-hover:scale-110" />
+            <span className="text-xs font-bold text-white tracking-wide sm:text-sm">Careers</span>
+            <span className="mt-1 text-[11px] font-medium text-cyan-200/80">Join Our Team</span>
+          </Link>
+        </div>
+      </PageHero>
 
       {/* Request Consultation / Request Proposal / Partner With Us / Join Our Team / General Inquiry */}
       <section className="industrial-surface py-16 sm:py-24">
