@@ -3054,12 +3054,11 @@ export default function HomePage() {
                   }}
                 />
 
-                {/* Top Gradient & Text on Top of Image Strip */}
-                <div className="absolute top-0 inset-x-0 bg-gradient-to-b from-black/85 via-black/45 to-transparent pt-3.5 pb-8 px-1 text-center pointer-events-none z-10">
-                  <p className="text-[9px] sm:text-[10px] lg:text-[11px] font-bold text-white uppercase tracking-wider leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] line-clamp-2">
+                {/* Top Text with subtle white background directly behind text */}
+                <div className="absolute top-2 sm:top-2.5 inset-x-1 flex flex-col items-center pointer-events-none z-10 text-center">
+                  <span className="inline-block rounded bg-white/80 px-1.5 py-0.5 text-[8px] sm:text-[9px] lg:text-[10px] font-extrabold text-slate-900 uppercase tracking-tight leading-tight line-clamp-2 shadow-xs">
                     {industry.topText}
-                  </p>
-                  <div className="w-3.5 sm:w-4 h-0.5 bg-white/80 mx-auto mt-1 rounded-full shadow-sm" />
+                  </span>
                 </div>
 
               </div>
@@ -3067,16 +3066,19 @@ export default function HomePage() {
           })}
         </div>
 
+        {/* Soft luminous ambient white glow strictly behind the central text to keep all images 100% clear and crisp */}
+        <div className="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 w-[750px] max-w-[90vw] h-[280px] bg-white/80 rounded-full blur-3xl pointer-events-none z-[1]" />
+
         {/* Foreground Content */}
         <AnimatedSection as="div" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center max-w-4xl mx-auto">
-            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0090e7]">
+            <span className="inline-block rounded-full bg-white/90 px-4 py-1 text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0070f3] shadow-xs">
               INDUSTRIES WE SERVE
             </span>
-            <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight leading-tight [text-shadow:_0_0_20px_rgba(255,255,255,1),_0_0_10px_rgba(255,255,255,1)]">
               Industrial sectors supported by GTS’s multidisciplinary expertise
             </h2>
-            <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed">
+            <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-slate-800 max-w-3xl mx-auto font-semibold leading-relaxed [text-shadow:_0_0_16px_rgba(255,255,255,1),_0_0_8px_rgba(255,255,255,1)]">
               GTS supports asset owners, OEMs, EPC teams, and technology programs across energy, infrastructure, manufacturing, transportation, and new industries.
             </p>
           </div>
