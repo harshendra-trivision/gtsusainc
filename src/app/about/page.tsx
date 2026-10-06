@@ -14,6 +14,7 @@ import {
   MapPin,
   Target,
   Users,
+  Workflow,
   type LucideIcon
 } from 'lucide-react';
 import { aboutSections, qualityContent } from '@/constants/aboutContent';
@@ -30,13 +31,14 @@ const categoryIcons: Record<string, LucideIcon> = {
   BadgeCheck,
   Handshake,
   MapPin,
-  Award
+  Award,
+  Workflow
 };
 
 export const metadata: Metadata = {
   title: 'About | GTS Engineering',
   description:
-    'GTS Engineering — who we are, our mission, vision, purpose and values, our story, global delivery model, quality management system, technology partners, and locations.',
+    'GTS Engineering — who we are, our mission, vision, purpose and values, our story, leadership, global delivery model, PLM & digital software engineering, quality management system, technology partners, and locations.',
   alternates: {
     canonical: 'https://gtsusainc.com/about'
   }
@@ -77,6 +79,8 @@ export default function AboutPage() {
                 'values',
                 'our-story',
                 'leadership',
+                'global-delivery-model',
+                'plm-digital-software-engineering',
                 'quality',
                 'technology-partners',
                 'locations',
@@ -98,7 +102,7 @@ export default function AboutPage() {
 
       <section className="industrial-surface py-16 sm:py-24">
         <div className="mx-auto max-w-7xl space-y-20 px-4 sm:px-6 lg:px-8">
-          {aboutSections.slice(0, 7).map((section, index) => {
+          {aboutSections.slice(0, 9).map((section, index) => {
             const Icon = categoryIcons[section.icon] ?? Users;
 
             return (
@@ -108,9 +112,9 @@ export default function AboutPage() {
                     <Icon className="h-6 w-6" />
                   </span>
                   <div>
-                    <span className="text-xs font-mono font-semibold uppercase tracking-[0.22em] text-accent">
+                    {/* <span className="text-xs font-mono font-semibold uppercase tracking-[0.22em] text-accent">
                       {String(index + 1).padStart(2, '0')}
-                    </span>
+                    </span> */}
                     <h2 className="mt-1 font-display text-2xl font-extrabold text-primary sm:text-3xl">{section.label}</h2>
                     {section.tagline && <p className="mt-1 text-sm font-semibold italic text-slate-500">{section.tagline}</p>}
                   </div>
@@ -122,6 +126,51 @@ export default function AboutPage() {
                       <p key={i} className="text-sm leading-relaxed text-slate-500">
                         {paragraph}
                       </p>
+                    ))}
+                  </div>
+                )}
+
+                {/* Leadership Groups (Advisors & Management Team) */}
+                {section.leadershipGroups && section.leadershipGroups.length > 0 && (
+                  <div className="mt-10 space-y-12">
+                    {section.leadershipGroups.map((group) => (
+                      <div key={group.title} className="space-y-6">
+                        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 border-b border-slate-200/80 pb-4">
+                          <div>
+                            <h3 className="font-display text-2xl font-bold text-primary sm:text-3xl">{group.title}</h3>
+                            <p className="mt-1 text-xs font-semibold text-slate-500">{group.subtitle}</p>
+                          </div>
+                          <p className="text-xs text-slate-500 max-w-md md:text-right font-medium">{group.description}</p>
+                        </div>
+
+                        <div className={`grid gap-4.5 ${
+                          group.members.length === 5
+                            ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'
+                            : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6'
+                        }`}>
+                          {group.members.map((member) => (
+                            <div
+                              key={member.name}
+                              className="flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#0070f3]/50 hover:shadow-md hover:-translate-y-1"
+                            >
+                              <div>
+                                <h4 className="font-display text-base font-bold text-primary leading-snug">{member.name}</h4>
+                                <div className="mt-1 text-xs font-semibold text-[#0070f3] leading-tight">
+                                  {member.role}
+                                </div>
+                                {member.location && (
+                                  <div className="text-[11px] font-medium text-slate-400 mt-0.5">
+                                    {member.location}
+                                  </div>
+                                )}
+                                <p className="mt-3.5 text-xs leading-relaxed text-slate-600">
+                                  {member.bio}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 )}
@@ -192,7 +241,7 @@ export default function AboutPage() {
                 <BadgeCheck className="h-6 w-6" />
               </span>
               <div>
-                <span className="text-xs font-mono font-semibold uppercase tracking-[0.22em] text-accent">08</span>
+                <span className="text-xs font-mono font-semibold uppercase tracking-[0.22em] text-accent">10</span>
                 <h2 className="mt-1 font-display text-2xl font-extrabold text-primary sm:text-3xl">{qualityContent.label}</h2>
                 <p className="mt-1 text-sm font-semibold italic text-slate-500">{qualityContent.tagline}</p>
               </div>
@@ -287,7 +336,7 @@ export default function AboutPage() {
             </div>
           </AnimatedSection>
 
-          {aboutSections.slice(7).map((section, index) => {
+          {aboutSections.slice(9).map((section, index) => {
             const Icon = categoryIcons[section.icon] ?? Users;
 
             return (
@@ -298,7 +347,7 @@ export default function AboutPage() {
                   </span>
                   <div>
                     <span className="text-xs font-mono font-semibold uppercase tracking-[0.22em] text-accent">
-                      {String(index + 9).padStart(2, '0')}
+                      {String(index + 11).padStart(2, '0')}
                     </span>
                     <h2 className="mt-1 font-display text-2xl font-extrabold text-primary sm:text-3xl">{section.label}</h2>
                     {section.tagline && <p className="mt-1 text-sm font-semibold italic text-slate-500">{section.tagline}</p>}

@@ -251,7 +251,12 @@ interface UploadedFileItem {
   size: string;
 }
 
-export default function ConsultationSection() {
+interface ConsultationSectionProps {
+  id?: string;
+  className?: string;
+}
+
+export default function ConsultationSection({ id = 'consultation', className }: ConsultationSectionProps = {}) {
   const [step, setStep] = useState<number>(1);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [inquiryId, setInquiryId] = useState<string>('');
@@ -385,7 +390,9 @@ export default function ConsultationSection() {
   };
 
   return (
-    <section id="consultation" className="relative overflow-hidden bg-[#030d1d] py-16 sm:py-20 lg:py-24 text-white">
+    <section id={id} className={`relative overflow-hidden bg-[#030d1d] py-16 sm:py-20 lg:py-24 text-white scroll-mt-20 ${className || ''}`}>
+      <span id="request-consultation" className="absolute -top-24 pointer-events-none" />
+      <span id="contact-form" className="absolute -top-24 pointer-events-none" />
       {/* Background Hero Industrial & Network Collage from public/image/consulatation/image4.jpg */}
       <div className="pointer-events-none absolute inset-0 select-none overflow-hidden">
         <Image

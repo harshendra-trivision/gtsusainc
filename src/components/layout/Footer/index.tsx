@@ -316,154 +316,24 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Connected World Map Graphic matching the reference mockup */}
-              <div className="relative mt-4 w-full overflow-hidden rounded-xl border border-blue-900/30 bg-[#010c1e]/60 p-2 backdrop-blur-xs">
-                <svg
-                  viewBox="0 0 480 200"
-                  className="w-full h-auto select-none"
-                  fill="none"
-                >
-                  <defs>
-                    <pattern
-                      id="worldDotsPattern"
-                      x="0"
-                      y="0"
-                      width="7"
-                      height="7"
-                      patternUnits="userSpaceOnUse"
-                    >
-                      <circle cx="2" cy="2" r="0.9" fill="#0070f3" fillOpacity="0.45" />
-                    </pattern>
-                    <linearGradient id="mapArcGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.85" />
-                      <stop offset="50%" stopColor="#38bdf8" stopOpacity="1" />
-                      <stop offset="100%" stopColor="#0070f3" stopOpacity="0.85" />
-                    </linearGradient>
-                  </defs>
-
-                  {/* Continent Silhouettes with Dotted Pattern Fill */}
-                  {/* North America */}
-                  <path
-                    d="M 50 35 C 75 25, 120 28, 140 45 C 150 55, 155 75, 140 90 C 125 105, 105 115, 110 125 C 100 120, 85 105, 75 90 C 65 80, 55 60, 50 35 Z"
-                    fill="url(#worldDotsPattern)"
-                    stroke="#0070f3"
-                    strokeWidth="0.8"
-                    strokeOpacity="0.35"
+              {/* Connected World Map Graphic */}
+              <div className="relative mt-4 w-full overflow-hidden rounded-xl border border-blue-900/40 bg-[#010c1e]/80 p-2 backdrop-blur-xs">
+                <div className="relative aspect-[2.4/1] w-full overflow-hidden rounded-lg">
+                  <Image
+                    src="/image/footer-map-image.jpg"
+                    alt="GTS Global Delivery Hubs & Presence Map"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover"
                   />
-                  {/* South America */}
-                  <path
-                    d="M 115 130 C 135 132, 155 145, 150 165 C 145 185, 130 195, 120 185 C 110 170, 108 145, 115 130 Z"
-                    fill="url(#worldDotsPattern)"
-                    stroke="#0070f3"
-                    strokeWidth="0.8"
-                    strokeOpacity="0.3"
-                  />
-                  {/* Europe & North Asia */}
-                  <path
-                    d="M 215 35 C 245 28, 295 30, 340 45 C 370 55, 410 70, 395 90 C 375 100, 345 95, 320 85 C 295 75, 275 80, 260 70 C 245 60, 235 45, 215 35 Z"
-                    fill="url(#worldDotsPattern)"
-                    stroke="#0070f3"
-                    strokeWidth="0.8"
-                    strokeOpacity="0.35"
-                  />
-                  {/* Africa */}
-                  <path
-                    d="M 220 85 C 245 90, 265 105, 270 125 C 275 145, 260 165, 245 180 C 235 170, 225 145, 220 125 C 215 105, 218 92, 220 85 Z"
-                    fill="url(#worldDotsPattern)"
-                    stroke="#0070f3"
-                    strokeWidth="0.8"
-                    strokeOpacity="0.3"
-                  />
-                  {/* India Subcontinent */}
-                  <path
-                    d="M 320 85 C 335 85, 350 95, 355 110 C 350 125, 335 138, 330 130 C 322 120, 318 100, 320 85 Z"
-                    fill="url(#worldDotsPattern)"
-                    stroke="#38bdf8"
-                    strokeWidth="1.2"
-                    strokeOpacity="0.6"
-                  />
-                  {/* East Asia & Southeast Asia */}
-                  <path
-                    d="M 355 75 C 385 70, 420 80, 430 95 C 435 110, 415 125, 395 130 C 380 125, 365 115, 355 75 Z"
-                    fill="url(#worldDotsPattern)"
-                    stroke="#0070f3"
-                    strokeWidth="0.8"
-                    strokeOpacity="0.35"
-                  />
-                  {/* Australia */}
-                  <path
-                    d="M 390 140 C 420 138, 440 150, 435 170 C 425 185, 400 185, 390 170 C 382 155, 385 145, 390 140 Z"
-                    fill="url(#worldDotsPattern)"
-                    stroke="#0070f3"
-                    strokeWidth="0.8"
-                    strokeOpacity="0.3"
-                  />
-
-                  {/* Connecting Arcs (Glowing Flight/Data Paths) */}
-                  {/* Houston to India (Great Circle Sweeping Arc) */}
-                  <path
-                    d="M 105 85 Q 220 10 340 110"
-                    stroke="url(#mapArcGradient)"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeDasharray="4 2"
-                  />
-                  {/* Houston to London / Europe */}
-                  <path
-                    d="M 105 85 Q 165 35 235 55"
-                    stroke="url(#mapArcGradient)"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                  />
-                  {/* Europe to India */}
-                  <path
-                    d="M 235 55 Q 285 50 340 110"
-                    stroke="url(#mapArcGradient)"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                  />
-                  {/* India to Singapore / East Asia */}
-                  <path
-                    d="M 340 110 Q 375 90 405 100"
-                    stroke="url(#mapArcGradient)"
-                    strokeWidth="1.2"
-                    strokeDasharray="3 2"
-                  />
-
-                  {/* Hub 1: Houston USA (HQ) */}
-                  <g transform="translate(105, 85)">
-                    <circle r="7" stroke="#38bdf8" strokeWidth="1" opacity="0.6" />
-                    <circle r="3.5" fill="#0070f3" />
-                    <circle r="1.5" fill="#ffffff" />
-                  </g>
-
-                  {/* Hub 2: Europe / London */}
-                  <g transform="translate(235, 55)">
-                    <circle r="6" stroke="#38bdf8" strokeWidth="1" opacity="0.5" />
-                    <circle r="3" fill="#38bdf8" />
-                    <circle r="1.2" fill="#ffffff" />
-                  </g>
-
-                  {/* Hub 3: India (Delivery Centers) */}
-                  <g transform="translate(340, 110)">
-                    <circle r="8" stroke="#38bdf8" strokeWidth="1.2" opacity="0.7" />
-                    <circle r="4" fill="#0070f3" />
-                    <circle r="1.8" fill="#ffffff" />
-                  </g>
-
-                  {/* Hub 4: East Asia */}
-                  <g transform="translate(405, 100)">
-                    <circle r="5" stroke="#38bdf8" strokeWidth="1" opacity="0.5" />
-                    <circle r="2.5" fill="#38bdf8" />
-                  </g>
-                </svg>
+                </div>
 
                 {/* Subtitle under map */}
-                <div className="mt-2 text-center">
-                  <div className="text-[10px] font-mono font-bold uppercase tracking-[0.24em] text-slate-400">
+                <div className="mt-2.5 text-center">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-[0.24em] text-slate-300">
                     ENGINEERING FOR A CONNECTED WORLD
                   </div>
-                  <div className="mx-auto mt-1 h-0.5 w-6 rounded-full bg-[#0070f3]" />
+                  <div className="mx-auto mt-1 h-0.5 w-8 rounded-full bg-[#0070f3]" />
                 </div>
               </div>
             </div>

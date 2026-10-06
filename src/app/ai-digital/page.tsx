@@ -30,7 +30,8 @@ export default function AiDigitalPage() {
     <div className="flex w-full flex-col">
       <PageHero
         eyebrow="AI & Digital"
-        title="Transforming Engineering Through Intelligence"
+        title="
+        "
         description="GTS combines engineering expertise with artificial intelligence, digital technologies, and industrial innovation to help organizations design smarter, build faster, operate more efficiently, and maximize asset performance. Our AI & Digital solutions are focused on delivering measurable business outcomes — from improved productivity and reduced project risk to enhanced operational reliability and long-term value creation."
         backgroundImage="/image/ai and digital/ai-digital-bg.jpg"
       >

@@ -10,13 +10,12 @@ import {
   MapPin,
   MessageSquare,
   Phone,
-  Upload,
   Users,
   type LucideIcon
 } from 'lucide-react';
 import { contactSections } from '@/constants/contactContent';
-import { industriesMegaMenu } from '@/constants/industriesMenu';
-import { AnimatedSection, GradientButton, MagneticCard, PageHero, SectionHeading } from '@/components/ui';
+import { AnimatedSection, MagneticCard, PageHero, SectionHeading } from '@/components/ui';
+import ConsultationSection from '@/components/home/ConsultationSection';
 
 const categoryIcons: Record<string, LucideIcon> = {
   MessageSquare,
@@ -25,22 +24,6 @@ const categoryIcons: Record<string, LucideIcon> = {
   Briefcase,
   HelpCircle
 };
-
-const serviceOptions = [
-  'Engineering Consulting',
-  'Front-End Engineering & Design (FEED)',
-  'EPCM Support',
-  'Construction Engineering',
-  'Digital Engineering',
-  'Process Safety Studies',
-  'AI & Automation Solutions',
-  'Technology Representation',
-  'Other'
-];
-
-const timelineOptions = ['Immediate (0–3 months)', 'Short-term (3–6 months)', 'Medium-term (6–12 months)', 'Long-term (12+ months)', 'Planning stage'];
-
-const budgetOptions = ['Under $100K', '$100K – $500K', '$500K – $1M', '$1M – $5M', '$5M+', 'Prefer not to say'];
 
 const primaryLocations = [
   {
@@ -256,146 +239,8 @@ export default function ContactPage() {
         </AnimatedSection>
       </section>
 
-      {/* Contact Form */}
-      <section className="industrial-surface py-16 sm:py-24">
-        <AnimatedSection as="div" className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-semibold text-slate-500">
-            Serving clients across North America and supporting global projects through our international engineering network.
-          </p>
-
-          <MagneticCard id="contact-form" className="mt-8 scroll-mt-32 rounded-[2rem] p-6 sm:p-10">
-            <h2 className="text-2xl font-extrabold text-primary">Tell Us About Your Project</h2>
-            <p className="mt-2 text-sm leading-7 text-slate-500">
-              Share your project details and GTS will route your inquiry to the most relevant engineering team.
-            </p>
-
-            <form className="mt-8 grid gap-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="space-y-2 text-sm font-semibold text-slate-800">
-                  <span>Name</span>
-                  <input className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" placeholder="Your full name" />
-                </label>
-                <label className="space-y-2 text-sm font-semibold text-slate-800">
-                  <span>Company</span>
-                  <input className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" placeholder="Company name" />
-                </label>
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="space-y-2 text-sm font-semibold text-slate-800">
-                  <span>Job Title</span>
-                  <input className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" placeholder="Your role" />
-                </label>
-                <label className="space-y-2 text-sm font-semibold text-slate-800">
-                  <span>Country</span>
-                  <input className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" placeholder="Country" />
-                </label>
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="space-y-2 text-sm font-semibold text-slate-800">
-                  <span>Email</span>
-                  <input type="email" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" placeholder="name@company.com" />
-                </label>
-                <label className="space-y-2 text-sm font-semibold text-slate-800">
-                  <span>Phone</span>
-                  <input className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" placeholder="Phone number" />
-                </label>
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="space-y-2 text-sm font-semibold text-slate-800">
-                  <span>Service of Interest</span>
-                  <select className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" defaultValue="">
-                    <option value="" disabled>
-                      Select a service
-                    </option>
-                    {serviceOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label className="space-y-2 text-sm font-semibold text-slate-800">
-                  <span>Industry</span>
-                  <select className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" defaultValue="">
-                    <option value="" disabled>
-                      Select an industry
-                    </option>
-                    {industriesMegaMenu.map((industry) => (
-                      <option key={industry.slug} value={industry.label}>
-                        {industry.label}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-              </div>
-
-              <label className="space-y-2 text-sm font-semibold text-slate-800">
-                <span>Project Description</span>
-                <textarea
-                  className="min-h-[140px] w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white"
-                  placeholder="Tell us about your project, scope, and objectives."
-                />
-              </label>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="space-y-2 text-sm font-semibold text-slate-800">
-                  <span>Estimated Project Timeline</span>
-                  <select className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" defaultValue="">
-                    <option value="" disabled>
-                      Select a timeline
-                    </option>
-                    {timelineOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label className="space-y-2 text-sm font-semibold text-slate-800">
-                  <span>Estimated Budget (Optional)</span>
-                  <select className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-accent focus:bg-white" defaultValue="">
-                    <option value="" disabled>
-                      Select a range
-                    </option>
-                    {budgetOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-              </div>
-
-              <label className="space-y-2 text-sm font-semibold text-slate-800">
-                <span>Preferred Contact Method</span>
-                <div className="flex flex-wrap gap-4 pt-1 text-sm font-medium text-slate-600">
-                  {['Email', 'Phone', 'Either'].map((method) => (
-                    <label key={method} className="flex items-center gap-2">
-                      <input type="radio" name="preferredContact" value={method} className="h-4 w-4 accent-accent" />
-                      {method}
-                    </label>
-                  ))}
-                </div>
-              </label>
-
-              <label className="space-y-2 text-sm font-semibold text-slate-800">
-                <span>File Upload (RFP, drawings, specifications)</span>
-                <div className="flex items-center gap-3 rounded-xl border border-dashed border-slate-300 bg-slate-50 px-4 py-4 text-sm text-slate-500">
-                  <Upload className="h-4 w-4 shrink-0 text-accent" />
-                  <input type="file" className="w-full text-xs text-slate-500 file:mr-3 file:rounded-lg file:border-0 file:bg-accent/10 file:px-3 file:py-2 file:text-xs file:font-semibold file:text-accent" />
-                </div>
-              </label>
-
-              <GradientButton type="submit" className="w-full">
-                Send Inquiry
-              </GradientButton>
-            </form>
-          </MagneticCard>
-        </AnimatedSection>
-      </section>
+      {/* Interactive Comprehensive Consultation / Contact Form */}
+      <ConsultationSection id="request-consultation" />
 
       {/* Quick Contact Information + Social */}
       <section className="border-t border-slate-100 bg-white py-16 sm:py-20">

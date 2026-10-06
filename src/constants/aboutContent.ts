@@ -15,6 +15,20 @@ export interface AboutMilestone {
   title: string;
 }
 
+export interface LeadershipMember {
+  name: string;
+  role: string;
+  location?: string;
+  bio: string;
+}
+
+export interface LeadershipGroup {
+  title: string;
+  subtitle: string;
+  description: string;
+  members: LeadershipMember[];
+}
+
 export interface AboutSection {
   slug: string;
   label: string;
@@ -25,6 +39,7 @@ export interface AboutSection {
   values?: AboutValue[];
   milestones?: AboutMilestone[];
   flow?: string[];
+  leadershipGroups?: LeadershipGroup[];
   cta?: { label: string; href: string };
 }
 
@@ -107,13 +122,140 @@ export const aboutSections: AboutSection[] = [
   {
     slug: 'leadership',
     label: 'Leadership',
+    icon: 'Users',
+    tagline: 'Experienced Leadership & Strategic Governance',
+    intro: [
+      'Our leadership team and advisory board bring decades of global industry leadership, executive experience, and multidisciplinary engineering capabilities to steer GTS forward with purpose, excellence, and innovation.'
+    ],
+    leadershipGroups: [
+      {
+        title: 'Advisors',
+        subtitle: 'Industry veterans. Strategic guidance. Long-term value.',
+        description: 'Experienced leaders who guide our vision and strengthen our commitment to excellence.',
+        members: [
+          {
+            name: 'Robert Kostelnik',
+            role: 'Senior Advisor',
+            bio: 'Former President & CEO of Cinatra Clean Technologies, Inc. Ex-CITGO Vice President and former Shell executive. Brings decades of leadership in refining, energy, and industrial operations.'
+          },
+          {
+            name: 'Jason Kisch',
+            role: 'Director Strategic Planning',
+            location: '(Houston, Texas)',
+            bio: '40+ years of experience in process design, systems engineering, plant operations, performance testing, and optimization across LNG, offshore, pipelines, and refinery projects.'
+          },
+          {
+            name: 'Galen M. D., P.E.',
+            role: 'Director Engineering Operations',
+            location: '(Houston, Texas)',
+            bio: 'International project management and engineering leader with extensive EPC experience across oil & gas, midstream, pipelines, power, and infrastructure projects worldwide.'
+          },
+          {
+            name: 'Steve Kimmel',
+            role: 'Director Process',
+            location: '(Houston, Texas)',
+            bio: '45 years of experience in process engineering, facilities design, construction, and plant support across petrochemical, gas processing, compressor and pump stations, and pipelines.'
+          },
+          {
+            name: 'Craig LaForce',
+            role: 'Executive Vice President Technology & Business Development',
+            location: '(Houston, Texas)',
+            bio: 'Industry expert with 40+ years in industrial gases, LNG, refining, and cryogenics. Experienced in technology development, business growth, and holds multiple patents in carbon capture and gas processing.'
+          }
+        ]
+      },
+      {
+        title: 'Management Team',
+        subtitle: 'Driving strategy. Enabling growth. Leading with purpose.',
+        description: 'A dynamic leadership team committed to operational excellence and global delivery.',
+        members: [
+          {
+            name: 'Ramesh Chandra',
+            role: 'Group Chairman',
+            bio: 'Visionary leader with a strong focus on global growth, strategic partnerships, and engineering excellence.'
+          },
+          {
+            name: 'Gaurav Kumar',
+            role: 'President & CEO',
+            location: '(North America)',
+            bio: 'Leads GTS USA with a focus on client success, operational excellence, and expanding engineering solutions across the Americas.'
+          },
+          {
+            name: 'Utkarsh Agarwal',
+            role: 'Director Operations',
+            location: '(US & India)',
+            bio: 'Drives global delivery operations and ensures seamless execution across engineering and digital solutions.'
+          },
+          {
+            name: 'Aakash Kumar',
+            role: 'Vice President',
+            location: '(Southeast Asia)',
+            bio: 'Leads regional strategy, client engagement, and business development across Southeast Asia.'
+          },
+          {
+            name: 'Rahul Sharda',
+            role: 'Manager HR & Administration',
+            location: '(Asia Pacific)',
+            bio: 'Drives people strategy, workplace excellence, and administrative operations across the Asia Pacific region.'
+          },
+          {
+            name: 'Arshia Agarwal',
+            role: 'Sr. Executive Finance & Accounts',
+            location: '(Asia Pacific)',
+            bio: 'Leads financial planning, accounting operations, and compliance to support global growth and operational excellence.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'global-delivery-model',
+    label: 'Global Delivery Model',
     icon: 'Globe',
-    tagline: 'Global Delivery Model — Engineering Without Boundaries',
+    tagline: 'Engineering Without Boundaries',
     intro: [
       'GTS combines local client engagement with global engineering resources to deliver high-quality engineering solutions across multiple regions and time zones.',
       'Our collaborative delivery model enables us to provide scalable engineering support while maintaining technical consistency, quality, and responsiveness throughout every project.'
     ],
-    flow: ['Client', 'Consulting', 'Engineering', 'Digital Engineering', 'Procurement Support', 'Construction Support', 'Commissioning', 'Operations', 'Optimization']
+    flow: ['Client', 'Consulting', 'Engineering', 'Digital Engineering', 'Procurement Support', 'Construction Support', 'Commissioning', 'Operations', 'Optimization'],
+    groups: [
+      {
+        heading: 'Key Delivery Advantages',
+        items: [
+          'Local Leadership & Project Management',
+          'Global Multidisciplinary Engineering Centers',
+          '24/7 Follow-the-Sun Project Execution',
+          'Standardized QA/QC Workflows',
+          'Scalable Resource Ramp-Up',
+          'Cost-Optimized Engineering Support'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'plm-digital-software-engineering',
+    label: 'PLM & Digital Software Engineering',
+    icon: 'Workflow',
+    tagline: 'Accelerating Digital Transformation Across the Product Lifecycle',
+    intro: [
+      'For product-based organizations, engineering companies, and manufacturers, PLM is central to managing complex engineering data and accelerating product development.',
+      'GTS provides an integrated array of services in the field of Product Lifecycle Management (PLM) and software engineering. Our PLM consultants assist in strategizing alignment with business objectives, executing enterprise migrations, and delivering design automation solutions that maximize ROI on digital engineering platforms.'
+    ],
+    groups: [
+      {
+        heading: 'Core Competencies',
+        items: [
+          'PLM Consulting & Strategy',
+          'Enterprise PLM Implementation (Windchill, Teamcenter, Enovia)',
+          'Heterogeneous CAD & PDM Data Migration',
+          'Design Automation & Custom API Development',
+          'Manufacturing Information Solutions (MIS)',
+          'ERP, MES & CAD Integration',
+          '24/7 Managed Services & Application Support',
+          'Bill of Materials (EBOM / MBOM) Synchronization'
+        ]
+      }
+    ]
   },
   {
     slug: 'technology-partners',
