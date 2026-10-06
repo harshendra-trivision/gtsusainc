@@ -100,6 +100,7 @@ export const engineeringCapabilities: EngineeringCapability[] = [
     rightVisualTitle: 'ENGINEERING FOCUS',
     rightVisualSubtitle: 'IDEAS TO IMPACT',
     rightVisualImage: '/image/our enginerring soluutions/Product Engineering.jpg',
+
     sidebarTheme: 'light',
     sidebarDescription: 'Collaborate with our engineering experts to turn your product vision into a safe, efficient, and manufacturable reality.',
     sidebarButton1Text: 'Request Engineering Support',
