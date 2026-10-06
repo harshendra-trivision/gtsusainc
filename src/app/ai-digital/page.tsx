@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
-import { BarChart3, BookOpen, Bot, Brain, Cog, Eye, FileSearch, Layers, Rocket, Wand2, type LucideIcon } from 'lucide-react';
+import { BarChart3, BookOpen, Bot, Brain, Cog, Eye, FileSearch, Layers, Rocket, Wand2, Workflow, type LucideIcon } from 'lucide-react';
 import { aiDigitalContent } from '@/constants/aiDigitalContent';
 import { AnimatedSection, GradientButton, MagneticCard, PageHero } from '@/components/ui';
+import PlmSoftwareEngineeringSection from '@/components/ai-digital/PlmSoftwareEngineeringSection';
 
 const categoryIcons: Record<string, LucideIcon> = {
   Brain,
@@ -13,13 +14,14 @@ const categoryIcons: Record<string, LucideIcon> = {
   BarChart3,
   Eye,
   Wand2,
-  Rocket
+  Rocket,
+  Workflow
 };
 
 export const metadata: Metadata = {
   title: 'AI & Digital | GTS Engineering',
   description:
-    'GTS AI & Digital solutions — AI engineering, engineering automation, copilots, document intelligence, knowledge management, digital twins, industrial analytics, computer vision, generative AI, and digital transformation.',
+    'GTS AI & Digital solutions — AI engineering, engineering automation, copilots, document intelligence, knowledge management, digital twins, PLM & software engineering, industrial analytics, computer vision, generative AI, and digital transformation.',
   alternates: {
     canonical: 'https://gtsusainc.com/ai-digital'
   }
@@ -30,8 +32,7 @@ export default function AiDigitalPage() {
     <div className="flex w-full flex-col">
       <PageHero
         eyebrow="AI & Digital"
-        title="
-        "
+        title="Engineering the Future with AI, Automation, and Digital Transformation"
         description="GTS combines engineering expertise with artificial intelligence, digital technologies, and industrial innovation to help organizations design smarter, build faster, operate more efficiently, and maximize asset performance. Our AI & Digital solutions are focused on delivering measurable business outcomes — from improved productivity and reduced project risk to enhanced operational reliability and long-term value creation."
         backgroundImage="/image/ai and digital/ai-digital-bg.jpg"
       >
@@ -51,6 +52,10 @@ export default function AiDigitalPage() {
       <section className="industrial-surface py-16 sm:py-24">
         <div className="mx-auto max-w-7xl space-y-20 px-4 sm:px-6 lg:px-8">
           {aiDigitalContent.map((category, index) => {
+            if (category.slug === 'plm-software-engineering') {
+              return <PlmSoftwareEngineeringSection key={category.slug} index={index + 1} />;
+            }
+
             const Icon = categoryIcons[category.icon] ?? Brain;
 
             return (

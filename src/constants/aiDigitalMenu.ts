@@ -9,6 +9,7 @@ export const aiDigitalMegaMenu: MegaMenuCategory[] = [
   { slug: 'document-intelligence', label: 'Document Intelligence', icon: 'FileSearch', tagline: 'AI-driven document classification, extraction, and review.', groups: [] },
   { slug: 'knowledge-management', label: 'Knowledge Management', icon: 'BookOpen', tagline: 'Capturing and delivering engineering knowledge at scale.', groups: [] },
   { slug: 'digital-twins', label: 'Digital Twins', icon: 'Layers', tagline: 'Intelligent digital representations of physical assets.', groups: [] },
+  { slug: 'plm-software-engineering', label: 'PLM & Software Engineering', icon: 'Workflow', tagline: 'Connecting engineering, manufacturing, and enterprise operations.', groups: [] },
   { slug: 'industrial-analytics', label: 'Industrial Analytics', icon: 'BarChart3', tagline: 'Turning engineering and operational data into insight.', groups: [] },
   { slug: 'computer-vision', label: 'Computer Vision', icon: 'Eye', tagline: 'AI-powered image and video analysis for safety and quality.', groups: [] },
   { slug: 'generative-ai', label: 'Generative AI', icon: 'Wand2', tagline: 'Accelerating documentation, reporting, and proposals.', groups: [] },

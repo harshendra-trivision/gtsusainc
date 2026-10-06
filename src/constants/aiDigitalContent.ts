@@ -92,6 +92,38 @@ export const aiDigitalContent: MegaMenuCategory[] = [
     ]
   },
   {
+    slug: 'plm-software-engineering',
+    label: 'PLM & Software Engineering',
+    icon: 'Workflow',
+    tagline: 'Digital Engineering Platforms That Connect Engineering, Manufacturing, and Enterprise Operations',
+    description:
+      'GTS Engineering delivers end-to-end lifecycle management (PLM), engineering software development, CAD automation, and enterprise integration and digital engineering solutions that enable organizations to accelerate innovation, improve collaboration, and maximize lifecycle performance.',
+    groups: [
+      {
+        heading: 'PLM Capabilities',
+        items: [
+          'PLM Strategy & Consulting',
+          'PLM Implementation & Upgrades',
+          'Enterprise Application Integration (PLM + ERP + MES)',
+          'Legacy Data & CAD/BOM Migration',
+          '24/7 Application Management & Support',
+          'Manufacturing Innovation Solutions (MBE Adoption)'
+        ]
+      },
+      {
+        heading: 'Software Engineering',
+        items: [
+          'System Integration (APIs & Middleware)',
+          'Engineering Knowledge Management Repositories',
+          'Design & Engineering Automation',
+          'CAD Customization (SolidWorks, NX, CATIA, Creo)',
+          'Application Support & Performance Tuning',
+          'Custom Plugin & Add-in Development'
+        ]
+      }
+    ]
+  },
+  {
     slug: 'industrial-analytics',
     label: 'Industrial Analytics',
     icon: 'BarChart3',
