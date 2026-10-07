@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -39,11 +39,27 @@ import {
   Wand2,
   Workflow,
   Wrench,
+  X,
   type LucideIcon
 } from 'lucide-react';
 import { AnimatedSection, GradientButton, MagneticCard } from '@/components/ui';
 
+export interface PlmDetailPopupData {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  heroBgImage: string;
+  featurePills: { title: string; icon: LucideIcon }[];
+  deliverables: string[];
+  industries?: string[];
+  supportedLabel?: string;
+  companiesImage?: string;
+  relatedServices: { title: string; icon: LucideIcon }[];
+}
+
 interface PlmCardItem {
+  id: string;
   title: string;
   image: string;
   icon: LucideIcon;
@@ -51,6 +67,7 @@ interface PlmCardItem {
 }
 
 interface SoftwareCardItem {
+  id: string;
   title: string;
   icon: LucideIcon;
   bullets: string[];
@@ -58,70 +75,419 @@ interface SoftwareCardItem {
 
 const plmCapabilities: PlmCardItem[] = [
   {
+    id: 'plm-strategy-consulting',
     title: 'PLM Strategy & Consulting',
     image: '/image/PLM & software engineer/PLM strategy.jpg',
     icon: Users,
     bullets: ['Digital Strategy', 'Process Redesign', 'Governance & Roadmap']
   },
   {
+    id: 'plm-implementation',
     title: 'PLM Implementation',
     image: '/image/PLM & software engineer/PLM implementation.jpg',
     icon: Cog,
     bullets: ['Platform Configuration', 'Migration & Upgrade', 'Workflow Automation']
   },
   {
+    id: 'enterprise-integration',
     title: 'Enterprise Application Integration',
     image: '/image/PLM & software engineer/interprice implementation.jpg',
     icon: Cloud,
     bullets: ['PLM + ERP + MES', 'Data & Middleware', 'APIs & Connectors']
   },
   {
+    id: 'data-migration',
     title: 'Data Migration',
     image: '/image/PLM & software engineer/data migration.jpg',
     icon: FileText,
     bullets: ['Legacy System Migration', 'CAD & BOM Migration', 'Data Validation']
   },
   {
+    id: 'application-management',
     title: 'Application Management',
     image: '/image/PLM & software engineer/application managment.jpg',
     icon: Headphones,
     bullets: ['24/7 Support', 'Performance Optimization', 'Feature Enhancements']
   },
   {
-    title: 'Manufacturing Innovation Solutions',
+    id: 'manufacturing-innovation',
+    title: 'Manufacturing Information Solutions',
     image: '/image/PLM & software engineer/manufacturing innovation solution.jpg',
     icon: Factory,
-    bullets: ['MBE Adoption', 'Manufacturing Analytics', 'Digital Work Instructions']
+    bullets: ['MES Integration', 'Digital Work Instructions', 'Production Data Management']
   }
 ];
 
 const softwareCapabilities: SoftwareCardItem[] = [
   {
+    id: 'system-integration',
     title: 'System Integration',
     icon: Network,
-    bullets: ['APIs & Middleware', 'Cloud Connectivity', 'Database Integration']
+    bullets: ['API Development', 'Data Integration', 'Database Integration']
   },
   {
+    id: 'knowledge-management',
     title: 'Knowledge Management',
     icon: BookOpen,
-    bullets: ['Design Libraries', 'Knowledge Repository', 'Digital Work Instructions']
+    bullets: ['Knowledge Repository', 'Document Management', 'AI-Driven Insights']
   },
   {
+    id: 'design-automation',
     title: 'Design & Engineering Automation',
     icon: Cpu,
-    bullets: ['CAD Automation', 'BOM Generation', 'Engineering Calculations']
+    bullets: ['CAD Automation', 'EDA Automation', 'Workflow Design']
   },
   {
+    id: 'cad-customization',
     title: 'CAD Customization',
     icon: Box,
-    bullets: ['SolidWorks, NX, CATIA', 'Creo, Inventor, AutoCAD', 'Custom Plugins']
+    bullets: ['Custom Plugin Development', 'Automation Scripts', 'Template Creation']
   },
   {
+    id: 'application-support',
     title: 'Application Support',
     icon: Wrench,
     bullets: ['Performance Tuning', 'Bug Resolution', 'Upgrades & Enhancements']
   }
 ];
+
+const plmPopupDetailsMap: Record<string, PlmDetailPopupData> = {
+  'plm-strategy-consulting': {
+    id: 'plm-strategy-consulting',
+    title: 'PLM Strategy & Consulting',
+    subtitle: 'Transform engineering data into a strategic business asset.',
+    description:
+      'We help organizations define and execute PLM strategies to improve product development, operational efficiency, and accelerate digital transformation.',
+    heroBgImage: '/image/PLM & software engineer/PLM learn more/PLM-strategy-bg.jpg',
+    featurePills: [
+      { title: 'PLM Strategy & Roadmap', icon: Lightbulb },
+      { title: 'Process Assessment', icon: FileCheck },
+      { title: 'Digital Engineering Consulting', icon: Cpu },
+      { title: 'Governance & Standards', icon: ShieldCheck }
+    ],
+    deliverables: [
+      'PLM Roadmap & Assessment',
+      'Current State Analysis',
+      'Process Alignment',
+      'Integration Strategy',
+      'ROI Analysis'
+    ],
+    industries: [
+      'Aerospace & Defense',
+      'Manufacturing',
+      'Industrial Equipment',
+      'Medical Devices',
+      'Energy & Utilities'
+    ],
+    supportedLabel: 'Supported Platforms',
+    companiesImage: '/image/PLM & software engineer/PLM learn more/PLM_startegy-company.png',
+    relatedServices: [
+      { title: 'PLM Implementation', icon: BookOpen },
+      { title: 'Enterprise Integration', icon: Network },
+      { title: 'Change Management', icon: Users }
+    ]
+  },
+  'plm-implementation': {
+    id: 'plm-implementation',
+    title: 'PLM Implementation',
+    subtitle: 'Deploy enterprise PLM platforms that deliver real business value.',
+    description:
+      'We implement and configure PLM platforms with a focus on user adoption, process integration, and measurable outcomes.',
+    heroBgImage: '/image/PLM & software engineer/PLM learn more/PLM-implementation.jpg',
+    featurePills: [
+      { title: 'System Installation & Configuration', icon: Cog },
+      { title: 'Workflow Automation', icon: Workflow },
+      { title: 'BOM Management', icon: Layers },
+      { title: 'Change Management', icon: Users }
+    ],
+    deliverables: [
+      'Configured PLM Environment',
+      'Engineering Workflows',
+      'BOM Structures'
+    ],
+    industries: [
+      'Aerospace & Defense',
+      'Industrial Equipment',
+      'Automotive',
+      'Life Sciences'
+    ],
+    supportedLabel: 'Supported Platforms',
+    companiesImage: '/image/PLM & software engineer/PLM learn more/PLM-implementation-company.png',
+    relatedServices: [
+      { title: 'PLM Strategy', icon: BookOpen },
+      { title: 'Data Migration', icon: Database },
+      { title: 'Training & Enablement', icon: Users }
+    ]
+  },
+  'enterprise-integration': {
+    id: 'enterprise-integration',
+    title: 'Enterprise Application Integration',
+    subtitle: 'Seamlessly connect PLM with ERP, MES, and cloud platforms.',
+    description:
+      'We design and implement robust middleware, APIs, and real-time data pipelines that unite engineering with enterprise business operations.',
+    heroBgImage: '/image/PLM & software engineer/PLM learn more/system-integration-bg.jpg',
+    featurePills: [
+      { title: 'PLM + ERP + MES', icon: Cloud },
+      { title: 'Middleware & Connectors', icon: Network },
+      { title: 'API Integration', icon: Share2 },
+      { title: 'Data Synchronization', icon: Database }
+    ],
+    deliverables: [
+      'Enterprise Integration Architecture',
+      'Bi-directional BOM Sync',
+      'Custom REST/SOAP APIs',
+      'Real-time Data Pipelines',
+      'End-to-end System Testing'
+    ],
+    industries: [
+      'Discrete Manufacturing',
+      'Automotive & Transportation',
+      'Aerospace & Defense',
+      'Energy & Utilities',
+      'High-Tech & Electronics'
+    ],
+    supportedLabel: 'Supported Platforms',
+    companiesImage: '/image/PLM & software engineer/PLM learn more/system-integration-company.png',
+    relatedServices: [
+      { title: 'PLM Implementation', icon: BookOpen },
+      { title: 'Application Management', icon: Headphones },
+      { title: 'Data Migration', icon: Database }
+    ]
+  },
+  'data-migration': {
+    id: 'data-migration',
+    title: 'Data Migration',
+    subtitle: 'Securely migrate engineering data with complete integrity.',
+    description:
+      'We plan, extract, transform and validate engineering data to ensure a smooth and risk-free migration to modern PLM environments.',
+    heroBgImage: '/image/PLM & software engineer/PLM learn more/data-migration-bg.jpg',
+    featurePills: [
+      { title: 'Legacy Data Migration', icon: Database },
+      { title: 'CAD Data Migration', icon: Box },
+      { title: 'PDM to PLM Migration', icon: FileText },
+      { title: 'Metadata Mapping', icon: Layers }
+    ],
+    deliverables: [
+      'Migration Plan',
+      'Data Cleansing',
+      'Validated Data',
+      'Post-Migration Support'
+    ],
+    industries: [
+      'Aerospace & Defense',
+      'Manufacturing',
+      'Life Sciences',
+      'Energy & Utilities'
+    ],
+    supportedLabel: 'Supported Platforms',
+    companiesImage: '/image/PLM & software engineer/PLM learn more/data-migration-company.png',
+    relatedServices: [
+      { title: 'PLM Implementation', icon: BookOpen },
+      { title: 'Application Management', icon: Headphones },
+      { title: 'Data Validation', icon: ShieldCheck }
+    ]
+  },
+  'application-management': {
+    id: 'application-management',
+    title: 'Application Management',
+    subtitle: 'Maintain, optimize, and continuously improve your engineering platforms.',
+    description:
+      'We provide ongoing support, performance tuning, upgrades, and enhancements to ensure your PLM systems deliver maximum value.',
+    heroBgImage: '/image/PLM & software engineer/PLM learn more/application-managment-bg.jpg',
+    featurePills: [
+      { title: 'L1/L2/L3 Support', icon: Headphones },
+      { title: 'Performance Optimization', icon: TrendingUp },
+      { title: 'Patch & Release Management', icon: Cog },
+      { title: 'User Administration', icon: Users },
+      { title: 'Continuous Improvement', icon: Activity }
+    ],
+    deliverables: [
+      'SLA Reports',
+      'Performance Reports',
+      'Digital Integration',
+      'System Health Checks',
+      'Upgrade Support',
+      'Enhancement Delivery'
+    ],
+    industries: [
+      'Aerospace & Defense',
+      'Industrial Manufacturing',
+      'Automotive & Rail',
+      'Energy & Utilities',
+      'Medical Technology'
+    ],
+    supportedLabel: 'Supported Platforms',
+    companiesImage: '/image/PLM & software engineer/PLM learn more/application-managment-company.png',
+    relatedServices: [
+      { title: 'PLM Implementation', icon: BookOpen },
+      { title: 'Data Migration', icon: Database },
+      { title: 'Application Support', icon: Wrench }
+    ]
+  },
+  'manufacturing-innovation': {
+    id: 'manufacturing-innovation',
+    title: 'Manufacturing Information Solutions',
+    subtitle: 'Bridge engineering and manufacturing for a connected enterprise.',
+    description:
+      'We enable seamless flow of engineering data to manufacturing systems, improving productivity, quality, and production readiness.',
+    heroBgImage: '/image/PLM & software engineer/PLM learn more/manufacturing-information-solution-bg.jpg',
+    featurePills: [
+      { title: 'MES Integration', icon: Factory },
+      { title: 'Digital Work Instructions', icon: FileText },
+      { title: 'Production Data Management', icon: BarChart3 },
+      { title: 'Shop Floor Connectivity', icon: Network }
+    ],
+    deliverables: [
+      'MES Integration',
+      'BOM Synchronization',
+      'Digital Work Instructions',
+      'Manufacturing Analytics'
+    ],
+    supportedLabel: 'Supported Platforms',
+    companiesImage: '/image/PLM & software engineer/PLM learn more/manufacturing-information-solution-company.png',
+    relatedServices: [
+      { title: 'Enterprise Integration', icon: Network },
+      { title: 'Application Management', icon: Headphones },
+      { title: 'Digital Transformation', icon: Sparkles }
+    ]
+  },
+  'system-integration': {
+    id: 'system-integration',
+    title: 'System Integration',
+    subtitle: 'Integrate engineering, manufacturing, and enterprise applications.',
+    description:
+      'We build robust integration solutions, middleware, and data exchange frameworks for critical engineering systems.',
+    heroBgImage: '/image/PLM & software engineer/PLM learn more/system-integration-bg.jpg',
+    featurePills: [
+      { title: 'API Development', icon: Cpu },
+      { title: 'Data Integration', icon: Box },
+      { title: 'Database Integration', icon: Database },
+      { title: 'IoT Connectivity', icon: Activity }
+    ],
+    deliverables: [
+      'Integration Architecture',
+      'Automated Data Flows',
+      'APIs & Middleware',
+      'Dashboards & Reporting'
+    ],
+    supportedLabel: 'Supported Technologies',
+    companiesImage: '/image/PLM & software engineer/PLM learn more/system-integration-company.png',
+    relatedServices: [
+      { title: 'Enterprise Integration', icon: Cloud },
+      { title: 'Knowledge Management', icon: BookOpen },
+      { title: 'Application Support', icon: Headphones }
+    ]
+  },
+  'knowledge-management': {
+    id: 'knowledge-management',
+    title: 'Knowledge Management',
+    subtitle: 'Capture, organize, and share engineering knowledge.',
+    description:
+      'We build knowledge repositories, search solutions, and collaboration tools to preserve tribal knowledge and accelerate innovation.',
+    heroBgImage: '/image/PLM & software engineer/PLM learn more/knowledge-management-bg.jpg',
+    featurePills: [
+      { title: 'Knowledge Repository', icon: FileText },
+      { title: 'Document Management', icon: BookOpen },
+      { title: 'Expert Search', icon: Lightbulb },
+      { title: 'AI-Driven Insights', icon: Brain }
+    ],
+    deliverables: [
+      'Knowledge Portal',
+      'Best Practice Repository',
+      'Engineering Templates',
+      'Governance Framework'
+    ],
+    supportedLabel: 'Supported Technologies',
+    companiesImage: '/image/PLM & software engineer/PLM learn more/knowledge-management-company.png',
+    relatedServices: [
+      { title: 'System Integration', icon: Network },
+      { title: 'Design Automation', icon: Cpu },
+      { title: 'Application Support', icon: Headphones }
+    ]
+  },
+  'design-automation': {
+    id: 'design-automation',
+    title: 'Design & Engineering Automation',
+    subtitle: 'Automate repetitive engineering tasks to increase speed and quality.',
+    description:
+      'We develop automation tools, scripts, and templates across CAD, PLM, and simulation environments.',
+    heroBgImage: '/image/PLM & software engineer/PLM learn more/designe-enginerring-automation-bg.jpg',
+    featurePills: [
+      { title: 'CAD Automation', icon: Box },
+      { title: 'EDA Automation', icon: Cpu },
+      { title: 'Engineering Consultation', icon: ShieldCheck },
+      { title: 'Workflow Design', icon: Workflow }
+    ],
+    deliverables: [
+      'Automation Scripts',
+      'Engineering Standards',
+      'Configurable Templates',
+      'User Documentation'
+    ],
+    supportedLabel: 'Supported Platforms',
+    companiesImage: '/image/PLM & software engineer/PLM learn more/PLM_startegy-company.png',
+    relatedServices: [
+      { title: 'CAD Customization', icon: Box },
+      { title: 'Knowledge Management', icon: BookOpen },
+      { title: 'Application Support', icon: Headphones }
+    ]
+  },
+  'cad-customization': {
+    id: 'cad-customization',
+    title: 'CAD Customization',
+    subtitle: 'Customize CAD platforms to fit your engineering processes.',
+    description:
+      'We develop custom tools, add-ins, and automation for SolidWorks, NX, CATIA, Creo, and AutoCAD.',
+    heroBgImage: '/image/PLM & software engineer/PLM learn more/CDA-customization-bg.jpg',
+    featurePills: [
+      { title: 'Custom Plugin Development', icon: Cpu },
+      { title: 'Automation Scripts', icon: FileCheck },
+      { title: 'Template Creation', icon: Layers },
+      { title: 'Design Standards', icon: ShieldCheck },
+      { title: 'Custom Training', icon: Users }
+    ],
+    deliverables: [
+      'CAD Plugins',
+      'Configured Libraries',
+      'Automation Scripts',
+      'User Documentation',
+      'Custom Commands'
+    ],
+    supportedLabel: 'Supported Platforms',
+    companiesImage: '/image/PLM & software engineer/PLM learn more/CDA-customization-company.png',
+    relatedServices: [
+      { title: 'Design Automation', icon: Cpu },
+      { title: 'Knowledge Management', icon: BookOpen },
+      { title: 'Application Support', icon: Headphones }
+    ]
+  },
+  'application-support': {
+    id: 'application-support',
+    title: 'Application Support',
+    subtitle: 'Ensure engineering applications remain secure, optimized, and available.',
+    description:
+      'We provide expert support and maintenance for PLM, CAD, MES, and simulation systems to keep your operations running smoothly.',
+    heroBgImage: '/image/PLM & software engineer/PLM learn more/application-support-bg.jpg',
+    featurePills: [
+      { title: 'User Support', icon: Headphones },
+      { title: 'Issue Resolution', icon: CheckCircle2 },
+      { title: 'System Monitoring', icon: Activity },
+      { title: 'Updates & Patches', icon: Download },
+      { title: 'Health Assessments', icon: ShieldCheck }
+    ],
+    deliverables: [
+      'Performance Reports',
+      'System Updates',
+      'System-wide Maintenance'
+    ],
+    supportedLabel: 'Supported Platforms',
+    companiesImage: '/image/PLM & software engineer/PLM learn more/image18.png',
+    relatedServices: [
+      { title: 'Application Management', icon: Layers },
+      { title: 'Knowledge Management', icon: BookOpen }
+    ]
+  }
+};
 
 const statsData = [
   {
@@ -217,6 +583,29 @@ const industriesSupported = [
 ];
 
 export default function PlmSoftwareEngineeringSection({ index = 7 }: { index?: number }) {
+  const [activePopupId, setActivePopupId] = useState<string | null>(null);
+
+  const activePopupData = activePopupId ? plmPopupDetailsMap[activePopupId] : null;
+
+  // Handle ESC key to close popup
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setActivePopupId(null);
+      }
+    };
+    if (activePopupId) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activePopupId]);
+
   return (
     <AnimatedSection as="div" id="plm-software-engineering" className="scroll-mt-32 space-y-10">
       {/* ================= 1. TOP HERO BANNER ================= */}
@@ -441,13 +830,14 @@ export default function PlmSoftwareEngineeringSection({ index = 7 }: { index?: n
                   </div>
 
                   <div className="px-4 pb-3.5 pt-1">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-1 text-[11px] font-bold text-[#0070f3] group-hover:text-blue-700"
+                    <button
+                      type="button"
+                      onClick={() => setActivePopupId(cap.id)}
+                      className="inline-flex items-center gap-1 text-[11px] font-bold text-[#0070f3] hover:text-blue-700 transition-colors"
                     >
                       Learn More
                       <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-                    </Link>
+                    </button>
                   </div>
                 </div>
               );
@@ -501,13 +891,14 @@ export default function PlmSoftwareEngineeringSection({ index = 7 }: { index?: n
                   </div>
 
                   <div className="pt-3">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-1 text-[11px] font-bold text-[#0070f3] group-hover:text-blue-700"
+                    <button
+                      type="button"
+                      onClick={() => setActivePopupId(soft.id)}
+                      className="inline-flex items-center gap-1 text-[11px] font-bold text-[#0070f3] hover:text-blue-700 transition-colors"
                     >
                       Learn More
                       <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-                    </Link>
+                    </button>
                   </div>
                 </div>
               );
@@ -727,6 +1118,299 @@ export default function PlmSoftwareEngineeringSection({ index = 7 }: { index?: n
           </div>
         </div>
       </div>
+
+      {/* ================= 7. INTERACTIVE SIDEBAR / MODAL POPUP ================= */}
+      {activePopupData && (
+        <div className="fixed inset-0 z-50 flex items-center justify-end overflow-hidden">
+          {/* Backdrop Blur Overlay */}
+          <div
+            className="absolute inset-0 bg-slate-950/70 backdrop-blur-sm transition-opacity"
+            onClick={() => setActivePopupId(null)}
+          />
+
+          {/* Slide-in Drawer Container */}
+          <div className="relative z-10 h-full w-full max-w-2xl bg-white shadow-2xl flex flex-col overflow-y-auto animate-in slide-in-from-right duration-300">
+            {/* Modal Top Header with Background Image */}
+            <div className="relative shrink-0 overflow-hidden bg-[#030d1d] p-6 pb-8 text-white min-h-[250px] flex flex-col justify-between sm:p-8 sm:pb-8">
+              {/* Header Background Image */}
+              <div className="pointer-events-none absolute inset-0 select-none">
+                <Image
+                  src={activePopupData.heroBgImage}
+                  alt={activePopupData.title}
+                  fill
+                  className="object-cover object-center opacity-45"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#030d1d]/95 via-[#030d1d]/75 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#030d1d] via-transparent to-transparent" />
+              </div>
+
+              {/* Top Row: Close Button */}
+              <div className="relative z-10 flex items-center justify-between">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.24em] text-cyan-400">
+                  PLM & SOFTWARE ENGINEERING
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setActivePopupId(null)}
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white/90 backdrop-blur-md transition hover:bg-black hover:text-white"
+                  aria-label="Close"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+
+              {/* Title & Description */}
+              <div className="relative z-10 mt-3 space-y-2">
+                <h3 className="font-display text-2xl sm:text-3xl font-black text-white leading-tight">
+                  {activePopupData.title}
+                </h3>
+                <p className="text-xs sm:text-sm font-semibold text-cyan-200 leading-snug">
+                  {activePopupData.subtitle}
+                </p>
+                <p className="text-xs text-slate-300 leading-relaxed max-w-xl">
+                  {activePopupData.description}
+                </p>
+
+                <div className="pt-2">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[#0070f3] px-5 py-2.5 text-xs font-bold text-white shadow-lg shadow-blue-500/30 transition hover:bg-blue-600 hover:-translate-y-0.5"
+                  >
+                    Request Consultation
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Body Content (Clean White Surface matching reference images) */}
+            <div className="flex-1 space-y-6 p-6 sm:p-8 bg-[#f8fafc]">
+              {/* Feature Pills Row */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                {activePopupData.featurePills.map((pill) => {
+                  const PillIcon = pill.icon;
+                  return (
+                    <div
+                      key={pill.title}
+                      className="flex flex-col items-center justify-center rounded-xl border border-blue-100 bg-white p-3 text-center shadow-xs transition hover:border-blue-300"
+                    >
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-[#0070f3] mb-1.5">
+                        <PillIcon className="h-4 w-4" />
+                      </div>
+                      <span className="text-[10px] font-bold text-slate-800 leading-tight">
+                        {pill.title}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Dynamic Section: Deliverables, Platforms & Services */}
+              {activePopupData.id === 'application-support' ? (
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+                  {/* Left Column (Deliverables + Platforms) */}
+                  <div className="lg:col-span-8 space-y-4">
+                    <div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-xs space-y-3">
+                      <h4 className="font-display text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        Key Deliverables
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 pt-1">
+                        <div>
+                          <div className="flex items-center gap-2 text-xs text-slate-700">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#0070f3] shrink-0" />
+                            <span>{activePopupData.deliverables[0]}</span>
+                          </div>
+                        </div>
+                        <div className="space-y-2.5">
+                          {activePopupData.deliverables.slice(1).map((item) => (
+                            <div key={item} className="flex items-center gap-2 text-xs text-slate-700">
+                              <span className="h-1.5 w-1.5 rounded-full bg-[#0070f3] shrink-0" />
+                              <span>{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {activePopupData.companiesImage && (
+                      <div className="rounded-2xl border border-slate-200/80 bg-white p-4 sm:p-5 shadow-xs space-y-2">
+                        <h4 className="font-display text-xs font-bold uppercase tracking-wider text-slate-900">
+                          {activePopupData.supportedLabel || 'Supported Platforms'}
+                        </h4>
+                        <div className="relative w-full overflow-hidden rounded-xl bg-slate-50/50 p-2">
+                          <Image
+                            src={activePopupData.companiesImage}
+                            alt={activePopupData.supportedLabel || 'Supported Platforms'}
+                            width={1426}
+                            height={477}
+                            className="w-full h-auto object-contain"
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Right Column (Related Services) */}
+                  <div className="lg:col-span-4 flex flex-col">
+                    <div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-xs flex-1 space-y-3">
+                      <h4 className="font-display text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-100 pb-2">
+                        Related Services
+                      </h4>
+                      <div className="space-y-2.5 pt-1">
+                        {activePopupData.relatedServices.map((rel) => {
+                          const RelIcon = rel.icon;
+                          return (
+                            <div
+                              key={rel.title}
+                              className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50/50 p-3 shadow-xs hover:border-blue-300 transition"
+                            >
+                              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-[#0070f3] shrink-0">
+                                <RelIcon className="h-3.5 w-3.5" />
+                              </div>
+                              <span className="text-[11px] font-bold text-slate-800 leading-tight">
+                                {rel.title}
+                              </span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {/* 2-Column Section: Key Deliverables & Industries / Platforms */}
+                  {activePopupData.industries && activePopupData.industries.length > 0 ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-xs">
+                      {/* Left Column: Key Deliverables */}
+                      <div>
+                        <h4 className="font-display text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">
+                          Key Deliverables
+                        </h4>
+                        <ul className="mt-3 space-y-2">
+                          {activePopupData.deliverables.map((item) => (
+                            <li key={item} className="flex items-center gap-2 text-xs text-slate-700">
+                              <span className="h-1.5 w-1.5 rounded-full bg-[#0070f3] shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Right Column: Industries */}
+                      <div>
+                        <h4 className="font-display text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">
+                          Industries
+                        </h4>
+                        <ul className="mt-3 space-y-2">
+                          {activePopupData.industries.map((item) => (
+                            <li key={item} className="flex items-center gap-2 text-xs text-slate-700">
+                              <span className="h-1.5 w-1.5 rounded-full bg-[#0070f3] shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ) : activePopupData.id === 'cad-customization' ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-xs">
+                      {/* Left: Deliverables */}
+                      <div>
+                        <h4 className="font-display text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">
+                          Key Deliverables
+                        </h4>
+                        <ul className="mt-3 space-y-2">
+                          {activePopupData.deliverables.map((item) => (
+                            <li key={item} className="flex items-center gap-2 text-xs text-slate-700">
+                              <span className="h-1.5 w-1.5 rounded-full bg-[#0070f3] shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Right: Supported Platforms */}
+                      <div className="flex flex-col justify-start">
+                        <h4 className="font-display text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">
+                          {activePopupData.supportedLabel || 'Supported Platforms'}
+                        </h4>
+                        {activePopupData.companiesImage && (
+                          <div className="relative w-full overflow-hidden rounded-xl bg-slate-50/50 p-2 mt-2">
+                            <Image
+                              src={activePopupData.companiesImage}
+                              alt={activePopupData.supportedLabel || 'Supported Platforms'}
+                              width={1426}
+                              height={477}
+                              className="w-full h-auto object-contain"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-xs space-y-3">
+                      <h4 className="font-display text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        Key Deliverables
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 pt-1">
+                        {activePopupData.deliverables.map((item) => (
+                          <div key={item} className="flex items-center gap-2 text-xs text-slate-700">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#0070f3] shrink-0" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Supported Platforms / Technologies (Full Width when not CAD customization) */}
+                  {activePopupData.companiesImage && activePopupData.id !== 'cad-customization' && (
+                    <div className="rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-xs space-y-3">
+                      <h4 className="font-display text-xs font-bold uppercase tracking-wider text-slate-900">
+                        {activePopupData.supportedLabel || 'Supported Platforms'}
+                      </h4>
+                      <div className="relative w-full overflow-hidden rounded-xl bg-slate-50/50 p-2 sm:p-3">
+                        <Image
+                          src={activePopupData.companiesImage}
+                          alt={activePopupData.supportedLabel || 'Supported Platforms'}
+                          width={1426}
+                          height={477}
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Related Services */}
+                  <div className="space-y-3">
+                    <h4 className="font-display text-xs font-bold uppercase tracking-wider text-slate-900">
+                      Related Services
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                      {activePopupData.relatedServices.map((rel) => {
+                        const RelIcon = rel.icon;
+                        return (
+                          <div
+                            key={rel.title}
+                            className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white p-3 shadow-xs hover:border-blue-300 transition"
+                          >
+                            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-[#0070f3] shrink-0">
+                              <RelIcon className="h-3.5 w-3.5" />
+                            </div>
+                            <span className="text-[11px] font-bold text-slate-800 leading-tight">
+                              {rel.title}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </AnimatedSection>
   );
 }

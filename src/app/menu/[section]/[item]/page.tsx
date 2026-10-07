@@ -1,6 +1,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, BriefcaseBusiness, FileText, FolderOpen, Globe2, GraduationCap, Users } from 'lucide-react';
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BriefcaseBusiness,
+  CheckCircle2,
+  ChevronRight,
+  FileText,
+  FolderOpen,
+  Globe2,
+  GraduationCap,
+  Home,
+  Layers,
+  Sparkles,
+  Users
+} from 'lucide-react';
 import TechnologyCompetenciesContent from '@/components/menu/delivery/TechnologyCompetenciesContent';
 import GlobalEngagementModelsContent from '@/components/menu/delivery/GlobalEngagementModelsContent';
 import CollaborativeCommunicationContent from '@/components/menu/delivery/CollaborativeCommunicationContent';
@@ -10,7 +24,7 @@ import InfrastructureContent from '@/components/menu/delivery/InfrastructureCont
 import LifeAtGtsContent from '@/components/menu/careers/LifeAtGtsContent';
 import WhyJoinUsContent from '@/components/menu/careers/WhyJoinUsContent';
 import EmploymentOpportunitiesContent from '@/components/menu/careers/EmploymentOpportunitiesContent';
-import { AnimatedSection, GradientButton, MagneticCard, SectionHeading } from '@/components/ui';
+import { AnimatedSection, GradientButton, MagneticCard, PageHero, SectionHeading } from '@/components/ui';
 
 interface MenuSubPageProps {
   params: Promise<{
@@ -210,6 +224,16 @@ const gtsAdvantages = [
   }
 ];
 
+
+const sectionHeroDescriptions: Record<string, string> = {
+  "service-offerings": "End-to-end engineering, design automation, digital software engineering, and lifecycle solutions for global industrial enterprises.",
+  "about-us": "Engineering excellence, global multidisciplinary teams, and proven delivery frameworks partnering with industry leaders worldwide.",
+  "industries": "Specialized engineering and technology capabilities across energy, aerospace, automotive, infrastructure, life sciences, and heavy machinery.",
+  "technology-sourcing": "Strategic technology representation, global sourcing solutions, and technical procurement services for high-value engineering programs.",
+  "delivery-enablers": "Scalable engagement models, multi-location delivery centers, robust infrastructure, and ISO-certified quality management systems.",
+  "careers": "Build your career in advanced industrial engineering, digital transformation, and global technical consulting."
+};
+
 const toTitleCase = (value: string) =>
   decodeURIComponent(value)
     .split('-')
@@ -305,17 +329,71 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
               ? 'Careers'
         : sidebarTitle;
 
+  const pageTitle = isWhoWeArePage
+    ? 'Who We Are'
+    : isOurTeamPage
+      ? 'Our Team & Leadership'
+      : isVisionMissionPage
+        ? 'Vision & Mission'
+        : isQualityPage
+          ? 'Quality Management'
+          : isGtsAdvantagePage
+            ? 'The GTS Engineering Advantage'
+            : isCareersPage
+              ? 'Careers & Talent'
+              : isPlmSoftwareEngineeringPage
+                ? 'PLM & Software Engineering'
+                : toTitleCase(item);
+
   return (
-    <main className="industrial-surface min-h-screen py-10 sm:py-14">
-      <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <AnimatedSection as="div" className="rounded-[2rem] border border-slate-200 bg-white/95 p-4 shadow-xl shadow-blue-100/60 backdrop-blur sm:p-8 lg:p-10">
-          <div className="grid gap-8 lg:grid-cols-12">
-            <aside className="lg:col-span-4 xl:col-span-3">
-              <MagneticCard className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <div className="bg-gradient-to-r from-slate-950 to-blue-900 px-5 py-3">
-                  <h2 className="text-lg font-semibold text-white">{resolvedSidebarTitle}</h2>
+    <div className="flex w-full flex-col bg-[#f8fafc]">
+      {/* Modern Page Hero */}
+      <PageHero
+        eyebrow={resolvedSidebarTitle.toUpperCase()}
+        title={pageTitle}
+        description={
+          sectionHeroDescriptions[section] ||
+          'Comprehensive multidisciplinary engineering, consulting, and technology services delivered with precision and global scale.'
+        }
+        backgroundImage={
+          section === 'about-us'
+            ? '/image/about/about bg.jpg'
+            : undefined
+        }
+      />
+
+      {/* Modern Breadcrumb Bar */}
+      <div className="border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3 text-xs text-slate-500 sm:px-6 lg:px-8">
+          <Link href="/" className="flex items-center gap-1 hover:text-[#0070f3] transition-colors">
+            <Home className="h-3.5 w-3.5" />
+            <span>Home</span>
+          </Link>
+          <ChevronRight className="h-3 w-3 text-slate-400" />
+          <span className="font-medium text-slate-600">{resolvedSidebarTitle}</span>
+          <ChevronRight className="h-3 w-3 text-slate-400" />
+          <span className="font-semibold text-[#0070f3]">{pageTitle}</span>
+        </div>
+      </div>
+
+      {/* Main 2-Column Section */}
+      <section className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-12">
+          {/* Left Sidebar (Sticky) */}
+          <aside className="lg:col-span-4 xl:col-span-3 space-y-6">
+            <div className="sticky top-24 space-y-5">
+              {/* Sidebar Navigation Card */}
+              <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-white/95 backdrop-blur-md shadow-xl shadow-blue-900/5">
+                <div className="bg-gradient-to-r from-slate-950 via-[#071d3a] to-[#0056a4] px-5 py-4 text-white flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <Layers className="h-4 w-4 text-cyan-400" />
+                    <h2 className="font-display text-base font-bold text-white">{resolvedSidebarTitle}</h2>
+                  </div>
+                  <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-mono font-semibold text-cyan-200">
+                    {sidebarSubmenu.length}
+                  </span>
                 </div>
-                <nav className="p-2">
+                <nav className="p-2.5 space-y-1">
                   {sidebarSubmenu.map((subItem) => {
                     const subSlug = toSlug(subItem);
                     const isActive = item === subSlug;
@@ -323,63 +401,89 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       <Link
                         key={subItem}
                         href={`/menu/${section}/${subSlug}`}
-                        className={`flex items-center rounded-lg px-3 py-2.5 text-sm transition-colors ${isActive
-                          ? 'bg-blue-50 font-semibold text-[#0056a4]'
-                          : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900'
-                          }`}
+                        className={`flex items-center justify-between rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-medium transition-all ${
+                          isActive
+                            ? 'bg-gradient-to-r from-blue-50 to-cyan-50/50 font-bold text-[#0070f3] border-l-4 border-[#0070f3] shadow-xs'
+                            : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                        }`}
                       >
-                        <span className="mr-2 text-[10px]">▸</span>
-                        {subItem}
+                        <span className="leading-snug">{subItem}</span>
+                        <ChevronRight
+                          className={`h-3.5 w-3.5 shrink-0 transition-transform ${
+                            isActive ? 'text-[#0070f3] translate-x-0.5' : 'text-slate-300'
+                          }`}
+                        />
                       </Link>
                     );
                   })}
                 </nav>
-              </MagneticCard>
+              </div>
 
-              <div className="mt-5 space-y-3">
-                {isProductEngineeringPage && (
-                  <>
-                    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-                      <div className="bg-[#0056a4] px-3 py-2 text-sm font-semibold text-white">Our Showcase</div>
-                      <Image src="/image/showcase1.png" alt="Showcase 1" width={320} height={220} className="h-auto w-full object-cover" />
-                    </div>
-                    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-                      <div className="bg-[#0056a4] px-3 py-2 text-sm font-semibold text-white">Our Showcase</div>
-                      <Image src="/image/showcase2.jpg" alt="Showcase 2" width={320} height={220} className="h-auto w-full object-cover" />
-                    </div>
-                    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-                      <div className="bg-[#0056a4] px-3 py-2 text-sm font-semibold text-white">Our Showcase</div>
-                      <Image src="/image/showcase3.png" alt="Showcase 3" width={320} height={220} className="h-auto w-full object-cover" />
-                    </div>
-                  </>
-                )}
+              {/* Showcase Widgets (Product Engineering) */}
+              {isProductEngineeringPage && (
+                <div className="space-y-3">
+                  <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm">
+                    <div className="bg-slate-900 px-3.5 py-2 text-xs font-bold text-cyan-300">Engineering Showcase</div>
+                    <Image src="/image/showcase1.png" alt="Showcase 1" width={320} height={220} className="h-auto w-full object-cover" />
+                  </div>
+                  <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm">
+                    <div className="bg-slate-900 px-3.5 py-2 text-xs font-bold text-cyan-300">Engineering Showcase</div>
+                    <Image src="/image/showcase2.jpg" alt="Showcase 2" width={320} height={220} className="h-auto w-full object-cover" />
+                  </div>
+                </div>
+              )}
 
+              {/* Quick Action Resource Links */}
+              <div className="space-y-2.5">
                 <Link
                   href="/downloads"
-                  className="group flex items-center rounded-xl border border-slate-200 bg-gradient-to-r from-slate-100 to-slate-50 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                  className="group flex items-center justify-between rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-xs transition-all hover:border-blue-300 hover:shadow-md hover:-translate-y-0.5"
                 >
-                  <div className="mr-3 rounded-lg bg-white p-2 text-[#0056a4] shadow-sm">
-                    <FileText className="h-5 w-5" />
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-[#0070f3]">
+                      <FileText className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-slate-900">Download Brochure</div>
+                      <div className="text-[11px] text-slate-500">Corporate & Technical Specs</div>
+                    </div>
                   </div>
-                  <span className="font-medium text-slate-800">Brochure</span>
+                  <ArrowUpRight className="h-4 w-4 text-slate-400 group-hover:text-[#0070f3] transition-colors" />
                 </Link>
+
                 <Link
                   href="/case-studies"
-                  className="group flex items-center rounded-xl border border-slate-200 bg-gradient-to-r from-slate-100 to-slate-50 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                  className="group flex items-center justify-between rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-xs transition-all hover:border-blue-300 hover:shadow-md hover:-translate-y-0.5"
                 >
-                  <div className="mr-3 rounded-lg bg-white p-2 text-[#0056a4] shadow-sm">
-                    <FolderOpen className="h-5 w-5" />
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600">
+                      <FolderOpen className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-slate-900">Case Studies</div>
+                      <div className="text-[11px] text-slate-500">Proven Program Delivery</div>
+                    </div>
                   </div>
-                  <span className="font-medium text-slate-800">Case Studies</span>
+                  <ArrowUpRight className="h-4 w-4 text-slate-400 group-hover:text-cyan-600 transition-colors" />
                 </Link>
               </div>
-            </aside>
+            </div>
+          </aside>
 
-            <div className="lg:col-span-8 xl:col-span-9">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0056a4]">{toTitleCase(section)}</p>
-              <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                {isWhoWeArePage ? 'Who We Are' : toTitleCase(item)}
-              </h1>
+          {/* Right Main Content Area */}
+          <div className="lg:col-span-8 xl:col-span-9">
+            <AnimatedSection as="article" className="rounded-3xl border border-slate-200/80 bg-white p-6 sm:p-10 shadow-xl shadow-blue-900/5">
+              {/* Header Meta Badge & Title */}
+              <div className="border-b border-slate-100 pb-6 mb-6">
+                <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/60 bg-blue-50/80 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0070f3]">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  <span>{toTitleCase(section)}</span>
+                </div>
+                <h1 className="mt-3 font-display text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                  {pageTitle}
+                </h1>
+                <div className="mt-3 h-1 w-16 rounded-full bg-gradient-to-r from-[#0070f3] to-cyan-400" />
+              </div>
 
               {isWhoWeArePage ? (
                 <>
@@ -395,11 +499,11 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                 </>
               ) : isOurTeamPage ? (
                 <div className="mt-5 space-y-8">
-                  <h2 className="text-2xl font-semibold text-[#0056a4]">Advisors</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">Advisors</h2>
 
-                  <article className="grid gap-5 rounded-2xl border border-slate-200 bg-slate-50 p-5 md:grid-cols-[1fr_220px]">
+                  <article className="grid gap-5 rounded-2xl border border-slate-200/80 bg-gradient-to-br from-slate-50/80 to-blue-50/20 p-6 shadow-xs hover:border-blue-200 hover:shadow-md transition-all md:grid-cols-[1fr_220px]">
                     <div className="space-y-4 text-[15px] leading-7 text-slate-700">
-                      <h3 className="text-lg font-semibold text-[#0056a4]">{advisors[0].name}</h3>
+                      <h3 className="text-base sm:text-lg font-bold font-display text-slate-900">{advisors[0].name}</h3>
                       {advisors[0].paragraphs.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
@@ -418,7 +522,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   <div className="space-y-6 text-[15px] leading-7 text-slate-700">
                     {advisors.slice(1).map((advisor) => (
                       <article key={advisor.name} className="space-y-3">
-                        <h3 className="text-lg font-semibold text-[#0056a4]">{advisor.name}</h3>
+                        <h3 className="text-base sm:text-lg font-bold font-display text-slate-900">{advisor.name}</h3>
                         {advisor.paragraphs.map((paragraph) => (
                           <p key={paragraph}>{paragraph}</p>
                         ))}
@@ -427,7 +531,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </div>
 
                   <div className="pt-2">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">Management Team</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">Management Team</h2>
                     <ul className="mt-5 space-y-3 text-[15px] text-slate-700">
                       {managementTeam.map((member) => (
                         <li key={member} className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
@@ -440,17 +544,17 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
               ) : isVisionMissionPage ? (
                 <div className="mt-5 space-y-8">
                   <section className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">Our Vision:</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">Our Vision:</h2>
                     <p className="text-[15px] leading-7 text-slate-700">{visionMissionContent.vision}</p>
                   </section>
 
                   <section className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">Our Mission:</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">Our Mission:</h2>
                     <p className="text-[15px] leading-7 text-slate-700">{visionMissionContent.mission}</p>
                   </section>
 
                   <section className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">Our Business Philosophy:</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">Our Business Philosophy:</h2>
                     <p className="text-[15px] leading-7 text-slate-700">{visionMissionContent.philosophy1}</p>
                     <p className="text-center text-base font-bold tracking-wide text-slate-900">{visionMissionContent.philosophy2}</p>
                     <p className="text-[15px] leading-7 text-slate-700">{visionMissionContent.coreContext}</p>
@@ -472,7 +576,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">Our Value Proposition:</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">Our Value Proposition:</h2>
                     <p className="text-[15px] leading-7 text-slate-700">{visionMissionContent.proposition}</p>
 
                     <ul className="space-y-2 text-[15px] leading-7 text-slate-700">
@@ -493,7 +597,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
               ) : isQualityPage ? (
                 <div className="mt-5 space-y-6">
                   <section className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">Our Quality Policy:</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">Our Quality Policy:</h2>
                     <p className="text-xl font-semibold leading-8 text-slate-800">
                       &ldquo;We are committed to deliver innovative solutions that delight Customers through deployment of robust processes.&rdquo;
                     </p>
@@ -514,7 +618,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">Our Quality Objectives:</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">Our Quality Objectives:</h2>
                     <ul className="ml-5 space-y-2 text-[15px] leading-8 text-slate-700">
                       {qualityObjectives.map((objective) => (
                         <li key={objective} className="list-disc">
@@ -546,10 +650,10 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-4">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">Working with GTS can assure you the following advantages:</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">Working with GTS can assure you the following advantages:</h2>
                     <div className="space-y-4">
                       {gtsAdvantages.map((advantage) => (
-                        <article key={advantage.title} className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                        <article key={advantage.title} className="rounded-2xl border border-slate-200/80 bg-gradient-to-br from-slate-50/80 to-blue-50/20 p-5 shadow-xs hover:border-blue-200 hover:shadow-md transition-all">
                           <h3 className="text-lg font-semibold text-slate-900">{advantage.title}:</h3>
                           <p className="mt-1 text-slate-700">{advantage.body}</p>
                         </article>
@@ -558,7 +662,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">What Enables US to Offer you ‘The GTS Advantage’</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">What Enables US to Offer you ‘The GTS Advantage’</h2>
                     <p>
                       We our diligent efforts and significant experience in the industry, we have been able to create our differentiators.
                       These differentiators not only give us an edge among our competitors, but also do they enable us to offer you a
@@ -567,7 +671,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <article className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                    <article className="rounded-2xl border border-slate-200/80 bg-gradient-to-br from-slate-50/80 to-blue-50/20 p-5 shadow-xs hover:border-blue-200 hover:shadow-md transition-all">
                       <h3 className="text-lg font-semibold text-slate-900">Our Tripod of Strength</h3>
                       <p className="mt-1">
                         The tripod of strength, as we refer to it, consists of the core strengths we have gathered in the field of
@@ -576,7 +680,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       </p>
                     </article>
 
-                    <article className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                    <article className="rounded-2xl border border-slate-200/80 bg-gradient-to-br from-slate-50/80 to-blue-50/20 p-5 shadow-xs hover:border-blue-200 hover:shadow-md transition-all">
                       <h3 className="text-lg font-semibold text-slate-900">Our Corporate Support</h3>
                       <p className="mt-1">
                         We are committed to create long-term value for our shareholders, employees, and customers. Being a corporate-level
@@ -584,7 +688,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       </p>
                     </article>
 
-                    <article className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                    <article className="rounded-2xl border border-slate-200/80 bg-gradient-to-br from-slate-50/80 to-blue-50/20 p-5 shadow-xs hover:border-blue-200 hover:shadow-md transition-all">
                       <h3 className="text-lg font-semibold text-slate-900">Strategic vision</h3>
                       <p className="mt-1">
                         We are envisioned to work with our clients adhering to a ‘win-win philosophy’, which means that our clients get
@@ -593,7 +697,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       </p>
                     </article>
 
-                    <article className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                    <article className="rounded-2xl border border-slate-200/80 bg-gradient-to-br from-slate-50/80 to-blue-50/20 p-5 shadow-xs hover:border-blue-200 hover:shadow-md transition-all">
                       <h3 className="text-lg font-semibold text-slate-900">Corporate Strength</h3>
                       <p className="mt-1">
                         We proactively invest in enablement of the technology-driven offshore delivery, which has been made possible due
@@ -694,7 +798,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-4">
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Ideation and Inception Stage</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Ideation and Inception Stage</h2>
                     <p>
                       This phase involves study and analysis of a new idea or a response to a market demand. Along with analysis, an ECR
                       (Engineering Change Request) may be raised as per the situation&apos;s demand. Depending upon the situation, an ECN
@@ -702,7 +806,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       and ergonomics study to help you conceptualize a high quality product.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Preliminary Design Stage</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Preliminary Design Stage</h2>
                     <p>
                       After a successful ideation, the preliminary design activities, such as concept design, material and component
                       selection, free body diagrams and preliminary calculations take place. Our experts ensure that the actual product
@@ -710,7 +814,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       able to offer you the collective advantage of all or few of the activities involved in preliminary design.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Design Stage</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Design Stage</h2>
                     <p>
                       This stage is the most crucial stage in the entire product engineering process as it involves brief and detailed
                       designing of the product using various tools and techniques. Along with CAD modelling and general arrangement, we
@@ -719,7 +823,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       question.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Validation Stage</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Validation Stage</h2>
                     <p>
                       This stage involves several activities related to design validation and optimizations. For instance, our design
                       analysts are also able to perform FEA Driven design and FEA/CAE validations to give rise to the best-fit design
@@ -728,14 +832,14 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       you a right fit solution to your precise needs.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Tooling stage</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Tooling stage</h2>
                     <p>
                       We also perform tooling stage activities, such as designing tool & die, casting the product, purchasing parts,
                       and establishing the quality parameters for testing the constructed product against. In addition, we facilitate
                       creation of prototypes, trials, and testing of the product.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Testing and Prototype</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Testing and Prototype</h2>
                     <p>
                       We assist with the creation of product mock-ups and prototypes as well as in performing functional tests and trials.
                       We are also able to understand any underlying regulatory requirements and address any compliance related issues
@@ -772,7 +876,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   <p>Our wide range of plant and process engineering services include:</p>
 
                   <section className="space-y-4">
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Process Design and Basic Engineering</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Process Design and Basic Engineering</h2>
                     <p>
                       Our process design and basic engineering services include simulation of process using adequate tools upon a careful
                       analysis of requirements. This gives you an early view of various steps, activities, and events participating in a
@@ -786,7 +890,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       diagrams (PFDs) in order to give you a basic representation of the overall preliminary process design.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">FEED</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">FEED</h2>
                     <p>
                       A plant and process engineering project requires a number of diagrams, feeds, data sheets and lists to be generated.
                       These artefacts serve as building blocks while carrying out phases of an engineering project. Our professionals have
@@ -796,7 +900,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       detailing of the design and optimization of the design given all the constraints.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Detailed Design</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Detailed Design</h2>
                     <p>
                       Detailed design involves detailing of the designs and layouts prepared at the preliminary stages. During the detailed
                       design phase, we create equipment layouts and BOMs (Bills of Materials), detail up the piping layouts and piping
@@ -805,7 +909,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       detection.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Specialized</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Specialized</h2>
                     <p>
                       GTS helps with conceptual studies of your project to identify the optimization points, potential risks, feasibility,
                       safety issues and possible bottlenecks. We also perform feasibility study of your process and plant design to
@@ -845,13 +949,13 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">PLM</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">PLM</h2>
                     <p>
                       Our offerings in the field of PLM primarily include PLM Consulting and other important services, such as Enterprise
                       Application Integration/implementation/customization, application management, and MIS.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">PLM Consulting</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">PLM Consulting</h3>
                     <p>
                       In order to ensure that your conceptualized product meets its core objectives and delivers the expected value, we
                       assist in strategizing alignment of your product vision with your organization&apos;s objectives and targets. Our PLM
@@ -865,7 +969,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       the maximum off every penny you invest!
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">
                       Implementation, customization & Enterprise Application Integration
                     </h3>
                     <p>
@@ -876,7 +980,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       upon a careful analysis of your business.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Migration and support</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Migration and support</h3>
                     <p>
                       With vast experience in the field of PLM, our professionals possess sound understanding of the issues most companies
                       face during the usage phases of their PLM platforms. These issues typically include troubles in data management,
@@ -886,7 +990,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       migration and management.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Application Management</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Application Management</h3>
                     <p>
                       Our PLM support analysts constitute our managed services team and work as per the industry-standard frameworks like
                       ITIL. Our application management services include maintenance of legacy applications and PDM data, multi-line
@@ -895,7 +999,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       we maintain our knowledge repository to avoid re-inventing the wheel and use our lessons from the past.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Manufacturing Information Solutions</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Manufacturing Information Solutions</h3>
                     <p>
                       At GTS, we realize that there can be a huge efficiency gain if the right and streamlined manufacturing processes are
                       used at your manufacturing units or plants. This is where a Manufacturing Information Solution (MIS) is of vital
@@ -906,14 +1010,14 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Software Engineering</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Software Engineering</h2>
                     <p>
                       Our software engineering services are tailored to help our clients make the best use of the latest tools and emerging
                       technologies to ease up their organizational activities. We specialize in offering several services related to software
                       engineering that provide you value addition on a number of facets.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Integration with engineering & business systems</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Integration with engineering & business systems</h3>
                     <p>
                       For optimum usage of information technology, disparate engineering and business systems must be designed to interact
                       with each other. However, it&apos;s a challenging task for most enterprises to make their separate departments,
@@ -922,7 +1026,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       an integration project to a successful closure.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Utilization of Corporate Engineering Knowledge</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Utilization of Corporate Engineering Knowledge</h3>
                     <p>
                       Despite the scattered availability of the engineering knowledge available with various individuals, most organizations
                       fail to utilize it in the most effective way. GTS offers its knowledge-base engineering service to strategize,
@@ -931,7 +1035,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       availability right when it&apos;s needed.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Design & Process Automation</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Design & Process Automation</h3>
                     <p>
                       To maximize the efficiency of your manufacturing processes and help you migrate to use the latest automated methods
                       of designing, we offer our design & process automation service. Our design experts and consultants have assisted
@@ -939,14 +1043,14 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       accurate methods of designing.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">CAD Customization & Interfaces</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">CAD Customization & Interfaces</h3>
                     <p>
                       GTS, being a &apos;new age&apos; company, possesses expertise in using the software tools to aid customization of your
                       designs. We are able to customize the CAD based designs and interfaces to assist you create the most accurate
                       designs in a cost-effective fashion.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Application Support & Maintenance</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Application Support & Maintenance</h3>
                     <p>
                       IT experts of GTS are able to take care of your applications with our support and maintenance services. They
                       undertake various activities, such as application tuning, optimization, data fixes, sanitization, change
@@ -963,7 +1067,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-4">
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Consulting</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Consulting</h2>
                     <p>
                       At GTS, we are committed to providing you the GIS solutions to deliver the optimum business value. Our Geoinformatics
                       consultants provide a complete array of consulting services, including assessment of your geographical and geo-spatial
@@ -978,7 +1082,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       strategies so as to minimize the post-implementation overheads and the maintenance costs.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Application Development</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Application Development</h2>
                     <p>
                       GTS employs a team of expert GIS application developers who selectively combine the best-fit technologies to build GIS
                       applications, maintain existing ones, and integrate them with other business systems. We are able to develop specific
@@ -988,7 +1092,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       existing/new enterprise IT systems.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Geo-Spatial Data Services</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Geo-Spatial Data Services</h2>
                     <p>
                       We are able to convert and digitalize your printed data, drawings, satellite imagery and photographs so that your GIS
                       applications may make use of them. We have extensive experience in remote sensing, i.e. in satellite image sensing and
@@ -999,7 +1103,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       to meet your specific GIS data conversation and interpretation needs.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Managed Services</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Managed Services</h2>
                     <p>
                       Our managed service offering has been designed to manage and maintain your GIS applications and data in a round-the-clock
                       fashion. We managed service team follows the proven processes and ensure maintenance of their SLA&apos;s with our clients.
@@ -1008,7 +1112,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       and data conversion and also, perform quality testing of your GIS applications.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Network Asset Management</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Network Asset Management</h2>
                     <p>
                       In order to manage your geographically distributed network assets, we offer our network asset management services.
                       These assets may be drainage systems, pipelines, optical fibre networks, underground circuits, pavements. These all
@@ -1018,7 +1122,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       involve maintenance and transformation of spatial data.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Land Management</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Land Management</h2>
                     <p>
                       Land management experts at GTS understand the spatial extent and usage of land information so that we can help
                       organize the land records data for an effective planning. Land records data management is often a daunting task, which
@@ -1033,7 +1137,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       along the course.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Risk Management</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Risk Management</h2>
                     <p>
                       Geo-informatics can help you understand any possible hazards and the risks associated with your widespread network
                       assets. Our geo-informatics services are designed to give you an excellent view of such hazards and facilitate
@@ -1046,7 +1150,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       suffered and to devise plans to meet their needs precisely.
                     </p>
 
-                    <h2 className="text-xl font-semibold text-[#0056a4]">Location Intelligence</h2>
+                    <h2 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Location Intelligence</h2>
                     <p>
                       In several business scenarios, location awareness about your assets, equipments, and people may be vital for smooth
                       operations. We provide the location intelligence services to equip you with tools that keep you informed about the
@@ -1061,7 +1165,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
               ) : isProjectManagementControlsPage ? (
                 <div className="mt-5 space-y-6 text-[15px] leading-7 text-slate-700">
                   <section className="space-y-3">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Management Services and Consultancy</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Management Services and Consultancy</h2>
                     <p>
                       It&apos;s a well-known fact that a majority of projects across the world do not reach their successful closure as
                       reported by PMI (Project Management Institute). According to the project management experts, the most common reason
@@ -1088,7 +1192,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Project Management</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Project Management</h2>
                     <p>
                       Spanning across several industry verticals, GTS has proven its expertise in project management. We have helped
                       several clients with their projects. Our Prince2 and PMP certified project managers bring in their years of rich
@@ -1096,7 +1200,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       specialize in:
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Project Planning, Scheduling and Monitoring</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Project Planning, Scheduling and Monitoring</h3>
                     <p>
                       Based on the understanding of requirements, we plan the project incorporating all the vital aspects of your project,
                       such as stakeholders&apos; expectations, budget and resources, scope, risk, tasks and responsibilities, communication
@@ -1105,7 +1209,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       Technique) to create the optimum schedules and are also able to fast-track or crash the projects as per the situation.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Cost Engineering</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Cost Engineering</h3>
                     <p>
                       Considering cost as the focal point of any project, we perform various cost engineering activities, such as
                       identification and optimization of cost-centric activities, cost estimation using standard estimation techniques,
@@ -1116,7 +1220,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       between technical aspects and the related costs.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Project Management Consultancy (PMC)</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Project Management Consultancy (PMC)</h3>
                     <p>
                       Our Project Management Consultancy services are crafted to cater to the creation, establishment, reinforcement,
                       monitoring and control of the project management processes at your organization. We analyse the current project
@@ -1133,7 +1237,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       <li className="list-disc">Risk management</li>
                     </ul>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Procurement Management</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Procurement Management</h3>
                     <p>
                       For a successful project execution, procurement and acquisition of resources may require additional expertise and may
                       be a time-consuming activity. This is why we help you on various aspects related to procurement, such as equipment
@@ -1144,7 +1248,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       inspect the quality of their services and products to avoid any quality shortcomings.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Construction Management</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Construction Management</h3>
                     <p>
                       In any construction project, aspects related to quality control and measuring progress require a deep understanding
                       of the construction business. We, at GTS, offer our services to ensure the quality of your construction projects
@@ -1153,7 +1257,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       check on the quality and speed with our progress reporting and monitoring services.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Commissioning Services</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Commissioning Services</h3>
                     <p>
                       In any project, commissioning of the procured equipments and material supplies is crucial for a successful execution
                       or construction phase of a project. Our project management consultants and commissioning engineers take up the
@@ -1171,8 +1275,8 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
               ) : isProjectEngineeringPage ? (
                 <div className="mt-5 space-y-7 text-[15px] leading-7 text-slate-700">
                   <section className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">MECHANICAL</h2>
-                    <h3 className="text-xl font-semibold text-[#0056a4]">HVAC</h3>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">MECHANICAL</h2>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">HVAC</h3>
 
                     <h4 className="text-lg font-semibold text-slate-900">High Side</h4>
                     <ul className="ml-5 space-y-2">
@@ -1290,8 +1394,8 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">MECHANICAL</h2>
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Fire Protection System (FPS)</h3>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">MECHANICAL</h2>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Fire Protection System (FPS)</h3>
                     <ul className="ml-5 space-y-2">
                       <li className="list-disc">FPS design including smoke exhaust system</li>
                       <li className="list-disc">Equipment selection/ sizing & specifications</li>
@@ -1309,7 +1413,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">PLUMBING</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">PLUMBING</h2>
                     <p className="font-medium">Design & engineering of :</p>
                     <ul className="ml-5 space-y-2">
                       <li className="list-disc">Domestic & Process Water supply systems</li>
@@ -1324,7 +1428,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">ELECTRICAL</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">ELECTRICAL</h2>
                     <ul className="ml-5 space-y-2">
                       <li className="list-disc">Design of Electrical distribution systems (High Voltage/ Low Voltage)</li>
                       <li className="list-disc">
@@ -1358,9 +1462,9 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-[#0056a4]">Our Service Offerings for MEP Sectors:</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-5">Our Service Offerings for MEP Sectors:</h2>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Drafting & Detailing</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Drafting & Detailing</h3>
                     <ul className="ml-5 space-y-2">
                       <li className="list-disc">Coordinated system layout drawings (2D) with interference check (3D)</li>
                       <li className="list-disc">Across all phases of the project including Design Development, Construction Drawings, etc.</li>
@@ -1376,7 +1480,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       <li className="list-disc">Detailed BOM</li>
                     </ul>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Design Development</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Design Development</h3>
                     <ul className="ml-5 space-y-2">
                       <li className="list-disc">Energy efficient system design</li>
                       <li className="list-disc">Equipment selection/ sizing and finalization of specifications</li>
@@ -1387,7 +1491,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       <li className="list-disc">Bill of Materials for variable materials/ items with specifications</li>
                     </ul>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Construction Documentation</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Construction Documentation</h3>
                     <ul className="ml-5 space-y-2">
                       <li className="list-disc">Preparation of RFQ and detailed specifications of plant equipment / materials</li>
                       <li className="list-disc">Tender evaluation (if-required) of plant equipment / materials</li>
@@ -1444,7 +1548,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Text Authoring</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Text Authoring</h2>
                     <p>
                       Our text authoring specialists possess sound knowledge of engineering, design, and manufacturing and are adept at
                       transforming it into technical or business language using the appropriate writing styles. Our text authoring service
@@ -1473,7 +1577,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Illustrations and Animations</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Illustrations and Animations</h2>
                     <p>
                       Often, textual content and design artefacts are best represented in the visual and audio-visual formats. We employ
                       a talented pool of design experts and animators who help you with the creation, revision, organization and
@@ -1490,7 +1594,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Miscellaneous Document Engineering Services</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Miscellaneous Document Engineering Services</h2>
                     <p>
                       We provide a comprehensive array of knowledge management and document engineering services. In addition to the text
                       authoring and illustration/animation related services, we help you with creation of maintenance planning documents,
@@ -1519,7 +1623,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Oil & Gas</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Oil & Gas</h2>
                     <p>
                       GTS strives to contribute to the activities of oil and gas customers who are related to the exploration and
                       production of hydrocarbon fuels. Our objective is to assist our customers in improvement of safety, enhancement
@@ -1527,7 +1631,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       and techniques.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Onshore & Offshore Oil & Gas</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Onshore & Offshore Oil & Gas</h3>
                     <p>
                       We have assisted many of our noteworthy clients with cost-effective, safe and reliable extraction, production, and
                       transport of oil & gas from offshore and onshore oil & gas fields. We have equipped ourselves with expertise in
@@ -1536,7 +1640,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       installation, performance monitoring, progress tracking and issue-addressing.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Pipeline</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Pipeline</h3>
                     <p>
                       In order to ensure that supply chains of the Oil & Gas industries meet the standards and needs of today, we help
                       our clients to enhance their safety policies, best practices, and optimize costs with the utilization of the latest
@@ -1544,7 +1648,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       corrosion mitigation, installation, inspection planning, testing and research.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Petrochemical & Refinery</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Petrochemical & Refinery</h3>
                     <p>
                       GTS offers its excellent research, project management, operation and testing services to the companies in the field
                       of petrochemical plants, gas and steam turbines, refineries, natural gas production and refining. With our
@@ -1555,7 +1659,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Power</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Power</h2>
                     <p>
                       GTS possesses expertise in helping utility companies, OEMs, service providers, nuclear decommissioning agencies,
                       research organizations and regulators to ensure smooth and safe operation of their power generation and distribution
@@ -1563,7 +1667,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       technological solutions, advice and consultancy, all underpinned by world-class research.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Thermal</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Thermal</h3>
                     <p>
                       With the ever increasing demand for electricity, number of thermal plant projects is also increasing worldwide.
                       This, in turn, generates demand for in-depth materials knowledge, robust asset management approaches, and proven
@@ -1573,7 +1677,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       for new and existing plant projects.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Hydro</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Hydro</h3>
                     <p>
                       In the growing and natural resource rich countries, hydropower is major source of electricity. Whereas long plant
                       life and greater safety are the key drivers for utilization of hydropower, it involves issues related to concrete
@@ -1581,7 +1685,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       expertise in structural integrity, inspection, repair and risk based asset life optimization.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Wind</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Wind</h3>
                     <p>
                       One of the most promising sources of renewable energy, wind, is having a constantly growing demand these days. With
                       the demand for wind turbines, there is an ongoing emphasis on lighter structures, better efficiencies, and optimal
@@ -1592,7 +1696,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       can ensure operational effectiveness of their existing plants.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Nuclear</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Nuclear</h3>
                     <p>
                       Nuclear power utilization poses several challenges related to efficiency, waste management, disaster management,
                       safety and regulatory compliances. We help the nuclear power operators and OEMs in addressing these challenges
@@ -1625,14 +1729,14 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Oil & Gas Equipment</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Oil & Gas Equipment</h2>
                     <p>
                       We have helped our clients, including oil & gas operators, exploring & irrigation companies with our services in
                       equipment design and engineering. With our deep understanding and thorough expertise in this field, we have been
                       able to offer our oil & gas clients excellent design solutions in a cost-effective fashion.
                     </p>
 
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Steel, Cement & Power Plant Equipment</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Steel, Cement & Power Plant Equipment</h2>
                     <p>
                       Our solutions are crafted around leveraging the benefit of our design, validation, testing and PLM expertise to our
                       clients in the field of steel, cement and power plants. Through the product lifecycle, we provide services that
@@ -1640,35 +1744,35 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       introduce variations and test them at all the aspects to spell success.
                     </p>
 
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Transportation</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Transportation</h2>
                     <p>
                       In the transportation industry, it&apos;s vital for manufacturers and OEMs to keep investing in newer and innovative
                       products. GTS helps our transportation clients by providing time-testing design, illustrations, and FEA validation
                       services so that they can ensure better products and reduce the time to market.
                     </p>
 
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Mining & Exploration</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Mining & Exploration</h2>
                     <p>
                       Many of the leading mining & exploration companies have been relying on our expertise in PLM, design, validation,
                       quality assurance and structural integrity assessment. As a result, our clients have been able to maintain efficiency
                       in their supply chain and optimize their profitability.
                     </p>
 
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Earthmoving & Yellow Line Equipment</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Earthmoving & Yellow Line Equipment</h2>
                     <p>
                       We help our clients with the design and validation of their heavy earthmoving and yellow line equipment. We cater
                       to the resource deficiency needs of our clients in these industries and streamline their product engineering and
                       design activities utilizing our expertise.
                     </p>
 
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Agricultural Machinery & Equipment</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Agricultural Machinery & Equipment</h2>
                     <p>
                       We understand the design concerns associated with the agricultural machinery and carefully consider all the pertinent
                       issues while assisting our clients. While performing the design & validation we take care of all the crucial
                       aspects, such as safety, compliance, supply chain, hazards, noise, and vibration etc.
                     </p>
 
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Material Handling Equipment</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Material Handling Equipment</h2>
                     <p>
                       Our proven material handling equipment design process involves input from all parties affected by the system including
                       operations, maintenance, IT and vendors. We rely on our extensive industry experience to develop a material handling
@@ -1676,7 +1780,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       requirements, develop layout options, perform simulation and analysis, and select best-of-breed technologies.
                     </p>
 
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Packaging Machinery</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Packaging Machinery</h2>
                     <p>
                       We contribute to the packaging machinery industry by responding to the increasing challenges related to
                       bio-degradability, recycling capability, increasing complexity, cost-effectiveness, load bearing capability, volume
@@ -1716,11 +1820,11 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">
                       Our key services in the railway industry also include:
                     </h2>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">
                       Engineering IT and Design Automation Service
                     </h3>
                     <p>
@@ -1730,7 +1834,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       with in-service testing document for best implementation of custom design.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Mechanical Design & Analysis</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Mechanical Design & Analysis</h3>
                     <p>
                       GTS possesses expert resources in the form of employees who are specialized in providing both Computer Aided Design
                       & Drafting (CADD) as well as manual drafting. We have the required infrastructure and advanced AutoCAD and 3D CAD
@@ -1740,7 +1844,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       are also well equipped with required expertise to create preliminary structural designs and drawings.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">Construction Services & Management</h3>
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">Construction Services & Management</h3>
                     <p>
                       The experienced construction team at GTS can provide field construction and equipment installation of your highway
                       crossing or wayside signal project. We complete all the required documents before the construction begins to ensure
@@ -1750,7 +1854,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       project management as well as technical support during installation.
                     </p>
 
-                    <h3 className="text-xl font-semibold text-[#0056a4]">
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-800 border-l-3 border-cyan-500 pl-3 my-4">
                       Communication & Electrical Engineering Services
                     </h3>
                     <p>
@@ -1825,7 +1929,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Office Automation:</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Office Automation:</h2>
                     <p>
                       Ever-changing business needs, increasing complexity, and cut-throat competition has forced companies to demand for
                       faster and smoother office automation products. To stay abreast with the latest technologies and to reduce time and
@@ -1845,7 +1949,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Electronics and Durables</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Electronics and Durables</h2>
                     <p>
                       Both Consumer Electronics and Consumer Durables are probably the fastest growing business segments. The revolutions
                       in these industries are in full throttle. Smartphones and tablets have changed the way people used to stay connected.
@@ -1871,7 +1975,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Security and Gaming Equipment</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Security and Gaming Equipment</h2>
                     <p>
                       At GTS, we understand the importance of security for your business and that is why we have a special team of
                       talented and experienced engineers who work hard to come up with innovative designs that are reliable as well. Our
@@ -1915,7 +2019,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Diagnostic Imaging</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Diagnostic Imaging</h2>
                     <p>
                       With new and advanced diagnostics imaging solutions being launched in the market on a daily basis, the demand for
                       innovative imaging technology is at all time high. At GTS, we work with global leaders to deliver high-end
@@ -1940,7 +2044,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Patient Monitoring System</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Patient Monitoring System</h2>
                     <p>
                       At GTS, our continuous effort is in developing a world-class, futuristic, and cost-effective patient monitoring
                       system. Our patient monitoring system comprises of complete range of patient care starting from hospital monitoring
@@ -1966,7 +2070,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Therapeutic Equipment</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Therapeutic Equipment</h2>
                     <p>
                       At GTS, we have a brilliant team of in-house medical device consultants with wealth of knowledge and experience in
                       the therapeutic segment. Our experts posses a deep knowledge in major therapeutic areas and are capable of delivering
@@ -1998,7 +2102,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-3">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Client Challenges</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Client Challenges</h2>
                     <ul className="ml-5 space-y-2">
                       <li className="list-disc">
                         Cope with the increasing consumer demands by building required infrastructure
@@ -2021,7 +2125,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Smart Grid</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Smart Grid</h2>
                     <p>
                       A smart grid application is designed by making an intelligent combination of various smart grid components. At GTS,
                       we work as your partner to help you with this as well as help you monitor and interpret information to ensure safe
@@ -2029,7 +2133,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       such as smart data services, meter data management, system integration, and communication solutions.
                     </p>
 
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">IT Systems</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">IT Systems</h2>
                     <p>
                       Our vast experience in managing IT systems across various industries helps us in gaining a clear understanding of
                       physical networks and inventories in the utilities industries as well. We use our expertise and experience to manage
@@ -2038,7 +2142,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       solutions across complete lifecycle around GIS, OMS, and WMS.
                     </p>
 
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Operational Systems</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Operational Systems</h2>
                     <p>
                       At GTS, we use our expertise to help customers offer a range of focused solutions and help them make their
                       operational technology ready for smart grid. We stay abreast with the latest operational technologies such as SCADA
@@ -2047,7 +2151,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                       and deliver it in order to improve operational efficiency, supply reliability and customer satisfaction.
                     </p>
 
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Power Engineering</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Power Engineering</h2>
                     <p>
                       In order to solve system problems, increase efficiency and improve system performance, one needs to understand system
                       needs and solve system problem. At GTS, we provide engineering consulting services to assist customers with this. Our
@@ -2067,7 +2171,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Aero Interiors:</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Aero Interiors:</h2>
                     <p>
                       We are known to offer aesthetic design and development services for aircraft interiors. Over the years of serving
                       aero interiors industry, we have helped our clients in designing high-quality, high-comfort aircraft interiors. Our
@@ -2096,7 +2200,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Aero Structures:</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Aero Structures:</h2>
                     <p>
                       Continuous innovation in design of airframe and focus on increasing passenger comfort is the success-formula for any
                       aero structure manufacturer. GTS strives to provide the same and work hard to create new innovative designs by making
@@ -2126,7 +2230,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Aero Systems:</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Aero Systems:</h2>
                     <p>
                       GTS aims at making the complex aerospace design system easy for all its clients by providing end-to-end solutions
                       for aero system design. Starting from Product Design to Product Definition, Structural Analysis, Thermal Analysis,
@@ -2144,7 +2248,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">Aero Engines:</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Aero Engines:</h2>
                     <p>
                       Today, when the prices of aviation fuel are at all time high, aerospace manufacturers are facing dual challenge to
                       design engine with increased performance but with reduced fuel consumption. At GTS, we accept this challenge and
@@ -2199,7 +2303,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-3">
-                    <h2 className="text-3xl font-semibold text-[#0056a4]">
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">
                       GTS can support your engineering design and analysis programs in the following areas of the automotive industry:
                     </h2>
                     <ul className="ml-5 space-y-2">
@@ -2230,7 +2334,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                 </div>
               ) : isSourcingSolutionsPage ? (
                 <div className="mt-5 space-y-6 text-[15px] leading-7 text-slate-700">
-                  <h2 className="text-3xl font-semibold text-[#0056a4]">Sourcing solutions</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Sourcing solutions</h2>
                   <p>
                     Continually escalating costs of product development and a struggling profitability has necessitated for the companies
                     to look for more agile and cost-effective product building strategies. Understanding this, GTS has been instrumental
@@ -2245,7 +2349,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-4">
-                    <h3 className="text-3xl font-semibold text-[#0056a4]">Our sourcing competency covers:</h3>
+                    <h3 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Our sourcing competency covers:</h3>
                     <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 sm:p-5">
                       <Image
                         src="/image/sourcing-solutions.png"
@@ -2258,7 +2362,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h3 className="text-3xl font-semibold text-[#0056a4]">Vendor Development & Management</h3>
+                    <h3 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Vendor Development & Management</h3>
                     <p>
                       Vendor management and development is a key aspect associated with any engagement involving sourcing of equipment,
                       components, supplies, or skills. At GTS, we follow a tested methodology of vendor development, which has manifested
@@ -2278,7 +2382,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-4">
-                    <h3 className="text-3xl font-semibold text-[#0056a4]">Quality Assurance</h3>
+                    <h3 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Quality Assurance</h3>
                     <p>
                       Quality of a developed product is largely dependent on the quality of sourced materials and equipment. This is why
                       importance of quality assurance during the sourcing stage of a product lifecycle cannot be underestimated.
@@ -2301,7 +2405,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                 </div>
               ) : isTechnologyRepresentationPage ? (
                 <div className="mt-5 space-y-6 text-[15px] leading-7 text-slate-700">
-                  <h2 className="text-3xl font-semibold text-[#0056a4]">Technology Representation</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">Technology Representation</h2>
                   <p>
                     Many product based companies realize the potential in expanding their market reach to newer markets, industries and
                     geographies. However, with the constraints related to time, money, and expertise, it is often difficult to showcase
@@ -2314,7 +2418,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </p>
 
                   <section className="space-y-3">
-                    <h3 className="text-3xl font-semibold text-[#0056a4]">
+                    <h3 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">
                       Our expertise in technology representation covers many crucial aspects, including:
                     </h3>
                     <ul className="ml-5 space-y-2">
@@ -2330,7 +2434,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                   </section>
 
                   <section className="space-y-3">
-                    <h3 className="text-3xl font-semibold text-[#0056a4]">
+                    <h3 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 border-l-4 border-[#0070f3] pl-3.5 my-6">
                       What makes us the best – Our strengths and capabilities:
                     </h3>
                     <ul className="ml-5 space-y-2">
@@ -2382,11 +2486,34 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
                     Content for this submenu is coming soon.
                   </p>
               )}
-            </div>
+              {/* Modern Bottom Technical Consultation CTA */}
+              <div className="mt-12 rounded-2xl border border-blue-900/40 bg-gradient-to-br from-[#020c1d] via-[#071d3a] to-[#01142e] p-6 sm:p-8 text-white shadow-xl">
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                  <div className="space-y-2">
+                    <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/30 bg-cyan-950/60 px-3 py-0.5 text-[11px] font-bold uppercase tracking-wider text-cyan-300">
+                      <Sparkles className="h-3 w-3" /> Technical Collaboration
+                    </div>
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
+                      Ready to partner on your next engineering initiative?
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
+                      Connect with GTS specialists to discuss technical requirements, project scoping, and global delivery solutions.
+                    </p>
+                  </div>
+                  <Link
+                    href="/contact"
+                    className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-[#0070f3] px-6 py-3 text-xs sm:text-sm font-bold text-white shadow-lg shadow-blue-500/30 transition hover:bg-blue-600 hover:-translate-y-0.5"
+                  >
+                    Request Technical Consultation
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
-        </AnimatedSection>
+        </div>
       </section>
-    </main>
+    </div>
   );
 }
 
