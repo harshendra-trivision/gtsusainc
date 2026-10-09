@@ -94,330 +94,777 @@ interface HeroMetric {
   value: string;
 }
 
+interface HeroSubSector {
+  name: string;
+  icon?: LucideIcon;
+}
+
 interface HeroVisual {
+  id: string;
   label: string;
+  category: string;
+  title1: string;
+  title2: string;
+  subtitle: string;
+  description: string;
   dashboardTitle: string;
   metrics: HeroMetric[];
-  title: string;
   tags: string[];
   video: string;
+  card1: string;
+  card2: string;
+  card3: string;
+  card4: string;
+  card5: string;
+  subSectors: string[];
 }
 
 const heroVisuals: HeroVisual[] = [
   {
+    id: 'oil-and-gas',
     label: 'Oil & Gas',
-    dashboardTitle: 'PLANT ENGINEERING VIEW',
+    category: 'OIL & GAS ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Energy Solutions for a Brighter Tomorrow',
+    description:
+      'Delivering end-to-end oil & gas engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy systems for a global future.',
+    dashboardTitle: 'OIL & GAS ENGINEERING VIEW',
     metrics: [
       { label: 'Asset Health', value: '98%' },
       { label: 'Safety Compliance', value: '100%' },
-      { label: 'Project Status', value: 'LIVE' }
+      { label: 'Production Status', value: 'Live' }
     ],
-    title: 'Integrated engineering solutions for upstream, midstream, and downstream facilities.',
-    tags: ['Process Engineering', 'P&ID Design', 'HAZOP', 'Stress Analysis', '3D Plant Design', 'Digital Twin', 'Asset Integrity', 'EPC Support'],
-    video: '/vedios-gts/energy.mp4'
+    tags: [
+      'Process Engineering',
+      'FEED & Detailed Engineering',
+      'P&ID Design',
+      'Construction Support',
+      '3D Plant Design',
+      'Digital Twin',
+      'Asset Integrity',
+      'Operations Support'
+    ],
+    video: '/vedios-gts/oil-and-gas/oil-and-gas-bg-video.mp4',
+    card1: '/vedios-gts/oil-and-gas/oil-and-gas-card1.jpg',
+    card2: '/vedios-gts/oil-and-gas/oil-and-gas-card2.jpg',
+    card3: '/vedios-gts/oil-and-gas/oil-and-gas-card3.jpg',
+    card4: '/vedios-gts/oil-and-gas/oil-and-gas-card4.jpg',
+    card5: '/vedios-gts/oil-and-gas/oil-and-gas-card5.jpg',
+    subSectors: [
+      'Exploration & Production',
+      'Midstream & Pipelines',
+      'Refining & Petrochemicals',
+      'LNG & Terminals',
+      'Sustainability'
+    ]
   },
   {
-    label: 'LNG',
-    dashboardTitle: 'LNG FACILITY VIEW',
+    id: 'power-utility',
+    label: 'Power & Utilities',
+    category: 'POWER & UTILITIES ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end power & utilities engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy infrastructure for a resilient future.',
+    dashboardTitle: 'POWER & UTILITIES VIEW',
     metrics: [
-      { label: 'Cryogenic Systems', value: 'Active' },
-      { label: 'BOG Performance', value: 'Optimal' },
-      { label: 'Terminal Status', value: 'LIVE' }
+      { label: 'Grid Stability', value: 'Stable' },
+      { label: 'Substation Health', value: '99%' },
+      { label: 'SCADA Status', value: 'Online' }
     ],
-    title: 'Engineering LNG liquefaction, storage, regasification, and export terminal infrastructure.',
-    tags: ['Liquefaction', 'Cryogenic Design', 'LNG Storage', 'Loading Systems', 'Process Safety', 'Piping Design', 'Digital Twin', 'Commissioning'],
-    video: '/vedios-gts/lng-facility.mp4'
+    tags: [
+      'Grid Studies',
+      'Relay Coordination',
+      'Substation Engineering',
+      'Load Flow & Short Circuit',
+      'Protection & Control',
+      'Power Quality',
+      'Transmission & Distribution',
+      'Asset Integrity',
+      'Renewable Integration',
+      'Energy Management Systems',
+      'Grid Modernization',
+      'Decarbonization Solutions'
+    ],
+    video: '/vedios-gts/power-utility/power-utility-bg-video.mp4',
+    card1: '/vedios-gts/power-utility/power-utility1.jpg',
+    card2: '/vedios-gts/power-utility/power-utility2.jpg',
+    card3: '/vedios-gts/power-utility/power-utility3.jpg',
+    card4: '/vedios-gts/power-utility/power-utility5.png',
+    card5: '/vedios-gts/power-utility/power-utility4.jpg',
+    subSectors: [
+      'Power Generation',
+      'Transmission & Distribution',
+      'Renewable Energy',
+      'Energy Storage',
+      'Utilities Infrastructure',
+      'Sustainability'
+    ]
   },
   {
+    id: 'data-center',
+    label: 'Data Centers',
+    category: 'DATA CENTER ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Mission-critical Solutions for a Smarter Tomorrow',
+    description:
+      'Delivering end-to-end data center engineering, digital solutions, and automation to build safer, smarter, and more sustainable digital infrastructure for a connected future.',
+    dashboardTitle: 'DATA CENTERS VIEW',
+    metrics: [
+      { label: 'Uptime', value: '99.999%' },
+      { label: 'Capacity Status', value: 'Optimal' },
+      { label: 'Operations', value: '24/7' }
+    ],
+    tags: [
+      'Electrical Engineering',
+      'CFD Cooling Design',
+      'BIM',
+      'Commissioning',
+      'UPS Systems',
+      'Digital Twin',
+      'Power Distribution',
+      'Energy Modeling'
+    ],
+    video: '/vedios-gts/data-center/data-center-bg-video.mp4',
+    card1: '/vedios-gts/data-center/data-center-card1.jpg',
+    card2: '/vedios-gts/data-center/data-center-card2.jpg',
+    card3: '/vedios-gts/data-center/data-center-card3.jpg',
+    card4: '/vedios-gts/data-center/data-center-card4.png',
+    card5: '/vedios-gts/data-center/data-center-card5.jpg',
+    subSectors: [
+      'Data Center Design',
+      'Power & Cooling',
+      'Electrical Systems',
+      'Building Infrastructure',
+      'Security & Safety',
+      'Sustainability'
+    ]
+  },
+  {
+    id: 'home-process',
     label: 'Process Engineering',
+    category: 'PROCESS ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end process engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.',
     dashboardTitle: 'PROCESS ENGINEERING VIEW',
     metrics: [
-      { label: 'Process Efficiency', value: '96%' },
+      { label: 'Plant Efficiency', value: '96%' },
       { label: 'Simulation Status', value: 'Running' },
       { label: 'Design Review', value: 'Complete' }
     ],
-    title: 'Optimizing industrial processes through advanced engineering, simulation, and design.',
-    tags: ['Process Simulation', 'Heat & Mass Balance', 'Equipment Design', 'Utility Systems', 'Process Optimization', 'FEED', 'Aspen HYSYS', 'Plant Design'],
-    video: '/vedios-gts/process-enginerring.mp4'
+    tags: [
+      'Process Simulation',
+      'Heat & Mass Balance',
+      'Equipment Design',
+      'Utility Systems',
+      'Process Optimization',
+      'Plant Design',
+      'Aspen HYSYS',
+      'Digital Twin',
+      'FEED & Detailed Engineering',
+      'Operations Support'
+    ],
+    video: '/vedios-gts/home-process/home-process-bg-video.mp4',
+    card1: '/vedios-gts/home-process/home-process1.jpg',
+    card2: '/vedios-gts/home-process/home-process2.jpg',
+    card3: '/vedios-gts/home-process/home-process3.jpg',
+    card4: '/vedios-gts/home-process/home-process4.png',
+    card5: '/vedios-gts/home-process/home-process5.jpg',
+    subSectors: [
+      'Chemicals & Petrochemicals',
+      'Refining',
+      'Pharmaceuticals',
+      'Food & Beverage',
+      'Specialty Chemicals',
+      'Energy & Fuels'
+    ]
   },
   {
+    id: 'process-safety',
     label: 'Process Safety',
+    category: 'PROCESS SAFETY ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Safer Processes for a Brighter Tomorrow',
+    description:
+      'Delivering end-to-end process safety engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.',
     dashboardTitle: 'PROCESS SAFETY VIEW',
     metrics: [
       { label: 'Risk Level', value: 'Low' },
       { label: 'Compliance', value: '100%' },
       { label: 'Safety Review', value: 'Complete' }
     ],
-    title: 'Protecting people, facilities, and operations through risk-based engineering.',
-    tags: ['HAZOP', 'HAZID', 'LOPA', 'SIL Studies', 'Relief Systems', 'Fire Protection', 'PSM', 'Risk Assessment'],
-    video: '/vedios-gts/process-safety.mp4'
-  },
-  {
-    label: 'Data Centers',
-    dashboardTitle: 'MISSION CRITICAL VIEW',
-    metrics: [
-      { label: 'Power Availability', value: '99.999%' },
-      { label: 'Cooling Status', value: 'Optimal' },
-      { label: 'Operations', value: '24/7' }
+    tags: [
+      'HAZOP',
+      'HAZID',
+      'LOPA',
+      'Fire Protection',
+      'Relief Systems',
+      'Emergency Response',
+      'PSM',
+      'Risk Assessment',
+      'SIL Studies',
+      'Safety Culture & Training'
     ],
-    title: 'Mission-critical engineering for hyperscale and AI infrastructure.',
-    tags: ['Electrical Engineering', 'CFD Cooling', 'BIM', 'Commissioning', 'UPS Systems', 'Digital Twin', 'Power Distribution', 'Energy Modeling'],
-    video: '/vedios-gts/data-center.mp4'
+    video: '/vedios-gts/process-safty/process-safty-bg-video.mp4',
+    card1: '/vedios-gts/process-safty/process-safty1.jpg',
+    card2: '/vedios-gts/process-safty/process-safty2.jpg',
+    card3: '/vedios-gts/process-safty/process-safty3.jpg',
+    card4: '/vedios-gts/process-safty/process-safty4.png',
+    card5: '/vedios-gts/process-safty/process-safty6.jpg',
+    subSectors: [
+      'Chemicals & Petrochemicals',
+      'Refining',
+      'Pharmaceuticals',
+      'Food & Beverage',
+      'Specialty Chemicals',
+      'Energy & Fuels'
+    ]
   },
   {
-    label: 'Semiconductors',
+    id: 'lng',
+    label: 'LNG',
+    category: 'LNG ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Clean Energy Solutions for a Brighter Tomorrow',
+    description:
+      'Delivering end-to-end LNG engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy systems for a global future.',
+    dashboardTitle: 'LNG FACILITY VIEW',
+    metrics: [
+      { label: 'Asset Health', value: '98%' },
+      { label: 'Safety Compliance', value: '100%' },
+      { label: 'Terminal Status', value: 'LIVE' }
+    ],
+    tags: [
+      'Liquefaction Engineering',
+      'FEED & Detailed Engineering',
+      'LNG Storage',
+      'Construction Support',
+      'Regasification',
+      'Digital Twin',
+      'Marine Loading',
+      'Operations Support',
+      'Asset Integrity',
+      'Decarbonization Solutions'
+    ],
+    video: '/vedios-gts/lng/lng-bg-video.mp4',
+    card1: '/vedios-gts/lng/lng-1.jpg',
+    card2: '/vedios-gts/lng/lng-2.jpg',
+    card3: '/vedios-gts/lng/lng-3.jpg',
+    card4: '/vedios-gts/lng/lng-4.png',
+    card5: '/vedios-gts/lng/lng-5.jpg',
+    subSectors: [
+      'LNG Terminals',
+      'Liquefaction',
+      'Storage & Tanks',
+      'Regasification',
+      'Marine & Shipping',
+      'Gas Infrastructure',
+      'Sustainability'
+    ]
+  },
+  {
+    id: 'semiconductor',
+    label: 'Semiconductor',
+    category: 'SEMICONDUCTOR ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end semiconductor engineering, digital solutions, and automation to build safer, smarter, and more sustainable semiconductor manufacturing for a connected future.',
     dashboardTitle: 'SEMICONDUCTOR FACILITY VIEW',
     metrics: [
       { label: 'Cleanroom Status', value: 'ISO 3' },
-      { label: 'Facility Yield', value: '98%' },
+      { label: 'Facility Status', value: 'Operational' },
       { label: 'Equipment Status', value: 'Online' }
     ],
-    title: 'Engineering advanced semiconductor manufacturing facilities and cleanroom environments.',
-    tags: ['Cleanroom Design', 'Ultra Pure Water', 'Chemical Systems', 'HVAC', 'Process Utilities', 'Equipment Layout', 'BIM', 'Digital Twin'],
-    video: '/vedios-gts/semiconductors.mp4'
-  },
-  {
-    label: 'Power & Utilities',
-    dashboardTitle: 'POWER SYSTEMS VIEW',
-    metrics: [
-      { label: 'Grid Stability', value: 'Stable' },
-      { label: 'Substation Health', value: '99%' },
-      { label: 'SCADA Status', value: 'Online' }
+    tags: [
+      'Cleanroom Design',
+      'Chemical Systems',
+      'Process Utilities',
+      'BIM',
+      'Digital Twin',
+      'Ultra Pure Water',
+      'HVAC',
+      'Equipment Layout',
+      'Facility Automation',
+      'Energy Modeling'
     ],
-    title: 'Engineering reliable electrical infrastructure for modern energy systems.',
-    tags: ['Substations', 'Relay Protection', 'SCADA', 'Load Flow', 'Arc Flash', 'Grid Studies', 'Power Quality', 'Switchgear'],
-    video: '/vedios-gts/power-utilities.mp4'
+    video: '/vedios-gts/semiconductor/Semiconductors-bg-video.mp4',
+    card1: '/vedios-gts/semiconductor/Semiconductors1.jpg',
+    card2: '/vedios-gts/semiconductor/Semiconductors2.jpg',
+    card3: '/vedios-gts/semiconductor/image2.jpg',
+    card4: '/vedios-gts/semiconductor/image1.png',
+    card5: '/vedios-gts/semiconductor/Semiconductors5.jpg',
+    subSectors: [
+      'Wafer Fabs',
+      'Assembly & Test',
+      'OSAT',
+      'Semiconductor Materials',
+      'Utilities & Infrastructure',
+      'Facility Automation',
+      'Sustainability'
+    ]
   },
   {
+    id: 'water-wastewater',
     label: 'Water & Wastewater',
-    dashboardTitle: 'UTILITY ENGINEERING VIEW',
+    category: 'WATER & WASTEWATER ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end water & wastewater engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
+    dashboardTitle: 'WATER & WASTEWATER VIEW',
     metrics: [
       { label: 'Plant Performance', value: '98%' },
       { label: 'Water Quality', value: 'Within Spec' },
       { label: 'Operations', value: 'Continuous' }
     ],
-    title: 'Delivering sustainable engineering solutions for water treatment and utility infrastructure.',
-    tags: ['Water Treatment', 'Wastewater', 'Pump Stations', 'Hydraulic Modeling', 'SCADA', 'Instrumentation', 'Process Control', 'Digital Twin'],
-    video: '/vedios-gts/water-wastewater.mp4'
+    tags: [
+      'Water Treatment',
+      'Wastewater',
+      'Pump Stations',
+      'Network Modeling',
+      'SCADA',
+      'Instrumentation',
+      'Process Control',
+      'Digital Twin'
+    ],
+    video: '/vedios-gts/water-wastewater/water-wastewater-bg-video.mp4',
+    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
+    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
+    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
+    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
+    card5: '/vedios-gts/water-wastewater/image2.jpg',
+    subSectors: [
+      'Water Treatment',
+      'Wastewater Treatment',
+      'Pumping Systems',
+      'Distribution Networks',
+      'Stormwater Management',
+      'Asset Optimization',
+      'Sustainability'
+    ]
   },
   {
-    label: 'Industrial Automation',
-    dashboardTitle: 'AUTOMATION CONTROL VIEW',
+    id: 'Telecommunication',
+    label: 'Telecommunication',
+    category: 'Telecommunication ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end Telecommunication engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
+    dashboardTitle: 'Telecommunication VIEW',
     metrics: [
-      { label: 'Automation Level', value: 'High' },
-      { label: 'System Availability', value: '99.9%' },
-      { label: 'Production Status', value: 'Running' }
+      { label: 'Plant Performance', value: '98%' },
+      { label: 'Water Quality', value: 'Within Spec' },
+      { label: 'Operations', value: 'Continuous' }
     ],
-    title: 'Connecting industrial operations through intelligent automation and Industry 4.0 technologies.',
-    tags: ['PLC', 'SCADA', 'Industrial IoT', 'MES', 'Robotics', 'Analytics', 'Control Systems', 'OT Cybersecurity'],
-    video: '/vedios-gts/industrial-automation.mp4'
+    tags: [
+      'Water Treatment',
+      'Wastewater',
+      'Pump Stations',
+      'Network Modeling',
+      'SCADA',
+      'Instrumentation',
+      'Process Control',
+      'Digital Twin'
+    ],
+    video: '/vedios-gts/telecommunication/telecommunication-bg-cideo.mp4',
+    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
+    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
+    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
+    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
+    card5: '/vedios-gts/water-wastewater/image2.jpg',
+    subSectors: [
+      'Water Treatment',
+      'Wastewater Treatment',
+      'Pumping Systems',
+      'Distribution Networks',
+      'Stormwater Management',
+      'Asset Optimization',
+      'Sustainability'
+    ]
   },
   {
-    label: 'AI & Digital Engineering',
-    dashboardTitle: 'AI ENGINEERING VIEW',
+    id: 'Railway',
+    label: 'Railway',
+    category: 'Railway ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end Railway engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
+    dashboardTitle: 'Railway VIEW',
     metrics: [
-      { label: 'AI Models', value: 'Active' },
-      { label: 'Connected Assets', value: 'Live' },
-      { label: 'Analytics', value: 'Real-Time' }
+      { label: 'Plant Performance', value: '98%' },
+      { label: 'Water Quality', value: 'Within Spec' },
+      { label: 'Operations', value: 'Continuous' }
     ],
-    title: 'Transforming engineering with AI, digital twins, and intelligent industrial solutions.',
-    tags: ['Digital Twin', 'Predictive Analytics', 'Computer Vision', 'AI Copilot', 'Cloud Engineering', 'Data Integration', 'Machine Learning', 'Industrial AI'],
-    video: '/vedios-gts/AI.mp4'
+    tags: [
+      'Water Treatment',
+      'Wastewater',
+      'Pump Stations',
+      'Network Modeling',
+      'SCADA',
+      'Instrumentation',
+      'Process Control',
+      'Digital Twin'
+    ],
+    video: '/vedios-gts/railway/railway-bg-video.mp4',
+    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
+    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
+    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
+    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
+    card5: '/vedios-gts/water-wastewater/image2.jpg',
+    subSectors: [
+      'Water Treatment',
+      'Wastewater Treatment',
+      'Pumping Systems',
+      'Distribution Networks',
+      'Stormwater Management',
+      'Asset Optimization',
+      'Sustainability'
+    ]
   },
   {
-    label: 'Product Engineering',
-    dashboardTitle: 'PRODUCT ENGINEERING VIEW',
+    id: 'Marine',
+    label: 'Marine',
+    category: 'Marine ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end Marine engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
+    dashboardTitle: 'Marine VIEW',
     metrics: [
-      { label: 'Design Status', value: 'Active' },
-      { label: 'Validation', value: 'Passed' },
-      { label: 'Revision', value: 'R12' }
+      { label: 'Plant Performance', value: '98%' },
+      { label: 'Water Quality', value: 'Within Spec' },
+      { label: 'Operations', value: 'Continuous' }
     ],
-    title: 'Accelerating product development through advanced design and engineering validation.',
-    tags: ['CAD Design', 'FEA', 'CFD', 'Tolerance Analysis', 'DFM', 'Rapid Prototyping', 'PLM', 'Manufacturing Support'],
-    video: '/vedios-gts/automobile.mp4'
+    tags: [
+      'Water Treatment',
+      'Wastewater',
+      'Pump Stations',
+      'Network Modeling',
+      'SCADA',
+      'Instrumentation',
+      'Process Control',
+      'Digital Twin'
+    ],
+    video: '/vedios-gts/marine/marine-bg-video.mp4',
+    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
+    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
+    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
+    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
+    card5: '/vedios-gts/water-wastewater/image2.jpg',
+    subSectors: [
+      'Water Treatment',
+      'Wastewater Treatment',
+      'Pumping Systems',
+      'Distribution Networks',
+      'Stormwater Management',
+      'Asset Optimization',
+      'Sustainability'
+    ]
   },
   {
-    label: 'Mechanical Engineering',
-    dashboardTitle: 'MECHANICAL ENGINEERING VIEW',
+    id: 'mining & metals',
+    label: 'mining & metals',
+    category: 'mining & metals ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end mining & metals engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
+    dashboardTitle: 'mining & metals VIEW',
     metrics: [
-      { label: 'Model Status', value: 'Approved' },
-      { label: 'Analysis', value: 'Complete' },
-      { label: 'Documentation', value: 'Released' }
+      { label: 'Plant Performance', value: '98%' },
+      { label: 'Water Quality', value: 'Within Spec' },
+      { label: 'Operations', value: 'Continuous' }
     ],
-    title: 'Delivering precision mechanical engineering for industrial equipment and machinery.',
-    tags: ['Mechanical Design', 'Equipment Design', 'FEA', 'GD&T', 'Assemblies', 'Rotating Equipment', 'Reverse Engineering', 'Drawings'],
-    video: '/vedios-gts/mechanical-engineering.mp4'
+    tags: [
+      'Water Treatment',
+      'Wastewater',
+      'Pump Stations',
+      'Network Modeling',
+      'SCADA',
+      'Instrumentation',
+      'Process Control',
+      'Digital Twin'
+    ],
+    video: '/vedios-gts/mining/mining & metals-bg-video.mp4',
+    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
+    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
+    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
+    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
+    card5: '/vedios-gts/water-wastewater/image2.jpg',
+    subSectors: [
+      'Water Treatment',
+      'Wastewater Treatment',
+      'Pumping Systems',
+      'Distribution Networks',
+      'Stormwater Management',
+      'Asset Optimization',
+      'Sustainability'
+    ]
   },
   {
-    label: 'Structural Engineering',
-    dashboardTitle: 'STRUCTURAL ENGINEERING VIEW',
+    id: 'renewable energy',
+    label: 'renewable energy',
+    category: 'renewable energy ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end renewable energy engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
+    dashboardTitle: 'renewable energy VIEW',
     metrics: [
-      { label: 'Structural Integrity', value: 'Verified' },
-      { label: 'BIM Coordination', value: '98%' },
-      { label: 'Fabrication Status', value: 'Ready' }
+      { label: 'Plant Performance', value: '98%' },
+      { label: 'Water Quality', value: 'Within Spec' },
+      { label: 'Operations', value: 'Continuous' }
     ],
-    title: 'Engineering safe, efficient structural systems for industrial facilities.',
-    tags: ['Steel Structures', 'Pipe Racks', 'Foundations', 'Structural Analysis', 'Tekla', 'BIM', 'Fabrication Drawings', 'Connection Design'],
-    video: '/vedios-gts/heavy-enginerring.mp4'
+    tags: [
+      'Water Treatment',
+      'Wastewater',
+      'Pump Stations',
+      'Network Modeling',
+      'SCADA',
+      'Instrumentation',
+      'Process Control',
+      'Digital Twin'
+    ],
+    video: '/vedios-gts/renewable energy/renewable energy.mp4',
+    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
+    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
+    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
+    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
+    card5: '/vedios-gts/water-wastewater/image2.jpg',
+    subSectors: [
+      'Water Treatment',
+      'Wastewater Treatment',
+      'Pumping Systems',
+      'Distribution Networks',
+      'Stormwater Management',
+      'Asset Optimization',
+      'Sustainability'
+    ]
   },
   {
-    label: 'Electrical Engineering',
-    dashboardTitle: 'ELECTRICAL ENGINEERING VIEW',
+    id: 'Medical Machine',
+    label: 'Medical Machine',
+    category: 'Medical Machine ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end Medical Machine engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
+    dashboardTitle: 'Medical Machine VIEW',
     metrics: [
-      { label: 'Load Capacity', value: 'Optimal' },
-      { label: 'Protection Status', value: 'Verified' },
-      { label: 'Distribution', value: 'Online' }
+      { label: 'Plant Performance', value: '98%' },
+      { label: 'Water Quality', value: 'Within Spec' },
+      { label: 'Operations', value: 'Continuous' }
     ],
-    title: 'Engineering dependable electrical systems for industrial and mission-critical facilities.',
-    tags: ['MV/LV Systems', 'Switchgear', 'Lighting', 'Grounding', 'ETAP', 'Cable Routing', 'Arc Flash', 'Power Studies'],
-    video: '/vedios-gts/electrical-engineering.mp4'
+    tags: [
+      'Water Treatment',
+      'Wastewater',
+      'Pump Stations',
+      'Network Modeling',
+      'SCADA',
+      'Instrumentation',
+      'Process Control',
+      'Digital Twin'
+    ],
+    video: '/vedios-gts/medical/medical.mp4',
+    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
+    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
+    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
+    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
+    card5: '/vedios-gts/water-wastewater/image2.jpg',
+    subSectors: [
+      'Water Treatment',
+      'Wastewater Treatment',
+      'Pumping Systems',
+      'Distribution Networks',
+      'Stormwater Management',
+      'Asset Optimization',
+      'Sustainability'
+    ]
   },
   {
-    label: 'Instrumentation & Controls',
-    dashboardTitle: 'I&C ENGINEERING VIEW',
+    id: 'Biology',
+    label: 'Biology',
+    category: 'Biology ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end Biology engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
+    dashboardTitle: 'Biology VIEW',
     metrics: [
-      { label: 'Instrument Health', value: '99%' },
-      { label: 'Loop Status', value: 'Verified' },
-      { label: 'Control Logic', value: 'Running' }
+      { label: 'Plant Performance', value: '98%' },
+      { label: 'Water Quality', value: 'Within Spec' },
+      { label: 'Operations', value: 'Continuous' }
     ],
-    title: 'Integrating intelligent instrumentation and control systems for industrial facilities.',
-    tags: ['Instrumentation', 'PLC', 'DCS', 'Control Panels', 'Loop Diagrams', 'SCADA', 'Functional Safety', 'Calibration'],
-    video: '/vedios-gts/instrumentation-controls.mp4'
+    tags: [
+      'Water Treatment',
+      'Wastewater',
+      'Pump Stations',
+      'Network Modeling',
+      'SCADA',
+      'Instrumentation',
+      'Process Control',
+      'Digital Twin'
+    ],
+    video: '/vedios-gts/biology/biology.mp4',
+    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
+    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
+    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
+    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
+    card5: '/vedios-gts/water-wastewater/image2.jpg',
+    subSectors: [
+      'Water Treatment',
+      'Wastewater Treatment',
+      'Pumping Systems',
+      'Distribution Networks',
+      'Stormwater Management',
+      'Asset Optimization',
+      'Sustainability'
+    ]
   },
   {
-    label: 'Manufacturing Engineering',
-    dashboardTitle: 'SMART MANUFACTURING VIEW',
+    id: 'Consumer',
+    label: 'Consumer',
+    category: 'Consumer ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end Consumer engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
+    dashboardTitle: 'Consumer VIEW',
     metrics: [
-      { label: 'Production Efficiency', value: '97%' },
-      { label: 'Line Availability', value: '99%' },
-      { label: 'Quality Status', value: 'Passed' }
+      { label: 'Plant Performance', value: '98%' },
+      { label: 'Water Quality', value: 'Within Spec' },
+      { label: 'Operations', value: 'Continuous' }
     ],
-    title: 'Improving manufacturing performance through engineering optimization and automation.',
-    tags: ['Production Lines', 'Lean Manufacturing', 'Automation', 'Robotics', 'Quality Engineering', 'Simulation', 'Digital Factory', 'MES'],
-    video: '/vedios-gts/marine.mp4'
+    tags: [
+      'Water Treatment',
+      'Wastewater',
+      'Pump Stations',
+      'Network Modeling',
+      'SCADA',
+      'Instrumentation',
+      'Process Control',
+      'Digital Twin'
+    ],
+    video: '/vedios-gts/consumer/consumer.mp4',
+    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
+    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
+    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
+    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
+    card5: '/vedios-gts/water-wastewater/image2.jpg',
+    subSectors: [
+      'Water Treatment',
+      'Wastewater Treatment',
+      'Pumping Systems',
+      'Distribution Networks',
+      'Stormwater Management',
+      'Asset Optimization',
+      'Sustainability'
+    ]
   },
   {
-    label: 'Telecommunications',
-    dashboardTitle: 'NETWORK INFRASTRUCTURE VIEW',
+    id: 'Aerospace',
+    label: 'Aerospace',
+    category: 'Aerospace ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end Aerospace engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
+    dashboardTitle: 'Aerospace VIEW',
     metrics: [
-      { label: 'Network Availability', value: '99.99%' },
-      { label: 'Tower Health', value: 'Verified' },
-      { label: 'Connectivity', value: 'Live' }
+      { label: 'Plant Performance', value: '98%' },
+      { label: 'Water Quality', value: 'Within Spec' },
+      { label: 'Operations', value: 'Continuous' }
     ],
-    title: 'Engineering connected infrastructure for next-generation communication networks.',
-    tags: ['Tower Design', 'Fiber Networks', 'Equipment Layout', 'Structural Analysis', 'GIS', 'RF Coordination', 'BIM', 'Site Engineering'],
-    video: '/vedios-gts/telecom.mp4'
+    tags: [
+      'Water Treatment',
+      'Wastewater',
+      'Pump Stations',
+      'Network Modeling',
+      'SCADA',
+      'Instrumentation',
+      'Process Control',
+      'Digital Twin'
+    ],
+    video: '/vedios-gts/aerospace/aerospace.mp4',
+    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
+    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
+    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
+    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
+    card5: '/vedios-gts/water-wastewater/image2.jpg',
+    subSectors: [
+      'Water Treatment',
+      'Wastewater Treatment',
+      'Pumping Systems',
+      'Distribution Networks',
+      'Stormwater Management',
+      'Asset Optimization',
+      'Sustainability'
+    ]
   },
   {
-    label: 'Rail & Transportation',
-    dashboardTitle: 'TRANSPORT SYSTEMS VIEW',
+    id: 'Process enginerring',
+    label: 'Process enginerring',
+    category: 'Process enginerring ENGINEERING',
+    title1: 'Engineering',
+    title2: 'Beyond Boundaries',
+    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
+    description:
+      'Delivering end-to-end Process enginerring engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
+    dashboardTitle: 'Process enginerring VIEW',
     metrics: [
-      { label: 'System Reliability', value: '99%' },
-      { label: 'Infrastructure Status', value: 'Operational' },
-      { label: 'Design Review', value: 'Approved' }
+      { label: 'Plant Performance', value: '98%' },
+      { label: 'Water Quality', value: 'Within Spec' },
+      { label: 'Operations', value: 'Continuous' }
     ],
-    title: 'Engineering modern transportation infrastructure and integrated mobility systems.',
-    tags: ['Rail Infrastructure', 'Stations', 'Track Engineering', 'Bridges', 'Structural Design', 'BIM', 'Systems Integration', 'Asset Management'],
-    video: '/vedios-gts/railway.mp4'
+    tags: [
+      'Water Treatment',
+      'Wastewater',
+      'Pump Stations',
+      'Network Modeling',
+      'SCADA',
+      'Instrumentation',
+      'Process Control',
+      'Digital Twin'
+    ],
+    video: '/vedios-gts/process-enginerring/process engineering.mp4',
+    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
+    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
+    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
+    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
+    card5: '/vedios-gts/water-wastewater/image2.jpg',
+    subSectors: [
+      'Water Treatment',
+      'Wastewater Treatment',
+      'Pumping Systems',
+      'Distribution Networks',
+      'Stormwater Management',
+      'Asset Optimization',
+      'Sustainability'
+    ]
   },
-  {
-    label: 'Marine & Offshore',
-    dashboardTitle: 'MARINE ENGINEERING VIEW',
-    metrics: [
-      { label: 'Structural Health', value: '98%' },
-      { label: 'Offshore Status', value: 'Operational' },
-      { label: 'Asset Integrity', value: 'Verified' }
-    ],
-    title: 'Engineering offshore platforms, marine structures, and port infrastructure.',
-    tags: ['Offshore Structures', 'Hull Design', 'Mooring Systems', 'Corrosion Protection', 'Marine Piping', 'Asset Integrity', 'Digital Twin', 'Structural Analysis'],
-    video: '/vedios-gts/marine.mp4'
-  },
-  {
-    label: 'Mining & Metals',
-    dashboardTitle: 'MINING OPERATIONS VIEW',
-    metrics: [
-      { label: 'Plant Availability', value: '97%' },
-      { label: 'Equipment Status', value: 'Running' },
-      { label: 'Safety Index', value: '100%' }
-    ],
-    title: 'Engineering processing facilities and infrastructure for mining and metals operations.',
-    tags: ['Material Handling', 'Crushers', 'Conveyors', 'Process Plants', 'Structural Engineering', 'Dust Control', 'Utilities', 'Asset Management'],
-    video: '/vedios-gts/heavy-enginerring.mp4'
-  },
-  {
-    label: 'Renewable Energy',
-    dashboardTitle: 'RENEWABLE ENERGY VIEW',
-    metrics: [
-      { label: 'Energy Output', value: '98%' },
-      { label: 'Grid Connection', value: 'Stable' },
-      { label: 'Availability', value: '99%' }
-    ],
-    title: 'Advancing sustainable energy through engineering for wind, solar, hydrogen, and emerging technologies.',
-    tags: ['Solar Plants', 'Wind Farms', 'Battery Storage', 'Hydrogen', 'Grid Integration', 'Electrical Design', 'SCADA', 'Digital Twin'],
-    video: '/vedios-gts/marine.mp4'
-  },
-  {
-    label: 'Medical Devices',
-    dashboardTitle: 'MEDICAL ENGINEERING VIEW',
-    metrics: [
-      { label: 'Compliance', value: 'FDA Ready' },
-      { label: 'Verification', value: 'Passed' },
-      { label: 'Traceability', value: '100%' }
-    ],
-    title: 'Supporting compliant engineering for precision medical technologies.',
-    tags: ['Medical Devices', 'Design Controls', 'DFMEA', 'Verification', 'Validation', 'Risk Management', 'CAD', 'Regulatory Support'],
-    video: '/vedios-gts/medical-machine.mp4'
-  },
-  {
-    label: 'Life Sciences',
-    dashboardTitle: 'LIFE SCIENCES VIEW',
-    metrics: [
-      { label: 'GMP Compliance', value: '100%' },
-      { label: 'Facility Status', value: 'Operational' },
-      { label: 'Quality Systems', value: 'Verified' }
-    ],
-    title: 'Engineering GMP-compliant facilities for pharmaceutical and biotechnology industries.',
-    tags: ['GMP Facilities', 'Clean Utilities', 'Validation', 'HVAC', 'Cleanrooms', 'Process Equipment', 'Automation', 'Digital Twin'],
-    video: '/vedios-gts/biology.mp4'
-  },
-  {
-    label: 'Consumer Products',
-    dashboardTitle: 'CONSUMER PRODUCT VIEW',
-    metrics: [
-      { label: 'Product Status', value: 'Released' },
-      { label: 'Quality', value: 'Approved' },
-      { label: 'Production', value: 'Live' }
-    ],
-    title: 'Helping manufacturers bring innovative consumer products from concept to production.',
-    tags: ['Product Design', 'Plastic Components', 'Tooling', 'FEA', 'DFM', 'Packaging', 'Validation', 'Manufacturing'],
-    video: '/vedios-gts/consumer.mp4'
-  },
-  {
-    label: 'Aerospace Engineering',
-    dashboardTitle: 'AEROSPACE ENGINEERING VIEW',
-    metrics: [
-      { label: 'Structural Analysis', value: 'Verified' },
-      { label: 'Thermal Performance', value: 'Optimal' },
-      { label: 'Certification', value: 'In Progress' }
-    ],
-    title: 'Delivering advanced engineering and simulation solutions for aerospace systems.',
-    tags: ['Composite Design', 'CFD', 'FEA', 'Thermal Analysis', 'Certification', 'Weight Optimization', 'Structural Design', 'Digital Engineering'],
-    video: '/vedios-gts/aerospace.mp4'
-  },
-  {
-    label: 'Smart Infrastructure & Cities',
-    dashboardTitle: 'SMART INFRASTRUCTURE VIEW',
-    metrics: [
-      { label: 'Connected Assets', value: 'Live' },
-      { label: 'City Operations', value: 'Integrated' },
-      { label: 'Infrastructure Health', value: '98%' }
-    ],
-    title: 'Engineering connected infrastructure that powers smarter, more resilient communities.',
-    tags: ['Smart Cities', 'IoT', 'Digital Twin', 'Utilities', 'Mobility', 'GIS', 'Asset Management', 'AI Analytics'],
-    video: '/vedios-gts/smart-infrastructure-cities.mp4'
-  }
 ];
-
 const trustStats = [
   {
     title: 'Established 2012',
@@ -1955,7 +2402,8 @@ export default function HomePage() {
 
   return (
     <div className="flex w-full flex-col overflow-hidden bg-white">
-      <section className="relative min-h-[760px] lg:min-h-screen overflow-hidden bg-slate-950 text-white">
+      <section className="relative isolate flex min-h-screen flex-col overflow-hidden bg-sky-100 text-slate-900">
+        {/* Background Video */}
         <video
           ref={videoRef}
           key={`hero-video-${activeSlide}`}
@@ -1964,127 +2412,170 @@ export default function HomePage() {
           playsInline
           preload="metadata"
           onEnded={handleVideoEnd}
-          className="absolute inset-0 h-full w-full object-cover "
+          className="absolute inset-0 h-full w-full object-cover"
         >
           <source src={heroVisuals[activeSlide].video} type="video/mp4" />
         </video>
+
+        {/* Overlays: full veil on mobile, left wash on desktop, white fade at the bottom */}
+        <div className="pointer-events-none absolute inset-0 z-[1] bg-white/60 lg:hidden" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-[52%] bg-gradient-to-r from-white/90 via-white/50 to-transparent lg:block" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-64 bg-gradient-to-t from-white via-white/85 to-transparent" />
         <FloatingParticles />
 
-        {/* Left Ambient Light Wash: Soft Top-Left Logo Glow & Delicate Translucent Left Column */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-[10%] min-w-[100px] sm:min-w-[120px] lg:min-w-[140px] z-[1] select-none">
-          {/* Entire left strip: light, soft, translucent glass wash */}
-          <div className="h-full w-full bg-gradient-to-r from-white/20 via-white/10 to-transparent backdrop-blur-[2px]" />
-          {/* Subtle feathering to the right */}
-          <div className="absolute inset-y-0 -right-10 w-10 bg-gradient-to-r from-white/10 to-transparent" />
-        </div>
-
-        {/* Localized Top-Left Soft White Highlight exclusively behind the logo */}
-        <div className="pointer-events-none absolute top-0 left-0 z-[2] select-none">
-          <div className="h-36 w-64 sm:h-44 sm:w-80 lg:h-48 lg:w-96 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.65)_0%,rgba(255,255,255,0.35)_40%,rgba(255,255,255,0.1)_70%,transparent_100%)]" />
-        </div>
-
-        <div className="relative z-10 grid min-h-[760px] lg:min-h-screen grid-cols-1 items-center lg:items-stretch gap-12 px-4 pt-28 pb-20 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-24 sm:px-6 lg:grid-cols-12 lg:px-8">
-          <AnimatedSection as="div" className="lg:col-span-7 flex flex-col justify-between gap-8 lg:gap-12">
-            <div className="space-y-8">
-              <div className="space-y-5">
-                <p className="text-base font-semibold text-cyan-200 sm:text-lg">
-                  Engineering Excellence Powered by AI & Innovation
+        {/* Main Content Area */}
+        <div className="relative z-10 mx-auto flex w-full max-w-[1720px] flex-1 flex-col gap-6 px-4 pb-5 pt-24 sm:px-6 sm:pt-28 lg:gap-7 lg:px-8">
+          <div className="grid flex-1 grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8">
+            {/* Left column: headline + Card 5 */}
+            <div className="flex flex-col justify-between gap-6 lg:col-span-5">
+              <AnimatedSection as="div" className="space-y-4">
+                <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#071A4A] sm:text-sm">
+                  {heroVisuals[activeSlide].category}
                 </p>
-                <h1 className="font-display text-3xl font-extrabold leading-[1.15] tracking-[-0.03em] sm:text-4xl lg:text-[2.4rem] xl:text-[2.6rem]">
-                  <span className="block">AI-Powered</span>
-                  <span className="block bg-gradient-to-r from-cyan-200 via-sky-300 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(34,211,238,0.18)] lg:whitespace-nowrap">
-                    Intelligent Engineering Solutions
-                  </span>
-                  <span className="block">
-                    for{' '}
-                    <span className="bg-gradient-to-r from-cyan-200 via-sky-300 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(34,211,238,0.18)] lg:whitespace-nowrap">
-                      Industrial Transformation
-                    </span>
-                  </span>
+
+                <h1 className="font-display text-[clamp(2.125rem,3.4vw,4rem)] font-black leading-[1] tracking-[-0.03em]">
+                  <span className="block text-[#071A4A]">{heroVisuals[activeSlide].title1}</span>
+                  <span className="block text-[#0A3DF0] lg:whitespace-nowrap">{heroVisuals[activeSlide].title2}</span>
                 </h1>
-              </div>
-            </div>
 
-            <div className="space-y-6">
-              <p className="max-w-3xl text-sm leading-7 text-slate-200 sm:text-base">
-                Delivering end-to-end Plant, Process, Product, Automation, Digital Engineering, and EPC solutions for global industrial, energy, infrastructure, and manufacturing sectors.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <GradientButton href="/#solutions">
-                  Explore Solutions
-                </GradientButton>
-                <GradientButton href="/contact" variant="ghost">
-                  Schedule Consultation
-                </GradientButton>
-              </div>
-              {/* <p className="max-w-2xl text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
-                More than drafting: integrated engineering, automation, AI, digital, and industrial technology delivery.
-              </p> */}
-            </div>
-          </AnimatedSection>
+                <p className="text-[clamp(1.125rem,1.7vw,1.75rem)] font-extrabold leading-tight tracking-tight text-[#071A4A]">
+                  {heroVisuals[activeSlide].subtitle}
+                </p>
 
-          <AnimatedSection as="div" delay={0.12} className="lg:col-span-5 lg:self-end w-full">
-            <div className="mx-auto lg:ml-auto max-w-[480px] w-full">
-              <GlassCard tone="dark" className="rounded-[2rem] p-3 shadow-2xl shadow-slate-950/60">
-                <div className="relative min-h-[520px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950">
-                  <video
-                    key={`panel-${activeSlide}`}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    className="absolute inset-0 h-full w-full object-cover opacity-70"
+                <p className="max-w-[31rem] text-[clamp(0.9375rem,1.15vw,1.125rem)] font-medium leading-snug text-[#0A3DC2]">
+                  {heroVisuals[activeSlide].description}
+                </p>
+
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <a
+                    href="/#solutions"
+                    className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0A3DF0] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-600/25 transition-colors hover:bg-[#0832C8]"
                   >
-                    <source src={heroVisuals[activeSlide].video} type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-transparent" />
-                  <div className="absolute left-5 right-5 top-5 rounded-2xl border border-cyan-200/20 bg-slate-950/55 p-4 backdrop-blur">
-                    <div className="flex items-center justify-between text-xs text-cyan-100">
-                      <span className="font-mono uppercase tracking-[0.22em]">{heroVisuals[activeSlide].dashboardTitle}</span>
-                      <span className="rounded-full bg-emerald-400/15 px-2 py-1 text-emerald-200">Live</span>
-                    </div>
-                    <div className="mt-4 grid grid-cols-3 gap-3">
-                      {heroVisuals[activeSlide].metrics.map((metric) => (
-                        <div key={metric.label} className="rounded-xl bg-white/10 p-3">
-                          <div className="text-[10px] uppercase tracking-wider text-slate-300">{metric.label}</div>
-                          <div className="mt-2 text-lg font-bold text-white">{metric.value}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="absolute bottom-5 left-5 right-5 space-y-4">
-                    <div>
-                      <div className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">
-                        {heroVisuals[activeSlide].label}
-                      </div>
-                      <h3 className="mt-2 line-clamp-2 text-xl font-bold leading-tight text-white">
-                        {heroVisuals[activeSlide].title}
-                      </h3>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      {heroVisuals[activeSlide].tags.map((tag) => (
-                        <div key={tag} className="rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-[11px] font-medium text-slate-100 backdrop-blur">
-                          {tag}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                    Explore Solutions <ArrowRight className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-[#0A3DF0] bg-white px-6 py-[10px] text-base font-semibold text-[#0A3DF0] transition-colors hover:bg-blue-50"
+                  >
+                    Schedule Consultation <ArrowRight className="h-4 w-4" />
+                  </a>
                 </div>
-              </GlassCard>
+              </AnimatedSection>
 
-              <div className="mt-5 flex flex-wrap justify-center gap-2">
-                {heroVisuals.map((visual, index) => (
-                  <button
-                    key={visual.label}
-                    onClick={() => setActiveSlide(index)}
-                    className={`h-2 rounded-full transition-all ${activeSlide === index ? 'w-10 bg-cyan-300' : 'w-2 bg-white/40 hover:bg-white/70'}`}
-                    aria-label={`Show ${visual.label}`}
+              {/* Card 5 (Digital Twin) — frame has no fixed height, so it follows the image's own aspect ratio */}
+              <AnimatedSection as="div" delay={0.15}>
+                <div className="w-full max-w-[540px] overflow-hidden rounded-xl shadow-[0_0_24px_rgba(37,99,235,0.45)] transition-transform duration-300 hover:-translate-y-1 lg:max-w-[clamp(260px,44vh,540px)] lg:rounded-2xl">
+                  <img
+                    src={heroVisuals[activeSlide].card5}
+                    alt={`${heroVisuals[activeSlide].label} Card 5`}
+                    className="block h-auto w-full"
                   />
-                ))}
-              </div>
+                </div>
+              </AnimatedSection>
             </div>
-          </AnimatedSection>
+
+            {/* Right column: Cards 1–3 + Card 4 */}
+            <div className="flex flex-col justify-between gap-5 lg:col-span-7">
+              {/* Cards 1, 2, 3 — swipeable row on phones, 3 columns from sm */}
+              <AnimatedSection as="div" delay={0.1}>
+                <div className="-mx-4 flex snap-x snap-mandatory items-start gap-3 overflow-x-auto px-4 py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:p-0">
+                  {[
+                    heroVisuals[activeSlide].card1,
+                    heroVisuals[activeSlide].card2,
+                    heroVisuals[activeSlide].card3
+                  ].map((src, index) => (
+                    <div
+                      key={src}
+                      className="w-[78%] shrink-0 snap-center overflow-hidden rounded-xl shadow-[0_0_24px_rgba(37,99,235,0.45)] transition-transform duration-300 hover:-translate-y-1 sm:w-auto lg:rounded-2xl"
+                    >
+                      <img
+                        src={src}
+                        alt={`${heroVisuals[activeSlide].label} Card ${index + 1}`}
+                        className="block h-auto w-full"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </AnimatedSection>
+
+              {/* Card 4 (Engineering View Panel) */}
+              <AnimatedSection as="div" delay={0.2} className="flex lg:justify-end">
+                <div className="w-full max-w-[580px] overflow-hidden rounded-xl shadow-[0_0_24px_rgba(37,99,235,0.45)] transition-transform duration-300 hover:-translate-y-1 lg:max-w-[clamp(300px,52vh,580px)] lg:rounded-2xl">
+                  <img
+                    src={heroVisuals[activeSlide].card4}
+                    alt={`${heroVisuals[activeSlide].label} Card 4`}
+                    className="block h-auto w-full"
+                  />
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+
+          {/* Bottom band — row 1: stats + industry switcher, row 2: sub-sectors + slogan */}
+          <div className="space-y-4">
+            <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between xl:gap-8">
+              {/* Stats */}
+              <ul className="grid grid-cols-2 gap-x-6 gap-y-4 sm:flex sm:flex-wrap sm:items-center sm:gap-x-8 xl:gap-x-12">
+                {[
+                  { icon: Globe, value: '15+', label: 'Industries Served' },
+                  { icon: Users, value: '100+', label: 'Projects Delivered' },
+                  { icon: Award, value: '15+', label: 'Years of Engineering Excellence' },
+                  { icon: Leaf, value: 'A Cleaner', label: 'Brighter Tomorrow' }
+                ].map(({ icon: Icon, value, label }) => (
+                  <li key={label} className="flex items-center gap-3">
+                    <Icon className="h-9 w-9 shrink-0 text-[#0A3DF0]" strokeWidth={1.75} />
+                    <div className="leading-tight">
+                      <div className="text-xl font-extrabold text-[#0A3DF0]">{value}</div>
+                      {/* <div className="max-w-[9rem] text-xs font-semibold text-[#0A2A8A] sm:text-[13px]">{label}</div> */}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Industry Switcher Tabs — shown only when there is more than one industry */}
+              {heroVisuals.length > 1 && (
+                <div className="flex flex-wrap items-center gap-2 xl:justify-end">
+                  {heroVisuals.map((visual, index) => (
+                    <button
+                      key={visual.id}
+                      type="button"
+                      onClick={() => setActiveSlide(index)}
+                      className={`rounded-full px-3.5 py-1.5 text-xs font-bold tracking-wide transition-colors ${
+                        activeSlide === index
+                          ? 'bg-[#0A3DF0] text-white shadow-md shadow-blue-600/30'
+                          : 'border border-slate-200 bg-white/85 text-slate-700 hover:border-[#0A3DF0] hover:text-[#0A3DF0]'
+                      }`}
+                    > * 
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-[#0A3DF0]/15 pt-4">
+              {/* Sub-sectors */}
+              {heroVisuals[activeSlide].subSectors && (
+                <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 2xl:gap-x-7">
+                  {heroVisuals[activeSlide].subSectors.map((sub) => (
+                    <li key={sub} className="flex items-center gap-2 text-xs font-semibold text-[#0A2A8A] 2xl:text-[13px]">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#0A3DF0]" />
+                      {sub}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {/* Slogan */}
+              <p className="ml-auto flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 text-[11px] font-bold tracking-[0.1em] text-[#0A3DF0] sm:flex-nowrap sm:whitespace-nowrap 2xl:gap-x-3 2xl:text-xs 2xl:tracking-[0.18em]">
+                {['PEOPLE', 'TECHNOLOGY', 'INDUSTRY', 'A CLEANER', 'BRIGHTER', 'TOMORROW'].map((word, index) => (
+                  <span key={word} className="flex items-center gap-x-2 2xl:gap-x-3">
+                    {index > 0 && <span className="opacity-50">|</span>}
+                    {word} 
+                  </span>
+                ))}
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
