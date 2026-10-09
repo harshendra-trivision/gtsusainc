@@ -121,749 +121,1285 @@ interface HeroVisual {
 
 const heroVisuals: HeroVisual[] = [
   {
-    id: 'oil-and-gas',
-    label: 'Oil & Gas',
-    category: 'OIL & GAS ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Energy Solutions for a Brighter Tomorrow',
-    description:
-      'Delivering end-to-end oil & gas engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy systems for a global future.',
-    dashboardTitle: 'OIL & GAS ENGINEERING VIEW',
-    metrics: [
-      { label: 'Asset Health', value: '98%' },
-      { label: 'Safety Compliance', value: '100%' },
-      { label: 'Production Status', value: 'Live' }
+    "id": "oil-and-gas",
+    "label": "Oil & Gas",
+    "category": "OIL & GAS ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Energy Solutions for a Brighter Tomorrow",
+    "description": "Delivering end-to-end oil & gas engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy systems for a global future.",
+    "dashboardTitle": "OIL & GAS ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Asset Health",
+        "value": "98%"
+      },
+      {
+        "label": "Safety Compliance",
+        "value": "100%"
+      },
+      {
+        "label": "Production Status",
+        "value": "Live"
+      }
     ],
-    tags: [
-      'Process Engineering',
-      'FEED & Detailed Engineering',
-      'P&ID Design',
-      'Construction Support',
-      '3D Plant Design',
-      'Digital Twin',
-      'Asset Integrity',
-      'Operations Support'
+    "tags": [
+      "Process Engineering",
+      "FEED & Detailed Engineering",
+      "P&ID Design",
+      "Construction Support",
+      "3D Plant Design",
+      "Digital Twin",
+      "Asset Integrity",
+      "Operations Support"
     ],
-    video: '/vedios-gts/oil-and-gas/oil-and-gas-bg-video.mp4',
-    card1: '/vedios-gts/oil-and-gas/oil-and-gas-card1.jpg',
-    card2: '/vedios-gts/oil-and-gas/oil-and-gas-card2.jpg',
-    card3: '/vedios-gts/oil-and-gas/oil-and-gas-card3.jpg',
-    card4: '/vedios-gts/oil-and-gas/oil-and-gas-card4.jpg',
-    card5: '/vedios-gts/oil-and-gas/oil-and-gas-card5.jpg',
-    subSectors: [
-      'Exploration & Production',
-      'Midstream & Pipelines',
-      'Refining & Petrochemicals',
-      'LNG & Terminals',
-      'Sustainability'
+    "video": "/vedios-gts/oil-and-gas/oil-and-gas-bg-video.mp4",
+    "card1": "/vedios-gts/oil-and-gas/oil-and-gas-card1.jpg",
+    "card2": "/vedios-gts/oil-and-gas/oil-and-gas-card2.jpg",
+    "card3": "/vedios-gts/oil-and-gas/oil-and-gas-card3.jpg",
+    "card4": "/vedios-gts/oil-and-gas/oil-and-gas-card4.jpg",
+    "card5": "/vedios-gts/oil-and-gas/oil-and-gas-card5.jpg",
+    "subSectors": [
+      "Exploration & Production",
+      "Midstream & Pipelines",
+      "Refining & Petrochemicals",
+      "LNG & Terminals",
+      "Sustainability"
     ]
   },
   {
-    id: 'power-utility',
-    label: 'Power & Utilities',
-    category: 'POWER & UTILITIES ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end power & utilities engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy infrastructure for a resilient future.',
-    dashboardTitle: 'POWER & UTILITIES VIEW',
-    metrics: [
-      { label: 'Grid Stability', value: 'Stable' },
-      { label: 'Substation Health', value: '99%' },
-      { label: 'SCADA Status', value: 'Online' }
+    "id": "power-utility",
+    "label": "Power & Utilities",
+    "category": "POWER & UTILITIES ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
+    "description": "Delivering end-to-end power & utilities engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy infrastructure for a resilient future.",
+    "dashboardTitle": "POWER & UTILITIES VIEW",
+    "metrics": [
+      {
+        "label": "Grid Stability",
+        "value": "Stable"
+      },
+      {
+        "label": "Substation Health",
+        "value": "99%"
+      },
+      {
+        "label": "SCADA Status",
+        "value": "Online"
+      }
     ],
-    tags: [
-      'Grid Studies',
-      'Relay Coordination',
-      'Substation Engineering',
-      'Load Flow & Short Circuit',
-      'Protection & Control',
-      'Power Quality',
-      'Transmission & Distribution',
-      'Asset Integrity',
-      'Renewable Integration',
-      'Energy Management Systems',
-      'Grid Modernization',
-      'Decarbonization Solutions'
+    "tags": [
+      "Grid Studies",
+      "Relay Coordination",
+      "Substation Engineering",
+      "Load Flow & Short Circuit",
+      "Protection & Control",
+      "Power Quality",
+      "Transmission & Distribution",
+      "Asset Integrity",
+      "Renewable Integration",
+      "Energy Management Systems",
+      "Grid Modernization",
+      "Decarbonization Solutions"
     ],
-    video: '/vedios-gts/power-utility/power-utility-bg-video.mp4',
-    card1: '/vedios-gts/power-utility/power-utility1.jpg',
-    card2: '/vedios-gts/power-utility/power-utility2.jpg',
-    card3: '/vedios-gts/power-utility/power-utility3.jpg',
-    card4: '/vedios-gts/power-utility/power-utility5.png',
-    card5: '/vedios-gts/power-utility/power-utility4.jpg',
-    subSectors: [
-      'Power Generation',
-      'Transmission & Distribution',
-      'Renewable Energy',
-      'Energy Storage',
-      'Utilities Infrastructure',
-      'Sustainability'
+    "video": "/vedios-gts/power-utility/power-utility-bg-video.mp4",
+    "card1": "/vedios-gts/power-utility/power-utility1.jpg",
+    "card2": "/vedios-gts/power-utility/power-utility2.jpg",
+    "card3": "/vedios-gts/power-utility/power-utility3.jpg",
+    "card4": "/vedios-gts/power-utility/power-utility5.png",
+    "card5": "/vedios-gts/power-utility/power-utility4.jpg",
+    "subSectors": [
+      "Power Generation",
+      "Transmission & Distribution",
+      "Renewable Energy",
+      "Energy Storage",
+      "Utilities Infrastructure",
+      "Sustainability"
     ]
   },
   {
-    id: 'data-center',
-    label: 'Data Centers',
-    category: 'DATA CENTER ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Mission-critical Solutions for a Smarter Tomorrow',
-    description:
-      'Delivering end-to-end data center engineering, digital solutions, and automation to build safer, smarter, and more sustainable digital infrastructure for a connected future.',
-    dashboardTitle: 'DATA CENTERS VIEW',
-    metrics: [
-      { label: 'Uptime', value: '99.999%' },
-      { label: 'Capacity Status', value: 'Optimal' },
-      { label: 'Operations', value: '24/7' }
+    "id": "data-center",
+    "label": "Data Centers",
+    "category": "DATA CENTER ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Mission-critical Solutions for a Smarter Tomorrow",
+    "description": "Delivering end-to-end data center engineering, digital solutions, and automation to build safer, smarter, and more sustainable digital infrastructure for a connected future.",
+    "dashboardTitle": "DATA CENTERS VIEW",
+    "metrics": [
+      {
+        "label": "Uptime",
+        "value": "99.999%"
+      },
+      {
+        "label": "Capacity Status",
+        "value": "Optimal"
+      },
+      {
+        "label": "Operations",
+        "value": "24/7"
+      }
     ],
-    tags: [
-      'Electrical Engineering',
-      'CFD Cooling Design',
-      'BIM',
-      'Commissioning',
-      'UPS Systems',
-      'Digital Twin',
-      'Power Distribution',
-      'Energy Modeling'
+    "tags": [
+      "Electrical Engineering",
+      "CFD Cooling Design",
+      "BIM",
+      "Commissioning",
+      "UPS Systems",
+      "Digital Twin",
+      "Power Distribution",
+      "Energy Modeling"
     ],
-    video: '/vedios-gts/data-center/data-center-bg-video.mp4',
-    card1: '/vedios-gts/data-center/data-center-card1.jpg',
-    card2: '/vedios-gts/data-center/data-center-card2.jpg',
-    card3: '/vedios-gts/data-center/data-center-card3.jpg',
-    card4: '/vedios-gts/data-center/data-center-card4.png',
-    card5: '/vedios-gts/data-center/data-center-card5.jpg',
-    subSectors: [
-      'Data Center Design',
-      'Power & Cooling',
-      'Electrical Systems',
-      'Building Infrastructure',
-      'Security & Safety',
-      'Sustainability'
+    "video": "/vedios-gts/data-center/data-center-bg-video.mp4",
+    "card1": "/vedios-gts/data-center/data-center-card1.jpg",
+    "card2": "/vedios-gts/data-center/data-center-card2.jpg",
+    "card3": "/vedios-gts/data-center/data-center-card3.jpg",
+    "card4": "/vedios-gts/data-center/data-center-card4.png",
+    "card5": "/vedios-gts/data-center/data-center-card5.jpg",
+    "subSectors": [
+      "Data Center Design",
+      "Power & Cooling",
+      "Electrical Systems",
+      "Building Infrastructure",
+      "Security & Safety",
+      "Sustainability"
     ]
   },
   {
-    id: 'home-process',
-    label: 'Process Engineering',
-    category: 'PROCESS ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end process engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.',
-    dashboardTitle: 'PROCESS ENGINEERING VIEW',
-    metrics: [
-      { label: 'Plant Efficiency', value: '96%' },
-      { label: 'Simulation Status', value: 'Running' },
-      { label: 'Design Review', value: 'Complete' }
+    "id": "home-process",
+    "label": "Process Engineering",
+    "category": "PROCESS ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
+    "description": "Delivering end-to-end process engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.",
+    "dashboardTitle": "PROCESS ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Plant Efficiency",
+        "value": "96%"
+      },
+      {
+        "label": "Simulation Status",
+        "value": "Running"
+      },
+      {
+        "label": "Design Review",
+        "value": "Complete"
+      }
     ],
-    tags: [
-      'Process Simulation',
-      'Heat & Mass Balance',
-      'Equipment Design',
-      'Utility Systems',
-      'Process Optimization',
-      'Plant Design',
-      'Aspen HYSYS',
-      'Digital Twin',
-      'FEED & Detailed Engineering',
-      'Operations Support'
+    "tags": [
+      "Process Simulation",
+      "Heat & Mass Balance",
+      "Equipment Design",
+      "Utility Systems",
+      "Process Optimization",
+      "Plant Design",
+      "Aspen HYSYS",
+      "Digital Twin",
+      "FEED & Detailed Engineering",
+      "Operations Support"
     ],
-    video: '/vedios-gts/home-process/home-process-bg-video.mp4',
-    card1: '/vedios-gts/home-process/home-process1.jpg',
-    card2: '/vedios-gts/home-process/home-process2.jpg',
-    card3: '/vedios-gts/home-process/home-process3.jpg',
-    card4: '/vedios-gts/home-process/home-process4.png',
-    card5: '/vedios-gts/home-process/home-process5.jpg',
-    subSectors: [
-      'Chemicals & Petrochemicals',
-      'Refining',
-      'Pharmaceuticals',
-      'Food & Beverage',
-      'Specialty Chemicals',
-      'Energy & Fuels'
+    "video": "/vedios-gts/home-process/home-process-bg-video.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Chemicals & Petrochemicals",
+      "Refining",
+      "Pharmaceuticals",
+      "Food & Beverage",
+      "Specialty Chemicals",
+      "Energy & Fuels"
     ]
   },
   {
-    id: 'process-safety',
-    label: 'Process Safety',
-    category: 'PROCESS SAFETY ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Safer Processes for a Brighter Tomorrow',
-    description:
-      'Delivering end-to-end process safety engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.',
-    dashboardTitle: 'PROCESS SAFETY VIEW',
-    metrics: [
-      { label: 'Risk Level', value: 'Low' },
-      { label: 'Compliance', value: '100%' },
-      { label: 'Safety Review', value: 'Complete' }
+    "id": "process-safety",
+    "label": "Process Safety",
+    "category": "PROCESS SAFETY ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Safer Processes for a Brighter Tomorrow",
+    "description": "Delivering end-to-end process safety engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.",
+    "dashboardTitle": "PROCESS SAFETY VIEW",
+    "metrics": [
+      {
+        "label": "Risk Level",
+        "value": "Low"
+      },
+      {
+        "label": "Compliance",
+        "value": "100%"
+      },
+      {
+        "label": "Safety Review",
+        "value": "Complete"
+      }
     ],
-    tags: [
-      'HAZOP',
-      'HAZID',
-      'LOPA',
-      'Fire Protection',
-      'Relief Systems',
-      'Emergency Response',
-      'PSM',
-      'Risk Assessment',
-      'SIL Studies',
-      'Safety Culture & Training'
+    "tags": [
+      "HAZOP",
+      "HAZID",
+      "LOPA",
+      "Fire Protection",
+      "Relief Systems",
+      "Emergency Response",
+      "PSM",
+      "Risk Assessment",
+      "SIL Studies",
+      "Safety Culture & Training"
     ],
-    video: '/vedios-gts/process-safty/process-safty-bg-video.mp4',
-    card1: '/vedios-gts/process-safty/process-safty1.jpg',
-    card2: '/vedios-gts/process-safty/process-safty2.jpg',
-    card3: '/vedios-gts/process-safty/process-safty3.jpg',
-    card4: '/vedios-gts/process-safty/process-safty4.png',
-    card5: '/vedios-gts/process-safty/process-safty6.jpg',
-    subSectors: [
-      'Chemicals & Petrochemicals',
-      'Refining',
-      'Pharmaceuticals',
-      'Food & Beverage',
-      'Specialty Chemicals',
-      'Energy & Fuels'
+    "video": "/vedios-gts/process-safty/process-safty-bg-video.mp4",
+    "card1": "/vedios-gts/process-safty/process-safty1.jpg",
+    "card2": "/vedios-gts/process-safty/process-safty2.jpg",
+    "card3": "/vedios-gts/process-safty/process-safty3.jpg",
+    "card4": "/vedios-gts/process-safty/process-safty4.png",
+    "card5": "/vedios-gts/process-safty/process-safty6.jpg",
+    "subSectors": [
+      "Chemicals & Petrochemicals",
+      "Refining",
+      "Pharmaceuticals",
+      "Food & Beverage",
+      "Specialty Chemicals",
+      "Energy & Fuels"
     ]
   },
   {
-    id: 'lng',
-    label: 'LNG',
-    category: 'LNG ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Clean Energy Solutions for a Brighter Tomorrow',
-    description:
-      'Delivering end-to-end LNG engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy systems for a global future.',
-    dashboardTitle: 'LNG FACILITY VIEW',
-    metrics: [
-      { label: 'Asset Health', value: '98%' },
-      { label: 'Safety Compliance', value: '100%' },
-      { label: 'Terminal Status', value: 'LIVE' }
+    "id": "lng",
+    "label": "LNG",
+    "category": "LNG ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Clean Energy Solutions for a Brighter Tomorrow",
+    "description": "Delivering end-to-end LNG engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy systems for a global future.",
+    "dashboardTitle": "LNG FACILITY VIEW",
+    "metrics": [
+      {
+        "label": "Asset Health",
+        "value": "98%"
+      },
+      {
+        "label": "Safety Compliance",
+        "value": "100%"
+      },
+      {
+        "label": "Terminal Status",
+        "value": "LIVE"
+      }
     ],
-    tags: [
-      'Liquefaction Engineering',
-      'FEED & Detailed Engineering',
-      'LNG Storage',
-      'Construction Support',
-      'Regasification',
-      'Digital Twin',
-      'Marine Loading',
-      'Operations Support',
-      'Asset Integrity',
-      'Decarbonization Solutions'
+    "tags": [
+      "Liquefaction Engineering",
+      "FEED & Detailed Engineering",
+      "LNG Storage",
+      "Construction Support",
+      "Regasification",
+      "Digital Twin",
+      "Marine Loading",
+      "Operations Support",
+      "Asset Integrity",
+      "Decarbonization Solutions"
     ],
-    video: '/vedios-gts/lng/lng-bg-video.mp4',
-    card1: '/vedios-gts/lng/lng-1.jpg',
-    card2: '/vedios-gts/lng/lng-2.jpg',
-    card3: '/vedios-gts/lng/lng-3.jpg',
-    card4: '/vedios-gts/lng/lng-4.png',
-    card5: '/vedios-gts/lng/lng-5.jpg',
-    subSectors: [
-      'LNG Terminals',
-      'Liquefaction',
-      'Storage & Tanks',
-      'Regasification',
-      'Marine & Shipping',
-      'Gas Infrastructure',
-      'Sustainability'
+    "video": "/vedios-gts/lng/lng-bg-video.mp4",
+    "card1": "/vedios-gts/lng/lng-1.jpg",
+    "card2": "/vedios-gts/lng/lng-2.jpg",
+    "card3": "/vedios-gts/lng/lng-3.jpg",
+    "card4": "/vedios-gts/lng/lng-4.png",
+    "card5": "/vedios-gts/lng/lng-5.jpg",
+    "subSectors": [
+      "LNG Terminals",
+      "Liquefaction",
+      "Storage & Tanks",
+      "Regasification",
+      "Marine & Shipping",
+      "Gas Infrastructure",
+      "Sustainability"
     ]
   },
   {
-    id: 'semiconductor',
-    label: 'Semiconductor',
-    category: 'SEMICONDUCTOR ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end semiconductor engineering, digital solutions, and automation to build safer, smarter, and more sustainable semiconductor manufacturing for a connected future.',
-    dashboardTitle: 'SEMICONDUCTOR FACILITY VIEW',
-    metrics: [
-      { label: 'Cleanroom Status', value: 'ISO 3' },
-      { label: 'Facility Status', value: 'Operational' },
-      { label: 'Equipment Status', value: 'Online' }
+    "id": "semiconductor",
+    "label": "Semiconductor",
+    "category": "SEMICONDUCTOR ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
+    "description": "Delivering end-to-end semiconductor engineering, digital solutions, and automation to build safer, smarter, and more sustainable semiconductor manufacturing for a connected future.",
+    "dashboardTitle": "SEMICONDUCTOR FACILITY VIEW",
+    "metrics": [
+      {
+        "label": "Cleanroom Status",
+        "value": "ISO 3"
+      },
+      {
+        "label": "Facility Status",
+        "value": "Operational"
+      },
+      {
+        "label": "Equipment Status",
+        "value": "Online"
+      }
     ],
-    tags: [
-      'Cleanroom Design',
-      'Chemical Systems',
-      'Process Utilities',
-      'BIM',
-      'Digital Twin',
-      'Ultra Pure Water',
-      'HVAC',
-      'Equipment Layout',
-      'Facility Automation',
-      'Energy Modeling'
+    "tags": [
+      "Cleanroom Design",
+      "Chemical Systems",
+      "Process Utilities",
+      "BIM",
+      "Digital Twin",
+      "Ultra Pure Water",
+      "HVAC",
+      "Equipment Layout",
+      "Facility Automation",
+      "Energy Modeling"
     ],
-    video: '/vedios-gts/semiconductor/Semiconductors-bg-video.mp4',
-    card1: '/vedios-gts/semiconductor/Semiconductors1.jpg',
-    card2: '/vedios-gts/semiconductor/Semiconductors2.jpg',
-    card3: '/vedios-gts/semiconductor/image2.jpg',
-    card4: '/vedios-gts/semiconductor/image1.png',
-    card5: '/vedios-gts/semiconductor/Semiconductors5.jpg',
-    subSectors: [
-      'Wafer Fabs',
-      'Assembly & Test',
-      'OSAT',
-      'Semiconductor Materials',
-      'Utilities & Infrastructure',
-      'Facility Automation',
-      'Sustainability'
+    "video": "/vedios-gts/semiconductor/Semiconductors-bg-video.mp4",
+    "card1": "/vedios-gts/semiconductor/Semiconductors1.jpg",
+    "card2": "/vedios-gts/semiconductor/Semiconductors2.jpg",
+    "card3": "/vedios-gts/semiconductor/image2.jpg",
+    "card4": "/vedios-gts/semiconductor/image1.png",
+    "card5": "/vedios-gts/semiconductor/Semiconductors5.jpg",
+    "subSectors": [
+      "Wafer Fabs",
+      "Assembly & Test",
+      "OSAT",
+      "Semiconductor Materials",
+      "Utilities & Infrastructure",
+      "Facility Automation",
+      "Sustainability"
     ]
   },
   {
-    id: 'water-wastewater',
-    label: 'Water & Wastewater',
-    category: 'WATER & WASTEWATER ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end water & wastewater engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
-    dashboardTitle: 'WATER & WASTEWATER VIEW',
-    metrics: [
-      { label: 'Plant Performance', value: '98%' },
-      { label: 'Water Quality', value: 'Within Spec' },
-      { label: 'Operations', value: 'Continuous' }
+    "id": "water-wastewater",
+    "label": "Water & Wastewater",
+    "category": "WATER & WASTEWATER ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
+    "description": "Delivering end-to-end water & wastewater engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.",
+    "dashboardTitle": "WATER & WASTEWATER VIEW",
+    "metrics": [
+      {
+        "label": "Plant Performance",
+        "value": "98%"
+      },
+      {
+        "label": "Water Quality",
+        "value": "Within Spec"
+      },
+      {
+        "label": "Operations",
+        "value": "Continuous"
+      }
     ],
-    tags: [
-      'Water Treatment',
-      'Wastewater',
-      'Pump Stations',
-      'Network Modeling',
-      'SCADA',
-      'Instrumentation',
-      'Process Control',
-      'Digital Twin'
+    "tags": [
+      "Water Treatment",
+      "Wastewater",
+      "Pump Stations",
+      "Network Modeling",
+      "SCADA",
+      "Instrumentation",
+      "Process Control",
+      "Digital Twin"
     ],
-    video: '/vedios-gts/water-wastewater/water-wastewater-bg-video.mp4',
-    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
-    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
-    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
-    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
-    card5: '/vedios-gts/water-wastewater/image2.jpg',
-    subSectors: [
-      'Water Treatment',
-      'Wastewater Treatment',
-      'Pumping Systems',
-      'Distribution Networks',
-      'Stormwater Management',
-      'Asset Optimization',
-      'Sustainability'
+    "video": "/vedios-gts/water-wastewater/water-wastewater-bg-video.mp4",
+    "card1": "/vedios-gts/water-wastewater/water-wastewater1.jpg",
+    "card2": "/vedios-gts/water-wastewater/water-wastewater2.jpg",
+    "card3": "/vedios-gts/water-wastewater/water-wastewater3.jpg",
+    "card4": "/vedios-gts/water-wastewater/water-wastewater4.png",
+    "card5": "/vedios-gts/water-wastewater/image2.jpg",
+    "subSectors": [
+      "Water Treatment",
+      "Wastewater Treatment",
+      "Pumping Systems",
+      "Distribution Networks",
+      "Stormwater Management",
+      "Asset Optimization",
+      "Sustainability"
     ]
   },
   {
-    id: 'Telecommunication',
-    label: 'Telecommunication',
-    category: 'Telecommunication ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end Telecommunication engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
-    dashboardTitle: 'Telecommunication VIEW',
-    metrics: [
-      { label: 'Plant Performance', value: '98%' },
-      { label: 'Water Quality', value: 'Within Spec' },
-      { label: 'Operations', value: 'Continuous' }
+    "id": "telecommunication",
+    "label": "Telecommunication",
+    "category": "TELECOMMUNICATION ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Connected Solutions for a Sustainable Tomorrow",
+    "description": "Delivering end-to-end telecommunication engineering, network solutions, and automation to build resilient, high-speed connectivity infrastructure for a digital future.",
+    "dashboardTitle": "TELECOMMUNICATION VIEW",
+    "metrics": [
+      {
+        "label": "Network Availability",
+        "value": "99.99%"
+      },
+      {
+        "label": "Latency",
+        "value": "<5ms"
+      },
+      {
+        "label": "Signal Coverage",
+        "value": "99%"
+      }
     ],
-    tags: [
-      'Water Treatment',
-      'Wastewater',
-      'Pump Stations',
-      'Network Modeling',
-      'SCADA',
-      'Instrumentation',
-      'Process Control',
-      'Digital Twin'
+    "tags": [
+      "5G & Fiber Networks",
+      "Tower Engineering",
+      "Data Infrastructure",
+      "Network Security",
+      "RF Engineering",
+      "Digital Twin",
+      "Operations Support",
+      "Decarbonization Solutions"
     ],
-    video: '/vedios-gts/telecommunication/telecommunication-bg-cideo.mp4',
-    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
-    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
-    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
-    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
-    card5: '/vedios-gts/water-wastewater/image2.jpg',
-    subSectors: [
-      'Water Treatment',
-      'Wastewater Treatment',
-      'Pumping Systems',
-      'Distribution Networks',
-      'Stormwater Management',
-      'Asset Optimization',
-      'Sustainability'
+    "video": "/vedios-gts/telecommunication/telecommunication-bg-cideo.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "5G Infrastructure",
+      "Fiber Optic Networks",
+      "Wireless & Microwave",
+      "Data Centers",
+      "Satellite Systems",
+      "Network Operations",
+      "Sustainability"
     ]
   },
   {
-    id: 'Railway',
-    label: 'Railway',
-    category: 'Railway ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end Railway engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
-    dashboardTitle: 'Railway VIEW',
-    metrics: [
-      { label: 'Plant Performance', value: '98%' },
-      { label: 'Water Quality', value: 'Within Spec' },
-      { label: 'Operations', value: 'Continuous' }
+    "id": "railway",
+    "label": "Railway",
+    "category": "RAILWAY ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Mobility Solutions for a Sustainable Tomorrow",
+    "description": "Delivering end-to-end railway engineering, signaling, and electrification solutions to build safer, faster, and smarter rail transit systems globally.",
+    "dashboardTitle": "RAILWAY ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Track Integrity",
+        "value": "99%"
+      },
+      {
+        "label": "Signaling Status",
+        "value": "Active"
+      },
+      {
+        "label": "On-Time Performance",
+        "value": "98%"
+      }
     ],
-    tags: [
-      'Water Treatment',
-      'Wastewater',
-      'Pump Stations',
-      'Network Modeling',
-      'SCADA',
-      'Instrumentation',
-      'Process Control',
-      'Digital Twin'
+    "tags": [
+      "Signaling & Interlocking",
+      "Electrification",
+      "Track Alignment",
+      "Rolling Stock",
+      "Civil Infrastructure",
+      "Digital Twin",
+      "Asset Integrity",
+      "Operations Support"
     ],
-    video: '/vedios-gts/railway/railway-bg-video.mp4',
-    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
-    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
-    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
-    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
-    card5: '/vedios-gts/water-wastewater/image2.jpg',
-    subSectors: [
-      'Water Treatment',
-      'Wastewater Treatment',
-      'Pumping Systems',
-      'Distribution Networks',
-      'Stormwater Management',
-      'Asset Optimization',
-      'Sustainability'
+    "video": "/vedios-gts/railway/railway-bg-video.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "High-Speed Rail",
+      "Metro & Light Rail",
+      "Freight & Heavy Haul",
+      "Signaling & Telecom",
+      "Station Infrastructure",
+      "Rolling Stock",
+      "Sustainability"
     ]
   },
   {
-    id: 'Marine',
-    label: 'Marine',
-    category: 'Marine ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end Marine engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
-    dashboardTitle: 'Marine VIEW',
-    metrics: [
-      { label: 'Plant Performance', value: '98%' },
-      { label: 'Water Quality', value: 'Within Spec' },
-      { label: 'Operations', value: 'Continuous' }
+    "id": "marine",
+    "label": "Marine",
+    "category": "MARINE & OFFSHORE ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Maritime Solutions for a Sustainable Tomorrow",
+    "description": "Delivering advanced marine engineering, naval architecture, and offshore solutions to build efficient, safe, and sustainable ocean vessels and platforms.",
+    "dashboardTitle": "MARINE VIEW",
+    "metrics": [
+      {
+        "label": "Vessel Health",
+        "value": "98%"
+      },
+      {
+        "label": "Emissions Compliance",
+        "value": "100%"
+      },
+      {
+        "label": "Operations",
+        "value": "Live"
+      }
     ],
-    tags: [
-      'Water Treatment',
-      'Wastewater',
-      'Pump Stations',
-      'Network Modeling',
-      'SCADA',
-      'Instrumentation',
-      'Process Control',
-      'Digital Twin'
+    "tags": [
+      "Naval Architecture",
+      "Offshore Structures",
+      "Propulsion Systems",
+      "Marine Safety",
+      "Port Infrastructure",
+      "Digital Twin",
+      "Asset Integrity",
+      "Decarbonization Solutions"
     ],
-    video: '/vedios-gts/marine/marine-bg-video.mp4',
-    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
-    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
-    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
-    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
-    card5: '/vedios-gts/water-wastewater/image2.jpg',
-    subSectors: [
-      'Water Treatment',
-      'Wastewater Treatment',
-      'Pumping Systems',
-      'Distribution Networks',
-      'Stormwater Management',
-      'Asset Optimization',
-      'Sustainability'
+    "video": "/vedios-gts/marine/marine-bg-video.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Offshore Platforms",
+      "Commercial Vessels",
+      "Port & Harbors",
+      "Green Propulsion",
+      "Subsea Systems",
+      "Marine Logistics",
+      "Sustainability"
     ]
   },
   {
-    id: 'mining & metals',
-    label: 'mining & metals',
-    category: 'mining & metals ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end mining & metals engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
-    dashboardTitle: 'mining & metals VIEW',
-    metrics: [
-      { label: 'Plant Performance', value: '98%' },
-      { label: 'Water Quality', value: 'Within Spec' },
-      { label: 'Operations', value: 'Continuous' }
+    "id": "mining",
+    "label": "Mining & Metals",
+    "category": "MINING & METALS ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Resource Solutions for a Sustainable Tomorrow",
+    "description": "Delivering end-to-end mining and metals engineering, mineral processing, and automated material handling to build safer and more efficient extraction operations.",
+    "dashboardTitle": "MINING & METALS VIEW",
+    "metrics": [
+      {
+        "label": "Extraction Yield",
+        "value": "95%"
+      },
+      {
+        "label": "Safety Score",
+        "value": "100%"
+      },
+      {
+        "label": "Equipment Uptime",
+        "value": "97%"
+      }
     ],
-    tags: [
-      'Water Treatment',
-      'Wastewater',
-      'Pump Stations',
-      'Network Modeling',
-      'SCADA',
-      'Instrumentation',
-      'Process Control',
-      'Digital Twin'
+    "tags": [
+      "Mineral Processing",
+      "Material Handling",
+      "Mine Ventilation",
+      "Smelting & Refining",
+      "Plant Automation",
+      "Digital Twin",
+      "Asset Integrity",
+      "Sustainability"
     ],
-    video: '/vedios-gts/mining/mining & metals-bg-video.mp4',
-    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
-    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
-    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
-    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
-    card5: '/vedios-gts/water-wastewater/image2.jpg',
-    subSectors: [
-      'Water Treatment',
-      'Wastewater Treatment',
-      'Pumping Systems',
-      'Distribution Networks',
-      'Stormwater Management',
-      'Asset Optimization',
-      'Sustainability'
+    "video": "/vedios-gts/mining/mining & metals-bg-video.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Open Pit Mining",
+      "Underground Mining",
+      "Mineral Beneficiation",
+      "Smelting & Metallurgy",
+      "Tailings Management",
+      "Autonomous Haulage",
+      "Sustainability"
     ]
   },
   {
-    id: 'renewable energy',
-    label: 'renewable energy',
-    category: 'renewable energy ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end renewable energy engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
-    dashboardTitle: 'renewable energy VIEW',
-    metrics: [
-      { label: 'Plant Performance', value: '98%' },
-      { label: 'Water Quality', value: 'Within Spec' },
-      { label: 'Operations', value: 'Continuous' }
+    "id": "renewable-energy",
+    "label": "Renewable Energy",
+    "category": "RENEWABLE ENERGY ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Clean Energy Solutions for a Sustainable Tomorrow",
+    "description": "Delivering world-class renewable energy engineering, solar, wind, and storage integration to build a zero-carbon energy ecosystem for generations to come.",
+    "dashboardTitle": "RENEWABLE ENERGY VIEW",
+    "metrics": [
+      {
+        "label": "Clean Generation",
+        "value": "99%"
+      },
+      {
+        "label": "Storage Capacity",
+        "value": "98%"
+      },
+      {
+        "label": "Grid Status",
+        "value": "Online"
+      }
     ],
-    tags: [
-      'Water Treatment',
-      'Wastewater',
-      'Pump Stations',
-      'Network Modeling',
-      'SCADA',
-      'Instrumentation',
-      'Process Control',
-      'Digital Twin'
+    "tags": [
+      "Solar PV Design",
+      "Wind Farm Engineering",
+      "BESS Storage",
+      "Hydroelectric Systems",
+      "Microgrid Design",
+      "Digital Twin",
+      "Power Integration",
+      "Decarbonization Solutions"
     ],
-    video: '/vedios-gts/renewable energy/renewable energy.mp4',
-    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
-    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
-    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
-    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
-    card5: '/vedios-gts/water-wastewater/image2.jpg',
-    subSectors: [
-      'Water Treatment',
-      'Wastewater Treatment',
-      'Pumping Systems',
-      'Distribution Networks',
-      'Stormwater Management',
-      'Asset Optimization',
-      'Sustainability'
+    "video": "/vedios-gts/renewable energy/renewable energy.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Solar Farms",
+      "Onshore & Offshore Wind",
+      "Battery Storage (BESS)",
+      "Green Hydrogen",
+      "Hydro & Geothermal",
+      "Hybrid Power Systems",
+      "Sustainability"
     ]
   },
   {
-    id: 'Medical Machine',
-    label: 'Medical Machine',
-    category: 'Medical Machine ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end Medical Machine engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
-    dashboardTitle: 'Medical Machine VIEW',
-    metrics: [
-      { label: 'Plant Performance', value: '98%' },
-      { label: 'Water Quality', value: 'Within Spec' },
-      { label: 'Operations', value: 'Continuous' }
+    "id": "medical",
+    "label": "Medical Devices",
+    "category": "MEDICAL MACHINE ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Healthcare Solutions for a Healthier Tomorrow",
+    "description": "Delivering precision medical device engineering, diagnostic equipment development, and compliance-driven automation to improve healthcare outcomes globally.",
+    "dashboardTitle": "MEDICAL MACHINE VIEW",
+    "metrics": [
+      {
+        "label": "Compliance (FDA/ISO)",
+        "value": "100%"
+      },
+      {
+        "label": "Device Precision",
+        "value": "99.9%"
+      },
+      {
+        "label": "Quality Audit",
+        "value": "Passed"
+      }
     ],
-    tags: [
-      'Water Treatment',
-      'Wastewater',
-      'Pump Stations',
-      'Network Modeling',
-      'SCADA',
-      'Instrumentation',
-      'Process Control',
-      'Digital Twin'
+    "tags": [
+      "Diagnostic Systems",
+      "Biomechatronics",
+      "Medical Robotics",
+      "ISO 13485 Compliance",
+      "Cleanroom Assembly",
+      "Digital Twin",
+      "Embedded Firmware",
+      "Verification & Validation"
     ],
-    video: '/vedios-gts/medical/medical.mp4',
-    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
-    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
-    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
-    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
-    card5: '/vedios-gts/water-wastewater/image2.jpg',
-    subSectors: [
-      'Water Treatment',
-      'Wastewater Treatment',
-      'Pumping Systems',
-      'Distribution Networks',
-      'Stormwater Management',
-      'Asset Optimization',
-      'Sustainability'
+    "video": "/vedios-gts/medical/medical.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Diagnostic Imaging",
+      "Surgical Robotics",
+      "Patient Monitoring",
+      "Implantable Devices",
+      "Laboratory Automation",
+      "Sterilization Systems",
+      "Healthcare AI"
     ]
   },
   {
-    id: 'Biology',
-    label: 'Biology',
-    category: 'Biology ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end Biology engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
-    dashboardTitle: 'Biology VIEW',
-    metrics: [
-      { label: 'Plant Performance', value: '98%' },
-      { label: 'Water Quality', value: 'Within Spec' },
-      { label: 'Operations', value: 'Continuous' }
+    "id": "biology",
+    "label": "Biotechnology & Life Sciences",
+    "category": "BIOTECHNOLOGY ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Biotech Solutions for a Healthier Tomorrow",
+    "description": "Delivering bioprocess engineering, sterile facility design, and bioreactor automation to accelerate life sciences breakthroughs and pharmaceutical production.",
+    "dashboardTitle": "BIOLOGY & LIFE SCIENCES VIEW",
+    "metrics": [
+      {
+        "label": "Sterility Level",
+        "value": "100%"
+      },
+      {
+        "label": "Batch Consistency",
+        "value": "99%"
+      },
+      {
+        "label": "Bio-Reactor Health",
+        "value": "Optimal"
+      }
     ],
-    tags: [
-      'Water Treatment',
-      'Wastewater',
-      'Pump Stations',
-      'Network Modeling',
-      'SCADA',
-      'Instrumentation',
-      'Process Control',
-      'Digital Twin'
+    "tags": [
+      "Bioprocess Design",
+      "Sterile Piping",
+      "Fermentation & Cell Culture",
+      "GMP Compliance",
+      "Purification Systems",
+      "Digital Twin",
+      "Automation & Control",
+      "Operations Support"
     ],
-    video: '/vedios-gts/biology/biology.mp4',
-    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
-    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
-    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
-    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
-    card5: '/vedios-gts/water-wastewater/image2.jpg',
-    subSectors: [
-      'Water Treatment',
-      'Wastewater Treatment',
-      'Pumping Systems',
-      'Distribution Networks',
-      'Stormwater Management',
-      'Asset Optimization',
-      'Sustainability'
+    "video": "/vedios-gts/biology/biology.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Biopharmaceuticals",
+      "Vaccine Manufacturing",
+      "Cell & Gene Therapy",
+      "Fermentation Plants",
+      "Cleanroom Facilities",
+      "Bio-waste Treatment",
+      "Sustainability"
     ]
   },
   {
-    id: 'Consumer',
-    label: 'Consumer',
-    category: 'Consumer ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end Consumer engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
-    dashboardTitle: 'Consumer VIEW',
-    metrics: [
-      { label: 'Plant Performance', value: '98%' },
-      { label: 'Water Quality', value: 'Within Spec' },
-      { label: 'Operations', value: 'Continuous' }
+    "id": "consumer",
+    "label": "Consumer Products",
+    "category": "CONSUMER GOODS ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Smart Solutions for Everyday Living",
+    "description": "Delivering consumer product engineering, high-volume automated manufacturing, and smart device development to create innovative and sustainable consumer experiences.",
+    "dashboardTitle": "CONSUMER GOODS VIEW",
+    "metrics": [
+      {
+        "label": "Line Efficiency",
+        "value": "98%"
+      },
+      {
+        "label": "Quality Pass Rate",
+        "value": "99.5%"
+      },
+      {
+        "label": "Automation Index",
+        "value": "High"
+      }
     ],
-    tags: [
-      'Water Treatment',
-      'Wastewater',
-      'Pump Stations',
-      'Network Modeling',
-      'SCADA',
-      'Instrumentation',
-      'Process Control',
-      'Digital Twin'
+    "tags": [
+      "Product Design (CAD/CAE)",
+      "Packaging Engineering",
+      "High-Speed Assembly",
+      "Quality Inspection",
+      "IoT Device Design",
+      "Digital Twin",
+      "Supply Chain Automation",
+      "Sustainability"
     ],
-    video: '/vedios-gts/consumer/consumer.mp4',
-    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
-    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
-    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
-    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
-    card5: '/vedios-gts/water-wastewater/image2.jpg',
-    subSectors: [
-      'Water Treatment',
-      'Wastewater Treatment',
-      'Pumping Systems',
-      'Distribution Networks',
-      'Stormwater Management',
-      'Asset Optimization',
-      'Sustainability'
+    "video": "/vedios-gts/consumer/consumer.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Smart Home Electronics",
+      "FMCG Packaging",
+      "Personal Care Devices",
+      "Wearables",
+      "Automated Packaging Lines",
+      "Sustainable Materials",
+      "Consumer Robotics"
     ]
   },
   {
-    id: 'Aerospace',
-    label: 'Aerospace',
-    category: 'Aerospace ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end Aerospace engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
-    dashboardTitle: 'Aerospace VIEW',
-    metrics: [
-      { label: 'Plant Performance', value: '98%' },
-      { label: 'Water Quality', value: 'Within Spec' },
-      { label: 'Operations', value: 'Continuous' }
+    "id": "aerospace",
+    "label": "Aerospace & Defense",
+    "category": "AEROSPACE ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Aviation Solutions for a Connected Tomorrow",
+    "description": "Delivering precision aerospace engineering, avionics integration, and structural mechanics to advance air and space transportation with unmatched safety and performance.",
+    "dashboardTitle": "AEROSPACE VIEW",
+    "metrics": [
+      {
+        "label": "Structural Reliability",
+        "value": "100%"
+      },
+      {
+        "label": "Avionics Status",
+        "value": "Nominal"
+      },
+      {
+        "label": "Safety Rating",
+        "value": "AS9100"
+      }
     ],
-    tags: [
-      'Water Treatment',
-      'Wastewater',
-      'Pump Stations',
-      'Network Modeling',
-      'SCADA',
-      'Instrumentation',
-      'Process Control',
-      'Digital Twin'
+    "tags": [
+      "Aerodynamic Analysis",
+      "Avionics Integration",
+      "Lightweight Structures",
+      "Propulsion Systems",
+      "Composite Materials",
+      "Digital Twin",
+      "Flight Testing Support",
+      "AS9100 Standards"
     ],
-    video: '/vedios-gts/aerospace/aerospace.mp4',
-    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
-    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
-    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
-    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
-    card5: '/vedios-gts/water-wastewater/image2.jpg',
-    subSectors: [
-      'Water Treatment',
-      'Wastewater Treatment',
-      'Pumping Systems',
-      'Distribution Networks',
-      'Stormwater Management',
-      'Asset Optimization',
-      'Sustainability'
+    "video": "/vedios-gts/aerospace/aerospace.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Commercial Aviation",
+      "Defense & Tactical Systems",
+      "Spacecraft & Satellites",
+      "UAV & Drones",
+      "Aircraft Propulsion",
+      "Ground Support Systems",
+      "Sustainability"
     ]
   },
   {
-    id: 'Process enginerring',
-    label: 'Process enginerring',
-    category: 'Process enginerring ENGINEERING',
-    title1: 'Engineering',
-    title2: 'Beyond Boundaries',
-    subtitle: 'Intelligent Solutions for a Sustainable Tomorrow',
-    description:
-      'Delivering end-to-end Process enginerring engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.',
-    dashboardTitle: 'Process enginerring VIEW',
-    metrics: [
-      { label: 'Plant Performance', value: '98%' },
-      { label: 'Water Quality', value: 'Within Spec' },
-      { label: 'Operations', value: 'Continuous' }
+    "id": "process-enginerring",
+    "label": "Process Engineering & Design",
+    "category": "PROCESS ENGINEERING & DESIGN",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Advanced Solutions for Industrial Optimization",
+    "description": "Delivering comprehensive process flow engineering, simulation modeling, and detailed plant design to optimize yield and resource efficiency across heavy industries.",
+    "dashboardTitle": "PROCESS ENGINEERING DESIGN VIEW",
+    "metrics": [
+      {
+        "label": "Plant Throughput",
+        "value": "97%"
+      },
+      {
+        "label": "Energy Efficiency",
+        "value": "94%"
+      },
+      {
+        "label": "Process Control",
+        "value": "Optimal"
+      }
     ],
-    tags: [
-      'Water Treatment',
-      'Wastewater',
-      'Pump Stations',
-      'Network Modeling',
-      'SCADA',
-      'Instrumentation',
-      'Process Control',
-      'Digital Twin'
+    "tags": [
+      "Process Simulation",
+      "Equipment Sizing",
+      "Piping & Instrumentation",
+      "Hydraulic Sizing",
+      "Thermal Analysis",
+      "Digital Twin",
+      "FEED Engineering",
+      "Operations Optimization"
     ],
-    video: '/vedios-gts/process-enginerring/process engineering.mp4',
-    card1: '/vedios-gts/water-wastewater/water-wastewater1.jpg',
-    card2: '/vedios-gts/water-wastewater/water-wastewater2.jpg',
-    card3: '/vedios-gts/water-wastewater/water-wastewater3.jpg',
-    card4: '/vedios-gts/water-wastewater/water-wastewater4.png',
-    card5: '/vedios-gts/water-wastewater/image2.jpg',
-    subSectors: [
-      'Water Treatment',
-      'Wastewater Treatment',
-      'Pumping Systems',
-      'Distribution Networks',
-      'Stormwater Management',
-      'Asset Optimization',
-      'Sustainability'
+    "video": "/vedios-gts/process-enginerring/process engineering.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Petrochemical Refining",
+      "Specialty Chemical Plants",
+      "Continuous Manufacturing",
+      "Batch Processing",
+      "Waste Heat Recovery",
+      "Industrial Gas",
+      "Sustainability"
     ]
   },
+  {
+    "id": "ai-digital",
+    "label": "AI & Digital Engineering",
+    "category": "AI & DIGITAL ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Intelligent Algorithms for an Autonomous Tomorrow",
+    "description": "Delivering industrial AI solutions, digital twins, predictive analytics, and edge computing to transform traditional engineering workflows into autonomous intelligence.",
+    "dashboardTitle": "AI & DIGITAL ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Model Accuracy",
+        "value": "99.4%"
+      },
+      {
+        "label": "Inference Latency",
+        "value": "<10ms"
+      },
+      {
+        "label": "System Health",
+        "value": "Live"
+      }
+    ],
+    "tags": [
+      "Industrial Machine Learning",
+      "Predictive Maintenance AI",
+      "Computer Vision",
+      "Digital Twin Simulation",
+      "Cloud & Edge Analytics",
+      "Sensor Fusion",
+      "Autonomous Controls",
+      "Data Security"
+    ],
+    "video": "/vedios-gts/ai & digital/ai & digital.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Predictive Analytics",
+      "Generative Engineering",
+      "Computer Vision Inspection",
+      "Robotic Process AI",
+      "Autonomous Operations",
+      "Edge IoT",
+      "Enterprise Data Architecture"
+    ]
+  },
+  {
+    "id": "electrical-engineering",
+    "label": "Electrical Engineering",
+    "category": "ELECTRICAL ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "High-Voltage Solutions for Modern Power",
+    "description": "Delivering end-to-end power systems engineering, switchgear design, motor control centers, and protective relay coordination for mission-critical facilities.",
+    "dashboardTitle": "ELECTRICAL ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Power Factor",
+        "value": "0.99"
+      },
+      {
+        "label": "Transformer Health",
+        "value": "99%"
+      },
+      {
+        "label": "Relay Coordination",
+        "value": "Verified"
+      }
+    ],
+    "tags": [
+      "Power Distribution",
+      "Switchgear & MCC",
+      "Arc Flash Studies",
+      "Relay Protection",
+      "Grounding & Lightning",
+      "Digital Twin",
+      "Cable Tray Design",
+      "Energy Management"
+    ],
+    "video": "/vedios-gts/electrical enginerring/electrical enginerring.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Medium & Low Voltage",
+      "Substations",
+      "Emergency Power & UPS",
+      "Industrial Lighting",
+      "Harmonic Mitigation",
+      "Facility Electrification",
+      "Sustainability"
+    ]
+  },
+  {
+    "id": "industrial-automation",
+    "label": "Industrial Automation",
+    "category": "INDUSTRIAL AUTOMATION & PLC",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Automated Solutions for Maximum Throughput",
+    "description": "Delivering advanced PLC, SCADA, DCS programming, and robotic automation systems to maximize plant efficiency, safety, and operational transparency.",
+    "dashboardTitle": "INDUSTRIAL AUTOMATION VIEW",
+    "metrics": [
+      {
+        "label": "System Uptime",
+        "value": "99.9%"
+      },
+      {
+        "label": "Loop Tuning",
+        "value": "Optimal"
+      },
+      {
+        "label": "Automation Index",
+        "value": "98%"
+      }
+    ],
+    "tags": [
+      "PLC & DCS Systems",
+      "SCADA Architecture",
+      "HMI Design",
+      "Robotic Integration",
+      "Safety Instrumented Systems (SIS)",
+      "Digital Twin",
+      "Industrial IoT",
+      "Commissioning Support"
+    ],
+    "video": "/vedios-gts/industrial automation/industrial automation.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "PLC Programming",
+      "SCADA Systems",
+      "Distributed Control (DCS)",
+      "Robotics & Motion Control",
+      "Industrial Networking",
+      "Vision Systems",
+      "Plant Modernization"
+    ]
+  },
+  {
+    "id": "instrumentation-controls",
+    "label": "Instrumentation & Controls",
+    "category": "INSTRUMENTATION & CONTROLS",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Precision Measurement for Critical Control",
+    "description": "Delivering field instrumentation design, control loop optimization, sensor calibration, and analytical instrumentation engineering for complex industrial operations.",
+    "dashboardTitle": "INSTRUMENTATION & CONTROLS VIEW",
+    "metrics": [
+      {
+        "label": "Sensor Calibration",
+        "value": "100%"
+      },
+      {
+        "label": "Loop Stability",
+        "value": "99%"
+      },
+      {
+        "label": "Signal Integrity",
+        "value": "Live"
+      }
+    ],
+    "tags": [
+      "Field Instrumentation",
+      "Control Valves",
+      "Flow & Pressure Sensors",
+      "Analytical Instruments",
+      "Loop Diagrams",
+      "Digital Twin",
+      "Hazardous Area Rating",
+      "SIL Compliance"
+    ],
+    "video": "/vedios-gts/instrumentation & controls/instrumentation & controls.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Transmitters & Sensors",
+      "Control Valve Sizing",
+      "Analyzer Houses",
+      "F&G Detection Systems",
+      "Junction Box Design",
+      "Wireless Instrumentation",
+      "Commissioning"
+    ]
+  },
+  {
+    "id": "manufacturing-engineering",
+    "label": "Manufacturing Engineering",
+    "category": "MANUFACTURING & PRODUCTION",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Production Solutions for Lean Excellence",
+    "description": "Delivering assembly line design, tooling optimization, lean manufacturing processes, and smart factory integrations to supercharge industrial productivity.",
+    "dashboardTitle": "MANUFACTURING VIEW",
+    "metrics": [
+      {
+        "label": "OEE (Overall Efficiency)",
+        "value": "92%"
+      },
+      {
+        "label": "Cycle Time Reduction",
+        "value": "28%"
+      },
+      {
+        "label": "Scrap Rate",
+        "value": "<0.5%"
+      }
+    ],
+    "tags": [
+      "Lean Manufacturing",
+      "Tooling & Fixture Design",
+      "Assembly Lines",
+      "Cellular Manufacturing",
+      "Production Simulation",
+      "Digital Twin",
+      "DFM / DFA",
+      "Quality Control"
+    ],
+    "video": "/vedios-gts/manufacturing enginerring/manufacturing enginerring.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Automated Assembly",
+      "CNC Machining & Tooling",
+      "Robotic Welding Cells",
+      "Plant Layout Design",
+      "Quality Assurance & Metrology",
+      "Additive Manufacturing",
+      "Smart Factory"
+    ]
+  },
+  {
+    "id": "mechanical-engineering",
+    "label": "Mechanical & Machine Engineering",
+    "category": "MECHANICAL & MACHINE ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Dynamic Solutions for Heavy Machinery",
+    "description": "Delivering rotating equipment design, stress analysis (FEA), piping stress, thermodynamic modeling, and heavy mechanical machinery engineering.",
+    "dashboardTitle": "MECHANICAL ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Machine Availability",
+        "value": "98%"
+      },
+      {
+        "label": "Vibration Levels",
+        "value": "Nominal"
+      },
+      {
+        "label": "Thermal Margin",
+        "value": "+22%"
+      }
+    ],
+    "tags": [
+      "Rotating Equipment",
+      "Piping Stress Analysis",
+      "Finite Element Analysis (FEA)",
+      "CFD Aerodynamics",
+      "HVAC Design",
+      "Digital Twin",
+      "Material Selection",
+      "Vibration Monitoring"
+    ],
+    "video": "/vedios-gts/mechine enginerring/mechine enginerring.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Pumps & Compressors",
+      "Turbomachinery",
+      "Piping Systems",
+      "Hydraulics & Pneumatics",
+      "Pressure Vessels (ASME)",
+      "Material Handling",
+      "Asset Integrity"
+    ]
+  },
+  {
+    "id": "product-engineering",
+    "label": "Product Engineering",
+    "category": "PRODUCT DESIGN & R&D",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "R&D Solutions for Groundbreaking Products",
+    "description": "Delivering end-to-end product design, rapid prototyping, thermal-mechanical simulation, and design for manufacturability (DFM) to turn visions into market leaders.",
+    "dashboardTitle": "PRODUCT ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Prototype Turnaround",
+        "value": "Rapid"
+      },
+      {
+        "label": "Design Validation",
+        "value": "100%"
+      },
+      {
+        "label": "Tolerance Margin",
+        "value": "Micron"
+      }
+    ],
+    "tags": [
+      "Industrial Design",
+      "Concept to CAD",
+      "Rapid Prototyping",
+      "DFM / DFA",
+      "Thermal Simulation",
+      "Digital Twin",
+      "Enclosure Design",
+      "Lifecycle Testing"
+    ],
+    "video": "/vedios-gts/product engineering/product engineering.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Industrial Equipment Design",
+      "Electronic Enclosures",
+      "Consumer Hardware",
+      "Precision Mechanisms",
+      "Plastics & Mold Design",
+      "Sheet Metal Engineering",
+      "Product R&D"
+    ]
+  },
+  {
+    "id": "structural-engineering",
+    "label": "Structural & Civil Engineering",
+    "category": "STRUCTURAL & CIVIL ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Resilient Foundations for Tomorrow",
+    "description": "Delivering structural analysis, foundation design, steel and concrete modeling, seismic engineering, and infrastructure civil design for industrial applications.",
+    "dashboardTitle": "STRUCTURAL ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Seismic Safety Factor",
+        "value": "1.5x"
+      },
+      {
+        "label": "Structural Integrity",
+        "value": "100%"
+      },
+      {
+        "label": "BIM Coordination",
+        "value": "Complete"
+      }
+    ],
+    "tags": [
+      "Steel Structure Design",
+      "Concrete Foundations",
+      "Seismic & Wind Analysis",
+      "STAAD.Pro & ETABS",
+      "BIM Modeling",
+      "Digital Twin",
+      "Connection Design",
+      "Construction Support"
+    ],
+    "video": "/vedios-gts/structral engineering/structral engineering.mp4",
+    "card1": "/vedios-gts/home-process/home-process1.jpg",
+    "card2": "/vedios-gts/home-process/home-process2.jpg",
+    "card3": "/vedios-gts/home-process/home-process3.jpg",
+    "card4": "/vedios-gts/home-process/home-process4.png",
+    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Industrial Steel Structures",
+      "Equipment Foundations",
+      "Pipe Racks & Bridges",
+      "Offshore Platforms",
+      "Civil Site Works",
+      "Building Foundations",
+      "Sustainability"
+    ]
+  }
 ];
 const trustStats = [
   {
