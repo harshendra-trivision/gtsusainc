@@ -533,30 +533,32 @@ const heroVisuals: HeroVisual[] = [
         "value": "99.99%"
       },
       {
-        "label": "Latency",
-        "value": "<5ms"
+        "label": "Network Performance",
+        "value": "Optimal"
       },
       {
-        "label": "Signal Coverage",
-        "value": "99%"
+        "label": "Service Status",
+        "value": "Online"
       }
     ],
     "tags": [
-      "5G & Fiber Networks",
-      "Tower Engineering",
-      "Data Infrastructure",
+      "Network Planning & Design",
+      "Network Optimization",
+      "Wireless & 5G",
+      "Private Networks",
+      "Fiber Optic Networks",
+      "IoT & M2M",
+      "Satellite Communications",
+      "Infrastructure Monitoring",
       "Network Security",
-      "RF Engineering",
-      "Digital Twin",
-      "Operations Support",
-      "Decarbonization Solutions"
+      "Digital Twin & Analytics"
     ],
     "video": "/vedios-gts/telecommunication/telecommunication-bg-cideo.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/telecommunication/Telecommunications card-1.jpg",
+    "card2": "/vedios-gts/telecommunication/Telecommunications card-2.jpg",
+    "card3": "/vedios-gts/telecommunication/Telecommunications caard-3.jpg",
+    "card4": "/vedios-gts/telecommunication/Telecommunications card-5.png",
+    "card5": "/vedios-gts/telecommunication/Telecommunications card-4.jpg",
     "subSectors": [
       "5G Infrastructure",
       "Fiber Optic Networks",
@@ -575,37 +577,39 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Mobility Solutions for a Sustainable Tomorrow",
     "description": "Delivering end-to-end railway engineering, signaling, and electrification solutions to build safer, faster, and smarter rail transit systems globally.",
-    "dashboardTitle": "RAILWAY ENGINEERING VIEW",
+    "dashboardTitle": "RAIL & TRANSPORTATION ENGINEERING VIEW",
     "metrics": [
       {
-        "label": "Track Integrity",
-        "value": "99%"
+        "label": "System Reliability",
+        "value": "99.9%"
       },
       {
-        "label": "Signaling Status",
-        "value": "Active"
+        "label": "Train On-Time Performance",
+        "value": "98.5%"
       },
       {
-        "label": "On-Time Performance",
-        "value": "98%"
+        "label": "Passenger Safety",
+        "value": "100%"
       }
     ],
     "tags": [
-      "Signaling & Interlocking",
-      "Electrification",
-      "Track Alignment",
-      "Rolling Stock",
-      "Civil Infrastructure",
-      "Digital Twin",
-      "Asset Integrity",
-      "Operations Support"
+      "Signaling & Train Control",
+      "Telecommunications",
+      "Station Automation",
+      "SCADA & Control Systems",
+      "Track Engineering",
+      "Power & Electrification",
+      "Structural Design",
+      "BIM & Digital Twin",
+      "Rolling Stock Integration",
+      "Asset Management"
     ],
     "video": "/vedios-gts/railway/railway-bg-video.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/railway/railway-card-1.jpg",
+    "card2": "/vedios-gts/railway/railway-card-2.jpg",
+    "card3": "/vedios-gts/railway/railway-card-3.jpg",
+    "card4": "/vedios-gts/railway/railway-card-5.png",
+    "card5": "/vedios-gts/railway/railway-card-4.jpg",
     "subSectors": [
       "High-Speed Rail",
       "Metro & Light Rail",
@@ -624,37 +628,39 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Maritime Solutions for a Sustainable Tomorrow",
     "description": "Delivering advanced marine engineering, naval architecture, and offshore solutions to build efficient, safe, and sustainable ocean vessels and platforms.",
-    "dashboardTitle": "MARINE VIEW",
+    "dashboardTitle": "MARINE & OFFSHORE VIEW",
     "metrics": [
       {
-        "label": "Vessel Health",
+        "label": "Structural Health",
         "value": "98%"
       },
       {
-        "label": "Emissions Compliance",
-        "value": "100%"
+        "label": "Operational Status",
+        "value": "Operational"
       },
       {
-        "label": "Operations",
-        "value": "Live"
+        "label": "Asset Integrity",
+        "value": "Verified"
       }
     ],
     "tags": [
-      "Naval Architecture",
       "Offshore Structures",
-      "Propulsion Systems",
-      "Marine Safety",
-      "Port Infrastructure",
-      "Digital Twin",
-      "Asset Integrity",
-      "Decarbonization Solutions"
+      "Hull Design",
+      "Mooring Systems",
+      "Corrosion Protection",
+      "Marine Piping",
+      "Marine Automation",
+      "Subsea Systems",
+      "Digital Twin & Simulation",
+      "Marine Asset Integrity",
+      "Decommissioning Support"
     ],
     "video": "/vedios-gts/marine/marine-bg-video.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/marine/marine-card-1.jpg",
+    "card2": "/vedios-gts/marine/marine-card-2.jpg",
+    "card3": "/vedios-gts/marine/marine-card-3.jpg",
+    "card4": "/vedios-gts/marine/marine-card-5.png",
+    "card5": "/vedios-gts/marine/marine-card-4.jpg",
     "subSectors": [
       "Offshore Platforms",
       "Commercial Vessels",
@@ -673,37 +679,37 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Resource Solutions for a Sustainable Tomorrow",
     "description": "Delivering end-to-end mining and metals engineering, mineral processing, and automated material handling to build safer and more efficient extraction operations.",
-    "dashboardTitle": "MINING & METALS VIEW",
+    "dashboardTitle": "MINING OPERATIONS VIEW",
     "metrics": [
       {
-        "label": "Extraction Yield",
-        "value": "95%"
-      },
-      {
-        "label": "Safety Score",
-        "value": "100%"
-      },
-      {
-        "label": "Equipment Uptime",
+        "label": "Plant Availability",
         "value": "97%"
+      },
+      {
+        "label": "Equipment Status",
+        "value": "Running"
+      },
+      {
+        "label": "Safety Index",
+        "value": "100%"
       }
     ],
     "tags": [
-      "Mineral Processing",
       "Material Handling",
-      "Mine Ventilation",
-      "Smelting & Refining",
-      "Plant Automation",
-      "Digital Twin",
-      "Asset Integrity",
-      "Sustainability"
+      "Crushers",
+      "Conveyors",
+      "Process Plants",
+      "Structural Engineering",
+      "Dust Control",
+      "Utilities",
+      "Asset Management"
     ],
     "video": "/vedios-gts/mining/mining & metals-bg-video.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/mining/mining-card-1.jpg",
+    "card2": "/vedios-gts/mining/mining-card-2.jpg",
+    "card3": "/vedios-gts/mining/mining-card-3.jpg",
+    "card4": "/vedios-gts/mining/mining-card-5.png",
+    "card5": "/vedios-gts/mining/mining-card-4.jpg",
     "subSectors": [
       "Open Pit Mining",
       "Underground Mining",
@@ -725,34 +731,36 @@ const heroVisuals: HeroVisual[] = [
     "dashboardTitle": "RENEWABLE ENERGY VIEW",
     "metrics": [
       {
-        "label": "Clean Generation",
-        "value": "99%"
-      },
-      {
-        "label": "Storage Capacity",
+        "label": "Energy Output",
         "value": "98%"
       },
       {
-        "label": "Grid Status",
-        "value": "Online"
+        "label": "Grid Stability",
+        "value": "99.9%"
+      },
+      {
+        "label": "Carbon Reduction",
+        "value": "100%"
       }
     ],
     "tags": [
-      "Solar PV Design",
-      "Wind Farm Engineering",
-      "BESS Storage",
-      "Hydroelectric Systems",
-      "Microgrid Design",
-      "Digital Twin",
-      "Power Integration",
-      "Decarbonization Solutions"
+      "Wind Farm Design",
+      "Resource Assessment",
+      "Solar PV Engineering",
+      "SCADA & Control Systems",
+      "Energy Storage",
+      "Asset Management",
+      "Grid Integration",
+      "Digital Twin & Simulation",
+      "Green Hydrogen",
+      "Operations & Optimization"
     ],
     "video": "/vedios-gts/renewable energy/renewable energy.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/renewable energy/renewable-energy-card-1.jpg",
+    "card2": "/vedios-gts/renewable energy/renewable-energy-card-2.jpg",
+    "card3": "/vedios-gts/renewable energy/renewable-energy-card-3.jpg",
+    "card4": "/vedios-gts/renewable energy/renewable-energy-card-5.png",
+    "card5": "/vedios-gts/renewable energy/renewable-energy-card-4.jpg",
     "subSectors": [
       "Solar Farms",
       "Onshore & Offshore Wind",
@@ -771,37 +779,37 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Healthcare Solutions for a Healthier Tomorrow",
     "description": "Delivering precision medical device engineering, diagnostic equipment development, and compliance-driven automation to improve healthcare outcomes globally.",
-    "dashboardTitle": "MEDICAL MACHINE VIEW",
+    "dashboardTitle": "MEDICAL ENGINEERING VIEW",
     "metrics": [
       {
-        "label": "Compliance (FDA/ISO)",
-        "value": "100%"
+        "label": "Compliance",
+        "value": "FDA Ready"
       },
       {
-        "label": "Device Precision",
-        "value": "99.9%"
-      },
-      {
-        "label": "Quality Audit",
+        "label": "Verification",
         "value": "Passed"
+      },
+      {
+        "label": "Traceability",
+        "value": "100%"
       }
     ],
     "tags": [
-      "Diagnostic Systems",
-      "Biomechatronics",
-      "Medical Robotics",
-      "ISO 13485 Compliance",
-      "Cleanroom Assembly",
-      "Digital Twin",
-      "Embedded Firmware",
-      "Verification & Validation"
+      "Medical Devices",
+      "Design Controls",
+      "DFMEA",
+      "Verification",
+      "Validation",
+      "Risk Management",
+      "CAD",
+      "Regulatory Support"
     ],
     "video": "/vedios-gts/medical/medical.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/medical/medical-card-1.jpg",
+    "card2": "/vedios-gts/medical/medical-card-2.jpg",
+    "card3": "/vedios-gts/medical/medical-card-3.jpg",
+    "card4": "/vedios-gts/medical/medical-card-5.png",
+    "card5": "/vedios-gts/medical/medical-card-4.jpg",
     "subSectors": [
       "Diagnostic Imaging",
       "Surgical Robotics",
@@ -820,37 +828,37 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Biotech Solutions for a Healthier Tomorrow",
     "description": "Delivering bioprocess engineering, sterile facility design, and bioreactor automation to accelerate life sciences breakthroughs and pharmaceutical production.",
-    "dashboardTitle": "BIOLOGY & LIFE SCIENCES VIEW",
+    "dashboardTitle": "LIFE SCIENCES ENGINEERING VIEW",
     "metrics": [
       {
-        "label": "Sterility Level",
+        "label": "Compliance",
+        "value": "FDA Ready"
+      },
+      {
+        "label": "Verification",
+        "value": "Passed"
+      },
+      {
+        "label": "Traceability",
         "value": "100%"
-      },
-      {
-        "label": "Batch Consistency",
-        "value": "99%"
-      },
-      {
-        "label": "Bio-Reactor Health",
-        "value": "Optimal"
       }
     ],
     "tags": [
-      "Bioprocess Design",
-      "Sterile Piping",
-      "Fermentation & Cell Culture",
-      "GMP Compliance",
-      "Purification Systems",
+      "Process Engineering",
+      "CMC & Scale-Up",
+      "Facility Design",
+      "Validation",
+      "Automation",
+      "Regulatory Support",
       "Digital Twin",
-      "Automation & Control",
-      "Operations Support"
+      "Data & Analytics"
     ],
-    "video": "/vedios-gts/biology/biology.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "video": "/vedios-gts/life sciences/biology.mp4",
+    "card1": "/vedios-gts/life sciences/Life Sciences-card-1.jpg",
+    "card2": "/vedios-gts/life sciences/Life Sciences-card-2.jpg",
+    "card3": "/vedios-gts/life sciences/Life Science-card-3.jpg",
+    "card4": "/vedios-gts/life sciences/Life Science-card-5.png",
+    "card5": "/vedios-gts/life sciences/Life Science-card-4.jpg",
     "subSectors": [
       "Biopharmaceuticals",
       "Vaccine Manufacturing",
@@ -869,37 +877,37 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Smart Solutions for Everyday Living",
     "description": "Delivering consumer product engineering, high-volume automated manufacturing, and smart device development to create innovative and sustainable consumer experiences.",
-    "dashboardTitle": "CONSUMER GOODS VIEW",
+    "dashboardTitle": "CONSUMER PRODUCTS VIEW",
     "metrics": [
       {
-        "label": "Line Efficiency",
-        "value": "98%"
+        "label": "Product Status",
+        "value": "Released"
       },
       {
-        "label": "Quality Pass Rate",
-        "value": "99.5%"
+        "label": "Quality",
+        "value": "Approved"
       },
       {
-        "label": "Automation Index",
-        "value": "High"
+        "label": "Production",
+        "value": "Live"
       }
     ],
     "tags": [
-      "Product Design (CAD/CAE)",
-      "Packaging Engineering",
-      "High-Speed Assembly",
-      "Quality Inspection",
-      "IoT Device Design",
-      "Digital Twin",
-      "Supply Chain Automation",
-      "Sustainability"
+      "Product Design",
+      "Plastic Components",
+      "Tooling",
+      "FEA",
+      "DFM",
+      "Packaging",
+      "Validation",
+      "Manufacturing"
     ],
     "video": "/vedios-gts/consumer/consumer.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/consumer/consuner-product-card-1.jpg",
+    "card2": "/vedios-gts/consumer/consumer-product-card-2.jpg",
+    "card3": "/vedios-gts/consumer/consumer-product-card-3.jpg",
+    "card4": "/vedios-gts/consumer/consume-product-card-5.png",
+    "card5": "/vedios-gts/consumer/consumer-product-card-4.jpg",
     "subSectors": [
       "Smart Home Electronics",
       "FMCG Packaging",
@@ -944,11 +952,11 @@ const heroVisuals: HeroVisual[] = [
       "AS9100 Standards"
     ],
     "video": "/vedios-gts/aerospace/aerospace.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/aerospace/aerospace-card-1.jpg",
+    "card2": "/vedios-gts/aerospace/aerospace-card-2.jpg",
+    "card3": "/vedios-gts/aerospace/aerospace-car-3.jpg",
+    "card4": "/vedios-gts/aerospace/aerospace-card-5.png",
+    "card5": "/vedios-gts/aerospace/aerospace-card-4.jpg",
     "subSectors": [
       "Commercial Aviation",
       "Defense & Tactical Systems",
@@ -1019,34 +1027,36 @@ const heroVisuals: HeroVisual[] = [
     "dashboardTitle": "AI & DIGITAL ENGINEERING VIEW",
     "metrics": [
       {
-        "label": "Model Accuracy",
-        "value": "99.4%"
+        "label": "AI Models Deployed",
+        "value": "50+"
       },
       {
-        "label": "Inference Latency",
-        "value": "<10ms"
+        "label": "Data Processing Uptime",
+        "value": "99.9%"
       },
       {
-        "label": "System Health",
-        "value": "Live"
+        "label": "Systems Integrated",
+        "value": "200+"
       }
     ],
     "tags": [
-      "Industrial Machine Learning",
-      "Predictive Maintenance AI",
+      "AI/ML Engineering",
+      "Generative AI",
+      "Digital Twin",
+      "Predictive Analytics",
       "Computer Vision",
-      "Digital Twin Simulation",
-      "Cloud & Edge Analytics",
-      "Sensor Fusion",
-      "Autonomous Controls",
-      "Data Security"
+      "Simulation & Modeling",
+      "Cloud Engineering",
+      "Industrial IoT (IIoT)",
+      "Data Integration",
+      "MLOps & AIOps"
     ],
     "video": "/vedios-gts/ai & digital/ai & digital.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/ai & digital/ai-digital-card-1.jpg",
+    "card2": "/vedios-gts/ai & digital/ai-digital-card-2.jpg",
+    "card3": "/vedios-gts/ai & digital/ai-digital-card-3.jpg",
+    "card4": "/vedios-gts/ai & digital/ai-digital-card-5.png",
+    "card5": "/vedios-gts/ai & digital/ai-digital-card-4.jpg",
     "subSectors": [
       "Predictive Analytics",
       "Generative Engineering",
@@ -1068,34 +1078,34 @@ const heroVisuals: HeroVisual[] = [
     "dashboardTitle": "ELECTRICAL ENGINEERING VIEW",
     "metrics": [
       {
-        "label": "Power Factor",
-        "value": "0.99"
+        "label": "Load Capacity",
+        "value": "Optimal"
       },
       {
-        "label": "Transformer Health",
-        "value": "99%"
-      },
-      {
-        "label": "Relay Coordination",
+        "label": "Protection Status",
         "value": "Verified"
+      },
+      {
+        "label": "Distribution Status",
+        "value": "Online"
       }
     ],
     "tags": [
-      "Power Distribution",
-      "Switchgear & MCC",
-      "Arc Flash Studies",
-      "Relay Protection",
-      "Grounding & Lightning",
-      "Digital Twin",
-      "Cable Tray Design",
-      "Energy Management"
+      "MV/LV Systems",
+      "Switchgear",
+      "Lighting",
+      "Earthing & Grounding",
+      "ETAP Studies",
+      "Cable Routing & Sizing",
+      "Arc Flash Analysis",
+      "Power Quality Studies"
     ],
     "video": "/vedios-gts/electrical enginerring/electrical enginerring.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/electrical enginerring/electrical-enginerring-card-1.jpg",
+    "card2": "/vedios-gts/electrical enginerring/electrical-enginerring-card-2.jpg",
+    "card3": "/vedios-gts/electrical enginerring/electrical-enginerring-card-3.jpg",
+    "card4": "/vedios-gts/electrical enginerring/electrical-enginerring-card-5.png",
+    "card5": "/vedios-gts/electrical enginerring/electrical-enginerring-card-4.jpg",
     "subSectors": [
       "Medium & Low Voltage",
       "Substations",
@@ -1140,11 +1150,11 @@ const heroVisuals: HeroVisual[] = [
       "Commissioning Support"
     ],
     "video": "/vedios-gts/industrial automation/industrial automation.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/industrial automation/industrial-automation-card-1.jpg",
+    "card2": "/vedios-gts/industrial automation/industrial-automation-card2.jpg",
+    "card3": "/vedios-gts/industrial automation/industrial-automation-card3.jpg",
+    "card4": "/vedios-gts/industrial automation/industrial-automation-card5.png",
+    "card5": "/vedios-gts/industrial automation/industrial-automation-card4.jpg",
     "subSectors": [
       "PLC Programming",
       "SCADA Systems",
@@ -1166,34 +1176,36 @@ const heroVisuals: HeroVisual[] = [
     "dashboardTitle": "INSTRUMENTATION & CONTROLS VIEW",
     "metrics": [
       {
-        "label": "Sensor Calibration",
-        "value": "100%"
-      },
-      {
-        "label": "Loop Stability",
+        "label": "Instrument Health",
         "value": "99%"
       },
       {
-        "label": "Signal Integrity",
-        "value": "Live"
+        "label": "Control Loop Status",
+        "value": "Verified"
+      },
+      {
+        "label": "System Availability",
+        "value": "Running"
       }
     ],
     "tags": [
-      "Field Instrumentation",
-      "Control Valves",
-      "Flow & Pressure Sensors",
-      "Analytical Instruments",
-      "Loop Diagrams",
-      "Digital Twin",
-      "Hazardous Area Rating",
-      "SIL Compliance"
+      "Process Instrumentation",
+      "Loop Design & Tuning",
+      "Control Systems (PLC/DCS)",
+      "Field Devices & Calibration",
+      "SCADA & HMI",
+      "Control Panel Design",
+      "SIS / ESD",
+      "Commissioning & Validation",
+      "Analyzer Systems",
+      "Asset Management"
     ],
     "video": "/vedios-gts/instrumentation & controls/instrumentation & controls.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/instrumentation & controls/instrumentation & controls card-1.jpg",
+    "card2": "/vedios-gts/instrumentation & controls/instrumentation & controls card-2.jpg",
+    "card3": "/vedios-gts/instrumentation & controls/instrumentation & controls card-3.jpg",
+    "card4": "/vedios-gts/instrumentation & controls/instrumentation & controls card-5.png",
+    "card5": "/vedios-gts/instrumentation & controls/instrumentation & controls card-4.jpg",
     "subSectors": [
       "Transmitters & Sensors",
       "Control Valve Sizing",
@@ -1215,34 +1227,36 @@ const heroVisuals: HeroVisual[] = [
     "dashboardTitle": "MANUFACTURING VIEW",
     "metrics": [
       {
-        "label": "OEE (Overall Efficiency)",
-        "value": "92%"
+        "label": "Production Efficiency",
+        "value": "97%"
       },
       {
-        "label": "Cycle Time Reduction",
-        "value": "28%"
+        "label": "Quality Compliance",
+        "value": "99%"
       },
       {
-        "label": "Scrap Rate",
-        "value": "<0.5%"
+        "label": "Line Status",
+        "value": "Running"
       }
     ],
     "tags": [
+      "Production Line Design",
+      "Robotics Integration",
+      "Process Optimization",
+      "Quality Engineering",
+      "Factory Automation",
+      "Equipment Design",
       "Lean Manufacturing",
-      "Tooling & Fixture Design",
-      "Assembly Lines",
-      "Cellular Manufacturing",
-      "Production Simulation",
-      "Digital Twin",
-      "DFM / DFA",
-      "Quality Control"
+      "Material Handling Systems",
+      "Digital Twin & Simulation",
+      "MES Integration"
     ],
     "video": "/vedios-gts/manufacturing enginerring/manufacturing enginerring.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/manufacturing enginerring/manufacturing engineering card-1.jpg",
+    "card2": "/vedios-gts/manufacturing enginerring/manufacturing engineering card-2.jpg",
+    "card3": "/vedios-gts/manufacturing enginerring/manufacturing engineering card-3.jpg",
+    "card4": "/vedios-gts/manufacturing enginerring/manufacturing engineering card-5.png",
+    "card5": "/vedios-gts/manufacturing enginerring/manufacturing engineering card-4.jpg",
     "subSectors": [
       "Automated Assembly",
       "CNC Machining & Tooling",
@@ -1264,34 +1278,36 @@ const heroVisuals: HeroVisual[] = [
     "dashboardTitle": "MECHANICAL ENGINEERING VIEW",
     "metrics": [
       {
-        "label": "Machine Availability",
-        "value": "98%"
+        "label": "Design Status",
+        "value": "Active"
       },
       {
-        "label": "Vibration Levels",
-        "value": "Nominal"
+        "label": "Validation",
+        "value": "Passed"
       },
       {
-        "label": "Thermal Margin",
-        "value": "+22%"
+        "label": "Revision",
+        "value": "R12"
       }
     ],
     "tags": [
+      "Mechanical Design",
+      "Equipment Design",
+      "FEA & Simulation",
+      "CFD & Thermal Analysis",
+      "Assemblies & Integration",
       "Rotating Equipment",
-      "Piping Stress Analysis",
-      "Finite Element Analysis (FEA)",
-      "CFD Aerodynamics",
-      "HVAC Design",
-      "Digital Twin",
-      "Material Selection",
-      "Vibration Monitoring"
+      "Reverse Engineering",
+      "Drawings & Documentation",
+      "Product Optimization",
+      "Manufacturing Support"
     ],
     "video": "/vedios-gts/mechine enginerring/mechine enginerring.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/mechine enginerring/mechinical-card-4.jpg",
+    "card2": "/vedios-gts/mechine enginerring/mechanical-card-2.jpg",
+    "card3": "/vedios-gts/mechine enginerring/mechanical-card-3.jpg",
+    "card4": "/vedios-gts/mechine enginerring/mechinical-card-5.png",
+    "card5": "/vedios-gts/mechine enginerring/mechanical-card-1.jpg",
     "subSectors": [
       "Pumps & Compressors",
       "Turbomachinery",
@@ -1313,34 +1329,34 @@ const heroVisuals: HeroVisual[] = [
     "dashboardTitle": "PRODUCT ENGINEERING VIEW",
     "metrics": [
       {
-        "label": "Prototype Turnaround",
-        "value": "Rapid"
+        "label": "Design Status",
+        "value": "Active"
       },
       {
-        "label": "Design Validation",
-        "value": "100%"
+        "label": "Validation",
+        "value": "Passed"
       },
       {
-        "label": "Tolerance Margin",
-        "value": "Micron"
+        "label": "Revision",
+        "value": "R12"
       }
     ],
     "tags": [
-      "Industrial Design",
-      "Concept to CAD",
-      "Rapid Prototyping",
-      "DFM / DFA",
-      "Thermal Simulation",
+      "AI-Driven Design",
+      "Generative Engineering",
       "Digital Twin",
-      "Enclosure Design",
-      "Lifecycle Testing"
+      "Predictive Analytics",
+      "Simulation & Analysis",
+      "CAE / CFD / FEA",
+      "PLM Integration",
+      "Manufacturing Support"
     ],
     "video": "/vedios-gts/product engineering/product engineering.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "card1": "/vedios-gts/product engineering/product engineering card-1.jpg",
+    "card2": "/vedios-gts/product engineering/product engineering card-2.jpg",
+    "card3": "/vedios-gts/product engineering/product engineering card-3.jpg",
+    "card4": "/vedios-gts/product engineering/product engineering-card-5.png",
+    "card5": "/vedios-gts/product engineering/product engineering-card-4.jpg",
     "subSectors": [
       "Industrial Equipment Design",
       "Electronic Enclosures",
@@ -1352,51 +1368,50 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
-    "id": "structural-engineering",
-    "label": "Structural & Civil Engineering",
-    "category": "STRUCTURAL & CIVIL ENGINEERING",
+    "id": "Smart infrastracture & cities enginerring",
+    "label": "Smart Infrastructure & Cities",
+    "category": "SMART INFRASTRUCTURE & CITIES ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Resilient Foundations for Tomorrow",
-    "description": "Delivering structural analysis, foundation design, steel and concrete modeling, seismic engineering, and infrastructure civil design for industrial applications.",
-    "dashboardTitle": "STRUCTURAL ENGINEERING VIEW",
+    "subtitle": "Smarter Infrastructure for a Brighter Tomorrow",
+    "description": "Delivering end-to-end smart infrastructure engineering, digital solutions, and automation to build safer, smarter, and more resilient cities for a sustainable future.",
+    "dashboardTitle": "SMART INFRASTRUCTURE VIEW",
     "metrics": [
       {
-        "label": "Seismic Safety Factor",
-        "value": "1.5x"
+        "label": "Connected Assets",
+        "value": "Live"
       },
       {
-        "label": "Structural Integrity",
-        "value": "100%"
+        "label": "City Operations",
+        "value": "Integrated"
       },
       {
-        "label": "BIM Coordination",
-        "value": "Complete"
+        "label": "Infrastructure Health",
+        "value": "98%"
       }
     ],
     "tags": [
-      "Steel Structure Design",
-      "Concrete Foundations",
-      "Seismic & Wind Analysis",
-      "STAAD.Pro & ETABS",
-      "BIM Modeling",
+      "Smart Cities",
       "Digital Twin",
-      "Connection Design",
-      "Construction Support"
+      "Mobility",
+      "Asset Management",
+      "IoT",
+      "Utilities",
+      "GIS",
+      "AI Analytics"
     ],
-    "video": "/vedios-gts/structral engineering/structral engineering.mp4",
-    "card1": "/vedios-gts/home-process/home-process1.jpg",
-    "card2": "/vedios-gts/home-process/home-process2.jpg",
-    "card3": "/vedios-gts/home-process/home-process3.jpg",
-    "card4": "/vedios-gts/home-process/home-process4.png",
-    "card5": "/vedios-gts/home-process/home-process5.jpg",
+    "video": "/vedios-gts/smart infrastracture/smart-infrastracture-bg-video.mp4",
+    "card1": "/vedios-gts/smart infrastracture/smart-infra-card1.jpg",
+    "card2": "/vedios-gts/smart infrastracture/smart-infra-card2.jpg",
+    "card3": "/vedios-gts/smart infrastracture/smart-infra-card3.jpg",
+    "card4": "/vedios-gts/smart infrastracture/smart-infra-card5.png",
+    "card5": "/vedios-gts/smart infrastracture/smart-infra-card4.jpg",
     "subSectors": [
-      "Industrial Steel Structures",
-      "Equipment Foundations",
-      "Pipe Racks & Bridges",
-      "Offshore Platforms",
-      "Civil Site Works",
-      "Building Foundations",
+      "Smart Cities",
+      "Transportation",
+      "Utilities",
+      "Public Infrastructure",
+      "Connected Assets",
       "Sustainability"
     ]
   }
@@ -1535,7 +1550,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     ]
   },
   {
-    id: 'structural-engineering',
+    id: 'Smart Infrastracture & cities enginerring',
     title: 'Structural Engineering',
     shortDesc: 'Steel detailing, structural analysis, fabrication drawings, and offshore structures.',
     fullDesc:
@@ -1783,7 +1798,7 @@ const solutionAreas: SolutionArea[] = [
     capabilities: ['SCADA', 'PLC', 'Digital Twins', 'Industrial IoT', 'Predictive Maintenance', 'AI Analytics']
   },
   {
-    id: 'steel-detailing-structural-engineering',
+    id: 'steel-detailing-Smart Infrastracture & cities enginerring',
     title: 'Steel Detailing & Structural Engineering',
     description: 'High-accuracy structural steel modeling and fabrication packages for industrial structures and project execution teams.',
     icon: '/icons/structure-enginerring.png',
