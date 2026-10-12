@@ -72,7 +72,7 @@ export default function Navbar() {
 
   return (
     <nav 
-      className="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-700"
+      className="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-900"
       onMouseLeave={() => setActiveDropdown(null)}
     >
       {/* Home Route */}

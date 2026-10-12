@@ -276,12 +276,12 @@ export default function Header() {
                       <Link
                         href={item.href}
                         className={cn(
-                          'group relative isolate flex items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-semibold transition-colors duration-200',
+                          'group relative isolate flex items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 py-2 text-sm min-[1440px]:text-base font-semibold transition-colors duration-200',
                           isScrolled
-                            ? 'text-slate-700 hover:bg-slate-100 hover:text-blue-600'
-                            : 'text-slate-100 hover:bg-white/10 hover:text-white',
+                            ? 'text-slate-900 hover:bg-slate-100 hover:text-blue-600'
+                            : 'text-slate-900 hover:bg-black/5 hover:text-blue-600',
                           'after:absolute after:inset-x-3.5 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-blue-600 after:to-cyan-500 after:transition-transform after:duration-300 hover:after:scale-x-100',
-                          isActive && (isScrolled ? 'text-blue-600 font-bold' : 'text-white font-bold')
+                          isActive ? 'text-blue-600 font-bold' : 'text-slate-900'
                         )}
                       >
                         {isActive && (
@@ -291,7 +291,7 @@ export default function Header() {
                               "absolute inset-0 -z-10 rounded-full",
                               isScrolled
                                 ? "border border-blue-200/80 bg-blue-50/80 shadow-[0_2px_8px_rgba(37,99,235,0.08)]"
-                                : "border border-white/20 bg-white/15 shadow-[0_0_24px_rgba(34,211,238,0.25)]"
+                                : "border border-slate-300/60 bg-white/70 shadow-[0_2px_12px_rgba(15,23,42,0.06)]"
                             )}
                             transition={{ type: 'spring', stiffness: 420, damping: 34 }}
                           />
@@ -300,11 +300,11 @@ export default function Header() {
                         {hasDropdown && (
                           <ChevronDown
                             className={cn(
-                              'relative z-10 h-3.5 w-3.5 transition-transform group-hover:rotate-180',
+                              'relative z-10 h-3.5 w-3.5 min-[1440px]:h-4 min-[1440px]:w-4 transition-transform group-hover:rotate-180',
                               isScrolled
-                                ? 'text-slate-400 group-hover:text-blue-600'
-                                : 'text-slate-300 group-hover:text-white',
-                              activeDropdown === item.label && (isScrolled ? 'rotate-180 text-blue-600' : 'rotate-180 text-cyan-200')
+                                ? 'text-slate-500 group-hover:text-blue-600'
+                                : 'text-slate-700 group-hover:text-blue-600',
+                              activeDropdown === item.label && 'rotate-180 text-blue-600'
                             )}
                           />
                         )}
@@ -477,7 +477,7 @@ export default function Header() {
               >
                 <Search className="h-4 w-4" />
               </button> */}
-              <GradientButton href="/contact" className="px-4 py-2.5 text-xs">
+              <GradientButton href="/contact" className="px-4 py-2.5 text-xs min-[1440px]:text-sm">
                 Consultation
               </GradientButton>
             </div>
@@ -487,8 +487,8 @@ export default function Header() {
               className={cn(
                 "flex h-11 w-11 items-center justify-center rounded-xl shadow-sm transition-colors lg:hidden",
                 isScrolled
-                  ? "border border-slate-200/80 bg-slate-50 text-slate-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600"
-                  : "border border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-cyan-200"
+                  ? "border border-slate-200/80 bg-slate-50 text-slate-900 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600"
+                  : "border border-slate-300/80 bg-white/80 text-slate-900 hover:border-blue-300 hover:bg-white hover:text-blue-600"
               )}
               aria-label="Open navigation menu"
             >

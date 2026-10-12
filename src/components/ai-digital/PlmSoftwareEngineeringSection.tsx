@@ -924,9 +924,9 @@ export default function PlmSoftwareEngineeringSection({ index = 7 }: { index?: n
                 key={eco.category}
                 className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-3 shadow-sm"
               >
-                <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 mb-2">
+                {/* <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 mb-2">
                   {eco.category}
-                </div>
+                </div> */}
                 <div className="relative h-14 w-full overflow-hidden">
                   <Image
                     src={eco.image}
