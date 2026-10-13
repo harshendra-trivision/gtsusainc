@@ -375,17 +375,39 @@ export default function Header() {
                                   <Link
                                     href={categoryHref}
                                     onClick={() => setActiveDropdown(null)}
-                                    className="group/cat mb-4 flex items-start gap-3 rounded-2xl border border-slate-200/70 bg-slate-50/80 p-3 transition-colors hover:border-blue-300 hover:bg-blue-50/60"
+                                    className={cn(
+                                      'group/cat relative mb-4 flex items-start gap-3 rounded-2xl border p-3 transition-all',
+                                      category.flagship
+                                        ? 'border-blue-500 bg-gradient-to-br from-[#0A3DF0] to-cyan-500 shadow-[0_10px_28px_rgba(10,61,240,0.32)] hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(10,61,240,0.42)]'
+                                        : 'border-slate-200/70 bg-slate-50/80 hover:border-blue-300 hover:bg-blue-50/60'
+                                    )}
                                   >
-                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-blue-200/60 bg-blue-50 text-blue-600">
+                                    <span
+                                      className={cn(
+                                        'flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border',
+                                        category.flagship
+                                          ? 'border-white/40 bg-white/20 text-white'
+                                          : 'border-blue-200/60 bg-blue-50 text-blue-600'
+                                      )}
+                                    >
                                       <CategoryIcon className="h-[18px] w-[18px]" />
                                     </span>
                                     <span>
-                                      <span className="block text-[13px] font-bold leading-tight text-slate-900 transition-colors group-hover/cat:text-blue-600">
+                                      <span
+                                        className={cn(
+                                          'block text-[13px] font-bold leading-tight transition-colors',
+                                          category.flagship ? 'text-white' : 'text-slate-900 group-hover/cat:text-blue-600'
+                                        )}
+                                      >
                                         {category.label}
                                       </span>
                                       {category.tagline && (
-                                        <span className="mt-1 block text-[10px] font-medium italic text-slate-500">
+                                        <span
+                                          className={cn(
+                                            'mt-1 block text-[10px] font-medium italic',
+                                            category.flagship ? 'text-blue-50' : 'text-slate-500'
+                                          )}
+                                        >
                                           {category.tagline}
                                         </span>
                                       )}

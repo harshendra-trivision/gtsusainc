@@ -76,5 +76,7 @@ export interface MegaMenuCategory {
   icon: MegaMenuIconName;
   tagline?: string;
   description?: string;
+  /** Marks a flagship offering — rendered as a highlighted card in the nav mega menu. */
+  flagship?: boolean;
   groups: MegaMenuGroup[];
 }

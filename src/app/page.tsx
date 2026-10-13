@@ -168,102 +168,53 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
-    "id": "power-utility",
-    "label": "Power & Utilities",
-    "category": "POWER & UTILITIES ENGINEERING",
+    "id": "lng",
+    "label": "LNG",
+    "category": "LNG ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
-    "description": "Delivering end-to-end power & utilities engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy infrastructure for a resilient future.",
-    "dashboardTitle": "POWER & UTILITIES VIEW",
+    "subtitle": "Clean Energy Solutions for a Brighter Tomorrow",
+    "description": "Delivering end-to-end LNG engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy systems for a global future.",
+    "dashboardTitle": "LNG FACILITY VIEW",
     "metrics": [
       {
-        "label": "Grid Stability",
-        "value": "Stable"
+        "label": "Asset Health",
+        "value": "98%"
       },
       {
-        "label": "Substation Health",
-        "value": "99%"
+        "label": "Safety Compliance",
+        "value": "100%"
       },
       {
-        "label": "SCADA Status",
-        "value": "Online"
+        "label": "Terminal Status",
+        "value": "LIVE"
       }
     ],
     "tags": [
-      "Grid Studies",
-      "Relay Coordination",
-      "Substation Engineering",
-      "Load Flow & Short Circuit",
-      "Protection & Control",
-      "Power Quality",
-      "Transmission & Distribution",
+      "Liquefaction Engineering",
+      "FEED & Detailed Engineering",
+      "LNG Storage",
+      "Construction Support",
+      "Regasification",
+      "Digital Twin",
+      "Marine Loading",
+      "Operations Support",
       "Asset Integrity",
-      "Renewable Integration",
-      "Energy Management Systems",
-      "Grid Modernization",
       "Decarbonization Solutions"
     ],
-    "video": "/videos-gts/power-utility/power-utility-bg-video.mp4",
-    "card1": "/videos-gts/power-utility/power-utility1.jpg",
-    "card2": "/videos-gts/power-utility/power-utility2.jpg",
-    "card3": "/videos-gts/power-utility/power-utility3.jpg",
-    "card4": "/videos-gts/power-utility/power-utility5.png",
-    "card5": "/videos-gts/power-utility/power-utility4.jpg",
+    "video": "/videos-gts/lng/lng-bg-video.mp4",
+    "card1": "/videos-gts/lng/lng-1.jpg",
+    "card2": "/videos-gts/lng/lng-2.jpg",
+    "card3": "/videos-gts/lng/lng-3.jpg",
+    "card4": "/videos-gts/lng/lng-4.png",
+    "card5": "/videos-gts/lng/lng-5.jpg",
     "subSectors": [
-      "Power Generation",
-      "Transmission & Distribution",
-      "Renewable Energy",
-      "Energy Storage",
-      "Utilities Infrastructure",
-      "Sustainability"
-    ]
-  },
-  {
-    "id": "data-center",
-    "label": "Data Centers",
-    "category": "DATA CENTER ENGINEERING",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Mission-critical Solutions for a Smarter Tomorrow",
-    "description": "Delivering end-to-end data center engineering, digital solutions, and automation to build safer, smarter, and more sustainable digital infrastructure for a connected future.",
-    "dashboardTitle": "DATA CENTERS VIEW",
-    "metrics": [
-      {
-        "label": "Uptime",
-        "value": "99.999%"
-      },
-      {
-        "label": "Capacity Status",
-        "value": "Optimal"
-      },
-      {
-        "label": "Operations",
-        "value": "24/7"
-      }
-    ],
-    "tags": [
-      "Electrical Engineering",
-      "CFD Cooling Design",
-      "BIM",
-      "Commissioning",
-      "UPS Systems",
-      "Digital Twin",
-      "Power Distribution",
-      "Energy Modeling"
-    ],
-    "video": "/videos-gts/data-center/data-center-bg-video.mp4",
-    "card1": "/videos-gts/data-center/data-center-card1.jpg",
-    "card2": "/videos-gts/data-center/data-center-card2.jpg",
-    "card3": "/videos-gts/data-center/data-center-card3.jpg",
-    "card4": "/videos-gts/data-center/data-center-card4.png",
-    "card5": "/videos-gts/data-center/data-center-card5.jpg",
-    "subSectors": [
-      "Data Center Design",
-      "Power & Cooling",
-      "Electrical Systems",
-      "Building Infrastructure",
-      "Security & Safety",
+      "LNG Terminals",
+      "Liquefaction",
+      "Storage & Tanks",
+      "Regasification",
+      "Marine & Shipping",
+      "Gas Infrastructure",
       "Sustainability"
     ]
   },
@@ -368,53 +319,50 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
-    "id": "lng",
-    "label": "LNG",
-    "category": "LNG ENGINEERING",
+    "id": "data-center",
+    "label": "Data Centers",
+    "category": "DATA CENTER ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Clean Energy Solutions for a Brighter Tomorrow",
-    "description": "Delivering end-to-end LNG engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy systems for a global future.",
-    "dashboardTitle": "LNG FACILITY VIEW",
+    "subtitle": "Mission-critical Solutions for a Smarter Tomorrow",
+    "description": "Delivering end-to-end data center engineering, digital solutions, and automation to build safer, smarter, and more sustainable digital infrastructure for a connected future.",
+    "dashboardTitle": "DATA CENTERS VIEW",
     "metrics": [
       {
-        "label": "Asset Health",
-        "value": "98%"
+        "label": "Uptime",
+        "value": "99.999%"
       },
       {
-        "label": "Safety Compliance",
-        "value": "100%"
+        "label": "Capacity Status",
+        "value": "Optimal"
       },
       {
-        "label": "Terminal Status",
-        "value": "LIVE"
+        "label": "Operations",
+        "value": "24/7"
       }
     ],
     "tags": [
-      "Liquefaction Engineering",
-      "FEED & Detailed Engineering",
-      "LNG Storage",
-      "Construction Support",
-      "Regasification",
+      "Electrical Engineering",
+      "CFD Cooling Design",
+      "BIM",
+      "Commissioning",
+      "UPS Systems",
       "Digital Twin",
-      "Marine Loading",
-      "Operations Support",
-      "Asset Integrity",
-      "Decarbonization Solutions"
+      "Power Distribution",
+      "Energy Modeling"
     ],
-    "video": "/videos-gts/lng/lng-bg-video.mp4",
-    "card1": "/videos-gts/lng/lng-1.jpg",
-    "card2": "/videos-gts/lng/lng-2.jpg",
-    "card3": "/videos-gts/lng/lng-3.jpg",
-    "card4": "/videos-gts/lng/lng-4.png",
-    "card5": "/videos-gts/lng/lng-5.jpg",
+    "video": "/videos-gts/data-center/data-center-bg-video.mp4",
+    "card1": "/videos-gts/data-center/data-center-card1.jpg",
+    "card2": "/videos-gts/data-center/data-center-card2.jpg",
+    "card3": "/videos-gts/data-center/data-center-card3.jpg",
+    "card4": "/videos-gts/data-center/data-center-card4.png",
+    "card5": "/videos-gts/data-center/data-center-card5.jpg",
     "subSectors": [
-      "LNG Terminals",
-      "Liquefaction",
-      "Storage & Tanks",
-      "Regasification",
-      "Marine & Shipping",
-      "Gas Infrastructure",
+      "Data Center Design",
+      "Power & Cooling",
+      "Electrical Systems",
+      "Building Infrastructure",
+      "Security & Safety",
       "Sustainability"
     ]
   },
@@ -470,6 +418,58 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
+    "id": "power-utility",
+    "label": "Power & Utilities",
+    "category": "POWER & UTILITIES ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
+    "description": "Delivering end-to-end power & utilities engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy infrastructure for a resilient future.",
+    "dashboardTitle": "POWER & UTILITIES VIEW",
+    "metrics": [
+      {
+        "label": "Grid Stability",
+        "value": "Stable"
+      },
+      {
+        "label": "Substation Health",
+        "value": "99%"
+      },
+      {
+        "label": "SCADA Status",
+        "value": "Online"
+      }
+    ],
+    "tags": [
+      "Grid Studies",
+      "Relay Coordination",
+      "Substation Engineering",
+      "Load Flow & Short Circuit",
+      "Protection & Control",
+      "Power Quality",
+      "Transmission & Distribution",
+      "Asset Integrity",
+      "Renewable Integration",
+      "Energy Management Systems",
+      "Grid Modernization",
+      "Decarbonization Solutions"
+    ],
+    "video": "/videos-gts/power-utility/power-utility-bg-video.mp4",
+    "card1": "/videos-gts/power-utility/power-utility1.jpg",
+    "card2": "/videos-gts/power-utility/power-utility2.jpg",
+    "card3": "/videos-gts/power-utility/power-utility3.jpg",
+    "card4": "/videos-gts/power-utility/power-utility5.png",
+    "card5": "/videos-gts/power-utility/power-utility4.jpg",
+    "subSectors": [
+      "Power Generation",
+      "Transmission & Distribution",
+      "Renewable Energy",
+      "Energy Storage",
+      "Utilities Infrastructure",
+      "Sustainability"
+    ]
+  },
+  {
     "id": "water-wastewater",
     "label": "Water & Wastewater",
     "category": "WATER & WASTEWATER ENGINEERING",
@@ -516,6 +516,407 @@ const heroVisuals: HeroVisual[] = [
       "Stormwater Management",
       "Asset Optimization",
       "Sustainability"
+    ]
+  },
+  {
+    "id": "industrial-automation",
+    "label": "Industrial Automation",
+    "category": "INDUSTRIAL AUTOMATION & PLC",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Automated Solutions for Maximum Throughput",
+    "description": "Delivering advanced PLC, SCADA, DCS programming, and robotic automation systems to maximize plant efficiency, safety, and operational transparency.",
+    "dashboardTitle": "INDUSTRIAL AUTOMATION VIEW",
+    "metrics": [
+      {
+        "label": "System Uptime",
+        "value": "99.9%"
+      },
+      {
+        "label": "Loop Tuning",
+        "value": "Optimal"
+      },
+      {
+        "label": "Automation Index",
+        "value": "98%"
+      }
+    ],
+    "tags": [
+      "PLC & DCS Systems",
+      "SCADA Architecture",
+      "HMI Design",
+      "Robotic Integration",
+      "Safety Instrumented Systems (SIS)",
+      "Digital Twin",
+      "Industrial IoT",
+      "Commissioning Support"
+    ],
+    "video": "/videos-gts/industrial automation/industrial automation.mp4",
+    "card1": "/videos-gts/industrial automation/industrial-automation-card-1.jpg",
+    "card2": "/videos-gts/industrial automation/industrial-automation-card2.jpg",
+    "card3": "/videos-gts/industrial automation/industrial-automation-card3.jpg",
+    "card4": "/videos-gts/industrial automation/industrial-automation-card5.png",
+    "card5": "/videos-gts/industrial automation/industrial-automation-card4.jpg",
+    "subSectors": [
+      "PLC Programming",
+      "SCADA Systems",
+      "Distributed Control (DCS)",
+      "Robotics & Motion Control",
+      "Industrial Networking",
+      "Vision Systems",
+      "Plant Modernization"
+    ]
+  },
+  {
+    "id": "ai-digital",
+    "label": "AI & Digital Engineering",
+    "category": "AI & DIGITAL ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Intelligent Algorithms for an Autonomous Tomorrow",
+    "description": "Delivering industrial AI solutions, digital twins, predictive analytics, and edge computing to transform traditional engineering workflows into autonomous intelligence.",
+    "dashboardTitle": "AI & DIGITAL ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "AI Models Deployed",
+        "value": "50+"
+      },
+      {
+        "label": "Data Processing Uptime",
+        "value": "99.9%"
+      },
+      {
+        "label": "Systems Integrated",
+        "value": "200+"
+      }
+    ],
+    "tags": [
+      "AI/ML Engineering",
+      "Generative AI",
+      "Digital Twin",
+      "Predictive Analytics",
+      "Computer Vision",
+      "Simulation & Modeling",
+      "Cloud Engineering",
+      "Industrial IoT (IIoT)",
+      "Data Integration",
+      "MLOps & AIOps"
+    ],
+    "video": "/videos-gts/ai & digital/ai & digital.mp4",
+    "card1": "/videos-gts/ai & digital/ai-digital-card-1.jpg",
+    "card2": "/videos-gts/ai & digital/ai-digital-card-2.jpg",
+    "card3": "/videos-gts/ai & digital/ai-digital-card-3.jpg",
+    "card4": "/videos-gts/ai & digital/ai-digital-card-5.png",
+    "card5": "/videos-gts/ai & digital/ai-digital-card-4.jpg",
+    "subSectors": [
+      "Predictive Analytics",
+      "Generative Engineering",
+      "Computer Vision Inspection",
+      "Robotic Process AI",
+      "Autonomous Operations",
+      "Edge IoT",
+      "Enterprise Data Architecture"
+    ]
+  },
+  {
+    "id": "product-engineering",
+    "label": "Product Engineering",
+    "category": "PRODUCT DESIGN & R&D",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "R&D Solutions for Groundbreaking Products",
+    "description": "Delivering end-to-end product design, rapid prototyping, thermal-mechanical simulation, and design for manufacturability (DFM) to turn visions into market leaders.",
+    "dashboardTitle": "PRODUCT ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Design Status",
+        "value": "Active"
+      },
+      {
+        "label": "Validation",
+        "value": "Passed"
+      },
+      {
+        "label": "Revision",
+        "value": "R12"
+      }
+    ],
+    "tags": [
+      "AI-Driven Design",
+      "Generative Engineering",
+      "Digital Twin",
+      "Predictive Analytics",
+      "Simulation & Analysis",
+      "CAE / CFD / FEA",
+      "PLM Integration",
+      "Manufacturing Support"
+    ],
+    "video": "/videos-gts/product engineering/product engineering.mp4",
+    "card1": "/videos-gts/product engineering/product engineering card-1.jpg",
+    "card2": "/videos-gts/product engineering/product engineering card-2.jpg",
+    "card3": "/videos-gts/product engineering/product engineering card-3.jpg",
+    "card4": "/videos-gts/product engineering/product engineering-card-5.png",
+    "card5": "/videos-gts/product engineering/product engineering-card-4.jpg",
+    "subSectors": [
+      "Industrial Equipment Design",
+      "Electronic Enclosures",
+      "Consumer Hardware",
+      "Precision Mechanisms",
+      "Plastics & Mold Design",
+      "Sheet Metal Engineering",
+      "Product R&D"
+    ]
+  },
+  {
+    "id": "mechanical-engineering",
+    "label": "Mechanical & Machine Engineering",
+    "category": "MECHANICAL & MACHINE ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Dynamic Solutions for Heavy Machinery",
+    "description": "Delivering rotating equipment design, stress analysis (FEA), piping stress, thermodynamic modeling, and heavy mechanical machinery engineering.",
+    "dashboardTitle": "MECHANICAL ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Design Status",
+        "value": "Active"
+      },
+      {
+        "label": "Validation",
+        "value": "Passed"
+      },
+      {
+        "label": "Revision",
+        "value": "R12"
+      }
+    ],
+    "tags": [
+      "Mechanical Design",
+      "Equipment Design",
+      "FEA & Simulation",
+      "CFD & Thermal Analysis",
+      "Assemblies & Integration",
+      "Rotating Equipment",
+      "Reverse Engineering",
+      "Drawings & Documentation",
+      "Product Optimization",
+      "Manufacturing Support"
+    ],
+    "video": "/videos-gts/mechanical engineering/mechanical engineering.mp4",
+    "card1": "/videos-gts/mechanical engineering/mechanical-card-4.jpg",
+    "card2": "/videos-gts/mechanical engineering/mechanical-card-2.jpg",
+    "card3": "/videos-gts/mechanical engineering/mechanical-card-3.jpg",
+    "card4": "/videos-gts/mechanical engineering/mechanical-card-5.png",
+    "card5": "/videos-gts/mechanical engineering/mechanical-card-1.jpg",
+    "subSectors": [
+      "Pumps & Compressors",
+      "Turbomachinery",
+      "Piping Systems",
+      "Hydraulics & Pneumatics",
+      "Pressure Vessels (ASME)",
+      "Material Handling",
+      "Asset Integrity"
+    ]
+  },
+  {
+    "id": "structural-engineering",
+    "label": "Structural Engineering",
+    "category": "STRUCTURAL ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Resilient Structures for a Smarter Tomorrow",
+    "description": "Delivering innovative structural engineering, BIM, and digital solutions for infrastructure, industrial, and commercial projects – building a safer, stronger, and more sustainable future.",
+    "dashboardTitle": "STRUCTURAL ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Structural Integrity",
+        "value": "Verified"
+      },
+      {
+        "label": "BIM Coordination",
+        "value": "98%"
+      },
+      {
+        "label": "Fabrication Status",
+        "value": "Ready"
+      }
+    ],
+    "tags": [
+      "Steel Structures",
+      "Pipe Racks",
+      "Foundations",
+      "Structural Analysis",
+      "Tekla",
+      "BIM",
+      "Fabrication Drawings",
+      "Connection Design"
+    ],
+    "video": "/videos-gts/stracture enginerring/stracture-enginerring-bg-video.mp4",
+    "card1": "/videos-gts/stracture enginerring/structural engineering card-1.jpg",
+    "card2": "/videos-gts/stracture enginerring/structural engineering card-2.jpg",
+    "card3": "/videos-gts/stracture enginerring/structural engineering card-3.jpg",
+    "card4": "/videos-gts/stracture enginerring/structural engineering card-5.png",
+    "card5": "/videos-gts/stracture enginerring/structural engineering card-4.jpg",
+    "subSectors": [
+      "Infrastructure",
+      "Industrial",
+      "Commercial",
+      "Energy & Utilities",
+      "Oil & Gas",
+      "Transportation",
+      "Marine",
+      "Sustainability"
+    ]
+  },
+  {
+    "id": "electrical-engineering",
+    "label": "Electrical Engineering",
+    "category": "ELECTRICAL ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "High-Voltage Solutions for Modern Power",
+    "description": "Delivering end-to-end power systems engineering, switchgear design, motor control centers, and protective relay coordination for mission-critical facilities.",
+    "dashboardTitle": "ELECTRICAL ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Load Capacity",
+        "value": "Optimal"
+      },
+      {
+        "label": "Protection Status",
+        "value": "Verified"
+      },
+      {
+        "label": "Distribution Status",
+        "value": "Online"
+      }
+    ],
+    "tags": [
+      "MV/LV Systems",
+      "Switchgear",
+      "Lighting",
+      "Earthing & Grounding",
+      "ETAP Studies",
+      "Cable Routing & Sizing",
+      "Arc Flash Analysis",
+      "Power Quality Studies"
+    ],
+    "video": "/videos-gts/electrical engineering/electrical engineering.mp4",
+    "card1": "/videos-gts/electrical engineering/electrical-engineering-card-1.jpg",
+    "card2": "/videos-gts/electrical engineering/electrical-engineering-card-2.jpg",
+    "card3": "/videos-gts/electrical engineering/electrical-engineering-card-3.jpg",
+    "card4": "/videos-gts/electrical engineering/electrical-engineering-card-5.png",
+    "card5": "/videos-gts/electrical engineering/electrical-engineering-card-4.jpg",
+    "subSectors": [
+      "Medium & Low Voltage",
+      "Substations",
+      "Emergency Power & UPS",
+      "Industrial Lighting",
+      "Harmonic Mitigation",
+      "Facility Electrification",
+      "Sustainability"
+    ]
+  },
+  {
+    "id": "instrumentation-controls",
+    "label": "Instrumentation & Controls",
+    "category": "INSTRUMENTATION & CONTROLS",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Precision Measurement for Critical Control",
+    "description": "Delivering field instrumentation design, control loop optimization, sensor calibration, and analytical instrumentation engineering for complex industrial operations.",
+    "dashboardTitle": "INSTRUMENTATION & CONTROLS VIEW",
+    "metrics": [
+      {
+        "label": "Instrument Health",
+        "value": "99%"
+      },
+      {
+        "label": "Control Loop Status",
+        "value": "Verified"
+      },
+      {
+        "label": "System Availability",
+        "value": "Running"
+      }
+    ],
+    "tags": [
+      "Process Instrumentation",
+      "Loop Design & Tuning",
+      "Control Systems (PLC/DCS)",
+      "Field Devices & Calibration",
+      "SCADA & HMI",
+      "Control Panel Design",
+      "SIS / ESD",
+      "Commissioning & Validation",
+      "Analyzer Systems",
+      "Asset Management"
+    ],
+    "video": "/videos-gts/instrumentation & controls/instrumentation & controls.mp4",
+    "card1": "/videos-gts/instrumentation & controls/instrumentation & controls card-1.jpg",
+    "card2": "/videos-gts/instrumentation & controls/instrumentation & controls card-2.jpg",
+    "card3": "/videos-gts/instrumentation & controls/instrumentation & controls card-3.jpg",
+    "card4": "/videos-gts/instrumentation & controls/instrumentation & controls card-5.png",
+    "card5": "/videos-gts/instrumentation & controls/instrumentation & controls card-4.jpg",
+    "subSectors": [
+      "Transmitters & Sensors",
+      "Control Valve Sizing",
+      "Analyzer Houses",
+      "F&G Detection Systems",
+      "Junction Box Design",
+      "Wireless Instrumentation",
+      "Commissioning"
+    ]
+  },
+  {
+    "id": "manufacturing-engineering",
+    "label": "Manufacturing Engineering",
+    "category": "MANUFACTURING & PRODUCTION",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Production Solutions for Lean Excellence",
+    "description": "Delivering assembly line design, tooling optimization, lean manufacturing processes, and smart factory integrations to supercharge industrial productivity.",
+    "dashboardTitle": "MANUFACTURING VIEW",
+    "metrics": [
+      {
+        "label": "Production Efficiency",
+        "value": "97%"
+      },
+      {
+        "label": "Quality Compliance",
+        "value": "99%"
+      },
+      {
+        "label": "Line Status",
+        "value": "Running"
+      }
+    ],
+    "tags": [
+      "Production Line Design",
+      "Robotics Integration",
+      "Process Optimization",
+      "Quality Engineering",
+      "Factory Automation",
+      "Equipment Design",
+      "Lean Manufacturing",
+      "Material Handling Systems",
+      "Digital Twin & Simulation",
+      "MES Integration"
+    ],
+    "video": "/videos-gts/manufacturing engineering/manufacturing engineering.mp4",
+    "card1": "/videos-gts/manufacturing engineering/manufacturing engineering card-1.jpg",
+    "card2": "/videos-gts/manufacturing engineering/manufacturing engineering card-2.jpg",
+    "card3": "/videos-gts/manufacturing engineering/manufacturing engineering card-3.jpg",
+    "card4": "/videos-gts/manufacturing engineering/manufacturing engineering card-5.png",
+    "card5": "/videos-gts/manufacturing engineering/manufacturing engineering card-4.jpg",
+    "subSectors": [
+      "Automated Assembly",
+      "CNC Machining & Tooling",
+      "Robotic Welding Cells",
+      "Plant Layout Design",
+      "Quality Assurance & Metrology",
+      "Additive Manufacturing",
+      "Smart Factory"
     ]
   },
   {
@@ -823,11 +1224,11 @@ const heroVisuals: HeroVisual[] = [
   {
     "id": "biology",
     "label": "Biotechnology & Life Sciences",
-    "category": "BIOTECHNOLOGY ENGINEERING",
+    "category": "LIFE SCIENCES ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Biotech Solutions for a Healthier Tomorrow",
-    "description": "Delivering bioprocess engineering, sterile facility design, and bioreactor automation to accelerate life sciences breakthroughs and pharmaceutical production.",
+    "subtitle": "Smarter Science for a Healthier Tomorrow",
+    "description": "Delivering end-to-end life sciences engineering, digital solutions, and automation to build safer, faster, and more innovative therapies for a healthier world.",
     "dashboardTitle": "LIFE SCIENCES ENGINEERING VIEW",
     "metrics": [
       {
@@ -860,15 +1261,114 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/life sciences/Life Science-card-5.png",
     "card5": "/videos-gts/life sciences/Life Science-card-4.jpg",
     "subSectors": [
-      "Biopharmaceuticals",
-      "Vaccine Manufacturing",
-      "Cell & Gene Therapy",
-      "Fermentation Plants",
-      "Cleanroom Facilities",
-      "Bio-waste Treatment",
+      "Discovery & R&D",
+      "Bioprocessing",
+      "Manufacturing",
+      "Quality & Compliance",
+      "Regulatory Support",
       "Sustainability"
     ]
   },
+  {
+    "id": "home-process",
+    "label": "Process Engineering",
+    "category": "PROCESS ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
+    "description": "Delivering end-to-end process engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.",
+    "dashboardTitle": "PROCESS ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "Plant Efficiency",
+        "value": "96%"
+      },
+      {
+        "label": "Simulation Status",
+        "value": "Running"
+      },
+      {
+        "label": "Design Review",
+        "value": "Complete"
+      }
+    ],
+    "tags": [
+      "Process Simulation",
+      "Heat & Mass Balance",
+      "Equipment Design",
+      "Utility Systems",
+      "Process Optimization",
+      "Plant Design",
+      "Aspen HYSYS",
+      "Digital Twin",
+      "FEED & Detailed Engineering",
+      "Operations Support"
+    ],
+    "video": "/videos-gts/home-process/home-process-bg-video.mp4",
+    "card1": "/videos-gts/home-process/home-process1.jpg",
+    "card2": "/videos-gts/home-process/home-process2.jpg",
+    "card3": "/videos-gts/home-process/home-process3.jpg",
+    "card4": "/videos-gts/home-process/home-process4.png",
+    "card5": "/videos-gts/home-process/home-process5.jpg",
+    "subSectors": [
+      "Chemicals & Petrochemicals",
+      "Refining",
+      "Pharmaceuticals",
+      "Food & Beverage",
+      "Specialty Chemicals",
+      "Energy & Fuels"
+    ]
+  },
+  // {
+  //   "id": "process-safety",
+  //   "label": "Process Safety",
+  //   "category": "PROCESS SAFETY ENGINEERING",
+  //   "title1": "Engineering",
+  //   "title2": "Beyond Boundaries",
+  //   "subtitle": "Safer Processes for a Brighter Tomorrow",
+  //   "description": "Delivering end-to-end process safety engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.",
+  //   "dashboardTitle": "PROCESS SAFETY VIEW",
+  //   "metrics": [
+  //     {
+  //       "label": "Risk Level",
+  //       "value": "Low"
+  //     },
+  //     {
+  //       "label": "Compliance",
+  //       "value": "100%"
+  //     },
+  //     {
+  //       "label": "Safety Review",
+  //       "value": "Complete"
+  //     }
+  //   ],
+  //   "tags": [
+  //     "HAZOP",
+  //     "HAZID",
+  //     "LOPA",
+  //     "Fire Protection",
+  //     "Relief Systems",
+  //     "Emergency Response",
+  //     "PSM",
+  //     "Risk Assessment",
+  //     "SIL Studies",
+  //     "Safety Culture & Training"
+  //   ],
+  //   "video": "/videos-gts/process-safety/process-safety-bg-video.mp4",
+  //   "card1": "/videos-gts/process-safety/process-safety1.jpg",
+  //   "card2": "/videos-gts/process-safety/process-safety2.jpg",
+  //   "card3": "/videos-gts/process-safety/process-safety3.jpg",
+  //   "card4": "/videos-gts/process-safety/process-safety4.png",
+  //   "card5": "/videos-gts/process-safety/process-safety6.jpg",
+  //   "subSectors": [
+  //     "Chemicals & Petrochemicals",
+  //     "Refining",
+  //     "Pharmaceuticals",
+  //     "Food & Beverage",
+  //     "Specialty Chemicals",
+  //     "Energy & Fuels"
+  //   ]
+  // },
   {
     "id": "consumer",
     "label": "Consumer Products",
@@ -1017,357 +1517,6 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
-    "id": "ai-digital",
-    "label": "AI & Digital Engineering",
-    "category": "AI & DIGITAL ENGINEERING",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Intelligent Algorithms for an Autonomous Tomorrow",
-    "description": "Delivering industrial AI solutions, digital twins, predictive analytics, and edge computing to transform traditional engineering workflows into autonomous intelligence.",
-    "dashboardTitle": "AI & DIGITAL ENGINEERING VIEW",
-    "metrics": [
-      {
-        "label": "AI Models Deployed",
-        "value": "50+"
-      },
-      {
-        "label": "Data Processing Uptime",
-        "value": "99.9%"
-      },
-      {
-        "label": "Systems Integrated",
-        "value": "200+"
-      }
-    ],
-    "tags": [
-      "AI/ML Engineering",
-      "Generative AI",
-      "Digital Twin",
-      "Predictive Analytics",
-      "Computer Vision",
-      "Simulation & Modeling",
-      "Cloud Engineering",
-      "Industrial IoT (IIoT)",
-      "Data Integration",
-      "MLOps & AIOps"
-    ],
-    "video": "/videos-gts/ai & digital/ai & digital.mp4",
-    "card1": "/videos-gts/ai & digital/ai-digital-card-1.jpg",
-    "card2": "/videos-gts/ai & digital/ai-digital-card-2.jpg",
-    "card3": "/videos-gts/ai & digital/ai-digital-card-3.jpg",
-    "card4": "/videos-gts/ai & digital/ai-digital-card-5.png",
-    "card5": "/videos-gts/ai & digital/ai-digital-card-4.jpg",
-    "subSectors": [
-      "Predictive Analytics",
-      "Generative Engineering",
-      "Computer Vision Inspection",
-      "Robotic Process AI",
-      "Autonomous Operations",
-      "Edge IoT",
-      "Enterprise Data Architecture"
-    ]
-  },
-  {
-    "id": "electrical-engineering",
-    "label": "Electrical Engineering",
-    "category": "ELECTRICAL ENGINEERING",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "High-Voltage Solutions for Modern Power",
-    "description": "Delivering end-to-end power systems engineering, switchgear design, motor control centers, and protective relay coordination for mission-critical facilities.",
-    "dashboardTitle": "ELECTRICAL ENGINEERING VIEW",
-    "metrics": [
-      {
-        "label": "Load Capacity",
-        "value": "Optimal"
-      },
-      {
-        "label": "Protection Status",
-        "value": "Verified"
-      },
-      {
-        "label": "Distribution Status",
-        "value": "Online"
-      }
-    ],
-    "tags": [
-      "MV/LV Systems",
-      "Switchgear",
-      "Lighting",
-      "Earthing & Grounding",
-      "ETAP Studies",
-      "Cable Routing & Sizing",
-      "Arc Flash Analysis",
-      "Power Quality Studies"
-    ],
-    "video": "/videos-gts/electrical engineering/electrical engineering.mp4",
-    "card1": "/videos-gts/electrical engineering/electrical-engineering-card-1.jpg",
-    "card2": "/videos-gts/electrical engineering/electrical-engineering-card-2.jpg",
-    "card3": "/videos-gts/electrical engineering/electrical-engineering-card-3.jpg",
-    "card4": "/videos-gts/electrical engineering/electrical-engineering-card-5.png",
-    "card5": "/videos-gts/electrical engineering/electrical-engineering-card-4.jpg",
-    "subSectors": [
-      "Medium & Low Voltage",
-      "Substations",
-      "Emergency Power & UPS",
-      "Industrial Lighting",
-      "Harmonic Mitigation",
-      "Facility Electrification",
-      "Sustainability"
-    ]
-  },
-  {
-    "id": "industrial-automation",
-    "label": "Industrial Automation",
-    "category": "INDUSTRIAL AUTOMATION & PLC",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Automated Solutions for Maximum Throughput",
-    "description": "Delivering advanced PLC, SCADA, DCS programming, and robotic automation systems to maximize plant efficiency, safety, and operational transparency.",
-    "dashboardTitle": "INDUSTRIAL AUTOMATION VIEW",
-    "metrics": [
-      {
-        "label": "System Uptime",
-        "value": "99.9%"
-      },
-      {
-        "label": "Loop Tuning",
-        "value": "Optimal"
-      },
-      {
-        "label": "Automation Index",
-        "value": "98%"
-      }
-    ],
-    "tags": [
-      "PLC & DCS Systems",
-      "SCADA Architecture",
-      "HMI Design",
-      "Robotic Integration",
-      "Safety Instrumented Systems (SIS)",
-      "Digital Twin",
-      "Industrial IoT",
-      "Commissioning Support"
-    ],
-    "video": "/videos-gts/industrial automation/industrial automation.mp4",
-    "card1": "/videos-gts/industrial automation/industrial-automation-card-1.jpg",
-    "card2": "/videos-gts/industrial automation/industrial-automation-card2.jpg",
-    "card3": "/videos-gts/industrial automation/industrial-automation-card3.jpg",
-    "card4": "/videos-gts/industrial automation/industrial-automation-card5.png",
-    "card5": "/videos-gts/industrial automation/industrial-automation-card4.jpg",
-    "subSectors": [
-      "PLC Programming",
-      "SCADA Systems",
-      "Distributed Control (DCS)",
-      "Robotics & Motion Control",
-      "Industrial Networking",
-      "Vision Systems",
-      "Plant Modernization"
-    ]
-  },
-  {
-    "id": "instrumentation-controls",
-    "label": "Instrumentation & Controls",
-    "category": "INSTRUMENTATION & CONTROLS",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Precision Measurement for Critical Control",
-    "description": "Delivering field instrumentation design, control loop optimization, sensor calibration, and analytical instrumentation engineering for complex industrial operations.",
-    "dashboardTitle": "INSTRUMENTATION & CONTROLS VIEW",
-    "metrics": [
-      {
-        "label": "Instrument Health",
-        "value": "99%"
-      },
-      {
-        "label": "Control Loop Status",
-        "value": "Verified"
-      },
-      {
-        "label": "System Availability",
-        "value": "Running"
-      }
-    ],
-    "tags": [
-      "Process Instrumentation",
-      "Loop Design & Tuning",
-      "Control Systems (PLC/DCS)",
-      "Field Devices & Calibration",
-      "SCADA & HMI",
-      "Control Panel Design",
-      "SIS / ESD",
-      "Commissioning & Validation",
-      "Analyzer Systems",
-      "Asset Management"
-    ],
-    "video": "/videos-gts/instrumentation & controls/instrumentation & controls.mp4",
-    "card1": "/videos-gts/instrumentation & controls/instrumentation & controls card-1.jpg",
-    "card2": "/videos-gts/instrumentation & controls/instrumentation & controls card-2.jpg",
-    "card3": "/videos-gts/instrumentation & controls/instrumentation & controls card-3.jpg",
-    "card4": "/videos-gts/instrumentation & controls/instrumentation & controls card-5.png",
-    "card5": "/videos-gts/instrumentation & controls/instrumentation & controls card-4.jpg",
-    "subSectors": [
-      "Transmitters & Sensors",
-      "Control Valve Sizing",
-      "Analyzer Houses",
-      "F&G Detection Systems",
-      "Junction Box Design",
-      "Wireless Instrumentation",
-      "Commissioning"
-    ]
-  },
-  {
-    "id": "manufacturing-engineering",
-    "label": "Manufacturing Engineering",
-    "category": "MANUFACTURING & PRODUCTION",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Production Solutions for Lean Excellence",
-    "description": "Delivering assembly line design, tooling optimization, lean manufacturing processes, and smart factory integrations to supercharge industrial productivity.",
-    "dashboardTitle": "MANUFACTURING VIEW",
-    "metrics": [
-      {
-        "label": "Production Efficiency",
-        "value": "97%"
-      },
-      {
-        "label": "Quality Compliance",
-        "value": "99%"
-      },
-      {
-        "label": "Line Status",
-        "value": "Running"
-      }
-    ],
-    "tags": [
-      "Production Line Design",
-      "Robotics Integration",
-      "Process Optimization",
-      "Quality Engineering",
-      "Factory Automation",
-      "Equipment Design",
-      "Lean Manufacturing",
-      "Material Handling Systems",
-      "Digital Twin & Simulation",
-      "MES Integration"
-    ],
-    "video": "/videos-gts/manufacturing engineering/manufacturing engineering.mp4",
-    "card1": "/videos-gts/manufacturing engineering/manufacturing engineering card-1.jpg",
-    "card2": "/videos-gts/manufacturing engineering/manufacturing engineering card-2.jpg",
-    "card3": "/videos-gts/manufacturing engineering/manufacturing engineering card-3.jpg",
-    "card4": "/videos-gts/manufacturing engineering/manufacturing engineering card-5.png",
-    "card5": "/videos-gts/manufacturing engineering/manufacturing engineering card-4.jpg",
-    "subSectors": [
-      "Automated Assembly",
-      "CNC Machining & Tooling",
-      "Robotic Welding Cells",
-      "Plant Layout Design",
-      "Quality Assurance & Metrology",
-      "Additive Manufacturing",
-      "Smart Factory"
-    ]
-  },
-  {
-    "id": "mechanical-engineering",
-    "label": "Mechanical & Machine Engineering",
-    "category": "MECHANICAL & MACHINE ENGINEERING",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Dynamic Solutions for Heavy Machinery",
-    "description": "Delivering rotating equipment design, stress analysis (FEA), piping stress, thermodynamic modeling, and heavy mechanical machinery engineering.",
-    "dashboardTitle": "MECHANICAL ENGINEERING VIEW",
-    "metrics": [
-      {
-        "label": "Design Status",
-        "value": "Active"
-      },
-      {
-        "label": "Validation",
-        "value": "Passed"
-      },
-      {
-        "label": "Revision",
-        "value": "R12"
-      }
-    ],
-    "tags": [
-      "Mechanical Design",
-      "Equipment Design",
-      "FEA & Simulation",
-      "CFD & Thermal Analysis",
-      "Assemblies & Integration",
-      "Rotating Equipment",
-      "Reverse Engineering",
-      "Drawings & Documentation",
-      "Product Optimization",
-      "Manufacturing Support"
-    ],
-    "video": "/videos-gts/mechanical engineering/mechanical engineering.mp4",
-    "card1": "/videos-gts/mechanical engineering/mechanical-card-4.jpg",
-    "card2": "/videos-gts/mechanical engineering/mechanical-card-2.jpg",
-    "card3": "/videos-gts/mechanical engineering/mechanical-card-3.jpg",
-    "card4": "/videos-gts/mechanical engineering/mechanical-card-5.png",
-    "card5": "/videos-gts/mechanical engineering/mechanical-card-1.jpg",
-    "subSectors": [
-      "Pumps & Compressors",
-      "Turbomachinery",
-      "Piping Systems",
-      "Hydraulics & Pneumatics",
-      "Pressure Vessels (ASME)",
-      "Material Handling",
-      "Asset Integrity"
-    ]
-  },
-  {
-    "id": "product-engineering",
-    "label": "Product Engineering",
-    "category": "PRODUCT DESIGN & R&D",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "R&D Solutions for Groundbreaking Products",
-    "description": "Delivering end-to-end product design, rapid prototyping, thermal-mechanical simulation, and design for manufacturability (DFM) to turn visions into market leaders.",
-    "dashboardTitle": "PRODUCT ENGINEERING VIEW",
-    "metrics": [
-      {
-        "label": "Design Status",
-        "value": "Active"
-      },
-      {
-        "label": "Validation",
-        "value": "Passed"
-      },
-      {
-        "label": "Revision",
-        "value": "R12"
-      }
-    ],
-    "tags": [
-      "AI-Driven Design",
-      "Generative Engineering",
-      "Digital Twin",
-      "Predictive Analytics",
-      "Simulation & Analysis",
-      "CAE / CFD / FEA",
-      "PLM Integration",
-      "Manufacturing Support"
-    ],
-    "video": "/videos-gts/product engineering/product engineering.mp4",
-    "card1": "/videos-gts/product engineering/product engineering card-1.jpg",
-    "card2": "/videos-gts/product engineering/product engineering card-2.jpg",
-    "card3": "/videos-gts/product engineering/product engineering card-3.jpg",
-    "card4": "/videos-gts/product engineering/product engineering-card-5.png",
-    "card5": "/videos-gts/product engineering/product engineering-card-4.jpg",
-    "subSectors": [
-      "Industrial Equipment Design",
-      "Electronic Enclosures",
-      "Consumer Hardware",
-      "Precision Mechanisms",
-      "Plastics & Mold Design",
-      "Sheet Metal Engineering",
-      "Product R&D"
-    ]
-  },
-  {
     "id": "Smart infrastructure & cities engineering",
     "label": "Smart Infrastructure & Cities",
     "category": "SMART INFRASTRUCTURE & CITIES ENGINEERING",
@@ -1416,6 +1565,7 @@ const heroVisuals: HeroVisual[] = [
     ]
   }
 ];
+
 const trustStats = [
   {
     title: 'Established 2012',
