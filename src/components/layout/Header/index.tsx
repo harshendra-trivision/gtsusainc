@@ -363,7 +363,7 @@ export default function Header() {
                       className="absolute left-1/2 top-full z-50 w-[min(96vw,1180px)] max-w-[calc(100vw-2rem)] pt-4"
                     >
                       <div className="overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 shadow-[0_30px_90px_rgba(15,23,42,0.18)] ring-1 ring-slate-900/5 backdrop-blur-2xl">
-                        <div className="grid grid-cols-1 gap-x-6 gap-y-8 p-6 sm:grid-cols-2 lg:grid-cols-4 lg:p-8">
+                        <div className="grid max-h-[calc(100vh-10rem)] grid-cols-1 gap-x-6 gap-y-8 overflow-y-auto overscroll-contain p-6 sm:grid-cols-2 lg:grid-cols-4 lg:p-8">
                           {activeMegaItem.megaMenu.map((category) => {
                             const CategoryIcon = megaMenuIcons[category.icon];
                             const linkTo = activeMegaItem.megaMenuLinkTo;

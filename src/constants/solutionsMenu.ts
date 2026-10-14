@@ -121,5 +121,118 @@ export const solutionsMegaMenu: MegaMenuCategory[] = [
         ]
       }
     ]
+  },
+  {
+    slug: 'mission-critical-infrastructure-engineering',
+    label: 'Mission Critical Infrastructure Engineering',
+    icon: 'Database',
+    groups: [
+      {
+        items: [
+          'Data Centers',
+          'AI Compute Facilities',
+          'Semiconductor Facilities',
+          'Battery Gigafactories',
+          'Transportation Infrastructure',
+          'Telecommunications',
+          'Smart Utilities',
+          'Critical Facilities',
+          'Control Centers'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'digital-engineering',
+    label: 'Digital Engineering',
+    icon: 'Layers',
+    groups: [
+      {
+        items: [
+          'Digital Twins',
+          'BIM',
+          'Asset Intelligence',
+          'Laser Scanning',
+          'Reality Capture',
+          'Engineering Information Management'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'intelligent-operations',
+    label: 'Intelligent Operations',
+    icon: 'BrainCircuit',
+    groups: [
+      {
+        items: [
+          'Industrial AI',
+          'Automation',
+          'Robotics',
+          'Industrial IoT',
+          'SCADA',
+          'Digital Operations',
+          'Predictive Analytics',
+          'Asset Performance',
+          'Industrial Cybersecurity'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'technology-supply-chain-solutions',
+    label: 'Technology & Supply Chain Solutions',
+    icon: 'Truck',
+    groups: [
+      {
+        items: [
+          'Technology Representation',
+          'OEM Partnerships',
+          'Strategic Sourcing',
+          'Procurement Engineering',
+          'Vendor Development',
+          'Supplier Quality',
+          'Manufacturing Support',
+          'Global Supply Chain'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'sustainable-infrastructure',
+    label: 'Sustainable Infrastructure',
+    icon: 'Globe',
+    groups: [
+      {
+        items: [
+          'Renewable Energy',
+          'Hydrogen',
+          'Carbon Capture',
+          'Energy Storage',
+          'Decarbonization',
+          'Water & Wastewater',
+          'ESG Engineering'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'asset-performance-reliability',
+    label: 'Asset Performance & Reliability',
+    icon: 'Gauge',
+    groups: [
+      {
+        items: [
+          'Asset Integrity',
+          'Reliability Engineering',
+          'RBI',
+          'FMEA',
+          'Predictive Maintenance',
+          'Asset Lifecycle Management',
+          'Process Safety',
+          'Operational Excellence'
+        ]
+      }
+    ]
   }
 ];

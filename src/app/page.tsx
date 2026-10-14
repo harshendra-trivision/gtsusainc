@@ -6,31 +6,55 @@ import Link from 'next/link';
 import type { LucideIcon } from 'lucide-react';
 import {
   Activity,
+  Armchair,
   ArrowRight,
+  Atom,
   Award,
   BarChart,
+  BatteryCharging,
   Bot,
   Box,
+  Boxes,
   BrainCircuit,
   Briefcase,
+  BriefcaseMedical,
+  Building,
   Building2,
   Calendar,
+  Car,
   Check,
   CheckCircle2,
   ChevronRight,
+  CircuitBoard,
   Clock,
   Cloud,
+  CloudRain,
   Code,
   Cog,
+  Container,
+  CookingPot,
   Cpu,
+  Cylinder,
   Database,
+  Dna,
+  Drone,
+  Droplet,
+  Droplets,
   Factory,
+  Fan,
   FileCheck,
   FileText,
+  Flame,
+  FlaskConical,
+  FlaskRound,
+  Fuel,
+  Gauge,
+  Gem,
   Globe,
   Grid,
   Handshake,
   HardHat,
+  HeartPulse,
   Landmark,
   Laptop,
   Layers,
@@ -41,23 +65,51 @@ import {
   MapPin,
   MessageSquare,
   Microscope,
+  Milk,
   Monitor,
   Network,
+  Package,
+  Pickaxe,
+  Pill,
   Plane,
+  Plug,
   Radio,
+  RadioTower,
+  Recycle,
+  Refrigerator,
+  Repeat,
   RotateCw,
+  Satellite,
+  ScanLine,
   Search,
   Server,
   Settings,
+  Shield,
   ShieldCheck,
   Ship,
+  ShoppingBag,
   Sliders,
   Smartphone,
+  SolarPanel,
   Sparkles,
   Star,
+  Sun,
+  Syringe,
+  Thermometer,
+  TrainFront,
+  TrainTrack,
+  TramFront,
   TrendingUp,
+  Truck,
+  Tv,
   Users,
+  UtilityPole,
+  Warehouse,
+  Watch,
+  Waves,
+  Waypoints,
   Wind,
+  Wrench,
   X,
   Zap
 } from 'lucide-react';
@@ -107,6 +159,9 @@ interface HeroVisual {
   title2: string;
   subtitle: string;
   description: string;
+  /** Per-industry hero stats; fall back to the company-wide figures when omitted. */
+  projectsDelivered?: string;
+  yearsOfExcellence?: string;
   dashboardTitle: string;
   metrics: HeroMetric[];
   tags: string[];
@@ -116,7 +171,7 @@ interface HeroVisual {
   card3: string;
   card4: string;
   card5: string;
-  subSectors: string[];
+  subSectors: HeroSubSector[];
 }
 
 const heroVisuals: HeroVisual[] = [
@@ -128,6 +183,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Energy Solutions for a Brighter Tomorrow",
     "description": "Delivering end-to-end oil & gas engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy systems for a global future.",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "OIL & GAS ENGINEERING VIEW",
     "metrics": [
       {
@@ -160,11 +217,12 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/oil-and-gas/oil-and-gas-card4.jpg",
     "card5": "/videos-gts/oil-and-gas/oil-and-gas-card5.jpg",
     "subSectors": [
-      "Exploration & Production",
-      "Midstream & Pipelines",
-      "Refining & Petrochemicals",
-      "LNG & Terminals",
-      "Sustainability"
+      { "name": "Exploration & Production", "icon": RadioTower },
+      { "name": "Midstream & Pipelines", "icon": Waypoints },
+      { "name": "Refining & Petrochemicals", "icon": Factory },
+      { "name": "LNG & Terminals", "icon": Cylinder },
+      { "name": "Sustainability", "icon": Leaf },
+      { "name": "HSE & Risk Management", "icon": HardHat }
     ]
   },
   {
@@ -175,6 +233,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Clean Energy Solutions for a Brighter Tomorrow",
     "description": "Delivering end-to-end LNG engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy systems for a global future.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "LNG FACILITY VIEW",
     "metrics": [
       {
@@ -209,13 +269,13 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/lng/lng-4.png",
     "card5": "/videos-gts/lng/lng-5.jpg",
     "subSectors": [
-      "LNG Terminals",
-      "Liquefaction",
-      "Storage & Tanks",
-      "Regasification",
-      "Marine & Shipping",
-      "Gas Infrastructure",
-      "Sustainability"
+      { "name": "LNG Terminals", "icon": Warehouse },
+      { "name": "Liquefaction", "icon": Factory },
+      { "name": "Storage & Tanks", "icon": Cylinder },
+      { "name": "Regasification", "icon": Flame },
+      { "name": "Marine & Shipping", "icon": Ship },
+      { "name": "Gas Infrastructure", "icon": Waypoints },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -226,6 +286,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
     "description": "Delivering end-to-end process engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "PROCESS ENGINEERING VIEW",
     "metrics": [
       {
@@ -260,12 +322,13 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/home-process/home-process4.png",
     "card5": "/videos-gts/home-process/home-process5.jpg",
     "subSectors": [
-      "Chemicals & Petrochemicals",
-      "Refining",
-      "Pharmaceuticals",
-      "Food & Beverage",
-      "Specialty Chemicals",
-      "Energy & Fuels"
+      { "name": "Chemicals & Petrochemicals", "icon": Factory },
+      { "name": "Refining", "icon": Building2 },
+      { "name": "Pharmaceuticals", "icon": FlaskConical },
+      { "name": "Food & Beverage", "icon": Milk },
+      { "name": "Specialty Chemicals", "icon": Atom },
+      { "name": "Energy & Fuels", "icon": Fuel },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -276,6 +339,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Safer Processes for a Brighter Tomorrow",
     "description": "Delivering end-to-end process safety engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "PROCESS SAFETY VIEW",
     "metrics": [
       {
@@ -310,12 +375,12 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/process-safety/process-safety4.png",
     "card5": "/videos-gts/process-safety/process-safety6.jpg",
     "subSectors": [
-      "Chemicals & Petrochemicals",
-      "Refining",
-      "Pharmaceuticals",
-      "Food & Beverage",
-      "Specialty Chemicals",
-      "Energy & Fuels"
+      { "name": "Chemicals & Petrochemicals", "icon": RadioTower },
+      { "name": "Refining", "icon": Gauge },
+      { "name": "Pharmaceuticals", "icon": Factory },
+      { "name": "Food & Beverage", "icon": Cylinder },
+      { "name": "Specialty Chemicals", "icon": Atom },
+      { "name": "Energy & Fuels", "icon": Leaf }
     ]
   },
   {
@@ -326,6 +391,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Mission-critical Solutions for a Smarter Tomorrow",
     "description": "Delivering end-to-end data center engineering, digital solutions, and automation to build safer, smarter, and more sustainable digital infrastructure for a connected future.",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "DATA CENTERS VIEW",
     "metrics": [
       {
@@ -358,12 +425,12 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/data-center/data-center-card4.png",
     "card5": "/videos-gts/data-center/data-center-card5.jpg",
     "subSectors": [
-      "Data Center Design",
-      "Power & Cooling",
-      "Electrical Systems",
-      "Building Infrastructure",
-      "Security & Safety",
-      "Sustainability"
+      { "name": "Data Center Design", "icon": Server },
+      { "name": "Power & Cooling", "icon": Fan },
+      { "name": "Electrical Systems", "icon": Zap },
+      { "name": "Building Infrastructure", "icon": Building2 },
+      { "name": "Security & Safety", "icon": ShieldCheck },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -374,6 +441,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
     "description": "Delivering end-to-end semiconductor engineering, digital solutions, and automation to build safer, smarter, and more sustainable semiconductor manufacturing for a connected future.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "SEMICONDUCTOR FACILITY VIEW",
     "metrics": [
       {
@@ -408,13 +477,13 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/semiconductor/image1.png",
     "card5": "/videos-gts/semiconductor/Semiconductors5.jpg",
     "subSectors": [
-      "Wafer Fabs",
-      "Assembly & Test",
-      "OSAT",
-      "Semiconductor Materials",
-      "Utilities & Infrastructure",
-      "Facility Automation",
-      "Sustainability"
+      { "name": "Wafer Fabs", "icon": Cpu },
+      { "name": "Assembly & Test", "icon": CircuitBoard },
+      { "name": "OSAT", "icon": Globe },
+      { "name": "Semiconductor Materials", "icon": Layers },
+      { "name": "Utilities & Infrastructure", "icon": Building },
+      { "name": "Facility Automation", "icon": Bot },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -425,6 +494,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
     "description": "Delivering end-to-end power & utilities engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy infrastructure for a resilient future.",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "POWER & UTILITIES VIEW",
     "metrics": [
       {
@@ -461,12 +532,12 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/power-utility/power-utility5.png",
     "card5": "/videos-gts/power-utility/power-utility4.jpg",
     "subSectors": [
-      "Power Generation",
-      "Transmission & Distribution",
-      "Renewable Energy",
-      "Energy Storage",
-      "Utilities Infrastructure",
-      "Sustainability"
+      { "name": "Power Generation", "icon": Factory },
+      { "name": "Transmission & Distribution", "icon": UtilityPole },
+      { "name": "Renewable Energy", "icon": Wind },
+      { "name": "Energy Storage", "icon": BatteryCharging },
+      { "name": "Utilities Infrastructure", "icon": Building2 },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -477,6 +548,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
     "description": "Delivering end-to-end water & wastewater engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "WATER & WASTEWATER VIEW",
     "metrics": [
       {
@@ -509,23 +582,25 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/water-wastewater/water-wastewater4.png",
     "card5": "/videos-gts/water-wastewater/image2.jpg",
     "subSectors": [
-      "Water Treatment",
-      "Wastewater Treatment",
-      "Pumping Systems",
-      "Distribution Networks",
-      "Stormwater Management",
-      "Asset Optimization",
-      "Sustainability"
+      { "name": "Water Treatment", "icon": Droplets },
+      { "name": "Wastewater Treatment", "icon": Waves },
+      { "name": "Pumping Systems", "icon": Gauge },
+      { "name": "Distribution Networks", "icon": Network },
+      { "name": "Stormwater Management", "icon": CloudRain },
+      { "name": "Asset Optimization", "icon": Settings },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
     "id": "industrial-automation",
     "label": "Industrial Automation",
-    "category": "INDUSTRIAL AUTOMATION & PLC",
+    "category": "INDUSTRIAL AUTOMATION ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Automated Solutions for Maximum Throughput",
-    "description": "Delivering advanced PLC, SCADA, DCS programming, and robotic automation systems to maximize plant efficiency, safety, and operational transparency.",
+    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
+    "description": "Delivering end-to-end industrial automation engineering, digital solutions, and integration to build safer, smarter, and more efficient operations across industries for a connected future.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "INDUSTRIAL AUTOMATION VIEW",
     "metrics": [
       {
@@ -558,13 +633,14 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/industrial automation/industrial-automation-card5.png",
     "card5": "/videos-gts/industrial automation/industrial-automation-card4.jpg",
     "subSectors": [
-      "PLC Programming",
-      "SCADA Systems",
-      "Distributed Control (DCS)",
-      "Robotics & Motion Control",
-      "Industrial Networking",
-      "Vision Systems",
-      "Plant Modernization"
+      { "name": "Automotive", "icon": Car },
+      { "name": "Food & Beverage", "icon": Milk },
+      { "name": "Pharmaceuticals", "icon": FlaskConical },
+      { "name": "Chemicals", "icon": Atom },
+      { "name": "Consumer Goods", "icon": Package },
+      { "name": "Electronics", "icon": CircuitBoard },
+      { "name": "Metals & Mining", "icon": Pickaxe },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -573,8 +649,10 @@ const heroVisuals: HeroVisual[] = [
     "category": "AI & DIGITAL ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Intelligent Algorithms for an Autonomous Tomorrow",
-    "description": "Delivering industrial AI solutions, digital twins, predictive analytics, and edge computing to transform traditional engineering workflows into autonomous intelligence.",
+    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
+    "description": "Accelerating innovation with AI, digital twins, intelligent engineering, and advanced simulation to build safer, smarter, and more connected operations for a better tomorrow.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "AI & DIGITAL ENGINEERING VIEW",
     "metrics": [
       {
@@ -609,23 +687,26 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/ai & digital/ai-digital-card-5.png",
     "card5": "/videos-gts/ai & digital/ai-digital-card-4.jpg",
     "subSectors": [
-      "Predictive Analytics",
-      "Generative Engineering",
-      "Computer Vision Inspection",
-      "Robotic Process AI",
-      "Autonomous Operations",
-      "Edge IoT",
-      "Enterprise Data Architecture"
+      { "name": "Energy & Utilities", "icon": UtilityPole },
+      { "name": "Oil & Gas", "icon": Fuel },
+      { "name": "Chemicals", "icon": FlaskConical },
+      { "name": "Manufacturing", "icon": Factory },
+      { "name": "Pharmaceuticals", "icon": Pill },
+      { "name": "Consumer Goods", "icon": Package },
+      { "name": "Technology", "icon": Cpu },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
     "id": "product-engineering",
     "label": "Product Engineering",
-    "category": "PRODUCT DESIGN & R&D",
+    "category": "PRODUCT ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "R&D Solutions for Groundbreaking Products",
-    "description": "Delivering end-to-end product design, rapid prototyping, thermal-mechanical simulation, and design for manufacturability (DFM) to turn visions into market leaders.",
+    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
+    "description": "Accelerating product innovation with AI, digital twins, intelligent engineering, and advanced simulation to build safer, smarter, and more connected products for a better tomorrow.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "PRODUCT ENGINEERING VIEW",
     "metrics": [
       {
@@ -658,23 +739,26 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/product engineering/product engineering-card-5.png",
     "card5": "/videos-gts/product engineering/product engineering-card-4.jpg",
     "subSectors": [
-      "Industrial Equipment Design",
-      "Electronic Enclosures",
-      "Consumer Hardware",
-      "Precision Mechanisms",
-      "Plastics & Mold Design",
-      "Sheet Metal Engineering",
-      "Product R&D"
+      { "name": "Automotive", "icon": Car },
+      { "name": "Aerospace & Defense", "icon": Plane },
+      { "name": "Industrial Equipment", "icon": Cog },
+      { "name": "Consumer Products", "icon": ShoppingBag },
+      { "name": "Medical Devices", "icon": BriefcaseMedical },
+      { "name": "Electronics", "icon": CircuitBoard },
+      { "name": "Semiconductors", "icon": Cpu },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
     "id": "mechanical-engineering",
     "label": "Mechanical & Machine Engineering",
-    "category": "MECHANICAL & MACHINE ENGINEERING",
+    "category": "MECHANICAL ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Dynamic Solutions for Heavy Machinery",
-    "description": "Delivering rotating equipment design, stress analysis (FEA), piping stress, thermodynamic modeling, and heavy mechanical machinery engineering.",
+    "subtitle": "Precision Engineering for a Smarter Tomorrow",
+    "description": "Innovative mechanical design, advanced simulation, and end-to-end engineering solutions to drive next-generation industrial success.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "MECHANICAL ENGINEERING VIEW",
     "metrics": [
       {
@@ -709,13 +793,14 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/mechanical engineering/mechanical-card-5.png",
     "card5": "/videos-gts/mechanical engineering/mechanical-card-1.jpg",
     "subSectors": [
-      "Pumps & Compressors",
-      "Turbomachinery",
-      "Piping Systems",
-      "Hydraulics & Pneumatics",
-      "Pressure Vessels (ASME)",
-      "Material Handling",
-      "Asset Integrity"
+      { "name": "Automotive", "icon": Car },
+      { "name": "Aerospace & Defense", "icon": Plane },
+      { "name": "Industrial Equipment", "icon": Cog },
+      { "name": "Marine", "icon": Ship },
+      { "name": "Energy & Utilities", "icon": UtilityPole },
+      { "name": "Oil & Gas", "icon": Fuel },
+      { "name": "Consumer Products", "icon": ShoppingBag },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -726,6 +811,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Resilient Structures for a Smarter Tomorrow",
     "description": "Delivering innovative structural engineering, BIM, and digital solutions for infrastructure, industrial, and commercial projects – building a safer, stronger, and more sustainable future.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "STRUCTURAL ENGINEERING VIEW",
     "metrics": [
       {
@@ -758,14 +845,14 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/stracture enginerring/structural engineering card-5.png",
     "card5": "/videos-gts/stracture enginerring/structural engineering card-4.jpg",
     "subSectors": [
-      "Infrastructure",
-      "Industrial",
-      "Commercial",
-      "Energy & Utilities",
-      "Oil & Gas",
-      "Transportation",
-      "Marine",
-      "Sustainability"
+      { "name": "Infrastructure", "icon": Landmark },
+      { "name": "Industrial", "icon": Factory },
+      { "name": "Commercial", "icon": Building2 },
+      { "name": "Energy & Utilities", "icon": UtilityPole },
+      { "name": "Oil & Gas", "icon": Fuel },
+      { "name": "Transportation", "icon": TrainFront },
+      { "name": "Marine", "icon": Ship },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -774,8 +861,10 @@ const heroVisuals: HeroVisual[] = [
     "category": "ELECTRICAL ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "High-Voltage Solutions for Modern Power",
-    "description": "Delivering end-to-end power systems engineering, switchgear design, motor control centers, and protective relay coordination for mission-critical facilities.",
+    "subtitle": "Intelligent Solutions for Industrial Transformation",
+    "description": "Delivering end-to-end electrical engineering, digital solutions, and automation for industrial, energy, infrastructure, and manufacturing sectors – building a safer, smarter, and more sustainable future.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "ELECTRICAL ENGINEERING VIEW",
     "metrics": [
       {
@@ -808,13 +897,15 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/electrical engineering/electrical-engineering-card-5.png",
     "card5": "/videos-gts/electrical engineering/electrical-engineering-card-4.jpg",
     "subSectors": [
-      "Medium & Low Voltage",
-      "Substations",
-      "Emergency Power & UPS",
-      "Industrial Lighting",
-      "Harmonic Mitigation",
-      "Facility Electrification",
-      "Sustainability"
+      { "name": "Industrial", "icon": Factory },
+      { "name": "Energy", "icon": Zap },
+      { "name": "Infrastructure", "icon": Landmark },
+      { "name": "Manufacturing", "icon": Bot },
+      { "name": "Commercial", "icon": Building2 },
+      { "name": "Data Centers", "icon": Server },
+      { "name": "Oil & Gas", "icon": Fuel },
+      { "name": "Renewables", "icon": Wind },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -823,8 +914,10 @@ const heroVisuals: HeroVisual[] = [
     "category": "INSTRUMENTATION & CONTROLS",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Precision Measurement for Critical Control",
-    "description": "Delivering field instrumentation design, control loop optimization, sensor calibration, and analytical instrumentation engineering for complex industrial operations.",
+    "subtitle": "Intelligent Solutions for Industrial Transformation",
+    "description": "Delivering end-to-end instrumentation, control systems, and automation solutions for industrial, energy, infrastructure, and manufacturing sectors – building a safer, smarter, and more sustainable future.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "INSTRUMENTATION & CONTROLS VIEW",
     "metrics": [
       {
@@ -859,23 +952,28 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/instrumentation & controls/instrumentation & controls card-5.png",
     "card5": "/videos-gts/instrumentation & controls/instrumentation & controls card-4.jpg",
     "subSectors": [
-      "Transmitters & Sensors",
-      "Control Valve Sizing",
-      "Analyzer Houses",
-      "F&G Detection Systems",
-      "Junction Box Design",
-      "Wireless Instrumentation",
-      "Commissioning"
+      { "name": "Industrial", "icon": Factory },
+      { "name": "Energy", "icon": Zap },
+      { "name": "Infrastructure", "icon": Landmark },
+      { "name": "Manufacturing", "icon": Building2 },
+      { "name": "Oil & Gas", "icon": Fuel },
+      { "name": "Water & Wastewater", "icon": Droplets },
+      { "name": "Pharmaceuticals", "icon": Pill },
+      { "name": "Chemicals", "icon": FlaskConical },
+      { "name": "Food & Beverage", "icon": Milk },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
     "id": "manufacturing-engineering",
     "label": "Manufacturing Engineering",
-    "category": "MANUFACTURING & PRODUCTION",
+    "category": "MANUFACTURING ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Production Solutions for Lean Excellence",
-    "description": "Delivering assembly line design, tooling optimization, lean manufacturing processes, and smart factory integrations to supercharge industrial productivity.",
+    "subtitle": "Intelligent Solutions for Industrial Transformation",
+    "description": "Delivering end-to-end manufacturing engineering, automation, and digital solutions to optimize production, enhance quality, and drive operational excellence.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "MANUFACTURING VIEW",
     "metrics": [
       {
@@ -910,23 +1008,26 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/manufacturing engineering/manufacturing engineering card-5.png",
     "card5": "/videos-gts/manufacturing engineering/manufacturing engineering card-4.jpg",
     "subSectors": [
-      "Automated Assembly",
-      "CNC Machining & Tooling",
-      "Robotic Welding Cells",
-      "Plant Layout Design",
-      "Quality Assurance & Metrology",
-      "Additive Manufacturing",
-      "Smart Factory"
+      { "name": "Automotive", "icon": Car },
+      { "name": "Industrial", "icon": Factory },
+      { "name": "Aerospace", "icon": Plane },
+      { "name": "Consumer Goods", "icon": Package },
+      { "name": "Energy", "icon": Zap },
+      { "name": "Life Sciences", "icon": FlaskConical },
+      { "name": "High-Tech", "icon": Cpu },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
     "id": "telecommunication",
     "label": "Telecommunication",
-    "category": "TELECOMMUNICATION ENGINEERING",
+    "category": "TELECOMMUNICATIONS ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Connected Solutions for a Sustainable Tomorrow",
-    "description": "Delivering end-to-end telecommunication engineering, network solutions, and automation to build resilient, high-speed connectivity infrastructure for a digital future.",
+    "subtitle": "Intelligent Solutions for a Connected World",
+    "description": "Delivering end-to-end telecommunications engineering, network infrastructure, and digital solutions for a more connected, resilient, and inclusive tomorrow.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "TELECOMMUNICATION VIEW",
     "metrics": [
       {
@@ -961,23 +1062,27 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/telecommunication/Telecommunications card-5.png",
     "card5": "/videos-gts/telecommunication/Telecommunications card-4.jpg",
     "subSectors": [
-      "5G Infrastructure",
-      "Fiber Optic Networks",
-      "Wireless & Microwave",
-      "Data Centers",
-      "Satellite Systems",
-      "Network Operations",
-      "Sustainability"
+      { "name": "Industrial", "icon": Factory },
+      { "name": "Energy", "icon": Zap },
+      { "name": "Infrastructure", "icon": Landmark },
+      { "name": "Smart Cities", "icon": Building2 },
+      { "name": "Digital", "icon": Monitor },
+      { "name": "Media & Broadcast", "icon": RadioTower },
+      { "name": "Aerospace & Defense", "icon": Plane },
+      { "name": "Maritime", "icon": Ship },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
     "id": "railway",
     "label": "Railway",
-    "category": "RAILWAY ENGINEERING",
+    "category": "RAIL & TRANSPORTATION ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Mobility Solutions for a Sustainable Tomorrow",
-    "description": "Delivering end-to-end railway engineering, signaling, and electrification solutions to build safer, faster, and smarter rail transit systems globally.",
+    "subtitle": "Smarter Transit for a Connected Tomorrow",
+    "description": "Delivering end-to-end rail and transportation engineering, automation, and digital solutions to build safer, smarter, and more sustainable mobility systems.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "RAIL & TRANSPORTATION ENGINEERING VIEW",
     "metrics": [
       {
@@ -1012,13 +1117,13 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/railway/railway-card-5.png",
     "card5": "/videos-gts/railway/railway-card-4.jpg",
     "subSectors": [
-      "High-Speed Rail",
-      "Metro & Light Rail",
-      "Freight & Heavy Haul",
-      "Signaling & Telecom",
-      "Station Infrastructure",
-      "Rolling Stock",
-      "Sustainability"
+      { "name": "Urban Transit", "icon": TramFront },
+      { "name": "High-Speed Rail", "icon": TrainFront },
+      { "name": "Freight Rail", "icon": TrainTrack },
+      { "name": "Airports", "icon": Plane },
+      { "name": "Ports & Logistics", "icon": Container },
+      { "name": "Smart Cities", "icon": Building2 },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -1027,8 +1132,10 @@ const heroVisuals: HeroVisual[] = [
     "category": "MARINE & OFFSHORE ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Maritime Solutions for a Sustainable Tomorrow",
-    "description": "Delivering advanced marine engineering, naval architecture, and offshore solutions to build efficient, safe, and sustainable ocean vessels and platforms.",
+    "subtitle": "Sustainable Solutions for a Blue Tomorrow",
+    "description": "Delivering end-to-end marine and offshore engineering, digital solutions, and automation to build safer, smarter, and more resilient marine infrastructure.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "MARINE & OFFSHORE VIEW",
     "metrics": [
       {
@@ -1063,13 +1170,13 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/marine/marine-card-5.png",
     "card5": "/videos-gts/marine/marine-card-4.jpg",
     "subSectors": [
-      "Offshore Platforms",
-      "Commercial Vessels",
-      "Port & Harbors",
-      "Green Propulsion",
-      "Subsea Systems",
-      "Marine Logistics",
-      "Sustainability"
+      { "name": "Oil & Gas", "icon": RadioTower },
+      { "name": "Renewable Energy", "icon": Sun },
+      { "name": "Ports & Terminals", "icon": Container },
+      { "name": "Shipbuilding", "icon": Ship },
+      { "name": "Marine Infrastructure", "icon": Building2 },
+      { "name": "Offshore Wind", "icon": Wind },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -1078,8 +1185,10 @@ const heroVisuals: HeroVisual[] = [
     "category": "MINING & METALS ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Resource Solutions for a Sustainable Tomorrow",
-    "description": "Delivering end-to-end mining and metals engineering, mineral processing, and automated material handling to build safer and more efficient extraction operations.",
+    "subtitle": "Sustainable Resources for a Brighter Tomorrow",
+    "description": "Delivering end-to-end mining and metals engineering, processing solutions, and digital technologies to build safer, smarter, and more sustainable operations.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "MINING OPERATIONS VIEW",
     "metrics": [
       {
@@ -1112,13 +1221,13 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/mining/mining-card-5.png",
     "card5": "/videos-gts/mining/mining-card-4.jpg",
     "subSectors": [
-      "Open Pit Mining",
-      "Underground Mining",
-      "Mineral Beneficiation",
-      "Smelting & Metallurgy",
-      "Tailings Management",
-      "Autonomous Haulage",
-      "Sustainability"
+      { "name": "Exploration", "icon": Pickaxe },
+      { "name": "Mining", "icon": Truck },
+      { "name": "Processing", "icon": Factory },
+      { "name": "Metals", "icon": Gem },
+      { "name": "Energy", "icon": Zap },
+      { "name": "Sustainability", "icon": Leaf },
+      { "name": "Digital Solutions", "icon": Cloud }
     ]
   },
   {
@@ -1127,8 +1236,10 @@ const heroVisuals: HeroVisual[] = [
     "category": "RENEWABLE ENERGY ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Clean Energy Solutions for a Sustainable Tomorrow",
-    "description": "Delivering world-class renewable energy engineering, solar, wind, and storage integration to build a zero-carbon energy ecosystem for generations to come.",
+    "subtitle": "Sustainable Energy for a Brighter Tomorrow",
+    "description": "Delivering end-to-end renewable energy engineering, digital solutions, and automation to build cleaner, smarter, and more resilient energy systems.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "RENEWABLE ENERGY VIEW",
     "metrics": [
       {
@@ -1163,23 +1274,26 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/renewable energy/renewable-energy-card-5.png",
     "card5": "/videos-gts/renewable energy/renewable-energy-card-4.jpg",
     "subSectors": [
-      "Solar Farms",
-      "Onshore & Offshore Wind",
-      "Battery Storage (BESS)",
-      "Green Hydrogen",
-      "Hydro & Geothermal",
-      "Hybrid Power Systems",
-      "Sustainability"
+      { "name": "Onshore Wind", "icon": Wind },
+      { "name": "Offshore Wind", "icon": Waves },
+      { "name": "Solar Energy", "icon": SolarPanel },
+      { "name": "Energy Storage", "icon": BatteryCharging },
+      { "name": "Grid & Transmission", "icon": UtilityPole },
+      { "name": "Green Hydrogen", "icon": Atom },
+      { "name": "Sustainability", "icon": Leaf },
+      { "name": "Digital Solutions", "icon": Cloud }
     ]
   },
   {
     "id": "medical",
     "label": "Medical Devices",
-    "category": "MEDICAL MACHINE ENGINEERING",
+    "category": "MEDICAL DEVICES ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Healthcare Solutions for a Healthier Tomorrow",
-    "description": "Delivering precision medical device engineering, diagnostic equipment development, and compliance-driven automation to improve healthcare outcomes globally.",
+    "subtitle": "Smarter Healthcare for a Healthier Tomorrow",
+    "description": "Delivering end-to-end medical device engineering, digital solutions, and automation to build safer, smarter, and more accessible healthcare technologies.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "MEDICAL ENGINEERING VIEW",
     "metrics": [
       {
@@ -1212,13 +1326,12 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/medical/medical-card-5.png",
     "card5": "/videos-gts/medical/medical-card-4.jpg",
     "subSectors": [
-      "Diagnostic Imaging",
-      "Surgical Robotics",
-      "Patient Monitoring",
-      "Implantable Devices",
-      "Laboratory Automation",
-      "Sterilization Systems",
-      "Healthcare AI"
+      { "name": "Medical Devices", "icon": HeartPulse },
+      { "name": "Diagnostics", "icon": ScanLine },
+      { "name": "Surgical Systems", "icon": Syringe },
+      { "name": "Patient Monitoring", "icon": Activity },
+      { "name": "Wearables", "icon": Watch },
+      { "name": "Healthcare IT", "icon": Cloud }
     ]
   },
   {
@@ -1229,6 +1342,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Smarter Science for a Healthier Tomorrow",
     "description": "Delivering end-to-end life sciences engineering, digital solutions, and automation to build safer, faster, and more innovative therapies for a healthier world.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "LIFE SCIENCES ENGINEERING VIEW",
     "metrics": [
       {
@@ -1261,12 +1376,12 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/life sciences/Life Science-card-5.png",
     "card5": "/videos-gts/life sciences/Life Science-card-4.jpg",
     "subSectors": [
-      "Discovery & R&D",
-      "Bioprocessing",
-      "Manufacturing",
-      "Quality & Compliance",
-      "Regulatory Support",
-      "Sustainability"
+      { "name": "Discovery & R&D", "icon": Dna },
+      { "name": "Bioprocessing", "icon": FlaskConical },
+      { "name": "Manufacturing", "icon": Factory },
+      { "name": "Quality & Compliance", "icon": ShieldCheck },
+      { "name": "Regulatory Support", "icon": FileText },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -1277,6 +1392,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
     "description": "Delivering end-to-end process engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "PROCESS ENGINEERING VIEW",
     "metrics": [
       {
@@ -1311,12 +1428,13 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/home-process/home-process4.png",
     "card5": "/videos-gts/home-process/home-process5.jpg",
     "subSectors": [
-      "Chemicals & Petrochemicals",
-      "Refining",
-      "Pharmaceuticals",
-      "Food & Beverage",
-      "Specialty Chemicals",
-      "Energy & Fuels"
+      { "name": "Chemicals & Petrochemicals", "icon": Factory },
+      { "name": "Refining", "icon": Building2 },
+      { "name": "Pharmaceuticals", "icon": FlaskConical },
+      { "name": "Food & Beverage", "icon": Milk },
+      { "name": "Specialty Chemicals", "icon": Atom },
+      { "name": "Energy & Fuels", "icon": Fuel },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   // {
@@ -1372,11 +1490,13 @@ const heroVisuals: HeroVisual[] = [
   {
     "id": "consumer",
     "label": "Consumer Products",
-    "category": "CONSUMER GOODS ENGINEERING",
+    "category": "CONSUMER PRODUCTS ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Smart Solutions for Everyday Living",
-    "description": "Delivering consumer product engineering, high-volume automated manufacturing, and smart device development to create innovative and sustainable consumer experiences.",
+    "subtitle": "Innovative Consumer Products for a Brighter Tomorrow",
+    "description": "Delivering end-to-end consumer products engineering, digital solutions, and automation to build safer, smarter, and more sustainable products for global brands.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "CONSUMER PRODUCTS VIEW",
     "metrics": [
       {
@@ -1409,13 +1529,13 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/consumer/consumer-product-card-5.png",
     "card5": "/videos-gts/consumer/consumer-product-card-4.jpg",
     "subSectors": [
-      "Smart Home Electronics",
-      "FMCG Packaging",
-      "Personal Care Devices",
-      "Wearables",
-      "Automated Packaging Lines",
-      "Sustainable Materials",
-      "Consumer Robotics"
+      { "name": "Home Appliances", "icon": Refrigerator },
+      { "name": "Kitchen Appliances", "icon": CookingPot },
+      { "name": "Consumer Electronics", "icon": Tv },
+      { "name": "Small Appliances", "icon": Plug },
+      { "name": "Home Comfort", "icon": Armchair },
+      { "name": "Personal Care", "icon": Lightbulb },
+      { "name": "Sustainable Products", "icon": Recycle }
     ]
   },
   {
@@ -1424,8 +1544,10 @@ const heroVisuals: HeroVisual[] = [
     "category": "AEROSPACE ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Aviation Solutions for a Connected Tomorrow",
-    "description": "Delivering precision aerospace engineering, avionics integration, and structural mechanics to advance air and space transportation with unmatched safety and performance.",
+    "subtitle": "Innovative Aerospace Solutions for a Brighter Tomorrow",
+    "description": "Delivering end-to-end aerospace engineering, digital solutions, and automation to build safer, smarter, and more sustainable aerospace systems for a global future.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "AEROSPACE VIEW",
     "metrics": [
       {
@@ -1458,13 +1580,12 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/aerospace/aerospace-card-5.png",
     "card5": "/videos-gts/aerospace/aerospace-card-4.jpg",
     "subSectors": [
-      "Commercial Aviation",
-      "Defense & Tactical Systems",
-      "Spacecraft & Satellites",
-      "UAV & Drones",
-      "Aircraft Propulsion",
-      "Ground Support Systems",
-      "Sustainability"
+      { "name": "Commercial Aviation", "icon": Plane },
+      { "name": "Defense & Military", "icon": Shield },
+      { "name": "Space Systems", "icon": Satellite },
+      { "name": "UAVs & Drones", "icon": Drone },
+      { "name": "MRO", "icon": Wrench },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -1507,13 +1628,13 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/home-process/home-process4.png",
     "card5": "/videos-gts/home-process/home-process5.jpg",
     "subSectors": [
-      "Petrochemical Refining",
-      "Specialty Chemical Plants",
-      "Continuous Manufacturing",
-      "Batch Processing",
-      "Waste Heat Recovery",
-      "Industrial Gas",
-      "Sustainability"
+      { "name": "Petrochemical Refining", "icon": Fuel },
+      { "name": "Specialty Chemical Plants", "icon": FlaskRound },
+      { "name": "Continuous Manufacturing", "icon": Repeat },
+      { "name": "Batch Processing", "icon": Boxes },
+      { "name": "Waste Heat Recovery", "icon": Thermometer },
+      { "name": "Industrial Gas", "icon": Cylinder },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -1524,6 +1645,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Smarter Infrastructure for a Brighter Tomorrow",
     "description": "Delivering end-to-end smart infrastructure engineering, digital solutions, and automation to build safer, smarter, and more resilient cities for a sustainable future.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
     "dashboardTitle": "SMART INFRASTRUCTURE VIEW",
     "metrics": [
       {
@@ -1556,12 +1679,12 @@ const heroVisuals: HeroVisual[] = [
     "card4": "/videos-gts/smart infrastructure/smart-infra-card5.png",
     "card5": "/videos-gts/smart infrastructure/smart-infra-card4.jpg",
     "subSectors": [
-      "Smart Cities",
-      "Transportation",
-      "Utilities",
-      "Public Infrastructure",
-      "Connected Assets",
-      "Sustainability"
+      { "name": "Smart Cities", "icon": Building2 },
+      { "name": "Transportation", "icon": TrainFront },
+      { "name": "Utilities", "icon": Droplet },
+      { "name": "Public Infrastructure", "icon": Landmark },
+      { "name": "Connected Assets", "icon": RadioTower },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   }
 ];
@@ -3220,25 +3343,25 @@ export default function HomePage() {
           <div className="space-y-4">
             <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between xl:gap-8">
               {/* Stats */}
-              <ul className="grid grid-cols-2 gap-x-6 gap-y-4 sm:flex sm:flex-wrap sm:items-center sm:gap-x-8 xl:gap-x-12">
+              <ul className="grid grid-cols-2 gap-x-5 gap-y-3 sm:flex sm:flex-nowrap sm:items-center sm:gap-x-6 xl:shrink-0 xl:gap-x-8">
                 {[
                   { icon: Globe, value: '15+', label: 'Industries Served' },
-                  { icon: Users, value: '100+', label: 'Projects Delivered' },
-                  { icon: Award, value: '15+', label: 'Years of Engineering Excellence' },
+                  { icon: Users, value: heroVisuals[activeSlide].projectsDelivered ?? '100+', label: 'Projects Delivered' },
+                  { icon: Award, value: heroVisuals[activeSlide].yearsOfExcellence ?? '16+', label: 'Years of Engineering Excellence' },
                   { icon: Leaf, value: 'A Cleaner', label: 'Brighter Tomorrow' }
                 ].map(({ icon: Icon, value, label }) => (
-                  <li key={label} className="flex items-center gap-3">
-                    <Icon className="h-9 w-9 shrink-0 text-[#0A3DF0]" strokeWidth={1.75} />
+                  <li key={label} className="flex items-center gap-2">
+                    <Icon className="h-7 w-7 shrink-0 text-[#0A3DF0]" strokeWidth={1.75} />
                     <div className="leading-tight">
-                      <div className="text-xl font-extrabold text-[#0A3DF0]">{value}</div>
-                      {/* <div className="max-w-[9rem] text-xs font-semibold text-[#0A2A8A] sm:text-[13px]">{label}</div> */}
+                      <div className="whitespace-nowrap text-base font-extrabold text-[#0A3DF0]">{value}</div>
+                      <div className="max-w-[8rem] text-[11px] font-semibold text-[#0A2A8A] sm:text-xs">{label}</div>
                     </div>
                   </li>
                 ))}
               </ul>
 
               {/* Industry Switcher Tabs — shown only when there is more than one industry */}
-              {heroVisuals.length > 1 && (
+              {/* {heroVisuals.length > 1 && (
                 <div className="flex flex-wrap items-center gap-2 xl:justify-end">
                   {heroVisuals.map((visual, index) => (
                     <button
@@ -3254,17 +3377,20 @@ export default function HomePage() {
                     </button>
                   ))}
                 </div>
-              )}
+              )} */}
             </div>
 
             <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-[#0A3DF0]/15 pt-4">
               {/* Sub-sectors */}
               {heroVisuals[activeSlide].subSectors && (
-                <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 2xl:gap-x-7">
-                  {heroVisuals[activeSlide].subSectors.map((sub) => (
-                    <li key={sub} className="flex items-center gap-2 text-xs font-semibold text-[#0A2A8A] 2xl:text-[13px]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#0A3DF0]" />
-                      {sub}
+                <ul className="flex flex-wrap items-start gap-y-3 divide-x divide-[#0A3DF0]/15">
+                  {heroVisuals[activeSlide].subSectors.map(({ name, icon: SubSectorIcon }) => (
+                    <li
+                      key={name}
+                      className="flex w-[5.25rem] flex-col items-center gap-1.5 px-2 text-center text-[11px] font-semibold leading-tight text-[#0A2A8A] 2xl:w-24 2xl:text-xs"
+                    >
+                      {SubSectorIcon && <SubSectorIcon className="h-7 w-7 text-[#0A3DF0]" strokeWidth={1.5} />}
+                      {name}
                     </li>
                   ))}
                 </ul>
