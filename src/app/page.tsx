@@ -2238,7 +2238,7 @@ const industriesServed: IndustryServedItem[] = [
     title: 'Renewables',
     topText: 'RENEWABLES',
     icon: Wind,
-    bgImage: '/image/utilities.png',
+    bgImage: '/image/industry-image/renewables.jpeg',
   },
   {
     title: 'Data Centers',
@@ -3434,13 +3434,11 @@ export default function HomePage() {
           </AnimatedSection>
 
           <div className="mt-14">
-            <div className="grid grid-cols-1 gap-0 overflow-hidden border border-white/15 bg-slate-900/40 md:grid-cols-2 lg:grid-cols-4">
+            {/* Bento layout (lg): Established over Global Delivery on the left, two tall cards (AI, Teams) on the right, USA + India and Projects Delivered across the bottom */}
+            <div className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-white/15 bg-white/15 md:grid-cols-2 lg:grid-cols-12 lg:auto-rows-[minmax(230px,auto)]">
 
-              {/* =========================================================
-        CARD 1 — ESTABLISHED 2012
-        Large feature card
-    ========================================================= */}
-              <div className="group relative min-h-[360px] overflow-hidden border-b border-white/15 md:col-span-2 lg:col-span-2 lg:row-span-2 lg:border-r">
+              {/* CARD 1 — ESTABLISHED 2012 (top-left) */}
+              <div className="group relative min-h-[260px] overflow-hidden bg-slate-950 md:col-span-2 lg:col-span-6">
                 <Image
                   src={trustStats[0].image}
                   alt={trustStats[0].title}
@@ -3448,14 +3446,8 @@ export default function HomePage() {
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-slate-950/10" />
-
-                {/* Technical grid */}
                 <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.15)_1px,transparent_1px)] [background-size:32px_32px]" />
-
-                {/* Content */}
                 <div className="absolute inset-x-0 bottom-0 z-10 p-6 sm:p-8">
                   <div className="mb-3 flex items-center gap-3">
                     <span className="h-px w-8 bg-cyan-400" />
@@ -3463,23 +3455,63 @@ export default function HomePage() {
                       Engineering Excellence
                     </span>
                   </div>
-
                   <h3 className="max-w-xl font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
                     {trustStats[0].title}
                   </h3>
-
-                  <p className="mt-3 max-w-xl text-sm leading-6 text-slate-200">
+                  <p className="mt-2 max-w-xl text-sm leading-6 text-slate-200">
                     {trustStats[0].description}
                   </p>
                 </div>
               </div>
 
+              {/* CARD 2 — AI-ENABLED DIGITAL ENGINEERING (tall, middle) */}
+              <div className="group relative min-h-[260px] overflow-hidden bg-slate-950 lg:col-span-3 lg:row-span-2">
+                <Image
+                  src={trustStats[4].image}
+                  alt={trustStats[4].title}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/30 transition-colors duration-300" />
+                <div className="absolute inset-0 z-10 flex flex-col justify-end p-6">
+                  <div className="mb-2 text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-cyan-300">
+                    AI
+                  </div>
+                  <h3 className="font-display text-xl font-extrabold text-white">
+                    AI-Enabled Digital Engineering
+                  </h3>
+                  <p className="mt-2 text-xs leading-5 text-slate-300">
+                    {trustStats[4].description}
+                  </p>
+                </div>
+              </div>
 
-              {/* =========================================================
-        CARD 2 — GLOBAL DELIVERY
-        Large right card
-    ========================================================= */}
-              <div className="group relative min-h-[260px] overflow-hidden border-b border-white/15 lg:col-span-2 lg:border-r">
+              {/* CARD 3 — MULTIDISCIPLINARY ENGINEERING TEAMS (tall, right) */}
+              <div className="group relative min-h-[260px] overflow-hidden bg-slate-950 lg:col-span-3 lg:row-span-2">
+                <Image
+                  src={trustStats[3].image}
+                  alt={trustStats[3].title}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/30 transition-colors duration-300" />
+                <div className="absolute inset-0 z-10 flex flex-col justify-end p-6">
+                  <div className="mb-2 text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-cyan-300">
+                    Teams
+                  </div>
+                  <h3 className="font-display text-xl font-extrabold text-white">
+                    {trustStats[3].title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-5 text-slate-300">
+                    {trustStats[3].description}
+                  </p>
+                </div>
+              </div>
+
+              {/* CARD 4 — GLOBAL DELIVERY MODEL (below Established) */}
+              <div className="group relative min-h-[260px] overflow-hidden bg-slate-950 md:col-span-2 lg:col-span-6">
                 <Image
                   src={trustStats[2].image}
                   alt={trustStats[2].title}
@@ -3487,153 +3519,71 @@ export default function HomePage() {
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/15" />
-
                 <div className="pointer-events-none absolute inset-0 opacity-15 [background-image:linear-gradient(rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:28px_28px]" />
-
-                <div className="absolute inset-x-0 bottom-0 z-10 p-6">
+                <div className="absolute inset-x-0 bottom-0 z-10 p-6 sm:p-8">
                   <div className="mb-2 text-[10px] font-mono font-bold uppercase tracking-[0.28em] text-cyan-300">
                     Global Delivery
                   </div>
-
                   <h3 className="font-display text-xl font-extrabold text-white sm:text-2xl">
                     {trustStats[2].title}
                   </h3>
-
-                  <p className="mt-2 max-w-2xl text-xs leading-5 text-slate-300">
+                  <p className="mt-2 max-w-2xl text-xs leading-5 text-slate-300 sm:text-sm sm:leading-6">
                     {trustStats[2].description}
                   </p>
                 </div>
               </div>
 
-
-              {/* =========================================================
-        CARD 3 — AI
-        Small card
-    ========================================================= */}
-              <div className="group relative min-h-[170px] overflow-hidden border-b border-white/15 lg:col-span-1 lg:border-r">
-                <Image
-                  src={trustStats[4].image}
-                  alt={trustStats[4].title}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-
-                <div className="absolute inset-0 bg-slate-950/75 transition-colors duration-300 group-hover:bg-slate-950/55" />
-
-                <div className="absolute inset-0 z-10 flex flex-col justify-end p-5">
-                  <div className="mb-2 text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-cyan-300">
-                    AI
-                  </div>
-
-                  <h3 className="text-base font-extrabold text-white">
-                    AI-Enabled Digital Engineering
-                  </h3>
-                  <p className="mt-2 max-w-2xl text-xs leading-5 text-slate-300">
-                    AI-assisted engineering workflows, digital twins, engineering analytics, and simulation technologies improve quality, accelerate schedules, and reduce project risk.
-                  </p>
-                </div>
-              </div>
-
-
-              {/* =========================================================
-        CARD 4 — TEAMS
-        Small card
-    ========================================================= */}
-              <div className="group relative min-h-[170px] overflow-hidden border-b border-white/15 lg:col-span-1">
-                <Image
-                  src={trustStats[3].image}
-                  alt={trustStats[3].title}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-
-                <div className="absolute inset-0 bg-slate-950/75 transition-colors duration-300 group-hover:bg-slate-950/55" />
-
-                <div className="absolute inset-0 z-10 flex flex-col justify-end p-5">
-                  <div className="mb-2 text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-cyan-300">
-                    Teams
-                  </div>
-
-                  <h3 className="text-base font-extrabold text-white">
-                    Multidisciplinary Engineering Teams
-                  </h3>
-                  <p className="mt-2 max-w-2xl text-xs leading-5 text-slate-300">
-                    Integrated engineering teams collaborate across all major disciplines to deliver coordinated, constructible, and digitally enabled engineering solutions.
-                  </p>
-                </div>
-              </div>
-
-
-              {/* =========================================================
-        CARD 5 — USA + INDIA
-        Small card
-    ========================================================= */}
-              <div className="group relative min-h-[170px] overflow-hidden border-b border-white/15 md:border-r lg:col-span-1">
+              {/* CARD 5 — USA + INDIA (bottom-left) */}
+              <div className="group relative min-h-[240px] overflow-hidden bg-slate-950 lg:col-span-4">
                 <Image
                   src={trustStats[5].image}
                   alt={trustStats[5].title}
                   fill
-                  sizes="(min-width: 1024px) 25vw, 100vw"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-
-                <div className="absolute inset-0 bg-slate-950/75 transition-colors duration-300 group-hover:bg-slate-950/55" />
-
-                <div className="absolute inset-0 z-10 flex flex-col justify-end p-5">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/30 transition-colors duration-300" />
+                <div className="absolute inset-0 z-10 flex flex-col justify-end p-6">
                   <div className="mb-2 text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-cyan-300">
                     Operations
                   </div>
-
-                  <h3 className="text-base font-extrabold text-white">
+                  <h3 className="font-display text-xl font-extrabold text-white">
                     USA + India
                   </h3>
-                  <p className="mt-2 max-w-2xl text-xs leading-5 text-slate-300">
-                    Combining USA project leadership with global engineering execution to provide responsive, scalable, and cost-effective engineering support.
+                  <p className="mt-2 text-xs leading-5 text-slate-300">
+                    {trustStats[5].description}
                   </p>
                 </div>
               </div>
 
-
-              {/* =========================================================
-        CARD 6 — PROJECTS DELIVERED
-        Bottom wide feature card
-    ========================================================= */}
-              <div className="group relative min-h-[220px] overflow-hidden md:col-span-2 lg:col-span-3">
+              {/* CARD 6 — 500+ PROJECTS DELIVERED (bottom, wide) */}
+              <div className="group relative min-h-[240px] overflow-hidden bg-slate-950 lg:col-span-8">
                 <Image
                   src={trustStats[1].image}
                   alt={trustStats[1].title}
                   fill
-                  sizes="(min-width: 1024px) 75vw, 100vw"
+                  sizes="(min-width: 1024px) 67vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-slate-950/25" />
-
                 <div className="absolute inset-0 z-10 flex items-center p-6 sm:p-8">
                   <div>
                     <div className="mb-3 flex items-center gap-3">
                       <span className="h-px w-8 bg-cyan-400" />
-
                       <span className="text-[10px] font-mono font-bold uppercase tracking-[0.28em] text-cyan-300">
                         Delivery Track Record
                       </span>
                     </div>
-
                     <h3 className="font-display text-2xl font-extrabold text-white sm:text-3xl">
                       {trustStats[1].title}
                     </h3>
-
                     <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
                       {trustStats[1].description}
                     </p>
                   </div>
                 </div>
               </div>
-
 
             </div>
           </div>

@@ -158,6 +158,9 @@ export default function Header() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
+  // Inner pages open on dark hero images, so the transparent header needs white text there.
+  // The landing page keeps dark text, and once scrolled the header turns white, so text goes dark again.
+  const useLightText = pathname !== '/' && !isScrolled;
 
   useBodyScrollLock(activeDropdown !== null);
 
@@ -279,9 +282,11 @@ export default function Header() {
                           'group relative isolate flex items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 py-2 text-sm min-[1440px]:text-base font-semibold transition-colors duration-200',
                           isScrolled
                             ? 'text-slate-900 hover:bg-slate-100 hover:text-blue-600'
-                            : 'text-slate-900 hover:bg-black/5 hover:text-blue-600',
+                            : useLightText
+                              ? 'text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] hover:bg-white/10 hover:text-cyan-200'
+                              : 'text-slate-900 hover:bg-black/5 hover:text-blue-600',
                           'after:absolute after:inset-x-3.5 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-blue-600 after:to-cyan-500 after:transition-transform after:duration-300 hover:after:scale-x-100',
-                          isActive ? 'text-blue-600 font-bold' : 'text-slate-900'
+                          isActive ? 'text-blue-600 font-bold drop-shadow-none' : useLightText ? 'text-white' : 'text-slate-900'
                         )}
                       >
                         {isActive && (
@@ -303,7 +308,9 @@ export default function Header() {
                               'relative z-10 h-3.5 w-3.5 min-[1440px]:h-4 min-[1440px]:w-4 transition-transform group-hover:rotate-180',
                               isScrolled
                                 ? 'text-slate-500 group-hover:text-blue-600'
-                                : 'text-slate-700 group-hover:text-blue-600',
+                                : useLightText && !isActive
+                                  ? 'text-white/80 group-hover:text-cyan-200'
+                                  : 'text-slate-700 group-hover:text-blue-600',
                               activeDropdown === item.label && 'rotate-180 text-blue-600'
                             )}
                           />
@@ -360,10 +367,18 @@ export default function Header() {
                       exit={shouldReduceMotion ? undefined : { opacity: 0, y: 10, scale: 0.98 }}
                       transition={{ duration: 0.2, ease: 'easeOut' }}
                       style={{ x: '-50%' }}
-                      className="absolute left-1/2 top-full z-50 w-[min(96vw,1180px)] max-w-[calc(100vw-2rem)] pt-4"
+                      className={cn(
+                        'absolute left-1/2 top-full z-50 max-w-[calc(100vw-2rem)] pt-4',
+                        activeMegaItem.megaMenuCompact ? 'w-[min(96vw,1400px)]' : 'w-[min(96vw,1180px)]'
+                      )}
                     >
                       <div className="overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 shadow-[0_30px_90px_rgba(15,23,42,0.18)] ring-1 ring-slate-900/5 backdrop-blur-2xl">
-                        <div className="grid max-h-[calc(100vh-10rem)] grid-cols-1 gap-x-6 gap-y-8 overflow-y-auto overscroll-contain p-6 sm:grid-cols-2 lg:grid-cols-4 lg:p-8">
+                        <div
+                          className={cn(
+                            'grid max-h-[calc(100vh-10rem)] grid-cols-1 overflow-y-auto overscroll-contain p-6 sm:grid-cols-2 lg:p-8',
+                            activeMegaItem.megaMenuCompact ? 'gap-x-5 gap-y-6 lg:grid-cols-5' : 'gap-x-6 gap-y-8 lg:grid-cols-4'
+                          )}
+                        >
                           {activeMegaItem.megaMenu.map((category) => {
                             const CategoryIcon = megaMenuIcons[category.icon];
                             const linkTo = activeMegaItem.megaMenuLinkTo;
@@ -376,7 +391,8 @@ export default function Header() {
                                     href={categoryHref}
                                     onClick={() => setActiveDropdown(null)}
                                     className={cn(
-                                      'group/cat relative mb-4 flex items-start gap-3 rounded-2xl border p-3 transition-all',
+                                      'group/cat relative flex items-start gap-3 rounded-2xl border p-3 transition-all',
+                                      activeMegaItem.megaMenuCompact ? 'mb-2.5' : 'mb-4',
                                       category.flagship
                                         ? 'border-blue-500 bg-gradient-to-br from-[#0A3DF0] to-cyan-500 shadow-[0_10px_28px_rgba(10,61,240,0.32)] hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(10,61,240,0.42)]'
                                         : 'border-slate-200/70 bg-slate-50/80 hover:border-blue-300 hover:bg-blue-50/60'
@@ -414,7 +430,7 @@ export default function Header() {
                                     </span>
                                   </Link>
                                 ) : (
-                                  <div className="mb-4 flex items-start gap-3 rounded-2xl border border-slate-200/70 bg-slate-50/80 p-3">
+                                  <div className={cn('flex items-start gap-3 rounded-2xl border border-slate-200/70 bg-slate-50/80 p-3', activeMegaItem.megaMenuCompact ? 'mb-2.5' : 'mb-4')}>
                                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-blue-200/60 bg-blue-50 text-blue-600">
                                       <CategoryIcon className="h-[18px] w-[18px]" />
                                     </span>
@@ -431,6 +447,27 @@ export default function Header() {
                                   </div>
                                 )}
 
+                                {activeMegaItem.megaMenuCompact ? (
+                                  <div className="space-y-2 px-1">
+                                    {category.groups.map((group, groupIdx) => (
+                                      <div key={group.heading ?? groupIdx}>
+                                        {group.heading && (
+                                          <div className="mb-0.5 text-[9px] font-mono font-semibold uppercase tracking-[0.12em] text-slate-400">
+                                            {group.heading}
+                                          </div>
+                                        )}
+                                        <p className="text-[11px] leading-[1.55] text-slate-600">
+                                          {group.items.map((label, itemIdx) => (
+                                            <span key={label}>
+                                              {itemIdx > 0 && <span className="mx-1 text-blue-500/60">•</span>}
+                                              {label}
+                                            </span>
+                                          ))}
+                                        </p>
+                                      </div>
+                                    ))}
+                                  </div>
+                                ) : (
                                 <div className={cn('space-y-4', category.groups.length > 0 && 'max-h-[52vh] overflow-y-auto overscroll-contain pr-1')}>
                                   {category.groups.map((group, groupIdx) => (
                                     <div key={group.heading ?? groupIdx}>
@@ -465,6 +502,7 @@ export default function Header() {
                                     </div>
                                   ))}
                                 </div>
+                                )}
                               </div>
                             );
                           })}

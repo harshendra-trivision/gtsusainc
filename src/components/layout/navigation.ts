@@ -21,6 +21,8 @@ export interface PrimaryNavigationItem extends NavigationLink {
   megaMenu?: MegaMenuCategory[];
   /** When set, mega menu category headers and items link to `${megaMenuLinkTo}#${category.slug}` instead of being plain display text. */
   megaMenuLinkTo?: string;
+  /** Dense 5-column layout: items flow inline under each heading instead of a scrolling column, so large menus fit in one view. */
+  megaMenuCompact?: boolean;
 }
 
 export {
@@ -46,7 +48,7 @@ export const utilityNavigation: NavigationLink[] = [
 
 export const primaryNavigation: PrimaryNavigationItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'Solutions', href: '/#solutions', megaMenu: solutionsMegaMenu },
+  { label: 'Solutions', href: '/#solutions', megaMenu: solutionsMegaMenu, megaMenuCompact: true },
   { label: 'Industries', href: '/industries', megaMenu: industriesMegaMenu },
   { label: 'Projects', href: '/case-studies', megaMenu: projectsMegaMenu, megaMenuLinkTo: '/case-studies' },
   { label: 'Technology', href: '/technology', megaMenu: technologyMegaMenu, megaMenuLinkTo: '/technology' },

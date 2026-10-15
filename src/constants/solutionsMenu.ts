@@ -16,13 +16,6 @@ export const solutionsMegaMenu: MegaMenuCategory[] = [
           'Structural Engineering',
           'Electrical Engineering',
           'Instrumentation & Controls',
-          'Product Engineering',
-          'Steel Detailing',
-          'Engineering Design',
-          'FEED',
-          'Detailed Engineering',
-          "Owner's Engineering",
-          'EPCM Support'
         ]
       }
     ]
@@ -42,23 +35,8 @@ export const solutionsMegaMenu: MegaMenuCategory[] = [
           'Mechanical Integrity',
           'Management of Change (MOC)',
           'Process Hazard Information (PHI)',
-          'Operating Procedures',
-          'Safe Work Practices',
-          'Incident Investigation'
         ]
       },
-      {
-        heading: 'Risk Engineering',
-        items: ['HAZOP', 'HAZID', 'SIL / LOPA', 'QRA', 'FERA', 'Fire & Explosion Analysis', 'Consequence Modeling', 'Dispersion Modeling', 'Bow-Tie Analysis']
-      },
-      {
-        heading: 'Functional Safety',
-        items: ['IEC 61511', 'Safety Instrumented Systems (SIS)', 'SIL Verification', 'Safety Lifecycle Management']
-      },
-      {
-        heading: 'Asset Integrity',
-        items: ['RBI', 'Corrosion Studies', 'Mechanical Integrity', 'Pressure Systems', 'Reliability Engineering']
-      }
     ]
   },
   {
@@ -78,18 +56,6 @@ export const solutionsMegaMenu: MegaMenuCategory[] = [
           'Construction Work Packages'
         ]
       },
-      {
-        heading: 'Project Management',
-        items: ['Project Controls', 'Cost Engineering', 'Schedule Engineering', 'Risk Management', 'Earned Value Management']
-      },
-      {
-        heading: 'Construction Management',
-        items: ['Site Supervision', 'Contractor Coordination', 'Quality Surveillance', 'Commissioning Support', 'Startup Support']
-      },
-      {
-        heading: 'Procurement Engineering',
-        items: ['Vendor Data Review', 'Material Take-Offs', 'Technical Procurement', 'Supplier Evaluation', 'Procurement Packages']
-      }
     ]
   },
   {
@@ -110,14 +76,6 @@ export const solutionsMegaMenu: MegaMenuCategory[] = [
           'Electrical E-Houses',
           'Modular Substations',
           'Motor Control Centers (MCC Buildings)',
-          'Analyzer Shelters',
-          'Instrument Buildings',
-          'Control Rooms',
-          'Operator Shelters',
-          'Pump Stations',
-          'Utility Modules',
-          'Prefabricated Equipment Packages',
-          'Balance of Plant Packages'
         ]
       }
     ]
