@@ -3361,7 +3361,7 @@ export default function HomePage() {
               </ul>
 
               {/* Industry Switcher Tabs — shown only when there is more than one industry */}
-              {/* {heroVisuals.length > 1 && (
+              {heroVisuals.length > 1 && (
                 <div className="flex flex-wrap items-center gap-2 xl:justify-end">
                   {heroVisuals.map((visual, index) => (
                     <button
@@ -3377,7 +3377,7 @@ export default function HomePage() {
                     </button>
                   ))}
                 </div>
-              )} */}
+              )}
             </div>
 
             <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-[#0A3DF0]/15 pt-4">

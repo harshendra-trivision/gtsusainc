@@ -53,9 +53,9 @@ export default function TechnologyPage() {
                     <Icon className="h-6 w-6" />
                   </span>
                   <div>
-                    <span className="text-xs font-mono font-bold uppercase tracking-[0.22em] text-blue-600">
+                    {/* <span className="text-xs font-mono font-bold uppercase tracking-[0.22em] text-blue-600">
                       {`TECHNOLOGY ${String(index + 1).padStart(2, '0')}`}
-                    </span>
+                    </span> */}
                     <h2 className="mt-0.5 font-display text-2xl font-extrabold text-slate-900 sm:text-3xl">
                       {category.label}
                     </h2>
