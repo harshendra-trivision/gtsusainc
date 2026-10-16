@@ -45,9 +45,9 @@ export default function CareersPage() {
                     <Icon className="h-6 w-6" />
                   </span>
                   <div>
-                    <span className="text-xs font-mono font-semibold uppercase tracking-[0.22em] text-accent">
+                    {/* <span className="text-xs font-mono font-semibold uppercase tracking-[0.22em] text-accent">
                       {String(index + 1).padStart(2, '0')}
-                    </span>
+                    </span> */}
                     <h2 className="mt-1 font-display text-2xl font-extrabold text-primary sm:text-3xl">{section.label}</h2>
                     {section.tagline && <p className="mt-1 text-sm font-semibold italic text-slate-500">{section.tagline}</p>}
                   </div>

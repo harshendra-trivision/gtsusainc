@@ -375,8 +375,8 @@ export default function Header() {
                       <div className="overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 shadow-[0_30px_90px_rgba(15,23,42,0.18)] ring-1 ring-slate-900/5 backdrop-blur-2xl">
                         <div
                           className={cn(
-                            'grid max-h-[calc(100vh-10rem)] grid-cols-1 overflow-y-auto overscroll-contain p-6 sm:grid-cols-2 lg:p-8',
-                            activeMegaItem.megaMenuCompact ? 'gap-x-5 gap-y-6 lg:grid-cols-5' : 'gap-x-6 gap-y-8 lg:grid-cols-4'
+                            'grid max-h-[calc(100vh-10rem)] grid-cols-1 overflow-y-auto overscroll-contain p-6 sm:grid-cols-2',
+                            activeMegaItem.megaMenuCompact ? 'gap-x-5 gap-y-5 lg:grid-cols-5' : 'gap-x-6 gap-y-8 lg:grid-cols-4 lg:p-8'
                           )}
                         >
                           {activeMegaItem.megaMenu.map((category) => {
@@ -448,7 +448,8 @@ export default function Header() {
                                 )}
 
                                 {activeMegaItem.megaMenuCompact ? (
-                                  <div className="space-y-2 px-1">
+                                  // Each category's points scroll inside a short box so both rows of five fit on screen together
+                                  <div className="max-h-[clamp(5.5rem,calc((100vh-24rem)/2),11rem)] space-y-2 overflow-y-auto overscroll-contain px-1 pr-2 [scrollbar-width:thin]">
                                     {category.groups.map((group, groupIdx) => (
                                       <div key={group.heading ?? groupIdx}>
                                         {group.heading && (
