@@ -243,7 +243,7 @@ export default function Header() {
         <div className="relative flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           <Link
             href="/"
-            className="group relative flex items-center gap-3 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            className="group relative flex shrink-0 items-center gap-3 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             <Image
               src="/icons/logo transparent.png"
@@ -251,7 +251,7 @@ export default function Header() {
               width={300}
               height={300}
               className={cn(
-                "h-20 sm:h-22 w-auto object-contain transition-all duration-300 group-hover:scale-105",
+                "h-14 sm:h-16 min-[1600px]:h-[4.5rem] w-auto object-contain transition-all duration-300 group-hover:scale-105",
                 isScrolled
                   ? "drop-shadow-none"
                   : "drop-shadow-[0_0_1px_rgba(255,255,255,0.95)] drop-shadow-[0_0_8px_rgba(255,255,255,0.65)]"
@@ -260,9 +260,9 @@ export default function Header() {
             />
           </Link>
 
-          <div className="flex items-center gap-4 lg:gap-6">
-            <div ref={dropdownRef} className="relative hidden lg:block" onMouseLeave={() => setActiveDropdown(null)}>
-              <nav className="flex items-center gap-1">
+          <div className="flex min-w-0 items-center gap-4 xl:gap-4 min-[1600px]:gap-6">
+            <div ref={dropdownRef} className="relative hidden min-w-0 xl:block" onMouseLeave={() => setActiveDropdown(null)}>
+              <nav className="flex items-center gap-0.5 min-[1600px]:gap-1">
                 {primaryNavigation.map((item) => {
                   const hasSubmenu = Boolean(item.submenu?.length);
                   const hasMegaMenu = Boolean(item.megaMenu?.length);
@@ -279,7 +279,8 @@ export default function Header() {
                       <Link
                         href={item.href}
                         className={cn(
-                          'group relative isolate flex items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 py-2 text-sm min-[1440px]:text-base font-semibold transition-colors duration-200',
+                          // Text and padding step up with the viewport so the whole bar (logo + links + Consultation) always fits
+                          'group relative isolate flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-1.5 text-xs font-semibold transition-colors duration-200 min-[1440px]:px-2.5 min-[1440px]:text-[13px] min-[1600px]:px-3 min-[1600px]:text-sm',
                           isScrolled
                             ? 'text-slate-900 hover:bg-slate-100 hover:text-blue-600'
                             : useLightText
@@ -305,7 +306,7 @@ export default function Header() {
                         {hasDropdown && (
                           <ChevronDown
                             className={cn(
-                              'relative z-10 h-3.5 w-3.5 min-[1440px]:h-4 min-[1440px]:w-4 transition-transform group-hover:rotate-180',
+                              'relative z-10 h-3 w-3 min-[1600px]:h-3.5 min-[1600px]:w-3.5 transition-transform group-hover:rotate-180',
                               isScrolled
                                 ? 'text-slate-500 group-hover:text-blue-600'
                                 : useLightText && !isActive
@@ -531,14 +532,14 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            <div className="hidden items-center gap-3 lg:flex">
+            <div className="hidden shrink-0 items-center gap-3 xl:flex">
               {/* <button
                 className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-slate-300 transition-colors hover:border-cyan-200/30 hover:bg-white/10 hover:text-cyan-200"
                 aria-label="Search"
               >
                 <Search className="h-4 w-4" />
               </button> */}
-              <GradientButton href="/contact" className="px-4 py-2.5 text-xs min-[1440px]:text-sm">
+              <GradientButton href="/contact" className="px-3.5 py-2 text-xs">
                 Consultation
               </GradientButton>
             </div>
@@ -546,7 +547,7 @@ export default function Header() {
             <button
               onClick={() => setIsOpen(true)}
               className={cn(
-                "flex h-11 w-11 items-center justify-center rounded-xl shadow-sm transition-colors lg:hidden",
+                "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl shadow-sm transition-colors xl:hidden",
                 isScrolled
                   ? "border border-slate-200/80 bg-slate-50 text-slate-900 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600"
                   : "border border-slate-300/80 bg-white/80 text-slate-900 hover:border-blue-300 hover:bg-white hover:text-blue-600"

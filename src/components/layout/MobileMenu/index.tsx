@@ -196,7 +196,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-[90] bg-slate-950/60 backdrop-blur-md lg:hidden"
+            className="fixed inset-0 z-[90] bg-slate-950/60 backdrop-blur-md xl:hidden"
           />
 
           <motion.div
@@ -204,7 +204,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed bottom-0 right-0 top-0 z-[91] flex h-full w-full max-w-sm flex-col border-l border-white/10 bg-slate-950/94 text-white shadow-[0_30px_100px_rgba(2,6,23,0.7)] backdrop-blur-2xl lg:hidden"
+            className="fixed bottom-0 right-0 top-0 z-[91] flex h-full w-full max-w-sm flex-col border-l border-white/10 bg-slate-950/94 text-white shadow-[0_30px_100px_rgba(2,6,23,0.7)] backdrop-blur-2xl xl:hidden"
           >
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(37,99,235,0.20),transparent_35%),linear-gradient(180deg,rgba(15,23,42,0.70),rgba(2,6,23,0.96))]" />
             <div className="relative flex items-center justify-between border-b border-white/10 px-5 py-5">
