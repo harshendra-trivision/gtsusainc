@@ -25,7 +25,7 @@ const solutionsList = [
   { title: 'Instrumentation & Controls', href: '/solutions/automation-ai-industry-4' },
   { title: 'Simulation & Analysis', href: '/solutions/simulation-digital-validation' },
   { title: 'Automation & Industry 4.0', href: '/solutions/automation-ai-industry-4' },
-  { title: 'Infrastructure & BIM', href: '/infrastructure' },
+  { title: 'Infrastructure & BIM', href: '/solutions/digital-engineering-asset-lifecycle' },
   { title: 'Project & Program Support', href: '/solutions/project-engineering-advisory' },
   { title: 'Asset Lifecycle Support', href: '/solutions/digital-engineering-asset-lifecycle' },
   { title: 'Technical Documentation', href: '/solutions/technical-documentation-asset-intelligence' },
@@ -49,11 +49,11 @@ const industriesList = [
 
 const companyList = [
   { title: 'About Us', href: '/about' },
-  { title: 'Our Approach', href: '/delivery-excellence' },
+  { title: 'Our Approach', href: '/delivery-excellence#delivery-philosophy' },
   { title: 'Leadership', href: '/about#leadership' },
-  { title: 'Global Delivery Model', href: '/delivery-excellence' },
-  { title: 'Quality & HSE', href: '/delivery-excellence#quality' },
-  { title: 'Sustainability', href: '/about#sustainability' },
+  { title: 'Global Delivery Model', href: '/delivery-excellence#global-delivery-model' },
+  { title: 'Quality & HSE', href: '/delivery-excellence#quality-management' },
+  { title: 'Sustainability', href: '/careers#csr' },
   { title: 'Careers', href: '/careers' },
   { title: 'News & Insights', href: '/insights' },
   { title: 'Projects', href: '/case-studies' },
@@ -269,7 +269,7 @@ export default function Footer() {
                     GTS Engineering® USA Incorporated
                   </strong>
                   <span className="text-slate-300 text-xs">
-                    10500 Valley Forge Drive, Suite 202 B,
+                    REGISTERED Office 10500 Valley Forge Drive, Suite 202 B,
                   </span>
                   <br />
                   <span className="text-slate-300 text-xs">
@@ -343,7 +343,7 @@ export default function Footer() {
         {/* ================= BOTTOM BAR / SUB-FOOTER ================= */}
         <div className="mt-14 flex flex-col gap-4 border-t border-slate-800/80 pt-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            &copy; {currentYear} GTS Engineering USA Incorporated. All rights reserved.
+            &copy; 2012 – 2027 GTS Engineering USA Incorporated. All Rights reserved.
           </div>
 
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">

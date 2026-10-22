@@ -410,8 +410,8 @@ export default function ConsultationSection({ id = 'consultation', className }: 
 
       <AnimatedSection as="div" className="relative mx-auto max-w-[1520px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8 items-start">
-          {/* ================= LEFT COLUMN ================= */}
-          <div className="lg:col-span-4 xl:col-span-4 flex flex-col justify-between space-y-8 pr-0 lg:pr-4">
+          {/* ================= TEXT COLUMN (right on lg) ================= */}
+          <div className="lg:order-2 lg:col-span-4 xl:col-span-4 flex flex-col justify-between space-y-8 pl-0 lg:pl-4">
             <div>
               {/* Eyebrow */}
               <div className="flex items-center gap-3">
@@ -531,8 +531,8 @@ export default function ConsultationSection({ id = 'consultation', className }: 
             </div>
           </div>
 
-          {/* ================= RIGHT COLUMN (THE 4-STEP WIZARD) ================= */}
-          <div className="lg:col-span-8 xl:col-span-8">
+          {/* ================= FORM COLUMN — THE 4-STEP WIZARD (left on lg) ================= */}
+          <div className="lg:order-1 lg:col-span-8 xl:col-span-8">
             <div className="rounded-[2rem] border border-white/80 bg-white p-6 sm:p-8 lg:p-10 text-slate-900 shadow-2xl">
               {/* Top Wizard Stepper Navigation */}
               <div className="border-b border-slate-100 pb-6">

@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BackToTopButton from "@/components/ui/scrollUp";
+import ScrollDownButton from "@/components/ui/scrollDown";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -29,6 +30,7 @@ export default function RootLayout({
         <main className="flex-grow flex flex-col">
           {children}
         </main>
+        <ScrollDownButton />
         <BackToTopButton />
         <Footer />
       </body>

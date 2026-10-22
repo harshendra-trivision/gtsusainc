@@ -76,8 +76,9 @@ import {
   type LucideIcon
 } from 'lucide-react';
 import MobileMenu from '../MobileMenu';
+import HeaderSearch from './HeaderSearch';
 import { primaryNavigation } from '../navigation';
-import { GradientButton, cn } from '@/components/ui';
+import { cn } from '@/components/ui';
 import type { MegaMenuIconName } from '@/constants/megaMenu';
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 
@@ -533,15 +534,7 @@ export default function Header() {
             </div>
 
             <div className="hidden shrink-0 items-center gap-3 xl:flex">
-              {/* <button
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-slate-300 transition-colors hover:border-cyan-200/30 hover:bg-white/10 hover:text-cyan-200"
-                aria-label="Search"
-              >
-                <Search className="h-4 w-4" />
-              </button> */}
-              <GradientButton href="/contact" className="px-3.5 py-2 text-xs">
-                Consultation
-              </GradientButton>
+              <HeaderSearch isScrolled={isScrolled} useLightText={useLightText} />
             </div>
 
             <button

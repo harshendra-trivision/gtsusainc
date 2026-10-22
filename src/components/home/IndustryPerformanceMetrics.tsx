@@ -767,10 +767,12 @@ export default function IndustryPerformanceMetrics() {
 
               <Link
                 href={`/industries/${activeIndustry.slug}`}
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-cyan-400 hover:text-white transition-colors self-start sm:self-center"
+                className="group/cta relative inline-flex items-center gap-2 self-start overflow-hidden rounded-full border border-cyan-300/60 bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-2.5 text-xs font-bold text-white animate-glow-pulse transition-all duration-300 hover:scale-105 hover:from-cyan-400 hover:to-blue-500 motion-reduce:animate-none sm:self-center sm:text-sm"
               >
-                <span>Explore {activeIndustry.shortName} Solutions</span>
-                <ArrowRight className="h-4 w-4" />
+                {/* Moving shine */}
+                <span className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/45 to-transparent animate-shimmer motion-reduce:hidden" />
+                <span className="relative">Explore {activeIndustry.shortName} Solutions</span>
+                <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover/cta:translate-x-1" />
               </Link>
             </div>
 

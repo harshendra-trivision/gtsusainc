@@ -279,6 +279,59 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
+    "id": "marine",
+    "label": "Marine",
+    "category": "MARINE & OFFSHORE ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Sustainable Solutions for a Blue Tomorrow",
+    "description": "Delivering end-to-end marine and offshore engineering, digital solutions, and automation to build safer, smarter, and more resilient marine infrastructure.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
+    "dashboardTitle": "MARINE & OFFSHORE VIEW",
+    "metrics": [
+      {
+        "label": "Structural Health",
+        "value": "98%"
+      },
+      {
+        "label": "Operational Status",
+        "value": "Operational"
+      },
+      {
+        "label": "Asset Integrity",
+        "value": "Verified"
+      }
+    ],
+    "tags": [
+      "Offshore Structures",
+      "Hull Design",
+      "Mooring Systems",
+      "Corrosion Protection",
+      "Marine Piping",
+      "Marine Automation",
+      "Subsea Systems",
+      "Digital Twin & Simulation",
+      "Marine Asset Integrity",
+      "Decommissioning Support"
+    ],
+    "video": "/videos-gts/marine/marine-bg-video.mp4",
+    "card1": "/videos-gts/marine/marine-card-1.jpg",
+    "card2": "/videos-gts/marine/marine-card-2.jpg",
+    "card3": "/videos-gts/marine/marine-card-3.jpg",
+    "card4": "/videos-gts/marine/marine-card-5.png",
+    "card5": "/videos-gts/marine/marine-card-4.jpg",
+    "subSectors": [
+      { "name": "Oil & Gas", "icon": RadioTower },
+      { "name": "Renewable Energy", "icon": Sun },
+      { "name": "Ports & Terminals", "icon": Container },
+      { "name": "Shipbuilding", "icon": Ship },
+      { "name": "Marine Infrastructure", "icon": Building2 },
+      { "name": "Offshore Wind", "icon": Wind },
+      { "name": "Sustainability", "icon": Leaf }
+    ]
+  },
+  {
     "id": "home-process",
     "label": "Process Engineering",
     "category": "PROCESS ENGINEERING",
@@ -381,6 +434,165 @@ const heroVisuals: HeroVisual[] = [
       { "name": "Food & Beverage", "icon": Cylinder },
       { "name": "Specialty Chemicals", "icon": Atom },
       { "name": "Energy & Fuels", "icon": Leaf }
+    ]
+  },
+  {
+    "id": "power-utility",
+    "label": "Power & Utilities",
+    "category": "POWER & UTILITIES ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
+    "description": "Delivering end-to-end power & utilities engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy infrastructure for a resilient future.",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
+    "dashboardTitle": "POWER & UTILITIES VIEW",
+    "metrics": [
+      {
+        "label": "Grid Stability",
+        "value": "Stable"
+      },
+      {
+        "label": "Substation Health",
+        "value": "99%"
+      },
+      {
+        "label": "SCADA Status",
+        "value": "Online"
+      }
+    ],
+    "tags": [
+      "Grid Studies",
+      "Relay Coordination",
+      "Substation Engineering",
+      "Load Flow & Short Circuit",
+      "Protection & Control",
+      "Power Quality",
+      "Transmission & Distribution",
+      "Asset Integrity",
+      "Renewable Integration",
+      "Energy Management Systems",
+      "Grid Modernization",
+      "Decarbonization Solutions"
+    ],
+    "video": "/videos-gts/power-utility/power-utility-bg-video.mp4",
+    "card1": "/videos-gts/power-utility/power-utility1.jpg",
+    "card2": "/videos-gts/power-utility/power-utility2.jpg",
+    "card3": "/videos-gts/power-utility/power-utility3.jpg",
+    "card4": "/videos-gts/power-utility/power-utility5.png",
+    "card5": "/videos-gts/power-utility/power-utility4.jpg",
+    "subSectors": [
+      { "name": "Power Generation", "icon": Factory },
+      { "name": "Transmission & Distribution", "icon": UtilityPole },
+      { "name": "Renewable Energy", "icon": Wind },
+      { "name": "Energy Storage", "icon": BatteryCharging },
+      { "name": "Utilities Infrastructure", "icon": Building2 },
+      { "name": "Sustainability", "icon": Leaf }
+    ]
+  },
+  {
+    "id": "renewable-energy",
+    "label": "Renewable Energy",
+    "category": "RENEWABLE ENERGY ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Sustainable Energy for a Brighter Tomorrow",
+    "description": "Delivering end-to-end renewable energy engineering, digital solutions, and automation to build cleaner, smarter, and more resilient energy systems.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
+    "dashboardTitle": "RENEWABLE ENERGY VIEW",
+    "metrics": [
+      {
+        "label": "Energy Output",
+        "value": "98%"
+      },
+      {
+        "label": "Grid Stability",
+        "value": "99.9%"
+      },
+      {
+        "label": "Carbon Reduction",
+        "value": "100%"
+      }
+    ],
+    "tags": [
+      "Wind Farm Design",
+      "Resource Assessment",
+      "Solar PV Engineering",
+      "SCADA & Control Systems",
+      "Energy Storage",
+      "Asset Management",
+      "Grid Integration",
+      "Digital Twin & Simulation",
+      "Green Hydrogen",
+      "Operations & Optimization"
+    ],
+    "video": "/videos-gts/renewable energy/renewable energy.mp4",
+    "card1": "/videos-gts/renewable energy/renewable-energy-card-1.jpg",
+    "card2": "/videos-gts/renewable energy/renewable-energy-card-2.jpg",
+    "card3": "/videos-gts/renewable energy/renewable-energy-card-3.jpg",
+    "card4": "/videos-gts/renewable energy/renewable-energy-card-5.png",
+    "card5": "/videos-gts/renewable energy/renewable-energy-card-4.jpg",
+    "subSectors": [
+      { "name": "Onshore Wind", "icon": Wind },
+      { "name": "Offshore Wind", "icon": Waves },
+      { "name": "Solar Energy", "icon": SolarPanel },
+      { "name": "Energy Storage", "icon": BatteryCharging },
+      { "name": "Grid & Transmission", "icon": UtilityPole },
+      { "name": "Green Hydrogen", "icon": Atom },
+      { "name": "Sustainability", "icon": Leaf },
+      { "name": "Digital Solutions", "icon": Cloud }
+    ]
+  },
+  {
+    "id": "water-wastewater",
+    "label": "Water & Wastewater",
+    "category": "WATER & WASTEWATER ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
+    "description": "Delivering end-to-end water & wastewater engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
+    "dashboardTitle": "WATER & WASTEWATER VIEW",
+    "metrics": [
+      {
+        "label": "Plant Performance",
+        "value": "98%"
+      },
+      {
+        "label": "Water Quality",
+        "value": "Within Spec"
+      },
+      {
+        "label": "Operations",
+        "value": "Continuous"
+      }
+    ],
+    "tags": [
+      "Water Treatment",
+      "Wastewater",
+      "Pump Stations",
+      "Network Modeling",
+      "SCADA",
+      "Instrumentation",
+      "Process Control",
+      "Digital Twin"
+    ],
+    "video": "/videos-gts/water-wastewater/water-wastewater-bg-video.mp4",
+    "card1": "/videos-gts/water-wastewater/water-wastewater1.jpg",
+    "card2": "/videos-gts/water-wastewater/water-wastewater2.jpg",
+    "card3": "/videos-gts/water-wastewater/water-wastewater3.jpg",
+    "card4": "/videos-gts/water-wastewater/water-wastewater4.png",
+    "card5": "/videos-gts/water-wastewater/image2.jpg",
+    "subSectors": [
+      { "name": "Water Treatment", "icon": Droplets },
+      { "name": "Wastewater Treatment", "icon": Waves },
+      { "name": "Pumping Systems", "icon": Gauge },
+      { "name": "Distribution Networks", "icon": Network },
+      { "name": "Stormwater Management", "icon": CloudRain },
+      { "name": "Asset Optimization", "icon": Settings },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -487,111 +699,6 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
-    "id": "power-utility",
-    "label": "Power & Utilities",
-    "category": "POWER & UTILITIES ENGINEERING",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
-    "description": "Delivering end-to-end power & utilities engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy infrastructure for a resilient future.",
-    "projectsDelivered": "500+",
-    "yearsOfExcellence": "15+",
-    "dashboardTitle": "POWER & UTILITIES VIEW",
-    "metrics": [
-      {
-        "label": "Grid Stability",
-        "value": "Stable"
-      },
-      {
-        "label": "Substation Health",
-        "value": "99%"
-      },
-      {
-        "label": "SCADA Status",
-        "value": "Online"
-      }
-    ],
-    "tags": [
-      "Grid Studies",
-      "Relay Coordination",
-      "Substation Engineering",
-      "Load Flow & Short Circuit",
-      "Protection & Control",
-      "Power Quality",
-      "Transmission & Distribution",
-      "Asset Integrity",
-      "Renewable Integration",
-      "Energy Management Systems",
-      "Grid Modernization",
-      "Decarbonization Solutions"
-    ],
-    "video": "/videos-gts/power-utility/power-utility-bg-video.mp4",
-    "card1": "/videos-gts/power-utility/power-utility1.jpg",
-    "card2": "/videos-gts/power-utility/power-utility2.jpg",
-    "card3": "/videos-gts/power-utility/power-utility3.jpg",
-    "card4": "/videos-gts/power-utility/power-utility5.png",
-    "card5": "/videos-gts/power-utility/power-utility4.jpg",
-    "subSectors": [
-      { "name": "Power Generation", "icon": Factory },
-      { "name": "Transmission & Distribution", "icon": UtilityPole },
-      { "name": "Renewable Energy", "icon": Wind },
-      { "name": "Energy Storage", "icon": BatteryCharging },
-      { "name": "Utilities Infrastructure", "icon": Building2 },
-      { "name": "Sustainability", "icon": Leaf }
-    ]
-  },
-  {
-    "id": "water-wastewater",
-    "label": "Water & Wastewater",
-    "category": "WATER & WASTEWATER ENGINEERING",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
-    "description": "Delivering end-to-end water & wastewater engineering, digital solutions, and automation to build safer, smarter, and more sustainable water infrastructure for a healthier, more resilient future.",
-    "projectsDelivered": "500+",
-    "yearsOfExcellence": "15+",
-    "dashboardTitle": "WATER & WASTEWATER VIEW",
-    "metrics": [
-      {
-        "label": "Plant Performance",
-        "value": "98%"
-      },
-      {
-        "label": "Water Quality",
-        "value": "Within Spec"
-      },
-      {
-        "label": "Operations",
-        "value": "Continuous"
-      }
-    ],
-    "tags": [
-      "Water Treatment",
-      "Wastewater",
-      "Pump Stations",
-      "Network Modeling",
-      "SCADA",
-      "Instrumentation",
-      "Process Control",
-      "Digital Twin"
-    ],
-    "video": "/videos-gts/water-wastewater/water-wastewater-bg-video.mp4",
-    "card1": "/videos-gts/water-wastewater/water-wastewater1.jpg",
-    "card2": "/videos-gts/water-wastewater/water-wastewater2.jpg",
-    "card3": "/videos-gts/water-wastewater/water-wastewater3.jpg",
-    "card4": "/videos-gts/water-wastewater/water-wastewater4.png",
-    "card5": "/videos-gts/water-wastewater/image2.jpg",
-    "subSectors": [
-      { "name": "Water Treatment", "icon": Droplets },
-      { "name": "Wastewater Treatment", "icon": Waves },
-      { "name": "Pumping Systems", "icon": Gauge },
-      { "name": "Distribution Networks", "icon": Network },
-      { "name": "Stormwater Management", "icon": CloudRain },
-      { "name": "Asset Optimization", "icon": Settings },
-      { "name": "Sustainability", "icon": Leaf }
-    ]
-  },
-  {
     "id": "industrial-automation",
     "label": "Industrial Automation",
     "category": "INDUSTRIAL AUTOMATION ENGINEERING",
@@ -644,56 +751,56 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
-    "id": "ai-digital",
-    "label": "AI & Digital Engineering",
-    "category": "AI & DIGITAL ENGINEERING",
+    "id": "manufacturing-engineering",
+    "label": "Manufacturing Engineering",
+    "category": "MANUFACTURING ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
-    "description": "Accelerating innovation with AI, digital twins, intelligent engineering, and advanced simulation to build safer, smarter, and more connected operations for a better tomorrow.",
+    "subtitle": "Intelligent Solutions for Industrial Transformation",
+    "description": "Delivering end-to-end manufacturing engineering, automation, and digital solutions to optimize production, enhance quality, and drive operational excellence.",
     "projectsDelivered": "100+",
     "yearsOfExcellence": "16+",
-    "dashboardTitle": "AI & DIGITAL ENGINEERING VIEW",
+    "dashboardTitle": "MANUFACTURING VIEW",
     "metrics": [
       {
-        "label": "AI Models Deployed",
-        "value": "50+"
+        "label": "Production Efficiency",
+        "value": "97%"
       },
       {
-        "label": "Data Processing Uptime",
-        "value": "99.9%"
+        "label": "Quality Compliance",
+        "value": "99%"
       },
       {
-        "label": "Systems Integrated",
-        "value": "200+"
+        "label": "Line Status",
+        "value": "Running"
       }
     ],
     "tags": [
-      "AI/ML Engineering",
-      "Generative AI",
-      "Digital Twin",
-      "Predictive Analytics",
-      "Computer Vision",
-      "Simulation & Modeling",
-      "Cloud Engineering",
-      "Industrial IoT (IIoT)",
-      "Data Integration",
-      "MLOps & AIOps"
+      "Production Line Design",
+      "Robotics Integration",
+      "Process Optimization",
+      "Quality Engineering",
+      "Factory Automation",
+      "Equipment Design",
+      "Lean Manufacturing",
+      "Material Handling Systems",
+      "Digital Twin & Simulation",
+      "MES Integration"
     ],
-    "video": "/videos-gts/ai & digital/ai & digital.mp4",
-    "card1": "/videos-gts/ai & digital/ai-digital-card-1.jpg",
-    "card2": "/videos-gts/ai & digital/ai-digital-card-2.jpg",
-    "card3": "/videos-gts/ai & digital/ai-digital-card-3.jpg",
-    "card4": "/videos-gts/ai & digital/ai-digital-card-5.png",
-    "card5": "/videos-gts/ai & digital/ai-digital-card-4.jpg",
+    "video": "/videos-gts/manufacturing engineering/manufacturing engineering.mp4",
+    "card1": "/videos-gts/manufacturing engineering/manufacturing engineering card-1.jpg",
+    "card2": "/videos-gts/manufacturing engineering/manufacturing engineering card-2.jpg",
+    "card3": "/videos-gts/manufacturing engineering/manufacturing engineering card-3.jpg",
+    "card4": "/videos-gts/manufacturing engineering/manufacturing engineering card-5.png",
+    "card5": "/videos-gts/manufacturing engineering/manufacturing engineering card-4.jpg",
     "subSectors": [
-      { "name": "Energy & Utilities", "icon": UtilityPole },
-      { "name": "Oil & Gas", "icon": Fuel },
-      { "name": "Chemicals", "icon": FlaskConical },
-      { "name": "Manufacturing", "icon": Factory },
-      { "name": "Pharmaceuticals", "icon": Pill },
+      { "name": "Automotive", "icon": Car },
+      { "name": "Industrial", "icon": Factory },
+      { "name": "Aerospace", "icon": Plane },
       { "name": "Consumer Goods", "icon": Package },
-      { "name": "Technology", "icon": Cpu },
+      { "name": "Energy", "icon": Zap },
+      { "name": "Life Sciences", "icon": FlaskConical },
+      { "name": "High-Tech", "icon": Cpu },
       { "name": "Sustainability", "icon": Leaf }
     ]
   },
@@ -965,112 +1072,54 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
-    "id": "manufacturing-engineering",
-    "label": "Manufacturing Engineering",
-    "category": "MANUFACTURING ENGINEERING",
+    "id": "mining",
+    "label": "Mining & Metals",
+    "category": "MINING & METALS ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Intelligent Solutions for Industrial Transformation",
-    "description": "Delivering end-to-end manufacturing engineering, automation, and digital solutions to optimize production, enhance quality, and drive operational excellence.",
+    "subtitle": "Sustainable Resources for a Brighter Tomorrow",
+    "description": "Delivering end-to-end mining and metals engineering, processing solutions, and digital technologies to build safer, smarter, and more sustainable operations.",
     "projectsDelivered": "100+",
     "yearsOfExcellence": "16+",
-    "dashboardTitle": "MANUFACTURING VIEW",
+    "dashboardTitle": "MINING OPERATIONS VIEW",
     "metrics": [
       {
-        "label": "Production Efficiency",
+        "label": "Plant Availability",
         "value": "97%"
       },
       {
-        "label": "Quality Compliance",
-        "value": "99%"
-      },
-      {
-        "label": "Line Status",
+        "label": "Equipment Status",
         "value": "Running"
+      },
+      {
+        "label": "Safety Index",
+        "value": "100%"
       }
     ],
     "tags": [
-      "Production Line Design",
-      "Robotics Integration",
-      "Process Optimization",
-      "Quality Engineering",
-      "Factory Automation",
-      "Equipment Design",
-      "Lean Manufacturing",
-      "Material Handling Systems",
-      "Digital Twin & Simulation",
-      "MES Integration"
+      "Material Handling",
+      "Crushers",
+      "Conveyors",
+      "Process Plants",
+      "Structural Engineering",
+      "Dust Control",
+      "Utilities",
+      "Asset Management"
     ],
-    "video": "/videos-gts/manufacturing engineering/manufacturing engineering.mp4",
-    "card1": "/videos-gts/manufacturing engineering/manufacturing engineering card-1.jpg",
-    "card2": "/videos-gts/manufacturing engineering/manufacturing engineering card-2.jpg",
-    "card3": "/videos-gts/manufacturing engineering/manufacturing engineering card-3.jpg",
-    "card4": "/videos-gts/manufacturing engineering/manufacturing engineering card-5.png",
-    "card5": "/videos-gts/manufacturing engineering/manufacturing engineering card-4.jpg",
+    "video": "/videos-gts/mining/mining & metals-bg-video.mp4",
+    "card1": "/videos-gts/mining/mining-card-1.jpg",
+    "card2": "/videos-gts/mining/mining-card-2.jpg",
+    "card3": "/videos-gts/mining/mining-card-3.jpg",
+    "card4": "/videos-gts/mining/mining-card-5.png",
+    "card5": "/videos-gts/mining/mining-card-4.jpg",
     "subSectors": [
-      { "name": "Automotive", "icon": Car },
-      { "name": "Industrial", "icon": Factory },
-      { "name": "Aerospace", "icon": Plane },
-      { "name": "Consumer Goods", "icon": Package },
+      { "name": "Exploration", "icon": Pickaxe },
+      { "name": "Mining", "icon": Truck },
+      { "name": "Processing", "icon": Factory },
+      { "name": "Metals", "icon": Gem },
       { "name": "Energy", "icon": Zap },
-      { "name": "Life Sciences", "icon": FlaskConical },
-      { "name": "High-Tech", "icon": Cpu },
-      { "name": "Sustainability", "icon": Leaf }
-    ]
-  },
-  {
-    "id": "telecommunication",
-    "label": "Telecommunication",
-    "category": "TELECOMMUNICATIONS ENGINEERING",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Intelligent Solutions for a Connected World",
-    "description": "Delivering end-to-end telecommunications engineering, network infrastructure, and digital solutions for a more connected, resilient, and inclusive tomorrow.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
-    "dashboardTitle": "TELECOMMUNICATION VIEW",
-    "metrics": [
-      {
-        "label": "Network Availability",
-        "value": "99.99%"
-      },
-      {
-        "label": "Network Performance",
-        "value": "Optimal"
-      },
-      {
-        "label": "Service Status",
-        "value": "Online"
-      }
-    ],
-    "tags": [
-      "Network Planning & Design",
-      "Network Optimization",
-      "Wireless & 5G",
-      "Private Networks",
-      "Fiber Optic Networks",
-      "IoT & M2M",
-      "Satellite Communications",
-      "Infrastructure Monitoring",
-      "Network Security",
-      "Digital Twin & Analytics"
-    ],
-    "video": "/videos-gts/telecommunication/telecommunication-bg-video.mp4",
-    "card1": "/videos-gts/telecommunication/Telecommunications card-1.jpg",
-    "card2": "/videos-gts/telecommunication/Telecommunications card-2.jpg",
-    "card3": "/videos-gts/telecommunication/Telecommunications card-3.jpg",
-    "card4": "/videos-gts/telecommunication/Telecommunications card-5.png",
-    "card5": "/videos-gts/telecommunication/Telecommunications card-4.jpg",
-    "subSectors": [
-      { "name": "Industrial", "icon": Factory },
-      { "name": "Energy", "icon": Zap },
-      { "name": "Infrastructure", "icon": Landmark },
-      { "name": "Smart Cities", "icon": Building2 },
-      { "name": "Digital", "icon": Monitor },
-      { "name": "Media & Broadcast", "icon": RadioTower },
-      { "name": "Aerospace & Defense", "icon": Plane },
-      { "name": "Maritime", "icon": Ship },
-      { "name": "Sustainability", "icon": Leaf }
+      { "name": "Sustainability", "icon": Leaf },
+      { "name": "Digital Solutions", "icon": Cloud }
     ]
   },
   {
@@ -1127,161 +1176,108 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
-    "id": "marine",
-    "label": "Marine",
-    "category": "MARINE & OFFSHORE ENGINEERING",
+    "id": "aerospace",
+    "label": "Aerospace & Defense",
+    "category": "AEROSPACE ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Sustainable Solutions for a Blue Tomorrow",
-    "description": "Delivering end-to-end marine and offshore engineering, digital solutions, and automation to build safer, smarter, and more resilient marine infrastructure.",
+    "subtitle": "Innovative Aerospace Solutions for a Brighter Tomorrow",
+    "description": "Delivering end-to-end aerospace engineering, digital solutions, and automation to build safer, smarter, and more sustainable aerospace systems for a global future.",
     "projectsDelivered": "100+",
     "yearsOfExcellence": "16+",
-    "dashboardTitle": "MARINE & OFFSHORE VIEW",
+    "dashboardTitle": "AEROSPACE VIEW",
     "metrics": [
       {
-        "label": "Structural Health",
-        "value": "98%"
+        "label": "Structural Reliability",
+        "value": "100%"
       },
       {
-        "label": "Operational Status",
-        "value": "Operational"
+        "label": "Avionics Status",
+        "value": "Nominal"
       },
       {
-        "label": "Asset Integrity",
-        "value": "Verified"
+        "label": "Safety Rating",
+        "value": "AS9100"
       }
     ],
     "tags": [
-      "Offshore Structures",
-      "Hull Design",
-      "Mooring Systems",
-      "Corrosion Protection",
-      "Marine Piping",
-      "Marine Automation",
-      "Subsea Systems",
-      "Digital Twin & Simulation",
-      "Marine Asset Integrity",
-      "Decommissioning Support"
+      "Aerodynamic Analysis",
+      "Avionics Integration",
+      "Lightweight Structures",
+      "Propulsion Systems",
+      "Composite Materials",
+      "Digital Twin",
+      "Flight Testing Support",
+      "AS9100 Standards"
     ],
-    "video": "/videos-gts/marine/marine-bg-video.mp4",
-    "card1": "/videos-gts/marine/marine-card-1.jpg",
-    "card2": "/videos-gts/marine/marine-card-2.jpg",
-    "card3": "/videos-gts/marine/marine-card-3.jpg",
-    "card4": "/videos-gts/marine/marine-card-5.png",
-    "card5": "/videos-gts/marine/marine-card-4.jpg",
+    "video": "/videos-gts/aerospace/aerospace.mp4",
+    "card1": "/videos-gts/aerospace/aerospace-card-1.jpg",
+    "card2": "/videos-gts/aerospace/aerospace-card-2.jpg",
+    "card3": "/videos-gts/aerospace/aerospace-card-3.jpg",
+    "card4": "/videos-gts/aerospace/aerospace-card-5.png",
+    "card5": "/videos-gts/aerospace/aerospace-card-4.jpg",
     "subSectors": [
-      { "name": "Oil & Gas", "icon": RadioTower },
-      { "name": "Renewable Energy", "icon": Sun },
-      { "name": "Ports & Terminals", "icon": Container },
-      { "name": "Shipbuilding", "icon": Ship },
-      { "name": "Marine Infrastructure", "icon": Building2 },
-      { "name": "Offshore Wind", "icon": Wind },
+      { "name": "Commercial Aviation", "icon": Plane },
+      { "name": "Defense & Military", "icon": Shield },
+      { "name": "Space Systems", "icon": Satellite },
+      { "name": "UAVs & Drones", "icon": Drone },
+      { "name": "MRO", "icon": Wrench },
       { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
-    "id": "mining",
-    "label": "Mining & Metals",
-    "category": "MINING & METALS ENGINEERING",
+    "id": "telecommunication",
+    "label": "Telecommunication",
+    "category": "TELECOMMUNICATIONS ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Sustainable Resources for a Brighter Tomorrow",
-    "description": "Delivering end-to-end mining and metals engineering, processing solutions, and digital technologies to build safer, smarter, and more sustainable operations.",
+    "subtitle": "Intelligent Solutions for a Connected World",
+    "description": "Delivering end-to-end telecommunications engineering, network infrastructure, and digital solutions for a more connected, resilient, and inclusive tomorrow.",
     "projectsDelivered": "100+",
     "yearsOfExcellence": "16+",
-    "dashboardTitle": "MINING OPERATIONS VIEW",
+    "dashboardTitle": "TELECOMMUNICATION VIEW",
     "metrics": [
       {
-        "label": "Plant Availability",
-        "value": "97%"
+        "label": "Network Availability",
+        "value": "99.99%"
       },
       {
-        "label": "Equipment Status",
-        "value": "Running"
+        "label": "Network Performance",
+        "value": "Optimal"
       },
       {
-        "label": "Safety Index",
-        "value": "100%"
+        "label": "Service Status",
+        "value": "Online"
       }
     ],
     "tags": [
-      "Material Handling",
-      "Crushers",
-      "Conveyors",
-      "Process Plants",
-      "Structural Engineering",
-      "Dust Control",
-      "Utilities",
-      "Asset Management"
+      "Network Planning & Design",
+      "Network Optimization",
+      "Wireless & 5G",
+      "Private Networks",
+      "Fiber Optic Networks",
+      "IoT & M2M",
+      "Satellite Communications",
+      "Infrastructure Monitoring",
+      "Network Security",
+      "Digital Twin & Analytics"
     ],
-    "video": "/videos-gts/mining/mining & metals-bg-video.mp4",
-    "card1": "/videos-gts/mining/mining-card-1.jpg",
-    "card2": "/videos-gts/mining/mining-card-2.jpg",
-    "card3": "/videos-gts/mining/mining-card-3.jpg",
-    "card4": "/videos-gts/mining/mining-card-5.png",
-    "card5": "/videos-gts/mining/mining-card-4.jpg",
+    "video": "/videos-gts/telecommunication/telecommunication-bg-video.mp4",
+    "card1": "/videos-gts/telecommunication/Telecommunications card-1.jpg",
+    "card2": "/videos-gts/telecommunication/Telecommunications card-2.jpg",
+    "card3": "/videos-gts/telecommunication/Telecommunications card-3.jpg",
+    "card4": "/videos-gts/telecommunication/Telecommunications card-5.png",
+    "card5": "/videos-gts/telecommunication/Telecommunications card-4.jpg",
     "subSectors": [
-      { "name": "Exploration", "icon": Pickaxe },
-      { "name": "Mining", "icon": Truck },
-      { "name": "Processing", "icon": Factory },
-      { "name": "Metals", "icon": Gem },
+      { "name": "Industrial", "icon": Factory },
       { "name": "Energy", "icon": Zap },
-      { "name": "Sustainability", "icon": Leaf },
-      { "name": "Digital Solutions", "icon": Cloud }
-    ]
-  },
-  {
-    "id": "renewable-energy",
-    "label": "Renewable Energy",
-    "category": "RENEWABLE ENERGY ENGINEERING",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Sustainable Energy for a Brighter Tomorrow",
-    "description": "Delivering end-to-end renewable energy engineering, digital solutions, and automation to build cleaner, smarter, and more resilient energy systems.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
-    "dashboardTitle": "RENEWABLE ENERGY VIEW",
-    "metrics": [
-      {
-        "label": "Energy Output",
-        "value": "98%"
-      },
-      {
-        "label": "Grid Stability",
-        "value": "99.9%"
-      },
-      {
-        "label": "Carbon Reduction",
-        "value": "100%"
-      }
-    ],
-    "tags": [
-      "Wind Farm Design",
-      "Resource Assessment",
-      "Solar PV Engineering",
-      "SCADA & Control Systems",
-      "Energy Storage",
-      "Asset Management",
-      "Grid Integration",
-      "Digital Twin & Simulation",
-      "Green Hydrogen",
-      "Operations & Optimization"
-    ],
-    "video": "/videos-gts/renewable energy/renewable energy.mp4",
-    "card1": "/videos-gts/renewable energy/renewable-energy-card-1.jpg",
-    "card2": "/videos-gts/renewable energy/renewable-energy-card-2.jpg",
-    "card3": "/videos-gts/renewable energy/renewable-energy-card-3.jpg",
-    "card4": "/videos-gts/renewable energy/renewable-energy-card-5.png",
-    "card5": "/videos-gts/renewable energy/renewable-energy-card-4.jpg",
-    "subSectors": [
-      { "name": "Onshore Wind", "icon": Wind },
-      { "name": "Offshore Wind", "icon": Waves },
-      { "name": "Solar Energy", "icon": SolarPanel },
-      { "name": "Energy Storage", "icon": BatteryCharging },
-      { "name": "Grid & Transmission", "icon": UtilityPole },
-      { "name": "Green Hydrogen", "icon": Atom },
-      { "name": "Sustainability", "icon": Leaf },
-      { "name": "Digital Solutions", "icon": Cloud }
+      { "name": "Infrastructure", "icon": Landmark },
+      { "name": "Smart Cities", "icon": Building2 },
+      { "name": "Digital", "icon": Monitor },
+      { "name": "Media & Broadcast", "icon": RadioTower },
+      { "name": "Aerospace & Defense", "icon": Plane },
+      { "name": "Maritime", "icon": Ship },
+      { "name": "Sustainability", "icon": Leaf }
     ]
   },
   {
@@ -1385,109 +1381,6 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
-    "id": "home-process",
-    "label": "Process Engineering",
-    "category": "PROCESS ENGINEERING",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
-    "description": "Delivering end-to-end process engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
-    "dashboardTitle": "PROCESS ENGINEERING VIEW",
-    "metrics": [
-      {
-        "label": "Plant Efficiency",
-        "value": "96%"
-      },
-      {
-        "label": "Simulation Status",
-        "value": "Running"
-      },
-      {
-        "label": "Design Review",
-        "value": "Complete"
-      }
-    ],
-    "tags": [
-      "Process Simulation",
-      "Heat & Mass Balance",
-      "Equipment Design",
-      "Utility Systems",
-      "Process Optimization",
-      "Plant Design",
-      "Aspen HYSYS",
-      "Digital Twin",
-      "FEED & Detailed Engineering",
-      "Operations Support"
-    ],
-    "video": "/videos-gts/home-process/home-process-bg-video.mp4",
-    "card1": "/videos-gts/home-process/home-process1.jpg",
-    "card2": "/videos-gts/home-process/home-process2.jpg",
-    "card3": "/videos-gts/home-process/home-process3.jpg",
-    "card4": "/videos-gts/home-process/home-process4.png",
-    "card5": "/videos-gts/home-process/home-process5.jpg",
-    "subSectors": [
-      { "name": "Chemicals & Petrochemicals", "icon": Factory },
-      { "name": "Refining", "icon": Building2 },
-      { "name": "Pharmaceuticals", "icon": FlaskConical },
-      { "name": "Food & Beverage", "icon": Milk },
-      { "name": "Specialty Chemicals", "icon": Atom },
-      { "name": "Energy & Fuels", "icon": Fuel },
-      { "name": "Sustainability", "icon": Leaf }
-    ]
-  },
-  // {
-  //   "id": "process-safety",
-  //   "label": "Process Safety",
-  //   "category": "PROCESS SAFETY ENGINEERING",
-  //   "title1": "Engineering",
-  //   "title2": "Beyond Boundaries",
-  //   "subtitle": "Safer Processes for a Brighter Tomorrow",
-  //   "description": "Delivering end-to-end process safety engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.",
-  //   "dashboardTitle": "PROCESS SAFETY VIEW",
-  //   "metrics": [
-  //     {
-  //       "label": "Risk Level",
-  //       "value": "Low"
-  //     },
-  //     {
-  //       "label": "Compliance",
-  //       "value": "100%"
-  //     },
-  //     {
-  //       "label": "Safety Review",
-  //       "value": "Complete"
-  //     }
-  //   ],
-  //   "tags": [
-  //     "HAZOP",
-  //     "HAZID",
-  //     "LOPA",
-  //     "Fire Protection",
-  //     "Relief Systems",
-  //     "Emergency Response",
-  //     "PSM",
-  //     "Risk Assessment",
-  //     "SIL Studies",
-  //     "Safety Culture & Training"
-  //   ],
-  //   "video": "/videos-gts/process-safety/process-safety-bg-video.mp4",
-  //   "card1": "/videos-gts/process-safety/process-safety1.jpg",
-  //   "card2": "/videos-gts/process-safety/process-safety2.jpg",
-  //   "card3": "/videos-gts/process-safety/process-safety3.jpg",
-  //   "card4": "/videos-gts/process-safety/process-safety4.png",
-  //   "card5": "/videos-gts/process-safety/process-safety6.jpg",
-  //   "subSectors": [
-  //     "Chemicals & Petrochemicals",
-  //     "Refining",
-  //     "Pharmaceuticals",
-  //     "Food & Beverage",
-  //     "Specialty Chemicals",
-  //     "Energy & Fuels"
-  //   ]
-  // },
-  {
     "id": "consumer",
     "label": "Consumer Products",
     "category": "CONSUMER PRODUCTS ENGINEERING",
@@ -1539,52 +1432,106 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
-    "id": "aerospace",
-    "label": "Aerospace & Defense",
-    "category": "AEROSPACE ENGINEERING",
+    "id": "Smart infrastructure & cities engineering",
+    "label": "Smart Infrastructure & Cities",
+    "category": "SMART INFRASTRUCTURE & CITIES ENGINEERING",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Innovative Aerospace Solutions for a Brighter Tomorrow",
-    "description": "Delivering end-to-end aerospace engineering, digital solutions, and automation to build safer, smarter, and more sustainable aerospace systems for a global future.",
+    "subtitle": "Smarter Infrastructure for a Brighter Tomorrow",
+    "description": "Delivering end-to-end smart infrastructure engineering, digital solutions, and automation to build safer, smarter, and more resilient cities for a sustainable future.",
     "projectsDelivered": "100+",
     "yearsOfExcellence": "16+",
-    "dashboardTitle": "AEROSPACE VIEW",
+    "dashboardTitle": "SMART INFRASTRUCTURE VIEW",
     "metrics": [
       {
-        "label": "Structural Reliability",
-        "value": "100%"
+        "label": "Connected Assets",
+        "value": "Live"
       },
       {
-        "label": "Avionics Status",
-        "value": "Nominal"
+        "label": "City Operations",
+        "value": "Integrated"
       },
       {
-        "label": "Safety Rating",
-        "value": "AS9100"
+        "label": "Infrastructure Health",
+        "value": "98%"
       }
     ],
     "tags": [
-      "Aerodynamic Analysis",
-      "Avionics Integration",
-      "Lightweight Structures",
-      "Propulsion Systems",
-      "Composite Materials",
+      "Smart Cities",
       "Digital Twin",
-      "Flight Testing Support",
-      "AS9100 Standards"
+      "Mobility",
+      "Asset Management",
+      "IoT",
+      "Utilities",
+      "GIS",
+      "AI Analytics"
     ],
-    "video": "/videos-gts/aerospace/aerospace.mp4",
-    "card1": "/videos-gts/aerospace/aerospace-card-1.jpg",
-    "card2": "/videos-gts/aerospace/aerospace-card-2.jpg",
-    "card3": "/videos-gts/aerospace/aerospace-card-3.jpg",
-    "card4": "/videos-gts/aerospace/aerospace-card-5.png",
-    "card5": "/videos-gts/aerospace/aerospace-card-4.jpg",
+    "video": "/videos-gts/smart infrastructure/smart-infrastructure-bg-video.mp4",
+    "card1": "/videos-gts/smart infrastructure/smart-infra-card1.jpg",
+    "card2": "/videos-gts/smart infrastructure/smart-infra-card2.jpg",
+    "card3": "/videos-gts/smart infrastructure/smart-infra-card3.jpg",
+    "card4": "/videos-gts/smart infrastructure/smart-infra-card5.png",
+    "card5": "/videos-gts/smart infrastructure/smart-infra-card4.jpg",
     "subSectors": [
-      { "name": "Commercial Aviation", "icon": Plane },
-      { "name": "Defense & Military", "icon": Shield },
-      { "name": "Space Systems", "icon": Satellite },
-      { "name": "UAVs & Drones", "icon": Drone },
-      { "name": "MRO", "icon": Wrench },
+      { "name": "Smart Cities", "icon": Building2 },
+      { "name": "Transportation", "icon": TrainFront },
+      { "name": "Utilities", "icon": Droplet },
+      { "name": "Public Infrastructure", "icon": Landmark },
+      { "name": "Connected Assets", "icon": RadioTower },
+      { "name": "Sustainability", "icon": Leaf }
+    ]
+  },
+  {
+    "id": "ai-digital",
+    "label": "AI & Digital Engineering",
+    "category": "AI & DIGITAL ENGINEERING",
+    "title1": "Engineering",
+    "title2": "Beyond Boundaries",
+    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
+    "description": "Accelerating innovation with AI, digital twins, intelligent engineering, and advanced simulation to build safer, smarter, and more connected operations for a better tomorrow.",
+    "projectsDelivered": "100+",
+    "yearsOfExcellence": "16+",
+    "dashboardTitle": "AI & DIGITAL ENGINEERING VIEW",
+    "metrics": [
+      {
+        "label": "AI Models Deployed",
+        "value": "50+"
+      },
+      {
+        "label": "Data Processing Uptime",
+        "value": "99.9%"
+      },
+      {
+        "label": "Systems Integrated",
+        "value": "200+"
+      }
+    ],
+    "tags": [
+      "AI/ML Engineering",
+      "Generative AI",
+      "Digital Twin",
+      "Predictive Analytics",
+      "Computer Vision",
+      "Simulation & Modeling",
+      "Cloud Engineering",
+      "Industrial IoT (IIoT)",
+      "Data Integration",
+      "MLOps & AIOps"
+    ],
+    "video": "/videos-gts/ai & digital/ai & digital.mp4",
+    "card1": "/videos-gts/ai & digital/ai-digital-card-1.jpg",
+    "card2": "/videos-gts/ai & digital/ai-digital-card-2.jpg",
+    "card3": "/videos-gts/ai & digital/ai-digital-card-3.jpg",
+    "card4": "/videos-gts/ai & digital/ai-digital-card-5.png",
+    "card5": "/videos-gts/ai & digital/ai-digital-card-4.jpg",
+    "subSectors": [
+      { "name": "Energy & Utilities", "icon": UtilityPole },
+      { "name": "Oil & Gas", "icon": Fuel },
+      { "name": "Chemicals", "icon": FlaskConical },
+      { "name": "Manufacturing", "icon": Factory },
+      { "name": "Pharmaceuticals", "icon": Pill },
+      { "name": "Consumer Goods", "icon": Package },
+      { "name": "Technology", "icon": Cpu },
       { "name": "Sustainability", "icon": Leaf }
     ]
   },
@@ -1636,57 +1583,57 @@ const heroVisuals: HeroVisual[] = [
       { "name": "Industrial Gas", "icon": Cylinder },
       { "name": "Sustainability", "icon": Leaf }
     ]
-  },
-  {
-    "id": "Smart infrastructure & cities engineering",
-    "label": "Smart Infrastructure & Cities",
-    "category": "SMART INFRASTRUCTURE & CITIES ENGINEERING",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Smarter Infrastructure for a Brighter Tomorrow",
-    "description": "Delivering end-to-end smart infrastructure engineering, digital solutions, and automation to build safer, smarter, and more resilient cities for a sustainable future.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
-    "dashboardTitle": "SMART INFRASTRUCTURE VIEW",
-    "metrics": [
-      {
-        "label": "Connected Assets",
-        "value": "Live"
-      },
-      {
-        "label": "City Operations",
-        "value": "Integrated"
-      },
-      {
-        "label": "Infrastructure Health",
-        "value": "98%"
-      }
-    ],
-    "tags": [
-      "Smart Cities",
-      "Digital Twin",
-      "Mobility",
-      "Asset Management",
-      "IoT",
-      "Utilities",
-      "GIS",
-      "AI Analytics"
-    ],
-    "video": "/videos-gts/smart infrastructure/smart-infrastructure-bg-video.mp4",
-    "card1": "/videos-gts/smart infrastructure/smart-infra-card1.jpg",
-    "card2": "/videos-gts/smart infrastructure/smart-infra-card2.jpg",
-    "card3": "/videos-gts/smart infrastructure/smart-infra-card3.jpg",
-    "card4": "/videos-gts/smart infrastructure/smart-infra-card5.png",
-    "card5": "/videos-gts/smart infrastructure/smart-infra-card4.jpg",
-    "subSectors": [
-      { "name": "Smart Cities", "icon": Building2 },
-      { "name": "Transportation", "icon": TrainFront },
-      { "name": "Utilities", "icon": Droplet },
-      { "name": "Public Infrastructure", "icon": Landmark },
-      { "name": "Connected Assets", "icon": RadioTower },
-      { "name": "Sustainability", "icon": Leaf }
-    ]
   }
+  // {
+  //   "id": "process-safety",
+  //   "label": "Process Safety",
+  //   "category": "PROCESS SAFETY ENGINEERING",
+  //   "title1": "Engineering",
+  //   "title2": "Beyond Boundaries",
+  //   "subtitle": "Safer Processes for a Brighter Tomorrow",
+  //   "description": "Delivering end-to-end process safety engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.",
+  //   "dashboardTitle": "PROCESS SAFETY VIEW",
+  //   "metrics": [
+  //     {
+  //       "label": "Risk Level",
+  //       "value": "Low"
+  //     },
+  //     {
+  //       "label": "Compliance",
+  //       "value": "100%"
+  //     },
+  //     {
+  //       "label": "Safety Review",
+  //       "value": "Complete"
+  //     }
+  //   ],
+  //   "tags": [
+  //     "HAZOP",
+  //     "HAZID",
+  //     "LOPA",
+  //     "Fire Protection",
+  //     "Relief Systems",
+  //     "Emergency Response",
+  //     "PSM",
+  //     "Risk Assessment",
+  //     "SIL Studies",
+  //     "Safety Culture & Training"
+  //   ],
+  //   "video": "/videos-gts/process-safety/process-safety-bg-video.mp4",
+  //   "card1": "/videos-gts/process-safety/process-safety1.jpg",
+  //   "card2": "/videos-gts/process-safety/process-safety2.jpg",
+  //   "card3": "/videos-gts/process-safety/process-safety3.jpg",
+  //   "card4": "/videos-gts/process-safety/process-safety4.png",
+  //   "card5": "/videos-gts/process-safety/process-safety6.jpg",
+  //   "subSectors": [
+  //     "Chemicals & Petrochemicals",
+  //     "Refining",
+  //     "Pharmaceuticals",
+  //     "Food & Beverage",
+  //     "Specialty Chemicals",
+  //     "Energy & Fuels"
+  //   ]
+  // }
 ];
 
 const trustStats = [
@@ -3434,16 +3381,16 @@ export default function HomePage() {
           </AnimatedSection>
 
           <div className="mt-14">
-            {/* Bento layout (lg): Established over Global Delivery on the left, two tall cards (AI, Teams) on the right, USA + India and Projects Delivered across the bottom */}
+            {/* Bento layout (lg): Established | AI, Global Delivery | Teams, then USA + India and Projects Delivered across the bottom */}
             <div className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-white/15 bg-white/15 md:grid-cols-2 lg:grid-cols-12 lg:auto-rows-[minmax(230px,auto)]">
 
               {/* CARD 1 — ESTABLISHED 2012 (top-left) */}
-              <div className="group relative min-h-[260px] overflow-hidden bg-slate-950 md:col-span-2 lg:col-span-6">
+              <div className="group relative min-h-[260px] overflow-hidden bg-slate-950 lg:col-span-6">
                 <Image
                   src={trustStats[0].image}
                   alt={trustStats[0].title}
                   fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-slate-950/10" />
@@ -3464,13 +3411,13 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* CARD 2 — AI-ENABLED DIGITAL ENGINEERING (tall, middle) */}
-              <div className="group relative min-h-[260px] overflow-hidden bg-slate-950 lg:col-span-3 lg:row-span-2">
+              {/* CARD 2 — AI-ENABLED DIGITAL ENGINEERING (top-right) */}
+              <div className="group relative min-h-[260px] overflow-hidden bg-slate-950 lg:col-span-6">
                 <Image
                   src={trustStats[4].image}
                   alt={trustStats[4].title}
                   fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/30 transition-colors duration-300" />
@@ -3487,36 +3434,13 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* CARD 3 — MULTIDISCIPLINARY ENGINEERING TEAMS (tall, right) */}
-              <div className="group relative min-h-[260px] overflow-hidden bg-slate-950 lg:col-span-3 lg:row-span-2">
-                <Image
-                  src={trustStats[3].image}
-                  alt={trustStats[3].title}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/30 transition-colors duration-300" />
-                <div className="absolute inset-0 z-10 flex flex-col justify-end p-6">
-                  <div className="mb-2 text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-cyan-300">
-                    Teams
-                  </div>
-                  <h3 className="font-display text-xl font-extrabold text-white">
-                    {trustStats[3].title}
-                  </h3>
-                  <p className="mt-2 text-xs leading-5 text-slate-300">
-                    {trustStats[3].description}
-                  </p>
-                </div>
-              </div>
-
-              {/* CARD 4 — GLOBAL DELIVERY MODEL (below Established) */}
-              <div className="group relative min-h-[260px] overflow-hidden bg-slate-950 md:col-span-2 lg:col-span-6">
+              {/* CARD 3 — GLOBAL DELIVERY MODEL (below Established) */}
+              <div className="group relative min-h-[260px] overflow-hidden bg-slate-950 lg:col-span-6">
                 <Image
                   src={trustStats[2].image}
                   alt={trustStats[2].title}
                   fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/15" />
@@ -3530,6 +3454,29 @@ export default function HomePage() {
                   </h3>
                   <p className="mt-2 max-w-2xl text-xs leading-5 text-slate-300 sm:text-sm sm:leading-6">
                     {trustStats[2].description}
+                  </p>
+                </div>
+              </div>
+
+              {/* CARD 4 — MULTIDISCIPLINARY ENGINEERING TEAMS (below AI) */}
+              <div className="group relative min-h-[260px] overflow-hidden bg-slate-950 lg:col-span-6">
+                <Image
+                  src={trustStats[3].image}
+                  alt={trustStats[3].title}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/30 transition-colors duration-300" />
+                <div className="absolute inset-0 z-10 flex flex-col justify-end p-6">
+                  <div className="mb-2 text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-cyan-300">
+                    Teams
+                  </div>
+                  <h3 className="font-display text-xl font-extrabold text-white">
+                    {trustStats[3].title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-5 text-slate-300">
+                    {trustStats[3].description}
                   </p>
                 </div>
               </div>
@@ -3626,9 +3573,9 @@ export default function HomePage() {
                   <Image
                     src="/icons/logo transparent.png"
                     alt="GTS Engineering"
-                    width={180}
-                    height={70}
-                    className="h-14 sm:h-16 w-auto object-contain"
+                    width={240}
+                    height={94}
+                    className="h-[4.5rem] sm:h-20 w-auto object-contain"
                     priority
                   />
                 </div>
