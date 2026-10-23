@@ -24,6 +24,7 @@ import {
   Car,
   Check,
   CheckCircle2,
+  ChevronLeft,
   ChevronRight,
   CircuitBoard,
   Clock,
@@ -332,55 +333,51 @@ const heroVisuals: HeroVisual[] = [
     ]
   },
   {
-    "id": "home-process",
-    "label": "Process Engineering",
-    "category": "PROCESS ENGINEERING",
+    "id": "process-engineering",
+    "label": "Process Engineering & Design",
+    "category": "PROCESS ENGINEERING & DESIGN",
     "title1": "Engineering",
     "title2": "Beyond Boundaries",
-    "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
-    "description": "Delivering end-to-end process engineering, digital solutions, and automation to build safer, smarter, and more sustainable process industries for a global future.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
-    "dashboardTitle": "PROCESS ENGINEERING VIEW",
+    "subtitle": "Advanced Solutions for Industrial Optimization",
+    "description": "Delivering comprehensive process flow engineering, simulation modeling, and detailed plant design to optimize yield and resource efficiency across heavy industries.",
+    "dashboardTitle": "PROCESS ENGINEERING DESIGN VIEW",
     "metrics": [
       {
-        "label": "Plant Efficiency",
-        "value": "96%"
+        "label": "Plant Throughput",
+        "value": "97%"
       },
       {
-        "label": "Simulation Status",
-        "value": "Running"
+        "label": "Energy Efficiency",
+        "value": "94%"
       },
       {
-        "label": "Design Review",
-        "value": "Complete"
+        "label": "Process Control",
+        "value": "Optimal"
       }
     ],
     "tags": [
       "Process Simulation",
-      "Heat & Mass Balance",
-      "Equipment Design",
-      "Utility Systems",
-      "Process Optimization",
-      "Plant Design",
-      "Aspen HYSYS",
+      "Equipment Sizing",
+      "Piping & Instrumentation",
+      "Hydraulic Sizing",
+      "Thermal Analysis",
       "Digital Twin",
-      "FEED & Detailed Engineering",
-      "Operations Support"
+      "FEED Engineering",
+      "Operations Optimization"
     ],
-    "video": "/videos-gts/home-process/home-process-bg-video.mp4",
+    "video": "/videos-gts/process-engineering/process engineering.mp4",
     "card1": "/videos-gts/home-process/home-process1.jpg",
     "card2": "/videos-gts/home-process/home-process2.jpg",
     "card3": "/videos-gts/home-process/home-process3.jpg",
     "card4": "/videos-gts/home-process/home-process4.png",
     "card5": "/videos-gts/home-process/home-process5.jpg",
     "subSectors": [
-      { "name": "Chemicals & Petrochemicals", "icon": Factory },
-      { "name": "Refining", "icon": Building2 },
-      { "name": "Pharmaceuticals", "icon": FlaskConical },
-      { "name": "Food & Beverage", "icon": Milk },
-      { "name": "Specialty Chemicals", "icon": Atom },
-      { "name": "Energy & Fuels", "icon": Fuel },
+      { "name": "Petrochemical Refining", "icon": Fuel },
+      { "name": "Specialty Chemical Plants", "icon": FlaskRound },
+      { "name": "Continuous Manufacturing", "icon": Repeat },
+      { "name": "Batch Processing", "icon": Boxes },
+      { "name": "Waste Heat Recovery", "icon": Thermometer },
+      { "name": "Industrial Gas", "icon": Cylinder },
       { "name": "Sustainability", "icon": Leaf }
     ]
   },
@@ -1534,56 +1531,8 @@ const heroVisuals: HeroVisual[] = [
       { "name": "Technology", "icon": Cpu },
       { "name": "Sustainability", "icon": Leaf }
     ]
-  },
-  {
-    "id": "process-engineering",
-    "label": "Process Engineering & Design",
-    "category": "PROCESS ENGINEERING & DESIGN",
-    "title1": "Engineering",
-    "title2": "Beyond Boundaries",
-    "subtitle": "Advanced Solutions for Industrial Optimization",
-    "description": "Delivering comprehensive process flow engineering, simulation modeling, and detailed plant design to optimize yield and resource efficiency across heavy industries.",
-    "dashboardTitle": "PROCESS ENGINEERING DESIGN VIEW",
-    "metrics": [
-      {
-        "label": "Plant Throughput",
-        "value": "97%"
-      },
-      {
-        "label": "Energy Efficiency",
-        "value": "94%"
-      },
-      {
-        "label": "Process Control",
-        "value": "Optimal"
-      }
-    ],
-    "tags": [
-      "Process Simulation",
-      "Equipment Sizing",
-      "Piping & Instrumentation",
-      "Hydraulic Sizing",
-      "Thermal Analysis",
-      "Digital Twin",
-      "FEED Engineering",
-      "Operations Optimization"
-    ],
-    "video": "/videos-gts/process-engineering/process engineering.mp4",
-    "card1": "/videos-gts/home-process/home-process1.jpg",
-    "card2": "/videos-gts/home-process/home-process2.jpg",
-    "card3": "/videos-gts/home-process/home-process3.jpg",
-    "card4": "/videos-gts/home-process/home-process4.png",
-    "card5": "/videos-gts/home-process/home-process5.jpg",
-    "subSectors": [
-      { "name": "Petrochemical Refining", "icon": Fuel },
-      { "name": "Specialty Chemical Plants", "icon": FlaskRound },
-      { "name": "Continuous Manufacturing", "icon": Repeat },
-      { "name": "Batch Processing", "icon": Boxes },
-      { "name": "Waste Heat Recovery", "icon": Thermometer },
-      { "name": "Industrial Gas", "icon": Cylinder },
-      { "name": "Sustainability", "icon": Leaf }
-    ]
   }
+
   // {
   //   "id": "process-safety",
   //   "label": "Process Safety",
@@ -3167,8 +3116,12 @@ export default function HomePage() {
     void currentVideo.play().catch(() => undefined);
   }, [activeSlide]);
 
-  const handleVideoEnd = () => {
+  const showNextSlide = () => {
     setActiveSlide((prev) => (prev + 1) % heroVisuals.length);
+  };
+
+  const showPrevSlide = () => {
+    setActiveSlide((prev) => (prev - 1 + heroVisuals.length) % heroVisuals.length);
   };
 
   return (
@@ -3182,7 +3135,7 @@ export default function HomePage() {
           muted
           playsInline
           preload="metadata"
-          onEnded={handleVideoEnd}
+          onEnded={showNextSlide}
           className="absolute inset-0 h-full w-full object-cover"
         >
           <source src={heroVisuals[activeSlide].video} type="video/mp4" />
@@ -3292,9 +3245,9 @@ export default function HomePage() {
               {/* Stats */}
               <ul className="grid grid-cols-2 gap-x-5 gap-y-3 sm:flex sm:flex-nowrap sm:items-center sm:gap-x-6 xl:shrink-0 xl:gap-x-8">
                 {[
-                  { icon: Globe, value: '15+', label: 'Industries Served' },
-                  { icon: Users, value: heroVisuals[activeSlide].projectsDelivered ?? '100+', label: 'Projects Delivered' },
-                  { icon: Award, value: heroVisuals[activeSlide].yearsOfExcellence ?? '16+', label: 'Years of Engineering Excellence' },
+                  { icon: Globe, value: '20+', label: 'Industries Served' },
+                  { icon: Users, value: heroVisuals[activeSlide].projectsDelivered ?? '500+', label: 'Projects Delivered' },
+                  { icon: Award, value: heroVisuals[activeSlide].yearsOfExcellence ?? '20+', label: 'Years of Engineering Excellence' },
                   { icon: Leaf, value: 'A Cleaner', label: 'Brighter Tomorrow' }
                 ].map(({ icon: Icon, value, label }) => (
                   <li key={label} className="flex items-center gap-2">
@@ -3309,20 +3262,26 @@ export default function HomePage() {
 
               {/* Industry Switcher Tabs — shown only when there is more than one industry */}
               {heroVisuals.length > 1 && (
-                <div className="flex flex-wrap items-center gap-2 xl:justify-end">
-                  {heroVisuals.map((visual, index) => (
-                    <button
-                      key={visual.id}
-                      type="button"
-                      onClick={() => setActiveSlide(index)}
-                      className={`rounded-full px-3.5 py-1.5 text-xs font-bold tracking-wide transition-colors ${
-                        activeSlide === index
-                          ? 'bg-[#0A3DF0] text-white shadow-md shadow-blue-600/30'
-                          : 'border border-slate-200 bg-white/85 text-slate-700 hover:border-[#0A3DF0] hover:text-[#0A3DF0]'
-                      }`}
-                    > * 
-                    </button>
-                  ))}
+                <div className="flex items-center gap-2 xl:justify-end">
+                  <button
+                    type="button"
+                    onClick={showPrevSlide}
+                    aria-label="Previous slide"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/85 text-slate-700 shadow-sm transition-colors hover:border-[#0A3DF0] hover:bg-[#0A3DF0] hover:text-white"
+                  >
+                    <ChevronLeft className="h-5 w-5 stroke-[2.5]" />
+                  </button>
+                  <span className="min-w-[3rem] text-center text-xs font-bold tabular-nums tracking-wide text-slate-700">
+                    {activeSlide + 1} / {heroVisuals.length}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={showNextSlide}
+                    aria-label="Next slide"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/85 text-slate-700 shadow-sm transition-colors hover:border-[#0A3DF0] hover:bg-[#0A3DF0] hover:text-white"
+                  >
+                    <ChevronRight className="h-5 w-5 stroke-[2.5]" />
+                  </button>
                 </div>
               )}
             </div>

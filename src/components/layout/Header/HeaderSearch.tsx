@@ -148,21 +148,17 @@ export default function HeaderSearch({ isScrolled, useLightText }: HeaderSearchP
         type="button"
         onClick={() => (isOpen ? close() : setIsOpen(true))}
         className={cn(
-          'flex items-center gap-2 rounded-xl border px-3 py-2 text-xs font-semibold transition-colors',
+          'flex h-9 w-9 items-center justify-center rounded-full transition-colors',
           isScrolled
-            ? 'border-slate-200/80 bg-slate-50 text-slate-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600'
+            ? 'text-slate-700 hover:bg-blue-50 hover:text-blue-600'
             : useLightText
-              ? 'border-white/25 bg-white/10 text-white hover:border-cyan-200/50 hover:bg-white/20 hover:text-cyan-200'
-              : 'border-slate-300/80 bg-white/80 text-slate-700 hover:border-blue-300 hover:bg-white hover:text-blue-600'
+              ? 'text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] hover:bg-white/10 hover:text-cyan-200'
+              : 'text-slate-700 hover:bg-black/5 hover:text-blue-600'
         )}
         aria-label="Search the site"
         aria-expanded={isOpen}
       >
-        <Search className="h-4 w-4" />
-        <span>Search</span>
-        <kbd className="hidden rounded border border-current/20 px-1 font-mono text-[10px] opacity-60 min-[1440px]:inline">
-          ⌘K
-        </kbd>
+        <Search className="h-5 w-5" />
       </button>
 
       <AnimatePresence>

@@ -249,10 +249,10 @@ export default function Header() {
             <Image
               src="/icons/logo transparent.png"
               alt="GTS Logo"
-              width={300}
-              height={300}
+              width={400}
+              height={400}
               className={cn(
-                "h-14 sm:h-16 min-[1600px]:h-[4.5rem] w-auto object-contain transition-all duration-300 group-hover:scale-105",
+                "h-[4.5rem] sm:h-20 min-[1600px]:h-24 w-auto object-contain transition-all duration-300 group-hover:scale-105",
                 isScrolled
                   ? "drop-shadow-none"
                   : "drop-shadow-[0_0_1px_rgba(255,255,255,0.95)] drop-shadow-[0_0_8px_rgba(255,255,255,0.65)]"
@@ -329,7 +329,7 @@ export default function Header() {
                             style={{ x: '-50%' }}
                             className="absolute left-1/2 top-full z-50 w-[420px] max-w-[calc(100vw-2rem)] pt-4"
                           >
-                            <div className="overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 p-2 shadow-[0_25px_60px_rgba(15,23,42,0.15)] ring-1 ring-slate-900/5 backdrop-blur-2xl">
+                            <div className="overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-2 shadow-[0_25px_60px_rgba(15,23,42,0.15)] ring-1 ring-slate-900/5">
                               <div className="rounded-2xl border border-blue-100 bg-blue-50/60 px-4 py-3 text-[11px] font-mono font-bold uppercase tracking-[0.22em] text-blue-600">
                                 {item.label}
                               </div>
@@ -374,7 +374,7 @@ export default function Header() {
                         activeMegaItem.megaMenuCompact ? 'w-[min(96vw,1400px)]' : 'w-[min(96vw,1180px)]'
                       )}
                     >
-                      <div className="overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 shadow-[0_30px_90px_rgba(15,23,42,0.18)] ring-1 ring-slate-900/5 backdrop-blur-2xl">
+                      <div className="overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.18)] ring-1 ring-slate-900/5">
                         <div
                           className={cn(
                             'grid max-h-[calc(100vh-10rem)] grid-cols-1 overflow-y-auto overscroll-contain p-6 sm:grid-cols-2',
@@ -451,22 +451,25 @@ export default function Header() {
 
                                 {activeMegaItem.megaMenuCompact ? (
                                   // Each category's points scroll inside a short box so both rows of five fit on screen together
-                                  <div className="max-h-[clamp(5.5rem,calc((100vh-24rem)/2),11rem)] space-y-2 overflow-y-auto overscroll-contain px-1 pr-2 [scrollbar-width:thin]">
+                                  <div className="max-h-[clamp(7rem,calc((100vh-24rem)/2),13rem)] space-y-3 overflow-y-auto overscroll-contain pr-1 [scrollbar-width:thin]">
                                     {category.groups.map((group, groupIdx) => (
                                       <div key={group.heading ?? groupIdx}>
                                         {group.heading && (
-                                          <div className="mb-0.5 text-[9px] font-mono font-semibold uppercase tracking-[0.12em] text-slate-400">
+                                          <div className="mb-1 px-2 text-[9px] font-mono font-semibold uppercase tracking-[0.12em] text-slate-400">
                                             {group.heading}
                                           </div>
                                         )}
-                                        <p className="text-[11px] leading-[1.55] text-slate-600">
-                                          {group.items.map((label, itemIdx) => (
-                                            <span key={label}>
-                                              {itemIdx > 0 && <span className="mx-1 text-blue-500/60">•</span>}
-                                              {label}
-                                            </span>
+                                        <ul className="space-y-0.5">
+                                          {group.items.map((label) => (
+                                            <li
+                                              key={label}
+                                              className="flex items-start gap-1.5 rounded-lg px-2 py-1 text-[12px] leading-snug text-slate-600"
+                                            >
+                                              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-blue-500/60" />
+                                              <span>{label}</span>
+                                            </li>
                                           ))}
-                                        </p>
+                                        </ul>
                                       </div>
                                     ))}
                                   </div>
@@ -533,7 +536,7 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            <div className="hidden shrink-0 items-center gap-3 xl:flex">
+            <div className="hidden shrink-0 items-center xl:flex">
               <HeaderSearch isScrolled={isScrolled} useLightText={useLightText} />
             </div>
 

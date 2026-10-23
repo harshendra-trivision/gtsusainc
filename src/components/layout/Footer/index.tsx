@@ -15,6 +15,7 @@ import {
   Layers,
   Leaf,
 } from 'lucide-react';
+import { LINKEDIN_URL } from '@/constants/legalContent';
 
 const solutionsList = [
   { title: 'Plant Engineering', href: '/solutions/plant-process-engineering' },
@@ -361,7 +362,7 @@ export default function Footer() {
 
             {/* LinkedIn Icon */}
             <a
-              href="https://www.linkedin.com/company/gts-usa/"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
