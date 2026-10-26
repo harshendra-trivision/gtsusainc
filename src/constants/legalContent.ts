@@ -14,6 +14,7 @@ export interface LegalDocument {
   eyebrow: string;
   title: string;
   description: string;
+  backgroundImage: string;
   effectiveDate?: string;
   sections: LegalSection[];
 }
@@ -31,6 +32,7 @@ export const privacyPolicy: LegalDocument = {
   title: 'Privacy Policy',
   description:
     'GTS Engineering® USA Incorporated ("GTS Engineering," "GTS," "we," "our," or "us") respects your privacy and is committed to protecting the information you provide while using our website and engineering consulting services.',
+  backgroundImage: '/image/footer/privacy-policy-bg.jpg',
   effectiveDate: 'January 1, 2026',
   sections: [
     {
@@ -174,6 +176,7 @@ export const termsOfUse: LegalDocument = {
   eyebrow: 'Legal',
   title: 'Terms of Use',
   description: 'The terms that govern your access to and use of the GTS Engineering® USA Incorporated website.',
+  backgroundImage: '/image/footer/terms-of-use-bg.jpg',
   sections: [
     {
       slug: 'acceptance',

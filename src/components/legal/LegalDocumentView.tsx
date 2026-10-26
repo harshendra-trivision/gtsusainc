@@ -5,7 +5,12 @@ import type { LegalDocument } from '@/constants/legalContent';
 export default function LegalDocumentView({ document }: { document: LegalDocument }) {
   return (
     <div className="flex w-full flex-col">
-      <PageHero eyebrow={document.eyebrow} title={document.title} description={document.description} />
+      <PageHero
+        eyebrow={document.eyebrow}
+        title={document.title}
+        description={document.description}
+        backgroundImage={document.backgroundImage}
+      />
 
       <section className="bg-slate-50 py-14 sm:py-20">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">

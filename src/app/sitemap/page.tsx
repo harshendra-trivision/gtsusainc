@@ -22,6 +22,7 @@ export default function SitemapPage() {
         eyebrow="Navigate"
         title="Sitemap"
         description="Find every section of the GTS Engineering website, from engineering solutions and industries to projects, downloads, and contact options."
+        backgroundImage="/image/footer/sitemap-bg.jpg"
       />
 
       <section className="bg-slate-50 py-14 sm:py-20">
