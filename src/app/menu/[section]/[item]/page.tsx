@@ -151,13 +151,6 @@ const advisors = [
     paragraphs: [
       'Forty five years’ experience in process engineering and facilities design, construction and production plant support experience in the process and mechanical design, project engineering, project management, and plant operations. Involvement at plant level and as staff consultant. Areas of technical specialty include compressor and pump stations, petrochemical plants, gas plants and pipelines.'
     ]
-  },
-  {
-    name: 'Craig LaForce – Executive Vice President Technology & Business Development (Houston, Texas)',
-    paragraphs: [
-      'Craig has worked in the Industrial gases industry since 1982, initially as a process engineer, progressing to facility operations and then to various sales and business development roles in oil and gas processing, LNG, NGL, refining, and cryogenics. Craig has an MBA from Fairleigh Dickinson and BS ChE from Penn State and has authored several patents relating to gas turbine carbon capture, Blast Furnace oxygen enrichment methods.',
-      'Experienced technically in distillation, molecular sieves, sulfur removal systems, thermodynamic cycle design and optimization, centrifugal and reciprocating compression, motors, gas turbine generators, steam systems, filtration, reactors, control systems and developing practical new technologies and solutions, to meet customer needs. Craig strives to structure mutually beneficial and equitable contractual arrangements, apportioning risks and rewards as appropriate.'
-    ]
   }
 ];
 

@@ -28,7 +28,7 @@ const categoryIcons: Record<string, LucideIcon> = {
 const primaryLocations = [
   {
     title: 'GTS Engineering USA Incorporated',
-    lines: ['Physical Address:', '888 W Sam Houston Pkwy S, Suite 225 B,', 'Houston, TX 77042-1909', '832-295-0545', '832-295-0587', 'info@gtsusainc.com', 'skype – gaurav_blue']
+    lines: ['Registered Office:', '10500 Valley Forge Drive, Suite 202 B,', 'Houston, TX 77042-1839', '832-295-0545', '832-295-0587', 'info@gtsusainc.com', 'skype – gaurav_blue']
   },
   {
     title: 'GTS – Singapore Sales Office',
@@ -43,15 +43,16 @@ const primaryLocations = [
 const deliveryLocations = [
   {
     title: 'Global Delivery Center',
-    lines: ['GTS Techno Projects (India) P Limited', 'An ISO 9001:2015 certified company', '(A subsidiary of GTS Engineering USA Incorporated)', 'G – 41, Sector – 63,', 'Noida, U.P. – 201301', 'INDIA']
-  },
-  {
-    title: 'GTS Manufacturing – Adomac Technicals',
-    lines: ['G – 230, Sector – 63,', 'Noida, U.P., India – 201309']
-  },
-  {
-    title: 'GTS India – Gurgaon',
-    lines: ['Unit 405, Sector – 21,', 'Suncity Trade Tower', 'Gurgaon, Haryana, India – 122016']
+    lines: [
+      'GTS Techno Projects (India) P Limited',
+      'An ISO 9001:2015 certified company',
+      '(A subsidiary of GTS Engineering USA Incorporated)',
+      'G – 41, Sector – 63,',
+      'Noida, U.P. – 201301, INDIA',
+      'GTS Manufacturing – Adomac Technicals',
+      'G – 230, Sector – 63,',
+      'Noida, U.P., India – 201309'
+    ]
   },
   {
     title: 'GTS India – Haridwar',

@@ -116,7 +116,8 @@ export const aboutSections: AboutSection[] = [
       { year: '2018', title: 'Digital Engineering Practice' },
       { year: '2020', title: 'AI & Digital Solutions' },
       { year: '2022', title: 'Innovation & Research Programs' },
-      { year: '2024', title: 'Mission Critical Infrastructure Practice' }
+      { year: '2024', title: 'Mission Critical Infrastructure Practice' },
+      { year: '2026', title: 'AI-Enabled Engineering & Digital Twin Delivery' }
     ]
   },
   {
@@ -155,12 +156,6 @@ export const aboutSections: AboutSection[] = [
             role: 'Director Process',
             location: '(Houston, Texas)',
             bio: '45 years of experience in process engineering, facilities design, construction, and plant support across petrochemical, gas processing, compressor and pump stations, and pipelines.'
-          },
-          {
-            name: 'Craig LaForce',
-            role: 'Executive Vice President Technology & Business Development',
-            location: '(Houston, Texas)',
-            bio: 'Industry expert with 40+ years in industrial gases, LNG, refining, and cryogenics. Experienced in technology development, business growth, and holds multiple patents in carbon capture and gas processing.'
           }
         ]
       },
