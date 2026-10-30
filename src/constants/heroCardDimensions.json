@@ -1,0 +1,522 @@
+{
+  "/videos-gts/aerospace/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/aerospace/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/aerospace/card-3.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/aerospace/card-4.webp": {
+    "width": 1080,
+    "height": 608
+  },
+  "/videos-gts/aerospace/card-5.webp": {
+    "width": 1080,
+    "height": 608
+  },
+  "/videos-gts/ai & digital/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/ai & digital/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/ai & digital/card-3.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/ai & digital/card-4.webp": {
+    "width": 1080,
+    "height": 1060
+  },
+  "/videos-gts/ai & digital/card-5.webp": {
+    "width": 1080,
+    "height": 608
+  },
+  "/videos-gts/consumer/card-1.webp": {
+    "width": 560,
+    "height": 316
+  },
+  "/videos-gts/consumer/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/consumer/card-3.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/consumer/card-4.webp": {
+    "width": 1080,
+    "height": 916
+  },
+  "/videos-gts/consumer/card-5.webp": {
+    "width": 1080,
+    "height": 608
+  },
+  "/videos-gts/data-center/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/data-center/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/data-center/card-3.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/data-center/card-4.webp": {
+    "width": 1080,
+    "height": 950
+  },
+  "/videos-gts/data-center/card-5.webp": {
+    "width": 1080,
+    "height": 532
+  },
+  "/videos-gts/electrical engineering/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/electrical engineering/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/electrical engineering/card-3.webp": {
+    "width": 560,
+    "height": 280
+  },
+  "/videos-gts/electrical engineering/card-4.webp": {
+    "width": 1080,
+    "height": 989
+  },
+  "/videos-gts/electrical engineering/card-5.webp": {
+    "width": 1080,
+    "height": 553
+  },
+  "/videos-gts/industrial automation/card-1.webp": {
+    "width": 560,
+    "height": 309
+  },
+  "/videos-gts/industrial automation/card-2.webp": {
+    "width": 560,
+    "height": 311
+  },
+  "/videos-gts/industrial automation/card-3.webp": {
+    "width": 560,
+    "height": 313
+  },
+  "/videos-gts/industrial automation/card-4.webp": {
+    "width": 1080,
+    "height": 1013
+  },
+  "/videos-gts/industrial automation/card-5.webp": {
+    "width": 1080,
+    "height": 579
+  },
+  "/videos-gts/instrumentation & controls/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/instrumentation & controls/card-2.webp": {
+    "width": 560,
+    "height": 324
+  },
+  "/videos-gts/instrumentation & controls/card-3.webp": {
+    "width": 560,
+    "height": 275
+  },
+  "/videos-gts/instrumentation & controls/card-4.webp": {
+    "width": 1080,
+    "height": 1008
+  },
+  "/videos-gts/instrumentation & controls/card-5.webp": {
+    "width": 1080,
+    "height": 553
+  },
+  "/videos-gts/life sciences/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/life sciences/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/life sciences/card-3.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/life sciences/card-4.webp": {
+    "width": 1080,
+    "height": 925
+  },
+  "/videos-gts/life sciences/card-5.webp": {
+    "width": 1080,
+    "height": 608
+  },
+  "/videos-gts/lng/card-1.webp": {
+    "width": 560,
+    "height": 316
+  },
+  "/videos-gts/lng/card-2.webp": {
+    "width": 560,
+    "height": 328
+  },
+  "/videos-gts/lng/card-3.webp": {
+    "width": 560,
+    "height": 273
+  },
+  "/videos-gts/lng/card-4.webp": {
+    "width": 1080,
+    "height": 1009
+  },
+  "/videos-gts/lng/card-5.webp": {
+    "width": 1080,
+    "height": 565
+  },
+  "/videos-gts/manufacturing engineering/card-1.webp": {
+    "width": 560,
+    "height": 324
+  },
+  "/videos-gts/manufacturing engineering/card-2.webp": {
+    "width": 560,
+    "height": 325
+  },
+  "/videos-gts/manufacturing engineering/card-3.webp": {
+    "width": 560,
+    "height": 287
+  },
+  "/videos-gts/manufacturing engineering/card-4.webp": {
+    "width": 1080,
+    "height": 1040
+  },
+  "/videos-gts/manufacturing engineering/card-5.webp": {
+    "width": 1080,
+    "height": 555
+  },
+  "/videos-gts/marine/card-1.webp": {
+    "width": 560,
+    "height": 336
+  },
+  "/videos-gts/marine/card-2.webp": {
+    "width": 560,
+    "height": 336
+  },
+  "/videos-gts/marine/card-3.webp": {
+    "width": 560,
+    "height": 280
+  },
+  "/videos-gts/marine/card-4.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/videos-gts/marine/card-5.webp": {
+    "width": 1080,
+    "height": 541
+  },
+  "/videos-gts/mechanical engineering/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/mechanical engineering/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/mechanical engineering/card-3.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/mechanical engineering/card-4.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/videos-gts/mechanical engineering/card-5.webp": {
+    "width": 1080,
+    "height": 608
+  },
+  "/videos-gts/medical/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/medical/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/medical/card-3.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/medical/card-4.webp": {
+    "width": 1080,
+    "height": 937
+  },
+  "/videos-gts/medical/card-5.webp": {
+    "width": 1080,
+    "height": 608
+  },
+  "/videos-gts/mining/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/mining/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/mining/card-3.webp": {
+    "width": 560,
+    "height": 280
+  },
+  "/videos-gts/mining/card-4.webp": {
+    "width": 1080,
+    "height": 911
+  },
+  "/videos-gts/mining/card-5.webp": {
+    "width": 1080,
+    "height": 608
+  },
+  "/videos-gts/oil-and-gas/card-1.webp": {
+    "width": 560,
+    "height": 228
+  },
+  "/videos-gts/oil-and-gas/card-2.webp": {
+    "width": 560,
+    "height": 228
+  },
+  "/videos-gts/oil-and-gas/card-3.webp": {
+    "width": 560,
+    "height": 228
+  },
+  "/videos-gts/oil-and-gas/card-4.webp": {
+    "width": 1080,
+    "height": 758
+  },
+  "/videos-gts/oil-and-gas/card-5.webp": {
+    "width": 1080,
+    "height": 443
+  },
+  "/videos-gts/power-utility/card-1.webp": {
+    "width": 560,
+    "height": 311
+  },
+  "/videos-gts/power-utility/card-2.webp": {
+    "width": 560,
+    "height": 311
+  },
+  "/videos-gts/power-utility/card-3.webp": {
+    "width": 560,
+    "height": 311
+  },
+  "/videos-gts/power-utility/card-4.webp": {
+    "width": 1080,
+    "height": 1083
+  },
+  "/videos-gts/power-utility/card-5.webp": {
+    "width": 1080,
+    "height": 540
+  },
+  "/videos-gts/process-engineering/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/process-engineering/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/process-engineering/card-3.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/process-engineering/card-4.webp": {
+    "width": 1080,
+    "height": 998
+  },
+  "/videos-gts/process-engineering/card-5.webp": {
+    "width": 1080,
+    "height": 608
+  },
+  "/videos-gts/process-safety/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/process-safety/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/process-safety/card-3.webp": {
+    "width": 560,
+    "height": 309
+  },
+  "/videos-gts/process-safety/card-4.webp": {
+    "width": 1080,
+    "height": 1121
+  },
+  "/videos-gts/process-safety/card-5.webp": {
+    "width": 1080,
+    "height": 608
+  },
+  "/videos-gts/product engineering/card-1.webp": {
+    "width": 560,
+    "height": 311
+  },
+  "/videos-gts/product engineering/card-2.webp": {
+    "width": 560,
+    "height": 314
+  },
+  "/videos-gts/product engineering/card-3.webp": {
+    "width": 560,
+    "height": 302
+  },
+  "/videos-gts/product engineering/card-4.webp": {
+    "width": 1080,
+    "height": 1059
+  },
+  "/videos-gts/product engineering/card-5.webp": {
+    "width": 1080,
+    "height": 589
+  },
+  "/videos-gts/railway/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/railway/card-2.webp": {
+    "width": 560,
+    "height": 336
+  },
+  "/videos-gts/railway/card-3.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/railway/card-4.webp": {
+    "width": 1080,
+    "height": 911
+  },
+  "/videos-gts/railway/card-5.webp": {
+    "width": 1080,
+    "height": 608
+  },
+  "/videos-gts/renewable energy/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/renewable energy/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/renewable energy/card-3.webp": {
+    "width": 560,
+    "height": 280
+  },
+  "/videos-gts/renewable energy/card-4.webp": {
+    "width": 1080,
+    "height": 1140
+  },
+  "/videos-gts/renewable energy/card-5.webp": {
+    "width": 1080,
+    "height": 540
+  },
+  "/videos-gts/semiconductor/card-1.webp": {
+    "width": 560,
+    "height": 310
+  },
+  "/videos-gts/semiconductor/card-2.webp": {
+    "width": 560,
+    "height": 335
+  },
+  "/videos-gts/semiconductor/card-3.webp": {
+    "width": 560,
+    "height": 279
+  },
+  "/videos-gts/semiconductor/card-4.webp": {
+    "width": 1080,
+    "height": 1008
+  },
+  "/videos-gts/semiconductor/card-5.webp": {
+    "width": 1080,
+    "height": 538
+  },
+  "/videos-gts/smart infrastructure/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/smart infrastructure/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/smart infrastructure/card-3.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/smart infrastructure/card-4.webp": {
+    "width": 1080,
+    "height": 909
+  },
+  "/videos-gts/smart infrastructure/card-5.webp": {
+    "width": 1080,
+    "height": 541
+  },
+  "/videos-gts/stracture enginerring/card-1.webp": {
+    "width": 560,
+    "height": 336
+  },
+  "/videos-gts/stracture enginerring/card-2.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/stracture enginerring/card-3.webp": {
+    "width": 560,
+    "height": 280
+  },
+  "/videos-gts/stracture enginerring/card-4.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/videos-gts/stracture enginerring/card-5.webp": {
+    "width": 1080,
+    "height": 608
+  },
+  "/videos-gts/telecommunication/card-1.webp": {
+    "width": 560,
+    "height": 315
+  },
+  "/videos-gts/telecommunication/card-2.webp": {
+    "width": 560,
+    "height": 316
+  },
+  "/videos-gts/telecommunication/card-3.webp": {
+    "width": 560,
+    "height": 281
+  },
+  "/videos-gts/telecommunication/card-4.webp": {
+    "width": 1080,
+    "height": 1035
+  },
+  "/videos-gts/telecommunication/card-5.webp": {
+    "width": 1080,
+    "height": 540
+  },
+  "/videos-gts/water-wastewater/card-1.webp": {
+    "width": 560,
+    "height": 311
+  },
+  "/videos-gts/water-wastewater/card-2.webp": {
+    "width": 560,
+    "height": 313
+  },
+  "/videos-gts/water-wastewater/card-3.webp": {
+    "width": 560,
+    "height": 280
+  },
+  "/videos-gts/water-wastewater/card-4.webp": {
+    "width": 1080,
+    "height": 1087
+  },
+  "/videos-gts/water-wastewater/card-5.webp": {
+    "width": 1080,
+    "height": 530
+  }
+}

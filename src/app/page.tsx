@@ -126,6 +126,7 @@ import {
 import ConsultationSection from '@/components/home/ConsultationSection';
 import CapabilitiesInteractiveMap from '@/components/home/CapabilitiesInteractiveMap';
 import IndustryPerformanceMetrics from '@/components/home/IndustryPerformanceMetrics';
+import HeroCardImage from '@/components/home/HeroCardImage';
 
 interface SolutionArea {
   id: string;
@@ -212,11 +213,11 @@ const heroVisuals: HeroVisual[] = [
       "Operations Support"
     ],
     "video": "/videos-gts/oil-and-gas/oil-and-gas-bg-video.mp4",
-    "card1": "/videos-gts/oil-and-gas/CARD 1 - GTS_Upstream_Engineering_4K_Continuous_Border.svg",
-    "card2": "/videos-gts/oil-and-gas/CARD 2 - GTS_Midstream_Process_Engineering_4K_Continuous_Border.svg",
-    "card3": "/videos-gts/oil-and-gas/CARD 3 - GTS_Downstream_Refining_Petrochemicals_4K_Continuous_Border.svg",
-    "card4": "/videos-gts/oil-and-gas/CARD 4 - GTS_Oil_Gas_Engineering_View_4K_Continuous_Border.svg",
-    "card5": "/videos-gts/oil-and-gas/CARD 5 - GTS_Digital_Twin_Oil_Gas_4K_Continuous_Border.svg",
+    "card1": "/videos-gts/oil-and-gas/card-1.webp",
+    "card2": "/videos-gts/oil-and-gas/card-2.webp",
+    "card3": "/videos-gts/oil-and-gas/card-3.webp",
+    "card4": "/videos-gts/oil-and-gas/card-4.webp",
+    "card5": "/videos-gts/oil-and-gas/card-5.webp",
     "subSectors": [
       { "name": "Exploration & Production", "icon": RadioTower },
       { "name": "Midstream & Pipelines", "icon": Waypoints },
@@ -264,11 +265,11 @@ const heroVisuals: HeroVisual[] = [
       "Decarbonization Solutions"
     ],
     "video": "/videos-gts/lng/lng-bg-video.mp4",
-    "card1": "/videos-gts/lng/CARD 1 - GTS_LNG_Terminal_Design_4K_Continuous_Border.svg",
-    "card2": "/videos-gts/lng/CARD 2 - GTS_LNG_Storage_Cryogenic_Solutions_4K_Continuous_Border.svg",
-    "card3": "/videos-gts/lng/CARD 3 - GTS_LNG_Supply_Chain_Regasification_4K_Continuous_Border.svg",
-    "card4": "/videos-gts/lng/CARD 4 - GTS_LNG_Facility_View_4K_Continuous_Border.svg",
-    "card5": "/videos-gts/lng/CARD 5 - GTS_Digital_Twin_LNG_Operations_4K_Continuous_Border.svg",
+    "card1": "/videos-gts/lng/card-1.webp",
+    "card2": "/videos-gts/lng/card-2.webp",
+    "card3": "/videos-gts/lng/card-3.webp",
+    "card4": "/videos-gts/lng/card-4.webp",
+    "card5": "/videos-gts/lng/card-5.webp",
     "subSectors": [
       { "name": "LNG Terminals", "icon": Warehouse },
       { "name": "Liquefaction", "icon": Factory },
@@ -317,11 +318,11 @@ const heroVisuals: HeroVisual[] = [
       "Decommissioning Support"
     ],
     "video": "/videos-gts/marine/marine-bg-video.mp4",
-    "card1": "/videos-gts/marine/CARD 1 - GTS_Offshore_Structures_Marine_Facilities_4K_Continuous_Border.svg",
-    "card2": "/videos-gts/marine/CARD 2 - GTS_Subsea_Systems_Surface_Support_4K_Continuous_Border.svg",
-    "card3": "/videos-gts/marine/CARD 3 - GTS_Marine_Asset_Integrity_Lifecycle_4K_Continuous_Border.svg",
-    "card4": "/videos-gts/marine/CARD 4 - GTS_Marine_Offshore_View_4K_Continuous_Border.svg",
-    "card5": "/videos-gts/marine/CARD 5 - GTS_Marine_Offshore_Digital_Twin_4K_Continuous_Border.svg",
+    "card1": "/videos-gts/marine/card-1.webp",
+    "card2": "/videos-gts/marine/card-2.webp",
+    "card3": "/videos-gts/marine/card-3.webp",
+    "card4": "/videos-gts/marine/card-4.webp",
+    "card5": "/videos-gts/marine/card-5.webp",
     "subSectors": [
       { "name": "Oil & Gas", "icon": RadioTower },
       { "name": "Renewable Energy", "icon": Sun },
@@ -366,11 +367,11 @@ const heroVisuals: HeroVisual[] = [
       "Operations Optimization"
     ],
     "video": "/videos-gts/process-engineering/process engineering.mp4",
-    "card1": "/videos-gts/process-engineering/CARD 1 - GTS_Process_Design_Simulation_4K_Continuous_Border.svg",
-    "card2": "/videos-gts/process-engineering/CARD 2 - GTS_Equipment_Design_Mechanical_Engineering_4K_Continuous_Border.svg",
-    "card3": "/videos-gts/process-engineering/CARD 3 - GTS_Process_Control_Automation_4K_Continuous_Border.svg",
-    "card4": "/videos-gts/process-engineering/CARD 4 - GTS_Process_Engineering_View_4K_Continuous_Border.svg",
-    "card5": "/videos-gts/process-engineering/CARD 5 - GTS_Digital_Twin_Process_Plants_4K_Continuous_Border.svg",
+    "card1": "/videos-gts/process-engineering/card-1.webp",
+    "card2": "/videos-gts/process-engineering/card-2.webp",
+    "card3": "/videos-gts/process-engineering/card-3.webp",
+    "card4": "/videos-gts/process-engineering/card-4.webp",
+    "card5": "/videos-gts/process-engineering/card-5.webp",
     "subSectors": [
       { "name": "Petrochemical Refining", "icon": Fuel },
       { "name": "Specialty Chemical Plants", "icon": FlaskRound },
@@ -419,11 +420,11 @@ const heroVisuals: HeroVisual[] = [
       "Safety Culture & Training"
     ],
     "video": "/videos-gts/process-safety/process-safety-bg-video.mp4",
-    "card1": "/videos-gts/process-safety/CARD 1 - GTS_Hazard_Risk_4K_REDOWNLOAD.svg",
-    "card2": "/videos-gts/process-safety/CARD 2 - GTS_Process_Safety_Risk_Management_4K_Continuous_Border.svg",
-    "card3": "/videos-gts/process-safety/CARD 3 - GTS_Emergency_Preparedness_Incident_Response_4K_Continuous_Border.svg",
-    "card4": "/videos-gts/process-safety/CARD 4 - GTS_Process_Safety_View_4K_Continuous_Border.svg",
-    "card5": "/videos-gts/process-safety/CARD 5- GTS_Digital_Twin_Process_Safety_4K_Continuous_Border.svg",
+    "card1": "/videos-gts/process-safety/card-1.webp",
+    "card2": "/videos-gts/process-safety/card-2.webp",
+    "card3": "/videos-gts/process-safety/card-3.webp",
+    "card4": "/videos-gts/process-safety/card-4.webp",
+    "card5": "/videos-gts/process-safety/card-5.webp",
     "subSectors": [
       { "name": "Chemicals & Petrochemicals", "icon": RadioTower },
       { "name": "Refining", "icon": Gauge },
@@ -473,11 +474,11 @@ const heroVisuals: HeroVisual[] = [
       "Decarbonization Solutions"
     ],
     "video": "/videos-gts/power-utility/power-utility-bg-video.mp4",
-    "card1": "/videos-gts/power-utility/CARD 1 - GTS_Grid_Design_Studies_4K_Continuous_Border.svg",
-    "card2": "/videos-gts/power-utility/CARD 2 - GTS_Substation_Engineering_Electrical_Systems_4K_Continuous_Border.svg",
-    "card3": "/videos-gts/power-utility/CARD 3 - GTS_Digital_Operations_Energy_Optimization_4K_Continuous_Border.svg",
-    "card4": "/videos-gts/power-utility/CARD 4 - GTS_Power_Utilities_View_4K_Continuous_Border.svg",
-    "card5": "/videos-gts/power-utility/CARD 5 - GTS_Digital_Twin_Power_Utilities_4K_Continuous_Cyan_Border.svg",
+    "card1": "/videos-gts/power-utility/card-1.webp",
+    "card2": "/videos-gts/power-utility/card-2.webp",
+    "card3": "/videos-gts/power-utility/card-3.webp",
+    "card4": "/videos-gts/power-utility/card-4.webp",
+    "card5": "/videos-gts/power-utility/card-5.webp",
     "subSectors": [
       { "name": "Power Generation", "icon": Factory },
       { "name": "Transmission & Distribution", "icon": UtilityPole },
@@ -525,11 +526,11 @@ const heroVisuals: HeroVisual[] = [
       "Operations & Optimization"
     ],
     "video": "/videos-gts/renewable energy/renewable energy.mp4",
-    "card1": "/videos-gts/renewable energy/CARD 1 - GTS_Wind_Energy_Solutions_4K_Continuous_Cyan_Border.svg",
-    "card2": "/videos-gts/renewable energy/CARD 2 - GTS_Solar_Energy_Systems_4K_Continuous_Cyan_Border.svg",
-    "card3": "/videos-gts/renewable energy/CARD 3 - GTS_Energy_Storage_Grid_Integration_4K_Continuous_Cyan_Border.svg",
-    "card4": "/videos-gts/renewable energy/CARD 4 - GTS_Renewable_Energy_View_4K_Continuous_Cyan_Border.svg",
-    "card5": "/videos-gts/renewable energy/CARD 5 - GTS_Digital_Twin_Renewable_Energy_4K_Continuous_Cyan_Border.svg",
+    "card1": "/videos-gts/renewable energy/card-1.webp",
+    "card2": "/videos-gts/renewable energy/card-2.webp",
+    "card3": "/videos-gts/renewable energy/card-3.webp",
+    "card4": "/videos-gts/renewable energy/card-4.webp",
+    "card5": "/videos-gts/renewable energy/card-5.webp",
     "subSectors": [
       { "name": "Onshore Wind", "icon": Wind },
       { "name": "Offshore Wind", "icon": Waves },
@@ -577,11 +578,11 @@ const heroVisuals: HeroVisual[] = [
       "Digital Twin"
     ],
     "video": "/videos-gts/water-wastewater/water-wastewater-bg-video.mp4",
-    "card1": "/videos-gts/water-wastewater/CARD 1 - GTS_Water_Treatment_Process_Engineering_4K_Continuous_Cyan_Border.svg",
-    "card2": "/videos-gts/water-wastewater/CARD 2 - GTS_Pumping_Systems_Hydraulic_Modeling_4K_Continuous_Cyan_Border.svg",
-    "card3": "/videos-gts/water-wastewater/CARD 3 - GTS_Digital_Operations_Intelligent_Monitoring_4K_Continuous_Cyan_Border.svg",
-    "card4": "/videos-gts/water-wastewater/CARD 4 - GTS_Water_Wastewater_View_4K_Continuous_Cyan_Border.svg",
-    "card5": "/videos-gts/water-wastewater/CARD 5 - GTS_Digital_Twin_Water_Wastewater_4K_Cyan_Border.svg",
+    "card1": "/videos-gts/water-wastewater/card-1.webp",
+    "card2": "/videos-gts/water-wastewater/card-2.webp",
+    "card3": "/videos-gts/water-wastewater/card-3.webp",
+    "card4": "/videos-gts/water-wastewater/card-4.webp",
+    "card5": "/videos-gts/water-wastewater/card-5.webp",
     "subSectors": [
       { "name": "Water Treatment", "icon": Droplets },
       { "name": "Wastewater Treatment", "icon": Waves },
@@ -628,11 +629,11 @@ const heroVisuals: HeroVisual[] = [
       "Energy Modeling"
     ],
     "video": "/videos-gts/data-center/data-center-bg-video.mp4",
-    "card1": "/videos-gts/data-center/CARD 1 - GTS_Data_Center_Design_4K_Cyan_Border.svg",
-    "card2": "/videos-gts/data-center/CARD 2 - GTS_Power_Cooling_Systems_4K_Cyan_Border.svg",
-    "card3": "/videos-gts/data-center/CARD 3 - digital_operations_4k_border.svg",
-    "card4": "/videos-gts/data-center/CARD 4 - data_centers_view_4k_cyan_border.svg",
-    "card5": "/videos-gts/data-center/CARD 5 - digital_twin_data_centers_4k_cyan_border.svg",
+    "card1": "/videos-gts/data-center/card-1.webp",
+    "card2": "/videos-gts/data-center/card-2.webp",
+    "card3": "/videos-gts/data-center/card-3.webp",
+    "card4": "/videos-gts/data-center/card-4.webp",
+    "card5": "/videos-gts/data-center/card-5.webp",
     "subSectors": [
       { "name": "Data Center Design", "icon": Server },
       { "name": "Power & Cooling", "icon": Fan },
@@ -680,11 +681,11 @@ const heroVisuals: HeroVisual[] = [
       "Energy Modeling"
     ],
     "video": "/videos-gts/semiconductor/Semiconductors-bg-video.mp4",
-    "card1": "/videos-gts/semiconductor/CARD 1 - cleanroom_design_facility_engineering_4k (1).svg",
-    "card2": "/videos-gts/semiconductor/CARD 2- process_tools_utility_systems_4k.svg",
-    "card3": "/videos-gts/semiconductor/CARD 3- advanced_manufacturing_digital_solutions_4k.svg",
-    "card4": "/videos-gts/semiconductor/CARD 4 - semiconductor_facility_view_4k_cyan_border.svg",
-    "card5": "/videos-gts/semiconductor/CARD 5 - digital_twin_semiconductors_4k_cyan_border (1).svg",
+    "card1": "/videos-gts/semiconductor/card-1.webp",
+    "card2": "/videos-gts/semiconductor/card-2.webp",
+    "card3": "/videos-gts/semiconductor/card-3.webp",
+    "card4": "/videos-gts/semiconductor/card-4.webp",
+    "card5": "/videos-gts/semiconductor/card-5.webp",
     "subSectors": [
       { "name": "Wafer Fabs", "icon": Cpu },
       { "name": "Assembly & Test", "icon": CircuitBoard },
@@ -731,11 +732,11 @@ const heroVisuals: HeroVisual[] = [
       "Commissioning Support"
     ],
     "video": "/videos-gts/industrial automation/industrial automation.mp4",
-    "card1": "/videos-gts/industrial automation/CARD 1 - automation_control_system_integration_4k.svg",
-    "card2": "/videos-gts/industrial automation/CARD 2- digital_operations_intelligent_monitoring_4k.svg",
-    "card3": "/videos-gts/industrial automation/CARD 3 - smart_manufacturing_process_optimization_4k.svg",
-    "card4": "/videos-gts/industrial automation/CARD 4 - industrial_automation_view_4k_cyan_border.svg",
-    "card5": "/videos-gts/industrial automation/CARD 5 - digital_twin_industrial_automation_4k.svg",
+    "card1": "/videos-gts/industrial automation/card-1.webp",
+    "card2": "/videos-gts/industrial automation/card-2.webp",
+    "card3": "/videos-gts/industrial automation/card-3.webp",
+    "card4": "/videos-gts/industrial automation/card-4.webp",
+    "card5": "/videos-gts/industrial automation/card-5.webp",
     "subSectors": [
       { "name": "Automotive", "icon": Car },
       { "name": "Food & Beverage", "icon": Milk },
@@ -785,11 +786,11 @@ const heroVisuals: HeroVisual[] = [
       "MES Integration"
     ],
     "video": "/videos-gts/manufacturing engineering/manufacturing engineering.mp4",
-    "card1": "/videos-gts/manufacturing engineering/CARD 1 - production_line_design_optimization_4k.svg",
-    "card2": "/videos-gts/manufacturing engineering/CARD 2- robotics_automation_integration_4k.svg",
-    "card3": "/videos-gts/manufacturing engineering/CARD 3 - manufacturing_simulation_digital_twin_4k.svg",
-    "card4": "/videos-gts/manufacturing engineering/CARD 4 - manufacturing_engineering_view_4k_cyan_border.svg",
-    "card5": "/videos-gts/manufacturing engineering/CARD 5 - digital_twin_for_manufacturing_4k.svg",
+    "card1": "/videos-gts/manufacturing engineering/card-1.webp",
+    "card2": "/videos-gts/manufacturing engineering/card-2.webp",
+    "card3": "/videos-gts/manufacturing engineering/card-3.webp",
+    "card4": "/videos-gts/manufacturing engineering/card-4.webp",
+    "card5": "/videos-gts/manufacturing engineering/card-5.webp",
     "subSectors": [
       { "name": "Automotive", "icon": Car },
       { "name": "Industrial", "icon": Factory },
@@ -837,11 +838,11 @@ const heroVisuals: HeroVisual[] = [
       "Manufacturing Support"
     ],
     "video": "/videos-gts/product engineering/product engineering.mp4",
-    "card1": "/videos-gts/product engineering/CARD 1 - ai_driven_design_product_development_4k.svg",
-    "card2": "/videos-gts/product engineering/CARD 2 - virtual_validation_simulation_4k.svg",
-    "card3": "/videos-gts/product engineering/CARD 3 - connected_engineering_lifecycle_management_4k.svg",
-    "card4": "/videos-gts/product engineering/CARD 4 - product_engineering_view_4k_cyan_border.svg",
-    "card5": "/videos-gts/product engineering/CARD 5 - digital_twin_smart_products_4k_cyan_border.svg",
+    "card1": "/videos-gts/product engineering/card-1.webp",
+    "card2": "/videos-gts/product engineering/card-2.webp",
+    "card3": "/videos-gts/product engineering/card-3.webp",
+    "card4": "/videos-gts/product engineering/card-4.webp",
+    "card5": "/videos-gts/product engineering/card-5.webp",
     "subSectors": [
       { "name": "Automotive", "icon": Car },
       { "name": "Aerospace & Defense", "icon": Plane },
@@ -891,11 +892,11 @@ const heroVisuals: HeroVisual[] = [
       "Manufacturing Support"
     ],
     "video": "/videos-gts/mechanical engineering/mechanical engineering.mp4",
-    "card1": "/videos-gts/mechanical engineering/CARD 1- 3d_modeling_design_engineering_4k.svg",
-    "card2": "/videos-gts/mechanical engineering/CARD 2- fea_structural_simulation_4k.svg",
-    "card3": "/videos-gts/mechanical engineering/CARD 3 - manufacturing_support_digitalization_4k.svg",
-    "card4": "/videos-gts/mechanical engineering/CARD 4- product_engineering_mechanical_solutions_4k.svg",
-    "card5": "/videos-gts/mechanical engineering/CARD 5 - digital_twin_mechanical_systems_4k.svg",
+    "card1": "/videos-gts/mechanical engineering/card-1.webp",
+    "card2": "/videos-gts/mechanical engineering/card-2.webp",
+    "card3": "/videos-gts/mechanical engineering/card-3.webp",
+    "card4": "/videos-gts/mechanical engineering/card-4.webp",
+    "card5": "/videos-gts/mechanical engineering/card-5.webp",
     "subSectors": [
       { "name": "Automotive", "icon": Car },
       { "name": "Aerospace & Defense", "icon": Plane },
@@ -943,11 +944,11 @@ const heroVisuals: HeroVisual[] = [
       "Connection Design"
     ],
     "video": "/videos-gts/stracture enginerring/stracture-enginerring-bg-video.mp4",
-    "card1": "/videos-gts/stracture enginerring/CARD 1 - 3d_modeling_design_engineering_bridge_4k.svg",
-    "card2": "/videos-gts/stracture enginerring/CARD 2- structural_analysis_simulation_4k.svg",
-    "card3": "/videos-gts/stracture enginerring/CARD 3 - bim_integration_digital_construction_4k.svg",
-    "card4": "/videos-gts/stracture enginerring/CARD 4 - structural_engineering_view_4k_cyan_border.svg",
-    "card5": "/videos-gts/stracture enginerring/CARD 5 - digital_twin_for_structures_4k.svg",
+    "card1": "/videos-gts/stracture enginerring/card-1.webp",
+    "card2": "/videos-gts/stracture enginerring/card-2.webp",
+    "card3": "/videos-gts/stracture enginerring/card-3.webp",
+    "card4": "/videos-gts/stracture enginerring/card-4.webp",
+    "card5": "/videos-gts/stracture enginerring/card-5.webp",
     "subSectors": [
       { "name": "Infrastructure", "icon": Landmark },
       { "name": "Industrial", "icon": Factory },
@@ -995,11 +996,11 @@ const heroVisuals: HeroVisual[] = [
       "Power Quality Studies"
     ],
     "video": "/videos-gts/electrical engineering/electrical engineering.mp4",
-    "card1": "/videos-gts/electrical engineering/CARD 1- power_distribution_design_engineering_4k.svg",
-    "card2": "/videos-gts/electrical engineering/CARD 2- load_flow_protection_studies_4k.svg",
-    "card3": "/videos-gts/electrical engineering/CARD 3 - mv_lv_systems_digital_substations_4k.svg",
-    "card4": "/videos-gts/electrical engineering/CARD 4 - electrical_engineering_view_4k_cyan_border.svg",
-    "card5": "/videos-gts/electrical engineering/CARD 5 digital_twin_electrical_systems_4k.svg",
+    "card1": "/videos-gts/electrical engineering/card-1.webp",
+    "card2": "/videos-gts/electrical engineering/card-2.webp",
+    "card3": "/videos-gts/electrical engineering/card-3.webp",
+    "card4": "/videos-gts/electrical engineering/card-4.webp",
+    "card5": "/videos-gts/electrical engineering/card-5.webp",
     "subSectors": [
       { "name": "Industrial", "icon": Factory },
       { "name": "Energy", "icon": Zap },
@@ -1050,11 +1051,11 @@ const heroVisuals: HeroVisual[] = [
       "Asset Management"
     ],
     "video": "/videos-gts/instrumentation & controls/instrumentation & controls.mp4",
-    "card1": "/videos-gts/instrumentation & controls/CARD 1- process_automation_control_4k.svg",
-    "card2": "/videos-gts/instrumentation & controls/CARD 2 - scada_dcs_integration_4k.svg",
-    "card3": "/videos-gts/instrumentation & controls/CARD 3 - safety_instrumented_systems_sis_4k.svg",
-    "card4": "/videos-gts/instrumentation & controls/CARD 4 - instrumentation_controls_view_4k.svg",
-    "card5": "/videos-gts/instrumentation & controls/CARD 5 - digital_twin_process_plants_4k.svg",
+    "card1": "/videos-gts/instrumentation & controls/card-1.webp",
+    "card2": "/videos-gts/instrumentation & controls/card-2.webp",
+    "card3": "/videos-gts/instrumentation & controls/card-3.webp",
+    "card4": "/videos-gts/instrumentation & controls/card-4.webp",
+    "card5": "/videos-gts/instrumentation & controls/card-5.webp",
     "subSectors": [
       { "name": "Industrial", "icon": Factory },
       { "name": "Energy", "icon": Zap },
@@ -1104,11 +1105,11 @@ const heroVisuals: HeroVisual[] = [
       "Asset Management"
     ],
     "video": "/videos-gts/mining/mining & metals-bg-video.mp4",
-    "card1": "/videos-gts/mining/CARD 1- mine_planning_optimization_4k.svg",
-    "card2": "/videos-gts/mining/CARD 2 - processing_material_handling_4k.svg",
-    "card3": "/videos-gts/mining/CARD 3 - safety_asset_integrity_4k.svg",
-    "card4": "/videos-gts/mining/CARD 4 - mining_operations_view_4k.svg",
-    "card5": "/videos-gts/mining/CARD 5 - digital_twin_mining_operations_4k.svg",
+    "card1": "/videos-gts/mining/card-1.webp",
+    "card2": "/videos-gts/mining/card-2.webp",
+    "card3": "/videos-gts/mining/card-3.webp",
+    "card4": "/videos-gts/mining/card-4.webp",
+    "card5": "/videos-gts/mining/card-5.webp",
     "subSectors": [
       { "name": "Exploration", "icon": Pickaxe },
       { "name": "Mining", "icon": Truck },
@@ -1157,11 +1158,11 @@ const heroVisuals: HeroVisual[] = [
       "Asset Management"
     ],
     "video": "/videos-gts/railway/railway-bg-video.mp4",
-    "card1": "/videos-gts/railway/CARD 1- signaling_train_control_systems_4k.svg",
-    "card2": "/videos-gts/railway/CARD 2- station_systems_automation_4K.svg",
-    "card3": "/videos-gts/railway/CARD 3 - rail_infrastructure_design_4K.svg",
-    "card4": "/videos-gts/railway/CARD 4 - rail_transportation_engineering_view_4K.svg",
-    "card5": "/videos-gts/railway/CARD 5 - digital_twin_rail_transit_4K.svg",
+    "card1": "/videos-gts/railway/card-1.webp",
+    "card2": "/videos-gts/railway/card-2.webp",
+    "card3": "/videos-gts/railway/card-3.webp",
+    "card4": "/videos-gts/railway/card-4.webp",
+    "card5": "/videos-gts/railway/card-5.webp",
     "subSectors": [
       { "name": "Urban Transit", "icon": TramFront },
       { "name": "High-Speed Rail", "icon": TrainFront },
@@ -1208,11 +1209,11 @@ const heroVisuals: HeroVisual[] = [
       "AS9100 Standards"
     ],
     "video": "/videos-gts/aerospace/aerospace.mp4",
-    "card1": "/videos-gts/aerospace/CARD 1- aircraft_design_analysis_4K.svg",
-    "card2": "/videos-gts/aerospace/CARD 2- propulsion_systems_4k.svg",
-    "card3": "/videos-gts/aerospace/CARD 3 - space_systems_satellite_engineering_4k.svg",
-    "card4": "/videos-gts/aerospace/CARD 4 - aerospace_engineering_view_4k.svg",
-    "card5": "/videos-gts/aerospace/CARD 5 - digital_twin_aerospace_systems_4k.svg",
+    "card1": "/videos-gts/aerospace/card-1.webp",
+    "card2": "/videos-gts/aerospace/card-2.webp",
+    "card3": "/videos-gts/aerospace/card-3.webp",
+    "card4": "/videos-gts/aerospace/card-4.webp",
+    "card5": "/videos-gts/aerospace/card-5.webp",
     "subSectors": [
       { "name": "Commercial Aviation", "icon": Plane },
       { "name": "Defense & Military", "icon": Shield },
@@ -1260,11 +1261,11 @@ const heroVisuals: HeroVisual[] = [
       "Digital Twin & Analytics"
     ],
     "video": "/videos-gts/telecommunication/telecommunication-bg-video.mp4",
-    "card1": "/videos-gts/telecommunication/CARD 1 - network_design_planning_4k.svg",
-    "card2": "/videos-gts/telecommunication/CARD 2 - wireless_5g_solutions_4k.svg",
-    "card3": "/videos-gts/telecommunication/CARD 3 - satellite_communications_ntn_4k.svg",
-    "card4": "/videos-gts/telecommunication/CARD 4 - telecommunications_engineering_4k.svg",
-    "card5": "/videos-gts/telecommunication/CARD 5 - network_digital_twin_4k.svg",
+    "card1": "/videos-gts/telecommunication/card-1.webp",
+    "card2": "/videos-gts/telecommunication/card-2.webp",
+    "card3": "/videos-gts/telecommunication/card-3.webp",
+    "card4": "/videos-gts/telecommunication/card-4.webp",
+    "card5": "/videos-gts/telecommunication/card-5.webp",
     "subSectors": [
       { "name": "Industrial", "icon": Factory },
       { "name": "Energy", "icon": Zap },
@@ -1313,11 +1314,11 @@ const heroVisuals: HeroVisual[] = [
       "Regulatory Support"
     ],
     "video": "/videos-gts/medical/medical.mp4",
-    "card1": "/videos-gts/medical/CARD 1 - diagnostic_imaging_systems_4k.svg",
-    "card2": "/videos-gts/medical/CARD 2 - surgical_systems_robotics_4k.svg",
-    "card3": "/videos-gts/medical/CARD 3- patient_monitoring_connected_care_4k.svg",
-    "card4": "/videos-gts/medical/CARD 4 - medical_engineering_view_4k.svg",
-    "card5": "/videos-gts/medical/CARD 5 - digital_twin_medical_devices_4k.svg",
+    "card1": "/videos-gts/medical/card-1.webp",
+    "card2": "/videos-gts/medical/card-2.webp",
+    "card3": "/videos-gts/medical/card-3.webp",
+    "card4": "/videos-gts/medical/card-4.webp",
+    "card5": "/videos-gts/medical/card-5.webp",
     "subSectors": [
       { "name": "Medical Devices", "icon": HeartPulse },
       { "name": "Diagnostics", "icon": ScanLine },
@@ -1363,11 +1364,11 @@ const heroVisuals: HeroVisual[] = [
       "Data & Analytics"
     ],
     "video": "/videos-gts/life sciences/biology.mp4",
-    "card1": "/videos-gts/life sciences/CARD 1 - discovery_development_4k.svg",
-    "card2": "/videos-gts/life sciences/CARD 2 - manufacturing_processing_4k.svg",
-    "card3": "/videos-gts/life sciences/CARD 3 - quality_regulatory_market_access_4k.svg",
-    "card4": "/videos-gts/life sciences/CARD 4 - life_sciences_engineering_view_4k.svg",
-    "card5": "/videos-gts/life sciences/CARD 5 - digital_twin_life_sciences_4k.svg",
+    "card1": "/videos-gts/life sciences/card-1.webp",
+    "card2": "/videos-gts/life sciences/card-2.webp",
+    "card3": "/videos-gts/life sciences/card-3.webp",
+    "card4": "/videos-gts/life sciences/card-4.webp",
+    "card5": "/videos-gts/life sciences/card-5.webp",
     "subSectors": [
       { "name": "Discovery & R&D", "icon": Dna },
       { "name": "Bioprocessing", "icon": FlaskConical },
@@ -1413,11 +1414,11 @@ const heroVisuals: HeroVisual[] = [
       "Manufacturing"
     ],
     "video": "/videos-gts/consumer/consumer.mp4",
-    "card1": "/videos-gts/consumer/CARD 1 - product_design_innovation_4k.svg",
-    "card2": "/videos-gts/consumer/CARD 2 - manufacturing_supply_chain_4k.svg",
-    "card3": "/videos-gts/consumer/CARD 3 - sustainability_circular_solutions_4k.svg",
-    "card4": "/videos-gts/consumer/CARD 4- consumer_products_view_rebuilt_4k.svg",
-    "card5": "/videos-gts/consumer/CARD 5 - digital_twin_consumer_products_4k.svg",
+    "card1": "/videos-gts/consumer/card-1.webp",
+    "card2": "/videos-gts/consumer/card-2.webp",
+    "card3": "/videos-gts/consumer/card-3.webp",
+    "card4": "/videos-gts/consumer/card-4.webp",
+    "card5": "/videos-gts/consumer/card-5.webp",
     "subSectors": [
       { "name": "Home Appliances", "icon": Refrigerator },
       { "name": "Kitchen Appliances", "icon": CookingPot },
@@ -1464,11 +1465,11 @@ const heroVisuals: HeroVisual[] = [
       "AI Analytics"
     ],
     "video": "/videos-gts/smart infrastructure/smart-infrastructure-bg-video.mp4",
-    "card1": "/videos-gts/smart infrastructure/CARD 1 - urban_infrastructure_smart_cities_4k.svg",
-    "card2": "/videos-gts/smart infrastructure/CARD 2 - connected_mobility_transportation_4k.svg",
-    "card3": "/videos-gts/smart infrastructure/CARD 3 - sustainable_infrastructure_resilient_communities_DETAILED_4K.svg",
-    "card4": "/videos-gts/smart infrastructure/CARD 4 - smart_infrastructure_view_REBUILT_4K.svg",
-    "card5": "/videos-gts/smart infrastructure/CARD 5- digital_twin_smart_infrastructure_4k.svg",
+    "card1": "/videos-gts/smart infrastructure/card-1.webp",
+    "card2": "/videos-gts/smart infrastructure/card-2.webp",
+    "card3": "/videos-gts/smart infrastructure/card-3.webp",
+    "card4": "/videos-gts/smart infrastructure/card-4.webp",
+    "card5": "/videos-gts/smart infrastructure/card-5.webp",
     "subSectors": [
       { "name": "Smart Cities", "icon": Building2 },
       { "name": "Transportation", "icon": TrainFront },
@@ -1516,11 +1517,11 @@ const heroVisuals: HeroVisual[] = [
       "MLOps & AIOps"
     ],
     "video": "/videos-gts/ai & digital/ai & digital.mp4",
-    "card1": "/videos-gts/ai & digital/CARD 1- ai_driven_design_engineering_4K.svg",
-    "card2": "/videos-gts/ai & digital/CARD 2 - digital_twin_virtual_validation_4K.svg",
-    "card3": "/videos-gts/ai & digital/CARD 3 - connected_operations_intelligent_analytics_4K.svg",
-    "card4": "/videos-gts/ai & digital/CARD 4 - ai_digital_engineering_view_4K.svg",
-    "card5": "/videos-gts/ai & digital/CARD 5 - digital_twin_industrial_operations_4K.svg",
+    "card1": "/videos-gts/ai & digital/card-1.webp",
+    "card2": "/videos-gts/ai & digital/card-2.webp",
+    "card3": "/videos-gts/ai & digital/card-3.webp",
+    "card4": "/videos-gts/ai & digital/card-4.webp",
+    "card5": "/videos-gts/ai & digital/card-5.webp",
     "subSectors": [
       { "name": "Energy & Utilities", "icon": UtilityPole },
       { "name": "Oil & Gas", "icon": Fuel },
@@ -3116,6 +3117,21 @@ export default function HomePage() {
     void currentVideo.play().catch(() => undefined);
   }, [activeSlide]);
 
+  // Warm the cache with the neighbouring slides' cards so ‹ / › and autoplay switch instantly.
+  useEffect(() => {
+    const neighbours = [
+      heroVisuals[(activeSlide + 1) % heroVisuals.length],
+      heroVisuals[(activeSlide - 1 + heroVisuals.length) % heroVisuals.length]
+    ];
+    neighbours.forEach((visual) => {
+      [visual.card1, visual.card2, visual.card3, visual.card4, visual.card5].forEach((src) => {
+        const img = new window.Image();
+        img.decoding = 'async';
+        img.src = src;
+      });
+    });
+  }, [activeSlide]);
+
   const showNextSlide = () => {
     setActiveSlide((prev) => (prev + 1) % heroVisuals.length);
   };
@@ -3123,6 +3139,9 @@ export default function HomePage() {
   const showPrevSlide = () => {
     setActiveSlide((prev) => (prev - 1 + heroVisuals.length) % heroVisuals.length);
   };
+
+  // First slide's cards are the hero's main content, so they get fetchPriority="high".
+  const isFirstSlide = activeSlide === 0;
 
   return (
     <div className="flex w-full flex-col overflow-hidden bg-white">
@@ -3193,9 +3212,11 @@ export default function HomePage() {
               {/* Card 5 (Digital Twin) — frame has no fixed height, so it follows the image's own aspect ratio */}
               <AnimatedSection as="div" delay={0.15}>
                 <div className="w-full max-w-[540px] overflow-hidden rounded-xl shadow-[0_0_24px_rgba(37,99,235,0.45)] transition-transform duration-300 hover:-translate-y-1 lg:max-w-[clamp(260px,44vh,540px)] lg:rounded-2xl">
-                  <img
+                  <HeroCardImage
+                    key={heroVisuals[activeSlide].card5}
                     src={heroVisuals[activeSlide].card5}
                     alt={`${heroVisuals[activeSlide].label} Card 5`}
+                    priority={isFirstSlide}
                     className="block h-auto w-full"
                   />
                 </div>
@@ -3216,9 +3237,11 @@ export default function HomePage() {
                       key={src}
                       className="w-[73%] shrink-0 snap-center overflow-hidden rounded-xl shadow-[0_0_22px_rgba(37,99,235,0.42)] transition-transform duration-300 hover:-translate-y-1 sm:w-auto lg:rounded-2xl"
                     >
-                      <img
+                      <HeroCardImage
+                        key={src}
                         src={src}
                         alt={`${heroVisuals[activeSlide].label} Card ${index + 1}`}
+                        priority={isFirstSlide}
                         className="block h-auto w-full object-contain"
                       />
                     </div>
@@ -3229,9 +3252,11 @@ export default function HomePage() {
               {/* Card 4 (Engineering View Panel) */}
               <AnimatedSection as="div" delay={0.2} className="flex lg:justify-end">
                 <div className="w-fit max-w-[520px] overflow-hidden rounded-xl shadow-[0_0_24px_rgba(37,99,235,0.45)] transition-transform duration-300 hover:-translate-y-1 lg:max-w-[clamp(280px,45vh,520px)] lg:rounded-2xl">
-                  <img
+                  <HeroCardImage
+                    key={heroVisuals[activeSlide].card4}
                     src={heroVisuals[activeSlide].card4}
                     alt={`${heroVisuals[activeSlide].label} Card 4`}
+                    priority={isFirstSlide}
                     className="block h-auto max-h-[clamp(260px,45vh,500px)] w-auto max-w-full object-contain"
                   />
                 </div>
@@ -3513,7 +3538,6 @@ export default function HomePage() {
             fill
             sizes="100vw"
             className="object-cover object-center"
-            priority
           />
           {/* Subtle directional washes: keep left text, logo and frosted cards clear while refinery towers and sunset stay vivid */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/25 to-transparent sm:from-white/60 sm:via-white/15 sm:to-transparent" />
@@ -3535,7 +3559,6 @@ export default function HomePage() {
                     width={240}
                     height={94}
                     className="h-[4.5rem] sm:h-20 w-auto object-contain"
-                    priority
                   />
                 </div>
 
@@ -4020,7 +4043,6 @@ export default function HomePage() {
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-right-bottom"
-                  priority
                 />
               </div>
             </div>
@@ -4321,7 +4343,6 @@ export default function HomePage() {
             src="/image/process and safty/image2.jpg"
             alt="Process Safety & EPC Industrial Facility"
             fill
-            priority
             className="object-cover object-center"
             quality={95}
           />
@@ -4834,7 +4855,6 @@ export default function HomePage() {
               style={{ objectPosition: 'left center' }}
               className="object-cover"
               quality={95}
-              priority
             />
             {/* Soft vertical blend into section top/bottom borders */}
             <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc]/60 to-transparent" />
@@ -4869,7 +4889,6 @@ export default function HomePage() {
               style={{ objectPosition: '30% center' }}
               className="object-cover"
               quality={95}
-              priority
             />
             {/* Soft vertical blend into section top/bottom borders */}
             <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc]/60 to-transparent" />

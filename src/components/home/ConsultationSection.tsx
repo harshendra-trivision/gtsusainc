@@ -399,7 +399,6 @@ export default function ConsultationSection({ id = 'consultation', className }: 
           src="/image/consulatation/image4.jpg"
           alt="Global Industrial & Engineering Network Background"
           fill
-          priority
           className="object-cover object-center"
           quality={95}
         />
