@@ -235,8 +235,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Clean Energy Solutions for a Brighter Tomorrow",
     "description": "Delivering end-to-end LNG engineering, digital solutions, and automation to build safer, smarter, and more sustainable energy systems for a global future.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "LNG FACILITY VIEW",
     "metrics": [
       {
@@ -288,8 +288,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Sustainable Solutions for a Blue Tomorrow",
     "description": "Delivering end-to-end marine and offshore engineering, digital solutions, and automation to build safer, smarter, and more resilient marine infrastructure.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "MARINE & OFFSHORE VIEW",
     "metrics": [
       {
@@ -496,8 +496,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Sustainable Energy for a Brighter Tomorrow",
     "description": "Delivering end-to-end renewable energy engineering, digital solutions, and automation to build cleaner, smarter, and more resilient energy systems.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "RENEWABLE ENERGY VIEW",
     "metrics": [
       {
@@ -651,8 +651,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
     "description": "Delivering end-to-end semiconductor engineering, digital solutions, and automation to build safer, smarter, and more sustainable semiconductor manufacturing for a connected future.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "SEMICONDUCTOR FACILITY VIEW",
     "metrics": [
       {
@@ -704,8 +704,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
     "description": "Delivering end-to-end industrial automation engineering, digital solutions, and integration to build safer, smarter, and more efficient operations across industries for a connected future.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "INDUSTRIAL AUTOMATION VIEW",
     "metrics": [
       {
@@ -756,8 +756,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for Industrial Transformation",
     "description": "Delivering end-to-end manufacturing engineering, automation, and digital solutions to optimize production, enhance quality, and drive operational excellence.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "MANUFACTURING VIEW",
     "metrics": [
       {
@@ -810,8 +810,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
     "description": "Accelerating product innovation with AI, digital twins, intelligent engineering, and advanced simulation to build safer, smarter, and more connected products for a better tomorrow.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "PRODUCT ENGINEERING VIEW",
     "metrics": [
       {
@@ -862,8 +862,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Precision Engineering for a Smarter Tomorrow",
     "description": "Innovative mechanical design, advanced simulation, and end-to-end engineering solutions to drive next-generation industrial success.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "MECHANICAL ENGINEERING VIEW",
     "metrics": [
       {
@@ -916,8 +916,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Resilient Structures for a Smarter Tomorrow",
     "description": "Delivering innovative structural engineering, BIM, and digital solutions for infrastructure, industrial, and commercial projects – building a safer, stronger, and more sustainable future.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "STRUCTURAL ENGINEERING VIEW",
     "metrics": [
       {
@@ -968,8 +968,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for Industrial Transformation",
     "description": "Delivering end-to-end electrical engineering, digital solutions, and automation for industrial, energy, infrastructure, and manufacturing sectors – building a safer, smarter, and more sustainable future.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "ELECTRICAL ENGINEERING VIEW",
     "metrics": [
       {
@@ -1021,8 +1021,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for Industrial Transformation",
     "description": "Delivering end-to-end instrumentation, control systems, and automation solutions for industrial, energy, infrastructure, and manufacturing sectors – building a safer, smarter, and more sustainable future.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "INSTRUMENTATION & CONTROLS VIEW",
     "metrics": [
       {
@@ -1077,8 +1077,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Sustainable Resources for a Brighter Tomorrow",
     "description": "Delivering end-to-end mining and metals engineering, processing solutions, and digital technologies to build safer, smarter, and more sustainable operations.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "MINING OPERATIONS VIEW",
     "metrics": [
       {
@@ -1128,8 +1128,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Smarter Transit for a Connected Tomorrow",
     "description": "Delivering end-to-end rail and transportation engineering, automation, and digital solutions to build safer, smarter, and more sustainable mobility systems.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "RAIL & TRANSPORTATION ENGINEERING VIEW",
     "metrics": [
       {
@@ -1181,8 +1181,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Innovative Aerospace Solutions for a Brighter Tomorrow",
     "description": "Delivering end-to-end aerospace engineering, digital solutions, and automation to build safer, smarter, and more sustainable aerospace systems for a global future.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "AEROSPACE VIEW",
     "metrics": [
       {
@@ -1231,8 +1231,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for a Connected World",
     "description": "Delivering end-to-end telecommunications engineering, network infrastructure, and digital solutions for a more connected, resilient, and inclusive tomorrow.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "TELECOMMUNICATION VIEW",
     "metrics": [
       {
@@ -1286,8 +1286,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Smarter Healthcare for a Healthier Tomorrow",
     "description": "Delivering end-to-end medical device engineering, digital solutions, and automation to build safer, smarter, and more accessible healthcare technologies.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "MEDICAL ENGINEERING VIEW",
     "metrics": [
       {
@@ -1336,8 +1336,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Smarter Science for a Healthier Tomorrow",
     "description": "Delivering end-to-end life sciences engineering, digital solutions, and automation to build safer, faster, and more innovative therapies for a healthier world.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "LIFE SCIENCES ENGINEERING VIEW",
     "metrics": [
       {
@@ -1386,8 +1386,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Innovative Consumer Products for a Brighter Tomorrow",
     "description": "Delivering end-to-end consumer products engineering, digital solutions, and automation to build safer, smarter, and more sustainable products for global brands.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "CONSUMER PRODUCTS VIEW",
     "metrics": [
       {
@@ -1437,8 +1437,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Smarter Infrastructure for a Brighter Tomorrow",
     "description": "Delivering end-to-end smart infrastructure engineering, digital solutions, and automation to build safer, smarter, and more resilient cities for a sustainable future.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "SMART INFRASTRUCTURE VIEW",
     "metrics": [
       {
@@ -1487,8 +1487,8 @@ const heroVisuals: HeroVisual[] = [
     "title2": "Beyond Boundaries",
     "subtitle": "Intelligent Solutions for a Sustainable Tomorrow",
     "description": "Accelerating innovation with AI, digital twins, intelligent engineering, and advanced simulation to build safer, smarter, and more connected operations for a better tomorrow.",
-    "projectsDelivered": "100+",
-    "yearsOfExcellence": "16+",
+    "projectsDelivered": "500+",
+    "yearsOfExcellence": "15+",
     "dashboardTitle": "AI & DIGITAL ENGINEERING VIEW",
     "metrics": [
       {
@@ -1626,7 +1626,7 @@ const trustStats = [
 ];
 
 const whoWeAreTrustStats = [
-  { value: '100+', label: 'Qualified Professionals', icon: Users },
+  { value: '500+', label: 'Qualified Professionals', icon: Users },
   { value: '500+', label: 'Projects Delivered', icon: FileText },
   { value: '15+', label: 'Industry Sectors Supported', icon: Cog },
   { value: 'USA • India', label: 'Engineering Centers', icon: Globe },
@@ -1684,7 +1684,7 @@ const engineeringSolutions: EngineeringSolutionItem[] = [
     relatedIndustries: ['Oil & Gas', 'LNG', 'Chemicals', 'Power', 'Refining', 'Manufacturing', 'Pharmaceuticals'],
     bottomMetrics: [
       { label: '500+', sublabel: 'Projects Delivered' },
-      { label: '20+', sublabel: 'Years Experience' },
+      { label: '15+', sublabel: 'Years Experience' },
       { label: 'Global', sublabel: 'Project Support' }
     ]
   },
@@ -2313,7 +2313,7 @@ const processSafetyCards = [
 const processSafetyStats = [
   {
     icon: ShieldCheck,
-    value: '100+',
+    value: '500+',
     label: 'Safety Studies Completed'
   },
   {
@@ -2701,7 +2701,7 @@ const aiWorkflowSteps = [
 const technologyMetrics = [
   {
     icon: Layers,
-    value: '100+',
+    value: '500+',
     label: 'Engineering Software & Tools'
   },
   {
@@ -2811,7 +2811,7 @@ const whyGtsStats: WhyGtsStat[] = [
     icon: Calendar
   },
   {
-    value: '100+',
+    value: '500+',
     label: 'Engineering Professionals',
     icon: Users
   },
@@ -2896,12 +2896,12 @@ const excellencePillars = [
 const excellenceStats = [
   {
     icon: Users,
-    value: '100+',
+    value: '500+',
     label: 'Engineering Professionals'
   },
   {
     icon: FileText,
-    value: '100+',
+    value: '500+',
     label: 'Projects Delivered'
   },
   {
@@ -3272,7 +3272,7 @@ export default function HomePage() {
                 {[
                   { icon: Globe, value: '20+', label: 'Industries Served' },
                   { icon: Users, value: heroVisuals[activeSlide].projectsDelivered ?? '500+', label: 'Projects Delivered' },
-                  { icon: Award, value: heroVisuals[activeSlide].yearsOfExcellence ?? '20+', label: 'Years of Engineering Excellence' },
+                  { icon: Award, value: heroVisuals[activeSlide].yearsOfExcellence ?? '15+', label: 'Years of Engineering Excellence' },
                   { icon: Leaf, value: 'A Cleaner', label: 'Brighter Tomorrow' }
                 ].map(({ icon: Icon, value, label }) => (
                   <li key={label} className="flex items-center gap-2">
