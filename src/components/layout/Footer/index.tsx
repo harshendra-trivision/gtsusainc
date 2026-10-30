@@ -1,11 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
   ArrowRight,
+  Check,
   ChevronRight,
+  Copy,
   Globe,
   Mail,
   MapPin,
@@ -84,6 +86,44 @@ const featurePills = [
     subtitle: 'A Sustainable Future',
   },
 ];
+
+function CopyButton({ value, label }: { value: string; label: string }) {
+  const [copied, setCopied] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Clear the pending "Copied" reset if the footer unmounts.
+  useEffect(() => {
+    return () => {
+      if (timer.current) clearTimeout(timer.current);
+    };
+  }, []);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(true);
+      if (timer.current) clearTimeout(timer.current);
+      timer.current = setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      aria-label={copied ? `${label} copied` : `Copy ${label}`}
+      title={copied ? 'Copied!' : `Copy ${label}`}
+      className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 transition-colors hover:bg-cyan-500/20 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+    >
+      {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+      <span className="sr-only" aria-live="polite">
+        {copied ? 'Copied' : ''}
+      </span>
+    </button>
+  );
+}
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -287,6 +327,7 @@ export default function Footer() {
                 >
                   +1 832 295 0545
                 </a>
+                <CopyButton value="+1 832 295 0545" label="phone number" />
               </div>
 
               <div className="flex items-center gap-3">
@@ -297,6 +338,7 @@ export default function Footer() {
                 >
                   info@gtsusainc.com
                 </a>
+                <CopyButton value="info@gtsusainc.com" label="email address" />
               </div>
             </div>
 
