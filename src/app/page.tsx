@@ -3090,6 +3090,8 @@ export default function HomePage() {
   const [hoveredIndustryIndex, setHoveredIndustryIndex] = useState<number | null>(null);
   const [selectedSolution, setSelectedSolution] = useState<EngineeringSolutionItem | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isIndustryPickerOpen, setIsIndustryPickerOpen] = useState(false);
+  const industryListRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -3131,6 +3133,19 @@ export default function HomePage() {
       });
     });
   }, [activeSlide]);
+
+  // When the industry picker opens, scroll the current industry into the middle of the row.
+  useEffect(() => {
+    const list = industryListRef.current;
+    if (!isIndustryPickerOpen || !list) return;
+    const active = list.querySelector<HTMLElement>('[data-active="true"]');
+    if (active) list.scrollLeft = active.offsetLeft - list.clientWidth / 2 + active.clientWidth / 2;
+  }, [isIndustryPickerOpen]);
+
+  const selectIndustry = (index: number) => {
+    setActiveSlide(index);
+    setIsIndustryPickerOpen(false);
+  };
 
   const showNextSlide = () => {
     setActiveSlide((prev) => (prev + 1) % heroVisuals.length);
@@ -3287,7 +3302,63 @@ export default function HomePage() {
 
               {/* Industry Switcher Tabs — shown only when there is more than one industry */}
               {heroVisuals.length > 1 && (
-                <div className="flex items-center gap-2 xl:justify-end">
+                <div
+                  className="relative flex items-center gap-2 xl:justify-end"
+                  onMouseEnter={() => setIsIndustryPickerOpen(true)}
+                  onMouseLeave={() => setIsIndustryPickerOpen(false)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Escape') setIsIndustryPickerOpen(false);
+                  }}
+                >
+                  {/* Industry picker — glass panel that opens upward above the arrows on hover (tap the counter on touch screens) */}
+                  <div
+                    className={`absolute bottom-full right-0 z-30 w-[min(92vw,760px)] pb-3 transition-all duration-200 ease-out max-xl:left-0 max-xl:right-auto ${
+                      isIndustryPickerOpen
+                        ? 'pointer-events-auto translate-y-0 opacity-100'
+                        : 'pointer-events-none translate-y-2 opacity-0'
+                    }`}
+                    aria-hidden={!isIndustryPickerOpen}
+                  >
+                    <div className="overflow-hidden rounded-2xl border border-white/40 bg-white/20 shadow-[0_20px_50px_rgba(10,61,240,0.25)] ring-1 ring-white/20 backdrop-blur-xl backdrop-saturate-150">
+                      <div className="flex items-center justify-between px-4 pt-3 text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-slate-800">
+                        <span>All Industries</span>
+                        <span className="text-[#0A3DF0]">{heroVisuals.length}</span>
+                      </div>
+                      <div
+                        ref={industryListRef}
+                        role="listbox"
+                        aria-label="Choose an industry"
+                        // Let a regular mouse wheel scroll the row sideways.
+                        onWheel={(e) => {
+                          if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) e.currentTarget.scrollLeft += e.deltaY;
+                        }}
+                        className="flex gap-2 overflow-x-auto scroll-smooth px-4 pb-3.5 pt-2.5 [scrollbar-width:thin]"
+                      >
+                        {heroVisuals.map((visual, index) => {
+                          const isActive = index === activeSlide;
+                          return (
+                            <button
+                              key={visual.id}
+                              type="button"
+                              role="option"
+                              aria-selected={isActive}
+                              data-active={isActive}
+                              tabIndex={isIndustryPickerOpen ? 0 : -1}
+                              onClick={() => selectIndustry(index)}
+                              className={`shrink-0 whitespace-nowrap rounded-full border px-3.5 py-1.5 text-xs font-bold transition-all duration-200 ${
+                                isActive
+                                  ? 'border-[#0A3DF0] bg-[#0A3DF0] text-white shadow-md shadow-blue-600/30'
+                                  : 'border-white/50 bg-white/40 text-slate-800 hover:-translate-y-0.5 hover:border-[#0A3DF0]/60 hover:bg-white/70 hover:text-[#0A3DF0]'
+                              }`}
+                            >
+                              {visual.label}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+
                   <button
                     type="button"
                     onClick={showPrevSlide}
@@ -3296,9 +3367,15 @@ export default function HomePage() {
                   >
                     <ChevronLeft className="h-5 w-5 stroke-[2.5]" />
                   </button>
-                  <span className="min-w-[3rem] text-center text-xs font-bold tabular-nums tracking-wide text-slate-700">
+                  <button
+                    type="button"
+                    onClick={() => setIsIndustryPickerOpen((open) => !open)}
+                    aria-label={`Industry ${activeSlide + 1} of ${heroVisuals.length}. Show all industries`}
+                    aria-expanded={isIndustryPickerOpen}
+                    className="min-w-[3rem] rounded-full px-1.5 py-1 text-center text-xs font-bold tabular-nums tracking-wide text-slate-700 transition-colors hover:text-[#0A3DF0]"
+                  >
                     {activeSlide + 1} / {heroVisuals.length}
-                  </span>
+                  </button>
                   <button
                     type="button"
                     onClick={showNextSlide}
