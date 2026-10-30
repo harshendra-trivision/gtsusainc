@@ -5,6 +5,27 @@
 
 ---
 
+## ✅ Current progress (last updated 2026-10-30)
+
+| # | Task | Status |
+|---|---|---|
+| 1 | CloudFront setup for the new site | ✅ Done (reported by user). Before go-live, confirm: origin = S3 *website* endpoint, ACM cert (us-east-1) attached, alternate domains `gtsusainc.com` + `www.gtsusainc.com` |
+| 2 | Old site **SQL database** backup downloaded to local machine (`system_gtsusainc_2026…3541.sql`) | ✅ Done. **Database ONLY** |
+| 2b | Old site **files** backup (`htdocs` / `wp-content`, themes, uploads, images; ~92 GB on hosting) | ⏳ **NOT done yet.** Without the files, the old site can't be fully restored |
+| 3 | Client approval for go-live | ⏳ Waiting on client |
+| 4 | DNS/CNAME change in Network Solutions | ⏳ After approval only (see section 5.4). Keep the MX/SPF email records |
+| 5 | Site live on gtsusainc.com + verify (site, deep links, contact form, **email**) | ⏳ After step 4 (see section 5.5) |
+| - | Upload `/about` fix build (`trailingSlash: true`) to S3 | ⏳ Confirm it's uploaded |
+
+> Old site must **stay live** until the client approves. Nothing done so far affects the live site.
+> ⚠️ Never click "Restore to Snapshot", "Restore Backup", "Delete" or "Disabled" in the Network Solutions hosting panel.
+
+### Where the database backup came from (to repeat it later)
+Network Solutions → **Hosting** → **Database Manager** → row `gtsusainc` → **⋮** → **Restore/View Backup** → **Download Backup** → pick the latest date.
+The same backups also live on the hosting at `/backup/sql/gtsusainc`.
+
+---
+
 ## 1. The request (from the client)
 
 - The new GTS Engineering site (this Next.js repo) is deployed at:
@@ -140,4 +161,8 @@ Route 53 **Alias** records let the root domain point to CloudFront. Network Solu
 Backup (Part 1) → upload the `/about` fix to S3 → ACM cert → CloudFront → test on the `*.cloudfront.net` URL → DNS switch → verify site + email.
 
 ## 8. Status log
+- 2026-10-30: Network Solutions hosting found: **Premium (Hosting-Unix)**, IP `206.188.193.130`, **Active, renews Oct 9, 2030** (no deadline risk). Uses **92 GB** web disk, 1 MySQL DB (~300 MB). Panel tools: Website Backups, Database Manager, File Manager, SFTP Account Manager, Softaculous, Cloud Backup (Xcitium, paid). The Mac only has ~9.5 GB free, so check what the 92 GB is before downloading everything, or use an external drive. Client wants the old site to stay live until they approve the DNS switch.
+- 2026-10-30: **Website Backups** page has 14 nightly snapshots (Oct 17–30), but only a "Restore to Snapshot" option and **no download**. ⚠️ Never click Restore: it overwrites the live site. Database found: name `gtsusainc`, server `vuxmysql11`, user `gtsusainc`, MySQL 8.0, **3.4 MB**. The DB password is in `wp-config.php` (`DB_PASSWORD`). Don't change the DB password, or the live site breaks. Next: database export via Database Manager → phpMyAdmin, then files via File Manager / SFTP.
+- 2026-10-30: ✅ **SQL database downloaded** to the local machine (`system_gtsusainc_2026…3541.sql`) using Database Manager → ⋮ → Restore/View Backup → Download Backup. **Database only. Website files are not backed up yet.**
+- 2026-10-30: User reports **CloudFront is set up**. Remaining: client approval → DNS/CNAME change → go live.
 - 2026-10-30: Investigation done. `trailingSlash: true` fix applied in `next.config.ts` and build verified locally. **Upload to S3 still pending** (no AWS credentials on that machine).
