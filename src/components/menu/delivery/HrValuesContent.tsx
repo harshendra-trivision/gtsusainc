@@ -14,7 +14,7 @@ export default function HrValuesContent() {
 
       <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 sm:p-5">
         <Image
-          src="/image/hr-values.png"
+          src="/image/hr-values.jpeg"
           alt="HR Values"
           width={1100}
           height={700}

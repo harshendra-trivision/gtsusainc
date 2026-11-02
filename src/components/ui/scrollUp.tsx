@@ -1,8 +1,40 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { ArrowUp } from "lucide-react";
+import { getSections } from "./scrollDown";
 
 export default function BackToTopButton() {
+    const [isVisible, setIsVisible] = useState(false);
+    const pathname = usePathname();
+
+    // Show only after the second section has scrolled up into view (half-way up the screen).
+    useEffect(() => {
+        let frame = 0;
+        const update = () => {
+            frame = 0;
+            const secondSection = getSections()[1];
+            setIsVisible(
+                secondSection
+                    ? secondSection.getBoundingClientRect().top <= window.innerHeight / 2
+                    : window.scrollY > window.innerHeight
+            );
+        };
+        const onScroll = () => {
+            if (!frame) frame = window.requestAnimationFrame(update);
+        };
+
+        update();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onScroll);
+            if (frame) window.cancelAnimationFrame(frame);
+        };
+    }, [pathname]);
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -14,7 +46,10 @@ export default function BackToTopButton() {
         <button
             onClick={scrollToTop}
             aria-label="Back to top"
-            className="
+            aria-hidden={!isVisible}
+            tabIndex={isVisible ? 0 : -1}
+            className={`
+        ${isVisible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}
         group fixed bottom-6 right-6 z-50
         flex h-12 w-12 items-center justify-center
         overflow-hidden rounded-full border border-purple-200/60
@@ -23,7 +58,7 @@ export default function BackToTopButton() {
         backdrop-blur-md transition-all duration-300 ease-out
         hover:w-36 hover:rounded-full hover:shadow-[0_12px_35px_rgba(122,24,229,0.28)]
         active:scale-95
-      "
+      `}
         >
             <ArrowUp
                 size={18}

@@ -44,7 +44,7 @@ const aboutUsSubmenu = [
 
 const careerLinks = [
   { label: 'HR Values', href: '/menu/careers/hr-values' },
-  { label: 'Life @ GTS Engineering', href: '/menu/careers/life-gts-engineering' },
+  { label: 'Life GTS Engineering', href: '/menu/careers/life-gts-engineering' },
   { label: 'Why Join Us', href: '/menu/careers/why-join-us' },
   { label: 'Employment Opportunities', href: '/menu/careers/employment-opportunities' }
 ];
@@ -112,7 +112,7 @@ const deliveryEnablersSubmenu = [
 
 const careersSubmenu = [
   'HR Values',
-  'Life @ GTS Engineering',
+  'Life GTS Engineering',
   'Why Join Us',
   'Employment Opportunities'
 ];
@@ -348,11 +348,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
           sectionHeroDescriptions[section] ||
           'Comprehensive multidisciplinary engineering, consulting, and technology services delivered with precision and global scale.'
         }
-        backgroundImage={
-          section === 'about-us'
-            ? '/image/about/about bg.jpg'
-            : undefined
-        }
+        backgroundImage={getHeroBackground(section, item)}
       />
 
       {/* Modern Breadcrumb Bar */}
@@ -777,7 +773,7 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
 
                   <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 sm:p-5">
                     <Image
-                      src="/image/product.png"
+                      src="/image/product.jpeg"
                       alt="Engineering Capability Maturity Roadmap"
                       width={1100}
                       height={700}
@@ -2510,12 +2506,41 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
   );
 }
 
+// Hero background per page (`section/item`), then per section; pages not listed keep the plain dark hero.
+const pageHeroImages: Record<string, string> = {
+  'service-offerings/product-engineering': '/image/about-product-enginerring.jpeg',
+  'service-offerings/plant-and-process-engineering': '/image/plant-and-process-enginerring.jpeg',
+  'service-offerings/plm-and-software-engineering': '/image/PLM & Software Engineering.jpeg',
+  'service-offerings/geoinformatics-engineering': '/image/geoinformatic-information.jpeg',
+  'service-offerings/project-management-and-controls': '/image/product managment and control.jpeg',
+  'service-offerings/project-engineering': '/image/project-enginerring.jpeg',
+  'service-offerings/document-engineering': '/image/Document-Engineering.jpeg',
+  'delivery-enablers/technology-and-competencies': '/image/technology-and-competencies.jpeg',
+  'delivery-enablers/global-engagement-models': '/image/global-engedment-model.png',
+  'delivery-enablers/collaborative-communication': '/image/collaborative-communication.jpeg',
+  'delivery-enablers/quality-management-system': '/image/quality-managment-system.jpeg',
+  'delivery-enablers/hr-values': '/image/career-hr-gb.jpeg',
+  'delivery-enablers/infrastructure': '/image/infrastracture-bg.jpeg',
+  'careers/hr-values': '/image/career-hr-gb.jpeg',
+  'careers/employment-opportunities': '/image/employment-opportunity.jpeg'
+};
+
+const sectionHeroImages: Record<string, string> = {
+  'about-us': '/image/about/about bg.jpg'
+};
+
+const getHeroBackground = (section: string, item: string): string | undefined =>
+  pageHeroImages[`${section}/${item}`] ?? sectionHeroImages[section];
+
 const toSlug = (value: string) =>
   value
     .toLowerCase()
     .replace(/&/g, 'and')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
+
+// Only the pages listed below exist; any other /menu/... URL (e.g. a typo) shows the 404 page instead of a runtime error.
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   const sectionToSubmenu: Record<string, string[]> = {

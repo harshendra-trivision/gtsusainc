@@ -70,7 +70,7 @@ const menuSections: Record<string, string[]> = {
   ],
   careers: [
     'HR Values',
-    'Life @ GTS Engineering',
+    'Life GTS Engineering',
     'Why Join Us',
     'Employment Opportunities',
   ],

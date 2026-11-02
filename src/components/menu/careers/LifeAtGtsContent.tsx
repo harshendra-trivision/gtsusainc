@@ -1,7 +1,7 @@
 export default function LifeAtGtsContent() {
   return (
     <div className="mt-5 space-y-6 text-[15px] leading-7 text-slate-700">
-      <h2 className="text-3xl font-semibold text-[#0056a4]">Life @ GTS Engineering</h2>
+      <h2 className="text-3xl font-semibold text-[#0056a4]">Life GTS Engineering</h2>
 
       <p>
         GTS Engineering USA Incorporated (GTS) is an organization where importance of employees&apos; growth is never underestimated. To our

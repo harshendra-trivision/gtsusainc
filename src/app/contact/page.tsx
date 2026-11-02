@@ -44,12 +44,11 @@ const deliveryLocations = [
   {
     title: 'Global Delivery Center',
     lines: [
-      'GTS Techno Projects (India) P Limited',
+      'GTS India - GTS Manufacturing – Adomac Technicals',
       'An ISO 9001:2015 certified company',
       '(A subsidiary of GTS Engineering USA Incorporated)',
       'G – 41, Sector – 63,',
       'Noida, U.P. – 201301, INDIA',
-      'GTS Manufacturing – Adomac Technicals',
       'G – 230, Sector – 63,',
       'Noida, U.P., India – 201309'
     ]
