@@ -26,7 +26,9 @@ export default function AnimatedSection({
       id={id}
       initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.18 }}
+      // Trigger once the block's top edge is 10% into the viewport. A fractional `amount` (e.g. 0.18) can never be
+      // reached by blocks taller than ~5 screens, which then stay invisible forever.
+      viewport={{ once: true, amount: 'some', margin: '0px 0px -10% 0px' }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay }}
       className={className}
     >

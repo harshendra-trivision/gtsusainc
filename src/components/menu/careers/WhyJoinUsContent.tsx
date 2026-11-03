@@ -1,7 +1,7 @@
 export default function WhyJoinUsContent() {
   return (
     <div className="mt-5 space-y-6 text-[15px] leading-7 text-slate-700">
-      <h2 className="text-3xl font-semibold text-[#0056a4]">Why Join Us</h2>
+      {/* <h2 className="text-3xl font-semibold text-[#0056a4]">Why Join Us</h2> */}
 
       <p>
         If you are a highly motivated person who loves challenges coming through with each day passing, we at GTS would love to see you on

@@ -119,7 +119,7 @@ export const disciplinesData: DisciplineData[] = [
     ],
     stats: {
       projects: '500+ Process Projects',
-      experience: '25+ Years'
+      experience: '15+ Years'
     },
     industries: ['Refining & Petrochemicals', 'LNG & Gas Processing', 'Chemicals', 'Hydrogen & Clean Fuels', 'Pharmaceuticals'],
     projects: [

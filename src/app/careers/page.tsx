@@ -2,13 +2,28 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Briefcase, HeartHandshake, Users, type LucideIcon } from 'lucide-react';
 import { careersContent } from '@/constants/careersContent';
-import { AnimatedSection, GradientButton, MagneticCard, PageHero } from '@/components/ui';
+import { AnimatedSection, MagneticCard, PageHero } from '@/components/ui';
 
 const categoryIcons: Record<string, LucideIcon> = {
   Users,
   Briefcase,
   HeartHandshake
 };
+
+// Same glowing, shimmering pill as the "Explore … Solutions" button on the home page.
+function GlowCtaButton({ href, label }: { href: string; label: string }) {
+  return (
+    <Link
+      href={href}
+      className="group/cta relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-cyan-300/60 bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3.5 text-sm font-bold text-white animate-glow-pulse transition-all duration-300 hover:scale-105 hover:from-cyan-400 hover:to-blue-500 motion-reduce:animate-none sm:text-base"
+    >
+      {/* Moving shine */}
+      <span className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/45 to-transparent animate-shimmer motion-reduce:hidden" />
+      <span className="relative">{label}</span>
+      <ArrowRight className="relative h-5 w-5 transition-transform duration-300 group-hover/cta:translate-x-1" />
+    </Link>
+  );
+}
 
 export const metadata: Metadata = {
   title: 'Careers | GTS Engineering',
@@ -29,7 +44,7 @@ export default function CareersPage() {
         backgroundImage="/image/carrers/career bg.jpg"
       >
         <div className="flex justify-center">
-          <GradientButton href="/menu/careers/employment-opportunities">View Open Positions</GradientButton>
+          <GlowCtaButton href="/menu/careers/employment-opportunities" label="View Open Positions" />
         </div>
       </PageHero>
 
@@ -82,13 +97,7 @@ export default function CareersPage() {
 
                 {section.cta && (
                   <div className="mt-6">
-                    <Link
-                      href={section.cta.href}
-                      className="inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-4 py-2.5 text-xs font-semibold text-accent transition-colors hover:bg-accent hover:text-white"
-                    >
-                      {section.cta.label}
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
+                    <GlowCtaButton href={section.cta.href} label={section.cta.label} />
                   </div>
                 )}
               </AnimatedSection>
@@ -103,7 +112,7 @@ export default function CareersPage() {
           Explore open roles across engineering, digital, AI, and corporate teams.
         </p>
         <div className="mt-8 flex justify-center">
-          <GradientButton href="/menu/careers/employment-opportunities">View Open Positions</GradientButton>
+          <GlowCtaButton href="/menu/careers/employment-opportunities" label="View Open Positions" />
         </div>
       </section>
     </div>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function HrValuesContent() {
   return (
     <div className="mt-5 space-y-6 text-[15px] leading-7 text-slate-700">
-      <h2 className="text-3xl font-semibold text-[#0056a4]">HR Values</h2>
+      {/* <h2 className="text-3xl font-semibold text-[#0056a4]">HR Values</h2> */}
 
       <p>
         AT GTS Engineering USA Incorporated (GTS), we truly believe that our employees play the role of the backbone of our delivery

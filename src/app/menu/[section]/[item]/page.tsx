@@ -44,7 +44,7 @@ const aboutUsSubmenu = [
 
 const careerLinks = [
   { label: 'HR Values', href: '/menu/careers/hr-values' },
-  { label: 'Life GTS Engineering', href: '/menu/careers/life-gts-engineering' },
+  { label: 'Life GTS @ Engineering', href: '/menu/careers/life-gts-engineering' },
   { label: 'Why Join Us', href: '/menu/careers/why-join-us' },
   { label: 'Employment Opportunities', href: '/menu/careers/employment-opportunities' }
 ];
@@ -112,7 +112,7 @@ const deliveryEnablersSubmenu = [
 
 const careersSubmenu = [
   'HR Values',
-  'Life GTS Engineering',
+  'Life GTS @ Engineering',
   'Why Join Us',
   'Employment Opportunities'
 ];
@@ -336,7 +336,8 @@ export default async function MenuSubPage({ params }: MenuSubPageProps) {
               ? 'Careers & Talent'
               : isPlmSoftwareEngineeringPage
                 ? 'PLM & Software Engineering'
-                : toTitleCase(item);
+                : // Use the menu label as written (e.g. "HR Values"), not a title-cased slug ("Hr Values").
+                  sidebarSubmenu.find((label) => toSlug(label) === item) ?? toTitleCase(item);
 
   return (
     <div className="flex w-full flex-col bg-[#f8fafc]">
@@ -2522,6 +2523,8 @@ const pageHeroImages: Record<string, string> = {
   'delivery-enablers/hr-values': '/image/career-hr-gb.jpeg',
   'delivery-enablers/infrastructure': '/image/infrastracture-bg.jpeg',
   'careers/hr-values': '/image/career-hr-gb.jpeg',
+  'careers/life-gts-engineering': '/image/life-gts-enginerring.jpeg',
+  'careers/why-join-us': '/image/why-join-us.jpeg',
   'careers/employment-opportunities': '/image/employment-opportunity.jpeg'
 };
 
